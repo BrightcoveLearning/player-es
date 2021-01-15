@@ -1,0 +1,1370 @@
+﻿<!doctype html>
+<html lang="es-es">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  
+  <title>Arquitectura de búsqueda</title>
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">  
+  <link data-react-helmet="true" rel="preload" as="font" href="https://files.brightcove.com/fonts/balto/baltoweb-ultra.eot" type="font/eot">
+  <link data-react-helmet="true" rel="preload" as="font" href="https://files.brightcove.com/fonts/balto/baltoweb-ultra.woff" type="font/woff">
+  <link data-react-helmet="true" rel="preload" as="font" href="https://files.brightcove.com/fonts/balto/baltoweb-super.eot" type="font/eot">
+  <link data-react-helmet="true" rel="preload" as="font" href="https://files.brightcove.com/fonts/balto/baltoweb-super.woff" type="font/woff">
+  <link data-react-helmet="true" rel="preload" as="font" href="https://files.brightcove.com/fonts/balto/baltoweb-black.eot" type="font/eot">
+  <link data-react-helmet="true" rel="preload" as="font" href="https://files.brightcove.com/fonts/balto/baltoweb-black.woff" type="font/woff">
+  <link data-react-helmet="true" rel="preload" as="font" href="https://files.brightcove.com/fonts/balto/baltoweb-bold.eot" type="font/eot">
+  <link data-react-helmet="true" rel="preload" as="font" href="https://files.brightcove.com/fonts/balto/baltoweb-bold.woff" type="font/woff">
+  <link data-react-helmet="true" rel="preload" as="font" href="https://files.brightcove.com/fonts/balto/baltoweb-medium.eot" type="font/eot">
+  <link data-react-helmet="true" rel="preload" as="font" href="https://files.brightcove.com/fonts/balto/baltoweb-medium.woff" type="font/woff">
+  <link data-react-helmet="true" rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500&amp;display=swap">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/prism.css">
+  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/styles.css">
+  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/landing-page.css">
+  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/tabs.css">
+  <link rel="stylesheet" href="/assets/css/local.css">
+  <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/381443caa8.js" crossorigin="anonymous"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/google-analytics.js"></script>
+  <script src="/assets/js/sajari-head.js"></script>
+</head>
+
+<body class="body">
+
+<header>
+  <div class="div-header">
+    <a href="/"><img class="product-logo" src="https://support.brightcove.com/site-assets/images/site/product-logos/Player_Logo.svg" alt="logotipo del producto" style="max-height: 100px;max-width: 232px;"/></a>
+<!-- GTranslate: https://gtranslate.io/ -->
+<select onchange="doGTranslate(this);"><option value="">Seleccionar idioma</option><option value="en|en" translate="No">English</option><option value="en|zh-TW" translate="No">繁體中文</option><option value="en|fr" translate="No">Français</option><option value="en|de" translate="No">Deutsche</option><option value="en|ja" translate="No">日本語</option><option value="en|ko" translate="No">한국어</option><option value="en|es" translate="No">Español</option></select>
+
+<script>
+/* <![CDATA[ */
+function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;if(lang_pair=='')return;var lang=lang_pair.split('|')[1];var plang=location.hostname.split('.')[0];if(plang.length !=2 && plang.toLowerCase() != 'zh-cn' && plang.toLowerCase() != 'zh-tw')plang='en';location.href=location.protocol+'//'+(lang == 'en' ? '' : lang+'.')+location.hostname.replace('www.', '').replace(RegExp('^' + plang + '\\.'), '')+location.pathname+location.search;}
+/* ]]> */
+</script>
+
+    <select id="site_select" class="bcls-select" style="margin-right: 1rem;">
+      <option value="">Otros documentos de Brightcove</option>
+      
+        
+          <option value="https://support.brightcove.com">Documentación Inicio</option>
+        
+      
+        
+          <option value="https://audience.support.brightcove.com">Audiencia de Brightcove</option>
+        
+      
+        
+          <option value="https://beacon.support.brightcove.com">Baliza Brightcove</option>
+        
+      
+        
+          <option value="https://campaign.support.brightcove.com">Campaña de Brightcove</option>
+        
+      
+        
+          <option value="https://engage.support.brightcove.com">Brightcove Engage</option>
+        
+      
+        
+          <option value="https://live.support.brightcove.com">Brightcove Live</option>
+        
+      
+        
+          <option value="https://gallery.support.brightcove.com">Brightcove Gallery</option>
+        
+      
+        
+          <option value="https://ssai.support.brightcove.com">Brightcove SSAI</option>
+        
+      
+        
+          <option value="https://social.support.brightcove.com">Brightcove Social</option>
+        
+      
+        
+          <option value="https://studio.support.brightcove.com">Video Cloud Studio</option>
+        
+      
+        
+          <option value="https://player.support.brightcove.com">Desarrollo de jugadores de Brightcove</option>
+        
+      
+        
+          <option value="https://apis.support.brightcove.com">API para la plataforma de Video Cloud</option>
+        
+      
+        
+          <option value="https://sdks.support.brightcove.com">SDK de dispositivos de Video Cloud</option>
+        
+      
+        
+          <option value="https://integrations.support.brightcove.com">Integraciones y conectores CMS</option>
+        
+      
+        
+          <option value="https://general.support.brightcove.com">Información general de Video Cloud</option>
+        
+      
+        
+          <option value="https://zencoder.support.brightcove.com">Zencoder</option>
+        
+      
+    </select>
+
+
+    <span class="secondary-nav"><a href="https://supportportal.brightcove.com/s/login/?"><img src="https://support.brightcove.com/site-assets/images/site/support.png" alt="soporte"/> Contactar con Soporte</a> <span style="vertical-align: top;margin-left:1em;margin-right:1em;">|</span> <a href="https://status.brightcove.com/">Estado<img src="https://support.brightcove.com/site-assets/images/site/status.png" alt="estado del sistema"/> del sistema</a></span> <br/>
+    
+  </div>
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb arr-right">
+      
+      <li class="breadcrumb-item"><a href="/">Inicio</a></li>
+      
+      
+      
+      <li class="breadcrumb-item">Referencias<a href="/references/"></a></li>
+      
+      <li class="breadcrumb-item active" aria-current="page">Arquitectura de búsqueda</li>
+    </ol>
+  </nav>
+</header>
+<div class="container">
+    <div class="row">
+      <div class="col-sm-3 left-side-bar">
+        <nav class="sidenav" id="side_nav">
+          
+            
+            <h5><a href="/index.html">Inicio</a></h5>
+            
+          
+            
+              <h5 class="submenu-header"><a href="/getting-started/index.html">Empezar <strong>+</strong></a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="/training/developer-basics-videos.html">Vídeos básicos del desarrollador</a></li>
+                  
+                
+                  
+                    <li>¿Qué es Brightcove Player?<a href="/getting-started/what-brightcove-player.html"></a></li>
+                  
+                
+                  
+                    <li>Visión general:<a href="/getting-started/overview-brightcove-player.html"> Reproductor de Brightcove</a></li>
+                  
+                
+                  
+                    <li>Guía de aprendizaje:<a href="/getting-started/learning-guide-video-advertising.html"> Publicidad en vídeo</a></li>
+                  
+                
+                  
+                    <li>Visión general:<a href="/getting-started/overview-brightcove-player-plugins.html"> Complementos de Brightcove Player</a></li>
+                  
+                
+                  
+                    <li>Vídeos de capacitación sobre desarrollo de jugadores<a href="/training/player-development-training-videos.html"></a></li>
+                  
+                
+                  
+                    <li>Paso a paso:<a href="/getting-started/step-step-brightcove-player.html"> Reproductor de Brightcove</a></li>
+                  
+                
+                  
+                    <li>Paso a paso:<a href="/getting-started/step-step-player-customization.html"> Personalización del reproductor</a></li>
+                  
+                
+                  
+                    <li>Capacitación:<a href="/training/training-demand-developing-brightcove-player.html"> Desarrollar con Brightcove Player</a></li>
+                  
+                
+                  
+                    <li>Guía de aprendizaje:<a href="/getting-started/learning-guide-using-rest-apis.html"> Uso de las API REST</a></li>
+                  
+                
+              </ul>
+            
+          
+            
+              <h5 class="submenu-header">Aprender los conceptos básicos +<a href="/basics/index.html"><strong></strong></a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="/basics/developer-basics-advanced-player-code.html">Código del reproductor avanzado</a></li>
+                  
+                
+                  
+                    <li><a href="/basics/developer-basics-autoplaying-video.html">Reproducción automática de un vídeo</a></li>
+                  
+                
+                  
+                    <li><a href="/basics/developer-basics-custom-plugin-converting-code.html">Plugin personalizado - Conversión de código</a></li>
+                  
+                
+                  
+                    <li><a href="/basics/developer-basics-custom-plugin-passing-data.html">Plugin personalizado - Pasar datos</a></li>
+                  
+                
+                  
+                    <li><a href="/basics/developer-basics-custom-plugin-using-studio.html">Plugin personalizado - Usar Studio</a></li>
+                  
+                
+                  
+                    <li><a href="/basics/developer-basics-custom-plugin-why-and-how.html">Plugin personalizado - Por qué y cómo</a></li>
+                  
+                
+                  
+                    <li><a href="/training/developer-basics-videos.html">Vídeos básicos del desarrollador</a></li>
+                  
+                
+                  
+                    <li><a href="/basics/developer-basics-generating-player-code.html">Generación de código de jugador</a></li>
+                  
+                
+                  
+                    <li>Preparación para escribir código<a href="/basics/developer-basics-preparing-write-code.html"></a></li>
+                  
+                
+              </ul>
+            
+          
+            
+              <h5 class="submenu-header">Referencias +<a href="/references/index.html"><strong></strong></a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="/references/brightcove-player-5-6-migration-guide.html">Guía de migración de Brightcove Player 5 a 6</a></li>
+                  
+                
+                  
+                    <li><a href="https://docs.brightcove.com/brightcove-player/current-release/index.html">Documentación de Brightcove Player API (sitio externo)</a></li>
+                  
+                
+                  
+                    <li><a href="/references/brightcove-player-cookies.html">Cookies de reproductor de Brightcove</a></li>
+                  
+                
+                  
+                    <li><a href="/references/brightcove-player-error-reference.html">Referencia de error del Reproductor de Brightcove</a></li>
+                  
+                
+                  
+                    <li><a href="https://groups.google.com/forum/embed/?place=forum/bcplayerdev#!forum/bcplayerdev">Foro de anuncios de jugadores de Brightcove</a></li>
+                  
+                
+                  
+                    <li><a href="/references/brightcove-player-system-requirements.html">Requisitos del sistema de Brightcove Player</a></li>
+                  
+                
+                  
+                    <li><a href="/references/catalog-search-architecture.html">Arquitectura de búsqueda</a></li>
+                  
+                
+                  
+                    <li>Problemas conocidos<a href="https://general.support.brightcove.com/general/known-issues-studio-brightcove-player-and-apis.html"></a></li>
+                  
+                
+                  
+                    <li>Catálogo de jugadores<a href="/references/player-catalog.html"></a></li>
+                  
+                
+                  
+                    <li>Compatibilidad con funciones de jugador por navegador<a href="/references/player-feature-support-browser.html"></a></li>
+                  
+                
+                  
+                    <li>Metadatos del reproductor de bcinfo<a href="/references/player-metadata-bcinfo.html"></a></li>
+                  
+                
+                  
+                    <li>Métodos de reproductores/API de eventos (sitio externo)<a href="https://docs.brightcove.com/brightcove-player/current-release/Player.html"></a></li>
+                  
+                
+                  
+                    <li>Guía de API de lista de reproducción<a href="/references/guide-playlist-api.html"></a></li>
+                  
+                
+                  
+                    <li>Metadatos de vídeo de mediainfo<a href="/references/video-metadata-mediainfo.html"></a></li>
+                  
+                
+              </ul>
+            
+          
+            
+              <h5 class="submenu-header">Plugins +<a href="/plugins/index.html"><strong></strong></a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="/plugins/360degvr-video-plugin.html">Vídeo 360º</a></li>
+                  
+                
+                  
+                    <li><a href="/plugins/ad-only-plugin.html">Sólo anuncio</a></li>
+                  
+                
+                  
+                    <li><a href="/plugins/advertising-freewheel-plugin.html">Publicidad con el plugin FreeWheel</a></li>
+                  
+                
+                  
+                    <li><a href="/plugins/advertising-ima3-plugin.html">Publicidad con el complemento IMA3</a></li>
+                  
+                
+                  
+                    <li>Actualización a la versión 3 del complemento IMA3<a href="/plugins/upgrading-ima3-plugin-version-3.html"></a></li>
+                  
+                
+                  
+                    <li><a href="/plugins/implementing-server-side-ads-brightcove-player.html">Publicidad con SSAI</a></li>
+                  
+                
+                  
+                    <li><a href="/plugins/chromecast-plugin-brightcove-player.html">Chromecast</a></li>
+                  
+                
+                  
+                    <li><a href="/plugins/custom-endscreen-plugin.html">Pantalla final personalizada</a></li>
+                  
+                
+                  
+                    <li><a href="/plugins/display-error-messages-plugin.html">Mostrar mensajes de error</a></li>
+                  
+                
+                  
+                    <li><a href="/plugins/display-thumbnail-previews-plugin.html">Mostrar vistas previas en miniatura</a></li>
+                  
+                
+                  
+                    <li><a href="/plugins/configuring-brightcove-player-drm.html">DRM</a></li>
+                  
+                
+                  
+                    <li><a href="/plugins/google-tag-manager-plugin-brightcove-player.html">Administrador de etiquetas de Google</a></li>
+                  
+                
+                  
+                    <li><a href="/plugins/hls-plugin.html">HLS</a></li>
+                  
+                
+                  
+                    <li>DVRUX en vivo<a href="/plugins/live-dvrux-plugin.html"></a></li>
+                  
+                
+                  
+                    <li>Superposición<a href="/plugins/display-overlay-plugin.html"></a></li>
+                  
+                
+                  
+                    <li>Visión general:<a href="/plugins/overview-brightcove-player-plugins.html"> Plugins de jugador</a></li>
+                  
+                
+                  
+                    <li>Imagen en imagen<a href="/plugins/picture-picture-plugin-aka-floating-or-pinned.html"></a></li>
+                  
+                
+                  
+                    <li>Pruebas de versión de reproductor/plugin<a href="/plugins/playerplugin-version-testing.html"></a></li>
+                  
+                
+                  
+                    <li>IU de lista de reproducción<a href="/plugins/playlist-ui-plugin.html"></a></li>
+                  
+                
+                  
+                    <li>Registro de cambios del complemento<a href="/plugins/changelog/index.html"></a></li>
+                  
+                
+                  
+                    <li>Registro de complementos<a href="/plugins/plugin-registry.html"></a></li>
+                  
+                
+                  
+                    <li>Referencia de versión del complemento<a href="/plugins/plugin-version-reference.html"></a></li>
+                  
+                
+                  
+                    <li>Selección de calidad<a href="/plugins/quality-selection-plugin.html"></a></li>
+                  
+                
+                  
+                    <li>Redes Sociales<a href="/plugins/social-sharing-plugin.html"></a></li>
+                  
+                
+                  
+                    <li>Tealium Tag Manager<a href="/plugins/tealium-plugin-brightcove-player.html"></a></li>
+                  
+                
+                  
+                    <li>Generador de esquemas SEO de vídeo<a href="/plugins/video-seo-schema-generator-plugin.html"></a></li>
+                  
+                
+              </ul>
+            
+          
+            
+              <h5 class="submenu-header"><a href="/advertising/index.html">Publicidad <strong>+</strong></a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="/advertising/ad-events-and-ad-objects.html">Eventos de anuncio y objetos de anuncio</a></li>
+                  
+                
+                  
+                    <li><a href="/plugins/ad-only-plugin.html">Plugin solo para anuncios</a></li>
+                  
+                
+                  
+                    <li><a href="/plugins/advertising-freewheel-plugin.html">Publicidad con el plugin FreeWheel</a></li>
+                  
+                
+                  
+                    <li><a href="/plugins/advertising-ima3-plugin.html">Publicidad con el complemento IMA3</a></li>
+                  
+                
+                  
+                    <li><a href="/advertising/client-side-preroll-with-live-ssai.html">Anuncios pre-roll del lado del cliente con SSAI en vivo</a></li>
+                  
+                
+                  
+                    <li><a href="/advertising/displaying-ads-using-ad-cue-points.html">Visualización de anuncios mediante puntos de anuncio</a></li>
+                  
+                
+                  
+                    <li><a href="/advertising/flash-no-longer-valid-ima.html">Flash ya no es válido con IMA</a></li>
+                  
+                
+                  
+                    <li><a href="/advertising/guide-ad-partner-integration.html">Guía: Integración de socios publicitarios</a></li>
+                  
+                
+                  
+                    <li><a href="/advertising/guide-contrib-ads-migration.html">Guía: migración de contrib-ads</a></li>
+                  
+                
+                  
+                    <li><a href="/plugins/implementing-server-side-ads-brightcove-player.html">Implementación de SSAI con Brightcove Player</a></li>
+                  
+                
+                  
+                    <li><a href="/advertising/jump-start-header-bidding-ad.html">Inicio de salto: Anuncio de puja de encabezado</a></li>
+                  
+                
+                  
+                    <li><a href="/advertising/jump-start-outstream-ad.html">Inicio de salto: Anuncio Outstream</a></li>
+                  
+                
+                  
+                    <li><a href="/advertising/jump-start-pre-roll-ad.html">Inicio de salto: Anuncio de pre-rollo</a></li>
+                  
+                
+                  
+                    <li>Problemas conocidos:<a href="/advertising/known-issues-server-side-ad-insertion-ssai.html"> Inserción de anuncios en el lado del servidor (SSAI)</a></li>
+                  
+                
+                  
+                    <li>Guía de aprendizaje:<a href="/getting-started/learning-guide-video-advertising.html"> Publicidad en vídeo</a></li>
+                  
+                
+                  
+                    <li>Paso a paso:<a href="/advertising/step-step-implementing-advertising.html"> Implementar publicidad</a></li>
+                  
+                
+                  
+                    <li>Prueba de complementos publicitarios previos al lanzamiento<a href="/advertising/testing-pre-release-advertising-plugins.html"></a></li>
+                  
+                
+                  
+                    <li>Uso de DFP Premium con Brightcove Player<a href="/advertising/using-dfp-premium-brightcove-player.html"></a></li>
+                  
+                
+                  
+                    <li>Uso de Live SSAI y Advanced Player Toolkit<a href="/advertising/using-player-enhancements-live-ssai-brightcove-player.html"></a></li>
+                  
+                
+                  
+                    <li>Validación de etiquetas de anuncio SSAI de Video Cloud<a href="/advertising/video-cloud-ssai-ad-tag-validation.html"></a></li>
+                  
+                
+              </ul>
+            
+          
+            
+              <h5 class="submenu-header">Publicar vídeos y reproductores +<a href="/publish/index.html"><strong></strong></a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="/publish/assigning-video-player-programmatically.html">Asignación de un vídeo al reproductor mediante programación</a></li>
+                  
+                
+                  
+                    <li><a href="/publish/available-options-advanced-page-embed-code.html">Opciones disponibles para el código de inserción avanzado (en página)</a></li>
+                  
+                
+                  
+                    <li><a href="/publish/available-options-standard-iframe-embed-code.html">Opciones disponibles para el código de inserción estándar (iframe)</a></li>
+                  
+                
+                  
+                    <li><a href="/publish/brightcove-player-loader.html">Cargador de jugadores de Brightcove</a></li>
+                  
+                
+                  
+                    <li><a href="/publish/bulk-updating-brightcove-default-player.html">Actualización masiva del reproductor predeterminado de Brightcove</a></li>
+                  
+                
+                  
+                    <li><a href="https://studio.support.brightcove.com/publish/choosing-correct-embed-code.html">Elegir el código de incrustación correcto</a></li>
+                  
+                
+                  
+                    <li>Atrasando la instanciación del jugador<a href="/publish/delaying-player-instantiation.html"></a></li>
+                  
+                
+                  
+                    <li>Jugador previo al lanzamiento<a href="/publish/pre-release-player.html"></a></li>
+                  
+                
+                  
+                    <li>Estrategias de sindicación<a href="/publish/syndication-strategies.html"></a></li>
+                  
+                
+                  
+                    <li>Uso de un reproductor que no sea de Brightcove<a href="/publish/using-non-brightcove-player.html"></a></li>
+                  
+                
+                  
+                    <li>Uso de varios jugadores en una página<a href="https://studio.support.brightcove.com/publish/using-multiple-players-one-page.html"></a></li>
+                  
+                
+                  
+                    <li>Uso de Id. de referencia<a href="https://studio.support.brightcove.com/publish/using-reference-ids.html"></a></li>
+                  
+                
+                  
+                    <li>Inspector de copias de vídeo<a href=""></a></li>
+                  
+                
+              </ul>
+            
+          
+            
+              <h5 class="submenu-header">Solución de problemas +<a href="/troubleshooting/index.html"><strong></strong></a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="/troubleshooting/brightcove-playback-technology-app.html">Aplicación de tecnología de reproducción Brightcove</a></li>
+                  
+                
+                  
+                    <li><a href="/references/brightcove-player-error-reference.html">Referencia de error del Reproductor de Brightcove</a></li>
+                  
+                
+                  
+                    <li><a href="/troubleshooting/brightcove-player-information-modal.html">Brightcove Información del Jugador Modal</a></li>
+                  
+                
+                  
+                    <li><a href="/troubleshooting/brightcove-player-troubleshooting-guide.html">Guía de solución de problemas de Brightcove Player</a></li>
+                  
+                
+                  
+                    <li><a href="/troubleshooting/creating-charles-log.html">Creación de un Charles Log</a></li>
+                  
+                
+                  
+                    <li><a href="/troubleshooting/creating-network-log.html">Creación de un registro de red</a></li>
+                  
+                
+                  
+                    <li><a href="/troubleshooting/domain-restrictions-messaging.html">Mensajería de restricciones de dominio</a></li>
+                  
+                
+                  
+                    <li><a href="/plugins/display-error-messages-plugin.html">Mostrar plugin de mensajes de error</a></li>
+                  
+                
+                  
+                    <li>Configuración manual de la versión del reproductor<a href="/troubleshooting/manually-setting-player-version.html"></a></li>
+                  
+                
+                  
+                    <li>Pruebas de versión de reproductor/plugin<a href="/plugins/playerplugin-version-testing.html"></a></li>
+                  
+                
+                  
+                    <li>Propiedades informativas del jugador<a href="/troubleshooting/player-informational-properties.html"></a></li>
+                  
+                
+                  
+                    <li>Ejemplo:<a href="/code-samples/brightcove-player-sample-live-custom-error-message.html"> Mensaje de error personalizado en vivo</a></li>
+                  
+                
+                  
+                    <li>Paso a paso:<a href="/troubleshooting/step-step-brightcove-player-debugger.html"> Depurador de reproductor de Brightcove</a></li>
+                  
+                
+                  
+                    <li>Ejecución de un seguimiento de ruta de red<a href="/troubleshooting/running-network-path-trace.html"></a></li>
+                  
+                
+                  
+                    <li>Uso de la referencia del reproductor<a href="/troubleshooting/using-player-reference.html"></a></li>
+                  
+                
+                  
+                    <li>Vetting Lanzamientos del jugador de Brightcove<a href="/troubleshooting/vetting-brightcove-player-releases.html"></a></li>
+                  
+                
+                  
+                    <li>Visualización de la configuración del reproductor<a href="/troubleshooting/viewing-player-configuration.html"></a></li>
+                  
+                
+              </ul>
+            
+          
+            
+              <h5 class="submenu-header">Estilo y apariencia +<a href="/styling/index.html"><strong></strong></a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="/styling/customizing-player-appearance.html">Personalización de la apariencia del reproductor</a></li>
+                  
+                
+                  
+                    <li><a href="/styling/customizing-player-appearance-legacy-skin.html">Personalización del aspecto del jugador - Aspecto heredado</a></li>
+                  
+                
+                  
+                    <li>Player Styling Playground<a href="/styling/brightcove-player-sample-player-styling-playground.html"></a></li>
+                  
+                
+                  
+                    <li>Inicio rápido:<a href="/styling/quick-start-player-customization-legacy-skin.html"> Personalización del jugador: aspecto heredado</a></li>
+                  
+                
+                  
+                    <li>Paso a paso:<a href="/getting-started/step-step-player-customization.html"> Personalización del reproductor</a></li>
+                  
+                
+                  
+                    <li>Tamaño de respuesta para el reproductor de Brightcove<a href="/styling/responsive-sizing-brightcove-player.html"></a></li>
+                  
+                
+                  
+                    <li>Tamaño del jugador<a href="/styling/sizing-player.html"></a></li>
+                  
+                
+                  
+                    <li>Skins y versiones de jugador<a href="/styling/skins-and-player-versions.html"></a></li>
+                  
+                
+                  
+                    <li>Estilo de subtítulos<a href="https://studio.support.brightcove.com/media/styling-captions.html"></a></li>
+                  
+                
+                  
+                    <li>Estilo de listas de reproducción<a href="/styling/styling-playlists.html"></a></li>
+                  
+                
+              </ul>
+            
+          
+            
+              <h5 class="submenu-header">Reproducción +<a href="/playback/index.html"><strong></strong></a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="/playback/autoplay-considerations.html">Consideraciones de reproducción automática</a></li>
+                  
+                
+                  
+                    <li><a href="/troubleshooting/brightcove-playback-technology-app.html">Aplicación de tecnología de reproducción Brightcove</a></li>
+                  
+                
+                  
+                    <li><a href="/playback/xdr-with-bcplayer.html">Reanudación multidispositivo con Brightcove Player</a></li>
+                  
+                
+                  
+                    <li><a href="https://studio.support.brightcove.com/publish/deep-linking.html">Vinculación profunda</a></li>
+                  
+                
+                  
+                    <li><a href="/playback/delivering-hls-video.html">Entrega de vídeo HLS</a></li>
+                  
+                
+                  
+                    <li><a href="/playback/determining-which-rendition-will-play.html">Determinar qué copia se reproducirá</a></li>
+                  
+                
+                  
+                    <li><a href="/playback/guide-playback-technology.html">Guía: Tecnología de reproducción</a></li>
+                  
+                
+                  
+                    <li><a href="/plugins/hls-plugin.html">Complemento HLS</a></li>
+                  
+                
+                  
+                    <li><a href="/playback/ios-and-brightcove-player.html">iOS y reproductor de Brightcove</a></li>
+                  
+                
+                  
+                    <li>Visión general:<a href="/playback/overview-https-support.html"> Soporte de HTTPS</a></li>
+                  
+                
+                  
+                    <li>Complemento de selección de calidad<a href="/plugins/quality-selection-plugin.html"></a></li>
+                  
+                
+                  
+                    <li>Entrega URL estática<a href="/playback/static-url-delivery.html"></a></li>
+                  
+                
+                  
+                    <li>Transmisión de contenido protegido PlayReady<a href="/playback/streaming-playready-protected-content-dynamic-delivery.html"></a></li>
+                  
+                
+                  
+                    <li>Uso del reproductor de Brightcove para TVE<a href="/playback/using-brightcove-player-tve.html"></a></li>
+                  
+                
+              </ul>
+            
+          
+            
+              <h5 class="submenu-header"><a href="/content-protection/index.html">Protección de contenido y DRM <strong>+</strong></a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="https://studio.support.brightcove.com/players/configuring-player-content-restrictions.html">Configuración de Restricciones de Contenido del Reproductor</a></li>
+                  
+                
+                  
+                    <li><a href="/content-protection/creating-dash-drm-manifest-brightcove-player.html">Creación de un manifiesto DRM de DASH para el reproductor de Brightcove</a></li>
+                  
+                
+                  
+                    <li><a href="/troubleshooting/domain-restrictions-messaging.html">Mensajería de restricciones de dominio</a></li>
+                  
+                
+                  
+                    <li><a href="/plugins/configuring-brightcove-player-drm.html">Complemento DRM</a></li>
+                  
+                
+                  
+                    <li>Visión general:<a href="/content-protection/overview-content-protection.html"> Protección de contenido</a></li>
+                  
+                
+                  
+                    <li>Teclas de política<a href="/content-protection/policy-keys.html"></a></li>
+                  
+                
+                  
+                    <li>Restringir la reproducción de vídeo mediante dirección IP<a href="/content-protection/restricting-video-playback-using-ip-address.html"></a></li>
+                  
+                
+                  
+                    <li>URL firmadas y autenticación de tokens con una transmisión en directo<a href="/content-protection/signed-urls-and-token-auth-live-stream.html"></a></li>
+                  
+                
+              </ul>
+            
+          
+            
+              <h5 class="submenu-header"><a href="/coding-topics/index.html">Temas de codificación <strong>+</strong></a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="/publish/brightcove-player-loader.html">Cargador de jugadores de Brightcove</a></li>
+                  
+                
+                  
+                    <li><a href="/references/catalog-search-architecture.html">Actualización de búsqueda de catálogo</a></li>
+                  
+                
+                  
+                    <li><a href="/code-samples/brightcove-player-sample-trigger-rewind-custom-event.html">Evento personalizado</a></li>
+                  
+                
+                  
+                    <li><a href="/playback/guide-playback-technology.html">Guía: Tecnología de reproducción</a></li>
+                  
+                
+                  
+                    <li>Localización de Brightcove Player<a href="/coding-topics/programmatically-localizing-brightcove-player.html"></a></li>
+                  
+                
+                  
+                    <li>Localización de complementos<a href="/coding-topics/localizing-plugins.html"></a></li>
+                  
+                
+                  
+                    <li>Eventos de jugador<a href="/coding-topics/player-events.html"></a></li>
+                  
+                
+                  
+                    <li>Visión general:<a href="/coding-topics/overview-components.html"> Componentes</a></li>
+                  
+                
+                  
+                    <li>Visión general:<a href="/playback/overview-https-support.html"> Soporte de HTTPS</a></li>
+                  
+                
+                  
+                    <li>Visión general:<a href="/coding-topics/overview-player-api.html"> Player API</a></li>
+                  
+                
+                  
+                    <li>Pasar datos al complemento<a href="/coding-topics/pass-data-plugin.html"></a></li>
+                  
+                
+                  
+                    <li>Reaccionar el cargador del jugador<a href="/coding-topics/react-player-loader.html"></a></li>
+                  
+                
+                  
+                    <li>Informes sobre configuraciones de Brightcove Player<a href="/coding-topics/reporting-brightcove-player-configurations.html"></a></li>
+                  
+                
+                  
+                    <li>RequireJS y reproductor de Brightcove<a href="/coding-topics/requirejs-and-brightcove-player.html"></a></li>
+                  
+                
+                  
+                    <li>Paso a paso:<a href="/coding-topics/step-step-plugin-development.html"> Desarrollo de complementos</a></li>
+                  
+                
+                  
+                    <li>Paso a paso:<a href="/coding-topics/step-step-videojs-plugin-generator.html"> Generador de complementos Video.js</a></li>
+                  
+                
+                  
+                    <li>Uso de los métodos bc () y getPlayer ()<a href="/coding-topics/using-bc-and-getplayer-methods.html"></a></li>
+                  
+                
+                  
+                    <li>Visualización de la configuración del reproductor<a href="/troubleshooting/viewing-player-configuration.html"></a></li>
+                  
+                
+              </ul>
+            
+          
+            
+              <h5 class="submenu-header"><a href="/general/index.html">Información general <strong>+</strong></a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="https://studio.support.brightcove.com/publish/adding-application-id-player-embed-code.html">Adición de un ID de aplicación al código de incrustación del reproductor</a></li>
+                  
+                
+                  
+                    <li><a href="/general/adding-captions-videos-programmatically.html">Adición de subtítulos a vídeos mediante programación</a></li>
+                  
+                
+                  
+                    <li><a href="https://studio.support.brightcove.com/media/adding-chapters-video.html">Adición de capítulos a un vídeo</a></li>
+                  
+                
+                  
+                    <li><a href="/general/brightcove-player-6-now-default-version.html">Versión predeterminada de Brightcove Player 6</a></li>
+                  
+                
+                  
+                    <li><a href="/general/brightcove-player-accessibility.html">Accesibilidad del reproductor de Brightcove</a></li>
+                  
+                
+                  
+                    <li><a href="/plugins/custom-endscreen-plugin.html">Complemento de pantalla final personalizado</a></li>
+                  
+                
+                  
+                    <li><a href="/plugins/display-overlay-plugin.html">Complemento de superposición de visualización</a></li>
+                  
+                
+                  
+                    <li><a href="/references/guide-playlist-api.html">Guía: API de lista de reproducción</a></li>
+                  
+                
+                  
+                    <li><a href="/general/identify-and-delete-low-performing-videos.html">Identificar y eliminar vídeos de bajo rendimiento</a></li>
+                  
+                
+                  
+                    <li><a href="/general/implementing-cue-points-programmatically.html">Implementación de puntos de referencia mediante programación</a></li>
+                  
+                
+                  
+                    <li><a href="/general/implementing-playlists.html">Implementar listas de reproducción</a></li>
+                  
+                
+                  
+                    <li><a href="/general/implementing-modaldialog.html">Implementación del ModalDialog</a></li>
+                  
+                
+                  
+                    <li>HLS en vivo<a href="/general/live-hls.html"></a></li>
+                  
+                
+                  
+                    <li>Configuración de Live Stream<a href="/general/live-stream-configuration.html"></a></li>
+                  
+                
+                  
+                    <li>Varias pistas de audio<a href="/general/multiple-audio-tracks.html"></a></li>
+                  
+                
+                  
+                    <li>Guía de configuración del reproductor<a href="/general/player-configuration-guide.html"></a></li>
+                  
+                
+                  
+                    <li>Reproducir transmisiones en vivo<a href="/general/playing-live-streams.html"></a></li>
+                  
+                
+                  
+                    <li>Plugin UI de lista de reproducción<a href="/plugins/playlist-ui-plugin.html"></a></li>
+                  
+                
+                  
+                    <li>URL firmadas y autenticación de tokens con una transmisión en directo<a href="/content-protection/signed-urls-and-token-auth-live-stream.html"></a></li>
+                  
+                
+                  
+                    <li>Plugin de redes sociales<a href="/plugins/social-sharing-plugin.html"></a></li>
+                  
+                
+                  
+                    <li>Paso a paso:<a href="https://apis.support.brightcove.com/player-management/getting-started/step-step-player-management.html"> Administración de jugadores</a></li>
+                  
+                
+                  
+                    <li>Estilo de listas de reproducción<a href="/styling/styling-playlists.html"></a></li>
+                  
+                
+                  
+                    <li>Uso de un lector de pantalla con Brightcove Player<a href="/general/using-screen-reader-brightcove-player.html"></a></li>
+                  
+                
+                  
+                    <li>Versiones de la documentación de Brightcove Player<a href="/general/versions-brightcove-player-documentation.html"></a></li>
+                  
+                
+                  
+                    <li>Control de volumen<a href="/general/volume-control.html"></a></li>
+                  
+                
+              </ul>
+            
+          
+            
+              <h5 class="submenu-header"><a href="/code-samples/index.html">Ejemplos de código <strong>+</strong></a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="/code-samples/index-thumb.html">Ejemplos de código por grupo</a></li>
+                  
+                
+                  
+                    <li><a href="/code-samples/index.html">Índice de ejemplo de código</a></li>
+                  
+                
+              </ul>
+            
+          
+            
+              <h5 class="submenu-header"><a href="/amp/index.html">AMP <strong>+</strong></a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="/amp/amp-using-video-cloud-video.html">AMP Uso de un vídeo de Video Cloud</a></li>
+                  
+                
+                  
+                    <li><a href="/amp/amp-using-external-video.html">AMP Uso de un vídeo externo</a></li>
+                  
+                
+              </ul>
+            
+          
+            
+              <h5 class="submenu-header">Entrenamiento +<a href="/training/index.html"><strong></strong></a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="/training/online-training-courses.html">Todos los cursos de formación en línea</a></li>
+                  
+                
+                  
+                    <li><a href="/training/developer-basics-videos.html">Vídeos básicos del desarrollador</a></li>
+                  
+                
+                  
+                    <li>Vídeos de capacitación sobre desarrollo de jugadores<a href="/training/player-development-training-videos.html"></a></li>
+                  
+                
+                  
+                    <li>Regístrese para la formación impartida por instructor<a href="/training/register-training.html"></a></li>
+                  
+                
+                  
+                    <li>Capacitación:<a href="/training/training-demand-developing-brightcove-player.html"> Desarrollar con Brightcove Player</a></li>
+                  
+                
+                  
+                    <li>Capacitación:<a href="https://apis.support.brightcove.com/player-management/getting-started/training-demand-quick-start-player-management.html"> Inicio rápido de la administración de reproductores</a></li>
+                  
+                
+                  
+                    <li><a href="/training/brightcove-university.html">Cursos de formación de la Universidad de Brightcove</a></li>
+                  
+                
+              </ul>
+            
+          
+            
+              <h5 class="submenu-header">Notas de la versión +<a href="/release-notes/index.html"><strong></strong></a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="/release-notes/brightcove-player-release-notes.html">Brightcove Player Notas informativas</a></li>
+                  
+                
+                  
+                    <li><a href="/release-notes/brightcove-player-prerelease-notes.html">Notas previas al lanzamiento del jugador de Brightcove</a></li>
+                  
+                
+              </ul>
+            
+          
+            
+              <h5 class="submenu-header">Soporte +<a href="/support/index.html"><strong></strong></a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="/support/brightcove-answer.html">Respuestas de Brightcove</a></li>
+                  
+                
+                  
+                    <li>Visualización de la página Estado del Sistema de Brightcove<a href="/support/viewing-brightcove-system-status-page.html"></a></li>
+                  
+                
+                  
+                    <li><a href="/support/contact-sales.html">Contacto con Ventas</a></li>
+                  
+                
+                  
+                    <li>Apertura de un caso de soporte<a href="/support/opening-case-with-brightcove-support.html"></a></li>
+                  
+                
+              </ul>
+            
+          
+      </nav>
+    </div>
+    <div class="col-lg-7" style="background-color: white;color: #333333;margin-top: -1em;margin-bottom: -1em;padding-bottom:1em;">
+  <!-- bootstrap layout -->
+
+<p id="bc_veggie_burger_wrapper" style="display: none;"><img id="bc_veggie_burger" src="/assets/images/feather/menu.svg" alt="Menú de navegación"/></p>
+
+<!-- search bar -->
+<div id="nav-search-box" style="margin-top: 1rem;"></div>
+<!-- in-page navigation for narrow screens -->
+<details class="centered-inpage-nav" id="centered_inpage_nav">
+  <summary><h6 class="toc">Contenido de la página</h6></summary>
+  <nav id="centered_toc"></nav>
+  <ul id="centered_in_page_toc" class="list-none"></ul>
+</details>
+<!-- open in new tab/window -->
+<a id="open_new_tab" href="#" target="_blank" style="display: none;"><img src="/assets/images/feather/external-link.svg" alt="abrir en una nueva pestaña" style="margin-top:4em;width: 1.5em;"/></a>
+
+
+
+  
+    
+
+
+<article class="bcls-article">
+  <h1>Arquitectura de búsqueda</h1>
+  <summary>En este tema, aprenderá acerca de la arquitectura de Brightcove para su tecnología de búsqueda de catalog.</summary>
+  <section class="bcls-section">
+    <h2 id="Overview">Resumen</h2>
+    <p >A partir de abril de 2019, la funcionalidad de búsqueda en catálogo se actualizó a Elasticsearch. Esta actualización proporciona una serie de beneficios, entre los que destacan la mejora de la relevancia y precisión, y el rendimiento considerablemente mejorado: el tiempo de respuesta es mucho más consistente y, por lo general, el doble de rápido. Esta nueva funcionalidad afectará a la API de CMS, a la API de reproducción, a la búsqueda interactiva de Studio y a los métodos de búsqueda del catálogo.</p>
+    <p >Aunque Brightcove ha invertido una cantidad sustancial de esfuerzo en lograr que los resultados de Elasticsearch sean coherentes, existen diferencias, y hay algunas pequeñas posibilidades de que si ha codificado dependencias específicas de los resultados de búsqueda, su integración no se comporte como se esperaba.</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="Search_Result_Differences_and_Impact">Diferencias e impacto en los resultados de búsqueda</h2>
+    <p >Al estudiar el impacto potencial, Brightcove ha descubierto que más del 90% de las búsquedas devuelven resultados que coinciden con el número de resultados devueltos. Este es un indicador de que los resultados esperados no deberían ser lo suficientemente diferentes como para causar problemas con las integraciones de API.</p>
+    <figure class="bcls-figure"><img class="bcls-image" alt="comparación" src="//learning-services-media.brightcove.com/doc-assets/player-development/architecture/elasticsearch/comparison.png"/></figure>
+    <p >Este gráfico muestra el número de resultados de búsqueda que coinciden exactamente con el número de resultados entre los dos sistemas en azul, y los que difieren en número en rojo.</p>
+    <p >Como parte de nuestro despliegue, todas las búsquedas predeterminadas, aquellas búsquedas en la cadena vacía, ya han sido proporcionadas por Elasticsearch desde hace varios meses, por lo que los usuarios ya están viendo y utilizando los resultados de Elasticsearch sin problemas.</p>
+    <p >Sin embargo, hay limitaciones a lo que podemos aprender de este tipo de comparación. En el mejor de los casos, solo podemos inferir la intención de una búsqueda en particular, y los datos del catálogo son fluidos.</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="Known_Differences">Diferencias conocidas</h2>
+    <p >Las diferencias a continuación son en gran medida fundamentales, o el resultado de las decisiones adoptadas después de un amplio análisis de los resultados de la búsqueda — son imposibles de eliminar por completo.</p>
+    <h3>Staming</h3>
+    <p >El tallo es el proceso de reducir las palabras inflexionadas (o a veces derivadas) a su raíz de palabras, base o forma raíz — generalmente una forma de palabra escrita.<a href="https://en.wikipedia.org/wiki/Stemming"></a><a href="https://en.wikipedia.org/wiki/Word_stem"></a><a href="https://en.wikipedia.org/wiki/Root_(linguistics)"></a></p>
+    <p >Un stemmer para Inglés que opera en el <em>gato</em> tallo debe identificar tales <a href="https://en.wikipedia.org/wiki/String_literal">cuerdas</a> como <em>gatos</em> , <em>catlike</em> y <em>catty</em>. Un algoritmo de derivación también podría reducir las palabras <em>pescar</em> , <em>pescado</em> y <em>pescador</em> al tallo <em>pez</em>. El tallo no tiene por qué ser una palabra, por ejemplo, el algoritmo Porter reduce argumentar, argumentar, argumentar, argumentar y argus al argu tallo.<em></em><em></em><em></em><em></em><em></em><em></em></p>
+    <p >Nuestra búsqueda existente utiliza el stemmer Lancaster (Paice/cáscara), este algoritmo generalmente se considera demasiado agresivo — esto resulta en una falta de distinción, por ejemplo, más ligero y ligero se consideraría como el mismo término bajo Lancaster.<em></em><em></em></p>
+    <p >Elasticsearch utiliza un algoritmo más reciente y mucho menos agresivo (Porter2) que ha ganado una amplia adopción en la industria y generalmente se considera una mejora significativa (Lancaster es ahora raro). El cambio de stemmer potencialmente impacta una proporción significativa (~ 35%) de búsquedas: eso no quiere decir que los resultados sean diferentes, solo que puedan ser diferentes, pero en general esto debería ser para mejor: dicho esto, algún subconjunto de clientes puede depender del comportamiento anterior.<strong></strong><strong></strong></p>
+    <h3>Relevancia</h3>
+    <p >Nuestra búsqueda existente parece tener una normalización de TF más estricta. Esto provoca una clasificación de relevancia diferente para términos que se encuentran en campos más grandes (es decir, existente considera que la coincidencia es menos relevante ya que da menos peso al término, ya que es más pequeño en relación con la longitud del documento).</p>
+    <h3>Caracteres Especiales</h3>
+    <p >Los caracteres especiales se eliminan dentro de nuestra búsqueda existente, esto equivale más o menos a quitar signos de puntuación y caracteres relacionados — en lugar de eliminarlos, generalmente los escapamos en Elasticsearch, por lo que existe la posibilidad de que una búsqueda los tenga en cuenta.</p>
+    <h3>Manejo de términos</h3>
+    <p >Las consultas de búsqueda existentes realizan `suavizado de terminos` mientras que en Elasticsearch soltamos términos mal formados, considere esta búsqueda con un término vacío:<code translate="No">tags:</code><code translate="No">q=tags: state:ACTIVE</code></p>
+    <ul>
+      <li>Existente: — busca vídeos con una etiqueta<strong></strong><code translate="No">tags:state:ACTIVE</code><code translate="No">state:ACTIVE</code></li>
+      <li><strong>Elasticsearch</strong>: <code translate="No">state:ACTIVE</code>— suelta el término vacío</li>
+    </ul>
+    <p >Hay una serie de casos de borde sutiles relacionados con el manejo de puntuaciones colgantes y consultas que generalmente están mal formadas, intentamos producir lo que pensamos que la consulta estaba destinada a ser, pero en estos casos lamentablemente estamos adivinando lo que un usuario podría haber intentado (cuando realmente deberíamos haber devuelto un error permitiéndoles refinar su búsqueda)</p>
+    <h3>Sólo jugable</h3>
+    <p >Existen dos mecanismos para restringir una búsqueda a vídeos que se pueden reproducir actualmente: la consulta puede incluir un indicador, o la propia consulta puede requerir algún aspecto de la jugabilidad.</p>
+    <ul>
+      <li>Existente: se consulta en función del valor de un campo que se actualiza</li>
+      <li>Elasticsearch: esto se consulta en función de rangos de fechas calculados</li>
+    </ul>
+    <p >Elasticsearch debería ser generalmente más preciso y producir mejores resultados (hay un retraso asociado con el mecanismo existente, y el mecanismo de mantenimiento de la bandera no es del todo confiable).</p>
+    <h3>Precisión del índice</h3>
+    <p >El índice de Elasticsearch es 'más fresco' que el índice existente y tiende a reflejar las actualizaciones más rápido; este no siempre es el caso, pero en general la experiencia con Elasticsearch es que los resultados reflejarán con mayor precisión el estado de los datos del catálogo subyacentes. Tanto los existentes como Elasticsearch son sistemas distribuidos y, por lo tanto, no del todo consistentes en los resultados que devuelven: una consulta repetida contra cualquiera de los sistemas puede potencialmente devolver resultados diferentes (especialmente en el caso de que haya una serie de operaciones de eliminación en ejecución simultánea).</p>
+    <p >Los resultados de búsqueda existentes cambian en función del estado del fragmento al que se asigna una cuenta: el estado global de un fragmento en particular puede (y lo hace) afectar a los resultados de una consulta en particular: Elasticsearch no tiene esta deficiencia.</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="Examples">Ejemplos</h2>
+    <h3>Ejemplo 1</h3>
+    <p >Supongamos que hay dos videos con los siguientes títulos:</p>
+    <pre>
+  <code class="language-html" translate="No">Video#1: has the title “Don’t look into the light”
+  Video#2: has the title “Using a lighter to make a campfire”</code></pre>
+    <p >El usuario desea devolver todos los vídeos que deben tener la palabra «luz». Usando la API de CMS, la consulta tendría el siguiente aspecto:</p>
+    <pre>
+  <code class="language-html" translate="No">q=%2Blight or q=+light</code></pre>
+    <p >Con la búsqueda existente, esto devolverá los dos vídeos en el orden:</p>
+    <pre>
+  <code class="language-html" translate="No">Video#2 - “Using a lighter to make a campfire”
+  Video#1 - “Don’t look into the light”</code></pre>
+    <p >Hay dos problemas con esto:</p>
+    <ul>
+      <li>Relevancia:<strong></strong> El pedido es incorrecto. «No mires a la luz» (Video #2) debería aparecer antes de «Usar un encendedor para hacer una fogata» (Video #1)</li>
+      <li><strong>Precisión</strong>: «Usar un encendedor para hacer una fogata» ni siquiera debería aparecer en el conjunto de resultados, ya que la palabra «luz» no aparece en absoluto en el título del vídeo.</li>
+    </ul>
+    <p >Con Elasticsearch, esto solo devolverá el vídeo uno:</p>
+    <pre>
+  <code class="language-html" translate="No">Video#1 - “Don’t look into the light”</code></pre>
+    <p >Esto es una mejora porque:</p>
+    <ul>
+      <li>Relevancia: La orden es correcta.</li>
+      <li>Precisión: Sólo vídeo uno se devuelve ya que es el único vídeo con la palabra «luz» en el título.</li>
+    </ul>
+    <h3>Ejemplo 2</h3>
+    <p >Como se describe en nuestra <a href="https://apis.support.brightcove.com/cms/searching/cmsplayback-api-videos-search.html#Stemming">documentación de la API de CMS para la derivación</a>, se admite el stemming, pero no las búsquedas parciales de palabras. Así que digamos que hay 5 videos con los siguientes títulos:</p>
+    <pre>
+  <code class="language-html" translate="No">Video#1 - "Parking Ban Announced"
+  Video#2 - "Parking to be Banned"
+  Video#3 - "City Banning Parking"
+  Video#4 - "Bank Holiday"
+  Video#5 - "Bandit Captured"</code></pre>
+    <p >El usuario desea devolver todos los vídeos que deben tener la palabra prohibición en el campo nombre.<strong></strong> Usando la API de CMS, la consulta tendría el siguiente aspecto:</p>
+    <pre>
+  <code class="language-html" translate="No">q=%2Bname%3Aban or q=+name:ban</code></pre>
+    <p >La expectativa es que «Ban», «Banning» y «Prohibido» producirían resultados de búsqueda, ya que «Ban» es un vástago de los tres.</p>
+    <p >Sin embargo, con el sistema de búsqueda actual, esto devolverá los cinco vídeos en este orden:</p>
+    <pre>
+  <code class="language-html" translate="No">Video#2 - "Parking to be Banned"
+  Video#3 - "City Banning Parking"
+  Video#1 - "Parking Ban Announced"
+  Video#4 - "Bank Holiday"
+  Video#5 - "Bandit Captured"</code></pre>
+    <p >Nuevamente, hay dos problemas con esto:</p>
+    <ul>
+      <li>Relevancia: El pedido es incorrecto. «Estacionamiento Ban Anunciado» debe ser el primer video devuelto ya que tiene la palabra «Ban» en él.</li>
+      <li>Precisión: «Bandit Holiday» y «Bandit Capturado» no deben devolverse en absoluto, ya que «Ban» no es parte de la palabra «Banco» o «Bandido».</li>
+    </ul>
+    <p >Con Elasticsearch, los resultados se ven así:</p>
+    <pre>
+  <code class="language-html" translate="No">Video#1 - "Parking Ban Announced"
+  Video#2 - "Parking to be Banned"
+  Video#3 - "City Banning Parking"</code></pre>
+    <p >Esto es una mejora porque:</p>
+    <ul>
+      <li>Relevancia: La orden es correcta.</li>
+      <li>Precisión: Solo se devuelven vídeos con los tallos de la palabra «Ban» («Ban», «Banning» y «Prohibido»).</li>
+    </ul>
+  </section>
+</article>
+
+<!-- complete bootstrap layout -->
+    </div>
+    <div class="col-sm-2 right-side-bar">
+      
+      <nav class="right-side-nav" id="right_side_nav">
+        <h6 class="toc">Contenido de la página</h6>
+        <ul id="in_page_nav" class="list-none"></ul>
+      </nav>
+      
+    </div>
+  </div>
+</div>
+
+<hr>
+<div class="last-updated">
+  Última actualización de la página el 29-09-2020
+</div>
+
+
+
+<footer class="bcls-footer" role="contentinfo">
+  <div class="row">
+    <div class="region region-footer-top-center col-md-12">
+      <nav role="navigation" aria-labelledby="block-brightcovesupport-menu" id="block-brightcovesupport" class="footer-menu">
+
+        <h2>Asistencia técnica de Brightcove</h2>
+
+        <ul class="menu">
+          <li>
+            Estado del sistema<a href="https://status.brightcove.com"></a>
+          </li>
+          <li>
+            <a href="https://supportportal.brightcove.com/s/login/?">Contactar soporte</a>
+          </li>
+          <li>
+            <a href="https://support.brightcove.com/">Documentación</a>
+          </li>
+        </ul>
+
+      </nav>
+      <nav role="navigation" aria-labelledby="block-training-menu" id="block-training" class="footer-menu">
+
+        <h2>Formación</h2>
+
+        <ul class="menu">
+          <li>
+            Cursos en línea<a href="https://studio.support.brightcove.com/training/online-training-courses.html"></a>
+          </li>
+          <li>
+            Inscríbete a un curso<a href="https://studio.support.brightcove.com/training/register-training.html"></a>
+          </li>
+          <li>
+            <a href="https://university.brightcove.com/">Universidad de Brightcove</a>
+          </li>
+        </ul>
+
+      </nav>
+      <nav role="navigation" aria-labelledby="block-brightcove-menu" class="footer-menu">
+
+        <h2>Brightcove</h2>
+
+        <ul class="menu">
+          <li>
+            <a href="https://www.brightcove.com">BrightCove.com</a>
+          </li>
+          <li>
+            <a href="https://supportportal.brightcove.com/s/login/?">Contáctanos</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+  <div class="row">
+    <div class="region region-footer-bottom-center col-md-12">
+      <div class="bcls-copyright footer-menu">
+        <table>
+          <tr>
+            <td>
+              <div id="bc_copyright" class="field field--name-field-copyright-year field--type-string field--label-hidden field--item" style="float: left;"> Brightcove Inc. All rights reserved.</div>
+            </td>
+            <td>Privacidad | Términos y Condiciones<a href="https://www.brightcove.com/en/legal/privacy"></a><a href="https://www.brightcove.com/en/terms-and-conditions"></a></td>
+            <td>
+              <div class="gf-links-cols footer-menu">
+                <div class="gf-social"><a href="https://www.linkedin.com/company/16439" title="LinkedIn" newtab="newtab" class="gf-social-linkedin"><i class="fab fa-linkedin-in" style="font-size: 1.5rem;"></i></a><a href="https://twitter.com/brightcove" title="Twitter" newtab="newtab" class="gf-social-twitter"><i class="fab fa-twitter" style="font-size: 1.5rem;"></i></a><a href="https://www.facebook.com/Brightcove" title="Facebook" newtab="newtab" class="gf-social-facebook"><i class="fab fa-facebook-f" style="font-size: 1.5rem;"></i></a>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</footer>
+<div id="talla_wrapper">
+  <p style="text-align: right;position: relative;"><button style="background:rgb(9, 7, 140);color:Snow;padding:.3rem;position:fixed;right:0;bottom:1em;z-index:9999999" onclick="javascript:displayChat()">¿Tiene alguna pregunta? </button> </p>
+  <div id="talla_chat">
+</div>
+</div>
+<script>
+      
+  var searchBox = sajari.init({
+    mode: "search-box",
+    project: "1588255093746585379", // Set this to your project.
+    collection: "brightcove-documenation", // Set this to your collection.
+    instantPipeline: "autocomplete", // Pipeline used as you type
+    inputPlaceholder: "Search", // Input element placeholder
+    maxSuggestions: 5, // Maximum number of suggestions to show
+    attachSearchBox: document.getElementById("nav-search-box") // DOM element to attach to
+  });
+  
+    searchBox("sub", "pipeline.search-sent", function (_, query) {
+      window.location = "/search.html?q=" + encodeURIComponent(query.q);
+    });
+  
+
+</script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/https-fix.js"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/setDate.js"></script>
+  
+  <script src="https://support.brightcove.com/site-assets/js/site/prism.js"></script>
+  
+  <script src="https://support.brightcove.com/site-assets/js/site/site.js"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/tabs.js"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/toc.js"></script>
+  <script src="/assets/js/sites_nav.js"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/bcls-utils.js"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/local-link-fix.js"></script>
+  <script src="/assets/js/feedback.js"></script>
+  
+  <script src="/assets/js/sajari-search-foot.js"></script>
+  
+  <!-- <script src="/assets/js/sajari-index.js"></script> -->
+  <script src="https://assets.talla.com/latest/embeddedjs/talla.js"></script>
+  <script src="/assets/js/talla-init.js"></script>
+  <style>
+    a.sj-paginator__page-number.sj-paginator__page-number--current.css-so0ov7 {
+      background-color: lightblue;
+    }
+    div.sj-tabs__tab {
+      margin-top: 3rem;
+      margin-left: .3rem;
+      border-top-left-radius: .4rem;
+      border-top-right-radius: .4rem;
+      background-color:#e8e8e8;
+    }
+
+    div.sj-tabs__tab.sj-tabs__tab--selected {
+      border-bottom-color: crimson;
+      background-color: #f8f8f8;
+    }
+
+    p.sj-results__result__description.css-p9jvyt {
+      font-size: 1rem;
+    }
+
+    .sj-result__text.css-31l7gp h3 {
+      color: navy;
+      font-size: 1.4rem;
+    }
+    </style>
+
+</body>
+
+</html>
