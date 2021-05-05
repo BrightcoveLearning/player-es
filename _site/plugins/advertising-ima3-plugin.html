@@ -1,0 +1,2840 @@
+﻿<!doctype html>
+<html lang="es-es">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  
+  <title>Publicidad con el complemento IMA3</title>
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">  
+  <link data-react-helmet="true" rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500&amp;display=swap">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/prism.css">
+  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/styles.css">
+  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/landing-page.css">
+  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/tabs.css">
+  <link rel="stylesheet" href="/assets/css/local.css">
+  <link data-react-helmet="true" rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500&display=swap">
+  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/381443caa8.js" crossorigin="anonymous"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/google-analytics.js"></script>
+  <script src="/assets/js/sajari-head.js"></script>
+</head>
+
+<body class="body">
+
+<header>
+  <div class="div-header">
+    <a href="/"><img class="product-logo" src="https://support.brightcove.com/site-assets/images/site/product-logos/Player_Logo.svg" alt="logotipo del producto" style="max-height: 100px;max-width: 232px;"/></a>
+<!-- GTranslate: https://gtranslate.io/ -->
+<select onchange="doGTranslate(this);"><option value="">Seleccionar idioma</option><option value="en|en" translate="No">English</option><option value="en|zh-TW" translate="No">繁體中文</option><option value="en|fr" translate="No">Français</option><option value="en|de" translate="No">Deutsche</option><option value="en|ja" translate="No">日本語</option><option value="en|ko" translate="No">한국어</option><option value="en|es" translate="No">Español</option></select>
+
+<script>
+/* <![CDATA[ */
+function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;if(lang_pair=='')return;var lang=lang_pair.split('|')[1];var plang=location.hostname.split('.')[0];if(plang.length !=2 && plang.toLowerCase() != 'zh-cn' && plang.toLowerCase() != 'zh-tw')plang='en';location.href=location.protocol+'//'+(lang == 'en' ? '' : lang+'.')+location.hostname.replace('www.', '').replace(RegExp('^' + plang + '\\.'), '')+location.pathname+location.search;}
+/* ]]> */
+</script>
+
+    
+
+
+    <span class="secondary-nav"><a href="https://supportportal.brightcove.com/s/login/?"><img src="https://support.brightcove.com/site-assets/images/site/support.png" alt="soporte"/> Contactar con Soporte</a> <span style="vertical-align: top;margin-left:1em;margin-right:1em;">|</span> <a href="https://status.brightcove.com/">Estado<img src="https://support.brightcove.com/site-assets/images/site/status.png" alt="estado del sistema"/> del sistema</a></span> <br/>
+    
+  </div>
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb arr-right">
+      
+      <li class="breadcrumb-item"><a href="/">Inicio</a></li>
+      
+      
+      
+      <li class="breadcrumb-item">Plugins<a href="/plugins/"></a></li>
+      
+      <li class="breadcrumb-item active" aria-current="page">Publicidad con el complemento IMA3</li>
+    </ol>
+  </nav>
+</header>
+<div class="container">
+    <div class="row">
+            <div class="col-sm-3 left-side-bar">
+        <select id="site_select" class="bcls-select" style="margin-right: 1rem;">
+          <option value="">Otros documentos de Brightcove</option>
+          
+            
+              <option value="https://support.brightcove.com">Documentación Inicio</option>
+            
+          
+            
+              <option value="https://audience.support.brightcove.com">Audiencia de Brightcove</option>
+            
+          
+            
+              <option value="https://beacon.support.brightcove.com">Baliza Brightcove</option>
+            
+          
+            
+              <option value="https://campaign.support.brightcove.com">Campaña de Brightcove</option>
+            
+          
+            
+              <option value="https://engage.support.brightcove.com">Brightcove Engage</option>
+            
+          
+            
+              <option value="https://live.support.brightcove.com">Brightcove Live</option>
+            
+          
+            
+              <option value="https://gallery.support.brightcove.com">Brightcove Gallery</option>
+            
+          
+            
+              <option value="https://ssai.support.brightcove.com">Brightcove SSAI</option>
+            
+          
+            
+              <option value="https://social.support.brightcove.com">Brightcove Social</option>
+            
+          
+            
+              <option value="https://studio.support.brightcove.com">Video Cloud Studio</option>
+            
+          
+            
+              <option value="https://player.support.brightcove.com">Desarrollo de jugadores de Brightcove</option>
+            
+          
+            
+              <option value="https://apis.support.brightcove.com">API para la plataforma de Video Cloud</option>
+            
+          
+            
+              <option value="https://sdks.support.brightcove.com">SDK de dispositivos de Video Cloud</option>
+            
+          
+            
+              <option value="https://integrations.support.brightcove.com">Integraciones y conectores CMS</option>
+            
+          
+            
+              <option value="https://general.support.brightcove.com">Información general de Video Cloud</option>
+            
+          
+            
+              <option value="https://zencoder.support.brightcove.com">Zencoder</option>
+            
+          
+        </select>
+
+        <nav class="sidenav" id="side_nav">
+          
+            
+            <h5><a href="/index.html">Inicio</a></h5>
+            
+          
+            
+              <select id="site_select" class="bcls-select" style="margin-right: 1rem;">
+					<option value="">기타 브라이트코브 문서</option>
+					
+						
+							<option value="https://support.brightcove.com">설명서 홈</option>
+						
+					
+						
+							<option value="https://audience.support.brightcove.com">브라이트코브 대상</option>
+						
+					
+						
+							<option value="https://beacon.support.brightcove.com">브라이트코브 비콘</option>
+						
+					
+						
+							<option value="https://campaign.support.brightcove.com">브라이트코브 캠페인</option>
+						
+					
+						
+							<option value="https://engage.support.brightcove.com">브라이트코브 참여</option>
+						
+					
+						
+							<option value="https://live.support.brightcove.com">Brightcove Live</option>
+						
+					
+						
+							<option value="https://gallery.support.brightcove.com">Brightcove Gallery</option>
+						
+					
+						
+							<option value="https://ssai.support.brightcove.com">Brightcove SSAI</option>
+						
+					
+						
+							<option value="https://social.support.brightcove.com">브라이트코브 소셜</option>
+						
+					
+						
+							<option value="https://studio.support.brightcove.com">비디오 클라우드 스튜디오</option>
+						
+					
+						
+							<option value="https://player.support.brightcove.com">브라이트코브 플레이어 개발</option>
+						
+					
+						
+							<option value="https://apis.support.brightcove.com">비디오 클라우드 플랫폼 API</option>
+						
+					
+						
+							<option value="https://sdks.support.brightcove.com">비디오 클라우드 디바이스 SDK</option>
+						
+					
+						
+							<option value="https://integrations.support.brightcove.com">통합 및 CMS 커넥터</option>
+						
+					
+						
+							<option value="https://general.support.brightcove.com">비디오 클라우드 일반 정보</option>
+						
+					
+						
+							<option value="https://zencoder.support.brightcove.com">Zencoder</option>
+						
+			<h5 class="submenu-header"><a href="/getting-started/index.html"><strong>+</strong> Empezar</a></h5>		
+				</select>
+        <nav class="sidenav" id="side_nav">
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="/training/developer-basics-videos.html">Vídeos básicos del desarrollador</a></li>
+                  
+                
+                  
+                    <li>¿Qué es Brightcove Player?<a href="/getting-started/what-brightcove-player.html"></a></li>
+                  
+                
+                  
+                    <li>Visión general:<a href="/getting-started/overview-brightcove-player.html"> Reproductor de Brightcove</a></li>
+                  
+                
+                  
+                    <li>Guía de aprendizaje:<a href="/getting-started/learning-guide-video-advertising.html"> Publicidad en vídeo</a></li>
+                  
+                
+                  
+                    <li>Visión general:<a href="/getting-started/overview-brightcove-player-plugins.html"> Complementos de Brightcove Player</a></li>
+                  
+                
+                  
+                    <li>Vídeos de capacitación sobre desarrollo de jugadores<a href="/training/player-development-training-videos.html"></a></li>
+                  
+                
+                  
+                    <li>Paso a paso:<a href="/getting-started/step-step-brightcove-player.html"> Reproductor de Brightcove</a></li>
+                  
+                
+                  
+                    <li>Paso a paso:<a href="/getting-started/step-step-player-customization.html"> Personalización del reproductor</a></li>
+                  
+                
+                  
+                    <li>Capacitación:<a href="/training/training-demand-developing-brightcove-player.html"> Desarrollar con Brightcove Player</a></li>
+                  
+                
+                  
+                    <li><a href="/getting-started/learning-guide-using-rest-apis.html">Guía de aprendizaje: Uso de las API REST</a></li>
+                  
+                
+              </ul>
+            
+          
+            
+              <h5 class="submenu-header">Aprender los conceptos básicos +<a href="/basics/index.html"><strong></strong></a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="/basics/developer-basics-advanced-player-code.html">Código del reproductor avanzado</a></li>
+                  
+                
+                  
+                    <li><a href="/basics/developer-basics-autoplaying-video.html">Reproducción automática de un vídeo</a></li>
+                  
+                
+                  
+                    <li><a href="/basics/developer-basics-custom-plugin-converting-code.html">Plugin personalizado - Conversión de código</a></li>
+                  
+                
+                  
+                    <li><a href="/basics/developer-basics-custom-plugin-passing-data.html">Plugin personalizado - Pasar datos</a></li>
+                  
+                
+                  
+                    <li><a href="/basics/developer-basics-custom-plugin-using-studio.html">Plugin personalizado - Usar Studio</a></li>
+                  
+                
+                  
+                    <li><a href="/basics/developer-basics-custom-plugin-why-and-how.html">Plugin personalizado - Por qué y cómo</a></li>
+                  
+                
+                  
+                    <li><a href="/training/developer-basics-videos.html">Vídeos básicos del desarrollador</a></li>
+                  
+                
+                  
+                    <li><a href="/basics/developer-basics-generating-player-code.html">Generación de código de jugador</a></li>
+                  
+                
+                  
+                    <li>Preparación para escribir código<a href="/basics/developer-basics-preparing-write-code.html"></a></li>
+                  
+                
+              </ul>
+            
+          
+            
+              <h5 class="submenu-header">Referencias +<a href="/references/index.html"><strong></strong></a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="/references/brightcove-player-5-6-migration-guide.html">Guía de migración de Brightcove Player 5 a 6</a></li>
+                  
+                
+                  
+                    <li><a href="https://docs.brightcove.com/brightcove-player/current-release/index.html">Documentación de Brightcove Player API (sitio externo)</a></li>
+                  
+                
+                  
+                    <li><a href="/references/brightcove-player-cookies.html">Cookies de reproductor de Brightcove</a></li>
+                  
+                
+                  
+                    <li><a href="/references/brightcove-player-error-reference.html">Referencia de error del Reproductor de Brightcove</a></li>
+                  
+                
+                  
+                    <li><a href="https://groups.google.com/forum/embed/?place=forum/bcplayerdev#!forum/bcplayerdev">Foro de anuncios de jugadores de Brightcove</a></li>
+                  
+                
+                  
+                    <li><a href="/references/brightcove-player-system-requirements.html">Requisitos del sistema de Brightcove Player</a></li>
+                  
+                
+                  
+                    <li><a href="/references/catalog-search-architecture.html">Arquitectura de búsqueda</a></li>
+                  
+                
+                  
+                    <li>Problemas conocidos<a href="https://general.support.brightcove.com/general/known-issues-studio-brightcove-player-and-apis.html"></a></li>
+                  
+                
+                  
+                    <li>Catálogo de jugadores<a href="/references/player-catalog.html"></a></li>
+                  
+                
+                  
+                    <li>Compatibilidad con funciones de jugador por navegador<a href="/references/player-feature-support-browser.html"></a></li>
+                  
+                
+                  
+                    <li>Metadatos del reproductor de bcinfo<a href="/references/player-metadata-bcinfo.html"></a></li>
+                  
+                
+                  
+                    <li>Métodos de reproductores/API de eventos (sitio externo)<a href="https://docs.brightcove.com/brightcove-player/current-release/Player.html"></a></li>
+                  
+                
+                  
+                    <li>Guía de API de lista de reproducción<a href="/references/guide-playlist-api.html"></a></li>
+                  
+                
+                  
+                    <li>Metadatos de vídeo de mediainfo<a href="/references/video-metadata-mediainfo.html"></a></li>
+                  
+                
+              </ul>
+            
+          
+            
+              <h5 class="submenu-header">Plugins +<a href="/plugins/index.html"><strong></strong></a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="/plugins/360degvr-video-plugin.html">Vídeo 360º</a></li>
+                  
+                
+                  
+                    <li><a href="/plugins/ad-only-plugin.html">Sólo anuncio</a></li>
+                  
+                
+                  
+                    <li><a href="/plugins/advertising-freewheel-plugin.html">Publicidad con el plugin FreeWheel</a></li>
+                  
+                
+                  
+                    <li><a href="/plugins/advertising-ima3-plugin.html">Publicidad con el complemento IMA3</a></li>
+                  
+                
+                  
+                    <li>Actualización a la versión 3 del complemento IMA3<a href="/plugins/upgrading-ima3-plugin-version-3.html"></a></li>
+                  
+                
+                  
+                    <li><a href="/plugins/implementing-server-side-ads-brightcove-player.html">Publicidad con SSAI</a></li>
+                  
+                
+                  
+                    <li><a href="/plugins/chromecast-plugin-brightcove-player.html">Chromecast</a></li>
+                  
+                
+                  
+                    <li><a href="/plugins/custom-endscreen-plugin.html">Pantalla final personalizada</a></li>
+                  
+                
+                  
+                    <li><a href="/plugins/display-error-messages-plugin.html">Mostrar mensajes de error</a></li>
+                  
+                
+                  
+                    <li><a href="/plugins/display-thumbnail-previews-plugin.html">Mostrar vistas previas en miniatura</a></li>
+                  
+                
+                  
+                    <li><a href="/plugins/configuring-brightcove-player-drm.html">DRM</a></li>
+                  
+                
+                  
+                    <li><a href="/plugins/google-tag-manager-plugin-brightcove-player.html">Administrador de etiquetas de Google</a></li>
+                  
+                
+                  
+                    <li><a href="/plugins/hls-plugin.html">HLS</a></li>
+                  
+                
+                  
+                    <li>DVRUX en vivo<a href="/plugins/live-dvrux-plugin.html"></a></li>
+                  
+                
+                  
+                    <li>Superposición<a href="/plugins/display-overlay-plugin.html"></a></li>
+                  
+                
+                  
+                    <li>Visión general:<a href="/plugins/overview-brightcove-player-plugins.html"> Plugins de jugador</a></li>
+                  
+                
+                  
+                    <li>Imagen en imagen<a href="/plugins/picture-picture-plugin-aka-floating-or-pinned.html"></a></li>
+                  
+                
+                  
+                    <li>Pruebas de versión de reproductor/plugin<a href="/plugins/playerplugin-version-testing.html"></a></li>
+                  
+                
+                  
+                    <li>IU de lista de reproducción<a href="/plugins/playlist-ui-plugin.html"></a></li>
+                  
+                
+                  
+                    <li>Registro de cambios del complemento<a href="/plugins/changelog/index.html"></a></li>
+                  
+                
+                  
+                    <li>Registro de complementos<a href="/plugins/plugin-registry.html"></a></li>
+                  
+                
+                  
+                    <li>Referencia de versión del complemento<a href="/plugins/plugin-version-reference.html"></a></li>
+                  
+                
+                  
+                    <li>Selección de calidad<a href="/plugins/quality-selection-plugin.html"></a></li>
+                  
+                
+                  
+                    <li>Redes Sociales<a href="/plugins/social-sharing-plugin.html"></a></li>
+                  
+                
+                  
+                    <li>Tealium Tag Manager<a href="/plugins/tealium-plugin-brightcove-player.html"></a></li>
+                  
+                
+                  
+                    <li>Generador de esquemas SEO de vídeo<a href="/plugins/video-seo-schema-generator-plugin.html"></a></li>
+                  
+                
+              </ul>
+            
+          
+            
+              <h5 class="submenu-header"><a href="/advertising/index.html">Publicidad <strong>+</strong></a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="/advertising/ad-events-and-ad-objects.html">Eventos de anuncio y objetos de anuncio</a></li>
+                  
+                
+                  
+                    <li><a href="/plugins/ad-only-plugin.html">Plugin solo para anuncios</a></li>
+                  
+                
+                  
+                    <li><a href="/plugins/advertising-freewheel-plugin.html">Publicidad con el plugin FreeWheel</a></li>
+                  
+                
+                  
+                    <li><a href="/plugins/advertising-ima3-plugin.html">Publicidad con el complemento IMA3</a></li>
+                  
+                
+                  
+                    <li><a href="/advertising/client-side-preroll-with-live-ssai.html">Anuncios pre-roll del lado del cliente con SSAI en vivo</a></li>
+                  
+                
+                  
+                    <li><a href="/advertising/displaying-ads-using-ad-cue-points.html">Visualización de anuncios mediante puntos de anuncio</a></li>
+                  
+                
+                  
+                    <li><a href="/advertising/flash-no-longer-valid-ima.html">Flash ya no es válido con IMA</a></li>
+                  
+                
+                  
+                    <li><a href="/advertising/guide-ad-partner-integration.html">Guía: Integración de socios publicitarios</a></li>
+                  
+                
+                  
+                    <li><a href="/advertising/guide-contrib-ads-migration.html">Guía: migración de contrib-ads</a></li>
+                  
+                
+                  
+                    <li><a href="/plugins/implementing-server-side-ads-brightcove-player.html">Implementación de SSAI con Brightcove Player</a></li>
+                  
+                
+                  
+                    <li><a href="/advertising/jump-start-header-bidding-ad.html">Inicio de salto: Anuncio de puja de encabezado</a></li>
+                  
+                
+                  
+                    <li><a href="/advertising/jump-start-outstream-ad.html">Inicio de salto: Anuncio Outstream</a></li>
+                  
+                
+                  
+                    <li><a href="/advertising/jump-start-pre-roll-ad.html">Inicio de salto: Anuncio de pre-rollo</a></li>
+                  
+                
+                  
+                    <li>Problemas conocidos:<a href="/advertising/known-issues-server-side-ad-insertion-ssai.html"> Inserción de anuncios en el lado del servidor (SSAI)</a></li>
+                  
+                
+                  
+                    <li>Guía de aprendizaje:<a href="/getting-started/learning-guide-video-advertising.html"> Publicidad en vídeo</a></li>
+                  
+                
+                  
+                    <li>Paso a paso:<a href="/advertising/step-step-implementing-advertising.html"> Implementar publicidad</a></li>
+                  
+                
+                  
+                    <li>Prueba de complementos publicitarios previos al lanzamiento<a href="/advertising/testing-pre-release-advertising-plugins.html"></a></li>
+                  
+                
+                  
+                    <li>Uso de DFP Premium con Brightcove Player<a href="/advertising/using-dfp-premium-brightcove-player.html"></a></li>
+                  
+                
+                  
+                    <li>Uso de Live SSAI y Advanced Player Toolkit<a href="/advertising/using-player-enhancements-live-ssai-brightcove-player.html"></a></li>
+                  
+                
+                  
+                    <li>Validación de etiquetas de anuncio SSAI de Video Cloud<a href="/advertising/video-cloud-ssai-ad-tag-validation.html"></a></li>
+                  
+                
+              </ul>
+            
+          
+            
+              <h5 class="submenu-header">Publicar vídeos y reproductores +<a href="/publish/index.html"><strong></strong></a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="/publish/assigning-video-player-programmatically.html">Asignación de un vídeo al reproductor mediante programación</a></li>
+                  
+                
+                  
+                    <li><a href="/publish/available-options-advanced-page-embed-code.html">Opciones disponibles para el código de inserción avanzado (en página)</a></li>
+                  
+                
+                  
+                    <li><a href="/publish/available-options-standard-iframe-embed-code.html">Opciones disponibles para el código de inserción estándar (iframe)</a></li>
+                  
+                
+                  
+                    <li><a href="/publish/brightcove-player-loader.html">Cargador de jugadores de Brightcove</a></li>
+                  
+                
+                  
+                    <li><a href="/publish/bulk-updating-brightcove-default-player.html">Actualización masiva del reproductor predeterminado de Brightcove</a></li>
+                  
+                
+                  
+                    <li><a href="https://studio.support.brightcove.com/publish/choosing-correct-embed-code.html">Elegir el código de incrustación correcto</a></li>
+                  
+                
+                  
+                    <li>Atrasando la instanciación del jugador<a href="/publish/delaying-player-instantiation.html"></a></li>
+                  
+                
+                  
+                    <li>Jugador previo al lanzamiento<a href="/publish/pre-release-player.html"></a></li>
+                  
+                
+                  
+                    <li>Estrategias de sindicación<a href="/publish/syndication-strategies.html"></a></li>
+                  
+                
+                  
+                    <li>Uso de un reproductor que no sea de Brightcove<a href="/publish/using-non-brightcove-player.html"></a></li>
+                  
+                
+                  
+                    <li>Uso de varios jugadores en una página<a href="https://studio.support.brightcove.com/publish/using-multiple-players-one-page.html"></a></li>
+                  
+                
+                  
+                    <li>Uso de Id. de referencia<a href="https://studio.support.brightcove.com/publish/using-reference-ids.html"></a></li>
+                  
+                
+                  
+                    <li>Inspector de copias de vídeo<a href=""></a></li>
+                  
+                
+              </ul>
+            
+          
+            
+              <h5 class="submenu-header">Solución de problemas +<a href="/troubleshooting/index.html"><strong></strong></a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="/troubleshooting/brightcove-playback-technology-app.html">Aplicación de tecnología de reproducción Brightcove</a></li>
+                  
+                
+                  
+                    <li><a href="/references/brightcove-player-error-reference.html">Referencia de error del Reproductor de Brightcove</a></li>
+                  
+                
+                  
+                    <li><a href="/troubleshooting/brightcove-player-information-modal.html">Brightcove Información del Jugador Modal</a></li>
+                  
+                
+                  
+                    <li><a href="/troubleshooting/brightcove-player-troubleshooting-guide.html">Guía de solución de problemas de Brightcove Player</a></li>
+                  
+                
+                  
+                    <li><a href="/troubleshooting/creating-charles-log.html">Creación de un Charles Log</a></li>
+                  
+                
+                  
+                    <li><a href="/troubleshooting/creating-network-log.html">Creación de un registro de red</a></li>
+                  
+                
+                  
+                    <li><a href="/troubleshooting/domain-restrictions-messaging.html">Mensajería de restricciones de dominio</a></li>
+                  
+                
+                  
+                    <li><a href="/plugins/display-error-messages-plugin.html">Mostrar plugin de mensajes de error</a></li>
+                  
+                
+                  
+                    <li>Configuración manual de la versión del reproductor<a href="/troubleshooting/manually-setting-player-version.html"></a></li>
+                  
+                
+                  
+                    <li>Pruebas de versión de reproductor/plugin<a href="/plugins/playerplugin-version-testing.html"></a></li>
+                  
+                
+                  
+                    <li>Propiedades informativas del jugador<a href="/troubleshooting/player-informational-properties.html"></a></li>
+                  
+                
+                  
+                    <li>Ejemplo:<a href="/code-samples/brightcove-player-sample-live-custom-error-message.html"> Mensaje de error personalizado en vivo</a></li>
+                  
+                
+                  
+                    <li>Paso a paso:<a href="/troubleshooting/step-step-brightcove-player-debugger.html"> Depurador de reproductor de Brightcove</a></li>
+                  
+                
+                  
+                    <li>Ejecución de un seguimiento de ruta de red<a href="/troubleshooting/running-network-path-trace.html"></a></li>
+                  
+                
+                  
+                    <li>Uso de la referencia del reproductor<a href="/troubleshooting/using-player-reference.html"></a></li>
+                  
+                
+                  
+                    <li>Vetting Lanzamientos del jugador de Brightcove<a href="/troubleshooting/vetting-brightcove-player-releases.html"></a></li>
+                  
+                
+                  
+                    <li>Visualización de la configuración del reproductor<a href="/troubleshooting/viewing-player-configuration.html"></a></li>
+                  
+                
+              </ul>
+            
+          
+            
+              <h5 class="submenu-header">Estilo y apariencia +<a href="/styling/index.html"><strong></strong></a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="/styling/customizing-player-appearance.html">Personalización de la apariencia del reproductor</a></li>
+                  
+                
+                  
+                    <li><a href="/styling/customizing-player-appearance-legacy-skin.html">Personalización del aspecto del jugador - Aspecto heredado</a></li>
+                  
+                
+                  
+                    <li>Player Styling Playground<a href="/styling/brightcove-player-sample-player-styling-playground.html"></a></li>
+                  
+                
+                  
+                    <li>Inicio rápido:<a href="/styling/quick-start-player-customization-legacy-skin.html"> Personalización del jugador: aspecto heredado</a></li>
+                  
+                
+                  
+                    <li>Paso a paso:<a href="/getting-started/step-step-player-customization.html"> Personalización del reproductor</a></li>
+                  
+                
+                  
+                    <li>Tamaño de respuesta para el reproductor de Brightcove<a href="/styling/responsive-sizing-brightcove-player.html"></a></li>
+                  
+                
+                  
+                    <li>Tamaño del jugador<a href="/styling/sizing-player.html"></a></li>
+                  
+                
+                  
+                    <li>Skins y versiones de jugador<a href="/styling/skins-and-player-versions.html"></a></li>
+                  
+                
+                  
+                    <li>Estilo de subtítulos<a href="https://studio.support.brightcove.com/media/styling-captions.html"></a></li>
+                  
+                
+                  
+                    <li>Estilo de listas de reproducción<a href="/styling/styling-playlists.html"></a></li>
+                  
+                
+              </ul>
+            
+          
+            
+              <h5 class="submenu-header">Reproducción +<a href="/playback/index.html"><strong></strong></a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="/playback/autoplay-considerations.html">Consideraciones de reproducción automática</a></li>
+                  
+                
+                  
+                    <li><a href="/troubleshooting/brightcove-playback-technology-app.html">Aplicación de tecnología de reproducción Brightcove</a></li>
+                  
+                
+                  
+                    <li><a href="/playback/xdr-with-bcplayer.html">Reanudación multidispositivo con Brightcove Player</a></li>
+                  
+                
+                  
+                    <li><a href="https://studio.support.brightcove.com/publish/deep-linking.html">Vinculación profunda</a></li>
+                  
+                
+                  
+                    <li><a href="/playback/delivering-hls-video.html">Entrega de vídeo HLS</a></li>
+                  
+                
+                  
+                    <li><a href="/playback/determining-which-rendition-will-play.html">Determinar qué copia se reproducirá</a></li>
+                  
+                
+                  
+                    <li><a href="/playback/guide-playback-technology.html">Guía: Tecnología de reproducción</a></li>
+                  
+                
+                  
+                    <li><a href="/plugins/hls-plugin.html">Complemento HLS</a></li>
+                  
+                
+                  
+                    <li><a href="/playback/ios-and-brightcove-player.html">iOS y reproductor de Brightcove</a></li>
+                  
+                
+                  
+                    <li>Visión general:<a href="/playback/overview-https-support.html"> Soporte de HTTPS</a></li>
+                  
+                
+                  
+                    <li>Complemento de selección de calidad<a href="/plugins/quality-selection-plugin.html"></a></li>
+                  
+                
+                  
+                    <li>Entrega URL estática<a href="/playback/static-url-delivery.html"></a></li>
+                  
+                
+                  
+                    <li>Transmisión de contenido protegido PlayReady<a href="/playback/streaming-playready-protected-content-dynamic-delivery.html"></a></li>
+                  
+                
+                  
+                    <li>Uso del reproductor de Brightcove para TVE<a href="/playback/using-brightcove-player-tve.html"></a></li>
+                  
+                
+              </ul>
+            
+          
+            
+              <h5 class="submenu-header"><a href="/content-protection/index.html">Protección de contenido y DRM <strong>+</strong></a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="https://studio.support.brightcove.com/players/configuring-player-content-restrictions.html">Configuración de Restricciones de Contenido del Reproductor</a></li>
+                  
+                
+                  
+                    <li><a href="/content-protection/creating-dash-drm-manifest-brightcove-player.html">Creación de un manifiesto DRM de DASH para el reproductor de Brightcove</a></li>
+                  
+                
+                  
+                    <li><a href="/troubleshooting/domain-restrictions-messaging.html">Mensajería de restricciones de dominio</a></li>
+                  
+                
+                  
+                    <li><a href="/plugins/configuring-brightcove-player-drm.html">Complemento DRM</a></li>
+                  
+                
+                  
+                    <li>Visión general:<a href="/content-protection/overview-content-protection.html"> Protección de contenido</a></li>
+                  
+                
+                  
+                    <li>Teclas de política<a href="/content-protection/policy-keys.html"></a></li>
+                  
+                
+                  
+                    <li>Restringir la reproducción de vídeo mediante dirección IP<a href="/content-protection/restricting-video-playback-using-ip-address.html"></a></li>
+                  
+                
+                  
+                    <li>URL firmadas y autenticación de tokens con una transmisión en directo<a href="/content-protection/signed-urls-and-token-auth-live-stream.html"></a></li>
+                  
+                
+              </ul>
+            
+          
+            
+              <h5 class="submenu-header"><a href="/coding-topics/index.html">Temas de codificación <strong>+</strong></a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="/publish/brightcove-player-loader.html">Cargador de jugadores de Brightcove</a></li>
+                  
+                
+                  
+                    <li><a href="/references/catalog-search-architecture.html">Actualización de búsqueda de catálogo</a></li>
+                  
+                
+                  
+                    <li><a href="/code-samples/brightcove-player-sample-trigger-rewind-custom-event.html">Evento personalizado</a></li>
+                  
+                
+                  
+                    <li><a href="/playback/guide-playback-technology.html">Guía: Tecnología de reproducción</a></li>
+                  
+                
+                  
+                    <li>Localización de Brightcove Player<a href="/coding-topics/programmatically-localizing-brightcove-player.html"></a></li>
+                  
+                
+                  
+                    <li>Localización de complementos<a href="/coding-topics/localizing-plugins.html"></a></li>
+                  
+                
+                  
+                    <li>Eventos de jugador<a href="/coding-topics/player-events.html"></a></li>
+                  
+                
+                  
+                    <li>Visión general:<a href="/coding-topics/overview-components.html"> Componentes</a></li>
+                  
+                
+                  
+                    <li>Visión general:<a href="/playback/overview-https-support.html"> Soporte de HTTPS</a></li>
+                  
+                
+                  
+                    <li>Visión general:<a href="/coding-topics/overview-player-api.html"> Player API</a></li>
+                  
+                
+                  
+                    <li>Pasar datos al complemento<a href="/coding-topics/pass-data-plugin.html"></a></li>
+                  
+                
+                  
+                    <li>Reaccionar el cargador del jugador<a href="/coding-topics/react-player-loader.html"></a></li>
+                  
+                
+                  
+                    <li>Informes sobre configuraciones de Brightcove Player<a href="/coding-topics/reporting-brightcove-player-configurations.html"></a></li>
+                  
+                
+                  
+                    <li>RequireJS y reproductor de Brightcove<a href="/coding-topics/requirejs-and-brightcove-player.html"></a></li>
+                  
+                
+                  
+                    <li>Paso a paso:<a href="/coding-topics/step-step-plugin-development.html"> Desarrollo de complementos</a></li>
+                  
+                
+                  
+                    <li>Paso a paso:<a href="/coding-topics/step-step-videojs-plugin-generator.html"> Generador de complementos Video.js</a></li>
+                  
+                
+                  
+                    <li>Uso de los métodos bc () y getPlayer ()<a href="/coding-topics/using-bc-and-getplayer-methods.html"></a></li>
+                  
+                
+                  
+                    <li>Visualización de la configuración del reproductor<a href="/troubleshooting/viewing-player-configuration.html"></a></li>
+                  
+                
+              </ul>
+            
+          
+            
+              <h5 class="submenu-header"><a href="/general/index.html">Información general <strong>+</strong></a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="https://studio.support.brightcove.com/publish/adding-application-id-player-embed-code.html">Adición de un ID de aplicación al código de incrustación del reproductor</a></li>
+                  
+                
+                  
+                    <li><a href="/general/adding-captions-videos-programmatically.html">Adición de subtítulos a vídeos mediante programación</a></li>
+                  
+                
+                  
+                    <li><a href="https://studio.support.brightcove.com/media/adding-chapters-video.html">Adición de capítulos a un vídeo</a></li>
+                  
+                
+                  
+                    <li><a href="/general/brightcove-player-6-now-default-version.html">Versión predeterminada de Brightcove Player 6</a></li>
+                  
+                
+                  
+                    <li><a href="/general/brightcove-player-accessibility.html">Accesibilidad del reproductor de Brightcove</a></li>
+                  
+                
+                  
+                    <li><a href="/plugins/custom-endscreen-plugin.html">Complemento de pantalla final personalizado</a></li>
+                  
+                
+                  
+                    <li><a href="/plugins/display-overlay-plugin.html">Complemento de superposición de visualización</a></li>
+                  
+                
+                  
+                    <li><a href="/references/guide-playlist-api.html">Guía: API de lista de reproducción</a></li>
+                  
+                
+                  
+                    <li><a href="/general/identify-and-delete-low-performing-videos.html">Identificar y eliminar vídeos de bajo rendimiento</a></li>
+                  
+                
+                  
+                    <li><a href="/general/implementing-cue-points-programmatically.html">Implementación de puntos de referencia mediante programación</a></li>
+                  
+                
+                  
+                    <li><a href="/general/implementing-playlists.html">Implementar listas de reproducción</a></li>
+                  
+                
+                  
+                    <li><a href="/general/implementing-modaldialog.html">Implementación del ModalDialog</a></li>
+                  
+                
+                  
+                    <li>HLS en vivo<a href="/general/live-hls.html"></a></li>
+                  
+                
+                  
+                    <li>Configuración de Live Stream<a href="/general/live-stream-configuration.html"></a></li>
+                  
+                
+                  
+                    <li>Varias pistas de audio<a href="/general/multiple-audio-tracks.html"></a></li>
+                  
+                
+                  
+                    <li>Guía de configuración del reproductor<a href="/general/player-configuration-guide.html"></a></li>
+                  
+                
+                  
+                    <li>Reproducir transmisiones en vivo<a href="/general/playing-live-streams.html"></a></li>
+                  
+                
+                  
+                    <li>Plugin UI de lista de reproducción<a href="/plugins/playlist-ui-plugin.html"></a></li>
+                  
+                
+                  
+                    <li>URL firmadas y autenticación de tokens con una transmisión en directo<a href="/content-protection/signed-urls-and-token-auth-live-stream.html"></a></li>
+                  
+                
+                  
+                    <li>Plugin de redes sociales<a href="/plugins/social-sharing-plugin.html"></a></li>
+                  
+                
+                  
+                    <li>Paso a paso:<a href="https://apis.support.brightcove.com/player-management/getting-started/step-step-player-management.html"> Administración de jugadores</a></li>
+                  
+                
+                  
+                    <li>Estilo de listas de reproducción<a href="/styling/styling-playlists.html"></a></li>
+                  
+                
+                  
+                    <li>Uso de un lector de pantalla con Brightcove Player<a href="/general/using-screen-reader-brightcove-player.html"></a></li>
+                  
+                
+                  
+                    <li>Versiones de la documentación de Brightcove Player<a href="/general/versions-brightcove-player-documentation.html"></a></li>
+                  
+                
+                  
+                    <li>Control de volumen<a href="/general/volume-control.html"></a></li>
+                  
+                
+              </ul>
+            
+          
+            
+              <h5 class="submenu-header"><a href="/code-samples/index.html">Ejemplos de código <strong>+</strong></a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="/code-samples/index-thumb.html">Ejemplos de código por grupo</a></li>
+                  
+                
+                  
+                    <li><a href="/code-samples/index.html">Índice de ejemplo de código</a></li>
+                  
+                
+              </ul>
+            
+          
+            
+              <h5 class="submenu-header"><a href="/amp/index.html">AMP <strong>+</strong></a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="/amp/amp-using-video-cloud-video.html">AMP Uso de un vídeo de Video Cloud</a></li>
+                  
+                
+                  
+                    <li><a href="/amp/amp-using-external-video.html">AMP Uso de un vídeo externo</a></li>
+                  
+                
+              </ul>
+            
+          
+            
+              <h5 class="submenu-header">Entrenamiento +<a href="/training/index.html"><strong></strong></a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="/training/online-training-courses.html">Todos los cursos de formación en línea</a></li>
+                  
+                
+                  
+                    <li><a href="/training/developer-basics-videos.html">Vídeos básicos del desarrollador</a></li>
+                  
+                
+                  
+                    <li>Vídeos de capacitación sobre desarrollo de jugadores<a href="/training/player-development-training-videos.html"></a></li>
+                  
+                
+                  
+                    <li>Regístrese para la formación impartida por instructor<a href="/training/register-training.html"></a></li>
+                  
+                
+                  
+                    <li>Capacitación:<a href="/training/training-demand-developing-brightcove-player.html"> Desarrollar con Brightcove Player</a></li>
+                  
+                
+                  
+                    <li>Capacitación:<a href="https://apis.support.brightcove.com/player-management/getting-started/training-demand-quick-start-player-management.html"> Inicio rápido de la administración de reproductores</a></li>
+                  
+                
+                  
+                    <li><a href="/training/brightcove-university.html">Cursos de formación de la Universidad de Brightcove</a></li>
+                  
+                
+              </ul>
+            
+          
+            
+              <h5 class="submenu-header">Notas de la versión +<a href="/release-notes/index.html"><strong></strong></a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="/release-notes/brightcove-player-release-notes.html">Brightcove Player Notas informativas</a></li>
+                  
+                
+                  
+                    <li><a href="/release-notes/brightcove-player-prerelease-notes.html">Notas previas al lanzamiento del jugador de Brightcove</a></li>
+                  
+                
+              </ul>
+            
+          
+            
+              <h5 class="submenu-header">Soporte +<a href="/support/index.html"><strong></strong></a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    
+                  
+                
+                  
+                    <li>Visualización de la página Estado del Sistema de Brightcove<a href="/support/viewing-brightcove-system-status-page.html"></a></li>
+                  
+                
+                  
+                    <li><a href="/support/contact-sales.html">Contacto con Ventas</a></li>
+                  
+                
+                  
+                    <li>Apertura de un caso de soporte<a href="/support/opening-case-with-brightcove-support.html"></a></li>
+                  
+                
+              </ul>
+            
+          
+      </nav>
+    </div>
+    <div class="col-lg-7" style="background-color: white;color: #333333;margin-top: -1em;margin-bottom: -1em;padding-bottom:1em;">
+  <!-- bootstrap layout -->
+
+<p id="bc_veggie_burger_wrapper" style="display: none;"><img id="bc_veggie_burger" src="/assets/images/feather/menu.svg" alt="Menú de navegación"/></p>
+
+<!-- search bar -->
+<div id="nav-search-box" style="margin-top: 1rem;"></div>
+<!-- in-page navigation for narrow screens -->
+<details class="centered-inpage-nav" id="centered_inpage_nav">
+  <summary><h6 class="toc">Contenido de la página</h6></summary>
+  <nav id="centered_toc"></nav>
+  <ul id="centered_in_page_toc" class="list-none"></ul>
+</details>
+<!-- open in new tab/window -->
+<a id="open_new_tab" href="#" target="_blank" style="display: none;"><img src="/assets/images/feather/external-link.svg" alt="abrir en una nueva pestaña" style="margin-top:4em;width: 1.5em;"/></a>
+
+
+
+  
+    
+
+
+<article class="bcls-article">
+    <h1>Publicidad con el complemento IMA3</h1>
+    <summary>Este tema cubre el uso del complemento IMA y cómo se puede implementar usando Studio y mediante codificación personalizada.</summary>
+    <style type="text/css">
+        iframe {
+            width: 640px;
+            height: 360px;
+        }
+    </style>
+    <p>
+        El complemento IMA integra el reproductor de Brightcove con los anuncios interactivos de medios (IMA) de Google para HTML5 versión 3. Esto le permite solicitar y realizar un seguimiento de los anuncios VAST, VPAID y VMAP para su reproductor. Para obtener más información sobre Google IMA, consulte el documento <a href="https://developers.google.com/interactive-media-ads/docs/sdks/html5/v3/">Uso del SDK para IMA y HTML5, versión 3</a>.
+    </p>
+
+    <section class="bcls-section">
+        <h2 id="Player_sample">Ejemplo del reproductor</h2>
+
+        <p>
+            El siguiente vídeo muestra el uso del complemento IMA. Reproduzca el vídeo para ver un pre-roll, un midroll saltable a 5 segundos y, finalmente, un post-roll.
+        </p>
+
+        <div>
+            <iframe src="https://players.brightcove.net/1752604059001/H1Qvsb12_default/index.html?videoId=4607357817001" allowfullscreen="" webkitallowfullscreen="" mozallowfullscreen=""></iframe>
+        </div>
+        <!-- <aside class="bcls-aside bcls-aside--information">Note: Initial behavior concerning the timing of loading of video advertisements is described in the <a href="#requestMode">requestMode</a> option. Be sure to check this as default behavior is undesirable for some types of ad servers/networks.</aside> -->
+    </section>
+
+    <section class="bcls-section">
+        <h2 id="Testing_the_ad_server">Comprobación del servidor de anuncios</h2>
+
+        <p>
+            Lo primero que debe hacer es verificar la validez de la etiqueta de anuncio que está planeando utilizar. Asegúrese de haber copiado su URL y vaya a la siguiente página: <a target="_blank" rel="noopener noreferrer" href="https://developers.google.com/interactive-media-ads/docs/sdks/html5/vastinspector">Video Suite Inspector</a> (al hacer clic en este enlace, la página se abrirá en una nueva ventana o pestaña).
+        </p>
+
+        <p>
+            Pegue la URL de la etiqueta de anuncio en el campo de entrada del <strong translate="No">Input type</strong> formulario. Haga clic <strong translate="No">Test Ad</strong> y verá su anuncio (s) reproducirse, con el vídeo proporcionado por Google intercalado. Si la etiqueta de anuncio no funciona en este entorno de prueba, no funcionará con Brightcove Player.
+        </p>
+
+        <aside class="bcls-aside bcls-aside--information">
+            Nota: El proveedor de anuncios puede alojar la etiqueta de anuncio VAST o puede copiar el XML y alojarlo en su propia URL.
+        </aside>
+    </section>
+
+    <section class="bcls-section">
+        <h2 id="Implement_using_Players_module_advertising_section">Implementar usando el módulo Players - Sección Publicidad</h2>
+
+        <p>
+            En esta sección del documento utilizará Studio para implementar publicidad utilizando la sección <strong>Publicidad</strong> . En este caso, está limitado a las opciones que proporciona el formulario. Si desea personalizar la implementación usando algunas de las muchas opciones disponibles que no se proporcionan en esta sección, utilice la sección <a href="#Implement_using_Players_module_plugins_section">Implementar usando el módulo Players - <strong>Plugins</strong></a> , que ofrece la oportunidad de suministrar opciones a través de JSON.
+        </p>
+
+        <div id="player" class="video-cloud-only">
+            <video-js data-account="20318290001" data-player="E16-WGGOe" data-embed="default" data-video-id="4043519495001" class="video-js" controls="" crossorigin="anonymous" width="640" height="360">&nbsp;</video-js>
+            <script src="https://players.brightcove.net/20318290001/E16-WGGOe_default/index.min.js"></script>
+        </div>
+
+        <p>Para implementar el complemento IMA utilizando el módulo Players, siga estos pasos:</p>
+
+        <ol class="bcls-tasklist">
+            <li>Abra el módulo PLAYERS y cree un nuevo reproductor o localice el reproductor al que desea añadir funcionalidad publicitaria.<strong></strong></li>
+            <li>Haga clic en el enlace del reproductor para abrir las propiedades del reproductor.</li>
+            <li>Haga clic en <strong>Publicidad</strong> en el menú de navegación izquierdo.</li>
+            <li> <strong>Marque la casilla de verificación Habilitar cliente (IMA)</strong> .</li>
+            <li>Introduzca el <strong translate="No">Server URL</strong> para el servidor de anuncios.</li>
+            <li>
+                Seleccione la <strong translate="No">Request Ads</strong> configuración.
+                <ul>
+                    <li>
+                        <strong translate="No">On load</strong> - Los anuncios se solicitan inmediatamente cuando se carga el reproductor (normalmente es la mejor experiencia para DFP/VPAID).
+                    </li>
+                    <li><strong translate="No">On play</strong> : la primera solicitud de anuncio se retrasa hasta que se inicie la reproducción.</li>
+                    <li>
+                        <strong translate="No">On demand</strong> - Todas las solicitudes de anuncios se iniciarán mediante programación utilizando el <code translate="No">player.ima3.adrequest()</code> método. Este modo no admite anuncios de pre-oll o postroll.
+                    </li>
+                    <li>
+                        <strong translate="No">On cue point</strong> : las solicitudes de anuncios se iniciarán en un punto de referencia de anuncio distribuido. Consulte el documento <a href="/advertising/displaying-ads-using-ad-cue-points.html">Visualización de anuncios mediante puntos</a> de anuncio para obtener más detalles.
+                    </li>
+                </ul>
+            </li>
+            <li>
+                Seleccione el anuncio <strong translate="No">VPAID Mode</strong>. El modo VPAID se utiliza para habilitar la compatibilidad con VPAID 2 en los anuncios de IMA.
+                <ul>
+                    <li><strong translate="No">Enabled</strong> - Reproducir anuncios VPAID en un iframe con un dominio diferente</li>
+                    <li><strong translate="No">Insecure</strong> - Reproducir anuncios VPAID en un iframe con el mismo dominio</li>
+                    <li><strong translate="No">Disabled</strong> - Los anuncios de VPAID generan un error</li>
+                </ul>
+            </li>
+            <li>
+                Establezca el <strong translate="No">Timeout</strong> valor. Es la cantidad máxima de tiempo que debe esperar, en milisegundos, para que un anuncio se inicialice antes de la reproducción.
+            </li>
+            <li>
+                Haga una elección para Tiempos de <strong>espera difíciles</strong>. Si se desmarca esta opción, el anuncio de carga lenta podría interrumpir la reproducción de vídeo.
+            </li>
+            <li>
+                Establezca el número máximo de redirecciones.<strong></strong> Esto especifica el número máximo de redirecciones antes de que se denieguen las redirecciones posteriores y se cancelará la carga del anuncio. El número de redirecciones afecta directamente a la latencia y, por lo tanto, a la experiencia del usuario.
+            </li>
+            <li>Para la <strong>versión del complemento</strong>, se recomienda encarecidamente que utilice la última versión.</li>
+            <li>
+                Ver un ejemplo, formulario completado:
+                <figure class="bcls-figure">
+                    <img class="bcls-image" alt="Propiedades IMA4 en Studio" src="//learning-services-media.brightcove.com/doc-assets/player-development/advertising/ima3-plugin/studio-ima-plugin-props.png"/>
+                </figure>
+            </li>
+            <li>Haga clic en <strong>Guardar</strong>.</li>
+            <li>Para publicar el reproductor, haga clic en Publicar e incrustar &gt; Publicar cambios.<strong></strong></li>
+            <li>Para cerrar el cuadro de diálogo abierto, haga clic en Cerrar.<strong></strong></li>
+        </ol>
+
+        <p>
+            Cuando se guarden los cambios en las propiedades publicitarias, el complemento IMA se configurará como parte de la configuración del complemento. El JavaScript y CSS estarán ocultos ya que los agregó a través de la <strong translate="No">Advertising</strong> sección.
+        </p>
+
+        <p>
+            El complemento IMA admite propiedades adicionales que no están disponibles en esta sección de la interfaz de usuario. Consulte la siguiente sección de este documento para ver una forma de utilizar más opciones de configuración.
+        </p>
+
+        <aside class="bcls-aside bcls-aside--tip">
+            Nota: Es posible que desee construir dinámicamente el <code translate="No">serverUrl</code> en el cliente (lo que significa que el complemento IMA4 ya se inicializaría), por ejemplo después de un inicio de sesión de usuario. Puede hacer esto estableciendo ese valor en una cadena vacía en el <strong translate="No">options</strong> <code translate="No">{ "serverUrl": "" }</code> y luego asigne el valor mediante programación.
+        </aside>
+    </section>
+
+    <section class="bcls-section">
+        <h2 id="Implement_using_Players_module_plugins_section">Implementar usando el módulo Players - Sección Plugins</h2>
+
+        <p>
+            Si desea configurar el plugin IMA4 más allá de las opciones proporcionadas en la sección <strong>Publicidad</strong> , puede utilizar la sección <strong>Plugins</strong> , que proporciona una forma de proporcionar opciones a través de JSON.
+        </p>
+
+        <p>Para implementar el complemento IMA4 agregará el nombre de la función del plugin y las URL a los archivos JavaScript y CSS del plugin:</p>
+
+        <ol class="bcls-tasklist-restart">
+            <li>Abra el módulo PLAYERS y cree un nuevo reproductor o localice el reproductor al que desea añadir el plugin.<strong></strong></li>
+            <li>Haga clic en el enlace del reproductor para abrir las propiedades del reproductor.</li>
+            <li>Haga clic en <strong>Plugins</strong> en el menú de navegación izquierdo.</li>
+            <li>
+                A continuación, haga clic en Plugins de las tres opciones.<strong></strong>
+                <figure class="bcls-figure">
+                    <img class="bcls-image" alt="Seleccionar plugin" src="//learning-services-media.brightcove.com/doc-assets/general/players-plugin-options.png"/>
+                </figure>
+            </li>
+            <li>En <strong>Agregar un complemento</strong> , seleccione <strong>Plugin personalizado</strong>.</li>
+            <li>Para el <strong>nombre del complemento</strong> , escriba <code translate="No">ima3</code>.</li>
+            <li>
+                Para la URL de <strong>JavaScript</strong> , escriba:
+                <pre>
+<code class="language-json" translate="No">https://players.brightcove.net/videojs-ima3/3/videojs.ima3.min.js</code></pre>
+            </li>
+            <li>
+                Para la URL <strong>CSS</strong> , escriba:
+                <pre>
+<code class="language-json" translate="No">https://players.brightcove.net/videojs-ima3/3/videojs.ima3.min.css</code></pre>
+            </li>
+            <!-- ** choose one of the following two steps, delete the other ** -->
+            <li>
+                Introduzca las opciones de configuración en el cuadro de texto <strong>Opciones (JSON)</strong> .
+                <pre class="line-numbers">
+<code class="language-json" translate="No">{
+  "serverUrl": "//pubads.g.doubleclick.net/gampad/ads?sz=400x300&amp;iu=%2F6062...",
+  "timeout": 5000,
+  "debug": true
+}</code></pre>
+            </li>
+            <li>Haga clic en <strong>Guardar</strong>.</li>
+            <li>Para publicar el reproductor, haga clic en Publicar e incrustar &gt; Publicar cambios.<strong></strong></li>
+            <li>Para cerrar el cuadro de diálogo abierto, haga clic en Cerrar.<strong></strong></li>
+        </ol>
+    </section>
+
+    <section class="bcls-section">
+        <h2 id="JSON_vs_JavaScript_notation">JSON vs notación JavaScript</h2>
+
+        <p>
+            Si examina la <strong translate="No">Options</strong> sección anterior, verá que la información de configuración se suministra en formato JSON. Si está utilizando código para implementar su plugin IMA4, la notación para configurar opciones con JavaScript es ligeramente diferente.
+        </p>
+
+        <p>Aquí puede ver las opciones en formato JSON que podría usar en Studio:</p>
+
+        <pre class="line-numbers">
+<code class="language-json" translate="No">{
+  "requestMode": "onload",
+  "serverUrl": "//solutions.brightcove.com/bcls/brightcove-player/vmap/simple-vmap.xml?cust_params={mediainfo.ad_keys}",
+  "timeout": 5000
+}</code></pre>
+
+        <p>Si está utilizando JavaScript para configurar sus opciones, el formato JSON funcionaría, pero también podría usar la sintaxis de JavaScript como se muestra aquí:</p>
+
+        <pre class="line-numbers">
+<code class="language-javascript" translate="No">{
+  requestMode: 'onload',
+  serverUrl: '//solutions.brightcove.com/bcls/brightcove-player/vmap/simple-vmap',
+  timeout: 5000
+}</code></pre>
+    </section>
+
+    <section class="bcls-section">
+        <h2 id="Options">Opciones</h2>
+
+        <p>
+            El plugin video.js IMA4 se construye sobre el <a href="https://github.com/brightcove/videojs-ads">marco de anuncios video.js</a> y acepta cualquier opción que proporcione el marco de anuncios. Eche un vistazo al <a href="https://github.com/videojs/videojs-contrib-ads/blob/main/docs/index.md">archivo LÉAME</a> del marco publicitario para obtener detalles sobre el conjunto actual de configuraciones anulables. Tanto las opciones específicas del complemento IMA como las opciones de marco publicitario se documentan aquí.
+        </p>
+        <p>Las opciones son:</p>
+        <ul>
+            <li><a href="#clickTrackingElement">ClickTrackingElement</a></li>
+            <li><a href="#debug">depurar</a></li>
+            <li><a href="#debugContribAds">DebugControbads</a></li>
+            <li><a href="#disableCustomPlaybackForIOS10Plus">DisableCustomPlaybackForios10Plus</a></li>
+            <li><a href="#hardTimeouts">HardTimeouts</a></li>
+            <li><a href="#ima3SdkSettings">iMA3SDKSettings</a></li>
+            <li><a href="#requestMode">RequestMode</a></li>
+            <li><a href="#serverUrl">ServerURL</a></li>
+            <li><a href="#showVpaidControls">ShowVpaidControls</a></li>
+            <li><a href="#timeout">tiempo de espera</a></li>
+            <li><a href="#useMediaCuePoints">UseMediacuePoints</a></li>
+            <li><a href="#vpaidMode">VPAIDMode</a></li>
+        </ul>
+
+        <h3 id="clickTrackingElement">ClickTrackingElement</h3>
+
+        <p>Tipo: <code translate="No">HTMLElement</code> Valor predeterminado: no definido</p>
+
+        <p>
+            Si la tecnología de anuncios HTML se utiliza en el modo de <a href="https://developers.google.com/web/fundamentals/design-and-ux/input/touch">reproducción de anuncios personalizado</a> , se especifica un elemento HTML alternativo que se utilizará para realizar un seguimiento de los toques publicitarios en dispositivos que no admiten eventos de entrada sobre el elemento de vídeo. Hay más detalles disponibles en la documentación de parámetros para <a href="https://developers.google.com/interactive-media-ads/docs/sdks/html5/v3/reference/js/ima.AdDisplayContainer">IMA ADDisplayContainer</a>. Si proporciona un elemento de seguimiento de clics, es su responsabilidad mostrarlo y ocultarlo en los momentos apropiados en las plataformas apropiadas. En la mayoría de los casos, es mejor dejar esta configuración sin definir y permitir que el complemento y el IMA gestionen la interacción con los anuncios.
+        </p>
+
+        <h3 id="debug">depurar</h3>
+
+        <p>Tipo: <code translate="No">boolean</code> Valor predeterminado: <code translate="No">false</code></p>
+
+        <p>
+            Si debug se establece en true, el marco de anuncios generará información adicional sobre su estado actual durante la reproducción. Esto puede ser útil para diagnosticar problemas o comportamientos inesperados en una integración de anuncios.
+        </p>
+
+        <p>Esta opción forma parte del marco publicitario y se configura de la siguiente manera:</p>
+
+        <pre class="line-numbers">
+<code class="language-javascript" translate="No">player.ima3({
+  debug: true
+});</code></pre>
+
+        <p>La siguiente captura de pantalla muestra la extensa información mostrada activando la depuración.</p>
+
+        <figure class="bcls-figure">
+            <img class="bcls-image" alt="salida de depuración en la consola" src="//learning-services-media.brightcove.com/doc-assets/player-development/advertising/ima3-plugin/console-debug.png"/>
+        </figure>
+
+        <h3 id="debugContribAds">DebugControbads</h3>
+
+        <p>Tipo: <code translate="No">boolean</code> Valor predeterminado: <code translate="No">false</code></p>
+        <p>Se utiliza para habilitar el registro de depuración para videojs-contrib-ads. Para que <code translate="No">oncue</code> las solicitudes ID3 funcionen, la trama ID3 TXXX recibida debe contener datos JSON con los siguientes campos:</p>
+        <ul>
+            <li>Formato de etiqueta de aviso de anuncio:
+                <ul>
+                    <li>name: Requerido - debe ser la cadena <code translate="No">adCue</code>&gt;</li>
+                    <li>id: Necesario: un valor único para identificar el anuncio dado que los tiempos son relativos en las transmisiones en directo</li>
+                    <li>ServerURL: Opcional: invalidar el <code translate="No">serverUrl</code> en la configuración de IMA4 sólo para este anuncio</li>
+                    <li>duración: Opcional: anexado como <code translate="No">breaklength</code> parámetro a la url del servidor</li>
+                </ul>
+                Ejemplo:<code translate="No">{"name": "adCue", "id": 123}</code>
+            </li>
+            <li>Formato de etiqueta de cancelación de anuncio:
+                <ul>
+                    <li>name: Requerido - debe ser el valor de cadena <code translate="No">adCancel</code></li>
+                    <li>id: Necesario: un valor único para identificar la cancelación del anuncio dado que los tiempos son relativos en las transmisiones en directo.</li>
+
+                </ul>
+                Ejemplo:<code translate="No">{"name": "adCancel", "id": 234}</code>
+            </li>
+        </ul>
+
+        <h3 id="disableCustomPlaybackForIOS10Plus">DisableCustomPlaybackForios10Plus</h3>
+
+        <p>Tipo: <code translate="No">boolean</code> Valor predeterminado: <code translate="No">false</code></p>
+
+        <p>
+            Esta propiedad forma parte del <code translate="No">ima3SdkSettings</code> objeto. Actúa como un getter y setter para controlar si deshabilitar la reproducción personalizada en los navegadores iOS 10+. El comportamiento es el siguiente:
+        </p>
+
+        <ul>
+            <li>
+                Si es true, los anuncios se reproducirán en línea si el contenido de vídeo está en línea, lo que habilita los anuncios saltables. Sin embargo, el anuncio permanecerá en línea y no será compatible con la pantalla completa nativa de iOS.
+            </li>
+            <li>Cuando es false, los anuncios se reproducirán en el mismo reproductor que el contenido.</li>
+        </ul>
+
+        <p>Consulte la sección <a href="#skippable-ads">Anuncios saltables de iOS</a> de este documento para obtener un ejemplo del uso de esta configuración.</p>
+
+
+
+        <h3 id="hardTimeouts">HardTimeouts</h3>
+
+        <p>Tipo: <code translate="No">boolean</code> Valor predeterminado: <code translate="No">true</code></p>
+
+        <p>
+            Abandona los anuncios que terminan de cargarse después de haber agotado el tiempo de espera. Esto evitará que los anuncios de pre-oll lentos se interrumpan después de que <code translate="No">timeout</code> haya transcurrido el tiempo y el vídeo de contenido haya comenzado a reproducirse.
+        </p>
+
+        <p>Esta opción forma parte del marco publicitario y se configura de la siguiente manera:</p>
+
+        <pre class="line-numbers">
+<code class="language-javascript" translate="No">player.ima3({
+  hardTimeouts: true
+});</code></pre>
+
+        <p>Si se establece esta opción, <code translate="No">false</code> se producirá un flash de contenido antes de los anuncios.</p>
+
+        <h3 id="ima3SdkSettings">iMA3SDKSettings</h3>
+
+        <p>Tipo: <code translate="No">object</code> Valor predeterminado: no definido</p>
+
+        <p>
+            Si se proporciona, las propiedades de este objeto se utilizan para establecer el <a href="https://developers.google.com/interactive-media-ads/docs/sdks/html5/v3/reference/js/ima.ImaSdkSettings">IMA3SDKSettings</a> de nivel de página cuando el SDK de IMA haya terminado de cargarse. Se espera que las propiedades de este objeto sean el equivalente en mayúsculas camel de los métodos setter en el objeto de configuración del <a href="https://developers.google.com/interactive-media-ads/docs/sdks/html5/v3/reference/js/ima.ImaSdkSettings">SDK</a> , menos el prefijo 'set'. Por ejemplo, si proporcionó este objeto al inicializar el complemento:
+        </p>
+
+        <pre class="line-numbers">
+<code class="language-javascript" translate="No">player.ima3({
+  ima3SdkSettings: {
+    'numRedirects': 3,
+    'ppid': 'publisher-provided-id'
+  }
+}</code></pre>
+
+        <p>Luego, el complemento video.js IMA ejecutaría código que se ve algo como esto cuando IMA se había cargado:</p>
+
+        <pre class="line-numbers">
+<code class="language-javascript" translate="No">window.google.ima.ImaSdkSettings.setNumRedirects(3);
+window.google.ima.ImaSdkSettings.setPpid('publisher-provided-id');</code></pre>
+
+        <h3 id="requestMode">RequestMode</h3>
+
+        <p>Tipo: <code translate="No">string</code> Valor predeterminado: <code translate="No">onload</code></p>
+
+        <p>Esta opción forma parte del marco de anuncios se configura de la siguiente manera:</p>
+
+        <pre class="line-numbers">
+<code class="language-javascript" translate="No">player.ima3({
+  requestMode: 'onplay'
+});</code></pre>
+
+        <p>Hay cuatro valores posibles para esta opción:</p>
+
+        <ul>
+            <li>
+                <code translate="No">onload</code>: Los anuncios se solicitan inmediatamente cuando se carga el reproductor. Normalmente, esta es la mejor experiencia para DFP/VPAID.
+            </li>
+            <li>
+                <code translate="No">onplay</code>: La primera solicitud de anuncio se retrasa hasta que se inicie la reproducción. Esto es importante para las redes publicitarias que consideran que las solicitudes de anuncios se reproducen, por lo que no querrá que una solicitud de anuncio antes que una solicitud de reproducción. Esto hará que los anuncios objeto de tráfico se caigan eventualmente, o el cliente recibirá menos por los anuncios mostrados.
+            </li>
+            <li>
+                <code translate="No">ondemand</code>: Los anuncios solo se reproducirán cuando se inicien utilizando el <code translate="No">player.ima3.adrequest()</code> método manualmente. Este modo no admite anuncios de pre-oll o postroll.
+            </li>
+            <li>
+                <code translate="No">oncue</code>:Esta opción se comporta de manera diferente dependiendo de si se utiliza con la <code translate="No">useMediaCuePoints</code> opción.
+                <h4>Uso de puntos de referencia con Video Cloud</h4>
+
+                <p>
+                    Puede crear puntos de referencia de anuncio para un vídeo en Studio y, a continuación, hacer que se reproduzca un anuncio cuando se activa el punto de referencia. Para obtener más información, consulte el documento <a href="/advertising/displaying-ads-using-ad-cue-points.html">Display Ads Using Ad Cue Points</a> .
+                </p>
+
+                <h4>Usar puntos de referencia en una transmisión en directo</h4>
+
+                <p>
+                    Los anuncios se solicitan en función de los puntos de referencia ID3 en una transmisión en directo. Para que este tipo de solicitud funcione correctamente, la trama ID3 TXXX recibida debe contener datos JSON con los siguientes campos:
+                </p>
+
+                <ul>
+                    <li><code translate="No">name</code>: Requerido; debe ser el valor de cadena <code translate="No">adCue</code></li>
+                    <li><code translate="No">id</code>: Obligatorio; valor único para identificar el anuncio dado que los tiempos son relativos en las transmisiones en directo</li>
+                    <li><code translate="No">serverUrl</code>: Opcional; Se anexa como parámetro de longitud de corte a la url del servidor</li>
+                    <li><code translate="No">duration</code>: Opcional; duración del anuncio</li>
+                </ul>
+
+                <p>Ejemplo:</p>
+
+                <pre class="line-numbers">
+<code class="language-json" translate="No">{"name": "adCue", "id": 123}</code></pre>
+
+                <p>
+                    También puede cancelar puntos de referencia ID3 en una transmisión en vivo creada <code translate="No">adCue</code> por un mediante <code translate="No">adCancel</code>. Se debe utilizar el siguiente formato para el objeto enviado:
+                </p>
+
+                <pre class="line-numbers">
+<code class="language-json" translate="No">{"name": "adCancel", "id": 123}</code></pre>
+
+                <p>Tanto el <code translate="No">name</code> y <code translate="No">id</code> son necesarios.</p>
+
+                <ul>
+                    <li>Las señales de anuncios ID3 en vivo no son compatibles con Android.</li>
+                    <li>Las señales de cancelación de anuncios ID3 en vivo no son compatibles con iOS.</li>
+                </ul>
+            </li>
+        </ul>
+
+        <h3 id="serverUrl">ServerURL</h3>
+
+        <p>Tipo: <code translate="No">string</code> o <code translate="No">function</code></p>
+
+        <p>Valor predeterminado (un anuncio genérico de Google):</p>
+
+        <pre class="line-numbers">
+<code class="language-html" translate="No">//pubads.g.doubleclick.net/gampad/ads?sz=400x300&amp;iu=%2F6062%2Fiab_vast_samples&amp;ciu_szs=300x250%2C728x90&amp;gdfp_req=1&amp;env=vp&amp;output=xml_vast2&amp;unviewed_position_start=1&amp;url=[referrer_url]&amp;correlator=[timestamp]&amp;cust_params=iab_vast_samples%3Dlinear</code></pre>
+
+        <p>
+            A continuación, proporcionará la URL de su servidor de anuncios. Esta opción se puede configurar en Brightcove Studio como se muestra arriba. También puede establecer el valor en código. A continuación se muestran dos ejemplos. (Recuerde que debe <a href="#Testing_the_ad_server">probar la etiqueta de anuncio</a> en su servidor antes de intentar usarla en el complemento).
+        </p>
+
+        <p>Si el valor es una cadena, representa la URL del servidor de anuncios desde donde se solicitan anuncios y se puede establecer en código de la siguiente manera:</p>
+
+        <pre class="line-numbers">
+<code class="language-javascript" translate="No">player.ima3({
+  serverUrl: 'your ad server'
+});</code></pre>
+
+        <p>
+            Si el valor es una función, el parámetro de función es una <code translate="No">callback</code> función que se debe llamar con la URL del servidor como argumento. Esto proporciona soporte para procesos asincrónicos, como pujas por cabecera. En el siguiente ejemplo, verá información del <code translate="No">mediainfo</code> objeto utilizado para determinar qué URL de anuncios se debe utilizar en función de un ID de cuenta:
+        </p>
+
+        <pre class="line-numbers">
+<code class="language-javascript" translate="No">// Initialize IMA plugin
+myPlayer.ima3({
+  serverUrl: function(callback) {
+    if (myPlayer.mediainfo.id === '4034552795001') {
+      callback('https://pubads.g.doubleclick.net/.../url1');
+    } else {
+      callback('https://pubads.g.doubleclick.net/.../url2');
+    }
+  },
+  requestMode: 'onload',
+  debug: true,
+  debugContribAds: true
+});</code></pre>
+
+        <h3 id="showVpaidControls">ShowVpaidControls</h3>
+
+        <p>Tipo: <code translate="No">boolean</code> Valor predeterminado: <code translate="No">false</code></p>
+
+        <p>
+            Se <code translate="No">true</code> configura para mostrar controles personalizados de Brightcove sobre los anuncios VPAID. Es posible que funcionen o no dependiendo de la implementación de VPAID, por lo que Brightcove sugiere probar esta función con sus anuncios antes de activarla en producción.
+        </p>
+
+
+
+        <h3 id="timeout">tiempo de espera</h3>
+
+        <p>Tipo: <code translate="No">number</code> Valor predeterminado: <code translate="No">4000</code></p>
+
+        <p>La cantidad máxima de tiempo, en milisegundos, que se espera a que se reproduzca un anuncio antes de que se salte un salto de anuncio.</p>
+
+        <p>Esta opción forma parte del marco de anuncios se configura de la siguiente manera:</p>
+
+        <pre class="line-numbers">
+<code class="language-javascript" translate="No">player.ima3({
+  timeout: 5000
+});</code></pre>
+
+        <p>
+            En las pruebas internas de Brightcove se encontró que cuatro segundos parecían ser lo suficientemente largos como para acomodar la inicialización lenta en la mayoría de los casos, pero aún así lo suficientemente cortos como para que las fallas al inicializar no parecieran fallas del reproductor o del vídeo de contenido.
+        </p>
+
+        <aside class="bcls-aside bcls-aside--tip">
+            Nota: Si establece el tiempo de espera tanto en Studio como en la configuración del plugin en la página HTML usando JavaScript, la configuración de JavaScript tendrá prioridad.
+        </aside>
+
+        <h3 id="useMediaCuePoints">UseMediacuePoints</h3>
+
+        <p>Tipo: <code translate="No">boolean</code> Valor predeterminado: <code translate="No">false</code></p>
+
+        <p>Habilita el uso de <strong translate="No">ad</strong> puntos de referencia (tal como se definen en Studio) para activar un anuncio para que se reproduzca.</p>
+
+        <p>Para que los puntos de referencia de anuncios de Video Cloud se utilicen para activar anuncios, se requiere lo siguiente en la configuración del complemento:</p>
+
+        <ul>
+            <li><code translate="No">useMediaCuePoints</code>: true</li>
+            <li><code translate="No">requestMode</code>: La cadena <code translate="No">oncue</code></li>
+            <li><code translate="No">serverUrl</code>: Debe apuntar a un anuncio VAST válido</li>
+        </ul>
+
+        <p>
+            Si utiliza Studio para configurar la publicidad, cuando seleccione <strong>En el punto de referencia</strong> la <code translate="No">useMediaCuePoints</code> y <code translate="No">requestMode</code> las opciones se establecerán correctamente para usted.
+        </p>
+
+        <h3 id="vpaidMode">VPAIDMode</h3>
+
+        <p>Tipo: <code translate="No">string</code> Valor predeterminado: <code translate="No">ENABLED</code></p>
+
+        <p>Especifique el modo VPAID 2 en el SDK HTML5 de IMA.</p>
+
+        <p>Hay tres valores posibles para esta opción:</p>
+
+        <ul>
+            <li><code translate="No">ENABLED</code>: Reproducir anuncios VPAID en un iframe con un dominio diferente.</li>
+            <li><code translate="No">INSECURE</code>: Reproduce anuncios VPAID en un iframe con el mismo dominio.</li>
+            <li><code translate="No">DISABLED</code>: Los anuncios de VPAID generan un error.</li>
+        </ul>
+
+        <p>Esta opción se configura de la siguiente manera:</p>
+
+        <pre class="line-numbers">
+<code class="language-javascript" translate="No">player.ima3({
+  vpaidMode: 'DISABLED'
+});</code></pre>
+    </section>
+
+    <section class="bcls-section">
+        <h2 id="Properties">Propiedades</h2>
+        <p>Solo existe una propiedad para el complemento:</p>
+        <ul>
+            <li>html5: Esta es la única tecnología publicitaria que se puede cargar cuando se inicializa el plugin.</li>
+        </ul>
+    </section>
+
+    <section class="bcls-section">
+        <h2 id="Ad_macros_and_the_serverUrl">Macros de anuncios y ServerURL</h2>
+
+        <p>
+            Existen macros de anuncios disponibles para facilitar el trabajo al crear la URL del servidor de anuncios. Estas macros le permiten utilizar variables en la URL del servidor para las que el complemento IMA4 sustituirá los valores apropiados. Por ejemplo, la siguiente URL del servidor contiene algunas de las variables:
+        </p>
+
+        <pre class="line-numbers">
+<code class="language-json" translate="No">{"serverUrl": "//myadserver.com/ad?video={mediainfo.id}&amp;duration={player.duration}"}</code></pre>
+
+        <p>Los complementos IMA4 sustituirían los valores apropiados, y la URL del servidor realmente utilizada aparecería de la siguiente manera:</p>
+
+        <pre class="line-numbers">
+<code class="language-json" translate="No">{"serverUrl": "//myadserver.com/ad?video=12340001&amp;duration=60"}</code></pre>
+
+        <p>La siguiente es la lista completa de variables para las que se utilizarán valores sustituidos:</p>
+
+        <table class="bcls-table">
+            <thead class="bcls-table__head">
+                <tr>
+                    <th style="width: 30%;">Macro</th>
+                    <th style="width: 60%;">Descripción</th>
+                </tr>
+            </thead>
+            <tbody class="bcls-table__body">
+                <tr>
+                    <td>{document.referrer}</td>
+                    <td>URL de página de referencia</td>
+                </tr>
+                <tr>
+                    <td>{mediainfo.ad_keys}</td>
+                    <td>
+                        Cadena de texto de formulario libre que se puede agregar y editar en el módulo Media de Studio; debe usar el parámetro de consulta en el formulario
+                        <pre class="line-numbers">
+<code class="language-javascript" translate="No">cust_params={mediainfo.ad_keys}</code></pre>
+                    </td>
+                </tr>
+                <tr>
+                    <td>{mediainfo.description}</td>
+                    <td>Descripción corta (250 chars max)</td>
+                </tr>
+                <tr>
+                    <td>{mediainfo.duration}</td>
+                    <td>Duración del vídeo según lo informado por Video Cloud</td>
+                </tr>
+                <tr>
+                    <td>{mediainfo.id}</td>
+                    <td>Id. del vídeo</td>
+                </tr>
+                <tr>
+                    <td>{mediainfo.name}</td>
+                    <td>Título del vídeo</td>
+                </tr>
+                <tr>
+                    <td>{mediainfo.reference_id}</td>
+                    <td>Identificador de referencia</td>
+                </tr>
+                <tr>
+                    <td>{mediainfo.tags}</td>
+                    <td>Etiquetas (metadatos) asociadas al vídeo</td>
+                </tr>
+                <tr>
+                    <td>{player.duration}</td>
+                    <td>
+                        Duración del vídeo medido por el reproductor (posiblemente ligeramente diferente de <code translate="No">mediainfo.duration</code> y probablemente más preciso). Tenga en cuenta que esto devuelve 0 si el vídeo no está cargado. Tenga cuidado de sincronización de su solicitud de anuncio con esta macro.
+                    </td>
+                </tr>
+                <tr>
+                    <td>{player.height}</td>
+                    <td>La altura actual del jugador</td>
+                </tr>
+                <tr>
+                    <td>{player.id}</td>
+                    <td>Identificador del reproductor</td>
+                </tr>
+                <tr>
+                    <td>{Player.PageURL}</td>
+                    <td>La URL de la página: Devuelve el referrer del documento si está en un iframe, de lo contrario, la ubicación de la ventana.</td>
+                </tr>
+                <tr>
+                    <td>{player.width}</td>
+                    <td>Ancho del reproductor actual</td>
+                </tr>
+                <tr>
+                    <td>{playlist.id}</td>
+                    <td>Extraído del objeto playlistinfo</td>
+                </tr>
+                <tr>
+                    <td>{playlist.name}</td>
+                    <td>Extraído del objeto playlistinfo</td>
+                </tr>
+                <tr>
+                    <td>{aleatorio}</td>
+                    <td>
+                        Un número aleatorio 0-1 billón (Se utiliza para crear una impresión única. Esto evita que el anuncio se almacene en caché en el navegador y evita discrepancias de impresión.)
+                    </td>
+                </tr>
+                <tr>
+                    <td>{marca de tiempo}</td>
+                    <td>Hora local actual en milisegundos desde 1/1/70</td>
+                </tr>
+                <tr>
+                    <td>{window.location.href}</td>
+                    <td>URL de página actual</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <aside class="bcls-aside bcls-aside--tip">
+            NOTA: Cuando recupere la URL principal de un reproductor iframe o una experiencia In-Page de la Gallery, <code translate="No">window.location.href</code> se recomienda utilizar. La razón de esto es que las experiencias de In-Page utilizando el código de inserción estándar construyen un iframe dinámicamente en tiempo de ejecución para evitar problemas de estilo y scripting. Dado que el iframe se genera a través de JavaScript, toma la misma <code class="notransalate">window.location</code> de la página principal y sigue la política del mismo origen. Desafortunadamente, los navegadores tratan <code class="notransalate">document.referrer</code> de manera diferente para estos iframes generados. Chrome, Safari y Opera establecen <code class="notransalate">document.referrer</code> en la <code class="notransalate">window.location</code> de la página principal, pero solo en http (no https). Firefox sigue las especificaciones correctamente y establece <code class="notransalate">document.referrer</code> al referrer de la página principal. Todos los navegadores configuran correctamente <code class="notransalate">document.referrer</code> al referrer de la página principal en https.
+        </aside>
+
+        <h4>Valores predeterminados y macros de anuncios</h4>
+
+        <p>
+            Puede proporcionar valores predeterminados a las macros de anuncios. Se puede proporcionar un valor predeterminado dentro de una macro, en cuyo caso este valor se utilizará cuando una variable no esté definida. La sintaxis es:
+        </p>
+
+        <pre class="line-numbers">
+<code class="language-javascript" translate="No">{macro=default}</code></pre>
+
+        <p>Por ejemplo,</p>
+
+        <pre class="line-numbers">
+<code class="language-javascript" translate="No">http://example.com/ad/{pageVariable.adConf=1234}</code></pre>
+
+        <p>resolvería lo siguiente si no está definido:<code translate="No">window.adConf</code></p>
+
+        <pre class="line-numbers">
+<code class="language-javascript" translate="No">http://example.com/ad/1234</code></pre>
+    </section>
+
+    <section class="bcls-section">
+        <h2 id="Dynamic_macros">Macros dinámicos</h2>
+
+        <p>Las macros dinámicas proporcionan acceso a los valores siguientes:</p>
+
+        <ul>
+            <li>El <code translate="No">customFields</code> objeto del vídeo a través de la <code translate="No">mediainfo.customFields</code> variable.</li>
+            <li>El <code translate="No">window</code> objeto del DOM a través de la <code translate="No">pageVariable</code> variable.</li>
+        </ul>
+
+        <p>Por ejemplo, puede utilizar lo siguiente en su solicitud de anuncio:</p>
+
+        <pre class="line-numbers">
+<code class="language-html" translate="No">//myadserver.com/ad?l={<span class="bcls-highlight">pageVariable.navigator.language</span>}&amp;category={<span class="bcls-highlight">mediainfo.customFields.type</span>}</code></pre>
+
+        <p>Para los <code translate="No">pageVariable</code> valores, sólo se permiten ciertos tipos de valores, como se muestra en esta tabla:</p>
+
+        <table class="bcls-table">
+            <thead class="bcls-table__head">
+                <tr>
+                    <th>Tipo</th>
+                    <th>Qué Sucede</th>
+                </tr>
+            </thead>
+            <tbody class="bcls-table__body">
+                <tr>
+                    <td>Cadena</td>
+                    <td>Usar sin cambios</td>
+                </tr>
+                <tr>
+                    <td>Número</td>
+                    <td>Convertido en cadena automáticamente</td>
+                </tr>
+                <tr>
+                    <td>Booleano</td>
+                    <td>Convertido en cadena automáticamente</td>
+                </tr>
+                <tr>
+                    <td>Nulo</td>
+                    <td>Devuelve la cadena <strong translate="No">null</strong></td>
+                </tr>
+                <tr>
+                    <td>Indefinido</td>
+                    <td>Registra la advertencia y devuelve una cadena vacía</td>
+                </tr>
+                <tr>
+                    <td>Otro</td>
+                    <td>Registra la advertencia y devuelve una cadena vacía</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <section class="bcls-section">
+        <h2 id="Custom_ad_macros">Macros de anuncios personalizados</h2>
+
+        <p>
+            Aunque la <strong translate="No">Dynamic macros</strong> técnica descrita anteriormente es el método preferido para acceder a información específica a través de macros, es posible que haya definido valores personalizados que utiliza al solicitar anuncios de su servidor de anuncios a los que no puede acceder mediante macros dinámicos. En este caso, puede utilizar sus valores anulando el <code translate="No">adMacroReplacement()</code> método. Al anular este método, le permite pasar sus valores especializados para la solicitud de anuncio.
+        </p>
+
+        <p>
+            El siguiente es un ejemplo de anular el <code translate="No">adMacroReplacement()</code> método. En este ejemplo, los valores personalizados se definen como parte del DOM de la página, lo que permite personalizar las solicitudes de anuncios por página. En este ejemplo, <code translate="No">mySite.category</code> es la ubicación donde se almacena la información de solicitud de anuncio.
+        </p>
+
+        <pre class="line-numbers">
+<code class="language-javascript" translate="No">brightcovePlayer.ima3.adMacroReplacement = function (url) {
+  <span class="bcls-highlight">  var parameters = {
+    '{category}': mySite.category
+  };</span>
+  for (var i in parameters) {
+    url = url.split(i).join(encodeURIComponent(parameters[i]));
+  }
+  return url;
+}</code></pre>
+
+        <p>Usar valores específicos ayudará a aclarar exactamente lo que está sucediendo. Supongamos que la URL de solicitud al servidor de anuncios es la siguiente:</p>
+
+        <pre class="line-numbers">
+<code class="language-html" translate="No">//myadserver.com/myads?adWord={category}</code></pre>
+
+        <p>
+            Y supongamos que el valor asignado dinámicamente <code translate="No">mySite.category</code> en la página es la cadena <strong translate="No">fishing-pole</strong>. Después de que se llame a la versión del <code translate="No">adMacroReplacement()</code> método, la URL de solicitud de anuncio aparecerá como:
+        </p>
+
+        <pre class="line-numbers">
+<code class="language-html" translate="No">//myadserver.com/myads?adWord=fishing-pole</code></pre>
+
+        <p>
+            En resumen, al anular el <code translate="No">adMacroReplacement()</code> método, permite utilizar valores personalizados como macros de anuncios y asignar dinámicamente valores a la solicitud de anuncio URL.
+        </p>
+    </section>
+
+    <section class="bcls-section">
+        <h2 id="Methods">Métodos</h2>
+
+        <p>
+            Cuando necesite interactuar con el SDK de IMA, debe esperar a que se distribuya el <code translate="No">ima3-ready</code> evento antes de que se pueda utilizar correctamente el SDK. Esto incluye los dos métodos siguientes.
+        </p>
+
+        <h3>player.ima3.adrequest ()</h3>
+
+        <p>
+            Al llamar a este método se creará una solicitud de anuncio bajo demanda inmediatamente después de recibir una respuesta al anuncio. Al invocar este método se crea un nuevo IMA ADManager, lo que significa que se perderá cualquier información de respuesta de anuncio anterior (por ejemplo, un anuncio de postroll devuelto en una respuesta VAST anterior). Brightcove recomienda que utilice este método únicamente en los casos en que no se conozca el conocimiento inicial de los tiempos de anuncio o se realicen todas las llamadas de anuncios bajo demanda. En todos los demás casos, tiene sentido poner todos los datos del anuncio en la llamada inicial de VAST en la inicialización del complemento.
+        </p>
+
+        <p>Los siguientes son dos puntos importantes a tener en cuenta al usar <code translate="No">player.ima3.adrequest( )</code>:</p>
+
+        <ul>
+            <li>El método es para uso únicamente con el modo de <strong translate="No">ondemand</strong> solicitud.</li>
+            <li>El método no se recomienda para las versiones preliminares, ya que el contenido se reproducirá antes de que finalice la solicitud de anuncio, lo que dará como resultado un flash de contenido.</li>
+        </ul>
+
+        <h5>Parámetros</h5>
+
+        <ul>
+            <li>
+                <strong translate="No">adRequestUrl</strong> <code translate="No">String</code> Ruta a una etiqueta de anuncio VAST. Puede y debe pasar URL relativas. Este parámetro es opcional y el configurado <code translate="No">serverUrl</code> se utiliza si no se pasa ningún parámetro.
+            </li>
+        </ul>
+
+        <h5>Devoluciones:</h5>
+
+        <ul>
+            <li>Nada</li>
+        </ul>
+
+        <p>Ejemplo</p>
+
+        <pre class="line-numbers">
+<code class="language-javascript" translate="No">player.ima3.adrequest('//pubads.g.doubleclick.net/gampad/ads?sz=640x360&amp;iu=/6062/iab_vast_samples/skippable&amp;ciu_szs=300x250,728x90&amp;impl=s&amp;gdfp_req=1&amp;env=vp&amp;output=xml_vast2&amp;unviewed_position_start=1&amp;url=[referrer_url]&amp;correlator=[timestamp]');</code></pre>
+
+        <h3>Player.IMA3.setAdsRenderingSettings ()</h3>
+
+        <p>Este método le permite establecer la configuración de representación de anuncios para el SDK de IMA para HTML5.</p>
+
+        <p>
+            Si todavía no existe el Administrador de anuncios, este método guarda la configuración y, cuando se crea un Administrador de anuncios, utiliza la configuración que proporcionó. Si ya existe un Administrador de anuncios, se actualiza para usar la configuración. En cualquier caso, cualquier nuevo gestor de anuncios creado en el futuro también utilizará la configuración más reciente que haya proporcionado. Puede crear un <code translate="No">AdsRenderingSettings</code> objeto accediendo directamente al SDK de IMA. <a href="https://developers.google.com/interactive-media-ads/docs/sdks/android/v3/api/reference/com/google/ads/interactivemedia/v3/api/AdsRenderingSettings">Hay una variedad de configuraciones disponibles.</a>
+        </p>
+
+        <h5>Parámetros</h5>
+
+        <ul>
+            <li><strong translate="No">google.ima.AdsRenderingSettings</strong> objeto</li>
+        </ul>
+
+        <h5>Devoluciones:</h5>
+
+        <ul>
+            <li>Nada</li>
+        </ul>
+
+        <p>Ejemplo:</p>
+
+        <pre class="line-numbers">
+<code class="language-javascript" translate="No">var adsRenderingSettings = new google.ima.AdsRenderingSettings();
+adsRenderingSettings.bitrate = 2500;
+adsRenderingSettings.enablePreloading = true;
+player.ima3.setAdsRenderingSettings(adsRenderingSettings);</code></pre>
+    </section>
+
+    <section class="bcls-section">
+        <h2 id="Googles_AdsManager">Administrador de AdsManager de Google</h2>
+
+        <p>
+            Hay métodos y propiedades disponibles en la interfaz Google.ima.adsManager de Google.<a href="https://developers.google.com/interactive-media-ads/docs/sdks/html5/v3/reference/js/ima.AdsManager"></a> Puede utilizar las propiedades/métodos de la interfaz que recuperan información. No se recomienda utilizar los métodos que realizan acciones, como <code translate="No">destroy</code>, <code translate="No">setAutoPlayAdBreaks</code> y <code translate="No">stop</code>. Por ejemplo, un método que puede usar se muestra aquí:
+        </p>
+
+        <h3>AdsManager.getRemainingTime</h3>
+
+        <p>Tipo:<code translate="No">google.ima.AdsManager.getRemainingTime</code></p>
+
+        <p>Uso: <code translate="No">myPlayer.ima3.adsManager.getRemainingTime()</code></p>
+
+        <p>
+            Al llamar a este método, se devuelve la cantidad de tiempo restante para el anuncio actual. Si un anuncio no está disponible o ha terminado de reproducirse, devuelve -1. Para obtener más información, consulte la <a href="https://developers.google.com/interactive-media-ads/docs/sdks/html5/v3/reference/js/ima.AdsManager#getRemainingTime">documentación</a> de Google sobre el método.
+        </p>
+    </section>
+
+    <section class="bcls-section">
+        <h2 id="Accessing_the_IMA_SDK_directly">Acceder al SDK de IMA directamente</h2>
+
+        <p>Una serie de ajustes de IMA están disponibles en el objeto plugin en tiempo de ejecución. Por ejemplo, para determinar el ID de anuncio que utilizarías:</p>
+
+        <pre class="line-numbers">
+<code class="language-javascript" translate="No">var adId = player.ima3.currentAd.getAdId();</code></pre>
+
+        <p>
+            Tenga cuidado de interactuar directamente con estas propiedades. Llamar al método incorrecto puede dar lugar a resultados inesperados y a que los anuncios no se jueguen correctamente.
+        </p>
+
+        <h3>AdSloader</h3>
+
+        <p>Tipo:<code translate="No">google.ima.AdsLoader</code></p>
+
+        <p>
+            Objeto utilizado para crear solicitudes de anuncios. Véase <a href="https://developers.google.com/interactive-media-ads/docs/sdks/html5/v3/reference/js#ima.AdsManager">IMA.AdSloader</a>. Es posible que el cargador de anuncios no esté disponible hasta que <code translate="No">adsready</code> haya sido disparado por el plugin.
+        </p>
+
+        <h3>Administrador de ADSs</h3>
+
+        <p>Tipo:<code translate="No">google.ima.AdsManager</code></p>
+
+        <p>
+            El objeto responsable de la reproducción de anuncios. Consulte <a href="https://developers.google.com/interactive-media-ads/docs/sdks/html5/v3/reference/js#ima.AdsManager">IMA.adsManager</a>. El Administrador de anuncios no está disponible hasta que <code translate="No">adsready</code> haya sido activado por el complemento.
+        </p>
+
+        <h3>AdDisplayContainer</h3>
+
+        <p>Tipo:<code translate="No">google.ima.AdDisplayContainer</code></p>
+
+        <p>
+            Objeto responsable de administrar los elementos de visualización de los anuncios. Consulte <a href="https://developers.google.com/interactive-media-ads/docs/sdks/html5/v3/reference/js#ima.AdDisplayContainer">IMA.ADDisplayContainer</a>. Es posible que el contenedor de Display de anuncios no esté disponible hasta que <code translate="No">adsready</code> haya sido activado por el complemento.
+        </p>
+
+        <h3>Actual</h3>
+
+        <p>Tipo:<code translate="No">google.ima.Ad</code></p>
+
+        <p>
+            Cuando se reproduce un anuncio, objeto que encapsula información sobre el anuncio actual. Véase <a href="https://developers.google.com/interactive-media-ads/docs/sdks/html5/v3/reference/js#ima.Ad">IMA.ad</a>.
+        </p>
+    </section>
+
+    <section class="bcls-section">
+        <h2 id="Events">Eventos</h2>
+
+        <p>
+            El complemento emite algunos tipos de eventos personalizados durante la carga, inicialización y reproducción. Puede escuchar eventos IMA4 y marco publicitario como lo haría con cualquier otro evento:
+        </p>
+
+        <pre class="line-numbers">
+<code class="language-javascript" translate="No">player.on('ima3error', function(event) {
+  console.log('event', event);
+});</code></pre>
+
+        <table class="bcls-table">
+            <thead class="bcls-table__head">
+                <tr>
+                    <th style="width: 35%;">Evento</th>
+                    <th style="width: 65%;">Se envía cuando:</th>
+                </tr>
+            </thead>
+            <tbody class="bcls-table__body">
+                <tr>
+                    <td>listo para ima3</td>
+                    <td>El código del complemento ima3 se ha cargado y está listo para cargar el SDK de IMA.</td>
+                </tr>
+                <tr>
+                    <td>ima3error</td>
+                    <td>Se produjo un error al cargar el SDK IMA4 desde Google. Si se produce, no se mostrarán anuncios.</td>
+                </tr>
+                <tr>
+                    <td>ima3-ad-error</td>
+                    <td>
+                        Se ha producido un error en el SDK de IMA4. Debe verificar la configuración y la configuración del anuncio para asegurarse de que su cuenta de DoubleClick está correctamente configurada. Puede encontrar tareas comunes de solución de problemas en el <a href="https://support.google.com/dfp_premium/">sitio de soporte de DoubleClick</a> o hablar con su representante de cuenta de DoubleClick.
+                    </td>
+                </tr>
+                <tr>
+                    <td>solicitud de anuncios</td>
+                    <td>A petición de datos publicitarios.</td>
+                </tr>
+                <tr>
+                    <td>carga de anuncios</td>
+                    <td>Cuando los datos del anuncio estén disponibles tras una solicitud de anuncio.</td>
+                </tr>
+                <tr>
+                    <td>ads-ad-iniciado</td>
+                    <td>Ha empezado a reproducirse un anuncio.</td>
+                </tr>
+                <tr>
+                    <td>ads-ad-finalizado</td>
+                    <td>Un anuncio ha terminado de reproducirse.</td>
+                </tr>
+                <tr>
+                    <td>pausa de anuncios</td>
+                    <td>Un anuncio está en pausa.</td>
+                </tr>
+                <tr>
+                    <td>anuncios de reproducción</td>
+                    <td>Un anuncio se reanuda a partir de una pausa.</td>
+                </tr>
+                <tr>
+                    <td>ads-ad-omitido</td>
+                    <td>Se omite un anuncio.</td>
+                </tr>
+                <tr>
+                    <td>ads-primer cuartil</td>
+                    <td>El anuncio ha reproducido el 25% de su duración total.</td>
+                </tr>
+                <tr>
+                    <td>punto medio de anuncios</td>
+                    <td>El anuncio ha reproducido el 50% de su duración total.</td>
+                </tr>
+                <tr>
+                    <td>ads-tercer cuartil</td>
+                    <td>El anuncio ha reproducido el 75% de su duración total.</td>
+                </tr>
+                <tr>
+                    <td>anuncios y clic</td>
+                    <td>Un espectador hizo clic en el anuncio de reproducción.</td>
+                </tr>
+                <tr>
+                    <td>ads-volumechange</td>
+                    <td>Se ha cambiado el volumen del anuncio de reproducción.</td>
+                </tr>
+                <tr>
+                    <td>ads-pod-iniciada</td>
+                    <td>Ha comenzado el primer anuncio de un pod de anuncios lineal (un grupo secuenciado de anuncios).</td>
+                </tr>
+                <tr>
+                    <td>ads-pod-finalizado</td>
+                    <td>El último anuncio de un pod de anuncios lineal (un grupo secuenciado de anuncios) ha finalizado.</td>
+                </tr>
+                <tr>
+                    <td>ads-allpods-completado</td>
+                    <td>Todos los anuncios lineales han terminado de reproducirse.</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3 id="Re-dispatched_events">Eventos con <code translate="No">ima3-</code> prefijos redistribuidos</h3>
+
+        <p>
+            Cuando el plugin IMA4 se utiliza en modo HTML <strong translate="No">AdErrorEvents</strong>, todos, <strong translate="No">AdEvents</strong> y <strong translate="No">AdsManagerLoadedEvents</strong> se vuelven a enviar al reproductor. Cuando los eventos se redistribuyen, se les prefiere <code translate="No">ima3-</code>. En la tabla siguiente se muestran los eventos redistribuido:
+        </p>
+
+        <table class="bcls-table">
+            <thead class="bcls-table__head">
+                <tr>
+                    <th>Evento redistribuido</th>
+                </tr>
+            </thead>
+            <tbody class="bcls-table__body">
+                <tr>
+                    <td>ima3-ad-error</td>
+                </tr>
+                <tr>
+                    <td>ima3-ads-manager cargado</td>
+                </tr>
+                <tr>
+                    <td>ima3-todo-ads-completado</td>
+                </tr>
+                <tr>
+                    <td>ima3-click</td>
+                </tr>
+                <tr>
+                    <td>ima3-completo</td>
+                </tr>
+                <tr>
+                    <td>ima3-contenido-pausa solicitada</td>
+                </tr>
+                <tr>
+                    <td>ima3-primer cuartil</td>
+                </tr>
+                <tr>
+                    <td>ima3-hardtimeout</td>
+                </tr>
+                <tr>
+                    <td>cargada con ima3</td>
+                </tr>
+                <tr>
+                    <td>ima3-punto medio</td>
+                </tr>
+                <tr>
+                    <td>ima3-pausado</td>
+                </tr>
+                <tr>
+                    <td>listo para ima3</td>
+                </tr>
+                <tr>
+                    <td>ima3-reanudado</td>
+                </tr>
+                <tr>
+                    <td>Ima3 iniciado</td>
+                </tr>
+                <tr>
+                    <td>ima3-tercer cuartil</td>
+                </tr>
+                <tr>
+                    <td>Ima3-volumen-cambiado</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <section class="bcls-section">
+        <h2 id="Live_video_and_IMA3">Vídeo en directo e IMA4</h2>
+
+        <p>
+            Si está utilizando la versión 3.1.0+ del plugin IMA4, puede usar pre-roll con un evento en vivo. El pre-roll se reproducirá cuando cada espectador comience a ver el evento en vivo, no la única vez que comienza el evento en vivo. Al configurar el evento en el módulo Live, como se muestra en el documento <a href="https://live.support.brightcove.com/live-module/creating-and-managing-live-events-using-live-module.html">Crear y administrar eventos en vivo mediante el módulo Live</a> , se le pedirá que seleccione un reproductor. Desea configurar la publicidad para el reproductor que seleccione, como se muestra en el <a href="/advertising/step-step-implementing-advertising.html">paso a paso: Implementación del documento de publicidad</a> .
+        </p>
+
+        <p>Tenga en cuenta los siguientes detalles de la implementación:</p>
+
+        <ul>
+            <li>Sólo los pre-rollos jugarán. Los rollos medios y postrollos no son compatibles.</li>
+            <li>
+                El <strong translate="No">Request Ads</strong> tipo debe ser <strong translate="No">On load</strong> o <strong translate="No">On play</strong>.
+            </li>
+            <li>Debe estar usando la versión <strong translate="No">3.1.0 or later</strong> del complemento IMA4, como se mencionó anteriormente.</li>
+        </ul>
+    </section>
+
+    <section class="bcls-section">
+        <h2 id="Player_Ad_Libraries">Bibliotecas de anuncios del reproductor</h2>
+
+        <p>
+            El repositorio de videojs/videojs-contrib-ads GitHub contiene un complemento que proporciona la funcionalidad común necesaria para las bibliotecas de anuncios de vídeo que trabajan con Brightcove Player.<a href="https://github.com/videojs/videojs-contrib-ads"></a> El complemento proporciona la funcionalidad común necesaria para las integraciones de anuncios de vídeo y se ocupa de una serie de problemas para los integradores de anuncios, lo que reduce el código que debe escribir para la integración de anuncios. El plugin está completamente documentado, con una <a href="https://github.com/videojs/videojs-contrib-ads/blob/main/docs/index.md">página de índice</a> como el mejor punto de partida.
+        </p>
+
+        <p>
+            Hay métodos, eventos y propiedades disponibles para su uso desde el plugin. Los detalles completos se proporcionan en la <a href="https://github.com/videojs/videojs-contrib-ads/blob/main/docs/integrator/api.md">referencia de la API de videojs-contrib-ads</a>. Aquí se ofrece un muestreo de las herramientas disponibles, empezando por los métodos:
+        </p>
+
+        <table class="bcls-table">
+            <thead class="bcls-table__head">
+                <tr>
+                    <th>Método</th>
+                    <th>Descripción</th>
+                </tr>
+            </thead>
+            <tbody class="bcls-table__body">
+                <tr>
+                    <td>iSinadMode ()</td>
+                    <td>Devuelve <code translate="No">true</code> si el reproductor está en modo anuncio.</td>
+                </tr>
+                <tr>
+                    <td>IsWaitingForadBreak ()</td>
+                    <td>Este método regresa <code translate="No">true</code> durante el modo de anuncio si aún no se ha iniciado un salto de anuncio.</td>
+                </tr>
+                <tr>
+                    <td>isContentResuming ()</td>
+                    <td>Este método regresa <code translate="No">true</code> durante el modo anuncio después de que haya finalizado un salto de anuncio, pero antes de que el contenido se reanude la reproducción.</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p>El plugin también distribuye numerosos eventos, algunos se enumeran aquí:</p>
+
+        <table class="bcls-table">
+            <thead class="bcls-table__head">
+                <tr>
+                    <th>Evento</th>
+                    <th>Descripción</th>
+                </tr>
+            </thead>
+            <tbody class="bcls-table__body">
+                <tr>
+                    <td>adstart</td>
+                    <td>Disparado directamente como consecuencia de la llamada <code translate="No">startLinearAdMode()</code>.</td>
+                </tr>
+                <tr>
+                    <td>adend</td>
+                    <td>disparado directamente como consecuencia de la llamada <code translate="No">endLinearAdMode()</code>.</td>
+                </tr>
+                <tr>
+                    <td>readyforpreroll</td>
+                    <td>Indica que el complemento de anuncios puede iniciar un salto de anuncio previo a la carga llamando <code translate="No">startLinearAdMode()</code>.</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p>El plugin también proporciona numerosas propiedades, algunas se enumeran aquí:</p>
+
+        <table class="bcls-table">
+            <thead class="bcls-table__head">
+                <tr>
+                    <th>Nombre</th>
+                    <th>Tipo de datos</th>
+                    <th>Descripción</th>
+                </tr>
+            </thead>
+            <tbody class="bcls-table__body">
+                <tr>
+                    <td>ads.ad.id</td>
+                    <td>Cadena</td>
+                    <td>Identificador único de un anuncio que se reproduce</td>
+                </tr>
+                <tr>
+                    <td>ads.ad.index</td>
+                    <td>Número</td>
+                    <td>Índice del anuncio que se reproduce en un momento especificado; el índice identificaría el valor ordinal de un anuncio en un pod de anuncios</td>
+                </tr>
+                <tr>
+                    <td>ads.ad.duration</td>
+                    <td>Número</td>
+                    <td>Duración del anuncio en segundos</td>
+                </tr>
+                <tr>
+                    <td>ads.ad.type</td>
+                    <td>Cadena</td>
+                    <td>
+                        O bien <strong translate="No">PREROLL</strong>, <strong translate="No">MIDROLL</strong> o <strong translate="No">POSTROLL</strong>
+                    </td>
+                </tr>
+                <!-- <tr>
+      <td>ads.ad.currentTime</td>
+      <td>function</td>
+      <td>A function that returns the current time of ad playback</td>
+      </tr> -->
+            </tbody>
+        </table>
+
+        <p>El código siguiente muestra el uso de las propiedades:</p>
+
+        <pre class="line-numbers">
+<code class="language-javascript" translate="No">var myPlayer,
+  player = bc('myPlayerID');
+player.ima3({
+  serverUrl: '//solutions.brightcove.com/bcls/brightcove-player/vmap/simple-vmap.xml'
+});
+player.ready(function () {
+  myPlayer = this;
+  myPlayer.on('ads-ad-started', function (evt) {
+    console.log('ads-ad-started event passed to event handler', evt);
+    console.log('myPlayer.ads.ad.id', myPlayer.ads.ad.id);
+    console.log('myPlayer.ads.ad.index', myPlayer.ads.ad.index);
+    console.log('myPlayer.ads.ad.duration', myPlayer.ads.ad.duration);
+    console.log('myPlayer.ads.ad.type', myPlayer.ads.ad.type);
+  });
+});</code></pre>
+
+        <p>La salida en la consola del código anterior se muestra aquí:</p>
+
+        <figure class="bcls-figure">
+            <img class="bcls-image" alt="consola de propiedades de contrib-ads" src="//learning-services-media.brightcove.com/doc-assets/player-development/advertising/ima3-plugin/contrib-ads-properties.png"/>
+        </figure>
+    </section>
+    <!-- <section class="bcls-section">
+      <h2 id="Ad_network_flow">Ad network flow</h2>
+      <p>For those wishing to see a bit more "under the hood", a browser's development tools Network tab can reveal interesting details about the key files being downloaded as part of the ad process.</p>
+      <p>In this example using the IMA3 plugin, you first see the plugin's SWF version being downloaded. Note that the screenshots are from a desktop, so the browser is getting the Flash version of the plugin.</p>
+      <figure class="bcls-figure"><img class="bcls-image" alt="network flow SWF" src="//learning-services-media.brightcove.com/doc-assets/player-development/advertising/ima3-plugin/ads-learning-guide-network-plugin-swf.png" /></figure>
+      <p>The next ads related file to download is the VMAP document.</p>
+      <figure class="bcls-figure"><img class="bcls-image" alt="network flow VMAP" src="//learning-services-media.brightcove.com/doc-assets/player-development/advertising/ima3-plugin/ads-learning-guide-network-vmap.png" /></figure>
+      <p>Last to load is a VAST document for a particular ad.</p>
+      <figure class="bcls-figure"><img class="bcls-image" alt="nework flow VAST" src="//learning-services-media.brightcove.com/doc-assets/player-development/advertising/ima3-plugin/ads-learning-guide-network-vast.png" /></figure>
+      </section> -->
+
+    <section class="bcls-section">
+        <h2 id="Implement_using_code">Implementar usando código</h2>
+
+        <p>
+            Para implementar el complemento IMA4, el jugador necesita conocer la ubicación del código del plugin, una hoja de estilo, el nombre del plugin y las opciones de configuración del plugin. La ubicación del código del complemento y la hoja de estilo son los siguientes:
+        </p>
+
+        <pre class="line-numbers">
+<code class="language-html" translate="No">https://players.brightcove.net/videojs-ima3/3/videojs.ima3.min.js</code></pre>
+
+        <pre class="line-numbers">
+<code class="language-html" translate="No">https://players.brightcove.net/videojs-ima3/3/videojs.ima3.min.css</code></pre>
+
+        <p>El nombre del plugin es, y un conjunto de opciones de ejemplo es:<code translate="No">ima3</code></p>
+
+        <pre class="line-numbers">
+<code class="language-json" translate="No">{
+  "serverUrl": "//pubads.g.doubleclick.net/gampad/ads?sz=400x300&amp;iu=%2F6062...",
+  "timeout": 5000
+}</code></pre>
+
+        <p>En el siguiente ejemplo se utiliza la implementación Incorporación en página del reproductor para asociar el complemento IMA con una sola instancia de un reproductor.</p>
+
+        <aside class="bcls-aside bcls-aside--information">
+            En el siguiente código, verá que se llama al <code translate="No">bc()</code> método para inicializar Brightcove Player, luego el complemento IMA4 se inicializa inmediatamente después. Esto se debe a que para que el complemento IMA4 funcione correctamente, debe cargarse justo después de la inicialización del reproductor, antes de que cualquier otro complemento sea inicializado. Inicializar el complemento IMA4 en <code translate="No">videojs.getPlayer('myPlayerID').ready(...)</code> o cuando se envía el <code translate="No">loadedmetadata</code> evento, hará que el complemento NO funcione como se pretende.
+        </aside>
+
+        <ul>
+            <li>
+                Línea 12: Utiliza una etiqueta para incluir el CSS del complemento en la página HTML.<code translate="No">link</code><code translate="No">head</code>
+            </li>
+            <li>
+                Línea 15: Le da a la <code translate="No">video</code> etiqueta un <code translate="No">id</code> atributo, con algún valor, en este caso <strong translate="No">myPlayerID</strong>.
+            </li>
+            <li>
+                Línea 23: Utiliza una etiqueta para incluir el JavaScript del complemento en la página HTML.<code translate="No">script</code><code translate="No">body</code>
+            </li>
+            <li>
+                Líneas 26-29: Inicializa el reproductor utilizando el <code translate="No">bc()</code> método y, a continuación, llama al <code translate="No">ima3()</code> método.
+            </li>
+            <li>
+                Líneas 30-33: En el jugador <code translate="No">ready</code>, se crea una referencia al jugador. El comentario se muestra para indicar dónde puede colocar código para agregar otros comportamientos de jugador más allá de la configuración y configuración del plugin IMA4.
+            </li>
+        </ul>
+
+        <pre class="line-numbers">
+<code class="language-html" translate="No">&lt;!doctype html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;title&gt;IMA3 Plugin Code Example&lt;/title&gt;
+  &lt;style&gt;
+    .video-js {
+      height: 344px;
+      width: 610px;
+    }
+  &lt;/style&gt;
+  &lt;link href="https://players.brightcove.net/videojs-ima3/3/videojs.ima3.min.css" rel="stylesheet"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;video-js id="myPlayerID"
+    data-video-id="3851380732001"
+    data-account="1752604059001"
+    data-player="Hy3gDJHu"
+    data-embed="default"
+    class="video-js"
+    controls&gt;&lt;/video-js&gt;
+  &lt;script src="https://players.brightcove.net/1752604059001/Hy3gDJHu_default/index.min.js"&gt;&lt;/script&gt;
+  &lt;script src="https://players.brightcove.net/videojs-ima3/3/videojs.ima3.min.js"&gt;&lt;/script&gt;
+  &lt;script&gt;
+    var myPlayer;
+    var player = bc('myPlayerID');
+    player.ima3({
+      serverUrl: '//solutions.brightcove.com/bcls/brightcove-player/vmap/simple-vmap.xml'
+    });
+    player.ready(function() {
+      myPlayer = this;
+      //Do something
+    });
+  &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+    </section>
+    <!-- <section class="bcls-section">
+      <h2 id="Creating_an_ad_tag_based_on_media_info">Creating an ad tag based on media info</h2>
+      <p>A common use-case for programmatic ads is to create an ad tag based on media info, retrieved from the <code translate="No">mediainfo</code> object. Because the ad tag can be passed in as an option during plugin initialization, it may seem appropriate to defer
+      plugin initialization until media info is available. As seen in the <a href="#Implement_using_code"> previous section</a>, however, plugin initialization cannot be deferred. Instead, initialization can happen at the usual time, but the ad
+      tag can be set later when the necessary media info becomes available.</p>
+      <p>Here is an example of how this works. Note that the properties of the <code translate="No">mediainfo</code> object cannot be used until the <code translate="No">loadedmetadata</code> event has been dispatched, which is standard practice.</p>
+      <aside class="bcls-aside bcls-aside--warning">This technique will NOT work if <code translate="No">autoplay</code> is true AND the ad request type is <code translate="No">onplay</code>. In this case you MUST set the <code translate="No">serverUrl</code> in the initial IMA3 plugin configuration.</aside>
+      <pre class="line-numbers">
+      <code class="language-javascript" translate="No">var myPlayer;
+      // Initialize player
+      var player = bc('myPlayerID');
+      // Initialize IMA plugin
+      // A blank serverUrl is used here because we want metadata from the video
+      player.ima3({
+      serverUrl: "",
+      requestMode: 'onplay',
+      debug: true
+      });
+      // When the player's ready, let's get started
+      player.ready(function(){
+      myPlayer = this;
+      myPlayer.one("loadedmetadata", function(){
+      // Now we have metadata, we can set up the ad with information from mediainfo
+      if (<span class="bcls-highlight">myPlayer.mediainfo.id</span> === '4034552795001') {
+      myPlayer.ima3.settings.serverUrl = "https://pubads.g.doubleclick.net/";
+      } else {
+      myPlayer.ima3.settings.serverUrl = "https://example.com/ads/";
+      }
+      });
+      });</code></pre>
+      </section> -->
+
+    <section class="bcls-section">
+        <h2 id="Hybrid_implementation">Aplicación híbrida</h2>
+
+        <p>
+            Hasta ahora en este documento ha visto el complemento IMA implementado en Studio, luego en código. A algunos clientes les gusta realizar una implementación híbrida donde el complemento básico se agrega en Studio, pero luego la configuración se realiza en JavaScript de la página. Esta implementación híbrida se discute en esta sección.
+        </p>
+
+        <p>
+            Como acabas de ver en la sección anterior, al implementar el complemento IMA4 puramente en código manipula el plugin en formato de función. Cuando instala el complemento en Studio, luego configura en la página, debe tratar el complemento como un objeto. Por ejemplo, supongamos que ha instalado el complemento IMA4 usando Studio como se muestra aquí, teniendo en cuenta que no se proporciona ninguna <strong>etiqueta de anuncio</strong> :
+        </p>
+
+        <figure class="bcls-figure">
+            <img class="bcls-image" alt="Instalación parcial de Studio" src="//learning-services-media.brightcove.com/doc-assets/player-development/advertising/ima3-plugin/partial-studio-install.png"/>
+        </figure>
+
+        <p>Ahora, en el JavaScript en la página puede asignar valores de propiedad (recuerde, trate el plugin como un objeto ahora) como se muestra aquí:</p>
+
+        <pre class="line-numbers">
+<code class="language-javascript" translate="No">videojs.getPlayer('myPlayerID').ready(function() {
+  var myPlayer = this;
+  myPlayer.ima3.settings.serverUrl = 'http://solutions.brightcove.com/bcls/brightcove-player/vmap/simple-vmap.xml';
+});</code></pre>
+
+        <p>Por supuesto, se pueden asignar valores a otras propiedades de esta manera.</p>
+    </section>
+
+    <section class="bcls-section">
+        <h2 id="Debugging_assistance">Asistencia de depuración</h2>
+
+        <p>
+            Existen dos opciones de ayuda para depurar problemas de reproducción de anuncios. Si no hace nada, en la consola solo verá información sobre cuándo se iniciaron y terminaron los anuncios:
+        </p>
+
+        <figure class="bcls-figure">
+            <img class="bcls-image" alt="salida de depuración en la consola" src="//learning-services-media.brightcove.com/doc-assets/player-development/advertising/ima3-plugin/default-console-debug.png"/>
+        </figure>
+
+        <p>
+            La primera opción se menciona anteriormente en este documento en la sección <a href="#debugOption">Opciones</a> . Esto activa la depuración en el nivel del complemento. Verá información adicional de depuración:
+        </p>
+
+        <figure class="bcls-figure">
+            <img class="bcls-image" alt="salida de depuración en la consola" src="//learning-services-media.brightcove.com/doc-assets/player-development/advertising/ima3-plugin/console-debug.png"/>
+        </figure>
+
+        <p>
+            La segunda opción utiliza una herramienta suministrada por Google. Especifique una <strong translate="No">sdkurl</strong> opción con un valor que apunte a un archivo JavaScript proporcionado por Google. Aquí se muestra un ejemplo de configuración:
+        </p>
+
+        <pre class="line-numbers">
+<code class="language-javascript" translate="No">var myPlayer = bc('myPlayerID');
+myPlayer.ima3({
+  "serverUrl": "//solutions.brightcove.com/bcls/brightcove-player/vmap/simple-vmap.xml",
+  "debug": true,
+  <span class="bcls-highlight">"sdkurl": "//imasdk.googleapis.com/js/sdkloader/ima3_debug.js"</span>
+});
+myPlayer.ready(function() {
+  myPlayer = this;
+});</code></pre>
+
+        <p>
+            La información de depuración ampliada parecería similar a la siguiente. (La información resaltada en amarillo proviene de la depuración del complemento y la información resaltada en azul es generada por la herramienta Google).
+        </p>
+
+        <figure class="bcls-figure">
+            <img class="bcls-image" alt="salida de depuración en la consola" src="//learning-services-media.brightcove.com/doc-assets/player-development/advertising/ima3-plugin/console-debug-google.png"/>
+        </figure>
+
+        <aside class="bcls-aside bcls-aside--information">
+            Nota: No hay dependencias entre la información de depuración del complemento y la información de Google. Se pueden usar por separado o juntos.
+        </aside>
+
+        <p>
+            Para obtener más información sobre los errores de IMA de Google, consulte la sección <a href="https://developers.google.com/interactive-media-ads/docs/sdks/html5/v3/reference/js/ima.AdError">Class Google.ima.adError</a> del <strong translate="No">Google IMA HTML5 SDK APIs</strong> documento de Google.
+        </p>
+    </section>
+
+    <section class="bcls-section">
+        <h2 id="Known_issues">Problemas conocidos</h2>
+
+        <h3>Imagen en imagen desactivada</h3>
+        <p>
+            El <a href="/general/player-configuration-guide.html#picture_in_picture_control">control de imagen en imagen</a> está deshabilitado cuando se implementa el complemento IMA4. Esta es una decisión de diseño intencional.
+        </p>
+
+        <h3>Configuración de la reproducción automática en Studio</h3>
+
+        <p>
+            NO configure la reproducción automática en Studio si está utilizando el complemento IMA4 para mostrar anuncios. Si se establece la reproducción automática en Studio, podría producirse un error en la reproducción de anuncios. Consulte el documento <a href="/playback/autoplay-considerations.html">Consideraciones de reproducción automática</a> para obtener más información.
+        </p>
+
+        <h3><em>Más información</em> y <em>el temporizador de cuenta atrás de anuncios</em> ya no se muestra de forma predeterminada</h3>
+        <p>Existe una solución alternativa utilizando la <code translate="No">useStyledLinearAds</code> propiedad del SDK de IMA de Google. Establezca este valor en true, como se muestra aquí:</p>
+        <pre class="line-numbers"><code class="language-javascript" translate="No">adsRenderingSettings.useStyledLinearAds=true;</code></pre>
+        <p>Para obtener más información, consulta la documentación de <a href="https://developers.google.com/interactive-media-ads/docs/sdks/html5/client-side/reference/js/google.ima.AdsRenderingSettings#useStyledLinearAds">Google.ima.adsRenderingSettings</a> de Google.</p>
+
+        <h3>Chrome en Android: Dessilenciar el pre-roll, el vídeo no se reproducirá automáticamente</h3>
+
+        <p>
+            Al utilizar Chrome (versión más reciente) en Android y dessilenciar el reproductor mientras se está reproduciendo el pre-roll, el reproductor no comienza a reproducir un vídeo automáticamente después de que finalice el pre-roll. Si anula el silencio del anuncio, la función de persistencia del volumen de Brightcove Player también anulará el silencio del contenido, ya que la intención del espectador es escuchar el audio. Sin embargo, en las versiones más recientes de Chrome Android, el contenido sin silenciar no se puede reproducir automáticamente y se ha añadido el requisito de gesto del usuario para comenzar la reproducción. Esta es una configuración de nivel OS/dispositivo y no es algo que Brightcove pueda anular.
+        </p>
+
+        <h3>Es posible que la visualización de la hora actual de la preroll no sea precisa</h3>
+
+        <p>Este problema tiene que ver con una limitación en la forma en que el SDK de IMA informa la hora actual. No hay ninguna solución documentada en este momento.</p>
+
+        <h3>Es posible que los midrolls no silenciados no se reproduzcan en Safari 11 Desktop</h3>
+
+        <p>
+            Es posible que los midroll no silenciados no se reproduzcan en Safari 11 Desktop debido a un cambio en el SDK de IMA de Google. Se introdujo un nuevo comportamiento para desencadenar un error y cancelar un anuncio cuando Safari 11 rechaza la reproducción automática (Desktop y posiblemente iOS). Los Midrolls afectados de esta manera activarán un error de anuncio 400, con el código de error 1205 indicando que se ha evitado la reproducción automática.
+        </p>
+
+        <h3>Entornos compatibles</h3>
+
+        <p>
+            Para comprobar si hay combinaciones compatibles de plataformas, estándares publicitarios y medios de vídeo, consulte el documento de <a href="https://developers.google.com/interactive-media-ads/video_features_and_sdk_versions">compatibilidad con la función de vídeo y SDK</a> de Google. Ese documento y el <a href="https://developers.google.com/interactive-media-ads/docs/vastinspector_dual">Inspector de Video Suite</a> le ayudarán a diagnosticar las configuraciones de anuncios IMA4 que simplemente no funcionarán.
+        </p>
+
+        <aside class="bcls-aside bcls-aside--information">
+            Nota: Para utilizar el Inspector de Video Suite, necesitará su etiqueta de anuncio VAST o su respuesta de anuncio VAST. A continuación, puede pegarlo en el campo de texto dado y luego hacer clic en el <strong translate="No">Test Ad</strong> botón.
+        </aside>
+
+        <h3>Superposiciones y transiciones de pantalla completa</h3>
+
+        <p>
+            video.js utiliza la <a href="https://www.w3.org/TR/fullscreen/">API de pantalla completa</a> cuando esté disponible. Diferentes navegadores implementan la transición a pantalla completa de manera diferente y que pueden producir discrepancias en la apariencia al pasar dentro y fuera del modo de pantalla completa. En la mayoría de las implementaciones, el elemento que se está tomando en pantalla completa se escala geométricamente (es decir, zoom) desde su tamaño original hasta el objetivo. Sin embargo, la mayoría de los anuncios de superposición están diseñados para mostrarse a un tamaño fijo, por lo que pueden aparecer distorsionados hasta que finalice la animación.
+        </p>
+        <!-- <h3>Midrolls and live streams/VMAP live streams</h3>
+      <p>Midrolls play immediately if they are configured for live streams. The reason this occurs is that in live video time is relative. If a midroll says 10 seconds, it's not clear what 10 seconds is relative to. Is it 10 seconds from the start of
+      the stream, or 10 seconds from the start of the time the user started playback? A better solution for a live streams is using ID3 metadata that gives unambiguous cue points when an ad should be played.</p> -->
+
+        <h3 id="skippable-ads">Anuncios saltables en dispositivos iOS</h3>
+
+        <p>Con el complemento IMA4, se pueden reproducir anuncios saltables en iPhones cuando se cumplan las siguientes condiciones:</p>
+
+        <ul>
+            <li>El <code translate="No">playsinline</code> atributo está presente en el <code translate="No">video</code> elemento</li>
+            <li>
+                La <code translate="No">disableCustomPlaybackForIOS10Plus</code> configuración se pasa al complemento y se establece en <code translate="No">true</code>
+            </li>
+        </ul>
+
+        <p>Para el <code translate="No">playsinline</code> atributo, simplemente incluirlo como un atributo en la <code translate="No">video</code> etiqueta:</p>
+
+        <pre class="line-numbers">
+<code class="language-html" translate="No">&lt;video-js id="player"
+  width="640"
+  height="360"
+  data-video-id="4524585416001"
+  data-account="4360108595001"
+  data-player="r12ukws9l"
+  data-embed="default"
+  class="video-js"
+  <span class="bcls-highlight">playsinline</span>
+  controls&gt;&lt;/video-js&gt;
+</code></pre>
+
+        <aside class="bcls-aside bcls-aside--information">Nota: El <code translate="No">playsinline</code> atributo solo funciona con iOS 10+.</aside>
+
+        <p>
+            Para la <code translate="No">disableCustomPlaybackForIOS10Plus</code> configuración, asígnelo como una propiedad de <code translate="No">ima3SdkSettings</code>:
+        </p>
+
+        <pre class="line-numbers">
+<code class="language-javascript" translate="No">player.ima3({
+  ima3SdkSettings: {
+    "disableCustomPlaybackForIOS10Plus": true
+  }
+})
+</code>
+</pre>
+
+        <p>Si está utilizando Studio y desea usar la configuración allí, agregue esto a la configuración del plugin IMA4:</p>
+
+        <pre class="line-numbers">
+<code class="language-javascript" translate="No">{
+  "ima3SdkSettings": {
+    "disableCustomPlaybackForIOS10Plus": true
+  }
+}</code></pre>
+
+        <p>
+            Para obtener detalles completos de esta configuración, consulte la entrada <a href="#disableCustomPlaybackForIOS10Plus">DisableCustomPlaybackForios10plus</a> en la <code translate="No">ima3SdkSettings</code> sección de este documento.
+        </p>
+
+        <p><strong translate="No">Skippable ad limitations:</strong></p>
+
+        <ul>
+            <li>
+                El <strong translate="No">Skip Ad</strong> botón <em>puede estar parcialmente cubierto por la barra de control de anuncios</em> en algunos dispositivos móviles. Esto dificulta que los usuarios finales salten el anuncio. El usuario puede pellizcar para hacer zoom para hacer el <strong translate="No">Skip Ad</strong> botón más grande en dispositivos móviles para poder hacer clic en él.
+            </li>
+            <li>
+                <strong translate="No">iPhone</strong> sin <code translate="No">playsinline</code> y <code translate="No">disableCustomPlaybackForIOS10Plus</code> - Los anuncios saltables no se reproducen.
+            </li>
+            <li>
+                <strong translate="No">iPhone</strong> con <code translate="No">playsinline</code> y <code translate="No">disableCustomPlaybackForIOS10Plus</code> - Los anuncios se reproducen en línea, pero si se utiliza a pantalla completa, los anuncios no se muestran, pero el audio del anuncio se reproducirá. En otras palabras, los anuncios saltables en pantalla completa no funcionan correctamente.
+            </li>
+            <li><strong translate="No">iPad</strong> - Los anuncios se reproducen en línea, pero saltar no está disponible en modo de pantalla completa</li>
+        </ul>
+
+        <h3>iOS 10 iPad y iPhone: Los anuncios previos a la publicación no funcionan cuando se usan <code translate="No">playsinline</code> y se van a pantalla completa</h3>
+
+        <p>
+            Si se utiliza <code translate="No">playsinline</code> en iOS 10 iPad y iPhone para permitir ver un vídeo que no sea a pantalla completa, se inicia un anuncio previo a la carga y se hace clic en el botón de pantalla completa, el anuncio NO continuará reproduciéndose. Esto es una limitación de la implementación de IMA de Google, y Google no tiene planes para corregir el problema.
+        </p>
+
+        <h3>Conflicto con gpt_proxy.js</h3>
+
+        <p>
+            Si utiliza el script proxy GPT con IMA4, y <strong translate="No">adTechOder</strong> es el <strong translate="No">HTML5</strong> primero, pueden producirse problemas de reproducción. El plugin IMA4 se verá afectado al usar cualquier script que use <strong translate="No">window.google</strong> o <strong translate="No">window.google.ima</strong>. Se sugiere que compruebe si está utilizando Brightcove Player y, si es así, no cargue el proxy en esas ocasiones.
+        </p>
+
+        <h3> <strong translate="No">Skip Ad</strong> Botón Cambiar tamaño</h3>
+
+        <p>
+            No es posible cambiar el tamaño del <strong translate="No">Skip Ad</strong> botón. La API de Brightcove Player no tiene métodos ni propiedades para especificar el tamaño del <strong translate="No">Skip Ad</strong> botón. En el nivel de desarrollador, si un editor utiliza anuncios de VPAID, los anuncios pueden implementar su propio <strong translate="No">Skip Ad</strong> botón y lógica para encajar en la interfaz de usuario y la distribución de elementos de Brightcove Player.
+        </p>
+
+        <h3>Los anuncios no se reproducirán automáticamente en iOS</h3>
+
+        <p>
+            Aunque no es específico del complemento IMA4, sepa que <code translate="No">autoplay</code> está restringido iOS, por lo que los anuncios no se iniciarán hasta que se realice un gesto de usuario.
+        </p>
+
+        <h3 id="Ad_cue_point_issues">Problemas del punto de referencia del anuncio</h3>
+
+        <p>
+            Para obtener información específica sobre el uso de puntos de referencia de anuncio, consulte la <strong translate="No">Known issues</strong> sección del documento <a href="/advertising/displaying-ads-using-ad-cue-points.html#Known_issues">Visualización de anuncios mediante puntos</a> de anuncio.
+        </p>
+    </section>
+
+    <section class="bcls-section">
+        <h2 id="Changelog">Registro de cambios</h2>
+
+        <p>Vea el registro de cambios aquí.<a href="/plugins/changelog/advertising-ima3-plugin-changelog.html"></a></p>
+    </section>
+</article>
+<!-- complete bootstrap layout -->
+    </div>
+    <div class="col-sm-2 right-side-bar">
+      
+      <nav class="right-side-nav" id="right_side_nav">
+        <h6 class="toc">Contenido de la página</h6>
+        <ul id="in_page_nav" class="list-none"></ul>
+      </nav>
+      
+    </div>
+  </div>
+</div>
+
+<hr>
+<footer class="bcls-footer" role="contentinfo">  <div class="row">
+    <div class="region region-footer-top-center col-md-12">
+      <nav role="navigation" aria-labelledby="block-brightcovesupport-menu" id="block-brightcovesupport" class="footer-menu">
+
+        <h2>Asistencia técnica de Brightcove</h2>
+
+        <ul class="menu">
+          <li>
+            Estado del sistema<a href="https://status.brightcove.com"></a>
+          </li>
+          <li>
+            <a href="https://supportportal.brightcove.com/s/login/?">Contactar soporte</a>
+          </li>
+          <li>
+            <a href="https://support.brightcove.com/">Documentación</a>
+          </li>
+        </ul>
+
+      </nav>
+      <nav role="navigation" aria-labelledby="block-training-menu" id="block-training" class="footer-menu">
+
+        <h2>Formación</h2>
+
+        <ul class="menu">
+          <li>
+            Cursos en línea<a href="https://studio.support.brightcove.com/training/online-training-courses.html"></a>
+          </li>
+          <li>
+            Inscríbete a un curso<a href="https://studio.support.brightcove.com/training/register-training.html"></a>
+          </li>
+          <li>
+            <a href="https://university.brightcove.com/">Universidad de Brightcove</a>
+          </li>
+        </ul>
+
+      </nav>
+      <nav role="navigation" aria-labelledby="block-brightcove-menu" class="footer-menu">
+
+        <h2>Brightcove</h2>
+
+        <ul class="menu">
+          <li>
+            <a href="https://www.brightcove.com">BrightCove.com</a>
+          </li>
+          <li>
+            <a href="https://supportportal.brightcove.com/s/login/?">Contáctanos</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+  <div class="row">
+    <div class="region region-footer-bottom-center col-md-12">
+      <div class="bcls-copyright footer-menu">
+        <table>
+          <tr>
+            <td>
+              <div id="bc_copyright" class="field field--name-field-copyright-year field--type-string field--label-hidden field--item" style="float: left;"> Brightcove Inc. All rights reserved.</div>
+            </td>
+            <td>Privacidad | Términos y Condiciones<a href="https://www.brightcove.com/en/legal/privacy"></a><a href="https://www.brightcove.com/en/terms-and-conditions"></a></td>
+            <td>
+              <div class="gf-links-cols footer-menu">
+                <div class="gf-social"><a href="https://www.linkedin.com/company/16439" title="LinkedIn" newtab="newtab" class="gf-social-linkedin"><i class="fab fa-linkedin-in" style="font-size: 1.5rem;"></i></a><a href="https://twitter.com/brightcove" title="Twitter" newtab="newtab" class="gf-social-twitter"><i class="fab fa-twitter" style="font-size: 1.5rem;"></i></a><a href="https://www.facebook.com/Brightcove" title="Facebook" newtab="newtab" class="gf-social-facebook"><i class="fab fa-facebook-f" style="font-size: 1.5rem;"></i></a>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</div>
+</div>
+<script>
+      
+  var searchBox = sajari.init({
+    mode: "search-box",
+    project: "1588255093746585379", // Set this to your project.
+    collection: "brightcove-documenation", // Set this to your collection.
+    instantPipeline: "autocomplete", // Pipeline used as you type
+    inputPlaceholder: "Search", // Input element placeholder
+    maxSuggestions: 5, // Maximum number of suggestions to show
+    attachSearchBox: document.getElementById("nav-search-box") // DOM element to attach to
+  });
+  
+    searchBox("sub", "pipeline.search-sent", function (_, query) {
+      window.location = "/search.html?q=" + encodeURIComponent(query.q);
+    });
+  
+
+</script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/https-fix.js"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/setDate.js"></script>
+  
+  <script src="https://support.brightcove.com/site-assets/js/site/prism.js"></script>
+  
+  <script src="https://support.brightcove.com/site-assets/js/site/site.js"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/tabs.js"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/toc.js"></script>
+  <script src="/assets/js/sites_nav.js"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/bcls-utils.js"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/local-link-fix.js"></script>
+  <script src="/assets/js/feedback.js"></script>
+  
+  <script src="/assets/js/sajari-search-foot.js"></script>
+  
+  <!-- <script src="/assets/js/sajari-index.js"></script> -->
+  <style>
+    a.sj-paginator__page-number.sj-paginator__page-number--current.css-so0ov7 {
+      background-color: lightblue;
+    }
+    div.sj-tabs__tab {
+      margin-top: 3rem;
+      margin-left: .3rem;
+      border-top-left-radius: .4rem;
+      border-top-right-radius: .4rem;
+      background-color:#e8e8e8;
+    }
+
+    div.sj-tabs__tab.sj-tabs__tab--selected {
+      border-bottom-color: crimson;
+      background-color: #f8f8f8;
+    }
+
+    p.sj-results__result__description.css-p9jvyt {
+      font-size: 1rem;
+    }
+
+    .sj-result__text.css-31l7gp h3 {
+      color: navy;
+      font-size: 1.4rem;
+    }
+    </style>
+
+</body>
+
+</html>

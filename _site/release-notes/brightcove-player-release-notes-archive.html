@@ -1,0 +1,3707 @@
+﻿<!doctype html>
+<html lang="es-es">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Esta página realiza un seguimiento de la información de lanzamiento de Brightcove Player">
+  
+  <title>Brightcove Player Notas informativas</title>
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">  
+  <link data-react-helmet="true" rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500&amp;display=swap">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/prism.css">
+  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/styles.css">
+  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/landing-page.css">
+  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/tabs.css">
+  <link rel="stylesheet" href="/assets/css/local.css">
+  <link data-react-helmet="true" rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500&display=swap">
+  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/381443caa8.js" crossorigin="anonymous"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/google-analytics.js"></script>
+  <script src="/assets/js/sajari-head.js"></script>
+</head>
+
+<body class="body">
+
+<header>
+  <div class="div-header">
+    <a href="/"><img class="product-logo" src="https://support.brightcove.com/site-assets/images/site/product-logos/Player_Logo.svg" alt="logotipo del producto" style="max-height: 100px;max-width: 232px;"/></a>
+<!-- GTranslate: https://gtranslate.io/ -->
+<select onchange="doGTranslate(this);"><option value="">Seleccionar idioma</option><option value="en|en" translate="No">English</option><option value="en|zh-TW" translate="No">繁體中文</option><option value="en|fr" translate="No">Français</option><option value="en|de" translate="No">Deutsche</option><option value="en|ja" translate="No">日本語</option><option value="en|ko" translate="No">한국어</option><option value="en|es" translate="No">Español</option></select>
+
+<script>
+/* <![CDATA[ */
+function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;if(lang_pair=='')return;var lang=lang_pair.split('|')[1];var plang=location.hostname.split('.')[0];if(plang.length !=2 && plang.toLowerCase() != 'zh-cn' && plang.toLowerCase() != 'zh-tw')plang='en';location.href=location.protocol+'//'+(lang == 'en' ? '' : lang+'.')+location.hostname.replace('www.', '').replace(RegExp('^' + plang + '\\.'), '')+location.pathname+location.search;}
+/* ]]> */
+</script>
+
+    
+
+
+    <span class="secondary-nav"><a href="https://supportportal.brightcove.com/s/login/?"><img src="https://support.brightcove.com/site-assets/images/site/support.png" alt="soporte"/> Contactar con Soporte</a> <span style="vertical-align: top;margin-left:1em;margin-right:1em;">|</span> <a href="https://status.brightcove.com/">Estado<img src="https://support.brightcove.com/site-assets/images/site/status.png" alt="estado del sistema"/> del sistema</a></span> <br/>
+    
+  </div>
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb arr-right">
+      
+      <li class="breadcrumb-item"><a href="/">Inicio</a></li>
+      
+      
+      
+      <li class="breadcrumb-item">Notas de versión<a href="/release-notes/"></a></li>
+      
+      <li class="breadcrumb-item active" aria-current="page">Brightcove Player Notas informativas</li>
+    </ol>
+  </nav>
+</header>
+<div class="container">
+    <div class="row">
+            <div class="col-sm-3 left-side-bar">
+        <select id="site_select" class="bcls-select" style="margin-right: 1rem;">
+          <option value="">Otros documentos de Brightcove</option>
+          
+            
+              <option value="https://support.brightcove.com">Documentación Inicio</option>
+            
+          
+            
+              <option value="https://audience.support.brightcove.com">Audiencia de Brightcove</option>
+            
+          
+            
+              <option value="https://beacon.support.brightcove.com">Baliza Brightcove</option>
+            
+          
+            
+              <option value="https://campaign.support.brightcove.com">Campaña de Brightcove</option>
+            
+          
+            
+              <option value="https://engage.support.brightcove.com">Brightcove Engage</option>
+            
+          
+            
+              <option value="https://live.support.brightcove.com">Brightcove Live</option>
+            
+          
+            
+              <option value="https://gallery.support.brightcove.com">Brightcove Gallery</option>
+            
+          
+            
+              <option value="https://ssai.support.brightcove.com">Brightcove SSAI</option>
+            
+          
+            
+              <option value="https://social.support.brightcove.com">Brightcove Social</option>
+            
+          
+            
+              <option value="https://studio.support.brightcove.com">Video Cloud Studio</option>
+            
+          
+            
+              <option value="https://player.support.brightcove.com">Desarrollo de jugadores de Brightcove</option>
+            
+          
+            
+              <option value="https://apis.support.brightcove.com">API para la plataforma de Video Cloud</option>
+            
+          
+            
+              <option value="https://sdks.support.brightcove.com">SDK de dispositivos de Video Cloud</option>
+            
+          
+            
+              <option value="https://integrations.support.brightcove.com">Integraciones y conectores CMS</option>
+            
+          
+            
+              <option value="https://general.support.brightcove.com">Información general de Video Cloud</option>
+            
+          
+            
+              <option value="https://zencoder.support.brightcove.com">Zencoder</option>
+            
+          
+        </select>
+
+        <nav class="sidenav" id="side_nav">
+          
+            
+            <h5><a href="/index.html">Inicio</a></h5>
+            
+          
+            
+              <select id="site_select" class="bcls-select" style="margin-right: 1rem;">
+					<option value="">기타 브라이트코브 문서</option>
+					
+						
+							<option value="https://support.brightcove.com">설명서 홈</option>
+						
+					
+						
+							<option value="https://audience.support.brightcove.com">브라이트코브 대상</option>
+						
+					
+						
+							<option value="https://beacon.support.brightcove.com">브라이트코브 비콘</option>
+						
+					
+						
+							<option value="https://campaign.support.brightcove.com">브라이트코브 캠페인</option>
+						
+					
+						
+							<option value="https://engage.support.brightcove.com">브라이트코브 참여</option>
+						
+					
+						
+							<option value="https://live.support.brightcove.com">Brightcove Live</option>
+						
+					
+						
+							<option value="https://gallery.support.brightcove.com">Brightcove Gallery</option>
+						
+					
+						
+							<option value="https://ssai.support.brightcove.com">Brightcove SSAI</option>
+						
+					
+						
+							<option value="https://social.support.brightcove.com">브라이트코브 소셜</option>
+						
+					
+						
+							<option value="https://studio.support.brightcove.com">비디오 클라우드 스튜디오</option>
+						
+					
+						
+							<option value="https://player.support.brightcove.com">브라이트코브 플레이어 개발</option>
+						
+					
+						
+							<option value="https://apis.support.brightcove.com">비디오 클라우드 플랫폼 API</option>
+						
+					
+						
+							<option value="https://sdks.support.brightcove.com">비디오 클라우드 디바이스 SDK</option>
+						
+					
+						
+							<option value="https://integrations.support.brightcove.com">통합 및 CMS 커넥터</option>
+						
+					
+						
+							<option value="https://general.support.brightcove.com">비디오 클라우드 일반 정보</option>
+						
+					
+						
+							<option value="https://zencoder.support.brightcove.com">Zencoder</option>
+						
+			<h5 class="submenu-header"><a href="/getting-started/index.html"><strong>+</strong> Empezar</a></h5>		
+				</select>
+        <nav class="sidenav" id="side_nav">
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="/training/developer-basics-videos.html">Vídeos básicos del desarrollador</a></li>
+                  
+                
+                  
+                    <li>¿Qué es Brightcove Player?<a href="/getting-started/what-brightcove-player.html"></a></li>
+                  
+                
+                  
+                    <li>Visión general:<a href="/getting-started/overview-brightcove-player.html"> Reproductor de Brightcove</a></li>
+                  
+                
+                  
+                    <li>Guía de aprendizaje:<a href="/getting-started/learning-guide-video-advertising.html"> Publicidad en vídeo</a></li>
+                  
+                
+                  
+                    <li>Visión general:<a href="/getting-started/overview-brightcove-player-plugins.html"> Complementos de Brightcove Player</a></li>
+                  
+                
+                  
+                    <li>Vídeos de capacitación sobre desarrollo de jugadores<a href="/training/player-development-training-videos.html"></a></li>
+                  
+                
+                  
+                    <li>Paso a paso:<a href="/getting-started/step-step-brightcove-player.html"> Reproductor de Brightcove</a></li>
+                  
+                
+                  
+                    <li>Paso a paso:<a href="/getting-started/step-step-player-customization.html"> Personalización del reproductor</a></li>
+                  
+                
+                  
+                    <li>Capacitación:<a href="/training/training-demand-developing-brightcove-player.html"> Desarrollar con Brightcove Player</a></li>
+                  
+                
+                  
+                    <li><a href="/getting-started/learning-guide-using-rest-apis.html">Guía de aprendizaje: Uso de las API REST</a></li>
+                  
+                
+              </ul>
+            
+          
+            
+              <h5 class="submenu-header">Aprender los conceptos básicos +<a href="/basics/index.html"><strong></strong></a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="/basics/developer-basics-advanced-player-code.html">Código del reproductor avanzado</a></li>
+                  
+                
+                  
+                    <li><a href="/basics/developer-basics-autoplaying-video.html">Reproducción automática de un vídeo</a></li>
+                  
+                
+                  
+                    <li><a href="/basics/developer-basics-custom-plugin-converting-code.html">Plugin personalizado - Conversión de código</a></li>
+                  
+                
+                  
+                    <li><a href="/basics/developer-basics-custom-plugin-passing-data.html">Plugin personalizado - Pasar datos</a></li>
+                  
+                
+                  
+                    <li><a href="/basics/developer-basics-custom-plugin-using-studio.html">Plugin personalizado - Usar Studio</a></li>
+                  
+                
+                  
+                    <li><a href="/basics/developer-basics-custom-plugin-why-and-how.html">Plugin personalizado - Por qué y cómo</a></li>
+                  
+                
+                  
+                    <li><a href="/training/developer-basics-videos.html">Vídeos básicos del desarrollador</a></li>
+                  
+                
+                  
+                    <li><a href="/basics/developer-basics-generating-player-code.html">Generación de código de jugador</a></li>
+                  
+                
+                  
+                    <li>Preparación para escribir código<a href="/basics/developer-basics-preparing-write-code.html"></a></li>
+                  
+                
+              </ul>
+            
+          
+            
+              <h5 class="submenu-header">Referencias +<a href="/references/index.html"><strong></strong></a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="/references/brightcove-player-5-6-migration-guide.html">Guía de migración de Brightcove Player 5 a 6</a></li>
+                  
+                
+                  
+                    <li><a href="https://docs.brightcove.com/brightcove-player/current-release/index.html">Documentación de Brightcove Player API (sitio externo)</a></li>
+                  
+                
+                  
+                    <li><a href="/references/brightcove-player-cookies.html">Cookies de reproductor de Brightcove</a></li>
+                  
+                
+                  
+                    <li><a href="/references/brightcove-player-error-reference.html">Referencia de error del Reproductor de Brightcove</a></li>
+                  
+                
+                  
+                    <li><a href="https://groups.google.com/forum/embed/?place=forum/bcplayerdev#!forum/bcplayerdev">Foro de anuncios de jugadores de Brightcove</a></li>
+                  
+                
+                  
+                    <li><a href="/references/brightcove-player-system-requirements.html">Requisitos del sistema de Brightcove Player</a></li>
+                  
+                
+                  
+                    <li><a href="/references/catalog-search-architecture.html">Arquitectura de búsqueda</a></li>
+                  
+                
+                  
+                    <li>Problemas conocidos<a href="https://general.support.brightcove.com/general/known-issues-studio-brightcove-player-and-apis.html"></a></li>
+                  
+                
+                  
+                    <li>Catálogo de jugadores<a href="/references/player-catalog.html"></a></li>
+                  
+                
+                  
+                    <li>Compatibilidad con funciones de jugador por navegador<a href="/references/player-feature-support-browser.html"></a></li>
+                  
+                
+                  
+                    <li>Metadatos del reproductor de bcinfo<a href="/references/player-metadata-bcinfo.html"></a></li>
+                  
+                
+                  
+                    <li>Métodos de reproductores/API de eventos (sitio externo)<a href="https://docs.brightcove.com/brightcove-player/current-release/Player.html"></a></li>
+                  
+                
+                  
+                    <li>Guía de API de lista de reproducción<a href="/references/guide-playlist-api.html"></a></li>
+                  
+                
+                  
+                    <li>Metadatos de vídeo de mediainfo<a href="/references/video-metadata-mediainfo.html"></a></li>
+                  
+                
+              </ul>
+            
+          
+            
+              <h5 class="submenu-header">Plugins +<a href="/plugins/index.html"><strong></strong></a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="/plugins/360degvr-video-plugin.html">Vídeo 360º</a></li>
+                  
+                
+                  
+                    <li><a href="/plugins/ad-only-plugin.html">Sólo anuncio</a></li>
+                  
+                
+                  
+                    <li><a href="/plugins/advertising-freewheel-plugin.html">Publicidad con el plugin FreeWheel</a></li>
+                  
+                
+                  
+                    <li><a href="/plugins/advertising-ima3-plugin.html">Publicidad con el complemento IMA3</a></li>
+                  
+                
+                  
+                    <li>Actualización a la versión 3 del complemento IMA3<a href="/plugins/upgrading-ima3-plugin-version-3.html"></a></li>
+                  
+                
+                  
+                    <li><a href="/plugins/implementing-server-side-ads-brightcove-player.html">Publicidad con SSAI</a></li>
+                  
+                
+                  
+                    <li><a href="/plugins/chromecast-plugin-brightcove-player.html">Chromecast</a></li>
+                  
+                
+                  
+                    <li><a href="/plugins/custom-endscreen-plugin.html">Pantalla final personalizada</a></li>
+                  
+                
+                  
+                    <li><a href="/plugins/display-error-messages-plugin.html">Mostrar mensajes de error</a></li>
+                  
+                
+                  
+                    <li><a href="/plugins/display-thumbnail-previews-plugin.html">Mostrar vistas previas en miniatura</a></li>
+                  
+                
+                  
+                    <li><a href="/plugins/configuring-brightcove-player-drm.html">DRM</a></li>
+                  
+                
+                  
+                    <li><a href="/plugins/google-tag-manager-plugin-brightcove-player.html">Administrador de etiquetas de Google</a></li>
+                  
+                
+                  
+                    <li><a href="/plugins/hls-plugin.html">HLS</a></li>
+                  
+                
+                  
+                    <li>DVRUX en vivo<a href="/plugins/live-dvrux-plugin.html"></a></li>
+                  
+                
+                  
+                    <li>Superposición<a href="/plugins/display-overlay-plugin.html"></a></li>
+                  
+                
+                  
+                    <li>Visión general:<a href="/plugins/overview-brightcove-player-plugins.html"> Plugins de jugador</a></li>
+                  
+                
+                  
+                    <li>Imagen en imagen<a href="/plugins/picture-picture-plugin-aka-floating-or-pinned.html"></a></li>
+                  
+                
+                  
+                    <li>Pruebas de versión de reproductor/plugin<a href="/plugins/playerplugin-version-testing.html"></a></li>
+                  
+                
+                  
+                    <li>IU de lista de reproducción<a href="/plugins/playlist-ui-plugin.html"></a></li>
+                  
+                
+                  
+                    <li>Registro de cambios del complemento<a href="/plugins/changelog/index.html"></a></li>
+                  
+                
+                  
+                    <li>Registro de complementos<a href="/plugins/plugin-registry.html"></a></li>
+                  
+                
+                  
+                    <li>Referencia de versión del complemento<a href="/plugins/plugin-version-reference.html"></a></li>
+                  
+                
+                  
+                    <li>Selección de calidad<a href="/plugins/quality-selection-plugin.html"></a></li>
+                  
+                
+                  
+                    <li>Redes Sociales<a href="/plugins/social-sharing-plugin.html"></a></li>
+                  
+                
+                  
+                    <li>Tealium Tag Manager<a href="/plugins/tealium-plugin-brightcove-player.html"></a></li>
+                  
+                
+                  
+                    <li>Generador de esquemas SEO de vídeo<a href="/plugins/video-seo-schema-generator-plugin.html"></a></li>
+                  
+                
+              </ul>
+            
+          
+            
+              <h5 class="submenu-header"><a href="/advertising/index.html">Publicidad <strong>+</strong></a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="/advertising/ad-events-and-ad-objects.html">Eventos de anuncio y objetos de anuncio</a></li>
+                  
+                
+                  
+                    <li><a href="/plugins/ad-only-plugin.html">Plugin solo para anuncios</a></li>
+                  
+                
+                  
+                    <li><a href="/plugins/advertising-freewheel-plugin.html">Publicidad con el plugin FreeWheel</a></li>
+                  
+                
+                  
+                    <li><a href="/plugins/advertising-ima3-plugin.html">Publicidad con el complemento IMA3</a></li>
+                  
+                
+                  
+                    <li><a href="/advertising/client-side-preroll-with-live-ssai.html">Anuncios pre-roll del lado del cliente con SSAI en vivo</a></li>
+                  
+                
+                  
+                    <li><a href="/advertising/displaying-ads-using-ad-cue-points.html">Visualización de anuncios mediante puntos de anuncio</a></li>
+                  
+                
+                  
+                    <li><a href="/advertising/flash-no-longer-valid-ima.html">Flash ya no es válido con IMA</a></li>
+                  
+                
+                  
+                    <li><a href="/advertising/guide-ad-partner-integration.html">Guía: Integración de socios publicitarios</a></li>
+                  
+                
+                  
+                    <li><a href="/advertising/guide-contrib-ads-migration.html">Guía: migración de contrib-ads</a></li>
+                  
+                
+                  
+                    <li><a href="/plugins/implementing-server-side-ads-brightcove-player.html">Implementación de SSAI con Brightcove Player</a></li>
+                  
+                
+                  
+                    <li><a href="/advertising/jump-start-header-bidding-ad.html">Inicio de salto: Anuncio de puja de encabezado</a></li>
+                  
+                
+                  
+                    <li><a href="/advertising/jump-start-outstream-ad.html">Inicio de salto: Anuncio Outstream</a></li>
+                  
+                
+                  
+                    <li><a href="/advertising/jump-start-pre-roll-ad.html">Inicio de salto: Anuncio de pre-rollo</a></li>
+                  
+                
+                  
+                    <li>Problemas conocidos:<a href="/advertising/known-issues-server-side-ad-insertion-ssai.html"> Inserción de anuncios en el lado del servidor (SSAI)</a></li>
+                  
+                
+                  
+                    <li>Guía de aprendizaje:<a href="/getting-started/learning-guide-video-advertising.html"> Publicidad en vídeo</a></li>
+                  
+                
+                  
+                    <li>Paso a paso:<a href="/advertising/step-step-implementing-advertising.html"> Implementar publicidad</a></li>
+                  
+                
+                  
+                    <li>Prueba de complementos publicitarios previos al lanzamiento<a href="/advertising/testing-pre-release-advertising-plugins.html"></a></li>
+                  
+                
+                  
+                    <li>Uso de DFP Premium con Brightcove Player<a href="/advertising/using-dfp-premium-brightcove-player.html"></a></li>
+                  
+                
+                  
+                    <li>Uso de Live SSAI y Advanced Player Toolkit<a href="/advertising/using-player-enhancements-live-ssai-brightcove-player.html"></a></li>
+                  
+                
+                  
+                    <li>Validación de etiquetas de anuncio SSAI de Video Cloud<a href="/advertising/video-cloud-ssai-ad-tag-validation.html"></a></li>
+                  
+                
+              </ul>
+            
+          
+            
+              <h5 class="submenu-header">Publicar vídeos y reproductores +<a href="/publish/index.html"><strong></strong></a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="/publish/assigning-video-player-programmatically.html">Asignación de un vídeo al reproductor mediante programación</a></li>
+                  
+                
+                  
+                    <li><a href="/publish/available-options-advanced-page-embed-code.html">Opciones disponibles para el código de inserción avanzado (en página)</a></li>
+                  
+                
+                  
+                    <li><a href="/publish/available-options-standard-iframe-embed-code.html">Opciones disponibles para el código de inserción estándar (iframe)</a></li>
+                  
+                
+                  
+                    <li><a href="/publish/brightcove-player-loader.html">Cargador de jugadores de Brightcove</a></li>
+                  
+                
+                  
+                    <li><a href="/publish/bulk-updating-brightcove-default-player.html">Actualización masiva del reproductor predeterminado de Brightcove</a></li>
+                  
+                
+                  
+                    <li><a href="https://studio.support.brightcove.com/publish/choosing-correct-embed-code.html">Elegir el código de incrustación correcto</a></li>
+                  
+                
+                  
+                    <li>Atrasando la instanciación del jugador<a href="/publish/delaying-player-instantiation.html"></a></li>
+                  
+                
+                  
+                    <li>Jugador previo al lanzamiento<a href="/publish/pre-release-player.html"></a></li>
+                  
+                
+                  
+                    <li>Estrategias de sindicación<a href="/publish/syndication-strategies.html"></a></li>
+                  
+                
+                  
+                    <li>Uso de un reproductor que no sea de Brightcove<a href="/publish/using-non-brightcove-player.html"></a></li>
+                  
+                
+                  
+                    <li>Uso de varios jugadores en una página<a href="https://studio.support.brightcove.com/publish/using-multiple-players-one-page.html"></a></li>
+                  
+                
+                  
+                    <li>Uso de Id. de referencia<a href="https://studio.support.brightcove.com/publish/using-reference-ids.html"></a></li>
+                  
+                
+                  
+                    <li>Inspector de copias de vídeo<a href=""></a></li>
+                  
+                
+              </ul>
+            
+          
+            
+              <h5 class="submenu-header">Solución de problemas +<a href="/troubleshooting/index.html"><strong></strong></a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="/troubleshooting/brightcove-playback-technology-app.html">Aplicación de tecnología de reproducción Brightcove</a></li>
+                  
+                
+                  
+                    <li><a href="/references/brightcove-player-error-reference.html">Referencia de error del Reproductor de Brightcove</a></li>
+                  
+                
+                  
+                    <li><a href="/troubleshooting/brightcove-player-information-modal.html">Brightcove Información del Jugador Modal</a></li>
+                  
+                
+                  
+                    <li><a href="/troubleshooting/brightcove-player-troubleshooting-guide.html">Guía de solución de problemas de Brightcove Player</a></li>
+                  
+                
+                  
+                    <li><a href="/troubleshooting/creating-charles-log.html">Creación de un Charles Log</a></li>
+                  
+                
+                  
+                    <li><a href="/troubleshooting/creating-network-log.html">Creación de un registro de red</a></li>
+                  
+                
+                  
+                    <li><a href="/troubleshooting/domain-restrictions-messaging.html">Mensajería de restricciones de dominio</a></li>
+                  
+                
+                  
+                    <li><a href="/plugins/display-error-messages-plugin.html">Mostrar plugin de mensajes de error</a></li>
+                  
+                
+                  
+                    <li>Configuración manual de la versión del reproductor<a href="/troubleshooting/manually-setting-player-version.html"></a></li>
+                  
+                
+                  
+                    <li>Pruebas de versión de reproductor/plugin<a href="/plugins/playerplugin-version-testing.html"></a></li>
+                  
+                
+                  
+                    <li>Propiedades informativas del jugador<a href="/troubleshooting/player-informational-properties.html"></a></li>
+                  
+                
+                  
+                    <li>Ejemplo:<a href="/code-samples/brightcove-player-sample-live-custom-error-message.html"> Mensaje de error personalizado en vivo</a></li>
+                  
+                
+                  
+                    <li>Paso a paso:<a href="/troubleshooting/step-step-brightcove-player-debugger.html"> Depurador de reproductor de Brightcove</a></li>
+                  
+                
+                  
+                    <li>Ejecución de un seguimiento de ruta de red<a href="/troubleshooting/running-network-path-trace.html"></a></li>
+                  
+                
+                  
+                    <li>Uso de la referencia del reproductor<a href="/troubleshooting/using-player-reference.html"></a></li>
+                  
+                
+                  
+                    <li>Vetting Lanzamientos del jugador de Brightcove<a href="/troubleshooting/vetting-brightcove-player-releases.html"></a></li>
+                  
+                
+                  
+                    <li>Visualización de la configuración del reproductor<a href="/troubleshooting/viewing-player-configuration.html"></a></li>
+                  
+                
+              </ul>
+            
+          
+            
+              <h5 class="submenu-header">Estilo y apariencia +<a href="/styling/index.html"><strong></strong></a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="/styling/customizing-player-appearance.html">Personalización de la apariencia del reproductor</a></li>
+                  
+                
+                  
+                    <li><a href="/styling/customizing-player-appearance-legacy-skin.html">Personalización del aspecto del jugador - Aspecto heredado</a></li>
+                  
+                
+                  
+                    <li>Player Styling Playground<a href="/styling/brightcove-player-sample-player-styling-playground.html"></a></li>
+                  
+                
+                  
+                    <li>Inicio rápido:<a href="/styling/quick-start-player-customization-legacy-skin.html"> Personalización del jugador: aspecto heredado</a></li>
+                  
+                
+                  
+                    <li>Paso a paso:<a href="/getting-started/step-step-player-customization.html"> Personalización del reproductor</a></li>
+                  
+                
+                  
+                    <li>Tamaño de respuesta para el reproductor de Brightcove<a href="/styling/responsive-sizing-brightcove-player.html"></a></li>
+                  
+                
+                  
+                    <li>Tamaño del jugador<a href="/styling/sizing-player.html"></a></li>
+                  
+                
+                  
+                    <li>Skins y versiones de jugador<a href="/styling/skins-and-player-versions.html"></a></li>
+                  
+                
+                  
+                    <li>Estilo de subtítulos<a href="https://studio.support.brightcove.com/media/styling-captions.html"></a></li>
+                  
+                
+                  
+                    <li>Estilo de listas de reproducción<a href="/styling/styling-playlists.html"></a></li>
+                  
+                
+              </ul>
+            
+          
+            
+              <h5 class="submenu-header">Reproducción +<a href="/playback/index.html"><strong></strong></a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="/playback/autoplay-considerations.html">Consideraciones de reproducción automática</a></li>
+                  
+                
+                  
+                    <li><a href="/troubleshooting/brightcove-playback-technology-app.html">Aplicación de tecnología de reproducción Brightcove</a></li>
+                  
+                
+                  
+                    <li><a href="/playback/xdr-with-bcplayer.html">Reanudación multidispositivo con Brightcove Player</a></li>
+                  
+                
+                  
+                    <li><a href="https://studio.support.brightcove.com/publish/deep-linking.html">Vinculación profunda</a></li>
+                  
+                
+                  
+                    <li><a href="/playback/delivering-hls-video.html">Entrega de vídeo HLS</a></li>
+                  
+                
+                  
+                    <li><a href="/playback/determining-which-rendition-will-play.html">Determinar qué copia se reproducirá</a></li>
+                  
+                
+                  
+                    <li><a href="/playback/guide-playback-technology.html">Guía: Tecnología de reproducción</a></li>
+                  
+                
+                  
+                    <li><a href="/plugins/hls-plugin.html">Complemento HLS</a></li>
+                  
+                
+                  
+                    <li><a href="/playback/ios-and-brightcove-player.html">iOS y reproductor de Brightcove</a></li>
+                  
+                
+                  
+                    <li>Visión general:<a href="/playback/overview-https-support.html"> Soporte de HTTPS</a></li>
+                  
+                
+                  
+                    <li>Complemento de selección de calidad<a href="/plugins/quality-selection-plugin.html"></a></li>
+                  
+                
+                  
+                    <li>Entrega URL estática<a href="/playback/static-url-delivery.html"></a></li>
+                  
+                
+                  
+                    <li>Transmisión de contenido protegido PlayReady<a href="/playback/streaming-playready-protected-content-dynamic-delivery.html"></a></li>
+                  
+                
+                  
+                    <li>Uso del reproductor de Brightcove para TVE<a href="/playback/using-brightcove-player-tve.html"></a></li>
+                  
+                
+              </ul>
+            
+          
+            
+              <h5 class="submenu-header"><a href="/content-protection/index.html">Protección de contenido y DRM <strong>+</strong></a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="https://studio.support.brightcove.com/players/configuring-player-content-restrictions.html">Configuración de Restricciones de Contenido del Reproductor</a></li>
+                  
+                
+                  
+                    <li><a href="/content-protection/creating-dash-drm-manifest-brightcove-player.html">Creación de un manifiesto DRM de DASH para el reproductor de Brightcove</a></li>
+                  
+                
+                  
+                    <li><a href="/troubleshooting/domain-restrictions-messaging.html">Mensajería de restricciones de dominio</a></li>
+                  
+                
+                  
+                    <li><a href="/plugins/configuring-brightcove-player-drm.html">Complemento DRM</a></li>
+                  
+                
+                  
+                    <li>Visión general:<a href="/content-protection/overview-content-protection.html"> Protección de contenido</a></li>
+                  
+                
+                  
+                    <li>Teclas de política<a href="/content-protection/policy-keys.html"></a></li>
+                  
+                
+                  
+                    <li>Restringir la reproducción de vídeo mediante dirección IP<a href="/content-protection/restricting-video-playback-using-ip-address.html"></a></li>
+                  
+                
+                  
+                    <li>URL firmadas y autenticación de tokens con una transmisión en directo<a href="/content-protection/signed-urls-and-token-auth-live-stream.html"></a></li>
+                  
+                
+              </ul>
+            
+          
+            
+              <h5 class="submenu-header"><a href="/coding-topics/index.html">Temas de codificación <strong>+</strong></a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="/publish/brightcove-player-loader.html">Cargador de jugadores de Brightcove</a></li>
+                  
+                
+                  
+                    <li><a href="/references/catalog-search-architecture.html">Actualización de búsqueda de catálogo</a></li>
+                  
+                
+                  
+                    <li><a href="/code-samples/brightcove-player-sample-trigger-rewind-custom-event.html">Evento personalizado</a></li>
+                  
+                
+                  
+                    <li><a href="/playback/guide-playback-technology.html">Guía: Tecnología de reproducción</a></li>
+                  
+                
+                  
+                    <li>Localización de Brightcove Player<a href="/coding-topics/programmatically-localizing-brightcove-player.html"></a></li>
+                  
+                
+                  
+                    <li>Localización de complementos<a href="/coding-topics/localizing-plugins.html"></a></li>
+                  
+                
+                  
+                    <li>Eventos de jugador<a href="/coding-topics/player-events.html"></a></li>
+                  
+                
+                  
+                    <li>Visión general:<a href="/coding-topics/overview-components.html"> Componentes</a></li>
+                  
+                
+                  
+                    <li>Visión general:<a href="/playback/overview-https-support.html"> Soporte de HTTPS</a></li>
+                  
+                
+                  
+                    <li>Visión general:<a href="/coding-topics/overview-player-api.html"> Player API</a></li>
+                  
+                
+                  
+                    <li>Pasar datos al complemento<a href="/coding-topics/pass-data-plugin.html"></a></li>
+                  
+                
+                  
+                    <li>Reaccionar el cargador del jugador<a href="/coding-topics/react-player-loader.html"></a></li>
+                  
+                
+                  
+                    <li>Informes sobre configuraciones de Brightcove Player<a href="/coding-topics/reporting-brightcove-player-configurations.html"></a></li>
+                  
+                
+                  
+                    <li>RequireJS y reproductor de Brightcove<a href="/coding-topics/requirejs-and-brightcove-player.html"></a></li>
+                  
+                
+                  
+                    <li>Paso a paso:<a href="/coding-topics/step-step-plugin-development.html"> Desarrollo de complementos</a></li>
+                  
+                
+                  
+                    <li>Paso a paso:<a href="/coding-topics/step-step-videojs-plugin-generator.html"> Generador de complementos Video.js</a></li>
+                  
+                
+                  
+                    <li>Uso de los métodos bc () y getPlayer ()<a href="/coding-topics/using-bc-and-getplayer-methods.html"></a></li>
+                  
+                
+                  
+                    <li>Visualización de la configuración del reproductor<a href="/troubleshooting/viewing-player-configuration.html"></a></li>
+                  
+                
+              </ul>
+            
+          
+            
+              <h5 class="submenu-header"><a href="/general/index.html">Información general <strong>+</strong></a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="https://studio.support.brightcove.com/publish/adding-application-id-player-embed-code.html">Adición de un ID de aplicación al código de incrustación del reproductor</a></li>
+                  
+                
+                  
+                    <li><a href="/general/adding-captions-videos-programmatically.html">Adición de subtítulos a vídeos mediante programación</a></li>
+                  
+                
+                  
+                    <li><a href="https://studio.support.brightcove.com/media/adding-chapters-video.html">Adición de capítulos a un vídeo</a></li>
+                  
+                
+                  
+                    <li><a href="/general/brightcove-player-6-now-default-version.html">Versión predeterminada de Brightcove Player 6</a></li>
+                  
+                
+                  
+                    <li><a href="/general/brightcove-player-accessibility.html">Accesibilidad del reproductor de Brightcove</a></li>
+                  
+                
+                  
+                    <li><a href="/plugins/custom-endscreen-plugin.html">Complemento de pantalla final personalizado</a></li>
+                  
+                
+                  
+                    <li><a href="/plugins/display-overlay-plugin.html">Complemento de superposición de visualización</a></li>
+                  
+                
+                  
+                    <li><a href="/references/guide-playlist-api.html">Guía: API de lista de reproducción</a></li>
+                  
+                
+                  
+                    <li><a href="/general/identify-and-delete-low-performing-videos.html">Identificar y eliminar vídeos de bajo rendimiento</a></li>
+                  
+                
+                  
+                    <li><a href="/general/implementing-cue-points-programmatically.html">Implementación de puntos de referencia mediante programación</a></li>
+                  
+                
+                  
+                    <li><a href="/general/implementing-playlists.html">Implementar listas de reproducción</a></li>
+                  
+                
+                  
+                    <li><a href="/general/implementing-modaldialog.html">Implementación del ModalDialog</a></li>
+                  
+                
+                  
+                    <li>HLS en vivo<a href="/general/live-hls.html"></a></li>
+                  
+                
+                  
+                    <li>Configuración de Live Stream<a href="/general/live-stream-configuration.html"></a></li>
+                  
+                
+                  
+                    <li>Varias pistas de audio<a href="/general/multiple-audio-tracks.html"></a></li>
+                  
+                
+                  
+                    <li>Guía de configuración del reproductor<a href="/general/player-configuration-guide.html"></a></li>
+                  
+                
+                  
+                    <li>Reproducir transmisiones en vivo<a href="/general/playing-live-streams.html"></a></li>
+                  
+                
+                  
+                    <li>Plugin UI de lista de reproducción<a href="/plugins/playlist-ui-plugin.html"></a></li>
+                  
+                
+                  
+                    <li>URL firmadas y autenticación de tokens con una transmisión en directo<a href="/content-protection/signed-urls-and-token-auth-live-stream.html"></a></li>
+                  
+                
+                  
+                    <li>Plugin de redes sociales<a href="/plugins/social-sharing-plugin.html"></a></li>
+                  
+                
+                  
+                    <li>Paso a paso:<a href="https://apis.support.brightcove.com/player-management/getting-started/step-step-player-management.html"> Administración de jugadores</a></li>
+                  
+                
+                  
+                    <li>Estilo de listas de reproducción<a href="/styling/styling-playlists.html"></a></li>
+                  
+                
+                  
+                    <li>Uso de un lector de pantalla con Brightcove Player<a href="/general/using-screen-reader-brightcove-player.html"></a></li>
+                  
+                
+                  
+                    <li>Versiones de la documentación de Brightcove Player<a href="/general/versions-brightcove-player-documentation.html"></a></li>
+                  
+                
+                  
+                    <li>Control de volumen<a href="/general/volume-control.html"></a></li>
+                  
+                
+              </ul>
+            
+          
+            
+              <h5 class="submenu-header"><a href="/code-samples/index.html">Ejemplos de código <strong>+</strong></a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="/code-samples/index-thumb.html">Ejemplos de código por grupo</a></li>
+                  
+                
+                  
+                    <li><a href="/code-samples/index.html">Índice de ejemplo de código</a></li>
+                  
+                
+              </ul>
+            
+          
+            
+              <h5 class="submenu-header"><a href="/amp/index.html">AMP <strong>+</strong></a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="/amp/amp-using-video-cloud-video.html">AMP Uso de un vídeo de Video Cloud</a></li>
+                  
+                
+                  
+                    <li><a href="/amp/amp-using-external-video.html">AMP Uso de un vídeo externo</a></li>
+                  
+                
+              </ul>
+            
+          
+            
+              <h5 class="submenu-header">Entrenamiento +<a href="/training/index.html"><strong></strong></a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="/training/online-training-courses.html">Todos los cursos de formación en línea</a></li>
+                  
+                
+                  
+                    <li><a href="/training/developer-basics-videos.html">Vídeos básicos del desarrollador</a></li>
+                  
+                
+                  
+                    <li>Vídeos de capacitación sobre desarrollo de jugadores<a href="/training/player-development-training-videos.html"></a></li>
+                  
+                
+                  
+                    <li>Regístrese para la formación impartida por instructor<a href="/training/register-training.html"></a></li>
+                  
+                
+                  
+                    <li>Capacitación:<a href="/training/training-demand-developing-brightcove-player.html"> Desarrollar con Brightcove Player</a></li>
+                  
+                
+                  
+                    <li>Capacitación:<a href="https://apis.support.brightcove.com/player-management/getting-started/training-demand-quick-start-player-management.html"> Inicio rápido de la administración de reproductores</a></li>
+                  
+                
+                  
+                    <li><a href="/training/brightcove-university.html">Cursos de formación de la Universidad de Brightcove</a></li>
+                  
+                
+              </ul>
+            
+          
+            
+              <h5 class="submenu-header">Notas de la versión +<a href="/release-notes/index.html"><strong></strong></a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="/release-notes/brightcove-player-release-notes.html">Brightcove Player Notas informativas</a></li>
+                  
+                
+                  
+                    <li><a href="/release-notes/brightcove-player-prerelease-notes.html">Notas previas al lanzamiento del jugador de Brightcove</a></li>
+                  
+                
+              </ul>
+            
+          
+            
+              <h5 class="submenu-header">Soporte +<a href="/support/index.html"><strong></strong></a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    
+                  
+                
+                  
+                    <li>Visualización de la página Estado del Sistema de Brightcove<a href="/support/viewing-brightcove-system-status-page.html"></a></li>
+                  
+                
+                  
+                    <li><a href="/support/contact-sales.html">Contacto con Ventas</a></li>
+                  
+                
+                  
+                    <li>Apertura de un caso de soporte<a href="/support/opening-case-with-brightcove-support.html"></a></li>
+                  
+                
+              </ul>
+            
+          
+      </nav>
+    </div>
+    <div class="col-lg-7" style="background-color: white;color: #333333;margin-top: -1em;margin-bottom: -1em;padding-bottom:1em;">
+  <!-- bootstrap layout -->
+
+<p id="bc_veggie_burger_wrapper" style="display: none;"><img id="bc_veggie_burger" src="/assets/images/feather/menu.svg" alt="Menú de navegación"/></p>
+
+<!-- search bar -->
+<div id="nav-search-box" style="margin-top: 1rem;"></div>
+<!-- in-page navigation for narrow screens -->
+<details class="centered-inpage-nav" id="centered_inpage_nav">
+  <summary><h6 class="toc">Contenido de la página</h6></summary>
+  <nav id="centered_toc"></nav>
+  <ul id="centered_in_page_toc" class="list-none"></ul>
+</details>
+<!-- open in new tab/window -->
+<a id="open_new_tab" href="#" target="_blank" style="display: none;"><img src="/assets/images/feather/external-link.svg" alt="abrir en una nueva pestaña" style="margin-top:4em;width: 1.5em;"/></a>
+
+
+
+  
+    
+
+
+<h1>Brightcove Player Notas informativas</h1>
+<article class="bcls-article">
+    <summary>Esta página realiza un seguimiento de la información de lanzamiento de Brightcove Player</summary>
+    <br/>
+
+    <aside class="bcls-aside bcls-aside--warning">
+        <p>
+            Nota:<strong style="color:#990000"></strong> Por defecto, las actualizaciones se aplican automáticamente a todos los reproductores. Para evitar la actualización automática de un reproductor, debe configurarlo en actualización manual (también conocida como bloqueo de un reproductor). Puede hacerlo en el módulo Studio Players (sitio externo) o mediante la API de administración de Player.<a href="https://studio.support.brightcove.com/players/setting-player-update-mode-and-version.html"></a><a href="https://apis.support.brightcove.com/player-management/guides/opting-out-automatic-player-updates.html"></a>
+        </p>
+        <p>
+            La opción de no recibir actualizaciones automáticas debe ser una medida temporal, aplicada mientras resuelve cualquier problema que cree la actualización. Si no actualiza los jugadores a la versión actual, se está perdiendo nuevas características y correcciones de errores, y las versiones anteriores del reproductor dejarán de ser compatibles en algún momento
+        </p>
+        <p>
+            <strong>Además</strong>, puede ver las versiones de Brightcove Player y los lanzamientos de complementos en el Grupo Google <a href="https://groups.google.com/forum/#!forum/bcplayerdev">Anuncios de lanzamiento de Brightcove Player</a>. 
+        </p>
+    </aside>
+
+    <section id="currentrelease" class="section">
+
+        <h2>VERSIÓN 6 - v6.45.4</h2>
+
+        <p>9 Oct 2020</p>
+
+        <ul>
+            <li>Actualizado a VHS 2.1.0</li>
+            <li>Actualizado a Video.js 7.9.3</li>
+            <li>Se ha corregido una regresión en el soporte para el <code translate="No">language</code> atributo en la incrustación de vídeo. Este caso de uso está obsoleto; no <code translate="No">language</code> es un atributo válido para el &gt; elemento &lt; video &gt; o &lt; video-js!</li>
+            <li>Se han corregido fallos con vistas previas y URL de archivos con parámetros de consulta</li>
+            <li>Ahora muestra la versión DRM en modal de información del jugador si es encontrable</li>
+            <li>VHS 2 - La inclusión de <em>VHS 2.1.0</em> en el Brightcove Player es un gran hito para Brightcove. Esta importante actualización de nuestro motor de reproducción nos prepara para muchas mejoras futuras. Representa la culminación de muchos meses de esfuerzo entre bastidores, pruebas y refinamiento. No se notarán diferencias en el comportamiento del jugador desde el punto de vista de los espectadores. ¡Felicitaciones a todos los que contribuyeron a entregar VHS 2!</li>
+            <li>Establecer <code>policy_key</code> en <code>none</code> en la configuración del reproductor ya no funcionará (esto se hace en algunos casos perimetrales). En su lugar, establezca <code>policy_key</code> en <code>cero</code></li>
+        </ul>
+
+        <h2>VERSIÓN 5 - 5.28.1</h2>
+
+        <aside class="bcls-aside bcls-aside--information">
+            <p>
+                Ya no se admite la versión 5 de Brightcove Player. Los reproductores publicados seguirán funcionando y no se deshabilitarán, pero Brightcove no puede garantizar la compatibilidad futura con navegadores, API, formatos de vídeo, integraciones y otros cambios que puedan ocurrir fuera del reproductor.
+            </p>
+
+            <p>
+                Nuestra recomendación es actualizar a la versión más reciente de la versión 6. Si necesita ayuda para hacerlo, póngase en contacto con el servicio de soporte de Brightcove.
+            </p>
+        </aside>
+
+        <p>27 Nov 2017</p>
+
+        <ul>
+            <li>
+                Permitir <code translate="No">playsinline</code> y <code translate="No">muted</code> opciones a nivel de jugador
+            </li>
+            <li>
+                Amplíe la global <strong>bc</strong> con propiedades por incrustación. En resumen, esto mejora el soporte para múltiples reproductores simultáneos en una sola página utilizando el incrustado avanzado o en página; sin embargo, no se recomienda mezclar reproductores 5.x y 6.x, ya que puede hacer que los iconos desaparezcan en algunas situaciones. Más información vendrá en forma de documentación sobre este tema.
+            </li>
+            <li>
+                Se ha corregido un error por el que faltaba <strong>el botón de juego grande</strong> para los jugadores que usaban el aspecto de grafito en iOS 11.
+            </li>
+            <li>
+                Se ha corregido un problema al analizar algunas etiquetas ID3 con un encabezado Pes_Packet_Length incorrecto.
+            </li>
+        </ul>
+    </section>
+
+    <section class="section">
+        <h2 id="Previous_releases">Versiones anteriores<strong></strong></h2>
+
+        <h2>VERSIÓN 6 - v6.44.3</h2>
+
+        <p>5 Ago 2020</p>
+
+        <ul>
+            <li>Añadido soporte previo a la preinstalación de IMA CSAI con SSAI a través de una configuración especial (documentación de próxima aparición)</li>
+            <li>Actualizado a <strong>Video.js 7.9.2</strong></li>
+            <li>Se han corregido errores de inicialización intermitente en dispositivos Chromecast</li>
+            <li>Se corrigió que los controles del jugador no respondieran en iPhones al salir de pantalla completa.</li>
+            <li>Se ha corregido una regresión en el soporte para el ID de aplicación</li>
+            <li>Se ha corregido una regresión en el soporte para una <code translate="No">"hls": true</code> configuración. Esta configuración en realidad no hacía nada anteriormente, pero un cambio reciente hizo que rompiera a los jugadores que lo tenían.</li>
+            <li>Se ha corregido una regresión en el soporte para el <code translate="No">language</code> atributo en la incrustación de vídeo. Este caso de uso está obsoleto; <code translate="No">language</code> no es un atributo válido para el <code translate="No">&lt;video&gt;</code> o <code translate="No">&lt;video-js&gt;</code> ¡elemento!</li>
+        </ul>
+
+        <h2>VERSIÓN 6 - v6.42.4</h2>
+
+        <p>20 jun 2020</p>
+
+        <ul>
+            <li>Se agregó una solución alternativa para los subtítulos que no se muestran en pantalla completa nativa en las versiones más recientes de iOS/iPhone</li>
+            <li>Se solucionó un problema al pasar los parámetros SSAI al receptor Chromecast</li>
+            <li>Solo agregue pistas de miniaturas si <code translate="No">videojs-thumbnails</code> está en uso; esto resuelve algunos mensajes de error inofensivos pero antiestéticos que se estaban registrando para algunos usuarios</li>
+        </ul>
+
+        <h2>VERSIÓN 6 - v6.42.1</h2>
+
+        <p>14 de mayo de 2020</p>
+
+        <ul>
+            <li>
+                Enviar <code translate="No">video_engagement</code> evento cuando se elige una nueva copia
+            </li>
+            <li>
+                Actualizado a <strong>Video.js 7.8.1</strong> y <strong>@videojs /http-streaming 1.13.2</strong>
+            </li>
+            <li>Corrección de errores: Considere el protocolo al seleccionar miniaturas WebVTT</li>
+            <li>Corrección de errores: Detección del idioma predeterminado en incrustaciones iframe</li>
+        </ul>
+
+        <h2>VERSIÓN 6 - v6.41.1</h2>
+
+        <p>6 de mayo de 2020</p>
+
+        <ul>
+            <li>Admite URL de miniaturas de VTT en las respuestas de la Playback API</li>
+            <li>
+                Corrección de errores: Nos aseguramos de que enviamos <code translate="No">play_request</code> cuando tenemos un anuncio pre-oll
+            </li>
+            <li>Corrección de errores: Actualizado a <strong>Video.js 7.7.6</strong></li>
+            <li>
+                Corrección de errores: Se solucionaron problemas con la detección de reproducción automática en iOS y Android
+            </li>
+        </ul>
+
+        <h2>VERSIÓN 6 - v6.40.3</h2>
+
+        <p>7 abr 2020</p>
+
+        <ul>
+            <li>Se solucionaron problemas con la detección de reproducción automática en iOS y Android</li>
+        </ul>
+
+        <h2>VERSIÓN 6 - v6.40.2</h2>
+
+        <p>27 Mar 2020</p>
+
+        <ul>
+            <li>Añadido soporte para la autorización de reproducción perimetral</li>
+            <li>Agregado soporte de idioma árabe (ar)</li>
+            <li>Se ha corregido una regresión en el manejo del idioma introducida en 6.38.0</li>
+            <li>
+                Actualizado el streaming HTTP Video.js a v1.12.3, que corrige problemas con niveles de calidad, errores de inicio en vivo y mucho más
+            </li>
+            <li>
+                Se han solucionado problemas con archivos remotos que solo se entregan con compresión gzip
+            </li>
+            <li>
+                Se corrigió un problema para que las compilaciones no fallaran en archivos con parámetros de consulta y caracteres especiales.
+            </li>
+            <li>Actualizado videojs-errors a 4.3.2</li>
+        </ul>
+
+        <h2>VERSIÓN 6 - v6.38.4</h2>
+
+        <p>8 Ene 2020</p>
+
+        <ul>
+            <li>
+                Se ha resuelto un problema relacionado con la interacción de informes cuando el usuario establece ciertas tasas de reproducción
+            </li>
+            <li>Actualizado a <strong>Video.js</strong> 7.7.4</li>
+            <li>
+                Se ha corregido un problema de compatibilidad con Brightcove Player v6.38.0 y el complemento IMA4 v3.4.0.
+            </li>
+            <li>
+                Añadido parámetro de configuración del reproductor para deshabilitar el botón nativo Picture-in-Picture. Para ocultar el botón nativo Picture-in-Picture, configure <code translate="No">"picture_in_picture_control": false</code> la configuración del reproductor mediante el editor JSON de Studio. Tenga en cuenta que esto es distinto del plugin Picture-in-Picture.
+            </li>
+            <li>
+                Agregado soporte para Chino (Simplificado) - ZH-Hans - y Chino (Tradicional) - ZH-hant - juegos de caracteres en cadenas traducidas
+            </li>
+            <li>
+                Se solucionaron problemas con DRM y errores ocasionales causados por la desconexión de auriculares.
+            </li>
+        </ul>
+
+        <h2>VERSIÓN 6 - v6.37.5</h2>
+
+        <p>18 dic 2019</p>
+
+        <ul>
+            <li>Actualizado a <strong>Video.js</strong> 7.6.6</li>
+        </ul>
+
+        <h2>VERSIÓN 6 - v6.37.4</h2>
+
+        <p>18 Nov 2019</p>
+
+        <ul>
+            <li>Se corrigió la reproducción de DRM en IE11 en Windows 8.1</li>
+            <li>
+                Se ha corregido el color del control de volumen durante la reproducción de anuncios con versiones anteriores del plugin SSAI.
+            </li>
+        </ul>
+
+        <h2>VERSIÓN 6 - v6.37.3</h2>
+
+        <p>24 Oct 2019</p>
+
+        <ul>
+            <li>
+                Se ha corregido una regresión en la que los atributos no se reconocían correctamente para <code translate="No">loop</code> , <code translate="No">muted</code> y <code translate="No">playsinline</code>
+            </li>
+        </ul>
+
+        <h2>VERSIÓN 6 - v6.37.2</h2>
+
+        <p>22 Oct 2019</p>
+
+        <ul>
+            <li>Actualizado a <strong>http-streaming</strong> 1.11.1</li>
+        </ul>
+
+        <h2>VERSIÓN 6 - v6.37.1</h2>
+
+        <p>9 Oct 2019</p>
+
+        <ul>
+            <li>Añadido soporte para la reproducción Widevine HLS</li>
+            <li>Actualizado Video.js a 7.6.5<strong></strong></li>
+        </ul>
+
+        <h2>VERSIÓN 6 - v6.36.6</h2>
+
+        <p>1 Oct 2019</p>
+
+        <ul>
+            <li>Se ha corregido una regresión en el soporte para valores de precarga no predeterminados</li>
+        </ul>
+
+        <h2>VERSIÓN 6 - v6.36.5</h2>
+
+        <p>6 Sep 2019</p>
+
+        <ul>
+            <li>
+                Añadido soporte para <code translate="No">suppress_not_supported_error</code> en la configuración del reproductor
+            </li>
+            <li>
+                Corrección de errores: Se ha corregido un error que provocaba que al eliminar el jugador se registrara un error después de ~ 10 segundos.
+            </li>
+            <li>
+                Corrección de errores: Se ha corregido el nombre del <code translate="No">data-delivery-config-id</code> atributo
+            </li>
+            <li>
+                Corrección de errores: Se han corregido varios problemas relacionados con la reproducción relacionados con brechas y tartamudez.
+            </li>
+            <li>
+                Corrección de errores: Se ha corregido una regresión en 6.31.1 que causaba errores a los jugadores localizados.
+            </li>
+            <li>
+                Corrección de errores: Métodos abreviados de teclado deshabilitados cuando el usuario está centrado en un <code translate="No">contenteditable</code> campo
+            </li>
+            <li>
+                Corrección de errores: Evite errores causados por el uso de un cargador AMD que no sea RequireJS
+            </li>
+            <li>
+                Corrección de errores: Evitar que aparezca el menú contextual al segmentar elementos de entrada de texto
+            </li>
+            <li>
+                Actualizado Video.js a 7.6.5<strong></strong>
+                <ul>
+                    <li>
+                        Esta actualización de Video.js incluye compatibilidad con un nuevo botón Picture-in-Picture. Esto es distinto de nuestro plugin del mismo nombre y se refiere al soporte PiP nativo disponible en algunos navegadores.
+                    </li>
+                    <li>
+                        El botón solo aparecerá cuando el navegador admita PIP nativo a través de la especificación WICG. Actualmente, esto no incluye Safari.
+                    </li>
+                    <li>
+                        El botón no aparecerá si el reproductor está configurado con un plugin publicitario.
+                    </li>
+                </ul>
+            </li>
+            <li>Actualizar <strong>http-streaming</strong> a 1.10.6</li>
+        </ul>
+
+        <h2>VERSIÓN 6 - v6.35.2</h2>
+
+        <p>24 Jul 2019</p>
+
+        <ul>
+            <li>
+                Se solucionó un problema por el que la primera búsqueda de vuelta a la ventana de DVR después de reproducir automáticamente una transmisión en vivo causaba que el reproductor buscara el borde en vivo en su lugar.
+            </li>
+            <li>
+                Se solucionó un problema de Firefox donde el <code translate="No">oncontextmenu</code> evento desencadena <code translate="No">click</code> el evento
+            </li>
+        </ul>
+
+        <h2>VERSIÓN 6 - v6.35.1</h2>
+
+        <p>18 Jun 2019</p>
+
+        <ul>
+            <li>Añadido soporte para reglas Dynamic Delivery</li>
+            <li>
+                Añadido soporte para <code translate="No">playback_rates</code> en la configuración del reproductor
+            </li>
+            <li>Actualización de la <strong>transmisión HTTP de Video.js</strong> a 1.10.3</li>
+            <li>Actualizado <strong>Video.js</strong> a 7.5.5</li>
+            <li>
+                Teclas de acceso rápido reactivadas; los problemas observados deben corregirse con Video.js 7.5.5
+            </li>
+        </ul>
+
+        <h2>VERSIÓN 6 - v6.34.3</h2>
+
+        <p>7 Mayo 2019</p>
+
+        <ul>
+            <li>
+                Soporte ampliado del Playback Authorization Service para incluir SSAI + HLSE.
+            </li>
+            <li>Actualizado a Video.js 7.5.4 y http-streaming 1.10.1</li>
+            <li>
+                Corrección de errores: No ocultes el control de progreso en tamaños de jugador con capacidad de respuesta pequeña y minúscula.
+            </li>
+            <li>Corrección de errores: Evite que el orden del complemento afecte a los análisis.</li>
+            <li>
+                Corrección de errores: Error correctamente en las compilaciones del reproductor cuando no se pudieron descargar los activos remotos.
+            </li>
+            <li>
+                Corrección de errores: Registre un error si un complemento está configurado, pero falta o arroja un error.
+            </li>
+            <li>
+                Corrección de errores: Desactive la nueva función de teclas rápidas debido a los informes de errores de los clientes. Pronto llegará una solución permanente, ¡pero queríamos detener el mal comportamiento tan pronto como sea posible! Perdón por un inconveniente.
+            </li>
+        </ul>
+
+        <h2>VERSIÓN 6 - v6.33.1</h2>
+
+        <p>25 abr 2019</p>
+
+        <ul>
+            <li>
+                Desactive la nueva función de teclas rápidas debido a los informes de errores de los clientes. Pronto llegará una solución permanente, ¡pero queríamos detener el mal comportamiento tan pronto como sea posible! Perdón por las molestias.
+            </li>
+        </ul>
+
+        <h2>VERSIÓN 6 - v6.33.0</h2>
+
+        <p>19 abr 2019</p>
+
+        <ul>
+            <li>Agregado soporte para el Playback Authorization Service de Brightcove</li>
+            <li>
+                Se ha añadido la configuración del <code translate="No">volume_orientation</code> reproductor para controlar la orientación del panel de volumen (el valor predeterminado es <strong>horizontal</strong> )
+            </li>
+            <li>
+                Admite un <code translate="No">{PLAYER_CLASS}</code> token en archivos CSS personalizados horneados en configuraciones de reproductor
+            </li>
+            <li>
+                Actualizado a <strong>Video.js</strong> 7.5 y habilitado el soporte de teclas rápidas predeterminadas ( <strong>f</strong> para pantalla completa, <strong>m</strong> para silencio y <strong>k</strong> y <strong>espacio</strong> para reproducir/pausa)
+            </li>
+            <li>
+                Utilice la nueva interfaz de usuario <strong>Video.js</strong> Live a menos que el reproductor esté configurado con el plugin DVRUX heredado
+            </li>
+            <li>
+                Corrección de errores: Se ha corregido un problema por el que InactivityTimeout se ignoraba en dispositivos móviles/táctiles
+            </li>
+            <li>
+                Corrección de errores: Las etiquetas de los menús de botones de pista no deben forzarse en minúsculas
+            </li>
+            <li>
+                Corrección de errores: Cuando el control de pantalla completa está deshabilitado, deshabilite el soporte para hacer doble clic para pantalla completa
+            </li>
+            <li>
+                Corrección de errores: Exponer la propiedad de segmento personalizada en la pista de metadatos del segmento
+            </li>
+            <li>Corrección de errores: Se han corregido problemas de reproducción con vídeos cortos en IE11/Win7</li>
+            <li>Corrección de errores: Ignorar tramas ID3 desconocidas</li>
+            <li>Actualizado <strong>http-streaming</strong> a 1.9.3</li>
+            <li>Actualizado <strong>Video.js</strong> a 7.5.3</li>
+            <li>Actualizado <strong>videojs-playlist</strong> a 4.3.1</li>
+        </ul>
+
+        <h2>VERSIÓN 6 - v6.31.1</h2>
+
+        <p>6 Mar 2019</p>
+
+        <ul>
+            <li>Añadido soporte para la obtención de vídeos relacionados desde la Playback API</li>
+            <li>
+                Corrección de errores: Se ha corregido un problema por el que <code translate="No">cuechange</code> los eventos ID3 no funcionaban en iOS 12
+            </li>
+            <li>
+                Corrección de errores: La información sobre herramientas de tiempo del ratón debe ser visible durante el tiempo de progreso
+            </li>
+            <li>
+                Corrección de errores: Use el mismo <code translate="No">inBandMetadataTrackDispatchType</code> que está expuesto por <strong>mux.js</strong>
+            </li>
+            <li>Corrección de errores: Evitar que las excepciones sean lanzadas por MediaSource</li>
+            <li>
+                Corrección de errores: Use subtítulos nativos en iOS Chrome, para que funcionen correctamente
+            </li>
+        </ul>
+
+        <h2>VERSIÓN 6 - v6.30.1</h2>
+
+        <p>8 Feb 2019</p>
+
+        <ul>
+            <li>
+                Permitir retrasar la inicialización automática del reproductor hasta que la detección de bloques de anuncios haya tomado una decisión, utilizando la configuración <code translate="No">"wait_for_ad_block_detect": true</code> . Actualmente, esta configuración avanzada solo está disponible a través de la Player Management API y no existe un plan a corto plazo para admitirla en Studio.
+            </li>
+            <li>Actualizar <code translate="No">videojs-playlist</code> a 4.3.0</li>
+            <li>Actualizado <code translate="No">video.js</code> a 7.4.3</li>
+        </ul>
+
+        <h2 id="6.29.2">VERSIÓN 6 - v6.29.2</h2>
+
+        <p>15 ene 2019</p>
+
+        <ul>
+            <li>
+                Hacer que los jugadores respondan al tamaño del navegador de forma predeterminada <span class="bcls-highlight"> <strong><sup>1</sup></strong> </span>
+            </li>
+            <li>Corrección de errores: Deseche limpiamente el controlador de origen HLS/DASH</li>
+            <li>
+                Corrección de errores: Resuelva un problema ocasional en el que Brightcove Player se soltó <code translate="No">video_impression</code> y <code translate="No">video_view</code> cuando se utiliza el complemento IMA4 v3.x y <code translate="No">autoplay</code> en
+            </li>
+            <li>
+                Corrección de errores: Revertir el uso de la API de SendBeacon para revertir un aumento del 0,1% en fallas de balizas
+            </li>
+            <li>
+                Actualización a <code translate="No">Video.js</code> 7.4.2 <span class="bcls-highlight"> <strong><sup>2</sup></strong> </span>
+            </li>
+            <li>
+                Corrección de errores: Cuando se utiliza con una <code translate="No">track</code> etiqueta, el <code translate="No">default</code> atributo ahora funciona correctamente e inicia los subtítulos automáticamente.
+            </li>
+        </ul>
+
+        <p>
+            <span class="bcls-highlight"><strong><sup>1</sup></strong> </span> Cabe señalar que, en este contexto, hacer que el jugador «responda al tamaño del navegador por defecto» es distinto de hacer fluido el reproductor. Lo siguiente debería aclarar la nueva característica:
+        </p>
+
+        <ul>
+            <li>Para ser claros: los jugadores estáticos no se volverán fluidos repentinamente!</li>
+            <li>
+                El uso de «responsive» en este contexto significa que hemos habilitado la nueva opción responsive Video.js en Brightcove Player de forma predeterminada (mientras que está desactivada de forma predeterminada en Video.js). Esta opción hará que una <code translate="No">vjs-layout-*</code> clase se aplique al jugador en función de un conjunto predeterminado de puntos de interrupción siempre que se cambie el tamaño del jugador. Esto significa que la «capacidad de respuesta» no se basa realmente en el tamaño de la ventana gráfica del navegador, sino en el tamaño del reproductor incrustado.
+            </li>
+            <li>
+                Se han realizado dos pequeños ajustes de interfaz de usuario basados en esta nueva opción Video.js. Se prevé que estos ajustes no deben afectar a muchos usuarios, si los hay, pero en aras de la integridad, están en:
+                <ul>
+                    <li>Cuadro de diálogo Configuración de subtítulos</li>
+                    <li>Diálogo de plugin social</li>
+                </ul>
+            </li>
+            <li>
+                Los usuarios que tengan incrustaciones adaptables desde Studio o a través de la opción fluida de Video.Js podrán aprovechar las nuevas <code translate="No">vjs-layout-*</code> clases para mejorar sus personalizaciones de la interfaz de usuario del reproductor en función del tamaño del reproductor. Y los usuarios que tengan incrustaciones de tamaño estático seguirán recibiendo una <code translate="No">vjs-layout-*</code> clase aplicada a su reproductor, pero no cambiará a menos que el tamaño del reproductor cambie en tiempo de ejecución.
+            </li>
+            <li>
+                Para implementaciones de reproductores de ancho pequeño (como 425px), es posible que algunos botones de la barra de control estén ocultos. Aunque perderá las características de respuesta, el siguiente código evitará que los botones se oculten:
+                <pre class="line-numbers">
+  <code class="language-javascript" translate="No">&lt;script&gt;
+    videojs.getPlayer('myPlayerID').ready(function() {
+      var myPlayer = this;
+      myPlayer.responsive(false);
+    });
+  &lt;/script&gt;</code></pre>
+            </li>
+        </ul>
+
+        <p>
+            <span class="bcls-highlight"><strong><sup>2</sup></strong> </span> Video.js v7.4.2 incluye una nueva funcionalidad para la transmisión en vivo, incluido el nuevo indicador de texto <strong>en vivo</strong>.  Si está creando un aspecto desde cero y utilizando el <code translate="No">skin: false</code> atributo, debe incluir el siguiente CSS para asegurarse de que el indicador <strong>Live</strong> no aparece:
+        </p>
+
+        <pre class="line-numbers">
+  <code class="language-css" translate="No">.video-js:not(.vjs-live) .vjs-live-control,.video-js.vjs-liveui .vjs-live-control {
+    display: none;
+  }</code></pre>
+
+        <h2>VERSIÓN 6 - v6.28.1</h2>
+
+        <p>12 dic 2018</p>
+
+        <ul>
+            <li>
+                Agregar <code translate="No">useBandwidthFromLocalStorage</code> opción para persistir las medidas de ancho de banda para la selección de copias
+            </li>
+            <li>
+                Corrección de errores: Mantenimiento de análisis y mejoras relacionadas con el soporte de plugin de anuncios.
+            </li>
+            <li>Corrección de errores: Corregir un vector potencial de ataque XSS en el Reproductor.</li>
+            <li>
+                Corrección de errores: Evitar que se produzcan errores si una integración dispone de la barra de control
+            </li>
+            <li>Corrección de errores: No transformar nombres de capítulos en los menús</li>
+        </ul>
+
+        <h2>VERSIÓN 6 - v6.27.0</h2>
+
+        <p>15 Nov 2018</p>
+
+        <ul>
+            <li>
+                Corrección de errores: Barra de control que se desplaza arriba/abajo en el aspecto de Luna cuando se tabulan en los controles
+            </li>
+            <li>
+                Corrección de errores: Tiempo de espera del jugador debido a una excepción lanzada en el analizador CTA-608
+            </li>
+            <li>Actualizado a Video.js 7.3.0</li>
+        </ul>
+
+        <h2>VERSIÓN 6 - v6.26.0</h2>
+
+        <p>2 Nov 2018</p>
+
+        <ul>
+            <li>Permitir la configuración de la ubicación <strong>vtt.js</strong> </li>
+            <li>Añadido soporte para contenido de varios períodos de entrega dinámica</li>
+        </ul>
+
+        <h2>VERSIÓN 6 - v6.25.3</h2>
+
+        <p>25 Sep 2018</p>
+
+        <ul>
+            <li>Permitir que el referrer se establezca como una opción iframe</li>
+            <li>Se ha corregido un problema con la carga de segmentos cuando se utiliza el atributo</li>
+            <li>Se ha corregido un problema que provocaba que el menú contextual pudiera estar fuera del reproductor.</li>
+            <li>
+                Se ha corregido un problema por el que los eventos de progreso disparados incorrectamente evitaban errores de tiempo de espera
+            </li>
+            <li>
+                Se ha corregido un error que provocaba que, usando Flash, el jugador no intentara vivir si fuera de la ventana activa.
+            </li>
+            <li>
+                Se ha corregido un error por el que no se respetaba la desactivación de la reproducción automática después de la inicialización del jugador.
+            </li>
+            <li>Se ha corregido un problema para detectar correctamente AdBlock Pro en iOS</li>
+            <li>
+                Se ha corregido un problema con la tartamudez de la reproducción después de un cambio de calidad manual en IE y Edge.
+            </li>
+            <li>Actualizado <strong>Video.js</strong> a 7.2.4</li>
+            <li>
+                Cuando esté disponible, utilice <code translate="No">sendBeacon</code> e intente enviar las métricas pendientes en la descarga de la ventana
+            </li>
+        </ul>
+
+        <h2>VERSIÓN 6 - v6.24.1</h2>
+
+        <p>19 Sep 2018</p>
+
+        <ul>
+            <li>Se ha aumentado el límite predeterminado de lista de reproducción por página a 100 elementos</li>
+            <li>
+                Corrección de errores: Se ha corregido un problema en Android Chrome que provocaba que la barra de control del jugador se mostrara incorrectamente.
+            </li>
+            <li>
+                Corrección de errores: Se ha corregido un problema con el <code translate="No">catalog.getLazySequence()</code> método que no funcionaba con varias secuencias.
+            </li>
+        </ul>
+
+        <h2>VERSIÓN 6 - v6.23.0</h2>
+
+        <p>11 Sep 2018</p>
+
+        <ul>
+            <li>
+                Nueva característica: Permitir que el bucle se establezca como un parámetro de configuración, opción o consulta para iframes
+            </li>
+            <li>
+                Se ha corregido un error que provocaba que la interacción ocasionalmente mostrara caídas a intervalos de 10 segundos debido a un problema interno de temporización.
+            </li>
+            <li>Actualizado a <strong>Video.js</strong> 7.2.2</li>
+        </ul>
+
+        <h2>VERSIÓN 6 - v6.22.8</h2>
+
+        <p>27 ago 2018</p>
+
+        <ul>
+            <li>
+                Se ha corregido un error introducido en v6.22.5 que rompió la funcionalidad de reproducción al reproducir secuencias segmentadas.
+            </li>
+        </ul>
+
+        <h2>VERSIÓN 6 - 6.22.7</h2>
+
+        <p>23 Ago 2018</p>
+
+        <ul>
+            <li>
+                Se ha corregido un problema que provocaba que una URL base personalizada para el catalog no se estableciera correctamente. Esto provocó que el contenido restringido por IP no se reprodujera
+            </li>
+            <li>
+                No envía parámetros no esenciales con balizas cuando empujarían la longitud de la URL por encima del límite
+            </li>
+        </ul>
+
+        <h2>VERSIÓN 6 - 6.22.5</h2>
+
+        <p>14 Ago 2018</p>
+
+        <ul>
+            <li>
+                Se agregó compatibilidad con la Playback API para <code translate="No">AD_CONFIG_NOT_FOUND</code> errores, parámetros de consulta de limitación/desplazamiento para listas de reproducción y un <code translate="No">get</code> método genérico que puede devolver un Promise
+            </li>
+            <li>
+                Compatibilidad con el uso de un valor de cadena para <code translate="No">autoplay</code> cuando se pasa como opción o en la configuración del reproductor, lo que permite al Brightcove Player omitir la reproducción automática nativa e intentar la reproducción automática por sí mismo
+            </li>
+            <li>Actualizado a <strong>Video.js 7.1.0</strong></li>
+            <li>
+                Refactorización de código: Se eliminó el código redundante relacionado con el botón de conmutación de silencio en iOS ahora que el reproductor está en Video.js 7.1.0
+            </li>
+            <li>
+                Correcciones de errores:
+                <ul>
+                    <li>Corregir dos posibles fuentes de fugas de memoria en la eliminación del jugador</li>
+                    <li>Borrar el búfer en la selección manual de calidad</li>
+                    <li>Continuar después de desconectar para transmisiones desmuxed</li>
+                    <li>
+                        Asegúrese de que el botón Big Play se muestre para el contenido en vivo cuando la reproducción automática no resulte en una reproducción automática exitosa
+                    </li>
+                    <li>
+                        Corregir un problema que <code translate="No">ad_config_id</code> podía omitirse para los orígenes de SSAI
+                    </li>
+                    <li>
+                        Corregir un problema que podía provocar un error en iOS 9; este problema no salía del estado previo al lanzamiento
+                    </li>
+                </ul>
+            </li>
+        </ul>
+
+        <h2>VERSIÓN 6 - 6.21.0</h2>
+
+        <p>26 Jul 2018</p>
+
+        <ul>
+            <li>
+                Se ha corregido un problema que provocaba que los caracteres de leyenda 608 no latinos no se mostraran correctamente en IE.
+            </li>
+            <li>Añadido soporte para 608 subtítulos con segmentos fmp4</li>
+        </ul>
+
+        <h2>VERSIÓN 6 - 6.20.0</h2>
+
+        <p>19 Jul 2018</p>
+
+        <ul>
+            <li>
+                Se ha corregido un problema por el que varias pistas de audio podían reproducirse simultáneamente en Flash
+            </li>
+            <li>
+                Actualizar a <strong>Video.js 7.0.5</strong> (Internet Explorer 9 y 10 ya no son compatibles, consulte https://support.brightcove.com/brightcove-player-system-requirements para obtener más información)
+            </li>
+        </ul>
+
+        <h2>VERSIÓN 6 - 6.19.2</h2>
+
+        <p>29 de junio de 2018</p>
+
+        <ul>
+            <li>Actualizado <strong>Video.js</strong> a la versión 6.10.3</li>
+        </ul>
+
+        <h2>VERSIÓN 6 - 6.19.1</h2>
+
+        <p>12 de junio de 2018</p>
+
+        <ul>
+            <li>Corregir el tamaño predeterminado para que los jugadores responsive/fluidos sean 16:9.</li>
+            <li>Codificar correctamente los identificadores de catalog al construir URL de Playback API</li>
+            <li>Se han corregido problemas de tartamudez con la reproducción de HlSE Flash.</li>
+        </ul>
+    </section>
+
+    <section class="bcls-section">
+        <h2 id="Older_releases">Versiones anteriores<strong></strong></h2>
+
+        <h3>VERSIÓN 6 - 6.19.0</h3>
+
+        <p>23 de mayo de 2018</p>
+
+        <ul>
+            <li>
+                Se ha añadido soporte para establecer la hora de inicio del primer vídeo reproducido mediante el <code translate="No">data-start-time</code> atributo
+            </li>
+            <li>
+                Expuesto algunas propiedades del <code translate="No">mediainfo</code> objeto anteriormente
+            </li>
+            <li>
+                Se actualizó el modal de información del jugador para admitir la detección de más plugins de Brightcove, así como la solución de problemas con múltiples incrustaciones de reproductores en la página
+            </li>
+            <li>Actualizado a <strong>videojs-errors</strong> 4.0.0</li>
+        </ul>
+
+        <h3>VERSIÓN 6 - 6.18.4</h3>
+
+        <p>15 de mayo de 2018</p>
+
+        <ul>
+            <li>
+                Corrección de errores: Ocultar menús en Luna cuando la barra de control está minimizada y un botón de menú está enfocado
+            </li>
+            <li>
+                Se restauró el comportamiento antiguo (eliminado en v6.17.5) de ocultar el botón de reproducción grande mientras esperaba la reproducción automática y el código de ajuste para manejar la reproducción automática manualmente
+            </li>
+        </ul>
+
+        <h3>VERSIÓN 6 - 6.18.3</h3>
+
+        <p>2 de mayo de 2018</p>
+
+        <ul>
+            <li>
+                Se solucionó un problema en el que llamar <code translate="No">bc()</code> como getter en un complemento podía confundir el proceso de inicialización; tenga en cuenta que no se recomienda usar <code translate="No">bc()</code> o <code translate="No">videojs()</code> como getter - use <code translate="No">videojs.getPlayer()</code> en su lugar!
+            </li>
+            <li>Ya no reemplaza mayúsculas y minúsculas en los nombres en el menú de capítulos</li>
+            <li>
+                Se ha corregido un problema por el que el enfoque en el botón de reproducción mantenía la barra de control visible en el móvil.
+            </li>
+            <li>
+                Silenciado un mensaje de error de no interrupción cuando una pausa interrumpe una solicitud de reproducción en la reproducción HLS
+            </li>
+            <li>Se ha ajustado la última posición del menú cuando se desactiva el control a pantalla</li>
+            <li>Se ha corregido el soporte de conmutación por error de anuncios en incrustaciones de</li>
+        </ul>
+
+        <h3>VERSIÓN 6 - 6.18.1</h3>
+
+        <p>19 abr 2018</p>
+
+        <ul>
+            <li>
+                Se agregó soporte para rellenar la lista de reproducción del reproductor a través de búsquedas en catalog y/o una secuencia de consultas
+            </li>
+            <li>
+                Permitir la configuración que describe cómo los parámetros de cadena de consulta deben adjuntarse al objeto de ventana global para los reproductores iframe
+            </li>
+            <li>
+                Compatibilidad con <code translate="No">ad_failover</code> la configuración del reproductor para seleccionar anuncios IMA del lado del cliente o anuncios SSAI del lado del servidor
+            </li>
+            <li>Actualizado a <strong>Video.js</strong> 6.8.0</li>
+        </ul>
+
+        <h3>VERSIÓN 6 - 6.17.5</h3>
+
+        <p>28 Mar 2018</p>
+
+        <ul>
+            <li>
+                Revertido: Debido a los cambios en la política de reproducción automática de Chrome 66, ya no oculta el botón de juego grande mientras espera la reproducción automática. Brightcove planea reemplazar este comportamiento en las próximas semanas de una manera que funcione más completamente.
+            </li>
+            <li>
+                Ahora use URL HTTPS donde anteriormente estábamos usando URL relativas al protocolo. Esto puede abordar algunos problemas que se han visto en plataformas poco comunes y oficialmente no admitidas donde las URL relativas al protocolo se interpretaron usando el protocolo <strong>file:</strong> protocol.
+            </li>
+        </ul>
+
+        <h3>VERSIÓN 6 - 6.17.3</h3>
+
+        <p>6 Mar 2018</p>
+
+        <ul>
+            <li>Actualizar a <strong>Video.js</strong> a 6.7.4</li>
+            <li>
+                Solución de errores
+                <ul>
+                    <li>
+                        Corregir una regresión en Video.js que provocaba que el control de progreso se comportara mal con los orígenes SSAI
+                    </li>
+                    <li>Corregir el uso de EXT-X-PROGRAM-DATE-TIME en transmisiones en vivo</li>
+                    <li>
+                        Revertir un cambio a un nuevo minificador CSS después de que haya causado una rotura en al menos un jugador cliente
+                    </li>
+                    <li>
+                        Aborda un error introducido en 6.16.0 que causaría que los jugadores OnCeux arrojaran un error
+                    </li>
+                    <li>Corregir una regresión para obtener un jugador por el ID de la tecnología</li>
+                </ul>
+            </li>
+        </ul>
+
+        <h3>VERSIÓN 6 - 6.16.5</h3>
+
+        <p>26 Feb 2018</p>
+
+        <ul>
+            <li>
+                Solución de errores
+                <ul>
+                    <li>
+                        Revertir un cambio a un nuevo minificador CSS después de que haya causado una rotura en al menos un jugador cliente
+                    </li>
+                </ul>
+            </li>
+        </ul>
+
+        <h3>VERSIÓN 6 - 6.16.2</h3>
+
+        <p>20 Feb 2018</p>
+
+        <ul>
+            <li>Ocultar el botón de juego grande mientras espera <code translate="No">autoplay</code></li>
+            <li>
+                Actualizar a videojs-playlist 4.2.0, añadiendo <code translate="No">duringplaylistchange</code> evento y <code translate="No">rest</code> opción para el <code translate="No">shuffle()</code> método
+            </li>
+            <li>Actualizar a <strong>Video.js</strong> 6.7.1</li>
+            <li>
+                Solución de errores
+                <ul>
+                    <li>
+                        Volver a <code translate="No">player_name</code> como título del iframe y establecer el nombre del vídeo del catalog como nombre de iframe, si está disponible
+                    </li>
+                    <li>
+                        Solucionar un problema que provocaba que ciertos vídeos no informaran de su último segundo de interacción
+                    </li>
+                    <li>
+                        Inicialice los complementos IMA y FreeWheel, si se utilizan, antes de que el reproductor esté listo
+                    </li>
+                    <li>Omitir el controlador de origen basado en Flash con origen DASH</li>
+                    <li>
+                        Asegúrese de que <code translate="No">autoplay</code> se respete correctamente tanto si procede del código incrustado, la configuración del reproductor o los parámetros de cadena de consulta (para iframes)
+                    </li>
+                    <li>
+                        Se ha corregido un problema que requería dos clics para jugar con Flash y Experiencias en la página
+                    </li>
+                    <li>
+                        Ocultar el menú de volumen vertical en Luna cuando la barra de control está minimizada
+                    </li>
+                    <li>
+                        Listas de reproducción de listas negras no admitidas por el origen multimedia del navegador antes de la selección inicial
+                    </li>
+                </ul>
+            </li>
+        </ul>
+
+        <h3>VERSIÓN 6 - 6.13.0</h3>
+
+        <p>17 Ene 2018</p>
+
+        <ul>
+            <li>Usar <strong>Flashls</strong> para la reproducción HLS basada en Flash</li>
+            <li>
+                Exponer algunos metadatos y configuración del reproductor a través de una propiedad <code translate="No">bcinfo</code> de reproductor
+            </li>
+            <li>Siempre use minified Videojs CSS</li>
+            <li>Lista de reproducción mostrar/ocultar alternar respeta los colores CSS configurados</li>
+            <li>Actualizar a <strong>Video.js</strong> 6.6.1</li>
+        </ul>
+
+        <h3>VERSIÓN 6 - 6.12.1</h3>
+
+        <p>9 Ene 2018</p>
+
+        <ul>
+            <li>
+                Usar <code translate="No">&lt;video-js&gt;</code> elemento en iframe embed y permitir <code translate="No">&lt;video-js&gt;</code> elemento para incrustaciones en página
+
+                <ul>
+                    <li>
+                        Este nuevo elemento fue introducido por Video.js 6.5.0 y ayuda con casos de <strong>destello de controles nativos</strong> donde el nativo <code translate="No">&lt;video&gt;</code> los controles de los elementos podrían ser momentáneamente visibles antes de que el reproductor se cargue por completo
+                    </li>
+                    <li>
+                        Este es un opt-in para las incrustaciones en la página y, por el momento, el código de inserción proporcionado no ha cambiado
+                    </li>
+                </ul>
+            </li>
+            <li>
+                Exponer algunos metadatos y configuración del reproductor a través de una propiedad <code translate="No">bcinfo</code> de jugador
+            </li>
+            <li>
+                Actualizar a Video.js 6.6.0 desde 6.4.0, incluye:
+                <ul>
+                    <li>Añadido soporte para el registro de depuración</li>
+                    <li><code translate="No">playerresize</code> evento en llamadas a la API de dimensión de Player</li>
+                    <li>Agregue un retraso antes de mostrar la carga del spinner (cambio CSS)</li>
+                    <li><code translate="No">&lt;video-js&gt;</code> soporte de elementos</li>
+                    <li>
+                        Mejoras en el <code translate="No">play()</code> método que admite la configuración de origen asincrónico
+                    </li>
+                    <li>Busca/depuración de mejoras de UX</li>
+                    <li>Muchas correcciones de pérdida de memoria</li>
+                </ul>
+            </li>
+            <li>
+                Actualizar videojs-playlist a 4.1.0, incluye:
+                <ul>
+                    <li>
+                        Esta actualización de la API de lista de reproducción afectará a todas las implementaciones de listas de reproducción
+                    </li>
+                    <li>
+                        Añade nuevos métodos: <code translate="No">currentIndex()</code> , <code translate="No">nextIndex()</code> , <code translate="No">previousIndex()</code> , <code translate="No">lastIndex()</code> , <code translate="No">sort()</code> , <code translate="No">reverse()</code> , y <code translate="No">shuffle()</code>
+                    </li>
+                    <li>
+                        los <code translate="No">sort()</code> , <code translate="No">reverse()</code> y <code translate="No">shuffle()</code> métodos disparan el <code translate="No">playlistsorted</code> evento, que actualmente no es compatible con los complementos de IU de listas de reproducción, ya sea la variedad predeterminada o heredada; Brightcove lanzará actualizaciones para esos en las próximas semanas
+                    </li>
+                </ul>
+            </li>
+        </ul>
+
+        <h3>VERSIÓN 6 - 6.10.2</h3>
+
+        <p>29 Nov 2017</p>
+
+        <ul>
+            <li>
+                Se ha corregido un error que provocaba que los jugadores de previsualización con listas de reproducción no se
+            </li>
+        </ul>
+
+        <h3>VERSIÓN 6 - 6.10.1</h3>
+
+        <p>27 Nov 2017</p>
+
+        <ul>
+            <li>
+                Extendido el global <strong>bc</strong> con propiedades por incrustación. En resumen, esto mejora el soporte para múltiples reproductores simultáneos en una sola página utilizando el incrustado avanzado o en página; sin embargo, no se recomienda mezclar reproductores 5.x y 6.x, ya que puede hacer que los iconos desaparezcan en algunas situaciones. Más información vendrá en forma de documentación sobre este tema.
+            </li>
+            <li>Actualizado a <strong>Video.js</strong> 6.4.0</li>
+            <li>Actualizado a <strong>videojs-playlist</strong> 4.0.2</li>
+            <li>
+                Se ha corregido un problema que provocaba que los jugadores configurados con la interfaz de usuario de la lista de reproducción en el estudio se representaban
+            </li>
+            <li>
+                Se ha corregido un problema al analizar algunas etiquetas ID3 con un <code translate="No">PES_packet_length</code> encabezado incorrecto
+            </li>
+        </ul>
+
+        <h3>VERSIÓN 6 - 6.9.0</h3>
+
+        <p>7 Nov 2017</p>
+
+        <ul>
+            <li>Usar MSE para la reproducción HLS en IE11</li>
+            <li>
+                Se ha corregido un problema con los subtítulos de CEA-608 colocados en el canal CC incorrecto.
+            </li>
+        </ul>
+
+        <h3>VERSIÓN 5 - 5.27.0</h3>
+
+        <p>7 Nov 2017</p>
+
+        <ul>
+            <li>Usar MSE para la reproducción HLS en IE11</li>
+            <li>
+                Se ha corregido un problema con los subtítulos de CEA-608 colocados en el canal CC incorrecto.
+            </li>
+        </ul>
+
+        <h3>VERSIÓN 6 - 6.8.3</h3>
+
+        <p>24 Oct 2017</p>
+
+        <ul>
+            <li>
+                Reducción del rebúfer y el estancamiento en streaming en directo con pequeñas ventanas en vivo.
+            </li>
+        </ul>
+
+        <h3>VERSIÓN 5 - 5.26.6</h3>
+
+        <p>24 Oct 2017</p>
+
+        <ul>
+            <li>
+                Reducción del rebúfer y el estancamiento en streaming en directo con pequeñas ventanas en vivo.
+            </li>
+        </ul>
+
+        <h3>VERSIÓN 6 - 6.8.2</h3>
+
+        <p>18 Oct 2017</p>
+
+        <ul>
+            <li>
+                Se ha corregido el audio distorsionado en flujos que tienen varias pistas de audio incrustadas.
+            </li>
+            <li>
+                Dar prioridad a las fuentes HLS de audio y vídeo sin muxed cuando utilice Flash para la reproducción.
+            </li>
+            <li>
+                Actualizado Video.js a <a href="https://github.com/videojs/video.js/blob/master/CHANGELOG.md"> v6.3.3 </a>
+            </li>
+        </ul>
+
+        <h3>VERSIÓN 5 - 5.26.5</h3>
+
+        <p>18 Oct 2017</p>
+
+        <ul>
+            <li>
+                Se ha corregido el audio distorsionado en flujos que tienen varias pistas de audio incrustadas.
+            </li>
+            <li>
+                Dar prioridad a las fuentes HLS de audio y vídeo sin muxed cuando utilice Flash para la reproducción.
+            </li>
+            <li>
+                Actualizado Video.js a <a href="https://github.com/videojs/video.js/blob/66c0cf5ac6da40c99827e3583f795386f4a54336/CHANGELOG.md#5204-2017-10-02"> v5.20.4 </a>
+            </li>
+        </ul>
+
+        <h3>VERSIÓN 6 - 6.7.1</h3>
+
+        <p>4 Oct 2017</p>
+
+        <ul>
+            <li>
+                Se ha corregido un problema al limpiar al principio de una transmisión con el plugin DVR.
+            </li>
+            <li>
+                Se ha corregido el error de tiempo de espera al intentar cambiar al audio sólo debido a la falta de información del códec.
+            </li>
+            <li>
+                Se ha corregido un problema con los subtítulos que no aparecían al cambiar fuentes con el complemento de lista de reproducción.
+            </li>
+            <li>Se ha corregido un problema con retrasos prolongados al cambiar pistas de audio.</li>
+            <li>Actualice Video.js a 6.2.8 para admitir un mejor comportamiento de reproducción automática.</li>
+        </ul>
+
+        <h3>VERSIÓN 5 - 5.26.2</h3>
+
+        <p>3 Oct 2017</p>
+
+        <ul>
+            <li>
+                Solucionó un problema que provocaba que faltaban controles en reproductores de grafito en iOS 11
+            </li>
+            <li>
+                Se ha corregido un problema al limpiar al principio de una transmisión con el plugin DVR.
+            </li>
+            <li>
+                Se corrigió el error de tiempo de espera al intentar cambiar al audio solo debido a la falta de información del códec.
+            </li>
+            <li>
+                Se ha corregido un problema con los subtítulos que no aparecían al cambiar fuentes con un complemento de lista de reproducción.
+            </li>
+            <li>Se ha corregido un problema con retrasos prolongados al cambiar pistas de audio</li>
+        </ul>
+
+        <h3>VERSIÓN 6 - 6.7.0</h3>
+
+        <p>13 Sep 2017</p>
+
+        <ul>
+            <li>
+                Módulo obsoleto llamado RequireJS y agregue la configuración del <code translate="No">require_js_anonymous</code> reproductor para controlarlo
+            </li>
+            <li>
+                Se ha solucionado un problema que provocaba que los eventos de error desencadenados en el reproductor durante la reproducción de anuncios contrib-ads no se reconocieran.<strong></strong>
+            </li>
+        </ul>
+
+        <h3>VERSIÓN 5 - 5.26.0</h3>
+
+        <p>13 Sep 2017</p>
+
+        <ul>
+            <li>
+                En desuso el módulo RequireJS nombrado y agregó la configuración del <code translate="No">require_js_anonymous</code> reproductor para controlarlo.
+            </li>
+            <li>
+                Se solucionó un problema que provocaba que los eventos de <strong>error</strong> desencadenados en el reproductor durante la reproducción de anuncios de contrib-ads no se reconocieran.
+            </li>
+        </ul>
+
+        <h3>VERSIÓN 6 - 6.5.2</h3>
+
+        <p>25 Ago 2017</p>
+
+        <ul>
+            <li>
+                Se ha corregido un problema por el que inicialmente se seleccionaba una representación de solo audio en el móvil.
+            </li>
+            <li>
+                Se solucionaron algunas advertencias de registro de plugins duplicados y de desuso en la consola
+            </li>
+            <li>
+                Se ha corregido un problema por el que la reproducción automática no se aplicaba al reproductor si se añadía mediante parámetros de consulta.
+            </li>
+            <li>Se corrigió la visualización de FreeWheel en modal de información del jugador</li>
+            <li>
+                Se corrigió el parámetro de cadena de consulta silenciada en IE11 y otros entornos basados en Flash
+            </li>
+            <li>Se han corregido varios problemas por los que el tamaño del jugador se comportaba incorrectamente.</li>
+        </ul>
+
+        <h3>VERSIÓN 5 - 5.24.5</h3>
+
+        <p>25 Ago 2017</p>
+
+        <ul>
+            <li>
+                Se ha corregido un problema por el que inicialmente se seleccionaba una representación de solo audio en el móvil.
+            </li>
+            <li>
+                Se ha corregido un problema por el que la reproducción automática no se aplicaba al reproductor si se añadía mediante parámetros de consulta.
+            </li>
+            <li>Se corrigió la visualización de FreeWheel en modal de información del jugador</li>
+        </ul>
+
+        <h3>VERSIÓN 6 - 6.5.0</h3>
+
+        <p>3 Ago 2017</p>
+
+        <ul>
+            <li>Agregar ID de sesión e ID de elemento de jugador al modal de información del jugador</li>
+            <li>
+                Se ha corregido un problema por el que los controles nativos y personalizados eran visibles en iOS 10.3.
+            </li>
+            <li>Se ha corregido un error intermitente de <strong>AddSourceBuffer</strong> </li>
+            <li>
+                Remoto <code translate="No">autoplay</code> en iOS 10 si <code translate="No">playsinline</code> o <code translate="No">muted</code> no estan presentes
+            </li>
+        </ul>
+
+        <h3>VERSIÓN 5 - 5.24.3</h3>
+
+        <p>3 Ago 2017</p>
+
+        <ul>
+            <li>
+                Se ha corregido un problema por el que los controles nativos y personalizados eran visibles en iOS 10.3.
+            </li>
+            <li>Se ha corregido un <strong>error intermitente de AddSourceBuffer.</strong></li>
+        </ul>
+
+        <h3>VERSIÓN 6 - 6.4.1</h3>
+
+        <p>25 Jul 2017</p>
+
+        <ul>
+            <li>Se ha corregido un problema que provocaba que solo las listas de reproducción HLS de audio no se podían reproducir</li>
+            <li>Enviar cualquier tipo de error a métricas si está disponible</li>
+            <li>Mejoras en el algoritmo ABR en la reproducción HLS</li>
+            <li>
+                Activar <code translate="No">analytics_request</code> eventos en el reproductor cuando enviamos métricas
+            </li>
+            <li>Actualizado&nbsp; <strong>Video.js</strong> a v6.2.1</li>
+        </ul>
+
+        <h3>VERSIÓN 5 - 5.24.1</h3>
+
+        <p>25 Jul 2017</p>
+
+        <ul>
+            <li>Se ha corregido un problema que provocaba que solo las listas de reproducción HLS de audio no se podían reproducir</li>
+            <li>Enviar cualquier tipo de error a métricas si está disponible</li>
+            <li>Mejoras en el algoritmo ABR en la reproducción HLS</li>
+            <li>
+                Se ha corregido un problema con la eliminación <code translate="No">autoplay</code> cuando faltaba <code translate="No">playsinline</code> o <code translate="No">muted</code> faltaba.
+            </li>
+            <li>
+                Se ha corregido un error que provocaba que el audio desmuxed se cortara al final de un vídeo.
+            </li>
+            <li>
+                Se ha corregido un problema por el que el vídeo y el audio se desincronizaban cuando los paquetes PES se dividían entre segmentos
+            </li>
+        </ul>
+
+        <h3>VERSIÓN 6 - 6.3.2</h3>
+
+        <p>10 Jul 2017</p>
+
+        <h3>Funciones</h3>
+
+        <ul>
+            <li>Actualizado a <strong>Video.js 6</strong></li>
+            <li>
+                Video.js 6 ofrece soporte para middleware, complementos avanzados y mejoras de accesibilidad y interfaz de usuario
+            </li>
+            <li>Se ha eliminado la compatibilidad con Internet Explorer 8</li>
+            <li>Modernizado y ajustado la piel de grafito</li>
+            <li>Actualizado <strong>Video.js</strong> a 6.2.1</li>
+            <li>Actualizado <strong>videojs-errors</strong> a 3.0.2</li>
+            <li>Agregar ID de sesión e ID de jugador al modal de error</li>
+            <li>
+                Permitir definir una cadena de consulta <code translate="No">playlistVideoId</code> vía o <code translate="No">data-playlist-video-id</code> atributo para activar un vídeo de lista de reproducción inicial
+            </li>
+            <li>Actualizar <strong>videojs-contrib-hls</strong> a v5.7.0</li>
+        </ul>
+
+        <h3>Solución de errores</h3>
+
+        <ul>
+            <li>
+                Se ha corregido un problema que provocaba que la pista proxy de puntos de referencia de medios identificara incorrectamente su pista con proxy.
+            </li>
+            <li>
+                Se solucionó un problema que provocaba que el uso del plugin IMA4 en modo <strong>onplay</strong> causara que el <code translate="No">video_view</code> evento se informara antes del <code translate="No">ad_start</code> evento de la preinstalación.
+            </li>
+            <li>
+                Ahora envíe el valor correcto del reproductor a análisis si los atributos de datos se establecen en el elemento de vídeo después de la inicialización
+            </li>
+            <li>Revertir códigos de error problemáticos</li>
+            <li>
+                Se ha corregido un problema que provocaba que la información de identificación del jugador no se pasara al complemento de análisis.
+            </li>
+            <li>
+                Se han añadido traducciones adicionales para errores de recursos de Video Cloud y modal de información del jugador
+            </li>
+            <li>
+                El reproductor informará ahora de los errores de <strong>VIDEO_NOT_PLAYABLE</strong> procedentes de Video Cloud en la interfaz de usuario del reproductor
+            </li>
+            <li>Se ha corregido un problema que causaba que se produjera un error en iOS.</li>
+            <li>
+                Se ha corregido un error que provocaba que el audio desmuxed se cortara al final de un vídeo.
+            </li>
+            <li>
+                Se ha corregido un problema por el que el vídeo y el audio se desincronizaban cuando los paquetes PES se dividían entre segmentos
+            </li>
+            <li>
+                Se ha corregido un error que provocaba que el reproductor se congelara después de un interruptor de representación con audio desmuxed
+            </li>
+        </ul>
+
+        <h3>VERSIÓN 5 - 5.23.2</h3>
+
+        <p>7 Jul 2017</p>
+
+        <ul>
+            <li>
+                El reproductor informará ahora de los errores de VIDEO_NOT_PLAYABLE procedentes de Video Cloud en la interfaz de usuario del reproductor
+            </li>
+            <li>
+                Se ha corregido un error que provocaba que el audio desmuxado se cortara al final de un vídeo.
+            </li>
+            <li>
+                Se ha corregido un problema por el que el vídeo y el audio se desincronizaban cuando los paquetes PES se dividían entre segmentos.
+            </li>
+            <li>
+                Se ha corregido un error que provocaba que el reproductor se congelara después de un interruptor de representación con audio desmuxed.
+            </li>
+            <li>Se ha corregido un problema que provocaba que se produjera un error en iOS.</li>
+            <li>Se ha corregido un problema con la oscurección en el control de volumen cuando se enfoca.</li>
+            <li>
+                Se ha corregido un error que provocaba que el tirador de carga del jugador no se mostrara cuando la reproducción se paralizaba.
+            </li>
+        </ul>
+
+        <h3>VERSIÓN 6 - 6.1.1</h3>
+
+        <p>30 Mayo 2017</p>
+
+        <ul>
+            <li>
+                Se ha corregido un problema que provocaba que la información de identificación del jugador no se pasara al complemento de análisis.
+            </li>
+            <li>
+                Se han añadido traducciones adicionales para errores de recursos de Video Cloud y modal de información del jugador
+            </li>
+        </ul>
+
+        <h3>VERSIÓN 5 - 5.22.4</h3>
+
+        <p>6 Jun 2017</p>
+
+        <ul>
+            <li>
+                Se ha corregido un problema que provocaba que la información de identificación del jugador no se pasara al complemento de análisis.
+            </li>
+            <li>
+                Se ha corregido un problema por el que el jugador no se silenciaba a pesar de la existencia de un parámetro de <code translate="No">muted</code> consulta
+            </li>
+            <li>
+                Se han añadido traducciones adicionales para errores de recursos de Video Cloud y modal de información del jugador
+            </li>
+            <li>Cálculo estadístico fijo de rebúfer</li>
+        </ul>
+
+        <h3>VERSIÓN 6 - v6.1.0</h3>
+
+        <p>18 Mayo 2017</p>
+
+        <ul>
+            <li>Se agregó el ID de sesión y el ID de jugador al modal de error</li>
+            <li>
+                Permitido definir una cadena de consulta <code translate="No">playlistVideoId</code> vía o <code translate="No">data-playlist-video-id</code> atributo para activar un vídeo de lista de reproducción inicial
+            </li>
+            <li>
+                Se solucionó un problema que provocaba que el uso del plugin IMA4 en <code translate="No">onplay</code> modo pudiera provocar que el <code translate="No">video_view</code> evento se informara antes del <code translate="No">ad_start</code> evento de la preinstalación
+            </li>
+            <li>Corregidos fallos del jugador en IE8</li>
+            <li>
+                Envía el valor correcto del reproductor a análisis si los atributos de datos se establecen en el elemento de vídeo después de la inicialización
+            </li>
+            <li>Revertir códigos de error problemáticos</li>
+            <li>Actualizar <strong>videojs-contrib-hls</strong> a v5.5.3</li>
+        </ul>
+
+        <h3>VERSIÓN 6 - 6.0.2</h3>
+
+        <p>20 abr 2017</p>
+
+        <ul>
+            <li>
+                Se ha corregido un problema que provocaba que la pista proxy de puntos de referencia de medios identificara incorrectamente su pista con proxy.
+            </li>
+            <li>Actualizado <strong>Video.js</strong> a 6.0.1</li>
+            <li>Actualizado videojs-errors a 1.3.1<strong></strong></li>
+        </ul>
+
+        <h3>5.22.2</h3>
+
+        <p>1 Jun 2017</p>
+
+        <ul>
+            <li>Corregidos fallos del jugador en IE8</li>
+            <li>
+                Envía el valor correcto del reproductor a análisis si los atributos de datos se establecen en el elemento de vídeo después de la inicialización
+            </li>
+            <li> <strong>Videojs-contrib-hls</strong> actualizado a v5.5.3</li>
+        </ul>
+
+        <h3>5.22,0</h3>
+
+        <p>16 de mayo de 2017</p>
+
+        <ul>
+            <li>
+                Se han añadido nuevos códigos de error, como se muestra en la <a href="https://player.support.brightcove.com/references/brightcove-player-error-reference.html"> sección Errores personalizados del documento del complemento Errores </a> 
+            </li>
+            <li>
+                Se agregó la capacidad de definir una cadena de consulta <code translate="No">playlistVideoId</code> vía o <code translate="No">data-playlist-video-id</code> atributo para activar un vídeo de lista de reproducción inicial
+            </li>
+            <li>
+                Se ha corregido un problema con HLS en Firefox que a veces provocaba que la reproducción comenzara desde el principio al buscar el final.
+            </li>
+            <li>
+                Se ha corregido el orden de origen de las respuestas del catalog para priorizar la última versión de HLS que es compatible con el navegador
+            </li>
+            <li>
+                Se ha corregido el manejo de etiquetas TXXX ID3 que no estaban terminadas correctamente en nulo.
+            </li>
+        </ul>
+
+        <h3>5.21.0</h3>
+
+        <p>27 abr 2017</p>
+
+        <ul>
+            <li>Agregado soporte para repetir listas de reproducción</li>
+            <li>
+                Añadido <code translate="No">overflow: hidden</code> a Luna y Graphite iframe CSS para evitar que aparezca la barra de desplazamiento
+            </li>
+            <li>
+                Se ha corregido un problema que provocaba que la pista proxy de puntos de referencia de medios identificara incorrectamente su pista con proxy.
+            </li>
+            <li>
+                Se ha corregido un error que provocaba que los vídeos no se podían reproducir con Grafito en iPhone, iOS 10 y <code translate="No">playsinline</code>
+            </li>
+            <li>Actualizado <strong>Video.js</strong> a 5.19.2</li>
+            <li>Actualizado videojs-errors a 1.3.1<strong></strong></li>
+        </ul>
+
+        <h3>5.20.1</h3>
+
+        <p>12 Abr 2017</p>
+
+        <h4>Entre las características notables de esta versión se incluyen:</h4>
+
+        <h5>Funciones/Actualizaciones</h5>
+
+        <ul>
+            <li>Añadido soporte para WebVTT in-manifest en HLS</li>
+            <li>Añadido soporte para pistas de audio de descripción en HLS</li>
+            <li>
+                Se ha mejorado el comportamiento de conmutación por error de transmisión en vivo en HLS
+                <ul>
+                    <li>
+                        El reproductor ahora detecta listas de reproducción que no se actualizan de manera oportuna e intenta cambiar a una fuente de copia de seguridad si está disponible
+                    </li>
+                </ul>
+            </li>
+            <li>
+                Añadido <code translate="No">id3CuePointsTrack</code> y <code translate="No">mediaCuePointsTrack</code> al reproductor que recupera pistas de metadatos, que persistirá en los saltos de anuncios
+            </li>
+            <li>Se corrigió un error de orientación de iOS</li>
+            <li>
+                Se ha corregido un problema por el <code translate="No">video_view</code> que no se informaba cuando el complemento IMA estaba en <code translate="No">ondemand</code> modo.
+            </li>
+            <li>
+                Se corrigió un error por el que el jugador podía agotar el tiempo de espera después de buscar en Firefox al jugar HLS
+            </li>
+        </ul>
+
+        <h3>5.19.2</h3>
+
+        <p>23 Mar 2017</p>
+
+        <h4>Entre las características notables de esta versión se incluyen:</h4>
+
+        <h5>Funciones/Actualizaciones</h5>
+
+        <ul>
+            <li>Se ha corregido un <code translate="No">addMediaInfo</code> error con el registro de errores.</li>
+            <li>Corregir una situación en la que los errores de tiempo de espera podrían bucle cada 45 segundos</li>
+        </ul>
+
+        <h3>5.19.1</h3>
+
+        <p>14 Mar 2017</p>
+
+        <h4>Entre las características notables de esta versión se incluyen:</h4>
+
+        <h5>Funciones/Actualizaciones</h5>
+
+        <ul>
+            <li>
+                Añade <code translate="No">video_complete</code> informes y arregla algunos errores con <code translate="No">play_request</code> los <code translate="No">video_engagement</code> informes finales en jugadores de múltiples fuentes.
+            </li>
+            <li>Actualice <strong>Video.js</strong> a 5.18.4.</li>
+        </ul>
+
+        <h5>Solución de errores</h5>
+
+        <ul>
+            <li>
+                Se eliminó una corrección incorrecta que suprimió el envío de tiempos de inicio negativos anómalos.
+            </li>
+            <li>
+                Se ha corregido un problema con algunas implementaciones de listas de reproducción personalizadas que evitaban <code translate="No">video_view</code> balizas para vídeos posteriores.
+            </li>
+            <li>
+                Se ha corregido el salto de audio flash, la inserción de fotogramas de audio silenciosa fija, la asignación fija de señales de metadatos con el mismo tiempo de inicio, evitan el tiempo de espera de la fuente de lista de reproducción no maestra.
+            </li>
+            <li>
+                Se ha corregido un problema que podía provocar que los análisis informaran de horas de inicio negativas.
+            </li>
+            <li>
+                Se ha corregido un problema que provocaba que los controles de anuncios no se ocultaran durante la reproducción de anuncios IMA4 en dispositivos Android.
+            </li>
+            <li>
+                Se ha corregido un problema de estilo con las listas de reproducción de grafito y heredadas en las que el jugador estaba cortado por la lista de reproducción.
+            </li>
+            <li>
+                Se ha añadido una solución para que el botón de alternar silenciar persista en los anuncios y vídeos de una lista de reproducción en iOS.
+            </li>
+            <li>Se ha corregido un error que provocaba que los controles se desactivaran después de un error</li>
+            <li>
+                Corregido la resolución de las URL de origen del protocolo relativo, reanudar la reproducción en vivo después de largas pausas, mejora la determinación del punto de sincronización.
+            </li>
+            <li>
+                Ya no se incluyen estilos de lista de reproducción antiguos si se utiliza un nuevo complemento de lista de reproducción.
+            </li>
+            <li>
+                Validar errores opciones de plugin para evitar errores de configuración rompe jugadores.
+            </li>
+        </ul>
+
+        <h3>5.18.1</h3>
+
+        <p>23 Feb 2017</p>
+
+        <h4>Entre las características notables de esta versión se incluyen:</h4>
+
+        <ul>
+            <li>
+                Aceptar el booleano <code translate="No">true</code> como una opción de configuración de errores
+            </li>
+            <li>
+                Se han añadido <code translate="No">video_complete</code> informes y se corrigen algunos errores con <code translate="No">play_request</code> los <code translate="No">video_engagement</code> informes finales en jugadores de múltiples fuentes.
+            </li>
+            <li>
+                Error corregido: No incluya estilos de lista de reproducción antiguos si se utiliza un nuevo complemento
+            </li>
+            <li>
+                Error corregido: Se redujo la incidencia de advertencias de desuso reportadas en la consola del navegador para <code translate="No">mediainfo</code> las propiedades
+            </li>
+            <li>Se han corregido problemas con la reproducción de FairPlay HLS.</li>
+            <li>El contenido DASH ahora es preferido sobre MP4 en la mayoría de las plataformas</li>
+            <li>
+                Se ha añadido una inserción inteligente de silencio a la reproducción HLS para llenar huecos inesperados entre segmentos causados por fotogramas de audio faltantes o dañados
+            </li>
+        </ul>
+
+        <h3>5.17,0</h3>
+
+        <p>1 Feb 2017</p>
+
+        <aside class="bcls-aside bcls-aside--information">
+            Para admitir HLS en una pestaña de fondo, esta versión elimina la compatibilidad con HLS en IE10. En la mayoría de los casos, la reproducción retrocederá sin problemas a un MP4. No hemos entregado esta actualización a ningún jugador que tenga un uso superior al 0,5% de IE10.
+        </aside>
+
+        <h4>Entre las características notables de esta versión se incluyen:</h4>
+
+        <ul>
+            <li>Habilitar reproducción de pestañas de fondo</li>
+            <li>
+                Corregir una incompatibilidad con IE8 y una posible pérdida de memoria en el análisis
+            </li>
+            <li>Se han corregido algunas fugas de memoria en el reproductor.</li>
+            <li>Corregido el proceso de compilación de HLS para admitir ES3</li>
+            <li>
+                Abordar algunos problemas con <code translate="No">start_time_ms</code> informes inexactos
+            </li>
+            <li>Actualizar a <code translate="No">video.js</code> 5.16.0</li>
+        </ul>
+
+        <h3>5.15.0</h3>
+
+        <p>20 Ene 2017</p>
+
+        <h4>Entre las características notables de esta versión se incluyen:</h4>
+
+        <ul>
+            <li>
+                Corrección de errores: En las listas de reproducción, solucionen un problema con la detección del complemento UI de la lista de reproducción
+            </li>
+            <li>Corrección de errores: Hacer que la configuración de subtítulos responda mejor al tamaño de la ventana gráfica</li>
+            <li>Actualizado a <strong>video.js</strong> 5.15.1</li>
+            <li>
+                Ordenación de fuentes fijas para garantizar que las fuentes de FairPlay sean las primeras, donde sea compatible
+            </li>
+            <li>Añadido soporte para <code translate="No">ad_config_id</code></li>
+            <li>
+                Se agregó soporte para activar/deshabilitar el <code translate="No">vjs-contextmenu</code> evento
+            </li>
+        </ul>
+
+        <h3>5.13.4</h3>
+
+        <p>19 dic 2016</p>
+
+        <h4>Entre las características notables de esta versión se incluyen:</h4>
+
+        <ul>
+            <li>Actualizado <strong>video.js</strong> a 5.14.1</li>
+            <li>
+                 <strong>Videojs-contrib-hls</strong> actualizado a 4.0.2
+                <ul>
+                    <li>
+                        Simplificado el algoritmo en el corazón de SegmentLoader tanto como sea posible
+                        <ul>
+                            <li>
+                                Introdujo el concepto de puntos de sincronización para ayudar a asociar CurrentTime con segmentos entre variantes
+                            </li>
+                            <li>
+                                Más información disponible en: <a href="https://www.brightcove.com/en/blog/2016/10/improving-hls-playback"> https://www.brightcove.com/en/blog/2016/10/improving-hls-playback </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                Actualización de los videojs-contrib-media-sources a 4.1.2<strong></strong>
+                <ul>
+                    <li>
+                        Comience a usar TextTracks remotos porque se pueden quitar correctamente
+                    </li>
+                    <li>Manejar correctamente eliminar las señales de la pista si las señales son null las</li>
+                </ul>
+            </li>
+            <li>
+                Actualizado mux.js a 3.0.3<strong></strong>
+                <ul>
+                    <li>
+                        Dejar de aplicar la CompositionTimeStamp del primer fotograma al BaseMediadeCodeTime para el fragmento
+                    </li>
+                    <li>
+                        Corrige el flujo de fusión para tener en cuenta la falta de datos de audio en pistas pendientes
+                    </li>
+                </ul>
+            </li>
+            <li>
+                Utilice HLS basado en MSE en Android Chrome y Microsoft Edge en lugar de depender de la compatibilidad nativa de HLS
+            </li>
+            <li>Se corrigió un error con el cambio de orientación en pantalla completa en Android</li>
+            <li>
+                Ajustó la <code translate="No">bc()</code> función para que se aliara <code translate="No">videojs()</code> más de cerca. Ahora se pueden usar indistintamente
+            </li>
+            <li>
+                Se ha corregido un error que provocaba que el jugador no funcionara al usar un iframe con Bootstrap en Firefox
+            </li>
+            <li>
+                Añadido soporte para el valor de <code translate="No">crossorigin</code> configuración o parámetro de consulta para reproductores iframe
+            </li>
+            <li>
+                Actualizado <strong>videojs-errors</strong> para activar un <strong>PLAYER_ERR_TIMEOUT</strong> si el swf de Flash no responde
+            </li>
+        </ul>
+
+        <h3>5.11.4</h3>
+
+        <p>25 Oct 2016</p>
+
+        <h4>Entre las características notables de esta versión se incluyen:</h4>
+
+        <ul>
+            <li>
+                Actualizar <strong>videojs-contrib-hls</strong> a 3.6.6
+
+                <ul>
+                    <li>
+                        Corregir el error en IE11/Windows7 cuando se especificó el atributo CODECS en una lista de reproducción variante
+                    </li>
+                    <li>Corregir <code translate="No">ended</code> el evento que no se dispara después de la reproducción</li>
+                    <li>Recorte solo las etiquetas FLV cuando se intenta evitar recortar iframes</li>
+                    <li>Anexar datos de segmento de entrada en cambios de pista de audio</li>
+                    <li>Normalizar el comportamiento de ID3 para seguir la implementación de Safari</li>
+                    <li>Permitir la opción de ancho de banda inicial de 0</li>
+                    <li>
+                        Agregado soporte para varias pistas de audio alternativas en Firefox 49
+                    </li>
+                    <li>Añadir segmento de entrada al búfer de vídeo para cada segmento</li>
+                </ul>
+            </li>
+            <li>Actualizado a <strong>video.js</strong> 5.12.5</li>
+            <li>
+                Actualización de <strong>videojs-bc-analytics</strong> a 2.4.1
+                <ul>
+                    <li>
+                        Abordar algunos casos de esquina con valores grandes (tanto positivos como negativos) notificados para la hora de inicio de la reproducción
+                    </li>
+                    <li>
+                        Mejorar aún más los informes de las estadísticas de rebúfer para mejorar la precisión
+                    </li>
+                </ul>
+            </li>
+            <li>
+                Actualizado <strong>videojs-bc-catálogo</strong> a 3.3.0
+                <ul>
+                    <li>Expuesto <code translate="No">transformVideoResponse</code></li>
+                </ul>
+            </li>
+            <li>
+                Mejor manejo de los valores predeterminados de iOS10 <code translate="No">playsinline</code> y <code translate="No">fullscreenchange</code>
+            </li>
+        </ul>
+
+        <h3>5.10.5</h3>
+
+        <p>7 Oct 2016</p>
+
+        <h4>Entre las características notables de esta versión se incluyen:</h4>
+
+        <ul>
+            <li>
+                Agregado soporte para reproducción en línea y reproducción automática silenciada en iOS 10 cuando se utilizan incrustaciones de iframe
+                <ul>
+                    <li>
+                        La compatibilidad con estas características se puede habilitar en un iframe estableciendo los parámetros <code translate="No">playsinline</code> y/o <code translate="No">muted</code> consulta (la reproducción automática ya estaba soportada) en la URL de origen de su iframe
+                    </li>
+                    <li>
+                        Estas características ya estaban soportadas en la incrustación en la página a través de los atributos HTML apropiados (por ejemplo <code translate="No">&lt;video playsinline muted autoplay&gt;</code> )
+                    </li>
+                </ul>
+            </li>
+            <li>
+                Los puntos de referencia de Video Cloud se comportan más como señales nativas tal como existen en Safari. Esto no debería tener ningún efecto en las implementaciones actuales de puntos de referencia, pero resuelve varios casos de borde
+            </li>
+            <li>
+                Se agregó un mensaje más fácil de usar para los usuarios con Flash deshabilitado en Internet Explorer
+            </li>
+            <li>
+                Se solucionó un problema por el que no se enviaban métricas de visualización de vídeo y interacción cuando se utilizaba el complemento de publicidad FreeWheel con una respuesta de anuncio vacía
+            </li>
+            <li>Se ha corregido un problema con FairPlay en Safari en macOS 10.10 (Yosemite)</li>
+            <li>Varias mejoras menores de código interno</li>
+            <li>
+                Actualizado a videojs-contrib-hls a 3.6.0
+                <ul>
+                    <li>Añadido soporte para generar cajas TFDT de la versión 1</li>
+                    <li>Se ha añadido compatibilidad con FMP4</li>
+                    <li>
+                        Se ha corregido un error que provocaba que el jugador cargase el primer segmento en una transmisión en directo.
+                    </li>
+                </ul>
+            </li>
+            <li>
+                Actualizado a videojs-bc-catalogo a 3.2.4
+                <ul>
+                    <li>Se han corregido listas de reproducción con fuentes de FairPlay en Yosemite</li>
+                </ul>
+            </li>
+            <li>
+                Actualizado a video.js 5.11.7
+                <ul>
+                    <li>Se ha corregido un problema con la doble envoltura del reproductor en iOS.</li>
+                </ul>
+            </li>
+            <li>Se ha corregido la barra de control que nunca aparecía después de ocultarse</li>
+            <li>
+                Se corrigieron los controles nativos y personalizados que aparecía en iOS 10 después de salir de pantalla completa en iPhones.
+            </li>
+            <li>
+                Fijos <code translate="No">playsinline</code> y <code translate="No">muted</code> atributos en incrustaciones en página
+            </li>
+            <li>Lenguaje fijo y parámetros de consulta de precarga</li>
+            <li>
+                Se ha corregido un error que provocaba que el botón de <strong>cierre</strong> no apareciera en los modales al usar el aspecto de grafito.
+            </li>
+            <li>
+                Se ha corregido un error que provocaba que el menú contextual personalizado no apareciera al usar el aspecto de grafito.
+            </li>
+            <li>
+                Actualizado a videojs-bc-catalogo a 3.2.5
+                <ul>
+                    <li>
+                        No se resolvieron los certificados de FairPlay cuando el plugin <strong>eme</strong> no está disponible
+                    </li>
+                </ul>
+            </li>
+        </ul>
+
+        <h3>5.9.1</h3>
+
+        <p>30 sep 2016</p>
+
+        <h4>Entre las características notables de esta versión se incluyen:</h4>
+
+        <ul>
+            <li>Añade soporte para fuentes HLS FairPlay</li>
+            <li>Mensaje mejorado para algunos navegadores IE que tienen Flash deshabilitado</li>
+            <li>Correcciones menores de código y mejoras</li>
+        </ul>
+
+        <h3>Actualización a la versión 1 de Brightcove Player: v1.14.32</h3>
+
+        <p>14 Sep 2016</p>
+
+        <h4>Entre las características notables de esta versión se incluyen:</h4>
+
+        <ul>
+            <li>El catálogo ordenará ahora las fuentes DASH para priorizar HTTPS</li>
+            <li>Mejoras en la compilación</li>
+        </ul>
+
+        <h3>5.8.1</h3>
+
+        <p>1 Sep 2016</p>
+
+        <h4>Entre las características notables de esta versión se incluyen:</h4>
+
+        <ul>
+            <li>
+                Se ha corregido un problema que provocaba confusión entre <code translate="No">bc.SKIN</code> los valores
+            </li>
+            <li>
+                Actualizado <strong>Video.js</strong> a 5.11.6
+                <ul>
+                    <li>Se agregó el manejo de excepciones a los controladores de eventos</li>
+                    <li>Envoltura fija nativa y emulada <code translate="No">MediaErrors</code></li>
+                    <li>Corregido el cambio entre pistas de audio</li>
+                    <li>Atributo de título añadido al botón de audio</li>
+                </ul>
+            </li>
+            <li>Actualizado <strong>videojs-contrib-hls</strong> a 3.5.3</li>
+            <li>Actualizado <strong>videojs-errors</strong> a 1.0.5</li>
+            <li>
+                 <strong>Análisis</strong> actualizado a 2.3.1
+                <ul>
+                    <li>
+                        Se ha corregido un problema que provocaba errores en las solicitudes de métricas para vídeos HLS en 2 segmentos de segundo.
+                    </li>
+                    <li>Se han añadido más informes de ancho de banda a los eventos</li>
+                </ul>
+            </li>
+            <li>
+                El Dock ahora muestra la descripción correctamente (anteriormente el título se usaba como descripción)
+            </li>
+        </ul>
+
+        <h3>5.7.1</h3>
+
+        <p>15 ago 2016</p>
+
+        <h4>Entre las características notables de esta versión se incluyen:</h4>
+
+        <ul>
+            <li>Se corrigió un problema con el comportamiento del botón derecho y el menú contextual.</li>
+            <li>Se ha corregido un problema que podía provocar la precarga involuntaria en iOS.</li>
+            <li>Se ha corregido un problema con el icono de audio alternativo</li>
+        </ul>
+
+        <h3>5.6.2</h3>
+
+        <p>1 Ago 2016</p>
+
+        <h4>Entre las características notables de esta versión se incluyen:</h4>
+
+        <ul>
+            <li>
+                HLS actualizado a v3.3.0 de v3.1.0:
+                <ul>
+                    <li>
+                        Se ha corregido un error en IE que no <code translate="No">loadedmetadata</code> estaba disparando.
+                    </li>
+                    <li>
+                        Ya no se solicitan segmentos de tiempo de espera si solo queda una lista de reproducción o si se utiliza la representación más baja disponible
+                    </li>
+                    <li>
+                        Se ha corregido un error por el que a veces no se recuperaba el primer segmento cuando debería haber sido
+                    </li>
+                    <li>
+                        Se agregó un algoritmo para buscar espacios en el búfer del elemento de vídeo cuando se crean debido a la falta de fotogramas de vídeo o audio.
+                    </li>
+                    <li>Se movió la lógica de descifrado de AES a su propio proyecto</li>
+                </ul>
+            </li>
+            <li>Se ha corregido un error que provocaba que se lanzara un error al desechar a un jugador.</li>
+            <li>
+                Se ha corregido un problema que provocaba la transición de los controles demasiado pronto en IE11.
+            </li>
+            <li>Se han corregido algunos problemas menores de compatibilidad con IE8</li>
+            <li>
+                Añadido un modal de <strong>información del jugador</strong> 
+                <ul>
+                    <li>
+                        Reemplaza el <strong>depurador</strong> antiguo que existía anteriormente
+                    </li>
+                    <li>
+                        El modal proporciona información útil para el soporte al cliente. Se puede invocar haciendo clic con el botón derecho (o a través de un toque prolongado en dispositivos que emiten eventos táctiles) y seleccionando <strong>Información del jugador</strong> en el menú
+                    </li>
+                    <li>
+                        Los eventos posteriores de este tipo (clic derecho o toque largo) activarán el comportamiento predeterminado (es decir, el menú contextual nativo)
+                    </li>
+                </ul>
+            </li>
+        </ul>
+
+        <h3>5.5.0</h3>
+
+        <p>6 Jul 2016</p>
+
+        <h4>Entre las características notables de esta versión se incluyen:</h4>
+
+        <ul>
+            <li>Actualizado video.js a 5.10.7</li>
+            <li>Soporte preliminar para análisis de QoE</li>
+            <li>Se ha corregido el cursor sobre los controles de anuncios.</li>
+            <li>
+                Los puntos de referencia ahora tienen una duración de 0,5 s para garantizar que todos los navegadores los activen de forma fiable
+            </li>
+        </ul>
+
+        <h3>5.4.0</h3>
+
+        <p>28 Jun 2016</p>
+
+        <ul>
+            <li>Actualizado video.js a 5.10.5</li>
+            <li>
+                Compatibilidad con acceso anticipado para la selección de copias manuales con HLS de escritorio
+            </li>
+            <li>Las incrustaciones inactivas de reproductores en páginas ahora se desactivan correctamente</li>
+            <li>Solucionado un problema de seguridad relacionado con la compilación de reproductores</li>
+            <li>No disparar PLAYER_ERR_TIMEOUT para pausas publicitarias de larga duración</li>
+            <li>
+                Añadida compatibilidad con los atributos “muted” y “loop” cuando se utiliza la tecnología de reproducción Flash
+            </li>
+        </ul>
+
+        <h3>5.3.4</h3>
+
+        <p>3 Jun 2016</p>
+
+        <ul>
+            <li>Videojs actualizado a 5.10.4</li>
+            <li>Soporte de múltiples pistas de audio alternativas</li>
+            <li>
+                Correcciones en el capturador de HLS para reducir el número de capturas de segmentos repetidas
+            </li>
+            <li>
+                Correcciones para el streaming en directo de Flash, incluida la función seek-to-live
+            </li>
+            <li>
+                Exposición de una única pista de audio predeterminada al ejecutar HLS con la opción de retorno de Flash
+            </li>
+            <li>Corregido un problema relacionado con cambios rápidos de calidad en HLS</li>
+            <li>Mejorado el comportamiento de obtención de HLS incorrectamente segmentado</li>
+            <li>Solucionado un problema de cálculo de las duraciones de segmentos HLS</li>
+            <li>Corregido un problema de audio (sonido envolvente)</li>
+            <li>
+                Solucionado un problema de navegación con el teclado y con la barra de control cuando se utiliza la apariencia de grafito “Graphite”
+            </li>
+            <li>Ignorar fuentes HLS cifradas con FairPlay, si están presentes</li>
+            <li>Ignorar fuentes HbbTV MPEG-DASH, si están presentes</li>
+            <li>
+                Solucionado un problema que impedía que la selección de variantes de representación conmutase a listas de reproducción ya descargadas del servidor
+            </li>
+        </ul>
+
+        <h3>5.2.2</h3>
+
+        <p>11 de mayo de 2016</p>
+
+        <ul>
+            <li>Actualizar video.js a v5.9.2</li>
+            <li>Se ha corregido un error intermitente con HLS en IE11 en Windows 10.</li>
+            <li>
+                <a href="https://github.com/videojs/videojs-contrib-hls/tree/v2.1.1#hlsxhr">Agregue un método para establecer las opciones de HLS XMLHttpRequest antes de que se envíen </a>
+            </li>
+            <li>
+                Solucionar un problema por el que los controles nativos aparecían brevemente en un iframe
+            </li>
+            <li>La información emergente de tiempo está contenida ahora dentro del reproductor.</li>
+            <li>Video.js ya no añade elementos de estilo dinámicos.</li>
+            <li>
+                El contenido HLS se reproduce mejor ahora cuando los segmentos no empiezan con fotogramas clave.
+            </li>
+            <li>Se ha eliminado una animación que desplazaba el gran botón de reproducción.</li>
+            <li>El estilo de las incrustaciones múltiples en páginas con la apariencia Luna es ahora el adecuado.</li>
+        </ul>
+
+        <h3>5.1.14</h3>
+
+        <p>19 abr 2016</p>
+
+        <ul>
+            <li>Actualizar a video.js v5.9.0.</li>
+            <li>
+                Eliminar el atributo <strong>controles</strong> de las incrustaciones en la página ahora deshabilita los controles
+            </li>
+            <li>
+                Se ha corregido un error por el que la conmutación del botón de silenciar provocaba anomalías en el sonido.
+            </li>
+            <li>
+                Se ha corregido un problema que provocaba que al establecer <strong>la propiedad de la piel</strong> en false todavía se incluían algunos estilos
+            </li>
+            <li>
+                Se ha corregido un error por el que no se podía acceder mediante el teclado a algunos elementos de la barra de control de la apariencia Graphite. 
+            </li>
+            <li>
+                Se ha corregido un error que provocaba que el <strong>botón de juego grande</strong> en el aspecto Luna no fuera accesible al teclado.
+            </li>
+            <li>Se ha corregido un error de mayúsculas y minúsculas en las traducciones al alemán.</li>
+            <li>
+                Se ha corregido un error por el que los vídeos con capítulos no mostraban el icono de capítulo en la barra de progreso.
+            </li>
+        </ul>
+
+        <h3>5.1.12</h3>
+
+        <p>25 Mar 2016</p>
+
+        <ul>
+            <li>Prefiere fuentes HTTPS DASH cuando juegue en páginas HTTPS.</li>
+            <li>Actualizar a video.js v5.8.3.</li>
+            <li>
+                Mejore la impresión de vídeo y el seguimiento de visualización para algunas configuraciones de reproductores.
+            </li>
+            <li>Sincronice la animación de desvanecimiento del muelle con la barra de control.</li>
+            <li>
+                HLS: Se ha corregido un problema que podía provocar que los IES antiguos volvieran a descargar segmentos de vídeo que ya se habían almacenado en búfer.
+            </li>
+            <li>
+                La <code translate="No">bc()</code> función ahora acepta una cadena de identificación de elemento de vídeo, como <code translate="No">videojs()</code> .
+            </li>
+            <li>Se ha corregido un problema que el vídeo no se ajustaba correctamente en pantalla completa.</li>
+            <li>
+                Se ha corregido un problema que provocaba que la barra de progreso estuviera apagada por 2 píxeles en Firefox y algunos iE.
+            </li>
+            <li>Se han corregido selectores de piel de grafito para dejar de romper las previsualizaciones.</li>
+            <li>Sincronizado la animación de desvanecimiento del muelle con la barra de control.</li>
+            <li>
+                HLS: Se ha corregido un problema con el análisis 608 que provocaba subtítulos confuso.
+            </li>
+            <li>HLS: Añadido soporte para el carácter de nota musical en los subtítulos.</li>
+            <li>
+                HLS: Se ha corregido un problema con IE11 en Windows 10 que ocasionalmente tenía problemas para reproducir contenido HLS.
+            </li>
+        </ul>
+
+        <h3>5.1.8</h3>
+
+        <p>22 Feb 2016</p>
+
+        <ul>
+            <li>
+                La especificidad CSS básica de las reglas de estilo de jugador se ha reducido a un selector de nivel de clase en el aspecto Luna. Esto facilita la anulación de las reglas de estilo predeterminadas y hace que las personalizaciones de estilo en Luna sean más compatibles con el aspecto de grafito.
+            </li>
+            <li>Actualizar video.js a v5.8.0</li>
+            <li>
+                Corregir un problema al crear el reproductor en un iframe en Firefox con «display» configurado inicialmente en «ninguno»
+            </li>
+        </ul>
+
+        <h3>5.1.7</h3>
+
+        <p>22 Feb 2016</p>
+
+        <ul>
+            <li>
+                Esta versión era necesaria para solucionar un problema que estábamos viendo con la funcionalidad de vista previa del reproductor. No hubo ningún cambio en el código de cliente.
+            </li>
+        </ul>
+
+        <h3>5.1.5</h3>
+
+        <p>16 Feb 2016</p>
+
+        <ul>
+            <li>
+                Mejoras en el muelle
+                <ul>
+                    <li>Tamaño de fuente fijo</li>
+                    <li>Se ha añadido la descripción del jugador al dock</li>
+                    <li>Se ha mejorado el gradiente</li>
+                </ul>
+            </li>
+            <li>Se ha corregido el icono de reproducción en el selector de lista de reproducción.</li>
+            <li>Se ha corregido el tamaño del jugador junto al selector de listas de reproducción en un iframe.</li>
+            <li>Se ha corregido el tamaño del jugador a pantalla completa en un iframe</li>
+            <li>Se eliminó el suplemento ES5 en todos los navegadores excepto IE8</li>
+            <li>Detección mejorada del agente de usuario para IE8</li>
+            <li>Se ha corregido un error con los estilos en IE8</li>
+            <li>Los puntos de referencia ahora funcionan correctamente con las listas de reproducción</li>
+            <li>
+                Trabajar alrededor de getComputedStyle () devolviendo null dentro de un iframe con 'display: none' en Firefox
+            </li>
+            <li>Incluye fuente vjs-con piel de grafito.</li>
+            <li>
+                Videojs-contrib-hls actualizado a v1.3.8
+                <ul>
+                    <li>
+                        Volver a HLS basado en Flash si existe MSE pero no admite mp4
+                    </li>
+                    <li>Pruebe otras copias si la primera lista de reproducción inmediatamente 404s</li>
+                    <li>Se ha corregido un problema en Firefox con el manejo de eventos de actualización.</li>
+                    <li>Se corrigió un error con 'duración' informando de valores incorrectos.</li>
+                    <li>Se ha corregido un error que provocaba que 'finalizar' no siempre se disparara</li>
+                    <li>
+                        Tenga más cuidado con qué partes del búfer se borran en una transmisión en vivo
+                    </li>
+                </ul>
+            </li>
+        </ul>
+
+        <h3>5.0.9</h3>
+
+        <p>26 ene 2016</p>
+
+        <p>
+            Brightcove Player versión 5 es una importante actualización que incluye mejoras significativas para la reproducción HLS y la personalización del usuario.
+        </p>
+
+        <p>
+            La mayoría de los usuarios de Brightcove Player se actualizarán automáticamente a partir del 8 de febrero. Recomendamos actualizaciones automáticas para la mayoría de los clientes para proporcionar la mejor experiencia al usuario final con las últimas características y correcciones de errores. Mantener el reproductor actualizado también facilita la asistencia técnica de Brightcove cuando sea necesario.
+        </p>
+
+        <p>
+            Esta tabla muestra cómo afectará esta actualización a los clientes en función de características y requisitos específicos, y quién debería optar por no recibir actualizaciones automatizadas por ahora.
+        </p>
+
+        <table class="bcls-table">
+            <thead>
+                <tr>
+                    <th>
+                        Versión/característica actual del reproductor<br/> Si está utilizando:
+                    </th>
+                    <th>Acción recomendada</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <p>
+                            Brightcove Player versión 1.x con las siguientes características habilitadas:
+                        </p>
+
+                        <ul>
+                            <li>Publicidad (a través del plugin IMA4)</li>
+                            <li>Compartir en redes sociales </li>
+                            <li>Pantalla final personalizada</li>
+                            <li>HLS cifrado</li>
+                            <li>Puntos de referencia ID3</li>
+                            <li>Reproducción HLS en vivo (sin DVR)</li>
+                            <li>Listas de reproducción</li>
+                            <li>Sobreimpresiones</li>
+                            <li>Plugins personalizados</li>
+                            <li>Reproducción HLS</li>
+                            <li>Reproducción de MP4</li>
+                        </ul>
+                    </td>
+                    <td>
+                        <p>
+                            No se requiere ninguna acción.<strong></strong> Actualización automática a partir del 8 de febrero de 2016
+                        </p>
+
+                        <p>Actualización manual disponible ahora recomendada para probar</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Brightcove Player versión 2.x o 5.x (versiones previas)</td>
+                    <td>
+                        <p>
+                            No se requiere ninguna acción.<strong></strong> Actualización automática a partir del 8 de febrero de 2016
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Reproductor inteligente (reproductor heredado, basado en Flash)</td>
+                    <td>
+                        <p>
+                            No se requiere ninguna acción.<strong></strong> Los jugadores no se actualizarán automáticamente. Inicie sesión en Studio para crear un nuevo Brightcove Player
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p>
+                            Brightcove Player versión 1.x con las siguientes características habilitadas:
+                        </p>
+
+                        <ul>
+                            <li>Publicidad FreeWheel</li>
+                            <li>Compatibilidad con DASH/DRM</li>
+                            <li>Integración OnCeux</li>
+                            <li>DVRUX</li>
+                        </ul>
+                    </td>
+                    <td>
+                        <p>
+                            <strong>Acción requerida:</strong> Estas características aún no son compatibles con la versión 5.0. o mediante API
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Brightcove Player versión 1.x con complementos personalizados o de terceros, CSS o modificaciones de la piel
+                    </td>
+                    <td>
+                        <p>
+                            <strong>Acción requerida:</strong> Pruebe cualquier personalización con la versión 5. En la versión 5 se incluyen dos aspectos:
+                        </p>
+
+                        <ol>
+                            <li>
+                                Grafito, que parece 1.14.x y está diseñado para la máxima compatibilidad
+                            </li>
+                            <li>Luna, una interfaz de usuario rediseñada con un aspecto actualizado</li>
+                        </ol>
+
+                        <p>
+                            Por defecto, los nuevos jugadores obtendrán el aspecto Luna; los jugadores que se actualizan automáticamente recibirán grafito.
+                        </p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>Nuevas funciones</h3>
+
+        <p>
+            Brightcove Player versión 5 tiene nuevo soporte para vídeo HLS sin usar Flash. En esta versión, en todos los navegadores compatibles con Media Source Extensions API (MSE), Brightcove Player puede reproducir vídeos HLS <strong>sin Flash.</strong> Esto significa que Flash no se utiliza en Firefox, Chrome, Safari o Microsoft Edge. Flash todavía se usará para versiones anteriores de IE, pero se puede deshabilitar mediante configuración.
+        </p>
+
+        <p>MSE HLS ofrece varios beneficios enormes:</p>
+
+        <ol>
+            <li>
+                Los vídeos se cargarán rápidamente y se reproducirán sin problemas, incluso con altas resoluciones y velocidades de fotogramas altas, <strong> incluyendo vídeo 4K y 60FPS, en hardware modesto </strong>.
+            </li>
+            <li>
+                Utiliza aproximadamente <strong>-50% de la carga de la CPU</strong> para renderizar los mismos vídeos, lo que significa que las baterías durarán más tiempo y el ventilador de tu portátil no se enciende
+            </li>
+            <li>
+                Ahorro de energía y otros ajustes del navegador para limitar el uso de Flash <strong>ya no tendrán ningún efecto en el reproductor</strong> independientemente de las dimensiones del jugador.
+            </li>
+        </ol>
+
+        <p>Otras características de esta versión incluyen:</p>
+
+        <ol>
+            <li>
+                <strong>Nueva piel</strong> - Basado en importantes investigaciones UX, hemos construido una nueva piel que incorpora muchos cambios. Estos incluyen un nuevo botón de juego grande centrado, nuevos colores, un nuevo comportamiento de la barra de búsqueda y una nueva barra de título llamada el dock. Los participantes de pruebas de usabilidad les encantó especialmente la nueva línea de tiempo que se expande al flotar y hace que sea más fácil buscar a un momento específico. Ahora puedes elegir entre el nuevo aspecto predeterminado, llamado Luna, y el antiguo aspecto 1.x, ahora llamado Grafito.
+            </li>
+            <li>
+                <strong>Compatibilidad inicial con subtítulos en vivo</strong> : esta versión ahora soporta muchos sistemas de codificación de subtítulos 608/708. Esto incluye soporte para los populares métodos emergentes y enrollables y el estilo básico
+            </li>
+            <li>
+                <strong>Modo de compatibilidad</strong> para todos los plugins 1.x y Video.js 4.x. (excepto los plugins DASH/DRM, FreeWheel y OnCeux - actualizaciones a seguir durante el primer trimestre)
+            </li>
+        </ol>
+
+        <p>
+            También en esta versión, hemos realizado muchas actualizaciones para mejorar el modelo de programación para la personalización, incluyendo simplificaciones de nuestro modelo de skinning y la API para plugins. Estos cambios nos ponen al día con nuestra última versión de código abierto, Video.js 5. También se dará cuenta de que también hemos sincronizado nuestra numeración de versiones entre las versiones Video.js y Brightcove Player.
+        </p>
+
+        <h3>v1.14.30</h3>
+
+        <p>11 dic 2015</p>
+
+        <p>Entre los cambios notables de esta versión se incluyen:</p>
+
+        <ul>
+            <li>
+                Corrección para solicitudes de catalog que devolvieron una matriz vacía de imágenes de póster o miniatura.
+            </li>
+        </ul>
+
+        <h3>v1.14.29</h3>
+
+        <p>30 Oct 2015</p>
+
+        <ul>
+            <li>
+                Corrección para solicitudes de catalog con carteles, subtítulos u orígenes null los o faltantes.
+            </li>
+            <li>Corrección para cargar pistas de texto HTTPS en Safari.</li>
+            <li>
+                Actualizar a <a href="https://github.com/videojs/video.js/releases/tag/v4.12.15"> video.js 4.12.15 </a> .
+            </li>
+        </ul>
+
+        <h3>v1.14.26</h3>
+
+        <p>16 Sep 2016</p>
+
+        <ul>
+            <li>
+                Agregue una opción para comenzar a reproducir un vídeo inmediatamente cuando se haga clic en el selector de listas de reproducción.
+            </li>
+            <li>
+                Haga que la fuente del selector de vídeo de la lista de reproducción sea coherente con el resto del reproductor.
+            </li>
+            <li>
+                Corregir un problema que provocaba que los iPhones vean vídeos en la vista web integrada de la aplicación Facebook.
+            </li>
+            <li>
+                Corrige un problema relacionado <code translate="No">indexOf</code> con el uso con listas de reproducción que contienen vídeos con fuentes RTMP.
+            </li>
+            <li>Actualización a video.js 4.12.14</li>
+        </ul>
+
+        <h3>v1.14.22</h3>
+
+        <p>17 ago 2015</p>
+
+        <ul>
+            <li>
+                Soporte para <code translate="No">preload</code> atributos en iframe incrustados a través del parámetro de consulta. Añada <code translate="No">preload=auto</code> , <code translate="No">preload=metadata</code> , o <code translate="No">preload=none</code> para controlar el comportamiento de precarga de iframe. El valor predeterminado es <code translate="No">auto</code> .
+            </li>
+            <li>
+                Soporte para <code translate="No">autoplay</code> atributos en iframe incrustados a través del parámetro de consulta. Añada <code translate="No">autoplay=true</code> a la reproducción automática de vídeos en plataformas que lo admitan. El valor predeterminado es <code translate="No">false</code> .
+            </li>
+            <li>
+                Elimine la necesidad de una solicitud de opciones previas al vuelo para el uso de la API del catalog.
+            </li>
+            <li>Actualizar a video.js 4.12.12.</li>
+            <li>
+                Para reducir las tasas de errores de reproducción, no utilice controles personalizados en el sistema operativo Android 4.x con el navegador preinstalado de serie. Los controles personalizados seguirán siendo visibles para los espectadores que utilicen Chrome para Android o Android 5.x
+            </li>
+            <li>
+                Corregir un problema que provocaba que el parámetro de consulta de idioma no se analizara correctamente para las incrustaciones de iframe.
+            </li>
+            <li>
+                Corrige un problema que causaba errores repetidos cuando un vídeo no tenía fuentes reproducibles.
+            </li>
+            <li>
+                Corregir un problema que a veces causaba que HLS de reproducción automática fallara al buscar el punto activo.
+            </li>
+        </ul>
+
+        <h3>v1.14.19</h3>
+
+        <p>24 Jul 2015</p>
+
+        <ul>
+            <li>
+                Se ha corregido un error que provocaba que algunos vídeos de HLS mostraran duraciones más largas de las que realmente tenían.
+            </li>
+            <li>Ahora el color de fondo se aplica a los menús de la barra de control</li>
+            <li>Se ha corregido un error con HLS solo de audio o vídeo en el escritorio.</li>
+            <li>
+                El botón de pantalla completa para las incrustaciones en página en IE10 o anterior ahora abrirá una ventana que carga el reproductor directamente; anteriormente, la nueva ventana cargaría la página de incrustación
+            </li>
+        </ul>
+
+        <h3>v1.14.18</h3>
+
+        <p>17 Jul 2015</p>
+
+        <ul>
+            <li>
+                Se ha corregido un problema que ocasionalmente causaba errores al buscar vídeo HLS.
+            </li>
+        </ul>
+
+        <h3>v1.14.17</h3>
+
+        <p>10 Jul 2015</p>
+
+        <ul>
+            <li>
+                Solucionado un problema que impedía la carga de una nueva lista de reproducción con el mismo número de elementos que la actualmente cargada
+            </li>
+            <li>Mejorado el cálculo de la duración de los vídeos para HLS</li>
+            <li>Limitar posicionamientos al rango posicionable para HLS</li>
+            <li>
+                Solucionado un problema que impedía al reproductor seleccionar variantes de representación de alta calidad en el modo de pantalla completa
+            </li>
+        </ul>
+
+        <h3>v1.14.16</h3>
+
+        <p>7 Jul 2015</p>
+
+        <ul>
+            <li>Búsqueda más rápida en transmisiones HLS en vivo</li>
+            <li>
+                Se ha corregido un error que provocaba que los vídeos se mostraran intermitentemente en una proporción de aspecto de 4:3.
+            </li>
+            <li>Actualizar a video.js 4.12.10</li>
+        </ul>
+
+        <h3>v1.14.15</h3>
+
+        <p>29 Jun 2015</p>
+
+        <ul>
+            <li>Mejorada la selección de fuentes de respaldo mp4</li>
+            <li>Mejorada la reproducción básica en dispositivos Android antiguos</li>
+        </ul>
+
+        <h3>v1.14.13</h3>
+
+        <p>12 Jun 2015</p>
+
+        <ul>
+            <li>
+                Añadido <a href="//html.spec.whatwg.org/multipage/embedded-content.html#dom-media-seekable"> seekable () </a> a la API; para averiguar el punto «en vivo» de una transmisión HLS en el escritorio, puede usar <code translate="No">player.seekable().end(0)</code> igual que en iOS.
+            </li>
+            <li>
+                Se han corregido los puntos clave basados en ID3 para que no se vuelvan a agregar si buscas en una transmisión HLS en vivo
+            </li>
+            <li>
+                Retira el terminador de cadena de bytes null en cue.text al analizar marcos ID3 TXXX
+            </li>
+        </ul>
+
+        <h3>v1.14.12</h3>
+
+        <p>5 Jun 2015</p>
+
+        <ul>
+            <li>Conmutación más rápida entre niveles de calidad cuando el ancho de banda empeora de forma inesperada</li>
+            <li>
+                Resuelto un problema que puede devolver la reproducción al punto del directo al cambiar los niveles de calidad HLS
+            </li>
+            <li>
+                Resuelto un problema que iniciaba la reproducción de algunas secuencias HLS con una relación de aspecto 4:3
+            </li>
+        </ul>
+
+        <h3>v1.14.11</h3>
+
+        <p>22 Mayo 2015</p>
+
+        <ul>
+            <li>
+                Escapar correctamente los scripts del plugin del reproductor que incluyeron HTML en las cadenas
+            </li>
+            <li>
+                La configuración <code translate="No">preload=none</code> evita cualquier almacenamiento en búfer previo antes de jugar con HLS
+            </li>
+            <li>
+                Actualizar a video.js <a href="//github.com/videojs/video.js/blob/69a4884880dc3baaacd91ea23194b46dd7b48f53/CHANGELOG.md#4127-2015-05-19"> 4.12.7 </a>
+            </li>
+            <li>
+                Actualizar la duración total de los controles antes de la reproducción cuando la precarga está activada
+            </li>
+            <li>
+                No mostrar un mensaje de error si la reproducción automática está activada pero no se ha cargado ningún vídeo
+            </li>
+            <li>
+                Corregir búsqueda y cálculo de duración en HLS de escritorio con discontinuidades
+            </li>
+        </ul>
+
+        <h3>v1.14.8</h3>
+
+        <p>8 de mayo de 2015</p>
+
+        <ul>
+            <li>
+                Dificulta la sobrescritura accidental de estilos de pantalla completa con incrustación en páginas.
+            </li>
+            <li>Corregido el error que se producía en iOS al desactivar el control de pantalla completa.</li>
+            <li>
+                Corregido el error que se producía en la página al utilizar el catálogo en IE8 con es5-shim.
+            </li>
+            <li>Retirado un uso de la propiedad text_tracks obsoleta.</li>
+            <li>Añadidos iconos a los botones de subtítulos abiertos y capítulos.</li>
+            <li>
+                Haga que el <code translate="No">ended</code> evento se incendie de forma más fiable cuando se utiliza la tecnología Flash
+            </li>
+            <li>
+                Corrección de una serie de problemas de redimensionamiento del reproductor relacionados con la relación de aspecto de contenidos.
+            </li>
+            <li>Añadido de nuevo el spinner de carga.</li>
+            <li>Corregida la activación del teclado del botón de pantalla completa en IE8-10.</li>
+            <li>Corregido TypeError al eliminar el reproductor después de cambiar de tecnologías.</li>
+            <li>Mejoras en el rendimiento de HLSe.</li>
+            <li>&nbsp;</li>
+        </ul>
+
+        <h3>v1.14.2</h3>
+
+        <p>16 abr 2015</p>
+
+        <ul>
+            <li>Compatibilidad con API de lista de reproducción e IU</li>
+            <li>Parche para la hora de comienzo de la reproducción de secuencias HLS en directo.</li>
+            <li>
+                Ocultar el primer fotograma del vídeo cuando se utiliza la imagen de cartel del vídeo con una relación de aspecto distinta.
+            </li>
+        </ul>
+    </section>
+</article>
+<!-- complete bootstrap layout -->
+    </div>
+    <div class="col-sm-2 right-side-bar">
+      
+      <nav class="right-side-nav" id="right_side_nav">
+        <h6 class="toc">Contenido de la página</h6>
+        <ul id="in_page_nav" class="list-none"></ul>
+      </nav>
+      
+    </div>
+  </div>
+</div>
+
+<hr>
+<footer class="bcls-footer" role="contentinfo">  <div class="row">
+    <div class="region region-footer-top-center col-md-12">
+      <nav role="navigation" aria-labelledby="block-brightcovesupport-menu" id="block-brightcovesupport" class="footer-menu">
+
+        <h2>Asistencia técnica de Brightcove</h2>
+
+        <ul class="menu">
+          <li>
+            Estado del sistema<a href="https://status.brightcove.com"></a>
+          </li>
+          <li>
+            <a href="https://supportportal.brightcove.com/s/login/?">Contactar soporte</a>
+          </li>
+          <li>
+            <a href="https://support.brightcove.com/">Documentación</a>
+          </li>
+        </ul>
+
+      </nav>
+      <nav role="navigation" aria-labelledby="block-training-menu" id="block-training" class="footer-menu">
+
+        <h2>Formación</h2>
+
+        <ul class="menu">
+          <li>
+            Cursos en línea<a href="https://studio.support.brightcove.com/training/online-training-courses.html"></a>
+          </li>
+          <li>
+            Inscríbete a un curso<a href="https://studio.support.brightcove.com/training/register-training.html"></a>
+          </li>
+          <li>
+            <a href="https://university.brightcove.com/">Universidad de Brightcove</a>
+          </li>
+        </ul>
+
+      </nav>
+      <nav role="navigation" aria-labelledby="block-brightcove-menu" class="footer-menu">
+
+        <h2>Brightcove</h2>
+
+        <ul class="menu">
+          <li>
+            <a href="https://www.brightcove.com">BrightCove.com</a>
+          </li>
+          <li>
+            <a href="https://supportportal.brightcove.com/s/login/?">Contáctanos</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+  <div class="row">
+    <div class="region region-footer-bottom-center col-md-12">
+      <div class="bcls-copyright footer-menu">
+        <table>
+          <tr>
+            <td>
+              <div id="bc_copyright" class="field field--name-field-copyright-year field--type-string field--label-hidden field--item" style="float: left;"> Brightcove Inc. All rights reserved.</div>
+            </td>
+            <td>Privacidad | Términos y Condiciones<a href="https://www.brightcove.com/en/legal/privacy"></a><a href="https://www.brightcove.com/en/terms-and-conditions"></a></td>
+            <td>
+              <div class="gf-links-cols footer-menu">
+                <div class="gf-social"><a href="https://www.linkedin.com/company/16439" title="LinkedIn" newtab="newtab" class="gf-social-linkedin"><i class="fab fa-linkedin-in" style="font-size: 1.5rem;"></i></a><a href="https://twitter.com/brightcove" title="Twitter" newtab="newtab" class="gf-social-twitter"><i class="fab fa-twitter" style="font-size: 1.5rem;"></i></a><a href="https://www.facebook.com/Brightcove" title="Facebook" newtab="newtab" class="gf-social-facebook"><i class="fab fa-facebook-f" style="font-size: 1.5rem;"></i></a>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</div>
+</div>
+<script>
+      
+  var searchBox = sajari.init({
+    mode: "search-box",
+    project: "1588255093746585379", // Set this to your project.
+    collection: "brightcove-documenation", // Set this to your collection.
+    instantPipeline: "autocomplete", // Pipeline used as you type
+    inputPlaceholder: "Search", // Input element placeholder
+    maxSuggestions: 5, // Maximum number of suggestions to show
+    attachSearchBox: document.getElementById("nav-search-box") // DOM element to attach to
+  });
+  
+    searchBox("sub", "pipeline.search-sent", function (_, query) {
+      window.location = "/search.html?q=" + encodeURIComponent(query.q);
+    });
+  
+
+</script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/https-fix.js"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/setDate.js"></script>
+  
+  <script src="https://support.brightcove.com/site-assets/js/site/prism.js"></script>
+  
+  <script src="https://support.brightcove.com/site-assets/js/site/site.js"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/tabs.js"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/toc.js"></script>
+  <script src="/assets/js/sites_nav.js"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/bcls-utils.js"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/local-link-fix.js"></script>
+  <script src="/assets/js/feedback.js"></script>
+  
+  <script src="/assets/js/sajari-search-foot.js"></script>
+  
+  <!-- <script src="/assets/js/sajari-index.js"></script> -->
+  <style>
+    a.sj-paginator__page-number.sj-paginator__page-number--current.css-so0ov7 {
+      background-color: lightblue;
+    }
+    div.sj-tabs__tab {
+      margin-top: 3rem;
+      margin-left: .3rem;
+      border-top-left-radius: .4rem;
+      border-top-right-radius: .4rem;
+      background-color:#e8e8e8;
+    }
+
+    div.sj-tabs__tab.sj-tabs__tab--selected {
+      border-bottom-color: crimson;
+      background-color: #f8f8f8;
+    }
+
+    p.sj-results__result__description.css-p9jvyt {
+      font-size: 1rem;
+    }
+
+    .sj-result__text.css-31l7gp h3 {
+      color: navy;
+      font-size: 1.4rem;
+    }
+    </style>
+
+</body>
+
+</html>
