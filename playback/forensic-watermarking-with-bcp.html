@@ -1,0 +1,152 @@
+---
+title: "Marca de agua forense con Brightcove Player"
+description: "En este tema, aprenderá a usar Brightcove Player para entregar videos protegidos con marca de agua forense".
+parent: Playback
+---
+
+
+<article class="bcls-article">
+  <h1>{{ page.title }}</h1>
+  <summary>{{ page.description }}</summary>
+
+  <section class="bcls-section">
+    <h2 id="Introduction">Introducción</h2>
+    <p>
+      Con la marca de agua forense, puede proteger su contenido premium contra la piratería y el intercambio de contenido no autorizado. Esta función agrega una marca de agua invisible a sus videos, lo que le permite rastrear cualquier filtración de contenido.
+    </p>
+    <p>Para obtener más información, consulte el <a href="https://apis.support.brightcove.com/general/overview-forensic-watermarking.html">Visión general: </a> Documento de marca de agua forense.</p>
+  </section>
+
+  <section class="bcls-section">
+    <h2 id="Requirements">Requisitos</h2>
+    <p>Se necesitan los siguientes requisitos para admitir esta función:</p>
+    <h3>Configuración</h3>
+    <p>Existen requisitos de instalación además de configurar su reproductor. Para obtener más detalles, consulte la <a href="https://apis.support.brightcove.com/general/overview-forensic-watermarking.html">Descripción general: </a> Documento de marca de agua forense.</p>
+
+    <h3>Jugador Brightcove</h3>
+    <p>Se requiere Brightcove Player versión 6.55+; última versión recomendada</p>
+  </section>
+
+  <section class="bcls-section">
+    <h2 id="Configuring_Brightcove_Player">Configuración de Brightcove Player</h2>
+    <p>
+      Para configurar un reproductor para que utilice la marca de agua forense, siga estos pasos:
+    </p>
+    <ol class="bcls-tasklist-restart">
+      <li>
+        <p>El reproductor debe estar integrado con su sistema de registro para que se transmita un ID de visor a la baliza web de análisis (en el <code translate="No">user</code> campo).</p>
+        <p>Para ello, utilice el <code translate="No">setUser()</code> método. Por ejemplo:</p>
+        <pre>
+<code class="language-html" translate="No">myPlayer.bcAnalytics.client.setUser('viewer id');</code></pre>
+      </li>
+      <li>
+        <p>
+          Antes de obtener su video, configure un token de cadena con el valor de su token de marca de agua de Nagra como parte del objeto del catálogo del reproductor.
+        </p>
+        <pre>
+<code class="language-html" translate="No">myPlayer.catalog.setWatermarkingToken()</code></pre>
+      </li>
+      <li>
+        <p>
+          Después de configurar el token de marca de agua, está listo para solicitar datos de la API de reproducción de Brightcove y cargarlos en el reproductor.
+        </p>
+        <p>
+          A continuación, se muestra un ejemplo de cómo obtener un solo video:
+        </p>
+        <aside class="bcls-aside bcls-aside--tip">Note que el <code translate="No">bc()</code> El método se utiliza para permitirle establecer el token de marca de agua antes de realizar una llamada al catálogo.</aside> <aside class="bcls-aside bcls-aside--information">Nota: Asegúrese de NO incluir el <code translate="No">data-video-id</code> parámetro en el <code translate="No">&lt;video-js&gt;</code> etiqueta, porque al hacerlo, se activará una solicitud de video automática sin el token de marca de agua.</aside>
+
+        <h3>HTML</h3>
+  <pre class="line-numbers">
+<code class="language-html" translate="No">&lt;div style=&quot;max-width: 960px;&quot;&gt;
+  &lt;video-js id=&quot;myPlayerID&quot;
+    data-embed=&quot;default&quot;
+    controls=&quot;&quot;
+    data-application-id=&quot;&quot;
+    class=&quot;vjs-fluid&quot;&gt;
+  &lt;/video-js&gt;
+&lt;/div&gt;
+
+&lt;script src=&quot;https://players.brightcove.net/your account id/your player id_default/index.min.js&quot;&gt;&lt;/script&gt;
+</code></pre>
+
+        <h3>JavaScript</h3>
+<pre class="line-numbers">
+<code class="language-javascript" translate="No">&lt;script&gt;
+  // +++ Add the player attributes +++
+  var myPlayer,
+    myPlayerEl = document.getElementById(&quot;myPlayerID&quot;);
+  myPlayerEl.setAttribute('data-account', your account id);
+  myPlayerEl.setAttribute('data-player', 'your player id');
+
+  // +++ Create the player +++
+  myPlayer = bc(myPlayerEl);
+
+  // Set the viewer id for Brightcove analytics
+  <span class="bcls-highlight">myPlayer.bcAnalytics.client.setUser(<span class="bcls-input">'viewer id'</span>)</span>;
+
+  // Set the watermarking key
+  <span class="bcls-highlight">myPlayer.catalog.setWatermarkingToken(<span class="bcls-input">your watermark token</span>)</span>;
+
+  myPlayer.catalog.get({id: 'your video id', type: 'video'}).
+  then(function(data) {
+    myPlayer.catalog.load(data);
+    myPlayer.muted(true);
+    myPlayer.play();
+  }).
+  catch(function(error) {
+    throw new Error(error);
+  });
+&lt;/script&gt;
+</code></pre>
+      </li>
+    </ol> 
+  </section>
+
+  <section class="bcls-section">
+    <h2 id="Using_a_data_attribute">Usando un atributo de datos</h2>
+   <p>Alternativamente, puede pasar un token de cadena como parte del objeto del catálogo del jugador, usando el nombre de la propiedad <code translate="No">data-watermarking-token</code>.</p>
+
+    <ol class="bcls-tasklist-restart">
+      <li>Recupere el código de inserción avanzado para su reproductor.</li>
+      <li>
+        <p>Incluye tu ficha de marca de agua con el código de inserción del reproductor. Para hacer esto, agregará el token de marca de agua de datos como un atributo del <video-js> etiqueta.</p>
+          <pre class="line-numbers">
+<code class="language-html" translate="No">&lt;video-js id=&quot;myPlayerID&quot;
+  data-account=&quot;1752604059001&quot; 
+  data-player=&quot;default&quot; 
+  data-embed=&quot;default&quot; 
+  controls=&quot;&quot; 
+  data-video-id=&quot;5550679964001&quot; 
+  data-playlist-id=&quot;&quot; 
+  data-application-id=&quot;&quot; 
+  <span class="bcls-highlight">data-watermarking-token=&quot;<span class="bcls-input">your watermark token</span>&quot;</span>
+  width=&quot;960&quot; height=&quot;540&quot;&gt;
+&lt;/video-js&gt;            
+</code></pre>
+      </li>
+      <li>
+        <p>El reproductor debe estar integrado con su sistema de registro para que se transmita un ID de visor a la baliza web de análisis (en el <code translate="No">user</code> campo).</p>
+        <p>Para ello, utilice el <code translate="No">setUser()</code> método. Por ejemplo:</p>
+        <pre><code class="language-html" translate="No">myPlayer.bcAnalytics.client.setUser('viewer id');</code></pre>
+        <h3>JavaScript</h3>
+        <pre class="line-numbers">
+<code class="language-html" translate="No">&lt;script&gt;
+  videojs.getPlayer('myPlayerID').ready(function() {
+    var myPlayer = this;
+
+    // Set the viewer id for Brightcove analytics
+    <span class="bcls-highlight">myPlayer.bcAnalytics.client.setUser('<span class="bcls-input">viewer id</span>'</span>); 
+  });
+&lt;/script&gt;      
+</code></pre>
+      </li>
+    </ol>
+  </section>
+
+  <section class="bcls-section">
+    <h2 id="Limitations">Limitaciones</h2>
+    <p>Para obtener detalles sobre las limitaciones de esta función, consulte la <a href="https://apis.support.brightcove.com/general/overview-forensic-watermarking.html#Limitations">Visión general: </a> Documento de marca de agua forense.</p>
+  </section>
+
+  
+</article>

@@ -1,1221 +1,71 @@
-﻿<!doctype html>
-<html lang="es-es">
-
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  
-  <title>Implementación de puntos de referencia mediante programación</title>
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  <link rel="manifest" href="/site.webmanifest">  
-  <link data-react-helmet="true" rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500&amp;display=swap">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/prism.css">
-  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/styles.css">
-  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/landing-page.css">
-  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/tabs.css">
-  <link rel="stylesheet" href="/assets/css/local.css">
-  <link data-react-helmet="true" rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500&display=swap">
-  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap" rel="stylesheet">
-  <script src="https://kit.fontawesome.com/381443caa8.js" crossorigin="anonymous"></script>
-  <script src="https://support.brightcove.com/site-assets/js/site/google-analytics.js"></script>
-  <script src="/assets/js/sajari-head.js"></script>
-</head>
-
-<body class="body">
-
-<header>
-  <div class="div-header">
-    <a href="/"><img class="product-logo" src="https://support.brightcove.com/site-assets/images/site/product-logos/Player_Logo.svg" alt="logotipo del producto" style="max-height: 100px;max-width: 232px;"/></a>
-<!-- GTranslate: https://gtranslate.io/ -->
-<select onchange="doGTranslate(this);"><option value="">Seleccionar idioma</option><option value="en|en" translate="No">English</option><option value="en|zh-TW" translate="No">繁體中文</option><option value="en|fr" translate="No">Français</option><option value="en|de" translate="No">Deutsche</option><option value="en|ja" translate="No">日本語</option><option value="en|ko" translate="No">한국어</option><option value="en|es" translate="No">Español</option></select>
-
-<script>
-/* <![CDATA[ */
-function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;if(lang_pair=='')return;var lang=lang_pair.split('|')[1];var plang=location.hostname.split('.')[0];if(plang.length !=2 && plang.toLowerCase() != 'zh-cn' && plang.toLowerCase() != 'zh-tw')plang='en';location.href=location.protocol+'//'+(lang == 'en' ? '' : lang+'.')+location.hostname.replace('www.', '').replace(RegExp('^' + plang + '\\.'), '')+location.pathname+location.search;}
-/* ]]> */
-</script>
-
-    
-
-
-    <span class="secondary-nav"><a href="https://supportportal.brightcove.com/s/login/?"><img src="https://support.brightcove.com/site-assets/images/site/support.png" alt="soporte"/> Contactar con Soporte</a> <span style="vertical-align: top;margin-left:1em;margin-right:1em;">|</span> <a href="https://status.brightcove.com/">Estado<img src="https://support.brightcove.com/site-assets/images/site/status.png" alt="estado del sistema"/> del sistema</a></span> <br/>
-    
-  </div>
-  <nav aria-label="breadcrumb">
-    <ol class="breadcrumb arr-right">
-      
-      <li class="breadcrumb-item"><a href="/">Inicio</a></li>
-      
-      
-      
-      <li class="breadcrumb-item"><a href="/general/">Información general</a></li>
-      
-      <li class="breadcrumb-item active" aria-current="page">Implementación de puntos de referencia mediante programación</li>
-    </ol>
-  </nav>
-</header>
-<div class="container">
-    <div class="row">
-            <div class="col-sm-3 left-side-bar">
-        <select id="site_select" class="bcls-select" style="margin-right: 1rem;">
-          <option value="">Otros documentos de Brightcove</option>
-          
-            
-              <option value="https://support.brightcove.com">Documentación Inicio</option>
-            
-          
-            
-              <option value="https://audience.support.brightcove.com">Audiencia de Brightcove</option>
-            
-          
-            
-              <option value="https://beacon.support.brightcove.com">Baliza Brightcove</option>
-            
-          
-            
-              <option value="https://campaign.support.brightcove.com">Campaña de Brightcove</option>
-            
-          
-            
-              <option value="https://engage.support.brightcove.com">Brightcove Engage</option>
-            
-          
-            
-              <option value="https://live.support.brightcove.com">Brightcove Live</option>
-            
-          
-            
-              <option value="https://gallery.support.brightcove.com">Brightcove Gallery</option>
-            
-          
-            
-              <option value="https://ssai.support.brightcove.com">Brightcove SSAI</option>
-            
-          
-            
-              <option value="https://social.support.brightcove.com">Brightcove Social</option>
-            
-          
-            
-              <option value="https://studio.support.brightcove.com">Video Cloud Studio</option>
-            
-          
-            
-              <option value="https://player.support.brightcove.com">Desarrollo de jugadores de Brightcove</option>
-            
-          
-            
-              <option value="https://apis.support.brightcove.com">API para la plataforma de Video Cloud</option>
-            
-          
-            
-              <option value="https://sdks.support.brightcove.com">SDK de dispositivos de Video Cloud</option>
-            
-          
-            
-              <option value="https://integrations.support.brightcove.com">Integraciones y conectores CMS</option>
-            
-          
-            
-              <option value="https://general.support.brightcove.com">Información general de Video Cloud</option>
-            
-          
-            
-              <option value="https://zencoder.support.brightcove.com">Zencoder</option>
-            
-          
-        </select>
-
-        <nav class="sidenav" id="side_nav">
-          
-            
-            <h5><a href="/index.html">Inicio</a></h5>
-            
-          
-            
-              <select id="site_select" class="bcls-select" style="margin-right: 1rem;">
-					<option value="">기타 브라이트코브 문서</option>
-					
-						
-							<option value="https://support.brightcove.com">설명서 홈</option>
-						
-					
-						
-							<option value="https://audience.support.brightcove.com">브라이트코브 대상</option>
-						
-					
-						
-							<option value="https://beacon.support.brightcove.com">브라이트코브 비콘</option>
-						
-					
-						
-							<option value="https://campaign.support.brightcove.com">브라이트코브 캠페인</option>
-						
-					
-						
-							<option value="https://engage.support.brightcove.com">브라이트코브 참여</option>
-						
-					
-						
-							<option value="https://live.support.brightcove.com">Brightcove Live</option>
-						
-					
-						
-							<option value="https://gallery.support.brightcove.com">Brightcove Gallery</option>
-						
-					
-						
-							<option value="https://ssai.support.brightcove.com">Brightcove SSAI</option>
-						
-					
-						
-							<option value="https://social.support.brightcove.com">브라이트코브 소셜</option>
-						
-					
-						
-							<option value="https://studio.support.brightcove.com">비디오 클라우드 스튜디오</option>
-						
-					
-						
-							<option value="https://player.support.brightcove.com">브라이트코브 플레이어 개발</option>
-						
-					
-						
-							<option value="https://apis.support.brightcove.com">비디오 클라우드 플랫폼 API</option>
-						
-					
-						
-							<option value="https://sdks.support.brightcove.com">비디오 클라우드 디바이스 SDK</option>
-						
-					
-						
-							<option value="https://integrations.support.brightcove.com">통합 및 CMS 커넥터</option>
-						
-					
-						
-							<option value="https://general.support.brightcove.com">비디오 클라우드 일반 정보</option>
-						
-					
-						
-							<option value="https://zencoder.support.brightcove.com">Zencoder</option>
-						
-			<h5 class="submenu-header"><a href="/getting-started/index.html"><strong>+</strong> Empezar</a></h5>		
-				</select>
-        <nav class="sidenav" id="side_nav">
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    <li><a href="/training/developer-basics-videos.html">Vídeos básicos del desarrollador</a></li>
-                  
-                
-                  
-                    <li>¿Qué es Brightcove Player?<a href="/getting-started/what-brightcove-player.html"></a></li>
-                  
-                
-                  
-                    <li>Visión general:<a href="/getting-started/overview-brightcove-player.html"> Reproductor de Brightcove</a></li>
-                  
-                
-                  
-                    <li>Guía de aprendizaje:<a href="/getting-started/learning-guide-video-advertising.html"> Publicidad en vídeo</a></li>
-                  
-                
-                  
-                    <li>Visión general:<a href="/getting-started/overview-brightcove-player-plugins.html"> Complementos de Brightcove Player</a></li>
-                  
-                
-                  
-                    <li>Vídeos de capacitación sobre desarrollo de jugadores<a href="/training/player-development-training-videos.html"></a></li>
-                  
-                
-                  
-                    <li>Paso a paso:<a href="/getting-started/step-step-brightcove-player.html"> Reproductor de Brightcove</a></li>
-                  
-                
-                  
-                    <li>Paso a paso:<a href="/getting-started/step-step-player-customization.html"> Personalización del reproductor</a></li>
-                  
-                
-                  
-                    <li>Capacitación:<a href="/training/training-demand-developing-brightcove-player.html"> Desarrollar con Brightcove Player</a></li>
-                  
-                
-                  
-                    <li><a href="/getting-started/learning-guide-using-rest-apis.html">Guía de aprendizaje: Uso de las API REST</a></li>
-                  
-                
-              </ul>
-            
-          
-            
-              <h5 class="submenu-header">Aprender los conceptos básicos +<a href="/basics/index.html"><strong></strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    <li><a href="/basics/developer-basics-advanced-player-code.html">Código del reproductor avanzado</a></li>
-                  
-                
-                  
-                    <li><a href="/basics/developer-basics-autoplaying-video.html">Reproducción automática de un vídeo</a></li>
-                  
-                
-                  
-                    <li><a href="/basics/developer-basics-custom-plugin-converting-code.html">Plugin personalizado - Conversión de código</a></li>
-                  
-                
-                  
-                    <li><a href="/basics/developer-basics-custom-plugin-passing-data.html">Plugin personalizado - Pasar datos</a></li>
-                  
-                
-                  
-                    <li><a href="/basics/developer-basics-custom-plugin-using-studio.html">Plugin personalizado - Usar Studio</a></li>
-                  
-                
-                  
-                    <li><a href="/basics/developer-basics-custom-plugin-why-and-how.html">Plugin personalizado - Por qué y cómo</a></li>
-                  
-                
-                  
-                    <li><a href="/training/developer-basics-videos.html">Vídeos básicos del desarrollador</a></li>
-                  
-                
-                  
-                    <li><a href="/basics/developer-basics-generating-player-code.html">Generación de código de jugador</a></li>
-                  
-                
-                  
-                    <li>Preparación para escribir código<a href="/basics/developer-basics-preparing-write-code.html"></a></li>
-                  
-                
-              </ul>
-            
-          
-            
-              <h5 class="submenu-header">Referencias +<a href="/references/index.html"><strong></strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    <li><a href="/references/brightcove-player-5-6-migration-guide.html">Guía de migración de Brightcove Player 5 a 6</a></li>
-                  
-                
-                  
-                    <li><a href="https://docs.brightcove.com/brightcove-player/current-release/index.html">Documentación de Brightcove Player API (sitio externo)</a></li>
-                  
-                
-                  
-                    <li><a href="/references/brightcove-player-cookies.html">Cookies de reproductor de Brightcove</a></li>
-                  
-                
-                  
-                    <li><a href="/references/brightcove-player-error-reference.html">Referencia de error del Reproductor de Brightcove</a></li>
-                  
-                
-                  
-                    <li><a href="https://groups.google.com/forum/embed/?place=forum/bcplayerdev#!forum/bcplayerdev">Foro de anuncios de jugadores de Brightcove</a></li>
-                  
-                
-                  
-                    <li><a href="/references/brightcove-player-system-requirements.html">Requisitos del sistema de Brightcove Player</a></li>
-                  
-                
-                  
-                    <li><a href="/references/catalog-search-architecture.html">Arquitectura de búsqueda</a></li>
-                  
-                
-                  
-                    <li>Problemas conocidos<a href="https://general.support.brightcove.com/general/known-issues-studio-brightcove-player-and-apis.html"></a></li>
-                  
-                
-                  
-                    <li>Catálogo de jugadores<a href="/references/player-catalog.html"></a></li>
-                  
-                
-                  
-                    <li>Compatibilidad con funciones de jugador por navegador<a href="/references/player-feature-support-browser.html"></a></li>
-                  
-                
-                  
-                    <li>Metadatos del reproductor de bcinfo<a href="/references/player-metadata-bcinfo.html"></a></li>
-                  
-                
-                  
-                    <li>Métodos de reproductores/API de eventos (sitio externo)<a href="https://docs.brightcove.com/brightcove-player/current-release/Player.html"></a></li>
-                  
-                
-                  
-                    <li>Guía de API de lista de reproducción<a href="/references/guide-playlist-api.html"></a></li>
-                  
-                
-                  
-                    <li>Metadatos de vídeo de mediainfo<a href="/references/video-metadata-mediainfo.html"></a></li>
-                  
-                
-              </ul>
-            
-          
-            
-              <h5 class="submenu-header">Plugins +<a href="/plugins/index.html"><strong></strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    <li><a href="/plugins/360degvr-video-plugin.html">Vídeo 360º</a></li>
-                  
-                
-                  
-                    <li><a href="/plugins/ad-only-plugin.html">Sólo anuncio</a></li>
-                  
-                
-                  
-                    <li><a href="/plugins/advertising-freewheel-plugin.html">Publicidad con el plugin FreeWheel</a></li>
-                  
-                
-                  
-                    <li><a href="/plugins/advertising-ima3-plugin.html">Publicidad con el complemento IMA3</a></li>
-                  
-                
-                  
-                    <li>Actualización a la versión 3 del complemento IMA3<a href="/plugins/upgrading-ima3-plugin-version-3.html"></a></li>
-                  
-                
-                  
-                    <li><a href="/plugins/implementing-server-side-ads-brightcove-player.html">Publicidad con SSAI</a></li>
-                  
-                
-                  
-                    <li><a href="/plugins/chromecast-plugin-brightcove-player.html">Chromecast</a></li>
-                  
-                
-                  
-                    <li><a href="/plugins/custom-endscreen-plugin.html">Pantalla final personalizada</a></li>
-                  
-                
-                  
-                    <li><a href="/plugins/display-error-messages-plugin.html">Mostrar mensajes de error</a></li>
-                  
-                
-                  
-                    <li><a href="/plugins/display-thumbnail-previews-plugin.html">Mostrar vistas previas en miniatura</a></li>
-                  
-                
-                  
-                    <li><a href="/plugins/configuring-brightcove-player-drm.html">DRM</a></li>
-                  
-                
-                  
-                    <li><a href="/plugins/google-tag-manager-plugin-brightcove-player.html">Administrador de etiquetas de Google</a></li>
-                  
-                
-                  
-                    <li><a href="/plugins/hls-plugin.html">HLS</a></li>
-                  
-                
-                  
-                    <li>DVRUX en vivo<a href="/plugins/live-dvrux-plugin.html"></a></li>
-                  
-                
-                  
-                    <li>Superposición<a href="/plugins/display-overlay-plugin.html"></a></li>
-                  
-                
-                  
-                    <li>Visión general:<a href="/plugins/overview-brightcove-player-plugins.html"> Plugins de jugador</a></li>
-                  
-                
-                  
-                    <li>Imagen en imagen<a href="/plugins/picture-picture-plugin-aka-floating-or-pinned.html"></a></li>
-                  
-                
-                  
-                    <li>Pruebas de versión de reproductor/plugin<a href="/plugins/playerplugin-version-testing.html"></a></li>
-                  
-                
-                  
-                    <li>IU de lista de reproducción<a href="/plugins/playlist-ui-plugin.html"></a></li>
-                  
-                
-                  
-                    <li>Registro de cambios del complemento<a href="/plugins/changelog/index.html"></a></li>
-                  
-                
-                  
-                    <li>Registro de complementos<a href="/plugins/plugin-registry.html"></a></li>
-                  
-                
-                  
-                    <li>Referencia de versión del complemento<a href="/plugins/plugin-version-reference.html"></a></li>
-                  
-                
-                  
-                    <li>Selección de calidad<a href="/plugins/quality-selection-plugin.html"></a></li>
-                  
-                
-                  
-                    <li>Redes Sociales<a href="/plugins/social-sharing-plugin.html"></a></li>
-                  
-                
-                  
-                    <li>Tealium Tag Manager<a href="/plugins/tealium-plugin-brightcove-player.html"></a></li>
-                  
-                
-                  
-                    <li>Generador de esquemas SEO de vídeo<a href="/plugins/video-seo-schema-generator-plugin.html"></a></li>
-                  
-                
-              </ul>
-            
-          
-            
-              <h5 class="submenu-header"><a href="/advertising/index.html">Publicidad <strong>+</strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    <li><a href="/advertising/ad-events-and-ad-objects.html">Eventos de anuncio y objetos de anuncio</a></li>
-                  
-                
-                  
-                    <li><a href="/plugins/ad-only-plugin.html">Plugin solo para anuncios</a></li>
-                  
-                
-                  
-                    <li><a href="/plugins/advertising-freewheel-plugin.html">Publicidad con el plugin FreeWheel</a></li>
-                  
-                
-                  
-                    <li><a href="/plugins/advertising-ima3-plugin.html">Publicidad con el complemento IMA3</a></li>
-                  
-                
-                  
-                    <li><a href="/advertising/client-side-preroll-with-live-ssai.html">Anuncios pre-roll del lado del cliente con SSAI en vivo</a></li>
-                  
-                
-                  
-                    <li><a href="/advertising/displaying-ads-using-ad-cue-points.html">Visualización de anuncios mediante puntos de anuncio</a></li>
-                  
-                
-                  
-                    <li><a href="/advertising/flash-no-longer-valid-ima.html">Flash ya no es válido con IMA</a></li>
-                  
-                
-                  
-                    <li><a href="/advertising/guide-ad-partner-integration.html">Guía: Integración de socios publicitarios</a></li>
-                  
-                
-                  
-                    <li><a href="/advertising/guide-contrib-ads-migration.html">Guía: migración de contrib-ads</a></li>
-                  
-                
-                  
-                    <li><a href="/plugins/implementing-server-side-ads-brightcove-player.html">Implementación de SSAI con Brightcove Player</a></li>
-                  
-                
-                  
-                    <li><a href="/advertising/jump-start-header-bidding-ad.html">Inicio de salto: Anuncio de puja de encabezado</a></li>
-                  
-                
-                  
-                    <li><a href="/advertising/jump-start-outstream-ad.html">Inicio de salto: Anuncio Outstream</a></li>
-                  
-                
-                  
-                    <li><a href="/advertising/jump-start-pre-roll-ad.html">Inicio de salto: Anuncio de pre-rollo</a></li>
-                  
-                
-                  
-                    <li>Problemas conocidos:<a href="/advertising/known-issues-server-side-ad-insertion-ssai.html"> Inserción de anuncios en el lado del servidor (SSAI)</a></li>
-                  
-                
-                  
-                    <li>Guía de aprendizaje:<a href="/getting-started/learning-guide-video-advertising.html"> Publicidad en vídeo</a></li>
-                  
-                
-                  
-                    <li>Paso a paso:<a href="/advertising/step-step-implementing-advertising.html"> Implementar publicidad</a></li>
-                  
-                
-                  
-                    <li>Prueba de complementos publicitarios previos al lanzamiento<a href="/advertising/testing-pre-release-advertising-plugins.html"></a></li>
-                  
-                
-                  
-                    <li>Uso de DFP Premium con Brightcove Player<a href="/advertising/using-dfp-premium-brightcove-player.html"></a></li>
-                  
-                
-                  
-                    <li>Uso de Live SSAI y Advanced Player Toolkit<a href="/advertising/using-player-enhancements-live-ssai-brightcove-player.html"></a></li>
-                  
-                
-                  
-                    <li>Validación de etiquetas de anuncio SSAI de Video Cloud<a href="/advertising/video-cloud-ssai-ad-tag-validation.html"></a></li>
-                  
-                
-              </ul>
-            
-          
-            
-              <h5 class="submenu-header">Publicar vídeos y reproductores +<a href="/publish/index.html"><strong></strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    <li><a href="/publish/assigning-video-player-programmatically.html">Asignación de un vídeo al reproductor mediante programación</a></li>
-                  
-                
-                  
-                    <li><a href="/publish/available-options-advanced-page-embed-code.html">Opciones disponibles para el código de inserción avanzado (en página)</a></li>
-                  
-                
-                  
-                    <li><a href="/publish/available-options-standard-iframe-embed-code.html">Opciones disponibles para el código de inserción estándar (iframe)</a></li>
-                  
-                
-                  
-                    <li><a href="/publish/brightcove-player-loader.html">Cargador de jugadores de Brightcove</a></li>
-                  
-                
-                  
-                    <li><a href="/publish/bulk-updating-brightcove-default-player.html">Actualización masiva del reproductor predeterminado de Brightcove</a></li>
-                  
-                
-                  
-                    <li><a href="https://studio.support.brightcove.com/publish/choosing-correct-embed-code.html">Elegir el código de incrustación correcto</a></li>
-                  
-                
-                  
-                    <li>Atrasando la instanciación del jugador<a href="/publish/delaying-player-instantiation.html"></a></li>
-                  
-                
-                  
-                    <li>Jugador previo al lanzamiento<a href="/publish/pre-release-player.html"></a></li>
-                  
-                
-                  
-                    <li>Estrategias de sindicación<a href="/publish/syndication-strategies.html"></a></li>
-                  
-                
-                  
-                    <li>Uso de un reproductor que no sea de Brightcove<a href="/publish/using-non-brightcove-player.html"></a></li>
-                  
-                
-                  
-                    <li>Uso de varios jugadores en una página<a href="https://studio.support.brightcove.com/publish/using-multiple-players-one-page.html"></a></li>
-                  
-                
-                  
-                    <li>Uso de Id. de referencia<a href="https://studio.support.brightcove.com/publish/using-reference-ids.html"></a></li>
-                  
-                
-                  
-                    <li>Inspector de copias de vídeo<a href=""></a></li>
-                  
-                
-              </ul>
-            
-          
-            
-              <h5 class="submenu-header">Solución de problemas +<a href="/troubleshooting/index.html"><strong></strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    <li><a href="/troubleshooting/brightcove-playback-technology-app.html">Aplicación de tecnología de reproducción Brightcove</a></li>
-                  
-                
-                  
-                    <li><a href="/references/brightcove-player-error-reference.html">Referencia de error del Reproductor de Brightcove</a></li>
-                  
-                
-                  
-                    <li><a href="/troubleshooting/brightcove-player-information-modal.html">Brightcove Información del Jugador Modal</a></li>
-                  
-                
-                  
-                    <li><a href="/troubleshooting/brightcove-player-troubleshooting-guide.html">Guía de solución de problemas de Brightcove Player</a></li>
-                  
-                
-                  
-                    <li><a href="/troubleshooting/creating-charles-log.html">Creación de un Charles Log</a></li>
-                  
-                
-                  
-                    <li><a href="/troubleshooting/creating-network-log.html">Creación de un registro de red</a></li>
-                  
-                
-                  
-                    <li><a href="/troubleshooting/domain-restrictions-messaging.html">Mensajería de restricciones de dominio</a></li>
-                  
-                
-                  
-                    <li><a href="/plugins/display-error-messages-plugin.html">Mostrar plugin de mensajes de error</a></li>
-                  
-                
-                  
-                    <li>Configuración manual de la versión del reproductor<a href="/troubleshooting/manually-setting-player-version.html"></a></li>
-                  
-                
-                  
-                    <li>Pruebas de versión de reproductor/plugin<a href="/plugins/playerplugin-version-testing.html"></a></li>
-                  
-                
-                  
-                    <li>Propiedades informativas del jugador<a href="/troubleshooting/player-informational-properties.html"></a></li>
-                  
-                
-                  
-                    <li>Ejemplo:<a href="/code-samples/brightcove-player-sample-live-custom-error-message.html"> Mensaje de error personalizado en vivo</a></li>
-                  
-                
-                  
-                    <li>Paso a paso:<a href="/troubleshooting/step-step-brightcove-player-debugger.html"> Depurador de reproductor de Brightcove</a></li>
-                  
-                
-                  
-                    <li>Ejecución de un seguimiento de ruta de red<a href="/troubleshooting/running-network-path-trace.html"></a></li>
-                  
-                
-                  
-                    <li>Uso de la referencia del reproductor<a href="/troubleshooting/using-player-reference.html"></a></li>
-                  
-                
-                  
-                    <li>Vetting Lanzamientos del jugador de Brightcove<a href="/troubleshooting/vetting-brightcove-player-releases.html"></a></li>
-                  
-                
-                  
-                    <li>Visualización de la configuración del reproductor<a href="/troubleshooting/viewing-player-configuration.html"></a></li>
-                  
-                
-              </ul>
-            
-          
-            
-              <h5 class="submenu-header">Estilo y apariencia +<a href="/styling/index.html"><strong></strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    <li><a href="/styling/customizing-player-appearance.html">Personalización de la apariencia del reproductor</a></li>
-                  
-                
-                  
-                    <li><a href="/styling/customizing-player-appearance-legacy-skin.html">Personalización del aspecto del jugador - Aspecto heredado</a></li>
-                  
-                
-                  
-                    <li>Player Styling Playground<a href="/styling/brightcove-player-sample-player-styling-playground.html"></a></li>
-                  
-                
-                  
-                    <li>Inicio rápido:<a href="/styling/quick-start-player-customization-legacy-skin.html"> Personalización del jugador: aspecto heredado</a></li>
-                  
-                
-                  
-                    <li>Paso a paso:<a href="/getting-started/step-step-player-customization.html"> Personalización del reproductor</a></li>
-                  
-                
-                  
-                    <li>Tamaño de respuesta para el reproductor de Brightcove<a href="/styling/responsive-sizing-brightcove-player.html"></a></li>
-                  
-                
-                  
-                    <li>Tamaño del jugador<a href="/styling/sizing-player.html"></a></li>
-                  
-                
-                  
-                    <li>Skins y versiones de jugador<a href="/styling/skins-and-player-versions.html"></a></li>
-                  
-                
-                  
-                    <li>Estilo de subtítulos<a href="https://studio.support.brightcove.com/media/styling-captions.html"></a></li>
-                  
-                
-                  
-                    <li>Estilo de listas de reproducción<a href="/styling/styling-playlists.html"></a></li>
-                  
-                
-              </ul>
-            
-          
-            
-              <h5 class="submenu-header">Reproducción +<a href="/playback/index.html"><strong></strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    <li><a href="/playback/autoplay-considerations.html">Consideraciones de reproducción automática</a></li>
-                  
-                
-                  
-                    <li><a href="/troubleshooting/brightcove-playback-technology-app.html">Aplicación de tecnología de reproducción Brightcove</a></li>
-                  
-                
-                  
-                    <li><a href="/playback/xdr-with-bcplayer.html">Reanudación multidispositivo con Brightcove Player</a></li>
-                  
-                
-                  
-                    <li><a href="https://studio.support.brightcove.com/publish/deep-linking.html">Vinculación profunda</a></li>
-                  
-                
-                  
-                    <li><a href="/playback/delivering-hls-video.html">Entrega de vídeo HLS</a></li>
-                  
-                
-                  
-                    <li><a href="/playback/determining-which-rendition-will-play.html">Determinar qué copia se reproducirá</a></li>
-                  
-                
-                  
-                    <li><a href="/playback/guide-playback-technology.html">Guía: Tecnología de reproducción</a></li>
-                  
-                
-                  
-                    <li><a href="/plugins/hls-plugin.html">Complemento HLS</a></li>
-                  
-                
-                  
-                    <li><a href="/playback/ios-and-brightcove-player.html">iOS y reproductor de Brightcove</a></li>
-                  
-                
-                  
-                    <li>Visión general:<a href="/playback/overview-https-support.html"> Soporte de HTTPS</a></li>
-                  
-                
-                  
-                    <li>Complemento de selección de calidad<a href="/plugins/quality-selection-plugin.html"></a></li>
-                  
-                
-                  
-                    <li>Entrega URL estática<a href="/playback/static-url-delivery.html"></a></li>
-                  
-                
-                  
-                    <li>Transmisión de contenido protegido PlayReady<a href="/playback/streaming-playready-protected-content-dynamic-delivery.html"></a></li>
-                  
-                
-                  
-                    <li>Uso del reproductor de Brightcove para TVE<a href="/playback/using-brightcove-player-tve.html"></a></li>
-                  
-                
-              </ul>
-            
-          
-            
-              <h5 class="submenu-header"><a href="/content-protection/index.html">Protección de contenido y DRM <strong>+</strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    <li><a href="https://studio.support.brightcove.com/players/configuring-player-content-restrictions.html">Configuración de Restricciones de Contenido del Reproductor</a></li>
-                  
-                
-                  
-                    <li><a href="/content-protection/creating-dash-drm-manifest-brightcove-player.html">Creación de un manifiesto DRM de DASH para el reproductor de Brightcove</a></li>
-                  
-                
-                  
-                    <li><a href="/troubleshooting/domain-restrictions-messaging.html">Mensajería de restricciones de dominio</a></li>
-                  
-                
-                  
-                    <li><a href="/plugins/configuring-brightcove-player-drm.html">Complemento DRM</a></li>
-                  
-                
-                  
-                    <li>Visión general:<a href="/content-protection/overview-content-protection.html"> Protección de contenido</a></li>
-                  
-                
-                  
-                    <li>Teclas de política<a href="/content-protection/policy-keys.html"></a></li>
-                  
-                
-                  
-                    <li>Restringir la reproducción de vídeo mediante dirección IP<a href="/content-protection/restricting-video-playback-using-ip-address.html"></a></li>
-                  
-                
-                  
-                    <li>URL firmadas y autenticación de tokens con una transmisión en directo<a href="/content-protection/signed-urls-and-token-auth-live-stream.html"></a></li>
-                  
-                
-              </ul>
-            
-          
-            
-              <h5 class="submenu-header"><a href="/coding-topics/index.html">Temas de codificación <strong>+</strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    <li><a href="/publish/brightcove-player-loader.html">Cargador de jugadores de Brightcove</a></li>
-                  
-                
-                  
-                    <li><a href="/references/catalog-search-architecture.html">Actualización de búsqueda de catálogo</a></li>
-                  
-                
-                  
-                    <li><a href="/code-samples/brightcove-player-sample-trigger-rewind-custom-event.html">Evento personalizado</a></li>
-                  
-                
-                  
-                    <li><a href="/playback/guide-playback-technology.html">Guía: Tecnología de reproducción</a></li>
-                  
-                
-                  
-                    <li>Localización de Brightcove Player<a href="/coding-topics/programmatically-localizing-brightcove-player.html"></a></li>
-                  
-                
-                  
-                    <li>Localización de complementos<a href="/coding-topics/localizing-plugins.html"></a></li>
-                  
-                
-                  
-                    <li>Eventos de jugador<a href="/coding-topics/player-events.html"></a></li>
-                  
-                
-                  
-                    <li>Visión general:<a href="/coding-topics/overview-components.html"> Componentes</a></li>
-                  
-                
-                  
-                    <li>Visión general:<a href="/playback/overview-https-support.html"> Soporte de HTTPS</a></li>
-                  
-                
-                  
-                    <li>Visión general:<a href="/coding-topics/overview-player-api.html"> Player API</a></li>
-                  
-                
-                  
-                    <li>Pasar datos al complemento<a href="/coding-topics/pass-data-plugin.html"></a></li>
-                  
-                
-                  
-                    <li>Reaccionar el cargador del jugador<a href="/coding-topics/react-player-loader.html"></a></li>
-                  
-                
-                  
-                    <li>Informes sobre configuraciones de Brightcove Player<a href="/coding-topics/reporting-brightcove-player-configurations.html"></a></li>
-                  
-                
-                  
-                    <li>RequireJS y reproductor de Brightcove<a href="/coding-topics/requirejs-and-brightcove-player.html"></a></li>
-                  
-                
-                  
-                    <li>Paso a paso:<a href="/coding-topics/step-step-plugin-development.html"> Desarrollo de complementos</a></li>
-                  
-                
-                  
-                    <li>Paso a paso:<a href="/coding-topics/step-step-videojs-plugin-generator.html"> Generador de complementos Video.js</a></li>
-                  
-                
-                  
-                    <li>Uso de los métodos bc () y getPlayer ()<a href="/coding-topics/using-bc-and-getplayer-methods.html"></a></li>
-                  
-                
-                  
-                    <li>Visualización de la configuración del reproductor<a href="/troubleshooting/viewing-player-configuration.html"></a></li>
-                  
-                
-              </ul>
-            
-          
-            
-              <h5 class="submenu-header"><a href="/general/index.html">Información general <strong>+</strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    <li><a href="https://studio.support.brightcove.com/publish/adding-application-id-player-embed-code.html">Adición de un ID de aplicación al código de incrustación del reproductor</a></li>
-                  
-                
-                  
-                    <li><a href="/general/adding-captions-videos-programmatically.html">Adición de subtítulos a vídeos mediante programación</a></li>
-                  
-                
-                  
-                    <li><a href="https://studio.support.brightcove.com/media/adding-chapters-video.html">Adición de capítulos a un vídeo</a></li>
-                  
-                
-                  
-                    <li><a href="/general/brightcove-player-6-now-default-version.html">Versión predeterminada de Brightcove Player 6</a></li>
-                  
-                
-                  
-                    <li><a href="/general/brightcove-player-accessibility.html">Accesibilidad del reproductor de Brightcove</a></li>
-                  
-                
-                  
-                    <li><a href="/plugins/custom-endscreen-plugin.html">Complemento de pantalla final personalizado</a></li>
-                  
-                
-                  
-                    <li><a href="/plugins/display-overlay-plugin.html">Complemento de superposición de visualización</a></li>
-                  
-                
-                  
-                    <li><a href="/references/guide-playlist-api.html">Guía: API de lista de reproducción</a></li>
-                  
-                
-                  
-                    <li><a href="/general/identify-and-delete-low-performing-videos.html">Identificar y eliminar vídeos de bajo rendimiento</a></li>
-                  
-                
-                  
-                    <li><a href="/general/implementing-cue-points-programmatically.html">Implementación de puntos de referencia mediante programación</a></li>
-                  
-                
-                  
-                    <li><a href="/general/implementing-playlists.html">Implementar listas de reproducción</a></li>
-                  
-                
-                  
-                    <li><a href="/general/implementing-modaldialog.html">Implementación del ModalDialog</a></li>
-                  
-                
-                  
-                    <li>HLS en vivo<a href="/general/live-hls.html"></a></li>
-                  
-                
-                  
-                    <li>Configuración de Live Stream<a href="/general/live-stream-configuration.html"></a></li>
-                  
-                
-                  
-                    <li>Varias pistas de audio<a href="/general/multiple-audio-tracks.html"></a></li>
-                  
-                
-                  
-                    <li>Guía de configuración del reproductor<a href="/general/player-configuration-guide.html"></a></li>
-                  
-                
-                  
-                    <li>Reproducir transmisiones en vivo<a href="/general/playing-live-streams.html"></a></li>
-                  
-                
-                  
-                    <li>Plugin UI de lista de reproducción<a href="/plugins/playlist-ui-plugin.html"></a></li>
-                  
-                
-                  
-                    <li>URL firmadas y autenticación de tokens con una transmisión en directo<a href="/content-protection/signed-urls-and-token-auth-live-stream.html"></a></li>
-                  
-                
-                  
-                    <li>Plugin de redes sociales<a href="/plugins/social-sharing-plugin.html"></a></li>
-                  
-                
-                  
-                    <li>Paso a paso:<a href="https://apis.support.brightcove.com/player-management/getting-started/step-step-player-management.html"> Administración de jugadores</a></li>
-                  
-                
-                  
-                    <li>Estilo de listas de reproducción<a href="/styling/styling-playlists.html"></a></li>
-                  
-                
-                  
-                    <li>Uso de un lector de pantalla con Brightcove Player<a href="/general/using-screen-reader-brightcove-player.html"></a></li>
-                  
-                
-                  
-                    <li>Versiones de la documentación de Brightcove Player<a href="/general/versions-brightcove-player-documentation.html"></a></li>
-                  
-                
-                  
-                    <li>Control de volumen<a href="/general/volume-control.html"></a></li>
-                  
-                
-              </ul>
-            
-          
-            
-              <h5 class="submenu-header"><a href="/code-samples/index.html">Ejemplos de código <strong>+</strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    <li><a href="/code-samples/index-thumb.html">Ejemplos de código por grupo</a></li>
-                  
-                
-                  
-                    <li><a href="/code-samples/index.html">Índice de ejemplo de código</a></li>
-                  
-                
-              </ul>
-            
-          
-            
-              <h5 class="submenu-header"><a href="/amp/index.html">AMP <strong>+</strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    <li><a href="/amp/amp-using-video-cloud-video.html">AMP Uso de un vídeo de Video Cloud</a></li>
-                  
-                
-                  
-                    <li><a href="/amp/amp-using-external-video.html">AMP Uso de un vídeo externo</a></li>
-                  
-                
-              </ul>
-            
-          
-            
-              <h5 class="submenu-header">Entrenamiento +<a href="/training/index.html"><strong></strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    <li><a href="/training/online-training-courses.html">Todos los cursos de formación en línea</a></li>
-                  
-                
-                  
-                    <li><a href="/training/developer-basics-videos.html">Vídeos básicos del desarrollador</a></li>
-                  
-                
-                  
-                    <li>Vídeos de capacitación sobre desarrollo de jugadores<a href="/training/player-development-training-videos.html"></a></li>
-                  
-                
-                  
-                    <li>Regístrese para la formación impartida por instructor<a href="/training/register-training.html"></a></li>
-                  
-                
-                  
-                    <li>Capacitación:<a href="/training/training-demand-developing-brightcove-player.html"> Desarrollar con Brightcove Player</a></li>
-                  
-                
-                  
-                    <li>Capacitación:<a href="https://apis.support.brightcove.com/player-management/getting-started/training-demand-quick-start-player-management.html"> Inicio rápido de la administración de reproductores</a></li>
-                  
-                
-                  
-                    <li><a href="/training/brightcove-university.html">Cursos de formación de la Universidad de Brightcove</a></li>
-                  
-                
-              </ul>
-            
-          
-            
-              <h5 class="submenu-header">Notas de la versión +<a href="/release-notes/index.html"><strong></strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    <li><a href="/release-notes/brightcove-player-release-notes.html">Brightcove Player Notas informativas</a></li>
-                  
-                
-                  
-                    <li><a href="/release-notes/brightcove-player-prerelease-notes.html">Notas previas al lanzamiento del jugador de Brightcove</a></li>
-                  
-                
-              </ul>
-            
-          
-            
-              <h5 class="submenu-header">Soporte +<a href="/support/index.html"><strong></strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    
-                  
-                
-                  
-                    <li>Visualización de la página Estado del Sistema de Brightcove<a href="/support/viewing-brightcove-system-status-page.html"></a></li>
-                  
-                
-                  
-                    <li><a href="/support/contact-sales.html">Contacto con Ventas</a></li>
-                  
-                
-                  
-                    <li>Apertura de un caso de soporte<a href="/support/opening-case-with-brightcove-support.html"></a></li>
-                  
-                
-              </ul>
-            
-          
-      </nav>
-    </div>
-    <div class="col-lg-7" style="background-color: white;color: #333333;margin-top: -1em;margin-bottom: -1em;padding-bottom:1em;">
-  <!-- bootstrap layout -->
-
-<p id="bc_veggie_burger_wrapper" style="display: none;"><img id="bc_veggie_burger" src="/assets/images/feather/menu.svg" alt="Menú de navegación"/></p>
-
-<!-- search bar -->
-<div id="nav-search-box" style="margin-top: 1rem;"></div>
-<!-- in-page navigation for narrow screens -->
-<details class="centered-inpage-nav" id="centered_inpage_nav">
-  <summary><h6 class="toc">Contenido de la página</h6></summary>
-  <nav id="centered_toc"></nav>
-  <ul id="centered_in_page_toc" class="list-none"></ul>
-</details>
-<!-- open in new tab/window -->
-<a id="open_new_tab" href="#" target="_blank" style="display: none;"><img src="/assets/images/feather/external-link.svg" alt="abrir en una nueva pestaña" style="margin-top:4em;width: 1.5em;"/></a>
-
-
-
-  
-    
-
+---
+title: Implementar puntos de referencia mediante programación
+parent: General Information
+description: In this topic, you will gain an understanding of cue points with Brightcove Player. You will then see how to programmatically create cue points and handle when a cue point is dispatched.
+---
 
 <article class="bcls-article">
-  <h1>Implementación de puntos de referencia mediante programación</h1>
-  <summary>En este tema, obtendrá una comprensión de los puntos de referencia con Brightcove Player. A continuación, verá cómo crear mediante programación puntos de referencia y manejar cuándo se distribuye un punto de referencia.</summary>
+  <h1>Implementar puntos de referencia mediante programación</h1>
+  <summary>{{ page.description }}</summary>
   <style type="text/css">
-.video-js {
-  		width: 640px;
-  		height: 360px;
-  	}
+.video-js { width: 640px; height: 360px; }
 </style>
   <section class="bcls-section">
     <h2 id="Overview">Resumen</h2>
-    <p>Los puntos de referencia se pueden establecer para un vídeo. Durante la reproducción de vídeo, se distribuye un evento cuando se golpea cada punto de referencia.</p>
+    <p>Se pueden establecer puntos de referencia para un video. Durante la reproducción de video, se envía un evento cuando se alcanza cada punto de referencia.</p>
     <div class="video-cloud-only">
-      <p>Reproduzca el siguiente vídeo para ver la información del punto de referencia del reproductor en los tiempos de pre-roll, mid-roll (5 segundos, 10 segundos, 12 segundos) y después del lanzamiento.</p>
+      <p>Reproduzca el siguiente video para ver cómo el jugador muestra la información del punto de referencia en los tiempos de pre-roll, mid-roll (5 segundos, 10 segundos, 12 segundos) y post-roll.</p>
       <video-js id="myPlayerID" data-video-id="4740963811001" data-account="1752604059001" data-player="VkIrj2aFx" data-embed="default" class="video-js" controls="">&nbsp;</video-js>
-      <p>******** Información de puntos de referencia ********</p>
+      <p>******** Información del punto de referencia ********</p>
       <p id="insertionPoint">&nbsp;</p>
-      <p>****** Información de fin de punto de referencia ******</p>
-      <aside class="bcls-aside bcls-aside--information">Nota: Las variables <strong>id</strong> no tienen valores asociados ya que no se asignaron en Video Cloud.</aside>
+      <p>****** Información del punto de referencia final ******</p>
+      <aside class="bcls-aside bcls-aside--information">Nota: los <strong>identificación</strong> las variables no tienen valores asociados ya que no se asignaron en Video Cloud.</aside>
     </div>
     <div class="player-only">
-      <p>Reproduzca este vídeo y verá la información de cuatro puntos de referencia que se muestran debajo del reproductor.</p>
+      <p>Reproduzca este video y verá información de cuatro puntos de referencia debajo del reproductor.</p>
       <video-js id="myPlayerID3" data-account="3676484087001" data-player="4f14e962-a11f-441f-8c00-0c89b8edb0a6" data-embed="default" class="video-js" controls="">&nbsp;</video-js>
       <p id="insertionPoint3">&nbsp;</p>
     </div>
   </section>
   <section class="bcls-section">
     <h2 id="Key_concepts">Conceptos clave</h2>
-    <p><span class="video-cloud-only">Algunos conceptos deben entenderse para utilizar eficazmente los puntos de referencia en Brightcove Player. Estos conceptos se explican en esta sección del documento.</span><span class="player-only">El siguiente concepto debe entenderse para utilizar eficazmente los puntos de referencia en Brightcove Player.</span></p>
+    <p><span class="video-cloud-only">Se deben comprender algunos conceptos para utilizar eficazmente los puntos de referencia en Brightcove Player. Estos conceptos se explican en esta sección del documento.</span><span class="player-only">Debe entenderse el siguiente concepto para utilizar eficazmente los puntos de referencia en Brightcove Player.</span></p>
     <div class="video-cloud-only">
-      <h3>Puntos de referencia del catalog de Video Cloud</h3>
-      <p>El primer concepto a entender tiene que ver con la terminología. En Brightcove Player, los puntos de referencia se almacenan como elementos de pista de texto, según el estándar HTML. Esto significa que cuando se utiliza un vídeo de Video Cloud, los puntos de referencia del «estilo de Video Cloud» se convierten en pistas de texto.</p>
-      <p>Estos puntos de referencia del «estilo de Video Cloud» también se pueden denominar puntos de referencia «catalog», ya que se leen en el catalog de Video Cloud (consulte el documento <a href="/references/player-catalog.html">catalog del Reproductor</a> para obtener más información sobre el catálogo). Cuando se realiza esta conversión, parte de la información del punto de referencia del catalog, como el tipo y la hora de punto de referencia, se convierten en la pista de texto.</p>
-      <h3>Estructura de puntos de referencia del catálogo</h3>
-      <p>El siguiente concepto a entender es que hay una diferencia significativa entre los puntos de referencia del catalog y el estándar HTML en la estructura. La diferencia es que un punto de referencia HTML puede tener una duración. Esto significa que para cada punto de referencia, se distribuirán dos eventos de cambio de punto de referencia: uno al inicio del punto de referencia y otro al final del punto de referencia.</p>
-      <p>En el proceso de conversión, cada punto de referencia del catalog se convierte en un punto de referencia con tiempos de inicio y parada idénticos. Esto significa que para cada punto de referencia del catalog, se distribuirán dos eventos de punto de referencia y deben contabilizarse en el código.</p>
+      <h3>Puntos de referencia del catálogo de Video Cloud</h3>
+      <p>El primer concepto a comprender tiene que ver con la terminología. En Brightcove Player, los puntos de referencia se almacenan como elementos de pista de texto, según el estándar HTML. Esto significa que cuando se utiliza un video de Video Cloud, cualquier punto de referencia de "estilo de Video Cloud" se convierte en pistas de texto.</p>
+      <p>Estos puntos de referencia de "estilo de Video Cloud" también se pueden denominar puntos de referencia de "catálogo", ya que se leen del catálogo de Video Cloud (consulte la <a href="/references/player-catalog.html">Catálogo de jugadores</a> documento para más información sobre el catálogo). Cuando se lleva a cabo esta conversión, parte de la información del punto de referencia del catálogo, como el tipo y el tiempo del punto de referencia, se convierte en la pista de texto.</p>
+      <h3>Estructura del punto de referencia del catálogo</h3>
+      <p>El siguiente concepto que hay que entender es que existe una diferencia significativa entre los puntos de referencia del catálogo y la estructura del estándar HTML. La diferencia es que un punto de referencia HTML puede tener una duración. Esto significa que para cada punto de referencia, se distribuirán dos eventos de cambio de punto de referencia: uno al inicio del punto de referencia y otro al final del punto de referencia.</p>
+      <p>En el proceso de conversión, cada punto de referencia del catálogo se convierte en un punto de referencia con tiempos de inicio y finalización idénticos. Esto significa que por cada punto de referencia del catálogo, se enviarán dos eventos de punto de referencia y se tendrán en cuenta en el código.</p>
     </div>
-    <h3><code translate="No">activecues</code> matriz</h3>
-    <p><span class="video-cloud-only">Otro</span><span class="player-only">Un</span> punto conceptual importante a entender cuando se trata de puntos de referencia HTML es la <code translate="No">activeCues</code> matriz. Todos los puntos de referencia se definen en una matriz. Hay otra matriz, <code translate="No">activeCues</code>, que contiene los puntos de referencia que están «activos», lo que significa que el tiempo de reproducción está entre los tiempos de inicio y parada del punto de referencia.</p>
-    <p>Cuando se utilizan puntos de referencia del catalog, las horas de inicio y de parada son idénticas, por lo que solo estarán activas para el segundo definido. Además, con los puntos de referencia del catalog, es muy poco probable que dos puntos de referencia estén activos al mismo tiempo, ya que no se superponen.</p>
-    <aside class="bcls-aside bcls-aside--information">Nota: Puede haber varios conjuntos de pistas de texto, por ejemplo un conjunto para puntos de referencia y otro para subtítulos de vídeo. En el código de ejemplo de este documento, las pistas de texto de puntos de referencia se encuentran en el primer y segundo elementos de la matriz TextTracks. Verá esto reflejado en el código.</aside>
+    <h3><code translate="No">activecues</code> formación</h3>
+    <p><span class="video-cloud-only">Otro</span><span class="player-only">Un</span> Un punto conceptual importante que hay que entender cuando se trata de puntos de referencia HTML es el <code translate="No">activeCues</code> formación. Todos los puntos de referencia están definidos en una matriz. Hay otra matriz, <code translate="No">activeCues</code> , que contiene los puntos de referencia que están "activos", lo que significa que el tiempo de reproducción se encuentra entre las horas de inicio y finalización del punto de referencia.</p>
+    <p>Cuando se utilizan puntos de referencia de catálogo, los tiempos de inicio y finalización son idénticos, por lo que estarán activos solo durante el segundo definido. Además, con los puntos de referencia del catálogo, es muy poco probable que dos puntos de referencia estén activos al mismo tiempo, ya que no se superpondrán.</p>
+    <aside class="bcls-aside bcls-aside--information">Nota: Puede haber varios conjuntos de pistas de texto, por ejemplo, un conjunto para puntos de referencia y otro para subtítulos de vídeo. En el código de ejemplo de este documento, las pistas de texto de los puntos de referencia se encuentran tanto en el primer como en el segundo elemento de la matriz TextTracks. Verá esto reflejado en el código.</aside>
     <h3>Tipos de puntos de referencia</h3>
-    <p>En este documento verá puntos de referencia con una <code translate="No">type</code> propiedad asignada un valor. Estos valores de tipo se asignan al crear puntos de referencia en la interfaz de usuario de Studio. Hay dos tipos de puntos de referencia, pero ambos simplemente proporcionan un valor de cadena a la <code translate="No">type</code> propiedad. El valor apropiado sólo es útil si se utiliza en JavaScript personalizado mientras se procesa la información del punto de referencia. Los tipos se detallan aquí:</p>
+    <p>En este documento, verá puntos de referencia con un <code translate="No">type</code> propiedad asignada un valor. Estos valores de tipo se asignan al crear puntos de referencia en la interfaz de usuario de Studio. Hay dos tipos de puntos de referencia, pero ambos simplemente proporcionan un valor de cadena al <code translate="No">type</code> propiedad. El valor apropiado es útil solo si se usa en JavaScript personalizado mientras se procesa la información del punto de referencia. Los tipos se detallan aquí:</p>
     <ul>
-      <li><strong>Ad</strong> - Asigna el valor de cadena de <code translate="No">AD</code> a la <code translate="No">type</code> propiedad</li>
-      <li><strong>Code</strong> - Asigna el valor de cadena de <code translate="No">CODE</code> a la <code translate="No">type</code> propiedad</li>
+      <li><strong>Anuncio</strong> - Asigna el valor de cadena de <code translate="No">AD</code> hacia <code translate="No">type</code> propiedad</li>
+      <li><strong>Código</strong> - Asigna el valor de cadena de <code translate="No">CODE</code> hacia <code translate="No">type</code> propiedad</li>
     </ul>
   </section>
   <section class="bcls-section video-cloud-only">
     <h2 id="Video_Cloud_cue_points">Puntos de referencia de Video Cloud</h2>
-    <p>En esta sección del documento, aprenderá a establecer puntos de referencia del catalog y a escuchar los despachos de eventos de puntos de referencia del catalog.</p>
+    <p>En esta sección del documento, aprenderá a establecer puntos de referencia de catálogo y a escuchar los envíos de eventos de puntos de referencia de catálogo.</p>
     <h3>Configuración de puntos de referencia de Video Cloud</h3>
-    <p>Los puntos de referencia de Video Cloud se pueden asociar a un vídeo mediante Video Cloud Studio, y varias otras formas, que se detallan en este documento: <a href="https://studio.support.brightcove.com/media/working-cue-points-media-module.html">Trabajar con puntos de referencia en el módulo de medios</a>.</p>
-    <h3>Actuación en puntos de referencia de Video Cloud: vídeo estáticamente vinculado al reproductor</h3>
-    <p>En esta sección del documento, aprenderá a procesar puntos de referencia del catalog cuando el vídeo se haya vinculado estáticamente al reproductor, lo que significa que el vídeo se ha cargado en el reproductor en Studio o utilizando directamente la Player Management API.</p>
-    <p>Para evitar que una condición de carrera intente procesar puntos de referencia antes de que se carguen, debe utilizar el <code translate="No">loadedmetadata</code> evento para ser distribuido antes de tratar con los puntos de referencia. Una vez leída la pista de texto adecuada, utilice el <code translate="No">oncuechange</code> evento para escuchar los eventos de puntos de referencia que se van a enviar.</p>
-    <p>El siguiente código muestra la escucha de puntos de referencia y la visualización de los datos del punto de referencia. Tenga en cuenta que en este ejemplo el vídeo está vinculado estáticamente al Reproductor.</p>
+    <p>Los puntos de referencia de Video Cloud se pueden asociar a un vídeo mediante Video Cloud Studio y de otras formas, que se detallan en este documento: <a href="https://studio.support.brightcove.com/media/working-cue-points-media-module.html">Trabajar con puntos de referencia en el módulo de medios</a>.</p>
+    <h3>Actuar sobre los puntos de referencia de Video Cloud: vídeo vinculado estáticamente al reproductor</h3>
+    <p>En esta sección del documento, aprenderá a procesar los puntos de referencia del catálogo cuando el video se ha vinculado estáticamente al reproductor, lo que significa que el video se ha cargado en el reproductor en Studio o usando la API de administración del reproductor directamente.</p>
+    <p>Para evitar una condición de carrera al intentar procesar puntos de referencia antes de que se carguen, debe utilizar el <code translate="No">loadedmetadata</code> evento que se enviará antes de tratar con los puntos de referencia. Una vez que se haya leído la pista de texto adecuada, utilice el <code translate="No">oncuechange</code> evento para escuchar los eventos de puntos de referencia que se enviarán.</p>
+    <p>El siguiente código muestra la escucha de puntos de referencia y la visualización de los datos del punto de referencia. Tenga en cuenta que en este ejemplo, el video está vinculado estáticamente al reproductor.</p>
     <ul>
-      <li>Línea 24: Cree un elemento de párrafo como una ubicación en la que inyectar HTML creado dinámicamente.</li>
-      <li>Líneas 31,43: Utilice el <code translate="No">one()</code> método para agregar un detector de eventos para el <code translate="No">loadedmetadata</code> evento sólo una vez. La función del controlador de eventos se define aquí de forma anónima.</li>
-      <li>Línea 32: Recupere la matriz TextTracks utilizando el método y, a continuación, asigne el elemento cero, que contiene los puntos de referencia, a la variable.<code translate="No">textTracks()</code><code translate="No">tt</code> Tenga en cuenta que en algunas implementaciones puede ser posible que los puntos de referencia estén en un elemento de matriz diferente. Consulte la sección Buscar pista correcta a continuación para obtener más información.<a href="#findtrack"></a></li>
-      <li>Líneas 33,41: Establece la función de controlador de eventos para cuando se distribuye el evento.<code translate="No">oncuechange</code></li>
-      <li>Línea 34: Compruebe para asegurarse de que está recibiendo el primer envío de puntos de referencia (elemento de matriz cero). Sin esta condición, verías que cada punto de referencia sería actuado dos veces. Tenga en cuenta que si está utilizando puntos de referencia que tienen duraciones que se superponen, esta condición tendría que ser diferente.</li>
-      <li>Líneas 35-39: Cree HTML dinámicamente utilizando información del punto de referencia e inyecte en la página HTML.</li>
-      <li>Línea 42: Reproduce el video.</li>
+      <li>Línea 24: Cree un elemento de párrafo como ubicación en la que inyectar HTML creado dinámicamente.</li>
+      <li>Líneas 31,43: Utilizar el <code translate="No">one()</code> método para agregar un detector de eventos para el <code translate="No">loadedmetadata</code> evento solo una vez. La función de controlador de eventos se define aquí de forma anónima.</li>
+      <li>Línea 32: Recupere la matriz TextTracks utilizando el <code translate="No">textTracks()</code> método y, a continuación, asigne el elemento cero, que contiene los puntos de referencia, a la variable <code translate="No">tt</code>. Tenga en cuenta que en algunas implementaciones es posible que los puntos de referencia estén en un elemento de matriz diferente. Ver el <a href="#findtrack">Encuentra la pista correcta</a> sección a continuación para obtener más información.</li>
+      <li>Líneas 33,41: Establece la función de controlador de eventos para cuando se distribuye el <code translate="No">oncuechange</code>evento.</li>
+      <li>Línea 34: Compruebe para asegurarse de que está obteniendo el primer envío del punto de referencia (elemento de matriz cero). Sin esta condición, vería que se actuaría dos veces sobre cada punto de referencia. Tenga en cuenta que si utiliza puntos de referencia que tienen duraciones que se superponen, esta condición tendría que ser diferente.</li>
+      <li>Líneas 35-39: Cree HTML de forma dinámica utilizando información del punto de referencia e injételas en la página HTML.</li>
+      <li>Línea 42: Reproduce el vídeo.</li>
     </ul>
     <pre class="line-numbers" data-start="17">
 <code class="language-html" translate="No">&lt;video-js id="myPlayerID"
@@ -1245,18 +95,18 @@ class="video-js" controls&gt;&lt;/video-js&gt;
     });
   });
 &lt;/script&gt;</code></pre>
-    <h3>Actuación sobre puntos de referencia de Video Cloud: carga dinámica de vídeo en el reproductor</h3>
+    <h3>Actuar sobre los puntos de referencia de Video Cloud: cargar vídeo de forma dinámica en el reproductor</h3>
     <p>En esta sección del documento, aprenderá a procesar puntos de referencia del catálogo cuando el video se carga dinámicamente en el reproductor usando el <code translate="No">catalog.getVideo()</code> y <code translate="No">catalog.load()</code> métodos.</p>
-    <p>Cuando utiliza el catalog del reproductor para obtener y cargar el vídeo, procesar puntos de referencia es un poco más fácil que cuando se utiliza un vídeo enlazado estáticamente, ya que no es necesario utilizar el <code translate="No">loadedmetadata</code> evento.</p>
+    <p>Cuando usa el catálogo del reproductor para obtener y cargar el video, procesar los puntos de referencia es un poco más fácil que cuando usa un video enlazado estáticamente, ya que no necesita usar el <code translate="No">loadedmetadata</code> evento.</p>
     <ul>
-      <li>Línea 76: Cree un elemento de párrafo como una ubicación en la que inyectar HTML creado dinámicamente.</li>
-      <li>Líneas 83,97: Utilice el <code translate="No">catalog.getVideo()</code> método para recuperar un vídeo. La función de devolución de llamada se define aquí de forma anónima.</li>
-      <li>Línea 85: Utilice el <code translate="No">catalog.load()</code> método para cargar el vídeo en el reproductor.</li>
-      <li>Línea 86: Recupere la matriz TextTracks utilizando el método y, a continuación, asigne el elemento cero, que contiene los puntos de referencia, a la variable.<code translate="No">textTracks()</code><code translate="No">tt</code> Tenga en cuenta que en algunas implementaciones puede ser posible que los puntos de referencia estén en un elemento de matriz diferente. Consulte la sección Buscar pista correcta a continuación para obtener más información.<a href="#findtrack"></a></li>
-      <li>Líneas 87,95: Establece la función de controlador de eventos para cuando se distribuye el evento.<code translate="No">oncuechange</code></li>
-      <li>Línea 88: Compruebe para asegurarse de que el primer punto de referencia (elemento de matriz cero) está definido. Sin esta condición, vería que cada punto de referencia se actuaría dos veces, la segunda vez sin elementos definidos en la <code translate="No">activecues</code> matriz (ya que el segundo cambio de cue es para el extremo del punto de referencia). Tenga en cuenta que si está utilizando puntos de referencia que tienen duraciones que se superponen, esta condición tendría que ser diferente.</li>
-      <li>Líneas 89-93: Cree HTML dinámicamente utilizando información del punto de referencia e inyecte en la página HTML.</li>
-      <li>Línea 96: Reproduce el video.</li>
+      <li>Línea 76: Cree un elemento de párrafo como ubicación en la que inyectar HTML creado dinámicamente.</li>
+      <li>Líneas 83,97: Utilizar el <code translate="No">catalog.getVideo()</code> método para recuperar un video. La función de devolución de llamada se define aquí de forma anónima.</li>
+      <li>Línea 85: Utilizar el <code translate="No">catalog.load()</code> método para cargar el video en el reproductor.</li>
+      <li>Línea 86: Recupere la matriz TextTracks utilizando el <code translate="No">textTracks()</code> método y, a continuación, asigne el elemento cero, que contiene los puntos de referencia, a la variable <code translate="No">tt</code>. Tenga en cuenta que en algunas implementaciones es posible que los puntos de referencia estén en un elemento de matriz diferente. Ver el <a href="#findtrack">Encuentra la pista correcta</a> sección a continuación para obtener más información.</li>
+      <li>Líneas 87,95: Establece la función de controlador de eventos para cuando se distribuye el <code translate="No">oncuechange</code>evento.</li>
+      <li>Línea 88: Asegúrese de que el primer punto de referencia (elemento de matriz cero) esté definido. Sin esta condición, vería que cada punto de referencia se actuaría dos veces, la segunda vez sin elementos definidos en el <code translate="No">activecues</code> array (ya que el segundo cambio de cue es para el final del punto de cue). Tenga en cuenta que si utiliza puntos de referencia que tienen duraciones que se superponen, esta condición tendría que ser diferente.</li>
+      <li>Líneas 89-93: Cree HTML de forma dinámica utilizando información del punto de referencia e injételas en la página HTML.</li>
+      <li>Línea 96: Reproduce el vídeo.</li>
     </ul>
     <pre class="line-numbers" data-start="69">
 <code class="language-html" translate="No">&lt;video-js id="myPlayerID"
@@ -1292,30 +142,30 @@ class="video-js" controls&gt;&lt;/video-js&gt;
     });
   });
 &lt;/script&gt;</code></pre>
-    <h3 id="allvcinfo">Recuperar toda la información de puntos de referencia de Video Cloud</h3>
-    <p>Como puede haber notado que no toda la información de puntos de referencia de Video Cloud está directamente disponible para usted desde la <code translate="No">activecues</code> matriz. Esto se corrige fácilmente recuperando la información deseada de la <code translate="No">mediainfo</code> propiedad.</p>
+    <h3 id="allvcinfo">Recuperar toda la información de los puntos de referencia de Video Cloud</h3>
+    <p>Como habrá notado, no toda la información de los puntos de referencia de Video Cloud está disponible directamente en el <code translate="No">activecues</code> formación. Esto se remedia fácilmente recuperando la información deseada del <code translate="No">mediainfo</code> propiedad.</p>
     <p>El enfoque básico de esta solución es:</p>
     <ol>
-      <li>Espere a que el <code translate="No">loadstart</code> evento se complete la <code translate="No">mediainfo</code> propiedad.</li>
-      <li>Asigne la <code translate="No">cue_points</code> matriz de la <code translate="No">mediainfo</code> propiedad a una variable. Esta variable contiene información completa de puntos de referencia de Video Cloud.</li>
-      <li>En un evento de punto de referencia, recupere los datos de punto de referencia correspondientes en función del valor de la <code translate="No">time</code> propiedad. Esto se hará utilizando una función auxiliar que toma un objeto de una matriz en función de un valor de propiedad en el objeto.</li>
+      <li>Esperen al <code translate="No">loadstart</code> evento para el <code translate="No">mediainfo</code> propiedad para ser poblada.</li>
+      <li>Asignar el <code translate="No">cue_points</code> matriz de la <code translate="No">mediainfo</code> propiedad a una variable. Esta variable contiene información completa sobre los puntos de referencia de Video Cloud.</li>
+      <li>En un evento de punto de referencia, recupere los datos del punto de referencia correspondiente según el <code translate="No">time</code> valor de la propiedad. Esto se hará usando una función auxiliar que toma un objeto de una matriz en función de un valor de propiedad en el objeto.</li>
       <li>Utilice los datos del punto de referencia.</li>
     </ol>
-    <p>La siguiente imagen muestra toda la matriz de puntos de referencia (arriba a la izquierda), la colección de datos de punto de referencia único (arriba a la derecha) y una propiedad de esa colección de datos de punto de referencia único (abajo a la derecha).</p>
-    <figure class="bcls-figure"><img class="bcls-image" alt="datos de punto de referencia" src="//learning-services-media.brightcove.com/doc-assets/player-development/player-customization/cue-points/using-cue-points/cue-point-all-vc-data.png"/></figure>
-    <p>En el fragmento de abajo solo se explicará el código nuevo/modificado de los ejemplos anteriores.</p>
+    <p>La siguiente imagen muestra la matriz de puntos de referencia completa (arriba a la izquierda), la colección de datos de un solo punto de referencia (arriba a la derecha) y una propiedad de esa colección de datos de puntos de referencia únicos (abajo a la derecha).</p>
+    <figure class="bcls-figure"><img class="bcls-image" alt="cue point data" src="/assets/images/general/cue-point-all-vc-data.png" /></figure>
+    <p>En el fragmento a continuación, solo se explicará el código nuevo / modificado de los ejemplos anteriores.</p>
     <ul>
-      <li>Líneas 452-463: Incluya la función que se utilizará para extraer una única colección de datos de punto de referencia de la matriz de todos los puntos de referencia. Tenga en cuenta que le pasa la matriz de todos los puntos de referencia, la propiedad en la que está buscando un valor específico y, por último, el valor que está buscando.</li>
-      <li>Línea 432: Escucha el evento.<code translate="No">loadstart</code> Cuando el vídeo comienza a cargarse, la <code translate="No">mediainfo</code> propiedad se rellena.</li>
+      <li>Líneas 452-463: Incluya la función que se utilizará para extraer una colección de datos de un solo punto de referencia de la matriz de todos los puntos de referencia. Tenga en cuenta que le pasa la matriz de todos los puntos de referencia, la propiedad en la que está buscando un valor específico y, por último, el valor que está buscando.</li>
+      <li>Línea 432: Escucha el <code translate="No">loadstart</code> evento. Cuando su video comience a cargar, entonces el <code translate="No">mediainfo</code> la propiedad está poblada.</li>
       <li>Línea 434: Asigne la matriz de todos los puntos de referencia de Video Cloud a una variable.</li>
-      <li>Línea 443: En el controlador de eventos de asignación de puntos de referencia, asigne la recopilación de datos del punto de referencia específico a una variable. Aquí es donde se llama a la función mencionada en el primer punto de viñeta. Los argumentos utilizados son:
+      <li>Línea 443: En el controlador de eventos de despacho del punto de referencia, asigne la recopilación de datos del punto de referencia específico a una variable. Aquí es donde se llama a la función mencionada en el primer punto. Los argumentos utilizados son:
         <ul>
           <li><code translate="No">cuePointAra</code>: Toda la colección de puntos de referencia de Video Cloud.</li>
-          <li><code translate="No">'time'</code>: Propiedad en la que se busca un valor.</li>
-          <li><code translate="No">tt.activeCues[0].startTime</code>: Hora de inicio del punto de referencia que se está manejando actualmente en el controlador de eventos de despacho de puntos de referencia.</li>
+          <li><code translate="No">'time'</code>: La propiedad en la que buscar un valor.</li>
+          <li><code translate="No">tt.activeCues[0].startTime</code>: La hora de inicio del punto de referencia que se maneja actualmente en el controlador de eventos de despacho de puntos de referencia.</li>
         </ul>
       </li>
-      <li>Líneas 444-445: Llamadas al <code translate="No">console.log()</code> método de depuración, que deben eliminarse en el código de producción.</li>
+      <li>Líneas 444-445: Depuración <code translate="No">console.log()</code> llamadas a métodos, que deben eliminarse en el código de producción.</li>
     </ul>
     <pre class="line-numbers" data-start="426">
 <code class="language-html" translate="No">&lt;script&gt;
@@ -1360,20 +210,20 @@ class="video-js" controls&gt;&lt;/video-js&gt;
   </section>
   <section class="bcls-section">
     <h2 id="HTML5_standard_cue_points">Puntos de referencia estándar HTML5</h2>
-    <p>Los puntos de referencia estándar HTML5 se almacenan como elementos de pista en un formato prescrito. Un buen contenido introductorio se puede encontrar en el siguiente tutorial HTML5 Rocks: <a href="//www.html5rocks.com/en/tutorials/track/basics/">Empezar con el elemento Track</a>. En esta sección del documento, aprenderá el formato de los archivos de puntos de referencia WebVTT y, a continuación, cómo procesar esos puntos de referencia.</p>
+    <p>Los puntos de referencia estándar HTML5 se almacenan como elementos de pista en un formato prescrito. Se puede encontrar un buen contenido introductorio en el siguiente tutorial de HTML5 Rocks: <a href="//www.html5rocks.com/en/tutorials/track/basics/">Introducción al elemento Track</a>. En esta sección del documento, aprenderá el formato de los archivos de puntos de referencia de WebVTT y luego cómo procesar esos puntos de referencia.</p>
     <h3>Formato de archivo WebVTT para puntos de referencia</h3>
     <p>El formato de archivo WebVTT está estrictamente definido. Para los puntos de referencia, el archivo se compone de la siguiente manera:</p>
     <ul>
-      <li>La cadena <strong>WebVTT</strong> como la primera línea del archivo</li>
+      <li>La cuerda <strong>WebVTT</strong> como la primera línea del archivo</li>
       <li>Una sola línea en blanco</li>
       <li>El identificador de un punto de referencia específico</li>
-      <li>La duración en el formato <strong>00:00:00 .000 — &gt; 00:00:00 .000</strong>; esto es el formato horas:minutos:seconds.milisegundos y se analiza estrictamente; los números deben estar rellenos de cero si es necesario</li>
-      <li>Los caracteres que siguen a la duración de la siguiente línea en blanco se colocan en un valor de <strong>texto</strong> ; si desea almacenar varios valores dispares aquí JSON funciona bien, ya que se puede analizar fácilmente</li>
+      <li>La duración en el formulario <strong>00: 00: 00.000 -&gt; 00: 00: 00.000</strong> ; este es el formato horas: minutos: segundos milisegundos y se analiza estrictamente; los números deben rellenarse con ceros si es necesario</li>
+      <li>Los caracteres que siguen la duración a la siguiente línea en blanco se colocan en un <strong>texto</strong> valor; si desea almacenar varios valores dispares, JSON funciona bien, ya que se puede analizar fácilmente</li>
       <li>Una sola línea en blanco</li>
-      <li>Se pueden agregar varios puntos de referencia utilizando el formato identificador/duración/texto/línea en blanco</li>
+      <li>Se pueden agregar múltiples puntos de referencia usando el formato de identificador / duración / texto / línea en blanco</li>
     </ul>
     <aside class="bcls-aside bcls-aside--tip">Nota: Puede validar su formato WebVTT con este <a href="//quuz.org/webvtt/">validador</a>.</aside>
-    <p>El siguiente es un documento de punto de referencia WebVTT válido que define dos puntos de referencia, uno con una duración de 2 a 5 segundos y otro con una duración de 10-15 segundos:</p>
+    <p>El siguiente es un documento válido de puntos de referencia de WebVTT que define dos puntos de referencia, uno con una duración de 2 a 5 segundos y otro con una duración de 10 a 15 segundos:</p>
     <pre class="line-numbers">
 <code class="language-javascript" translate="No">WEBVTT
 
@@ -1394,39 +244,38 @@ insects
 "src": "insects.jpg",
 "href": "http://en.wikipedia.org/wiki/Insects"
 }</code></pre>
-    <p>Cuando reproduzca el siguiente vídeo, verá el archivo WebVTT de punto de referencia que se muestra arriba procesado. Al comienzo de un punto de referencia, verá HTML creado dinámicamente inyectado en la página, seguido de un JSON analizado del campo de <strong>texto</strong> . Al final del punto de referencia se muestra el mensaje <strong>Duración del punto de</strong> referencia.</p>
+    <p>Cuando reproduzca el siguiente video, verá procesado el archivo WebVTT del punto de referencia que se muestra arriba. Al comienzo de un punto de referencia, verá HTML creado dinámicamente inyectado en la página, seguido de un JSON analizado del <strong>texto</strong> campo. Al final del punto de referencia, el mensaje <strong>Duración del punto de referencia sobre</strong> se visualiza.</p>
     <video-js id="myPlayerID2" data-video-id="4607357817001" data-account="1752604059001" data-player="VkIrj2aFx" data-embed="default" class="video-js" controls="">
       <track kind="metadata" src="https://solutions.brightcove.com/bcls/tests/player/cuepoints.vtt" />
     </video-js>
-    <p>******** Información de puntos de referencia ********</p>
+    <p>******** Información del punto de referencia ********</p>
     <p id="insertionPoint2">&nbsp;</p>
-    <p>****** Información de fin de punto de referencia ******</p>
-    <h3>Introducción a los puntos de referencia del proceso</h3>
-    <p>Los pasos básicos para usar los puntos de referencia estándar HTML5 son:</p>
+    <p>****** Información del punto de referencia final ******</p>
+    <h3>Descripción general de los puntos de referencia del proceso</h3>
+    <p>Los pasos básicos para utilizar puntos de referencia estándar HTML5 son:</p>
     <ol>
-      <li>Lea en el archivo WebVTT que contiene los puntos de referencia utilizando una <code translate="No">&lt;track&gt;</code> etiqueta anidada como hijo de la <code translate="No">&lt;video-js&gt;</code> etiqueta.</li>
-      <li>En un controlador de <code translate="No">loadedmetadata</code> eventos, recupere el elemento de seguimiento de texto adecuado.</li>
-      <li>En el mismo controlador de eventos, configure un segundo controlador de eventos para el evento de punto de <code translate="No">oncuechange</code> referencia.</li>
-      <li>En el controlador de <code translate="No">oncuechange</code> eventos, compruebe si el objeto <code translate="No">activecues</code> array tiene un elemento cero definido, en caso afirmativo, actuar en el inicio del punto de referencia.
-        <aside class="bcls-aside bcls-aside--information">Nota: Tendrá <code translate="No">oncuechange</code> eventos distribuido cuando el punto de referencia comience y se detenga. La <code translate="No">activecues</code> matriz tendrá un valor sólo para la duración del punto de referencia. Por lo tanto, si se produce un <code translate="No">oncuechange</code> evento y no hay objetos definidos en la <code translate="No">activecues</code> matriz, sabe que el evento distribuido es para una parada de punto de referencia.</aside>
+      <li>Leer en el archivo WebVTT que contiene los puntos de referencia usando un <code translate="No">&lt;track&gt;</code> etiqueta anidada como hijo de la <code translate="No">&lt;video-js&gt;</code> etiqueta.</li>
+      <li>en un <code translate="No">loadedmetadata</code> controlador de eventos, recupere el elemento de pista de texto adecuado.</li>
+      <li>En el mismo controlador de eventos, configure un segundo controlador de eventos para el <code translate="No">oncuechange</code> evento de punto de referencia.</li>
+      <li>En el <code translate="No">oncuechange</code> controlador de eventos, compruebe si el <code translate="No">activecues</code> El objeto de matriz tiene un elemento cero definido, si es así, actúa sobre el inicio del punto de referencia. <aside class="bcls-aside bcls-aside--information">Nota: Usted tendrá <code translate="No">oncuechange</code> eventos enviados cuando el punto de referencia comienza y se detiene. La <code translate="No">activecues</code> array tendrá un valor solo durante la duración del punto de referencia. Por tanto, si un <code translate="No">oncuechange</code> ocurre el evento y no hay objetos definidos en el <code translate="No">activecues</code> matriz, sabe que el evento enviado es para una parada de punto de referencia.</aside>
       </li>
-      <li>En el controlador de <code translate="No">oncuechange</code> eventos, compruebe si el objeto <code translate="No">activecues</code> array tiene el elemento cero definido, si no, actuar sobre la parada del punto de referencia.</li>
+      <li>En el <code translate="No">oncuechange</code> controlador de eventos, compruebe si el <code translate="No">activecues</code> El objeto de matriz tiene un elemento cero definido, si no, actúa sobre la parada del punto de referencia.</li>
     </ol>
-    <aside class="bcls-aside bcls-aside--information">Nota: Si sus puntos de referencia tienen duraciones superpuestas, la lógica de los pasos anteriores tendrá que ser ligeramente alterada.</aside>
+    <aside class="bcls-aside bcls-aside--information">Nota: Si sus puntos de referencia tienen duraciones superpuestas, la lógica de los pasos anteriores deberá modificarse ligeramente.</aside>
     <div class="video-cloud-only">
-      <h3>Procesar código de puntos de referencia</h3>
+      <h3>Código de puntos de referencia del proceso</h3>
       <p>&nbsp;</p>
       <ul>
         <li>Línea 122: Cree una pista de texto leyendo en el archivo WebVTT utilizando la <code translate="No">&lt;track&gt;</code> etiqueta.</li>
-        <li>Línea 126: Cree un elemento de párrafo como una ubicación en la que inyectar HTML creado dinámicamente.</li>
-        <li>Líneas 134.152: Utilice el método para escuchar sólo una vez el evento.<code translate="No">one()</code><code translate="No">loadedmetadata</code> La función del controlador de eventos se define aquí de forma anónima.</li>
+        <li>Línea 126: Cree un elemento de párrafo como ubicación en la que inyectar HTML creado dinámicamente.</li>
+        <li>Líneas 134,152: Utilice el <code translate="No">one()</code> método para escuchar el <code translate="No">loadedmetadata</code> evento solo una vez. La función de controlador de eventos se define aquí de forma anónima.</li>
         <li>Línea 135: Asigne a una variable el índice de la última pista de texto cargada.</li>
-        <li>Línea 136: Recuperar la matriz TextTracks utilizando el método el asignar el último elemento de la matriz a una variable utilizando el índice determinado en el paso anterior.<code translate="No">textTracks()</code> Consulta la sección Buscar pista correcta a continuación para ver las variaciones de esta lógica.<a href="#findtrack"></a></li>
-        <li>Líneas 137.149: Establece la función de controlador de eventos para cuando se distribuye el evento.<code translate="No">oncuechange</code></li>
-        <li>Línea 138: Compruebe para asegurarse de que el primer punto de referencia (elemento de matriz cero) está definido en la matriz ActiveCues. Esto le indica que se trata de un evento de punto de referencia inicial.</li>
-        <li>Líneas 139-145: Cree HTML dinámicamente utilizando información del punto de referencia e inyecte en la página HTML. Esto incluye analizar JSON y mostrar varios campos de ese JSON.</li>
-        <li>Líneas 146-147: Muestra una nota que indica que se ha alcanzado el extremo del punto de referencia.</li>
-        <li>Línea 150: Reproduce el video.</li>
+        <li>Línea 136: Recupere la matriz TextTracks utilizando el <code translate="No">textTracks()</code> método y asigne el último elemento de la matriz a una variable utilizando el índice determinado en el paso anterior. Ver el <a href="#findtrack">Encuentra la pista correcta</a> sección a continuación para conocer las variaciones de esta lógica.</li>
+        <li>Líneas 137,149: Establece la función de controlador de eventos para cuando se distribuye el <code translate="No">oncuechange</code>evento.</li>
+        <li>Línea 138: Asegúrese de que el primer punto de referencia (elemento de matriz cero) esté definido en la matriz ActiveCues. Esto indica que se trata de un evento de punto de referencia de inicio.</li>
+        <li>Líneas 139-145: Cree HTML de forma dinámica utilizando información del punto de referencia e injételas en la página HTML. Esto incluye analizar JSON y mostrar varios campos de ese JSON.</li>
+        <li>Líneas 146-147: Muestra una nota de que se ha alcanzado el extremo del punto de referencia.</li>
+        <li>Línea 150: Reproduce el vídeo.</li>
       </ul>
       <pre class="line-numbers" data-start="115">
 <code class="language-html" translate="No">&lt;video-js id="myPlayerID2"
@@ -1469,28 +318,28 @@ insects
 &lt;/script&gt;</code></pre>
     </div>
     <div class="player-only">
-      <h3>Procesar código de puntos de referencia</h3>
+      <h3>Código de puntos de referencia del proceso</h3>
       <p>&nbsp;</p>
       <ul>
         <li>Línea 270: Cree una pista de texto leyendo en el archivo WebVTT utilizando la <code translate="No">&lt;track&gt;</code> etiqueta.</li>
-        <li>Línea 273: Cree un elemento de párrafo como una ubicación en la que inyectar HTML creado dinámicamente.</li>
-        <li>Líneas 285.309: Utilice el método para escuchar sólo una vez el evento.<code translate="No">one()</code><code translate="No">loadedmetadata</code> La función del controlador de eventos se define aquí de forma anónima.</li>
+        <li>Línea 273: Cree un elemento de párrafo como ubicación en la que inyectar HTML creado dinámicamente.</li>
+        <li>Líneas 285,309: Utilice el <code translate="No">one()</code> método para escuchar el <code translate="No">loadedmetadata</code> evento solo una vez. La función de controlador de eventos se define aquí de forma anónima.</li>
         <li>Línea 286: Asigne a una variable el índice de la última pista de texto cargada.</li>
-        <li>Línea 287: Recuperar la matriz TextTracks utilizando el método el asignar el último elemento de la matriz a una variable utilizando el índice determinado en el paso anterior.<code translate="No">textTracks()</code> Consulta la sección Buscar pista correcta a continuación para ver las variaciones de esta lógica.<a href="#findtrack"></a></li>
-        <li>Líneas 289.301: Establece la función de controlador de eventos para cuando se distribuye el evento.<code translate="No">oncuechange</code></li>
-        <li>Línea 290: Compruebe para asegurarse de que el primer punto de referencia (elemento de matriz cero) está definido en la matriz ActiveCues. Esto le indica que se trata de un evento de punto de referencia inicial.</li>
-        <li>Líneas 291-294: Cree HTML dinámicamente utilizando información del punto de referencia e inyecte en la página HTML. Esto incluye analizar JSON y mostrar varios campos de ese JSON.</li>
-        <li>Líneas 295-297: Muestra una nota que indica que se ha alcanzado el extremo del punto de referencia.</li>
-        <li>Línea 302: Reproduce el video.</li>
+        <li>Línea 287: Recupere la matriz TextTracks utilizando el <code translate="No">textTracks()</code> método y asigne el último elemento de la matriz a una variable utilizando el índice determinado en el paso anterior. Ver el <a href="#findtrack">Encuentra la pista correcta</a> sección a continuación para conocer las variaciones de esta lógica.</li>
+        <li>Líneas 289,301: Establece la función de controlador de eventos para cuando se distribuye el <code translate="No">oncuechange</code>evento.</li>
+        <li>Línea 290: Asegúrese de que el primer punto de referencia (elemento de matriz cero) esté definido en la matriz ActiveCues. Esto indica que se trata de un evento de punto de referencia de inicio.</li>
+        <li>Líneas 291-294: Cree HTML de forma dinámica utilizando información del punto de referencia e injételas en la página HTML. Esto incluye analizar JSON y mostrar varios campos de ese JSON.</li>
+        <li>Líneas 295-297: Muestra una nota de que se ha alcanzado el extremo del punto de referencia.</li>
+        <li>Línea 302: Reproduce el vídeo.</li>
       </ul>
       <p>&nbsp;</p>
     </div>
-    <p>Uno podría suponer que podría agregar el archivo WebVTT mediante programación utilizando el <code translate="No">addRemoteTextTrack()</code> método. En este caso, no sería confiable ya que puedes experimentar una condición de carrera en la que los puntos de referencia no estén listos para procesar antes de intentar usarlos. Es seguro agregar el archivo WebVTT usando la <code translate="No">&lt;track&gt;</code> etiqueta como se muestra.</p>
+    <p>Se podría suponer que podría agregar el archivo WebVTT mediante programación utilizando el <code translate="No">addRemoteTextTrack()</code> método. En este caso, no sería confiable ya que puede experimentar una condición de carrera en la que los puntos de referencia no estarían listos para procesarse antes de intentar usarlos. Es seguro agregar el archivo WebVTT usando el <code translate="No">&lt;track&gt;</code> etiqueta como se muestra.</p>
   </section>
   <section class="bcls-section">
-    <h2 id="findtrack">Buscar pista correcta</h2>
-    <p>En varios lugares de este documento podría producirse un posible problema si hay varias pistas de texto asociadas a un reproductor. Se asumió que sólo una pista de texto está asociada con el reproductor, por lo que se utilizó este código: <code translate="No">var tt = myPlayer.textTracks()[0];</code>. Al seleccionar el elemento de matriz cero se asume una sola pista de texto asociada al reproductor.</p>
-    <p>Las pistas de texto no solo se utilizan para puntos de referencia, sino también para otros tipos de datos. El atributo <strong>kind</strong> puede contener los siguientes valores:</p>
+    <h2 id="findtrack">Encuentra la pista correcta</h2>
+    <p>En varios lugares de este documento, podría ocurrir un posible problema si se asocian varias pistas de texto con un reproductor. Se asumió que solo una pista de texto está asociada con el reproductor, por lo que se usó este código: <code translate="No">var tt = myPlayer.textTracks()[0];</code>. La selección del elemento de matriz cero supone una única pista de texto asociada al reproductor.</p>
+    <p>Las pistas de texto no solo se utilizan para puntos de referencia, sino también para otros tipos de datos. La <strong>amable</strong> El atributo puede contener los siguientes valores:</p>
     <ul>
       <li>subtítulos</li>
       <li>subtítulos</li>
@@ -1498,7 +347,7 @@ insects
       <li>capítulos</li>
       <li>metadatos</li>
     </ul>
-    <p>Esto significa que es muy posible que se puedan asociar varias pistas de texto con el reproductor, y se necesita una manera de encontrar la correcta para su lógica de aplicación. El siguiente código recorre las pistas de texto disponibles hasta que se encuentre el valor de <strong>metadatos</strong> (punto de referencia):</p>
+    <p>Esto significa que es muy posible que se puedan asociar varias pistas de texto con el reproductor, y se necesita una forma de encontrar la correcta para la lógica de su aplicación. El siguiente código recorre las pistas de texto disponibles hasta que el <strong>metadatos</strong> (punto de referencia) se encuentra el valor:</p>
     <pre class="line-numbers">
 <code class="language-html" translate="No">&lt;script type="text/javascript"&gt;
   videojs.getPlayer('myPlayerID').ready(function() {
@@ -1518,29 +367,29 @@ insects
     });
   });
 &lt;/script&gt;</code></pre>
-    <p>La lógica de ejemplos anteriores se podría usar para procesar los puntos de referencia utilizando la <code translate="No">tt</code> variable, que contiene la pista de texto deseada.</p>
+    <p>La lógica de los ejemplos anteriores podría usarse para procesar los puntos de referencia usando el <code translate="No">tt</code> variable, que contiene la pista de texto deseada.</p>
   </section>
   <section class="bcls-section video-cloud-only">
     <h2 id="Programmatic_cue_points">Puntos de referencia programáticos</h2>
-    <p>Es posible añadir puntos de referencia mediante programación. El método clave proviene de la <code translate="No">VTTCue</code> interfaz HTML5. Puede crear puntos de referencia utilizando la sintaxis siguiente:</p>
+    <p>Es posible agregar puntos de referencia mediante programación. El método clave proviene del HTML5 <code translate="No">VTTCue</code> interfaz. Puede crear puntos de referencia utilizando la siguiente sintaxis:</p>
     <pre>
 <code class="language-javascript" translate="No">new VTTCue( startTime, endTime, text )</code></pre>
-    <p>La lógica de procesar los puntos de referencia es muy similar a los ejemplos anteriores, por lo que solo se detallará el código diferente al utilizado anteriormente.</p>
+    <p>La lógica de procesamiento de los puntos de referencia es muy similar a los ejemplos anteriores, por lo que solo se detallará el código diferente al utilizado anteriormente.</p>
     <ul>
       <li>
-        <p>Líneas 43,44: Añade un <code translate="No">textTrack</code> elemento al reproductor utilizando el <code translate="No">addRemoteTextTrack()</code> método del jugador. Especifique los metadatos <code translate="No">kind</code> para ser <strong>metadatos</strong> y <code translate="No">label</code> , en este caso, <strong>Punto de referencia temporizado</strong>.</p>
-        <aside class="bcls-aside bcls-aside--information">Nota: Debido a que sólo se pueden quitar pistas de texto remotas de un reproductor, se recomienda utilizar el método <a href="https://docs.brightcove.com/brightcove-player/current-release/Player.html#addRemoteTextTrack">AddRemoteTextTrack ()</a> .</aside>
+        <p>Líneas 43,44: Agrega un <code translate="No">textTrack</code> elemento al jugador que usa el <code translate="No">addRemoteTextTrack()</code> método. Especifica el <code translate="No">kind</code> ser - estar <strong>metadatos</strong> y un <code translate="No">label</code> , en este caso <strong>Punto de señal cronometrado</strong>.</p>
+        <aside class="bcls-aside bcls-aside--information">Nota: Debido a que solo las pistas de texto remotas se pueden eliminar de un reproductor, recomendamos usar el <a href="https://docs.brightcove.com/brightcove-player/current-release/Player.html#addRemoteTextTrack">addRemoteTextTrack ()</a> método.</aside>
       </li>
       <li>
-        <p>Líneas 45-48: Espere 10 milisegundos antes de crear dos puntos de referencia utilizando el <code translate="No">addCue()</code> método del jugador. Los puntos de referencia se crean instancias usando el <code translate="No">VTTCue()</code> constructor de HTML5.</p>
-        <aside class="bcls-aside bcls-aside--tip">Para Safari e iOS, debes retrasar antes de añadir puntos de referencia o no se agregan. Esto se debe a que Brightcove Player utiliza pistas nativas y asincrónicas en el navegador Safari y en iOS.</aside>
+        <p>Líneas 45-48: Espere 10 milisegundos antes de crear dos puntos de referencia con el <code translate="No">addCue()</code> método. Los puntos de referencia se instancian utilizando HTML5 <code translate="No">VTTCue()</code> constructor.</p>
+        <aside class="bcls-aside bcls-aside--tip">Para Safari e iOS, debe demorarse antes de agregar puntos de referencia o no se agregarán. Esto se debe a que Brightcove Player utiliza pistas asíncronas nativas en el navegador Safari y en iOS.</aside>
       </li>
-      <li>Línea 22: Escucha el evento.<code translate="No">addtrack</code></li>
+      <li>Línea 22: Escucha el <code translate="No">addtrack</code> evento.</li>
       <li>Línea 23: Recupera todas las pistas de texto asociadas con el reproductor.</li>
-      <li>Línea 24: Establece la <code translate="No">attLength</code> variable en el número de pistas de texto. Este valor se utilizará en un bucle en el siguiente segmento de código.</li>
-      <li>Líneas 25-30: Realice un bucle sobre cada pista de texto comprobando que el <code translate="No">label</code> para ser igual al valor correcto. Cuando se encuentre, asigne la pista de texto actual a una variable y salga del bucle.</li>
+      <li>Línea 24: Establece el <code translate="No">attLength</code> variable al número de pistas de texto. Este valor se utilizará en un bucle en el siguiente segmento de código.</li>
+      <li>Líneas 25-30: Recorra cada pista de texto comprobando el <code translate="No">label</code> para ser igual al valor correcto. Cuando lo encuentre, asigne la pista de texto actual a una variable y salga del bucle.</li>
     </ul>
-    <aside class="bcls-aside bcls-aside--tip">Nota: Fuera del código de ejemplo de aprendizaje que sigue, es muy probable que los puntos de referencia se creen en bucle sobre alguna estructura de datos que contiene información de punto de referencia clave.</aside>
+    <aside class="bcls-aside bcls-aside--tip">Nota: Fuera del código de muestra de aprendizaje que sigue, es muy probable que los puntos de referencia se creen en bucle sobre alguna estructura de datos que contenga información de puntos de referencia clave.</aside>
     <pre class="line-numbers" data-start="1">
 <code class="language-html" translate="No">&lt;video-js id="myPlayerID"
   data-video-id="4607746980001"
@@ -1593,12 +442,12 @@ insects
     }); //end on loadedmetadata
   }); //end ready
 &lt;/script&gt;</code></pre>
-    <p>El código genera salida como se muestra en la siguiente captura de pantalla. Tenga en cuenta que los valores de <strong>id</strong> no reciben un valor cuando se utiliza el método <code translate="No">VTTCue()</code> constructor.</p>
-    <figure class="bcls-figure"><img class="bcls-image" alt="puntos de referencia dinámicos" src="//learning-services-media.brightcove.com/doc-assets/player-development/player-customization/cue-points/using-cue-points/cue-points-dynamic.png"/></figure>
+    <p>El código genera una salida como se muestra en la siguiente captura de pantalla. Nota la <strong>identificación</strong> los valores no se proporcionan un valor cuando se utiliza el <code translate="No">VTTCue()</code> método constructor.</p>
+    <figure class="bcls-figure"><img class="bcls-image" alt="dynamic cue points" src="/assets/images/general/cue-points-dynamic.png" /></figure>
   </section>
   <section class="bcls-section">
-    <h2 id="ID3_and_media_cue_points">ID3 y puntos de referencia de medios</h2>
-    <p>Si tiene puntos de referencia ID3 o puntos de referencia de medios asociados con sus medios, puede tratarlos utilizando el <code translate="No">id3CuePointsTrack()</code> y <code translate="No">mediaCuePointsTrack()</code> métodos. Por ejemplo, para escuchar los cambios de punto de referencia, usaría lo siguiente:</p>
+    <h2 id="ID3_and_media_cue_points">Puntos de referencia de medios y ID3</h2>
+    <p>Si tiene puntos de referencia ID3 o puntos de referencia de medios asociados con sus medios, puede tratarlos utilizando el <code translate="No">id3CuePointsTrack()</code> y <code translate="No">mediaCuePointsTrack()</code> métodos. Por ejemplo, para escuchar cambios en el punto de referencia, usaría lo siguiente:</p>
     <pre class="line-numbers">
 <code class="language-javascript" translate="No">videojs.getPlayer('myPlayerID').ready(function () {
   var myPlayer = this;
@@ -1608,249 +457,27 @@ insects
     });</span>
   });
 });</code></pre>
-    <h3>Detalles de ID3</h3>
-    <p>A continuación se proporciona más información sobre el uso de puntos de referencia ID3:</p>
+    <h3>Detalles ID3</h3>
+    <p>A continuación, se proporciona más información sobre el uso de puntos de referencia ID3:</p>
     <ul>
-      <li>Las etiquetas ID3 se pueden utilizar para insertar metadatos cronometrados en la secuencia.</li>
+      <li>Las etiquetas ID3 se pueden utilizar para insertar metadatos cronometrados en la transmisión.</li>
       <li>Puede tener varios fotogramas ID3 por segmento.</li>
-      <li>Brightcove Player analiza los puntos de referencia ID3 y los expone como una pista de texto, utilizando el <code translate="No">id3CuePointsTrack()</code> método antes mencionado.</li>
-      <li>Es una práctica recomendada esperar el <code translate="No">canplay</code> evento o existe la posibilidad de que la pista no sea recuperable al intentar acceder a él.</li>
+      <li>Brightcove Player analiza los puntos de referencia ID3 y los expone como una pista de texto, utilizando el mencionado <code translate="No">id3CuePointsTrack()</code> método.</li>
+      <li>Es una buena práctica esperar a que <code translate="No">canplay</code> evento o existe la posibilidad de que la pista no sea recuperable al intentar acceder a ella.</li>
       <li>Se admiten varios fotogramas por etiqueta.</li>
     </ul>
   </section>
   <section class="bcls-section">
     <h2 id="Known_issues">Problemas conocidos</h2>
     <ul>
-      <li>En Safari, los puntos de referencia no se activarán si la hora de finalización es igual a la hora de inicio. Por lo tanto, si la compatibilidad con Safari es un problema, los puntos de referencia necesitan una duración mayor que cero.</li>
+      <li>En Safari, los puntos de referencia no se activarán si la hora de finalización es igual a la hora de inicio. Entonces, si la compatibilidad con Safari es un problema, los puntos de referencia necesitan una duración mayor que cero.</li>
     </ul>
   </section>
 </article>
 <script src="https://players.brightcove.net/1752604059001/VkIrj2aFx_default/index.min.js"></script><script src="https://players.brightcove.net/3676484087001/4f14e962-a11f-441f-8c00-0c89b8edb0a6_default/index.min.js"></script><script>
-  videojs.getPlayer('myPlayerID').ready(function() {
-  	var player = this;
-  	player.one("loadedmetadata",function(){
-  		var tt = player.textTracks()[0];
-  		tt.oncuechange = function() {
-  			if(tt.activeCues[0] !== undefined){
-  				var dynamicHTML = "id: <strong>" + tt.activeCues[0].id + ", ";
-  				dynamicHTML += "text: <strong>" + tt.activeCues[0].text + ", ";
-  				dynamicHTML += "startTime: <strong>" + tt.activeCues[0].startTime + ",  ";
-  				dynamicHTML += "endTime: <strong>" + tt.activeCues[0].endTime + "";
-  				document.getElementById("insertionPoint").innerHTML += dynamicHTML + "<br/>";
-  			}
-  		}
-  		//player.play();
-  		player.muted(true);
-  	});
-  });
+  videojs.getPlayer ('myPlayerID'). ready (function () {var player = this; player.one ("loadingmetadata", function () {var tt = player.textTracks () [0]; tt.oncuechange = function ( ) {if (tt.activeCues [0]! == indefinido) {var dynamicHTML = "id: <strong> "+ tt.activeCues [0] .id +", "; dynamicHTML + =" texto: <strong> "+ tt.activeCues [0] .text +", "; dynamicHTML + =" startTime: <strong> "+ tt.activeCues [0] .startTime +", "; dynamicHTML + =" endTime: <strong> "+ tt.activeCues [0] .endTime +" "; document.getElementById (" insertionPoint "). innerHTML + = dynamicHTML +"<br/>";}} //player.play (); player.muted (true);});});
   </script><script>
-  videojs.getPlayer('myPlayerID2').ready(function() {
-  	var myPlayer = this;
-
-  	myPlayer.one("loadedmetadata",function(){
-  		var trackIndex = myPlayer.textTracks().length -1;
-  		var tt = myPlayer.textTracks()[trackIndex];
-  		tt.oncuechange = function() {
-  			if(tt.activeCues[0] !== undefined){
-console.log('tt.activeCues[0]',tt.activeCues[0]);
-  				var dynamicHTML = "id: <strong>" + tt.activeCues[0].id + ", ";
-  				dynamicHTML += "text: <strong>" + tt.activeCues[0].text + ", ";
-  				dynamicHTML += "startTime: <strong>" + tt.activeCues[0].startTime + ",  ";
-  				dynamicHTML += "endTime: <strong>" + tt.activeCues[0].endTime + "";
-  				document.getElementById("insertionPoint2").innerHTML += dynamicHTML + "<br/><br/>";
-  				jsonData = JSON.parse(tt.activeCues[0].text);
-  				document.getElementById("insertionPoint2").innerHTML += jsonData.title + ": " + jsonData.description + "<br/><br/>";
-  			} else {
-  				document.getElementById("insertionPoint2").innerHTML += "<strong>Cue point duration over" + "<br/><br/>";
-  			}
-  		} //end oncuechange
-  		//myPlayer.play();
-  		myPlayer.muted(true);
-  	}); //end loadedmetadata
-
-  }); //end ready
+  videojs.getPlayer ('myPlayerID2'). ready (function () {var myPlayer = this; myPlayer.one ("loadingmetadata", function () {var trackIndex = myPlayer.textTracks (). length -1; var tt = myPlayer. textTracks () [trackIndex]; tt.oncuechange = function () {if (tt.activeCues [0]! == undefined) {console.log ('tt.activeCues [0]', tt.activeCues [0]); var dynamicHTML = "id: <strong> "+ tt.activeCues [0] .id +", "; dynamicHTML + =" texto: <strong> "+ tt.activeCues [0] .text +", "; dynamicHTML + =" startTime: <strong> "+ tt.activeCues [0] .startTime +", "; dynamicHTML + =" endTime: <strong> "+ tt.activeCues [0] .endTime +" "; document.getElementById (" insertionPoint2 "). innerHTML + = dynamicHTML +"<br/><br/>"; jsonData = JSON.parse (tt.activeCues [0] .text); document.getElementById (" insertionPoint2 "). innerHTML + = jsonData.title +": "+ jsonData.description +"<br/><br/>";} else {document.getElementById (" insertionPoint2 "). innerHTML + ="<strong>Duración del punto de señal superior a "+"<br/><br/>";}} // finaliza oncuechange //myPlayer.play (); myPlayer.muted (true);}); // finaliza los metadatos cargados}); // finaliza listo
   </script><script>
-  var myPlayer3,
-  textTrack;
-
-  videojs.getPlayer('myPlayerID3').ready(function() {
-  	var myPlayer3 = this;
-  	myPlayer3.src({
-  		"type": "video/mp4",
-  		"src": "//solutions.brightcove.com/bcls/assets/videos/Water-In-Motion.mp4"
-  	});
-  	textTrack = myPlayer3.addTextTrack('metadata', 'Timed Cue Point');
-  	textTrack.addCue(new window.VTTCue(2,4,'cue point 1 text'));
-  	textTrack.addCue(new window.VTTCue(6,8,'cue point 2 text'));
-  	textTrack.addCue(new window.VTTCue(10,11,'cue point 3 text'));
-  	textTrack.addCue(new window.VTTCue(15,20,'cue point 4 text - LAST CUEPOINT'));
-  	var tt = myPlayer3.textTracks()[0];
-  	tt.oncuechange = function() {
-  		if(tt.activeCues[0] !== undefined){
-  			//var dynamicHTML = "id: " + tt.activeCues[0].id + ", ";
-  			var dynamicHTML = "text: <strong>" + tt.activeCues[0].text + ", ";
-  			dynamicHTML += "startTime: <strong>" + tt.activeCues[0].startTime + ",  ";
-  			dynamicHTML += "endTime: <strong>" + tt.activeCues[0].endTime + "";
-  			document.getElementById("insertionPoint3").innerHTML += dynamicHTML + "<br/>";
-  		} else {
-  			document.getElementById("insertionPoint3").innerHTML += "Cue point duration over" + "<br/><br/>";
-  		}
-  	} //end oncuechange
-  }); //end ready
+  var myPlayer3, textTrack; videojs.getPlayer ('myPlayerID3'). listo (función () { var myPlayer3 = this; myPlayer3.src({ "type": "video/mp4", "src": "//solutions.brightcove.com/bcls/assets/videos/Water-In-Motion.mp4" }); textTrack = myPlayer3.addTextTrack ('metadatos', 'Punto de entrada cronometrado'); textTrack.addCue (nueva ventana.VTTCue (2,4, 'texto del punto de referencia 1')); textTrack.addCue (nueva ventana.VTTCue (6,8, 'texto del punto de referencia 2')); textTrack.addCue (nueva ventana.VTTCue (10,11, 'texto del punto de referencia 3')); textTrack.addCue (nueva ventana.VTTCue (15,20, 'texto del punto de referencia 4 - ÚLTIMO CUEPOINT')); var tt = myPlayer3.textTracks () [0]; tt.oncuechange = function () {if (tt.activeCues [0]! == undefined) {// var dynamicHTML = "id:" + tt.activeCues [0] .id + ","; var dynamicHTML = "texto: <strong> "+ tt.activeCues [0] .text +", "; dynamicHTML + =" startTime: <strong> "+ tt.activeCues [0] .startTime +", "; dynamicHTML + =" endTime: <strong> "+ tt.activeCues [0] .endTime +" "; document.getElementById (" insertionPoint3 "). innerHTML + = dynamicHTML +"<br/>";} else {document.getElementById (" insertionPoint3 "). innerHTML + =" Duración del punto de referencia sobre "+"<br/><br/>";}} // finaliza oncuechange}); // finaliza listo
   </script>
-<!-- complete bootstrap layout -->
-    </div>
-    <div class="col-sm-2 right-side-bar">
-      
-      <nav class="right-side-nav" id="right_side_nav">
-        <h6 class="toc">Contenido de la página</h6>
-        <ul id="in_page_nav" class="list-none"></ul>
-      </nav>
-      
-    </div>
-  </div>
-</div>
-
-<hr>
-<footer class="bcls-footer" role="contentinfo">  <div class="row">
-    <div class="region region-footer-top-center col-md-12">
-      <nav role="navigation" aria-labelledby="block-brightcovesupport-menu" id="block-brightcovesupport" class="footer-menu">
-
-        <h2>Asistencia técnica de Brightcove</h2>
-
-        <ul class="menu">
-          <li>
-            Estado del sistema<a href="https://status.brightcove.com"></a>
-          </li>
-          <li>
-            <a href="https://supportportal.brightcove.com/s/login/?">Contactar soporte</a>
-          </li>
-          <li>
-            <a href="https://support.brightcove.com/">Documentación</a>
-          </li>
-        </ul>
-
-      </nav>
-      <nav role="navigation" aria-labelledby="block-training-menu" id="block-training" class="footer-menu">
-
-        <h2>Formación</h2>
-
-        <ul class="menu">
-          <li>
-            Cursos en línea<a href="https://studio.support.brightcove.com/training/online-training-courses.html"></a>
-          </li>
-          <li>
-            Inscríbete a un curso<a href="https://studio.support.brightcove.com/training/register-training.html"></a>
-          </li>
-          <li>
-            <a href="https://university.brightcove.com/">Universidad de Brightcove</a>
-          </li>
-        </ul>
-
-      </nav>
-      <nav role="navigation" aria-labelledby="block-brightcove-menu" class="footer-menu">
-
-        <h2>Brightcove</h2>
-
-        <ul class="menu">
-          <li>
-            <a href="https://www.brightcove.com">BrightCove.com</a>
-          </li>
-          <li>
-            <a href="https://supportportal.brightcove.com/s/login/?">Contáctanos</a>
-          </li>
-        </ul>
-      </nav>
-    </div>
-  </div>
-  <div class="row">
-    <div class="region region-footer-bottom-center col-md-12">
-      <div class="bcls-copyright footer-menu">
-        <table>
-          <tr>
-            <td>
-              <div id="bc_copyright" class="field field--name-field-copyright-year field--type-string field--label-hidden field--item" style="float: left;"> Brightcove Inc. All rights reserved.</div>
-            </td>
-            <td>Privacidad | Términos y Condiciones<a href="https://www.brightcove.com/en/legal/privacy"></a><a href="https://www.brightcove.com/en/terms-and-conditions"></a></td>
-            <td>
-              <div class="gf-links-cols footer-menu">
-                <div class="gf-social"><a href="https://www.linkedin.com/company/16439" title="LinkedIn" newtab="newtab" class="gf-social-linkedin"><i class="fab fa-linkedin-in" style="font-size: 1.5rem;"></i></a><a href="https://twitter.com/brightcove" title="Twitter" newtab="newtab" class="gf-social-twitter"><i class="fab fa-twitter" style="font-size: 1.5rem;"></i></a><a href="https://www.facebook.com/Brightcove" title="Facebook" newtab="newtab" class="gf-social-facebook"><i class="fab fa-facebook-f" style="font-size: 1.5rem;"></i></a>
-                </div>
-              </div>
-            </td>
-          </tr>
-        </table>
-      </div>
-    </div>
-  </div>
-</footer>
-
-</div>
-</div>
-<script>
-      
-  var searchBox = sajari.init({
-    mode: "search-box",
-    project: "1588255093746585379", // Set this to your project.
-    collection: "brightcove-documenation", // Set this to your collection.
-    instantPipeline: "autocomplete", // Pipeline used as you type
-    inputPlaceholder: "Search", // Input element placeholder
-    maxSuggestions: 5, // Maximum number of suggestions to show
-    attachSearchBox: document.getElementById("nav-search-box") // DOM element to attach to
-  });
-  
-    searchBox("sub", "pipeline.search-sent", function (_, query) {
-      window.location = "/search.html?q=" + encodeURIComponent(query.q);
-    });
-  
-
-</script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-  <script src="https://support.brightcove.com/site-assets/js/site/https-fix.js"></script>
-  <script src="https://support.brightcove.com/site-assets/js/site/setDate.js"></script>
-  
-  <script src="https://support.brightcove.com/site-assets/js/site/prism.js"></script>
-  
-  <script src="https://support.brightcove.com/site-assets/js/site/site.js"></script>
-  <script src="https://support.brightcove.com/site-assets/js/site/tabs.js"></script>
-  <script src="https://support.brightcove.com/site-assets/js/site/toc.js"></script>
-  <script src="/assets/js/sites_nav.js"></script>
-  <script src="https://support.brightcove.com/site-assets/js/site/bcls-utils.js"></script>
-  <script src="https://support.brightcove.com/site-assets/js/site/local-link-fix.js"></script>
-  <script src="/assets/js/feedback.js"></script>
-  
-  <script src="/assets/js/sajari-search-foot.js"></script>
-  
-  <!-- <script src="/assets/js/sajari-index.js"></script> -->
-  <style>
-    a.sj-paginator__page-number.sj-paginator__page-number--current.css-so0ov7 {
-      background-color: lightblue;
-    }
-    div.sj-tabs__tab {
-      margin-top: 3rem;
-      margin-left: .3rem;
-      border-top-left-radius: .4rem;
-      border-top-right-radius: .4rem;
-      background-color:#e8e8e8;
-    }
-
-    div.sj-tabs__tab.sj-tabs__tab--selected {
-      border-bottom-color: crimson;
-      background-color: #f8f8f8;
-    }
-
-    p.sj-results__result__description.css-p9jvyt {
-      font-size: 1rem;
-    }
-
-    .sj-result__text.css-31l7gp h3 {
-      color: navy;
-      font-size: 1.4rem;
-    }
-    </style>
-
-</body>
-
-</html>

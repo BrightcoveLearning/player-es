@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>Módulo Brightcove Player v5.22.2: conversor de lista de pistas de texto</title>
+
+	<!--[if lt IE 9]>
+	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	<link type="text/css" rel="stylesheet" href="styles/sunlight.default.css">
+
+	<link type="text/css" rel="stylesheet" href="styles/site.yeti.css">
+
+</head>
+
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top navbar-inverse">
+<div class="container">
+	<div class="navbar-header">
+		<a class="navbar-brand" href="index.html">Reproductor de Brightcove v5.22.2</a>
+		<button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#topNavigation">
+			<span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>
+        </button>
+	</div>
+	<div class="navbar-collapse collapse" id="topNavigation">
+		<ul class="nav navbar-nav">
+			
+			<li class="dropdown">
+				<a href="modules.list.html" class="dropdown-toggle" data-toggle="dropdown">Módulos<b class="caret"></b></a>
+				<ul class="dropdown-menu inline">
+					<li><a href="module-browser.html">navegador</a></li><li><a href="module-buffer.html">tampón</a></li><li><a href="module-computed-style.html">estilo computarizado</a></li><li><a href="module-dom.html">dom</a></li><li><a href="module-events.html">eventos</a></li><li><a href="module-extend.html">extender</a></li><li><a href="module-flash-rtmp.html">flash-rtmp</a></li><li><a href="module-fn.html">fn</a></li><li><a href="module-Format-time.html">Format-time</a></li><li><a href="module-guid.html">guid</a></li><li><a href="module-log.html">registro</a></li><li><a href="module-merge-options.html">opciones de fusión</a></li><li><a href="module-obj.html">obj</a></li><li><a href="module-plugins.html">plugins</a></li><li><a href="module-setup.html">configuración</a></li><li><a href="module-stylesheet.html">hoja de estilo</a></li><li><a href="module-text-track-list-converter.html">convertidor de lista-pista de texto</a></li><li><a href="module-time-ranges.html">intervalos temporales</a></li><li><a href="module-to-title-case.html">a title-case</a></li><li><a href="module-url.html">url</a></li><li><a href="module-videojs.html">vídeos</a></li>
+				</ul>
+			</li>
+			
+			<li class="dropdown">
+				<a href="classes.list.html" class="dropdown-toggle" data-toggle="dropdown">Clases<b class="caret"></b></a>
+				<ul class="dropdown-menu inline">
+					<li><a href="AudioTrack.html">pista de audio</a></li><li><a href="AudioTrackButton.html">Botón de pista de audio</a></li><li><a href="AudioTrackList.html">Lista de pistas de audio</a></li><li><a href="AudioTrackMenuItem.html">Elemento del menú Audio Track</a></li><li><a href="BigPlayButton.html">Botón de reproducción grande</a></li><li><a href="Button.html">Botón</a></li><li><a href="CaptionsButton.html">Botón de subtítulos</a></li><li><a href="CaptionSettingsMenuItem.html">Elemento de menú Configuración de subtítulos</a></li><li><a href="ChaptersButton.html">Botón Capítulos</a></li><li><a href="ChaptersTrackMenuItem.html">Elemento del menú Track de capítulos</a></li><li><a href="ClickableComponent.html">Componente que se puede hacer clic</a></li><li><a href="CloseButton.html">Botón Cerrar</a></li><li><a href="Component.html">Componente</a></li><li><a href="ControlBar.html">Barra de control</a></li><li><a href="CurrentTimeDisplay.html">Pantalla de tiempo actual</a></li><li><a href="CustomControlSpacer.html">Espaciador de control personalizado</a></li><li><a href="DescriptionsButton.html">Botón descripciones</a></li><li><a href="DurationDisplay.html">Visualización de duración</a></li><li><a href="ErrorDisplay.html">Visualización de errores</a></li><li><a href="EventTarget.html">Objetivo del evento</a></li><li><a href="Flash.html">Flash</a></li><li><a href="FullscreenToggle.html">Gogle a pantalla completa</a></li><li><a href="Html5.html">Html5</a></li><li><a href="HTMLTrackElement.html">Elemento de seguimiento HTML</a></li><li><a href="HtmlTrackElementList.html">Lista de elementos de seguimiento HTML</a></li><li><a href="LiveDisplay.html">Pantalla en vivo</a></li><li><a href="LoadingSpinner.html">Spinner de carga</a></li><li><a href="LoadProgressBar.html">Barra de progreso de carga</a></li><li><a href="MediaError.html">Error de medios</a></li><li><a href="MediaLoader.html">MediaLoader</a></li><li><a href="Menu.html">Menú</a></li><li><a href="MenuButton.html">Botón Menú</a></li><li><a href="MenuItem.html">Elemento de menú</a></li><li><a href="ModalDialog.html">Cuadro de diálogo modal</a></li><li><a href="module-videojs-videojs.AudioTrack.videojs.AudioTrack.html">VideoJS ~ VideoJS.AudioTrack.videojs.pista de audio</a></li><li><a href="module-videojs-videojs.EventTarget.videojs.EventTarget.html">videojs~videojs.eventtarget.videojs.eventTarget</a></li><li><a href="module-videojs-videojs.TextTrack.videojs.TextTrack.html">Videojs~videojs.texttrack.videojs.texttrack</a></li><li><a href="module-videojs-videojs.VideoTrack.videojs.VideoTrack.html">VideoJS ~ VideoJS.VideoTrack.videojs.VideoTrack</a></li><li><a href="MouseTimeDisplay.html">Pantalla Mouse Timer</a></li><li><a href="MuteToggle.html">Alternar silencio</a></li><li><a href="OffTextTrackMenuItem.html">Elemento de menú de seguimiento de texto fuera</a></li><li><a href="PlaybackRateMenuButton.html">Botón Menú Velocidad de reproducción</a></li><li><a href="PlaybackRateMenuItem.html">Elemento del menú Índice de reproducción</a></li><li><a href="Player.html">Jugador</a></li><li><a href="PlayProgressBar.html">Barra de progreso de reproducción</a></li><li><a href="PlayToggle.html">Toggle</a></li><li><a href="Popup.html">emergente</a></li><li><a href="PopupButton.html">Botón emergente</a></li><li><a href="PosterImage.html">Imagen de póster</a></li><li><a href="ProgressControl.html">Control de progreso</a></li><li><a href="RemainingTimeDisplay.html">Pantalla de tiempo restante</a></li><li><a href="SeekBar.html">Barra de búsqueda</a></li><li><a href="Slider.html">Control deslizante</a></li><li><a href="Spacer.html">Espaciador</a></li><li><a href="SubtitlesButton.html">Botón Subtítulos</a></li><li><a href="Tech.html">Tecnología</a></li><li><a href="TextTrack.html">Track de texto</a></li><li><a href="TextTrackButton.html">Botón de pista de texto</a></li><li><a href="TextTrackCueList.html">Lista de Cuelistas de TextTrack</a></li><li><a href="TextTrackDisplay.html">Visualización de pistas de texto</a></li><li><a href="TextTrackList.html">Text Lista De Pistas</a></li><li><a href="TextTrackMenuItem.html">Elemento de menú TextTrack</a></li><li><a href="TextTrackSettings.html">Configuración de pista de texto</a></li><li><a href="TimeDivider.html">divisor de tiempo</a></li><li><a href="TooltipProgressBar.html">Barra de progreso de información sobre herramientas</a></li><li><a href="Track.html">Track</a></li><li><a href="TrackButton.html">Botón Track</a></li><li><a href="TrackList.html">Lista de canciones</a></li><li><a href="VideoTrack.html">pista de vídeo</a></li><li><a href="VideoTrackList.html">Lista de seguimiento de vídeo</a></li><li><a href="VolumeBar.html">Barra de volumen</a></li><li><a href="VolumeControl.html">Control de volumen</a></li><li><a href="VolumeLevel.html">Nivel de volumen</a></li><li><a href="VolumeMenuButton.html">Botón Menu volumen</a></li>
+				</ul>
+			</li>
+			
+			<li class="dropdown">
+				<a href="mixins.list.html" class="dropdown-toggle" data-toggle="dropdown">Mixins<b class="caret"></b></a>
+				<ul class="dropdown-menu inline">
+					<li><a href="module-flash-rtmp-FlashRtmpDecorator.html">Flash-RTMP ~ Decorador Flash RTMP</a></li>
+				</ul>
+			</li>
+			
+			<li class="dropdown">
+				<a href="events.list.html" class="dropdown-toggle" data-toggle="dropdown">Eventos<b class="caret"></b></a>
+				<ul class="dropdown-menu inline">
+					<li><a href="AudioTrack.html#event:enabledchange">AudioTrack #evento: cambio habilitado</a></li><li><a href="AudioTrackList.html#event:addtrack">Lista de pistas de audio #evento: agregar pista</a></li><li><a href="AudioTrackList.html#event:change">Lista de seguimiento de audio #evento: cambiar</a></li><li><a href="AudioTrackList.html#event:removetrack">Lista de pistas de audio #evento: eliminar pista</a></li><li><a href="BigPlayButton.html#event:dispose">BigPlayButton #evento: desechar</a></li><li><a href="BigPlayButton.html#event:ready">BigPlayButton #evento: listo</a></li><li><a href="BigPlayButton.html#event:resize">BigPlayButton #evento: cambiar tamaño</a></li><li><a href="BigPlayButton.html#event:tap">Big PlayButton #evento: toque</a></li><li><a href="Button.html#event:dispose">Botón #evento:desechar</a></li><li><a href="Button.html#event:ready">Botón #evento:listo</a></li><li><a href="Button.html#event:resize">Botón #evento:cambiar tamaño</a></li><li><a href="Button.html#event:tap">Botón #evento:toque</a></li><li><a href="ClickableComponent.html#event:dispose">ClicableComponente #evento:eliminar</a></li><li><a href="ClickableComponent.html#event:ready">ClicableComponente #evento:listo</a></li><li><a href="ClickableComponent.html#event:resize">ClicableComponente #evento: cambiar tamaño</a></li><li><a href="ClickableComponent.html#event:tap">Componente en el que se puede hacer clic #evento: toque</a></li><li><a href="CloseButton.html#event:close">CloseButton #evento:cerrar</a></li><li><a href="CloseButton.html#event:dispose">CloseButton #evento:desechar</a></li><li><a href="CloseButton.html#event:ready">CloseButton #evento:listo</a></li><li><a href="CloseButton.html#event:resize">CloseButton #evento:cambiar tamaño</a></li><li><a href="CloseButton.html#event:tap">Cerrar botón #evento:toque</a></li><li><a href="Component.html#event:dispose">Componente #evento:desechar</a></li><li><a href="Component.html#event:ready">Componente #evento:listo</a></li><li><a href="Component.html#event:resize">Componente #evento:redimensionar</a></li><li><a href="Component.html#event:tap">Componente #evento:toque</a></li><li><a href="ControlBar.html#event:dispose">Barra de control #evento:desechar</a></li><li><a href="ControlBar.html#event:ready">Barra de control #evento: listo</a></li><li><a href="ControlBar.html#event:resize">Barra de control #evento:cambiar tamaño</a></li><li><a href="ControlBar.html#event:tap">Barra de control #evento:toque</a></li><li><a href="CurrentTimeDisplay.html#event:dispose">Pantalla de tiempo actual #evento: desechar</a></li><li><a href="CurrentTimeDisplay.html#event:ready">Pantalla de tiempo actual #evento: listo</a></li><li><a href="CurrentTimeDisplay.html#event:resize">Pantalla en tiempo actual #evento: redimensionar</a></li><li><a href="CurrentTimeDisplay.html#event:tap">Pantalla de tiempo actual #evento: toque</a></li><li><a href="CustomControlSpacer.html#event:dispose">CustomControls Spacer #evento:desechar</a></li><li><a href="CustomControlSpacer.html#event:ready">CustomControls Spacer #evento: listo</a></li><li><a href="CustomControlSpacer.html#event:resize">CustomControls Spacer #evento: redimensionar</a></li><li><a href="CustomControlSpacer.html#event:tap">Control personalizado espaciador #evento: toque</a></li><li><a href="DurationDisplay.html#event:dispose">Duración Visualización #evento:desechar</a></li><li><a href="DurationDisplay.html#event:ready">Duración Visualización #evento:listo</a></li><li><a href="DurationDisplay.html#event:resize">Duración Visualización #evento:redimensionar</a></li><li><a href="DurationDisplay.html#event:tap">Duración Visualización #evento:toque</a></li><li><a href="ErrorDisplay.html#event:beforemodalclose">Error Mostrar #evento: antes de cerrar de forma remota</a></li><li><a href="ErrorDisplay.html#event:beforemodalempty">Error Mostrar #evento: antes de remodelar vacío</a></li><li><a href="ErrorDisplay.html#event:beforemodalfill">Error Mostrar #evento: antes del relleno de la remodelación</a></li><li><a href="ErrorDisplay.html#event:beforemodalopen">Error Mostrar #evento: antes de la remodelación abierta</a></li><li><a href="ErrorDisplay.html#event:modalclose">Error Mostrar #evento: cierre modal</a></li><li><a href="ErrorDisplay.html#event:modalempty">Error Mostrar #evento:modal vacía</a></li><li><a href="ErrorDisplay.html#event:modalfill">Error Mostrar #evento:relleno modal</a></li><li><a href="ErrorDisplay.html#event:modalopen">Error Visualización #evento: modal open</a></li><li><a href="Flash.html#event:audiotrackchange">Flash #evento: cambio de pista de audio</a></li><li><a href="Flash.html#event:progress">Flash #evento:progreso</a></li><li><a href="Flash.html#event:texttrackchange">Flash #evento: cambio de pista de texto</a></li><li><a href="Flash.html#event:timeupdate">Flash #evento:actualización de tiempo</a></li><li><a href="Flash.html#event:videotrackchange">Flash #evento: cambio de pista de vídeo</a></li><li><a href="Flash.html#event:vttjsloaded">Flash #evento:vttj cargada</a></li><li><a href="FullscreenToggle.html#event:dispose">Google a pantalla completa #evento: desechar</a></li><li><a href="FullscreenToggle.html#event:ready">Google de pantalla completa #evento: listo</a></li><li><a href="FullscreenToggle.html#event:resize">Google de pantalla completa #evento: redimensionar</a></li><li><a href="FullscreenToggle.html#event:tap">Google de pantalla completa #evento: toque</a></li><li><a href="Html5.html#event:audiotrackchange">Html5 #evento: cambio de pista de audio</a></li><li><a href="Html5.html#event:progress">Html5 #evento: progreso</a></li><li><a href="Html5.html#event:texttrackchange">Html5 #evento: cambio de pista de texto</a></li><li><a href="Html5.html#event:timeupdate">Html5 #evento:actualización de tiempo</a></li><li><a href="Html5.html#event:videotrackchange">Html5 #evento: cambio de pista de vídeo</a></li><li><a href="Html5.html#event:vttjsloaded">Html5 #evento: vttj cargada</a></li><li><a href="LiveDisplay.html#event:dispose">Live Display #evento:desechar</a></li><li><a href="LiveDisplay.html#event:ready">Live Display #evento:listo</a></li><li><a href="LiveDisplay.html#event:resize">Live Display #evento:redimensionar</a></li><li><a href="LiveDisplay.html#event:tap">Live Display #evento:toque</a></li><li><a href="LoadingSpinner.html#event:dispose">LoadingSpinner #evento:desechar</a></li><li><a href="LoadingSpinner.html#event:ready">LoadingSpinner #evento:listo</a></li><li><a href="LoadingSpinner.html#event:resize">LoadingSpinner #evento:redimensionar</a></li><li><a href="LoadingSpinner.html#event:tap">LoadingSpinner #evento:toque</a></li><li><a href="LoadProgressBar.html#event:dispose">LoadProgressBar #evento:desechar</a></li><li><a href="LoadProgressBar.html#event:ready">Load ProgressBar #evento: listo</a></li><li><a href="LoadProgressBar.html#event:resize">Barra de progreso de carga #evento: redimensionar</a></li><li><a href="LoadProgressBar.html#event:tap">Barra de progreso de carga #evento: toque</a></li><li><a href="MediaLoader.html#event:dispose">MediaLoader #evento:desechar</a></li><li><a href="MediaLoader.html#event:ready">MediaLoader #evento:listo</a></li><li><a href="MediaLoader.html#event:resize">MediaLoader #evento:cambiar tamaño</a></li><li><a href="MediaLoader.html#event:tap">MediaLoader #evento:toque</a></li><li><a href="Menu.html#event:dispose">Menú #evento:desechar</a></li><li><a href="Menu.html#event:ready">Menú #evento:listo</a></li><li><a href="Menu.html#event:resize">Menú #evento:cambiar tamaño</a></li><li><a href="Menu.html#event:tap">Menú #evento:toque</a></li><li><a href="MenuButton.html#event:dispose">MenuButton #evento:desechar</a></li><li><a href="MenuButton.html#event:ready">MenuButton #evento:listo</a></li><li><a href="MenuButton.html#event:resize">MenuButton #evento:cambiar tamaño</a></li><li><a href="MenuButton.html#event:tap">MenúBotón #evento:toque</a></li><li><a href="MenuItem.html#event:dispose">MenúElemento #evento:desechar</a></li><li><a href="MenuItem.html#event:ready">MenúElemento #evento:listo</a></li><li><a href="MenuItem.html#event:resize">MenúElemento #evento:cambiar tamaño</a></li><li><a href="MenuItem.html#event:tap">MenúElemento #evento:toque</a></li><li><a href="ModalDialog.html#event:beforemodalclose">Cuadro de diálogo modal #evento: antes de cerrar</a></li><li><a href="ModalDialog.html#event:beforemodalempty">Diálogo modal #evento: antes de remodelar vacío</a></li><li><a href="ModalDialog.html#event:beforemodalfill">Diálogo modal #evento: antes del relleno de la remodelación</a></li><li><a href="ModalDialog.html#event:beforemodalopen">Cuadro de diálogo modal #evento: antes de remodelar abrir</a></li><li><a href="ModalDialog.html#event:dispose">Diálogo modal #evento:desechar</a></li><li><a href="ModalDialog.html#event:modalclose">Diálogo modal #evento: cierre modal</a></li><li><a href="ModalDialog.html#event:modalempty">Diálogo modal #evento:modal vacía</a></li><li><a href="ModalDialog.html#event:modalfill">Diálogo modal #evento:relleno modal</a></li><li><a href="ModalDialog.html#event:modalopen">Diálogo modal #evento: modal open</a></li><li><a href="ModalDialog.html#event:ready">Diálogo modal #evento:listo</a></li><li><a href="ModalDialog.html#event:resize">Diálogo modal #evento:cambiar tamaño</a></li><li><a href="ModalDialog.html#event:tap">Diálogo modal #evento:toque</a></li><li><a href="MouseTimeDisplay.html#event:dispose">MouseTieDisplay #evento:desechar</a></li><li><a href="MouseTimeDisplay.html#event:ready">MouseTieDisplay #evento: listo</a></li><li><a href="MouseTimeDisplay.html#event:resize">MouseTieDisplay #evento: redimensionar</a></li><li><a href="MouseTimeDisplay.html#event:tap">Mouse TiemPlay #evento: toque</a></li><li><a href="MuteToggle.html#event:dispose">Silenciar Toggle #evento:desechar</a></li><li><a href="MuteToggle.html#event:ready">Silenciar Toggle #evento:listo</a></li><li><a href="MuteToggle.html#event:resize">MuteToggle #evento:redimensionar</a></li><li><a href="MuteToggle.html#event:tap">Silenciar Toggle #evento:toque</a></li><li><a href="Player.html#event:abort">Jugador #evento:abort</a></li><li><a href="Player.html#event:canplay">Jugador #evento: puede jugar</a></li><li><a href="Player.html#event:canplaythrough">Jugador #evento: puede jugar</a></li><li><a href="Player.html#event:controlsdisabled">Jugador #evento: controles desactivados</a></li><li><a href="Player.html#event:controlsenabled">Jugador #evento: controles habilitados</a></li><li><a href="Player.html#event:dispose">Jugador #evento:desechar</a></li><li><a href="Player.html#event:durationchange">Jugador #evento: cambio de duración</a></li><li><a href="Player.html#event:emptied">Jugador #evento: vaciado</a></li><li><a href="Player.html#event:ended">#jugador #evento:finalizado</a></li><li><a href="Player.html#event:enterFullWindow">Jugador #Evento: Entra Full Window</a></li><li><a href="Player.html#event:error">Jugador #evento:error</a></li><li><a href="Player.html#event:exitFullWindow">Jugador #Evento: Salir Ventana completa</a></li><li><a href="Player.html#event:firstplay">Jugador #evento: primera jugada</a></li><li><a href="Player.html#event:fullscreenchange">#evento del jugador: cambio de pantalla completa</a></li><li><a href="player_.html#event:loadeddata">jugador #evento: datos cargados</a></li><li><a href="Player.html#event:loadeddata">Jugador #evento: datos cargados</a></li><li><a href="Player.html#event:loadedmetadata">Jugador #evento: metadatos cargados</a></li><li><a href="Player.html#event:loadstart">Jugador #evento:loadstart</a></li><li><a href="Player.html#event:pause">Jugador #evento:pausa</a></li><li><a href="Player.html#event:play">Jugador #evento:play</a></li><li><a href="Player.html#event:playing">Jugador #evento:jugar</a></li><li><a href="Player.html#event:posterchange">Jugador #evento: cambio de póster</a></li><li><a href="Player.html#event:progress">Jugador #evento:progreso</a></li><li><a href="player_.html#event:ratechange">jugador #evento:cambio de tarifas</a></li><li><a href="Player.html#event:ready">Jugador #evento:listo</a></li><li><a href="Player.html#event:resize">Jugador #evento:resize</a></li><li><a href="Player.html#event:seeked">Jugador #evento:buscado</a></li><li><a href="Player.html#event:seeking">Jugador #evento:buscando</a></li><li><a href="Player.html#event:stalled">Jugador #evento:estancado</a></li><li><a href="Player.html#event:suspend">Jugador #evento:suspender</a></li><li><a href="Player.html#event:tap">Jugador #evento:toque</a></li><li><a href="Player.html#event:textdata">Jugador #evento:datos de texto</a></li><li><a href="player_.html#event:texttrackchange">jugador #evento:cambio de pista de texto</a></li><li><a href="player_.html#event:timeupdate">jugador #evento:timeupdate</a></li><li><a href="Player.html#event:timeupdate">Jugador #evento:timeupdate</a></li><li><a href="Player.html#event:useractive">Jugador #evento:usuario activo</a></li><li><a href="Player.html#event:userinactive">Jugador #evento: usuario inactivo</a></li><li><a href="Player.html#event:usingcustomcontrols">#jugador #evento:utilizar controles personalizados</a></li><li><a href="Player.html#event:usingnativecontrols">#jugador #evento: uso de controles nativos</a></li><li><a href="Player.html#event:volumechange">Jugador #evento: cambio de volumen</a></li><li><a href="player_.html#event:volumechange">jugador #evento:cambio de volumen</a></li><li><a href="Player.html#event:waiting">Jugador #evento:esperando</a></li><li><a href="PlayProgressBar.html#event:dispose">PlayProgressBar #evento: desechar</a></li><li><a href="PlayProgressBar.html#event:ready">PlayProgressBar #evento: listo</a></li><li><a href="PlayProgressBar.html#event:resize">PlayProgressBar #evento: redimensionar</a></li><li><a href="PlayProgressBar.html#event:tap">Barra de progreso de reproducción #evento: toque</a></li><li><a href="PlayToggle.html#event:dispose">PlayToggle #evento:desechar</a></li><li><a href="PlayToggle.html#event:ready">PlayToggle #evento: listo</a></li><li><a href="PlayToggle.html#event:resize">PlayToggle #evento:cambiar tamaño</a></li><li><a href="PlayToggle.html#event:tap">PlayToggle #evento:toque</a></li><li><a href="Popup.html#event:dispose">emergente #evento:desechar</a></li><li><a href="Popup.html#event:ready">emergente #evento:listo</a></li><li><a href="Popup.html#event:resize">emergente #evento:redimensionar</a></li><li><a href="Popup.html#event:tap">emergente #evento:toque</a></li><li><a href="PopupButton.html#event:dispose">Botón emergente #evento:desechar</a></li><li><a href="PopupButton.html#event:ready">Botón emergente #evento: listo</a></li><li><a href="PopupButton.html#event:resize">Botón emergente #evento: redimensionar</a></li><li><a href="PopupButton.html#event:tap">Botón emergente #evento: toque</a></li><li><a href="PosterImage.html#event:dispose">Imagen del póster #evento: desechar</a></li><li><a href="PosterImage.html#event:ready">Poster Image #evento:ready</a></li><li><a href="PosterImage.html#event:resize">Imagen del póster #evento: redimensionar</a></li><li><a href="PosterImage.html#event:tap">Imagen del póster #evento: toque</a></li><li><a href="ProgressControl.html#event:dispose">ProgressControl #evento:desechar</a></li><li><a href="ProgressControl.html#event:ready">ProgressControl #evento:listo</a></li><li><a href="ProgressControl.html#event:resize">ProgressControl #evento:cambiar tamaño</a></li><li><a href="ProgressControl.html#event:tap">ProgressControl #evento:toque</a></li><li><a href="RemainingTimeDisplay.html#event:dispose">Tiempo restante Pantalla #evento:desechar</a></li><li><a href="RemainingTimeDisplay.html#event:ready">Tiempo restante Mostrar #evento: listo</a></li><li><a href="RemainingTimeDisplay.html#event:resize">Tiempo restante Mostrar #evento: redimensionar</a></li><li><a href="RemainingTimeDisplay.html#event:tap">Tiempo restante Mostrar #evento:toque</a></li><li><a href="SeekBar.html#event:slideractive">SeekBar #evento:slideractive</a></li><li><a href="SeekBar.html#event:sliderinactive">SeekBar #evento: control deslizante inactivo</a></li><li><a href="Slider.html#event:dispose">Control deslizante #evento:desechar</a></li><li><a href="Slider.html#event:ready">Slider #evento:listo</a></li><li><a href="Slider.html#event:resize">Control deslizante #evento:redimensionar</a></li><li><a href="Slider.html#event:slideractive">Slider #evento:slideractive</a></li><li><a href="Slider.html#event:sliderinactive">Control deslizante #evento:deslizador inactivo</a></li><li><a href="Slider.html#event:tap">Control deslizante #evento:toque</a></li><li><a href="Spacer.html#event:dispose">Espaciador #evento:desechar</a></li><li><a href="Spacer.html#event:ready">Spacer #evento:listo</a></li><li><a href="Spacer.html#event:resize">Espaciador #evento:redimensionar</a></li><li><a href="Spacer.html#event:tap">Espaciador #evento:toque</a></li><li><a href="Tech.html#event:audiotrackchange">#evento tecnológico: cambio de pista de audio</a></li><li><a href="Tech.html#event:dispose">Tecnología #evento:desechar</a></li><li><a href="Tech.html#event:progress">Tecnología #evento:progreso</a></li><li><a href="Tech.html#event:ready">Tech #evento:ready</a></li><li><a href="Tech.html#event:resize">Tecnología #evento:redimensionar</a></li><li><a href="Tech.html#event:tap">Tecnología #evento:tap</a></li><li><a href="Tech.html#event:texttrackchange">Tecnología #evento:cambio de pista de texto</a></li><li><a href="Tech.html#event:timeupdate">Tecnología #evento:timeupdate</a></li><li><a href="Tech.html#event:videotrackchange">Tech #evento:cambio de seguimiento de vídeo</a></li><li><a href="Tech.html#event:vttjsloaded">Tecnología #event:vttjsloaded</a></li><li><a href="TextTrack.html#event:modechange">TextTrack #evento: cambio de modo</a></li><li><a href="TextTrackDisplay.html#event:dispose">TextTrackDisplay #evento:desechar</a></li><li><a href="TextTrackDisplay.html#event:ready">TextTrack Display #evento: listo</a></li><li><a href="TextTrackDisplay.html#event:resize">TextTrack Display #evento: cambiar tamaño</a></li><li><a href="TextTrackDisplay.html#event:tap">TextTrack Display #evento:toque</a></li><li><a href="TextTrackList.html#event:addtrack">Lista de canciones de texto #evento: agregar pista</a></li><li><a href="TextTrackList.html#event:change">TextTracklist #evento:change</a></li><li><a href="TextTrackList.html#event:removetrack">Lista de canciones de texto #evento: eliminar pista</a></li><li><a href="TextTrackSettings.html#event:dispose">Configuración de la pista de texto #evento:desechar</a></li><li><a href="TextTrackSettings.html#event:ready">Configuración de la pista de texto #evento: listo</a></li><li><a href="TextTrackSettings.html#event:resize">Configuración de la pista de texto #evento: cambiar tamaño</a></li><li><a href="TextTrackSettings.html#event:tap">Configuración de la pista de texto #evento:toque</a></li><li><a href="TimeDivider.html#event:dispose">TieDivider #evento:desechar</a></li><li><a href="TimeDivider.html#event:ready">TieDivider #evento:listo</a></li><li><a href="TimeDivider.html#event:resize">TieDivider #evento:redimensionar</a></li><li><a href="TimeDivider.html#event:tap">TieVider #evento:toque</a></li><li><a href="TooltipProgressBar.html#event:dispose">TooltipBarra de progreso #evento:desechar</a></li><li><a href="TooltipProgressBar.html#event:ready">Información sobre herramientas Barra de progreso #evento: listo</a></li><li><a href="TooltipProgressBar.html#event:resize">Información sobre herramientas Barra de progreso #evento:cambiar tamaño</a></li><li><a href="TooltipProgressBar.html#event:tap">Información sobre herramientas Barra de progreso #evento:toque</a></li><li><a href="TrackList.html#event:addtrack">Lista de canciones #evento: add track</a></li><li><a href="TrackList.html#event:change">Tracklist #evento:change</a></li><li><a href="TrackList.html#event:removetrack">Lista de canciones #evento: eliminar pista</a></li><li><a href="VideoTrack.html#event:selectedchange">Video Track #evento: cambio seleccionado</a></li><li><a href="VideoTrackList.html#event:addtrack">Lista de pistas de vídeo #evento: add track</a></li><li><a href="VideoTrackList.html#event:change">Lista de seguimiento de vídeo #evento:change</a></li><li><a href="VideoTrackList.html#event:removetrack">Lista de seguimiento de vídeo #evento: eliminar pista</a></li><li><a href="VolumeBar.html#event:slideractive">Barra de volumen #evento:slideractive</a></li><li><a href="VolumeBar.html#event:sliderinactive">Barra de volumen #evento: control deslizante inactivo</a></li><li><a href="VolumeControl.html#event:dispose">Control de volumen #evento:desechar</a></li><li><a href="VolumeControl.html#event:ready">Control de volumen #evento: listo</a></li><li><a href="VolumeControl.html#event:resize">Control de volumen #evento: cambiar tamaño</a></li><li><a href="VolumeControl.html#event:tap">Control de volumen #evento:toque</a></li><li><a href="VolumeLevel.html#event:dispose">Nivel de volumen #evento: desechar</a></li><li><a href="VolumeLevel.html#event:ready">Nivel de volumen #evento: listo</a></li><li><a href="VolumeLevel.html#event:resize">Nivel de volumen #evento: redimensionar</a></li><li><a href="VolumeLevel.html#event:tap">Nivel de volumen #evento:toque</a></li>
+				</ul>
+			</li>
+			
+			<li class="dropdown">
+				<a href="global.html" class="dropdown-toggle" data-toggle="dropdown">Global<b class="caret"></b></a>
+				<ul class="dropdown-menu inline">
+					<li><a href="global.html#activeCues">Cutes activos</a></li><li><a href="global.html#createTrackHelper">Create Track Helper</a></li><li><a href="global.html#cues">señales</a></li><li><a href="global.html#currentSrc">SRC actual</a></li><li><a href="global.html#default">predeterminado</a></li><li><a href="global.html#emulateTextTracks">Emular pistas de texto</a></li><li><a href="global.html#enabled">habilitado</a></li><li><a href="global.html#id">id</a></li><li><a href="global.html#kind">amable</a></li><li><a href="global.html#label">etiqueta</a></li><li><a href="global.html#language">idioma</a></li><li><a href="global.html#length">longitud</a></li><li><a href="global.html#mode">modo</a></li><li><a href="global.html#NONE">NINGUNO</a></li><li><a href="global.html#readyState">Estado listo</a></li><li><a href="global.html#selected">seleccionado</a></li><li><a href="global.html#track">pista</a></li><li><a href="global.html#tryUpdateStyle">Prueba Update Style</a></li>
+				</ul>
+			</li>
+			
+		</ul>
+        
+            <div class="col-sm-3 col-md-3">
+                <form class="navbar-form" role="search">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search" name="q" id="search-input">
+                        <div class="input-group-btn">
+                            <button class="btn btn-default" id="search-submit"><i class="glyphicon glyphicon-search"></i></button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        
+	</div>
+
+</div>
+</div>
+
+
+<div class="container" id="toc-content">
+<div class="row">
+
+	
+	<div class="col-md-8">
+	
+		<div id="main">
+			
+
+	<h1 class="page-title">Módulo: conversor de lista de pistas de texto</h1>
+<section>
+
+<header>
+    
+</header>
+
+
+<article>
+    <div class="container-overview">
+    
+        
+            <div class="description"><p>text-track-list-converter.js Utilidades para capturar el estado de la pista de texto y volver a crear pistas basadas en una captura.</p></div>
+        
+
+        
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source method-doc-label method-doc-details-label">Fuente:</dt>
+	<dd class="tag-source">
+		tracks/text-track-list-converter.js que es
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+        
+    
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <h3 class="subsection-title">Métodos</h3>
+
+        <dl>
+            
+<hr>
+<dt>
+    <h4 class="name" id="~jsonToTextTracks"><span class="type-signature">&lt;interno&gt; </span>jsonToTextTracks (json, tecnología)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Crea un conjunto de control remoto <a href="TextTrack.html">TextTrack</a>s en un <a href="Tech.html">Tecnología</a> basado en una matriz de objetos javascript <a href="TextTrack.html">TextTrack</a> representaciones.</p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5>Parámetros:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Nombre</th>
+        
+
+        <th>Tipo</th>
+
+        
+
+        
+
+        <th class="last">Descripción</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>json</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Matriz</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Una serie de <code>TextTrack</code> objetos de representación, como los que serían producidos por <code>textTracksToJson</code>.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>tecnología</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="Tech.html">Tecnología</a></span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>La <code>tecnología</code> para crear <code>TextTrack</code>está activada.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source method-doc-label method-doc-details-label">Fuente:</dt>
+	<dd class="tag-source">
+		tracks/text-track-list-converter.js que es
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="~textTracksToJson"><span class="type-signature">&lt;interno&gt; </span>textTracksToJson (tecnología)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Examine un <a href="Tech.html">Tech</a> y devuelva una matriz javascript compatible con JSON que representa el estado de todos los <a href="TextTrack.html">TextTrack</a>configurados actualmente. La matriz de retorno es compatible con Text-Track-List-Converter:JSONToTextTracks.</p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5>Parámetros:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Nombre</th>
+        
+
+        <th>Tipo</th>
+
+        
+
+        
+
+        <th class="last">Descripción</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>tecnología</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="Tech.html">Tecnología</a></span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>El objeto tecnológico que se va a consultar</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source method-doc-label method-doc-details-label">Fuente:</dt>
+	<dd class="tag-source">
+		tracks/text-track-list-converter.js que es
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Devoluciones:</h5>
+    
+            
+<div class="param-desc">
+    <p>Una representación javascript serializable del <a href="Tech.html">Tecnología</a>s <a href="TextTrackList.html">TextTrackList</a>.</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Tipo
+    </dt>
+    <dd>
+        
+<span class="param-type">Matriz</span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
+</dd>
+
+        </dl>
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+		</div>
+	</div>
+
+	<div class="clearfix"></div>
+
+	
+		<div class="col-md-3">
+			<div id="toc" class="col-md-3 hidden-xs hidden-sm hidden-md"></div>
+		</div>
+	
+
+</div>
+</div>
+
+
+    <div class="modal fade" id="searchResults">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title">Resultados de búsqueda</h4>
+          </div>
+          <div class="modal-body"></div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div>
+
+
+<footer>
+
+
+	<span class="copyright"> Copyright 2017 </span> <span class="jsdoc-message"> Documentación generada por <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.0</a> el 5 de junio de 2017 utilizando la plantilla <a href="https://github.com/docstrap/docstrap">DocStrap</a>. </span>
+</footer>
+
+<script src="scripts/docstrap.lib.js"></script>
+<script src="scripts/toc.js"></script>
+
+    <script type="text/javascript" src="scripts/fulltext-search-ui.js"></script>
+
+
+<script>
+$ (function () { $( "[id*='$']" ).each( function () { var $this = $( this ); $this.attr( "id", $this.attr( "id" ).replace( "$", "__" ) ); }); $ («.tutorial-section pre, .readme-section pre, pre.prettyprint.source») .each (function () { var $this = $( this ); var example = $this.find( "code" ); exampleText = example.html(); var lang = /{@lang (.*?)}/.exec (exampleText); if (lang &amp;&amp; lang [1]) { exampleText = exampleText.replace( lang[0], "" ); example.html( exampleText ); lang = lang[1]; } else { var langClassMatch = example.parent()[0].className.match(/lang\-(\S+)/); lang = langClassMatch ? langClassMatch[1] : "javascript"; } if (lang) { $this .addClass( "sunlight-highlight-" + lang ) .addClass( "linenums" ) .html( example.html() ); }}); Sunlight.highlightAll ( { lineNumbers : false, showMenu : true, enableDoclinks : true }); $.catchanchorLinks ( { navbarOffset: 10 }); $ ("#toc") .toc ( { anchorName : function ( i, heading, prefix ) { return $( heading ).attr( "id" ) || ( prefix + i ); }, selectores: "#toc -content h1, #toc -content h2, #toc -content h3, #toc -content h4", Mostrar y ocultar: false, SmoothScrolling: true}); $ ("#main span [id^='toc']») .addClass («toc-shim»); $ ('.dropdown-toggle' ) .dropdown (); $ («tabla») .each (function ( { var $this = $( this ); $this.addClass('table'); }));}
+</script>
+
+
+
+<!--Navigation and Symbol Display-->
+
+<script>
+	$ (function () { $( '#main' ).localScroll( { offset : { top : 60 } //offset por la altura de tu encabezado (da o toma algunos px, mira qué funciona para ti)}); $ («dt.name») .each (function () {var $this = $ (this) .find («h4"); icono var = $ (»<i/>«) .addClass («icon-plus-sign») .addClass («pull-right») .addClass («icono-blanco»); var dt = $ (this); var children = dt.next («dd» {cursor : "pointer"}); dt.prepend (icono) .css (); dt.addClass («miembro»); children.hide (); dt.children () .on («clic», function () { children = dt.next( "dd" ); children.slideToggle( "fast", function () { if ( children.is( ":visible" ) ) { icon.addClass( "icon-minus-sign" ).removeClass( "icon-plus-sign" ).removeClass( "icon-white" ); dt.addClass( "member-open" ).animate( "member-collapsed" ); } else { icon.addClass( "icon-plus-sign" ).removeClass( "icon-minus-sign" ).addClass( "icon-white" ); dt.addClass( "member-collapsed" ).removeClass( "member-open" ); }});});});});});});
+</script>
+
+
+<!--Google Analytics-->
+
+
+
+    <script type="text/javascript">
+        $ (documento) .ready (function () { SearcherDisplay.init(); });
+    </script>
+
+
+<script src="https://learning-services-media.brightcove.com/doc-assets/js/https-fix.js"></script>
+<script src="https://learning-services-media.brightcove.com/doc-assets/js/support-feedback.js"></script><script src="https://support.brightcove.com/site-assets/js/site/feedback-docs.js"></script>
+</body>
+</html>

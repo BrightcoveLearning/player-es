@@ -1,1174 +1,26 @@
-﻿<!doctype html>
-<html lang="es-es">
-
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  
-  <title>Catálogo de jugadores</title>
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  <link rel="manifest" href="/site.webmanifest">  
-  <link data-react-helmet="true" rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500&amp;display=swap">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/prism.css">
-  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/styles.css">
-  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/landing-page.css">
-  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/tabs.css">
-  <link rel="stylesheet" href="/assets/css/local.css">
-  <link data-react-helmet="true" rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500&display=swap">
-  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap" rel="stylesheet">
-  <script src="https://kit.fontawesome.com/381443caa8.js" crossorigin="anonymous"></script>
-  <script src="https://support.brightcove.com/site-assets/js/site/google-analytics.js"></script>
-  <script src="/assets/js/sajari-head.js"></script>
-</head>
-
-<body class="body">
-
-<header>
-  <div class="div-header">
-    <a href="/"><img class="product-logo" src="https://support.brightcove.com/site-assets/images/site/product-logos/Player_Logo.svg" alt="logotipo del producto" style="max-height: 100px;max-width: 232px;"/></a>
-<!-- GTranslate: https://gtranslate.io/ -->
-<select onchange="doGTranslate(this);"><option value="">Seleccionar idioma</option><option value="en|en" translate="No">English</option><option value="en|zh-TW" translate="No">繁體中文</option><option value="en|fr" translate="No">Français</option><option value="en|de" translate="No">Deutsche</option><option value="en|ja" translate="No">日本語</option><option value="en|ko" translate="No">한국어</option><option value="en|es" translate="No">Español</option></select>
-
-<script>
-/* <![CDATA[ */
-function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;if(lang_pair=='')return;var lang=lang_pair.split('|')[1];var plang=location.hostname.split('.')[0];if(plang.length !=2 && plang.toLowerCase() != 'zh-cn' && plang.toLowerCase() != 'zh-tw')plang='en';location.href=location.protocol+'//'+(lang == 'en' ? '' : lang+'.')+location.hostname.replace('www.', '').replace(RegExp('^' + plang + '\\.'), '')+location.pathname+location.search;}
-/* ]]> */
-</script>
-
-    
-
-
-    <span class="secondary-nav"><a href="https://supportportal.brightcove.com/s/login/?"><img src="https://support.brightcove.com/site-assets/images/site/support.png" alt="soporte"/> Contactar con Soporte</a> <span style="vertical-align: top;margin-left:1em;margin-right:1em;">|</span> <a href="https://status.brightcove.com/">Estado<img src="https://support.brightcove.com/site-assets/images/site/status.png" alt="estado del sistema"/> del sistema</a></span> <br/>
-    
-  </div>
-  <nav aria-label="breadcrumb">
-    <ol class="breadcrumb arr-right">
-      
-      <li class="breadcrumb-item"><a href="/">Inicio</a></li>
-      
-      
-      
-      <li class="breadcrumb-item">Referencias<a href="/references/"></a></li>
-      
-      <li class="breadcrumb-item active" aria-current="page">Catálogo de jugadores</li>
-    </ol>
-  </nav>
-</header>
-<div class="container">
-    <div class="row">
-            <div class="col-sm-3 left-side-bar">
-        <select id="site_select" class="bcls-select" style="margin-right: 1rem;">
-          <option value="">Otros documentos de Brightcove</option>
-          
-            
-              <option value="https://support.brightcove.com">Documentación Inicio</option>
-            
-          
-            
-              <option value="https://audience.support.brightcove.com">Audiencia de Brightcove</option>
-            
-          
-            
-              <option value="https://beacon.support.brightcove.com">Baliza Brightcove</option>
-            
-          
-            
-              <option value="https://campaign.support.brightcove.com">Campaña de Brightcove</option>
-            
-          
-            
-              <option value="https://engage.support.brightcove.com">Brightcove Engage</option>
-            
-          
-            
-              <option value="https://live.support.brightcove.com">Brightcove Live</option>
-            
-          
-            
-              <option value="https://gallery.support.brightcove.com">Brightcove Gallery</option>
-            
-          
-            
-              <option value="https://ssai.support.brightcove.com">Brightcove SSAI</option>
-            
-          
-            
-              <option value="https://social.support.brightcove.com">Brightcove Social</option>
-            
-          
-            
-              <option value="https://studio.support.brightcove.com">Video Cloud Studio</option>
-            
-          
-            
-              <option value="https://player.support.brightcove.com">Desarrollo de jugadores de Brightcove</option>
-            
-          
-            
-              <option value="https://apis.support.brightcove.com">API para la plataforma de Video Cloud</option>
-            
-          
-            
-              <option value="https://sdks.support.brightcove.com">SDK de dispositivos de Video Cloud</option>
-            
-          
-            
-              <option value="https://integrations.support.brightcove.com">Integraciones y conectores CMS</option>
-            
-          
-            
-              <option value="https://general.support.brightcove.com">Información general de Video Cloud</option>
-            
-          
-            
-              <option value="https://zencoder.support.brightcove.com">Zencoder</option>
-            
-          
-        </select>
-
-        <nav class="sidenav" id="side_nav">
-          
-            
-            <h5><a href="/index.html">Inicio</a></h5>
-            
-          
-            
-              <select id="site_select" class="bcls-select" style="margin-right: 1rem;">
-					<option value="">기타 브라이트코브 문서</option>
-					
-						
-							<option value="https://support.brightcove.com">설명서 홈</option>
-						
-					
-						
-							<option value="https://audience.support.brightcove.com">브라이트코브 대상</option>
-						
-					
-						
-							<option value="https://beacon.support.brightcove.com">브라이트코브 비콘</option>
-						
-					
-						
-							<option value="https://campaign.support.brightcove.com">브라이트코브 캠페인</option>
-						
-					
-						
-							<option value="https://engage.support.brightcove.com">브라이트코브 참여</option>
-						
-					
-						
-							<option value="https://live.support.brightcove.com">Brightcove Live</option>
-						
-					
-						
-							<option value="https://gallery.support.brightcove.com">Brightcove Gallery</option>
-						
-					
-						
-							<option value="https://ssai.support.brightcove.com">Brightcove SSAI</option>
-						
-					
-						
-							<option value="https://social.support.brightcove.com">브라이트코브 소셜</option>
-						
-					
-						
-							<option value="https://studio.support.brightcove.com">비디오 클라우드 스튜디오</option>
-						
-					
-						
-							<option value="https://player.support.brightcove.com">브라이트코브 플레이어 개발</option>
-						
-					
-						
-							<option value="https://apis.support.brightcove.com">비디오 클라우드 플랫폼 API</option>
-						
-					
-						
-							<option value="https://sdks.support.brightcove.com">비디오 클라우드 디바이스 SDK</option>
-						
-					
-						
-							<option value="https://integrations.support.brightcove.com">통합 및 CMS 커넥터</option>
-						
-					
-						
-							<option value="https://general.support.brightcove.com">비디오 클라우드 일반 정보</option>
-						
-					
-						
-							<option value="https://zencoder.support.brightcove.com">Zencoder</option>
-						
-			<h5 class="submenu-header"><a href="/getting-started/index.html"><strong>+</strong> Empezar</a></h5>		
-				</select>
-        <nav class="sidenav" id="side_nav">
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    <li><a href="/training/developer-basics-videos.html">Vídeos básicos del desarrollador</a></li>
-                  
-                
-                  
-                    <li>¿Qué es Brightcove Player?<a href="/getting-started/what-brightcove-player.html"></a></li>
-                  
-                
-                  
-                    <li>Visión general:<a href="/getting-started/overview-brightcove-player.html"> Reproductor de Brightcove</a></li>
-                  
-                
-                  
-                    <li>Guía de aprendizaje:<a href="/getting-started/learning-guide-video-advertising.html"> Publicidad en vídeo</a></li>
-                  
-                
-                  
-                    <li>Visión general:<a href="/getting-started/overview-brightcove-player-plugins.html"> Complementos de Brightcove Player</a></li>
-                  
-                
-                  
-                    <li>Vídeos de capacitación sobre desarrollo de jugadores<a href="/training/player-development-training-videos.html"></a></li>
-                  
-                
-                  
-                    <li>Paso a paso:<a href="/getting-started/step-step-brightcove-player.html"> Reproductor de Brightcove</a></li>
-                  
-                
-                  
-                    <li>Paso a paso:<a href="/getting-started/step-step-player-customization.html"> Personalización del reproductor</a></li>
-                  
-                
-                  
-                    <li>Capacitación:<a href="/training/training-demand-developing-brightcove-player.html"> Desarrollar con Brightcove Player</a></li>
-                  
-                
-                  
-                    <li><a href="/getting-started/learning-guide-using-rest-apis.html">Guía de aprendizaje: Uso de las API REST</a></li>
-                  
-                
-              </ul>
-            
-          
-            
-              <h5 class="submenu-header">Aprender los conceptos básicos +<a href="/basics/index.html"><strong></strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    <li><a href="/basics/developer-basics-advanced-player-code.html">Código del reproductor avanzado</a></li>
-                  
-                
-                  
-                    <li><a href="/basics/developer-basics-autoplaying-video.html">Reproducción automática de un vídeo</a></li>
-                  
-                
-                  
-                    <li><a href="/basics/developer-basics-custom-plugin-converting-code.html">Plugin personalizado - Conversión de código</a></li>
-                  
-                
-                  
-                    <li><a href="/basics/developer-basics-custom-plugin-passing-data.html">Plugin personalizado - Pasar datos</a></li>
-                  
-                
-                  
-                    <li><a href="/basics/developer-basics-custom-plugin-using-studio.html">Plugin personalizado - Usar Studio</a></li>
-                  
-                
-                  
-                    <li><a href="/basics/developer-basics-custom-plugin-why-and-how.html">Plugin personalizado - Por qué y cómo</a></li>
-                  
-                
-                  
-                    <li><a href="/training/developer-basics-videos.html">Vídeos básicos del desarrollador</a></li>
-                  
-                
-                  
-                    <li><a href="/basics/developer-basics-generating-player-code.html">Generación de código de jugador</a></li>
-                  
-                
-                  
-                    <li>Preparación para escribir código<a href="/basics/developer-basics-preparing-write-code.html"></a></li>
-                  
-                
-              </ul>
-            
-          
-            
-              <h5 class="submenu-header">Referencias +<a href="/references/index.html"><strong></strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    <li><a href="/references/brightcove-player-5-6-migration-guide.html">Guía de migración de Brightcove Player 5 a 6</a></li>
-                  
-                
-                  
-                    <li><a href="https://docs.brightcove.com/brightcove-player/current-release/index.html">Documentación de Brightcove Player API (sitio externo)</a></li>
-                  
-                
-                  
-                    <li><a href="/references/brightcove-player-cookies.html">Cookies de reproductor de Brightcove</a></li>
-                  
-                
-                  
-                    <li><a href="/references/brightcove-player-error-reference.html">Referencia de error del Reproductor de Brightcove</a></li>
-                  
-                
-                  
-                    <li><a href="https://groups.google.com/forum/embed/?place=forum/bcplayerdev#!forum/bcplayerdev">Foro de anuncios de jugadores de Brightcove</a></li>
-                  
-                
-                  
-                    <li><a href="/references/brightcove-player-system-requirements.html">Requisitos del sistema de Brightcove Player</a></li>
-                  
-                
-                  
-                    <li><a href="/references/catalog-search-architecture.html">Arquitectura de búsqueda</a></li>
-                  
-                
-                  
-                    <li>Problemas conocidos<a href="https://general.support.brightcove.com/general/known-issues-studio-brightcove-player-and-apis.html"></a></li>
-                  
-                
-                  
-                    <li>Catálogo de jugadores<a href="/references/player-catalog.html"></a></li>
-                  
-                
-                  
-                    <li>Compatibilidad con funciones de jugador por navegador<a href="/references/player-feature-support-browser.html"></a></li>
-                  
-                
-                  
-                    <li>Metadatos del reproductor de bcinfo<a href="/references/player-metadata-bcinfo.html"></a></li>
-                  
-                
-                  
-                    <li>Métodos de reproductores/API de eventos (sitio externo)<a href="https://docs.brightcove.com/brightcove-player/current-release/Player.html"></a></li>
-                  
-                
-                  
-                    <li>Guía de API de lista de reproducción<a href="/references/guide-playlist-api.html"></a></li>
-                  
-                
-                  
-                    <li>Metadatos de vídeo de mediainfo<a href="/references/video-metadata-mediainfo.html"></a></li>
-                  
-                
-              </ul>
-            
-          
-            
-              <h5 class="submenu-header">Plugins +<a href="/plugins/index.html"><strong></strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    <li><a href="/plugins/360degvr-video-plugin.html">Vídeo 360º</a></li>
-                  
-                
-                  
-                    <li><a href="/plugins/ad-only-plugin.html">Sólo anuncio</a></li>
-                  
-                
-                  
-                    <li><a href="/plugins/advertising-freewheel-plugin.html">Publicidad con el plugin FreeWheel</a></li>
-                  
-                
-                  
-                    <li><a href="/plugins/advertising-ima3-plugin.html">Publicidad con el complemento IMA3</a></li>
-                  
-                
-                  
-                    <li>Actualización a la versión 3 del complemento IMA3<a href="/plugins/upgrading-ima3-plugin-version-3.html"></a></li>
-                  
-                
-                  
-                    <li><a href="/plugins/implementing-server-side-ads-brightcove-player.html">Publicidad con SSAI</a></li>
-                  
-                
-                  
-                    <li><a href="/plugins/chromecast-plugin-brightcove-player.html">Chromecast</a></li>
-                  
-                
-                  
-                    <li><a href="/plugins/custom-endscreen-plugin.html">Pantalla final personalizada</a></li>
-                  
-                
-                  
-                    <li><a href="/plugins/display-error-messages-plugin.html">Mostrar mensajes de error</a></li>
-                  
-                
-                  
-                    <li><a href="/plugins/display-thumbnail-previews-plugin.html">Mostrar vistas previas en miniatura</a></li>
-                  
-                
-                  
-                    <li><a href="/plugins/configuring-brightcove-player-drm.html">DRM</a></li>
-                  
-                
-                  
-                    <li><a href="/plugins/google-tag-manager-plugin-brightcove-player.html">Administrador de etiquetas de Google</a></li>
-                  
-                
-                  
-                    <li><a href="/plugins/hls-plugin.html">HLS</a></li>
-                  
-                
-                  
-                    <li>DVRUX en vivo<a href="/plugins/live-dvrux-plugin.html"></a></li>
-                  
-                
-                  
-                    <li>Superposición<a href="/plugins/display-overlay-plugin.html"></a></li>
-                  
-                
-                  
-                    <li>Visión general:<a href="/plugins/overview-brightcove-player-plugins.html"> Plugins de jugador</a></li>
-                  
-                
-                  
-                    <li>Imagen en imagen<a href="/plugins/picture-picture-plugin-aka-floating-or-pinned.html"></a></li>
-                  
-                
-                  
-                    <li>Pruebas de versión de reproductor/plugin<a href="/plugins/playerplugin-version-testing.html"></a></li>
-                  
-                
-                  
-                    <li>IU de lista de reproducción<a href="/plugins/playlist-ui-plugin.html"></a></li>
-                  
-                
-                  
-                    <li>Registro de cambios del complemento<a href="/plugins/changelog/index.html"></a></li>
-                  
-                
-                  
-                    <li>Registro de complementos<a href="/plugins/plugin-registry.html"></a></li>
-                  
-                
-                  
-                    <li>Referencia de versión del complemento<a href="/plugins/plugin-version-reference.html"></a></li>
-                  
-                
-                  
-                    <li>Selección de calidad<a href="/plugins/quality-selection-plugin.html"></a></li>
-                  
-                
-                  
-                    <li>Redes Sociales<a href="/plugins/social-sharing-plugin.html"></a></li>
-                  
-                
-                  
-                    <li>Tealium Tag Manager<a href="/plugins/tealium-plugin-brightcove-player.html"></a></li>
-                  
-                
-                  
-                    <li>Generador de esquemas SEO de vídeo<a href="/plugins/video-seo-schema-generator-plugin.html"></a></li>
-                  
-                
-              </ul>
-            
-          
-            
-              <h5 class="submenu-header"><a href="/advertising/index.html">Publicidad <strong>+</strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    <li><a href="/advertising/ad-events-and-ad-objects.html">Eventos de anuncio y objetos de anuncio</a></li>
-                  
-                
-                  
-                    <li><a href="/plugins/ad-only-plugin.html">Plugin solo para anuncios</a></li>
-                  
-                
-                  
-                    <li><a href="/plugins/advertising-freewheel-plugin.html">Publicidad con el plugin FreeWheel</a></li>
-                  
-                
-                  
-                    <li><a href="/plugins/advertising-ima3-plugin.html">Publicidad con el complemento IMA3</a></li>
-                  
-                
-                  
-                    <li><a href="/advertising/client-side-preroll-with-live-ssai.html">Anuncios pre-roll del lado del cliente con SSAI en vivo</a></li>
-                  
-                
-                  
-                    <li><a href="/advertising/displaying-ads-using-ad-cue-points.html">Visualización de anuncios mediante puntos de anuncio</a></li>
-                  
-                
-                  
-                    <li><a href="/advertising/flash-no-longer-valid-ima.html">Flash ya no es válido con IMA</a></li>
-                  
-                
-                  
-                    <li><a href="/advertising/guide-ad-partner-integration.html">Guía: Integración de socios publicitarios</a></li>
-                  
-                
-                  
-                    <li><a href="/advertising/guide-contrib-ads-migration.html">Guía: migración de contrib-ads</a></li>
-                  
-                
-                  
-                    <li><a href="/plugins/implementing-server-side-ads-brightcove-player.html">Implementación de SSAI con Brightcove Player</a></li>
-                  
-                
-                  
-                    <li><a href="/advertising/jump-start-header-bidding-ad.html">Inicio de salto: Anuncio de puja de encabezado</a></li>
-                  
-                
-                  
-                    <li><a href="/advertising/jump-start-outstream-ad.html">Inicio de salto: Anuncio Outstream</a></li>
-                  
-                
-                  
-                    <li><a href="/advertising/jump-start-pre-roll-ad.html">Inicio de salto: Anuncio de pre-rollo</a></li>
-                  
-                
-                  
-                    <li>Problemas conocidos:<a href="/advertising/known-issues-server-side-ad-insertion-ssai.html"> Inserción de anuncios en el lado del servidor (SSAI)</a></li>
-                  
-                
-                  
-                    <li>Guía de aprendizaje:<a href="/getting-started/learning-guide-video-advertising.html"> Publicidad en vídeo</a></li>
-                  
-                
-                  
-                    <li>Paso a paso:<a href="/advertising/step-step-implementing-advertising.html"> Implementar publicidad</a></li>
-                  
-                
-                  
-                    <li>Prueba de complementos publicitarios previos al lanzamiento<a href="/advertising/testing-pre-release-advertising-plugins.html"></a></li>
-                  
-                
-                  
-                    <li>Uso de DFP Premium con Brightcove Player<a href="/advertising/using-dfp-premium-brightcove-player.html"></a></li>
-                  
-                
-                  
-                    <li>Uso de Live SSAI y Advanced Player Toolkit<a href="/advertising/using-player-enhancements-live-ssai-brightcove-player.html"></a></li>
-                  
-                
-                  
-                    <li>Validación de etiquetas de anuncio SSAI de Video Cloud<a href="/advertising/video-cloud-ssai-ad-tag-validation.html"></a></li>
-                  
-                
-              </ul>
-            
-          
-            
-              <h5 class="submenu-header">Publicar vídeos y reproductores +<a href="/publish/index.html"><strong></strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    <li><a href="/publish/assigning-video-player-programmatically.html">Asignación de un vídeo al reproductor mediante programación</a></li>
-                  
-                
-                  
-                    <li><a href="/publish/available-options-advanced-page-embed-code.html">Opciones disponibles para el código de inserción avanzado (en página)</a></li>
-                  
-                
-                  
-                    <li><a href="/publish/available-options-standard-iframe-embed-code.html">Opciones disponibles para el código de inserción estándar (iframe)</a></li>
-                  
-                
-                  
-                    <li><a href="/publish/brightcove-player-loader.html">Cargador de jugadores de Brightcove</a></li>
-                  
-                
-                  
-                    <li><a href="/publish/bulk-updating-brightcove-default-player.html">Actualización masiva del reproductor predeterminado de Brightcove</a></li>
-                  
-                
-                  
-                    <li><a href="https://studio.support.brightcove.com/publish/choosing-correct-embed-code.html">Elegir el código de incrustación correcto</a></li>
-                  
-                
-                  
-                    <li>Atrasando la instanciación del jugador<a href="/publish/delaying-player-instantiation.html"></a></li>
-                  
-                
-                  
-                    <li>Jugador previo al lanzamiento<a href="/publish/pre-release-player.html"></a></li>
-                  
-                
-                  
-                    <li>Estrategias de sindicación<a href="/publish/syndication-strategies.html"></a></li>
-                  
-                
-                  
-                    <li>Uso de un reproductor que no sea de Brightcove<a href="/publish/using-non-brightcove-player.html"></a></li>
-                  
-                
-                  
-                    <li>Uso de varios jugadores en una página<a href="https://studio.support.brightcove.com/publish/using-multiple-players-one-page.html"></a></li>
-                  
-                
-                  
-                    <li>Uso de Id. de referencia<a href="https://studio.support.brightcove.com/publish/using-reference-ids.html"></a></li>
-                  
-                
-                  
-                    <li>Inspector de copias de vídeo<a href=""></a></li>
-                  
-                
-              </ul>
-            
-          
-            
-              <h5 class="submenu-header">Solución de problemas +<a href="/troubleshooting/index.html"><strong></strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    <li><a href="/troubleshooting/brightcove-playback-technology-app.html">Aplicación de tecnología de reproducción Brightcove</a></li>
-                  
-                
-                  
-                    <li><a href="/references/brightcove-player-error-reference.html">Referencia de error del Reproductor de Brightcove</a></li>
-                  
-                
-                  
-                    <li><a href="/troubleshooting/brightcove-player-information-modal.html">Brightcove Información del Jugador Modal</a></li>
-                  
-                
-                  
-                    <li><a href="/troubleshooting/brightcove-player-troubleshooting-guide.html">Guía de solución de problemas de Brightcove Player</a></li>
-                  
-                
-                  
-                    <li><a href="/troubleshooting/creating-charles-log.html">Creación de un Charles Log</a></li>
-                  
-                
-                  
-                    <li><a href="/troubleshooting/creating-network-log.html">Creación de un registro de red</a></li>
-                  
-                
-                  
-                    <li><a href="/troubleshooting/domain-restrictions-messaging.html">Mensajería de restricciones de dominio</a></li>
-                  
-                
-                  
-                    <li><a href="/plugins/display-error-messages-plugin.html">Mostrar plugin de mensajes de error</a></li>
-                  
-                
-                  
-                    <li>Configuración manual de la versión del reproductor<a href="/troubleshooting/manually-setting-player-version.html"></a></li>
-                  
-                
-                  
-                    <li>Pruebas de versión de reproductor/plugin<a href="/plugins/playerplugin-version-testing.html"></a></li>
-                  
-                
-                  
-                    <li>Propiedades informativas del jugador<a href="/troubleshooting/player-informational-properties.html"></a></li>
-                  
-                
-                  
-                    <li>Ejemplo:<a href="/code-samples/brightcove-player-sample-live-custom-error-message.html"> Mensaje de error personalizado en vivo</a></li>
-                  
-                
-                  
-                    <li>Paso a paso:<a href="/troubleshooting/step-step-brightcove-player-debugger.html"> Depurador de reproductor de Brightcove</a></li>
-                  
-                
-                  
-                    <li>Ejecución de un seguimiento de ruta de red<a href="/troubleshooting/running-network-path-trace.html"></a></li>
-                  
-                
-                  
-                    <li>Uso de la referencia del reproductor<a href="/troubleshooting/using-player-reference.html"></a></li>
-                  
-                
-                  
-                    <li>Vetting Lanzamientos del jugador de Brightcove<a href="/troubleshooting/vetting-brightcove-player-releases.html"></a></li>
-                  
-                
-                  
-                    <li>Visualización de la configuración del reproductor<a href="/troubleshooting/viewing-player-configuration.html"></a></li>
-                  
-                
-              </ul>
-            
-          
-            
-              <h5 class="submenu-header">Estilo y apariencia +<a href="/styling/index.html"><strong></strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    <li><a href="/styling/customizing-player-appearance.html">Personalización de la apariencia del reproductor</a></li>
-                  
-                
-                  
-                    <li><a href="/styling/customizing-player-appearance-legacy-skin.html">Personalización del aspecto del jugador - Aspecto heredado</a></li>
-                  
-                
-                  
-                    <li>Player Styling Playground<a href="/styling/brightcove-player-sample-player-styling-playground.html"></a></li>
-                  
-                
-                  
-                    <li>Inicio rápido:<a href="/styling/quick-start-player-customization-legacy-skin.html"> Personalización del jugador: aspecto heredado</a></li>
-                  
-                
-                  
-                    <li>Paso a paso:<a href="/getting-started/step-step-player-customization.html"> Personalización del reproductor</a></li>
-                  
-                
-                  
-                    <li>Tamaño de respuesta para el reproductor de Brightcove<a href="/styling/responsive-sizing-brightcove-player.html"></a></li>
-                  
-                
-                  
-                    <li>Tamaño del jugador<a href="/styling/sizing-player.html"></a></li>
-                  
-                
-                  
-                    <li>Skins y versiones de jugador<a href="/styling/skins-and-player-versions.html"></a></li>
-                  
-                
-                  
-                    <li>Estilo de subtítulos<a href="https://studio.support.brightcove.com/media/styling-captions.html"></a></li>
-                  
-                
-                  
-                    <li>Estilo de listas de reproducción<a href="/styling/styling-playlists.html"></a></li>
-                  
-                
-              </ul>
-            
-          
-            
-              <h5 class="submenu-header">Reproducción +<a href="/playback/index.html"><strong></strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    <li><a href="/playback/autoplay-considerations.html">Consideraciones de reproducción automática</a></li>
-                  
-                
-                  
-                    <li><a href="/troubleshooting/brightcove-playback-technology-app.html">Aplicación de tecnología de reproducción Brightcove</a></li>
-                  
-                
-                  
-                    <li><a href="/playback/xdr-with-bcplayer.html">Reanudación multidispositivo con Brightcove Player</a></li>
-                  
-                
-                  
-                    <li><a href="https://studio.support.brightcove.com/publish/deep-linking.html">Vinculación profunda</a></li>
-                  
-                
-                  
-                    <li><a href="/playback/delivering-hls-video.html">Entrega de vídeo HLS</a></li>
-                  
-                
-                  
-                    <li><a href="/playback/determining-which-rendition-will-play.html">Determinar qué copia se reproducirá</a></li>
-                  
-                
-                  
-                    <li><a href="/playback/guide-playback-technology.html">Guía: Tecnología de reproducción</a></li>
-                  
-                
-                  
-                    <li><a href="/plugins/hls-plugin.html">Complemento HLS</a></li>
-                  
-                
-                  
-                    <li><a href="/playback/ios-and-brightcove-player.html">iOS y reproductor de Brightcove</a></li>
-                  
-                
-                  
-                    <li>Visión general:<a href="/playback/overview-https-support.html"> Soporte de HTTPS</a></li>
-                  
-                
-                  
-                    <li>Complemento de selección de calidad<a href="/plugins/quality-selection-plugin.html"></a></li>
-                  
-                
-                  
-                    <li>Entrega URL estática<a href="/playback/static-url-delivery.html"></a></li>
-                  
-                
-                  
-                    <li>Transmisión de contenido protegido PlayReady<a href="/playback/streaming-playready-protected-content-dynamic-delivery.html"></a></li>
-                  
-                
-                  
-                    <li>Uso del reproductor de Brightcove para TVE<a href="/playback/using-brightcove-player-tve.html"></a></li>
-                  
-                
-              </ul>
-            
-          
-            
-              <h5 class="submenu-header"><a href="/content-protection/index.html">Protección de contenido y DRM <strong>+</strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    <li><a href="https://studio.support.brightcove.com/players/configuring-player-content-restrictions.html">Configuración de Restricciones de Contenido del Reproductor</a></li>
-                  
-                
-                  
-                    <li><a href="/content-protection/creating-dash-drm-manifest-brightcove-player.html">Creación de un manifiesto DRM de DASH para el reproductor de Brightcove</a></li>
-                  
-                
-                  
-                    <li><a href="/troubleshooting/domain-restrictions-messaging.html">Mensajería de restricciones de dominio</a></li>
-                  
-                
-                  
-                    <li><a href="/plugins/configuring-brightcove-player-drm.html">Complemento DRM</a></li>
-                  
-                
-                  
-                    <li>Visión general:<a href="/content-protection/overview-content-protection.html"> Protección de contenido</a></li>
-                  
-                
-                  
-                    <li>Teclas de política<a href="/content-protection/policy-keys.html"></a></li>
-                  
-                
-                  
-                    <li>Restringir la reproducción de vídeo mediante dirección IP<a href="/content-protection/restricting-video-playback-using-ip-address.html"></a></li>
-                  
-                
-                  
-                    <li>URL firmadas y autenticación de tokens con una transmisión en directo<a href="/content-protection/signed-urls-and-token-auth-live-stream.html"></a></li>
-                  
-                
-              </ul>
-            
-          
-            
-              <h5 class="submenu-header"><a href="/coding-topics/index.html">Temas de codificación <strong>+</strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    <li><a href="/publish/brightcove-player-loader.html">Cargador de jugadores de Brightcove</a></li>
-                  
-                
-                  
-                    <li><a href="/references/catalog-search-architecture.html">Actualización de búsqueda de catálogo</a></li>
-                  
-                
-                  
-                    <li><a href="/code-samples/brightcove-player-sample-trigger-rewind-custom-event.html">Evento personalizado</a></li>
-                  
-                
-                  
-                    <li><a href="/playback/guide-playback-technology.html">Guía: Tecnología de reproducción</a></li>
-                  
-                
-                  
-                    <li>Localización de Brightcove Player<a href="/coding-topics/programmatically-localizing-brightcove-player.html"></a></li>
-                  
-                
-                  
-                    <li>Localización de complementos<a href="/coding-topics/localizing-plugins.html"></a></li>
-                  
-                
-                  
-                    <li>Eventos de jugador<a href="/coding-topics/player-events.html"></a></li>
-                  
-                
-                  
-                    <li>Visión general:<a href="/coding-topics/overview-components.html"> Componentes</a></li>
-                  
-                
-                  
-                    <li>Visión general:<a href="/playback/overview-https-support.html"> Soporte de HTTPS</a></li>
-                  
-                
-                  
-                    <li>Visión general:<a href="/coding-topics/overview-player-api.html"> Player API</a></li>
-                  
-                
-                  
-                    <li>Pasar datos al complemento<a href="/coding-topics/pass-data-plugin.html"></a></li>
-                  
-                
-                  
-                    <li>Reaccionar el cargador del jugador<a href="/coding-topics/react-player-loader.html"></a></li>
-                  
-                
-                  
-                    <li>Informes sobre configuraciones de Brightcove Player<a href="/coding-topics/reporting-brightcove-player-configurations.html"></a></li>
-                  
-                
-                  
-                    <li>RequireJS y reproductor de Brightcove<a href="/coding-topics/requirejs-and-brightcove-player.html"></a></li>
-                  
-                
-                  
-                    <li>Paso a paso:<a href="/coding-topics/step-step-plugin-development.html"> Desarrollo de complementos</a></li>
-                  
-                
-                  
-                    <li>Paso a paso:<a href="/coding-topics/step-step-videojs-plugin-generator.html"> Generador de complementos Video.js</a></li>
-                  
-                
-                  
-                    <li>Uso de los métodos bc () y getPlayer ()<a href="/coding-topics/using-bc-and-getplayer-methods.html"></a></li>
-                  
-                
-                  
-                    <li>Visualización de la configuración del reproductor<a href="/troubleshooting/viewing-player-configuration.html"></a></li>
-                  
-                
-              </ul>
-            
-          
-            
-              <h5 class="submenu-header"><a href="/general/index.html">Información general <strong>+</strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    <li><a href="https://studio.support.brightcove.com/publish/adding-application-id-player-embed-code.html">Adición de un ID de aplicación al código de incrustación del reproductor</a></li>
-                  
-                
-                  
-                    <li><a href="/general/adding-captions-videos-programmatically.html">Adición de subtítulos a vídeos mediante programación</a></li>
-                  
-                
-                  
-                    <li><a href="https://studio.support.brightcove.com/media/adding-chapters-video.html">Adición de capítulos a un vídeo</a></li>
-                  
-                
-                  
-                    <li><a href="/general/brightcove-player-6-now-default-version.html">Versión predeterminada de Brightcove Player 6</a></li>
-                  
-                
-                  
-                    <li><a href="/general/brightcove-player-accessibility.html">Accesibilidad del reproductor de Brightcove</a></li>
-                  
-                
-                  
-                    <li><a href="/plugins/custom-endscreen-plugin.html">Complemento de pantalla final personalizado</a></li>
-                  
-                
-                  
-                    <li><a href="/plugins/display-overlay-plugin.html">Complemento de superposición de visualización</a></li>
-                  
-                
-                  
-                    <li><a href="/references/guide-playlist-api.html">Guía: API de lista de reproducción</a></li>
-                  
-                
-                  
-                    <li><a href="/general/identify-and-delete-low-performing-videos.html">Identificar y eliminar vídeos de bajo rendimiento</a></li>
-                  
-                
-                  
-                    <li><a href="/general/implementing-cue-points-programmatically.html">Implementación de puntos de referencia mediante programación</a></li>
-                  
-                
-                  
-                    <li><a href="/general/implementing-playlists.html">Implementar listas de reproducción</a></li>
-                  
-                
-                  
-                    <li><a href="/general/implementing-modaldialog.html">Implementación del ModalDialog</a></li>
-                  
-                
-                  
-                    <li>HLS en vivo<a href="/general/live-hls.html"></a></li>
-                  
-                
-                  
-                    <li>Configuración de Live Stream<a href="/general/live-stream-configuration.html"></a></li>
-                  
-                
-                  
-                    <li>Varias pistas de audio<a href="/general/multiple-audio-tracks.html"></a></li>
-                  
-                
-                  
-                    <li>Guía de configuración del reproductor<a href="/general/player-configuration-guide.html"></a></li>
-                  
-                
-                  
-                    <li>Reproducir transmisiones en vivo<a href="/general/playing-live-streams.html"></a></li>
-                  
-                
-                  
-                    <li>Plugin UI de lista de reproducción<a href="/plugins/playlist-ui-plugin.html"></a></li>
-                  
-                
-                  
-                    <li>URL firmadas y autenticación de tokens con una transmisión en directo<a href="/content-protection/signed-urls-and-token-auth-live-stream.html"></a></li>
-                  
-                
-                  
-                    <li>Plugin de redes sociales<a href="/plugins/social-sharing-plugin.html"></a></li>
-                  
-                
-                  
-                    <li>Paso a paso:<a href="https://apis.support.brightcove.com/player-management/getting-started/step-step-player-management.html"> Administración de jugadores</a></li>
-                  
-                
-                  
-                    <li>Estilo de listas de reproducción<a href="/styling/styling-playlists.html"></a></li>
-                  
-                
-                  
-                    <li>Uso de un lector de pantalla con Brightcove Player<a href="/general/using-screen-reader-brightcove-player.html"></a></li>
-                  
-                
-                  
-                    <li>Versiones de la documentación de Brightcove Player<a href="/general/versions-brightcove-player-documentation.html"></a></li>
-                  
-                
-                  
-                    <li>Control de volumen<a href="/general/volume-control.html"></a></li>
-                  
-                
-              </ul>
-            
-          
-            
-              <h5 class="submenu-header"><a href="/code-samples/index.html">Ejemplos de código <strong>+</strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    <li><a href="/code-samples/index-thumb.html">Ejemplos de código por grupo</a></li>
-                  
-                
-                  
-                    <li><a href="/code-samples/index.html">Índice de ejemplo de código</a></li>
-                  
-                
-              </ul>
-            
-          
-            
-              <h5 class="submenu-header"><a href="/amp/index.html">AMP <strong>+</strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    <li><a href="/amp/amp-using-video-cloud-video.html">AMP Uso de un vídeo de Video Cloud</a></li>
-                  
-                
-                  
-                    <li><a href="/amp/amp-using-external-video.html">AMP Uso de un vídeo externo</a></li>
-                  
-                
-              </ul>
-            
-          
-            
-              <h5 class="submenu-header">Entrenamiento +<a href="/training/index.html"><strong></strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    <li><a href="/training/online-training-courses.html">Todos los cursos de formación en línea</a></li>
-                  
-                
-                  
-                    <li><a href="/training/developer-basics-videos.html">Vídeos básicos del desarrollador</a></li>
-                  
-                
-                  
-                    <li>Vídeos de capacitación sobre desarrollo de jugadores<a href="/training/player-development-training-videos.html"></a></li>
-                  
-                
-                  
-                    <li>Regístrese para la formación impartida por instructor<a href="/training/register-training.html"></a></li>
-                  
-                
-                  
-                    <li>Capacitación:<a href="/training/training-demand-developing-brightcove-player.html"> Desarrollar con Brightcove Player</a></li>
-                  
-                
-                  
-                    <li>Capacitación:<a href="https://apis.support.brightcove.com/player-management/getting-started/training-demand-quick-start-player-management.html"> Inicio rápido de la administración de reproductores</a></li>
-                  
-                
-                  
-                    <li><a href="/training/brightcove-university.html">Cursos de formación de la Universidad de Brightcove</a></li>
-                  
-                
-              </ul>
-            
-          
-            
-              <h5 class="submenu-header">Notas de la versión +<a href="/release-notes/index.html"><strong></strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    <li><a href="/release-notes/brightcove-player-release-notes.html">Brightcove Player Notas informativas</a></li>
-                  
-                
-                  
-                    <li><a href="/release-notes/brightcove-player-prerelease-notes.html">Notas previas al lanzamiento del jugador de Brightcove</a></li>
-                  
-                
-              </ul>
-            
-          
-            
-              <h5 class="submenu-header">Soporte +<a href="/support/index.html"><strong></strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    
-                  
-                
-                  
-                    <li>Visualización de la página Estado del Sistema de Brightcove<a href="/support/viewing-brightcove-system-status-page.html"></a></li>
-                  
-                
-                  
-                    <li><a href="/support/contact-sales.html">Contacto con Ventas</a></li>
-                  
-                
-                  
-                    <li>Apertura de un caso de soporte<a href="/support/opening-case-with-brightcove-support.html"></a></li>
-                  
-                
-              </ul>
-            
-          
-      </nav>
-    </div>
-    <div class="col-lg-7" style="background-color: white;color: #333333;margin-top: -1em;margin-bottom: -1em;padding-bottom:1em;">
-  <!-- bootstrap layout -->
-
-<p id="bc_veggie_burger_wrapper" style="display: none;"><img id="bc_veggie_burger" src="/assets/images/feather/menu.svg" alt="Menú de navegación"/></p>
-
-<!-- search bar -->
-<div id="nav-search-box" style="margin-top: 1rem;"></div>
-<!-- in-page navigation for narrow screens -->
-<details class="centered-inpage-nav" id="centered_inpage_nav">
-  <summary><h6 class="toc">Contenido de la página</h6></summary>
-  <nav id="centered_toc"></nav>
-  <ul id="centered_in_page_toc" class="list-none"></ul>
-</details>
-<!-- open in new tab/window -->
-<a id="open_new_tab" href="#" target="_blank" style="display: none;"><img src="/assets/images/feather/external-link.svg" alt="abrir en una nueva pestaña" style="margin-top:4em;width: 1.5em;"/></a>
-
-
-
-  
-    
-
+---
+title: Catálogo de jugadores
+parent: References
+---
 
 <article class="bcls-article">
   <h1>Catálogo de jugadores</h1>
-  <summary>En este tema, aprenderá a utilizar la biblioteca de <strong>catalog</strong> de métodos de Brightcove Player para realizar solicitudes al catalog de Video Cloud. La biblioteca del catálogo facilita la información sobre los medios de Video Cloud y cargarlos en un reproductor.
+  <summary>En este tema, aprenderá a usar Brightcove Player's <strong>catalogar</strong> biblioteca de métodos para realizar solicitudes al catálogo de Video Cloud. La biblioteca del catálogo facilita la obtención de información sobre los medios de Video Cloud y su carga en un reproductor.
     </p>
-    <aside class="bcls-aside bcls-aside--information">El contenido de este documento sólo se aplica a Video Cloud.</aside>
+    <aside class="bcls-aside bcls-aside--information">El contenido de este documento se aplica únicamente a Video Cloud.</aside>
   </summary>
   <section class="bcls-section">
     <h2 id="Basic_syntax">Sintaxis básica</h2>
-    <p>La sintaxis básica para usar el <code translate="No">catalog</code> es la siguiente:</p>
+    <p>La sintaxis básica para usar el <code translate="No">catalog</code> es como sigue:</p>
     <ul>
       <li>Métodos: <code translate="No">playerName.catalog.methodName()</code></li>
     </ul>
-    <p>Varios de los <code translate="No">catalog</code> métodos pasarán un objeto de parámetros que definen la solicitud. El <a href="#Catalog_parameters_object">objeto de<span translate="No">catalog</span> parámetros</a> se define en la siguiente sección, y se hará referencia en las descripciones de los métodos, cuando corresponda.</p>
-    <aside class="bcls-aside bcls-aside--information">Nota: En todo el contenido de esta página, cuando un parámetro está rodeado de corchetes (<strong translate="No">[ ]</strong>) indica que el parámetro es opcional.</aside>
+    <p>Varios de los <code translate="No">catalog</code> Los métodos pasarán un objeto de parámetros que definen la solicitud. los <a href="#Catalog_parameters_object"><span translate="No">catalogar</span> objeto de parámetros</a> se define en la siguiente sección, y se hará referencia en los métodos' descripciones, en su caso.</p>
+    <aside class="bcls-aside bcls-aside--information">Nota: En todo el contenido de esta página, cuando un parámetro está entre corchetes (<strong translate="No"> []</strong> ) indica que el parámetro es opcional.</aside>
   </section>
   <section class="bcls-section">
-    <h2 id="Catalog_parameters_object"><span translate="No">catalog</span> parameters (objeto)</h2>
-    <p>En la tabla siguiente se describen las propiedades del <code translate="No">CatalogParams</code> objeto. Este true objeto (no un constructor) define el formato de los parámetros que se utilizarán con muchas solicitudes de catalog.</p>
+    <h2 id="Catalog_parameters_object"><span translate="No">catalogar</span> objeto de parámetros</h2>
+    <p>La siguiente tabla describe las propiedades en el <code translate="No">CatalogParams</code> objeto. Este verdadero objeto (no un constructor) define el formato de los parámetros que se utilizarán con muchas solicitudes de catálogo.</p>
     <table class="bcls-table">
       <thead class="bcls-table__head">
         <tr>
@@ -1181,32 +33,32 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
         <tr>
           <td><code translate="No">type</code></td>
           <td><code translate="No">string</code></td>
-          <td><p>El tipo de solicitud que se va a realizar. Debe ser uno de <strong>vídeo</strong>, <strong>lista de reproducción</strong> o <strong>búsqueda</strong>.</p></td>
+          <td><p>El tipo de solicitud a realizar. Debe ser uno de <strong>video</strong> , <strong>lista de reproducción</strong> , o <strong>buscar</strong>.</p></td>
         </tr>
         <tr>
           <td style="white-space: nowrap;"><code translate="No">policyKey</code></td>
           <td style="white-space: nowrap;"><code translate="No">string</code></td>
-          <td><p>La clave de directiva de esta cuenta. De forma predeterminada, será la clave de política del reproductor.<strong translate="No">**</strong> Tenga en cuenta que si pasa un ID de cuenta diferente como parámetro, también debe pasar la clave de directiva correspondiente para esa cuenta.</p></td>
+          <td><p>La clave de política para esta cuenta. Esto se establecerá de forma predeterminada en la clave de política del jugador.<strong translate="No">**</strong> Tenga en cuenta que si pasa un ID de cuenta diferente como parámetro, también debe pasar la clave de política correspondiente para esa cuenta.</p></td>
         </tr>
         <tr>
           <td style="white-space: nowrap;"><code translate="No">deliveryConfigId</code></td>
           <td style="white-space: nowrap;"><code translate="No">string</code></td>
-          <td><p>El ID de las reglas de entrega. Consulte <a href="https://apis.support.brightcove.com/delivery-rules/overview-delivery-rules.html">Visión General: Reglas de entrega</a>.</p></td>
+          <td><p>La identificación de las reglas de entrega. Ver <a href="https://apis.support.brightcove.com/delivery-rules/getting-started/overview-delivery-rules.html">Descripción general: Reglas de entrega</a>.</p></td>
         </tr>
         <tr>
           <td style="white-space: nowrap;"><code translate="No">[id]</code></td>
           <td style="white-space: nowrap;"><code translate="No">string</code></td>
-          <td><p>Un ID de vídeo o lista de reproducción o un ID de referencia con el prefijo «ref:». <strong translate="No">Required</strong> para obtener solicitudes de vídeo y listas de reproducción. <strong translate="No">DEPRECATED:</strong> Para la compatibilidad con versiones anteriores, esto se admite como una consulta de búsqueda en lugar de <code translate="No">q</code>. Esto se puede proporcionar como un sub-objeto, que también es un <code translate="No">CatalogParams</code> objeto, que se puede usar para proporcionar parámetros.</p></td>
+          <td><p>Un ID de video o lista de reproducción o un ID de referencia con el prefijo "ref:". <strong translate="No">Requerido</strong> para solicitudes de videos y listas de reproducción. <strong translate="No">OBSOLETO:</strong> Para compatibilidad con versiones anteriores, esto se admite como una consulta de búsqueda en lugar de <code translate="No">q</code>. Esto se puede proporcionar como un subobjeto, que también es un <code translate="No">CatalogParams</code> objeto, que se puede utilizar para proporcionar parámetros.</p></td>
         </tr>
         <tr>
           <td style="white-space: nowrap;"><code translate="No">[q]</code></td>
           <td style="white-space: nowrap;"><code translate="No">string</code></td>
-          <td><p>Una consulta de búsqueda. <strong translate="No">Required</strong> para solicitudes de búsqueda, ignoradas para otros.</p></td>
+          <td><p>Una consulta de búsqueda. <strong translate="No">Requerido</strong> para solicitudes de búsqueda, ignorado para otros.</p></td>
         </tr>
         <tr>
           <td style="white-space: nowrap;"><code translate="No">[adConfigId]</code></td>
           <td style="white-space: nowrap;"><code translate="No">string</code></td>
-          <td><p>Un ID de configuración de anuncio SSAI de vídeo Podría.</p></td>
+          <td><p>Un video podría SSAI ID de configuración de anuncios.</p></td>
         </tr>
         <tr>
           <td style="white-space: nowrap;"><code translate="No">[tveToken]</code></td>
@@ -1216,33 +68,33 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
         <tr>
           <td style="white-space: nowrap;"><code translate="No">[limit]</code></td>
           <td style="white-space: nowrap;"><code translate="No">string</code></td>
-          <td><p>Sólo admite y tipos.<em><strong translate="No">playlist</strong><strong translate="No">search</strong></em> Limite el número de vídeos devueltos.</p></td>
+          <td><p><em>Soportado para <strong translate="No">lista de reproducción</strong> y <strong translate="No">buscar</strong> tipos solamente.</em> Limite la cantidad de videos devueltos.</p></td>
         </tr>
         <tr>
           <td style="white-space: nowrap;"><code translate="No">[offset]</code></td>
           <td style="white-space: nowrap;"><code translate="No">string</code></td>
-          <td><p>Sólo admite y tipos.<em><strong translate="No">playlist</strong><strong translate="No">search</strong></em> El número de vídeos que se deben omitir.</p></td>
+          <td><p><em>Soportado para <strong translate="No">lista de reproducción</strong> y <strong translate="No">buscar</strong> tipos solamente.</em> La cantidad de videos que se van a omitir.</p></td>
         </tr>
         <tr>
           <td style="white-space: nowrap;"><code translate="No">[sort]</code></td>
           <td style="white-space: nowrap;"><code translate="No">string</code></td>
-          <td><p><em>Solo se admite <strong translate="No">search</strong> tipo.</em> Cómo se deben ordenar los vídeos para búsquedas.</p></td>
+          <td><p><em>Soportado para <strong translate="No">buscar</strong> escriba solamente.</em> Cómo se deben ordenar los videos para las búsquedas.</p></td>
         </tr>
         <tr>
           <td style="white-space: nowrap;"><code translate="No">[bcovAuthToken]</code></td>
           <td style="white-space: nowrap;"><code translate="No">string</code></td>
-          <td>Para su uso con el Playback Authorization Service (PAS) de Brightcove.</td>
+          <td>Para usar con el Servicio de autorización de reproducción (PAS) de Brightcove.</td>
         </tr>
       </tbody>
     </table>
     <aside class="bcls-aside bcls-aside--warning">
-      <p>**Nota: De forma predeterminada, la clave de política generada con un reproductor NO está habilitada para la búsqueda. Esto significa que debe (elegir uno):</p>
+      <p>**Nota: Por defecto, la clave de política generada con un jugador NO está habilitada para la búsqueda. Esto significa que debe (elegir uno):</p>
       <ul>
         <li>
-          <p >Utilice el <code translate="No">policyKey</code> parámetro para pasar una clave de política habilitada para búsquedas.</p>
+          <p >Utilizar el <code translate="No">policyKey</code> parámetro para pasar una clave de política habilitada para la búsqueda.</p>
         </li>
         <li>
-          <p>Utilice la <a href="https://apis.support.brightcove.com/player-management/">API de administración del reproductor</a> para sobrescribir la clave de directiva predeterminada del reproductor. Puede utilizar una instrucción curl similar a la siguiente para hacerlo:</p>
+          <p>Utilizar el <a href="https://apis.support.brightcove.com/player-management/">API de gestión de jugadores</a> para sobrescribir la clave de política predeterminada del jugador. Puede usar una declaración curl similar a la siguiente para hacerlo:</p>
           <pre class="line-numbers">
 <code class="language-bash" translate="No">curl \
   --header "Content-Type: application/json" \
@@ -1254,25 +106,25 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     }
   }' \
 https://players.api.brightcove.com/v2/accounts/$ACCOUNT_ID/players/$PLAYER_ID/configuration</code></pre>
-          <p>Asegúrese de tener en cuenta cualquier problema de seguridad al asociar una clave de política habilitada para búsquedas con el reproductor.</p>
-          <p>Para obtener información sobre cómo crear una clave de directiva habilitada para búsquedas, consulte la <a href="https://apis.support.brightcove.com/policy/getting-started/overview-policy-api.html#Search_videos">descripción general: Policy API - sección Buscar vídeos</a> .</p>
+          <p>Asegúrese de considerar cualquier problema de seguridad al asociar una clave de política habilitada para búsqueda con el reproductor.</p>
+          <p>Para obtener información sobre cómo crear una clave de política habilitada para búsqueda, consulte la <a href="https://apis.support.brightcove.com/policy/getting-started/overview-policy-api.html#Search_videos">Descripción general: API de políticas: búsqueda de vídeos</a> sección.</p>
         </li>
       </ul>
     </aside>
   </section>
   <section class="bcls-section">
     <h2 id="getVideo"><code translate="No">getVideo( )</code> método</h2>
-    <p >El <code translate="No">getVideo(params | videoID,callback,[adConfigId]) =&gt; XMLHttpRequest</code> método realiza una <code translate="No">catalog</code> solicitud para el video con el id especificado e invoca una devolución de llamada cuando se completa la solicitud.</p>
+    <p >La <code translate="No">getVideo(params | videoID,callback,[adConfigId]) =&gt; XMLHttpRequest</code> el método hace un <code translate="No">catalog</code> solicita el video con la identificación especificada e invoca una devolución de llamada cuando se completa la solicitud.</p>
     <h3>Parámetros</h3>
     <ul>
       <li>
-        <p><strong translate="No">params | videoID</strong>: Un objeto de <a href="#Catalog_parameters_object"><span translate="No">catalog</span> parámetros</a> de tipo O una cadena que contiene el ID de vídeo o un identificador de referencia con el prefijo <strong translate="No">ref:</strong>.</p>
+        <p><strong translate="No">params | videoID</strong>: Un objeto de tipo <a href="#Catalog_parameters_object"><span translate="No">catalogar</span> parámetros</a> O una cadena que contenga la identificación del video o una identificación de referencia con el prefijo <strong translate="No">árbitro:</strong>.</p>
       </li>
       <li>
-        <p><strong translate="No">callback</strong>: Función que se llamará cuando se complete la solicitud, ya sea que sea exitosa o no. Se invoca con dos argumentos:</p>
+        <p><strong translate="No">devolución de llamada</strong>: Función a la que se llamará cuando se complete la solicitud, se haya realizado correctamente o no. Se invoca con dos argumentos:</p>
         <ul>
           <li>
-            <p>El primer argumento contendrá un objeto de error, si se produce un error. Este objeto contiene detalles del error. Si no se produce ningún error, este objeto es <strong translate="No">null</strong>.</p>
+            <p>El primer argumento contendrá un objeto de error si se produce un error. Este objeto contiene detalles del error. Si no se produce ningún error, este objeto es <strong translate="No">nulo</strong>.</p>
           </li>
           <li>
             <p>Si no se produce ningún error, el segundo argumento es el objeto de vídeo solicitado. Si se produce un error, este valor contiene la cadena vacía.</p>
@@ -1280,15 +132,15 @@ https://players.api.brightcove.com/v2/accounts/$ACCOUNT_ID/players/$PLAYER_ID/co
         </ul>
       </li>
       <li>
-        <p><strong translate="No">[adConfigId]</strong>: DESAPROBADO Un ID de configuración de anuncio de Video Cloud que se pasará a la API de reproducción. En su lugar, pase adConfigID en el objeto params inicial.</p>
+        <p><strong translate="No">[AdConfigID]</strong>: OBSOLETO ID de configuración de anuncios de Video Cloud que se pasará a la API de reproducción. En su lugar, pase el adConfigID en el objeto params inicial.</p>
       </li>
     </ul>
     <h3>Valor devuelto</h3>
-    <p>La llamada en sí devuelve un objeto de tipo.<code translate="No">catalog</code><strong translate="No">XMLHttpRequest</strong> A continuación se muestra un ejemplo de este objeto:</p>
-    <figure class="bcls-figure"><img class="bcls-image" alt="objeto de solicitud" src="//learning-services-media.brightcove.com/doc-assets/player-development/references/player-catalog/request-object.png"/></figure>
-    <p>Aunque la llamada devuelve un <strong translate="No">XMLHttpRequest</strong> objeto, lo más probable es que nunca tratará con ese objeto. La razón es que en la función de devolución de llamada la respuesta JSON se analiza automáticamente y un objeto utilizable es lo que se pasa a la función de devolución de llamada, en este caso un objeto de video.</p>
-    <h3>Ejemplo: ID de vídeo como cadena</h3>
-    <p>En el ejemplo siguiente se muestra un uso del <code translate="No">getVideo()</code> método:</p>
+    <p>La <code translate="No">catalog</code> llamada en sí devuelve un objeto de tipo <strong translate="No">XMLHttpRequest</strong>. A continuación, se muestra un ejemplo de este objeto:</p>
+    <figure class="bcls-figure"><img class="bcls-image" alt="request object" src="/assets/images/references/player-catalog/request-object.png" /></figure>
+    <p>Aunque la llamada devuelve un <strong translate="No">XMLHttpRequest</strong> objeto, lo más probable es que nunca se ocupe de ese objeto. La razón es que en la función de devolución de llamada, la respuesta JSON se analiza automáticamente y un objeto utilizable es lo que se pasa a la función de devolución de llamada, en este caso un objeto de video.</p>
+    <h3>Ejemplo: ID de video como cadena</h3>
+    <p>El siguiente ejemplo muestra un uso de la <code translate="No">getVideo()</code> método:</p>
     <pre class="line-numbers">
 <code class="language-html" translate="No">&lt;video-js id="myPlayerID"
   data-account="1507807800001"
@@ -1308,8 +160,8 @@ https://players.api.brightcove.com/v2/accounts/$ACCOUNT_ID/players/$PLAYER_ID/co
   });
 });
 &lt;/script&gt;</code></pre>
-    <h3>Ejemplo: Uso de CatalogParams</h3>
-    <p>El equivalente del código justo arriba, pero el uso del objeto CatalogParams aparece de la siguiente manera:</p>
+    <h3>Ejemplo: Usando catalogParams</h3>
+    <p>El equivalente del código anterior, pero usando el objeto CatalogParams, aparece de la siguiente manera:</p>
     <pre class="line-numbers">
 <code class="language-html" translate="No">&lt;script&gt;
   videojs.getPlayer('myPlayerID').ready(function() {
@@ -1326,17 +178,17 @@ https://players.api.brightcove.com/v2/accounts/$ACCOUNT_ID/players/$PLAYER_ID/co
   </section>
   <section class="bcls-section">
     <h2 id="getPlaylist"><code translate="No">getPlaylist( )</code> método</h2>
-    <p>El <code translate="No">getPlaylist(params | playlistID,callback,[adConfigId]) =&gt; XMLHttpRequest</code> método realiza una <code translate="No">catalog</code> solicitud para la lista de reproducción con el id especificado e invoca una devolución de llamada cuando se completa la solicitud.</p>
+    <p>La <code translate="No">getPlaylist(params | playlistID,callback,[adConfigId]) =&gt; XMLHttpRequest</code> el método hace un <code translate="No">catalog</code> solicita la lista de reproducción con el ID especificado e invoca una devolución de llamada cuando se completa la solicitud.</p>
     <h3>Parámetros</h3>
     <ul>
       <li>
-        <p><strong translate="No">params | playlistID</strong>: Un objeto de <a href="#Catalog_parameters_object"><span translate="No">catalog</span> parámetros</a> de tipo O una cadena que contiene el ID de la lista de reproducción o un identificador de referencia con el prefijo <strong translate="No">ref:</strong>.</p>
+        <p><strong translate="No">params | playlistID</strong>: Un objeto de tipo <a href="#Catalog_parameters_object"><span translate="No">catalogar</span> parámetros</a> O una cadena que contenga el ID de la lista de reproducción o un ID de referencia con el prefijo <strong translate="No">árbitro:</strong>.</p>
       </li>
       <li>
-        <p><strong translate="No">callback</strong>: Función que se llamará cuando se complete la solicitud, ya sea que sea exitosa o no. Se invoca con dos argumentos:</p>
+        <p><strong translate="No">devolución de llamada</strong>: Función a la que se llamará cuando se complete la solicitud, se haya realizado correctamente o no. Se invoca con dos argumentos:</p>
         <ul>
           <li>
-            <p>El primer argumento contendrá un objeto de error, si se produce un error. Este objeto contiene detalles del error. Si no se produce ningún error, este objeto es <strong translate="No">null</strong>.</p>
+            <p>El primer argumento contendrá un objeto de error si se produce un error. Este objeto contiene detalles del error. Si no se produce ningún error, este objeto es <strong translate="No">nulo</strong>.</p>
           </li>
           <li>
             <p>Si no se produce ningún error, el segundo argumento es el objeto de vídeo solicitado. Si se produce un error, este valor contiene la cadena vacía.</p>
@@ -1344,13 +196,13 @@ https://players.api.brightcove.com/v2/accounts/$ACCOUNT_ID/players/$PLAYER_ID/co
         </ul>
       </li>
       <li>
-        <p><strong translate="No">[adConfigId]</strong>: DESAPROBADO Un ID de configuración de anuncio de Video Cloud que se pasará a la API de reproducción. En su lugar, pase adConfigID en el objeto params inicial.</p>
+        <p><strong translate="No">[AdConfigID]</strong>: OBSOLETO ID de configuración de anuncios de Video Cloud que se pasará a la API de reproducción. En su lugar, pase el adConfigID en el objeto params inicial.</p>
       </li>
     </ul>
     <h3>Valor devuelto</h3>
-    <p>La <code translate="No">catalog</code> llamada en sí devuelve un <strong translate="No">XMLHttpRequest</strong>. Aunque la llamada devuelve un <strong translate="No">XMLHttpRequest</strong> objeto, lo más probable es que nunca tratará con ese objeto. La razón es que en la función de devolución de llamada la respuesta JSON se analiza automáticamente y un objeto utilizable es lo que se pasa a la función de devolución de llamada, en este caso un objeto de lista de reproducción.</p>
+    <p>los <code translate="No">catalog</code> la llamada a sí misma devuelve un <strong translate="No">XMLHttpRequest</strong>. Aunque la llamada devuelve un <strong translate="No">XMLHttpRequest</strong> objeto, lo más probable es que nunca se ocupe de ese objeto. La razón es que en la función de devolución de llamada, la respuesta JSON se analiza automáticamente y un objeto utilizable es lo que se pasa a la función de devolución de llamada, en este caso un objeto de lista de reproducción.</p>
     <h3>Ejemplo</h3>
-    <p>En el siguiente ejemplo se muestra un uso del <code translate="No">getPlaylist()</code> método siguiente:</p>
+    <p>El siguiente ejemplo muestra un uso de la <code translate="No">getPlaylist()</code> sigue el método:</p>
     <pre class="line-numbers" data-start="26">
 <code class="language-html" translate="No">&lt;video-js id="myPlayerID"
   data-account="1752604059001"
@@ -1369,26 +221,26 @@ https://players.api.brightcove.com/v2/accounts/$ACCOUNT_ID/players/$PLAYER_ID/co
     })
   });
 &lt;/script&gt;</code></pre>
-    <aside class="bcls-aside bcls-aside--tip language-editable">Si desea cargar la lista de reproducción, pero NO tener el primer vídeo de la lista de reproducción colocado en el reproductor, en el método puede establecer un segundo parámetro en.<code translate="No">playlist()</code><code translate="No">-1</code> Por ejemplo, el siguiente código recupera una lista de reproducción, la coloca en el reproductor, pero no carga el primer vídeo en el reproductor:
+    <aside class="bcls-aside bcls-aside--tip">Si deseas cargar la lista de reproducción, pero NO tienes el primer vídeo de la lista de reproducción colocado en el reproductor, en el <code translate="No">playlist()</code> método puedes establecer un segundo parámetro en <code translate="No">-1</code>. Por ejemplo, el siguiente código recupera una lista de reproducción, la coloca en el reproductor, pero no carga el primer vídeo en el reproductor:
       <pre class="line-numbers">
 <code class="language-javascript" translate="No">myPlayer.catalog.getPlaylist(playlistID, function(error, myPlaylist) {
   // deal with error
   // +++ Place playlist in player, but -1 parameter does not load playlist video in player +++
   myPlayer.playlist(myPlaylist, -1);
 });</code></pre>
-      Por supuesto, entonces tiene que cargar el video manualmente. Consulte el ejemplo del reproductor de Brightcove:<a href="/code-samples/brightcove-player-sample-play-video-playlist.html"> Reproducir vídeo antes de la lista de reproducción para un ejemplo de esta técnica.</a></aside>
+      Por supuesto, entonces tienes que cargar el vídeo manualmente. Vea la muestra de <a href="/code-samples/brightcove-player-sample-play-video-playlist.html">Brightcove Player: Reproducir vídeo antes de la lista de reproducción</a> para ver un ejemplo de esta técnica.</aside>
   </section>
   <section class="bcls-section">
-    <h2 id="load">load (), método</h2>
-    <p>El <code translate="No">load(mediaobject)</code> método carga un objeto de vídeo o lista de reproducción en el reproductor. Este método actualizará la <code translate="No">mediainfo</code> propiedad del reproductor y actualizará la fuente de vídeo y el póster. En la mayoría de los casos, llamaría a este método con el resultado de una llamada a <code translate="No">getVideo()</code> o <code translate="No">getPlaylist()</code>. Si desea recibir una notificación cuando se <code translate="No">mediainfo</code> haya actualizado, escuche el <code translate="No">loadstart</code> evento.</p>
+    <h2 id="load">método load ()</h2>
+    <p>La <code translate="No">load(mediaobject)</code> El método carga un objeto de video o lista de reproducción en el reproductor. Este método actualizará la <code translate="No">mediainfo</code> propiedad, y actualice la fuente de video y el póster. En la mayoría de los casos, llamaría a este método con el resultado de una llamada a <code translate="No">getVideo()</code> o <code translate="No">getPlaylist()</code>. Si desea recibir una notificación cuando <code translate="No">mediainfo</code> ha sido actualizado, escuche el <code translate="No">loadstart</code> evento.</p>
     <h3>Parámetros</h3>
     <ul>
       <li>
-        <p><strong translate="No">mediaobject</strong>: Un objeto de vídeo o lista de reproducción que se va a cargar. Este objeto debe tener el mismo formato que el objeto de respuesta de una llamada a <code translate="No">getVideo()</code> o <code translate="No">getPlaylist()</code>método.</p>
+        <p><strong translate="No">mediaobject</strong>: Un objeto de video o lista de reproducción para cargar. Este objeto debe tener el mismo formato que el objeto de respuesta de una llamada a <code translate="No">getVideo()</code> o <code translate="No">getPlaylist()</code>método.</p>
       </li>
     </ul>
     <h3>Ejemplo</h3>
-    <p>El siguiente ejemplo recupera un vídeo y lo carga en el reproductor.</p>
+    <p>El siguiente ejemplo recupera un video y lo carga en el reproductor.</p>
     <pre class="line-numbers">
 <code class="language-html" translate="No">&lt;video-js id="myPlayerID"
   data-account="1507807800001"
@@ -1410,18 +262,18 @@ https://players.api.brightcove.com/v2/accounts/$ACCOUNT_ID/players/$PLAYER_ID/co
 &lt;/script&gt;</code></pre>
   </section>
   <section class="bcls-section">
-    <h2 id="get_method">get (), método</h2>
-    <p>El <code translate="No">get(params, [callback]) ⇒ Promise | XMLHttpRequest</code> método permite buscar el <code translate="No">catalog</code> uso de <a href="https://apis.support.brightcove.com/cms/searching/cms-and-playback-apis-video-search-v2.html">CMS/Playback API: Sintaxis de búsqueda de vídeos.</a> Bajo el capó, este método utiliza la API de reproducción.</p>
+    <h2 id="get_method">método get ()</h2>
+    <p>La <code translate="No">get(params, [callback]) ⇒ Promise | XMLHttpRequest</code> El método permite buscar el <code translate="No">catalog</code> utilizando <a href="https://apis.support.brightcove.com/cms/searching/cms-and-playback-apis-video-search-v2.html">CMS / API de reproducción: </a> Sintaxis de búsqueda de vídeos. Bajo el capó, este método utiliza la API de reproducción.</p>
     <h3>Parámetros</h3>
     <ul>
       <li>
-        <p><strong translate="No">params</strong>: Objeto con <a href="#Catalog_parameters_object"><span translate="No">catalog</span> parámetros</a>de tipo.</p>
+        <p><strong translate="No">params</strong>: Un objeto de tipo <a href="#Catalog_parameters_object"><span translate="No">catalogar</span> parámetros</a>.</p>
       </li>
       <li>
-        <p><strong translate="No">callback</strong>: Función que se llamará cuando se complete la solicitud, ya sea que sea exitosa o no. Se invoca con dos argumentos:</p>
+        <p><strong translate="No">devolución de llamada</strong>: Función a la que se llamará cuando se complete la solicitud, se haya realizado correctamente o no. Se invoca con dos argumentos:</p>
         <ul>
           <li>
-            <p>El primer argumento contendrá un objeto de error, si se produce un error. Este objeto contiene detalles del error. Si no se produce ningún error, este objeto es <strong translate="No">null</strong>.</p>
+            <p>El primer argumento contendrá un objeto de error si se produce un error. Este objeto contiene detalles del error. Si no se produce ningún error, este objeto es <strong translate="No">nulo</strong>.</p>
           </li>
           <li>
             <p>Si no se produce ningún error, el segundo argumento es el objeto de vídeo solicitado. Si se produce un error, este valor contiene la cadena vacía.</p>
@@ -1430,18 +282,18 @@ https://players.api.brightcove.com/v2/accounts/$ACCOUNT_ID/players/$PLAYER_ID/co
       </li>
     </ul>
     <h3>Valor devuelto</h3>
-    <p>El método devuelve un <strong translate="No">Promise</strong> o un objeto de tipo <strong translate="No">XMLHttpRequest</strong>. Si está utilizando una función de devolución de llamada, la respuesta JSON se analiza automáticamente y un objeto utilizable es lo que se pasa a la función de devolución de llamada. La estructura exacta de los datos devueltos en la devolución de llamada variará dependiendo de lo que se haya buscado.</p>
+    <p>El método devuelve un <strong translate="No">Promesa</strong> o un objeto de tipo <strong translate="No">XMLHttpRequest</strong>. Si está utilizando una función de devolución de llamada, la respuesta JSON se analiza automáticamente y un objeto utilizable es lo que se pasa a la función de devolución de llamada. La estructura exacta de los datos devueltos en la devolución de llamada variará según lo que se haya buscado.</p>
     <h3>Ejemplo de devolución de llamada</h3>
-    <p>El siguiente ejemplo hace lo siguiente:</p>
+    <p>En el ejemplo siguiente se hace lo siguiente:</p>
     <ol>
       <li>
-        <p>Construye un objeto CatalogParams que se pasará como argumento con la función. La búsqueda consultará vídeos con la cadena <strong translate="No">Desert</strong> en el vídeo <strong translate="No">name</strong>.</p>
+        <p>Crea un objeto catalogParams que se pasará como argumento con la función. La búsqueda buscará videos con la cadena <strong translate="No">Desierto</strong> en el video <strong translate="No">nombre</strong>.</p>
       </li>
       <li>
-        <p>Realiza la búsqueda utilizando el <code translate="No">get()</code> método. Tenga en cuenta que la función de devolución de llamada utilizará los parámetros nombrados y.<code translate="No">errorObj</code><code translate="No">videosReturned</code></p>
+        <p>Realiza la búsqueda usando el <code translate="No">get()</code> método. Tenga en cuenta que la función de devolución de llamada utilizará los parámetros denominados <code translate="No">errorObj</code> y <code translate="No">videosReturned</code>.</p>
       </li>
       <li>
-        <p>Utilice el método para asignar los vídeos devueltos al Reproductor de Brightcove.<code translate="No">playlist()</code></p>
+        <p>Utilice el <code translate="No">playlist()</code> método para asignar los vídeos devueltos a Brightcove Player.</p>
       </li>
     </ol>
     <pre class="line-numbers">
@@ -1459,10 +311,10 @@ https://players.api.brightcove.com/v2/accounts/$ACCOUNT_ID/players/$PLAYER_ID/co
     });
   });
 &lt;/script&gt;</code></pre>
-    <p>La siguiente captura de pantalla muestra los dos resultados en el código anterior.<code translate="No">console.log()</code> El <code translate="No">catalogParams</code> muestra los parámetros de la búsqueda y la <code translate="No">videosReturned</code> matriz muestra los tres vídeos devueltos por la búsqueda.</p>
-    <figure class="bcls-figure"><img class="bcls-image" alt="Objetos en la consola de llamada al método get" src="//learning-services-media.brightcove.com/doc-assets/player-development/references/player-catalog/get-search-callback.png"/></figure>
+    <p>En la siguiente captura de pantalla se muestran los dos <code translate="No">console.log()</code> resultados del código anterior. La <code translate="No">catalogParams</code> muestra los parámetros para la búsqueda, y el <code translate="No">videosReturned</code> matriz muestra los tres videos devueltos por la búsqueda.</p>
+    <figure class="bcls-figure"><img class="bcls-image" alt="Objects in console from get method call" src="/assets/images/references/player-catalog/get-search-callback.png" /></figure>
     <h3>Ejemplo de promesa</h3>
-    <p>En este código la misma búsqueda se realiza utilizando el <code translate="No">get()</code> método que se muestra justo arriba, pero el resultado se maneja como una Promesa.</p>
+    <p>En este código se realiza la misma búsqueda usando <code translate="No">get()</code> como se muestra arriba, pero el resultado se maneja como una Promesa.</p>
     <pre class="line-numbers">
 <code class="language-html" translate="No">&lt;script type="text/javascript"&gt;
   videojs.getPlayer('myPlayerID').ready(function() {
@@ -1479,42 +331,42 @@ https://players.api.brightcove.com/v2/accounts/$ACCOUNT_ID/players/$PLAYER_ID/co
     })
   });
 &lt;/script&gt;</code></pre>
-    <p>Para obtener más información sobre Promesas, consulte <a href="https://general.support.brightcove.com/developer/concepts-using-javascript-promises.html">Uso de promesas de JavaScript</a>.</p>
+    <p>Para obtener más información sobre promesas, consulte <a href="https://general.support.brightcove.com/developer/concepts-using-javascript-promises.html">Usar promesas de JavaScript</a>.</p>
   </section>
   <section class="bcls-section">
-    <h2 id="getSearch_method">GetSearch () (método)</h2>
-    <p>El <code translate="No">getSearch(params, [callback], [adConfigId]) ⇒ XMLHttpRequest</code> método permite buscar en el catalog usando <a href="https://apis.support.brightcove.com/cms/searching/cms-and-playback-apis-video-search-v2.html">CMS/API de reproducción: Sintaxis de búsqueda de vídeos.</a> Bajo el capó, este método utiliza la API de reproducción.</p>
+    <h2 id="getSearch_method">método getSearch ()</h2>
+    <p>La <code translate="No">getSearch(params, [callback], [adConfigId]) ⇒ XMLHttpRequest</code> El método permite buscar en el catálogo utilizando <a href="https://apis.support.brightcove.com/cms/searching/cms-and-playback-apis-video-search-v2.html">CMS / API de reproducción: </a> Sintaxis de búsqueda de vídeos. Bajo el capó, este método utiliza la API de reproducción.</p>
     <h3>Parámetros</h3>
     <ul>
       <li>
-        <p><strong translate="No">params</strong>: Objeto con <a href="#Catalog_parameters_object"><span translate="No">catalog</span> parámetros</a>de tipo.</p>
+        <p><strong translate="No">params</strong>: Un objeto de tipo <a href="#Catalog_parameters_object"><span translate="No">catalogar</span> parámetros</a>.</p>
       </li>
       <li>
-        <p><strong translate="No">callback</strong>: Función que se llamará cuando se complete la solicitud, ya sea que sea exitosa o no. Se invoca con dos argumentos:</p>
+        <p><strong translate="No">devolución de llamada</strong>: Función a la que se llamará cuando se complete la solicitud, se haya realizado correctamente o no. Se invoca con dos argumentos:</p>
         <ul>
           <li>
-            <p>El primer argumento contendrá un objeto de error, si se produce un error. Este objeto contiene detalles del error. Si no se produce ningún error, este objeto es <strong translate="No">null</strong>.</p>
+            <p>El primer argumento contendrá un objeto de error si se produce un error. Este objeto contiene detalles del error. Si no se produce ningún error, este objeto es <strong translate="No">nulo</strong>.</p>
           </li>
           <li>
             <p>Si no se produce ningún error, el segundo argumento es el objeto de vídeo solicitado. Si se produce un error, este valor contiene la cadena vacía.</p>
           </li>
         </ul>
       </li>
-      <li><strong translate="No">[adConfigId]</strong>: DESAPROBADO Un ID de configuración de anuncio de Video Cloud que se pasará a la API de reproducción. En su lugar, pase adConfigID en el objeto params inicial.</li>
+      <li><strong translate="No">[AdConfigID]</strong>: OBSOLETO ID de configuración de anuncios de Video Cloud que se pasará a la API de reproducción. En su lugar, pase el adConfigID en el objeto params inicial.</li>
     </ul>
     <h3>Valor devuelto</h3>
-    <p>La llamada en sí devuelve un objeto de tipo.<code translate="No">catalog</code><strong translate="No">XMLHttpRequest</strong> Aunque la llamada devuelve un <strong translate="No">XMLHttpRequest</strong> objeto, lo más probable es que nunca tratará con ese objeto. La razón es que en la función de devolución de llamada la respuesta JSON se analiza automáticamente y un objeto utilizable es lo que se pasa a la función de devolución de llamada. La estructura exacta de los datos devueltos en la devolución de llamada variará dependiendo de lo que se haya buscado.</p>
+    <p>La <code translate="No">catalog</code> llamada en sí devuelve un objeto de tipo <strong translate="No">XMLHttpRequest</strong>. Aunque la llamada devuelve un <strong translate="No">XMLHttpRequest</strong> objeto, lo más probable es que nunca se ocupe de ese objeto. El motivo es que en la función de devolución de llamada la respuesta JSON se analiza automáticamente y un objeto utilizable es lo que se pasa a la función de devolución de llamada. La estructura exacta de los datos devueltos en la devolución de llamada variará según lo que se haya buscado.</p>
     <h3>Ejemplo</h3>
-    <p>El siguiente ejemplo hace lo siguiente:</p>
+    <p>En el ejemplo siguiente se hace lo siguiente:</p>
     <ol>
       <li>
-        <p>Construye un objeto <a href="#Catalog_parameters_object">CatalogParams</a> que se pasará como argumento con la función. Se pasa la clave de directiva habilitada para la búsqueda. La búsqueda consultará vídeos con la cadena <strong translate="No">desert</strong> en el vídeo <strong translate="No">name</strong>.</p>
+        <p>Construye un <a href="#Catalog_parameters_object">CatálogoParams</a> objeto que se pasará como argumento con la función. Se pasa la clave de política habilitada para la búsqueda. La búsqueda buscará videos con la cadena <strong translate="No">Desierto</strong> en el video <strong translate="No">nombre</strong>.</p>
       </li>
       <li>
-        <p>Realiza la búsqueda utilizando el <code translate="No">getSearch()</code> método. Tenga en cuenta que la función de devolución de llamada utilizará los parámetros nombrados y.<code translate="No">errorObj</code><code translate="No">videosReturned</code></p>
+        <p>Realiza la búsqueda usando el <code translate="No">getSearch()</code> método. Tenga en cuenta que la función de devolución de llamada utilizará los parámetros denominados <code translate="No">errorObj</code> y <code translate="No">videosReturned</code>.</p>
       </li>
       <li>
-        <p>Utilice el método para asignar los vídeos devueltos al Reproductor de Brightcove.<code translate="No">playlist()</code></p>
+        <p>Utilice el <code translate="No">playlist()</code> método para asignar los vídeos devueltos a Brightcove Player.</p>
       </li>
     </ol>
     <pre class="line-numbers">
@@ -1532,34 +384,34 @@ https://players.api.brightcove.com/v2/accounts/$ACCOUNT_ID/players/$PLAYER_ID/co
     });
   });
 &lt;/script&gt;</code></pre>
-    <p>La siguiente captura de pantalla muestra los dos resultados en el código anterior.<code translate="No">console.log()</code> El <code translate="No">catalogParams</code> muestra los parámetros necesarios para la búsqueda, y la <code translate="No">videosReturned</code> matriz muestra los tres vídeos devueltos por la búsqueda.</p>
-    <figure class="bcls-figure"><img class="bcls-image" alt="Objetos en la consola desde la llamada al método GetSearch" src="//learning-services-media.brightcove.com/doc-assets/player-development/references/player-catalog/getsearch-console.png"/></figure>
+    <p>En la siguiente captura de pantalla se muestran los dos <code translate="No">console.log()</code> resultados del código anterior. La <code translate="No">catalogParams</code> muestra los parámetros requeridos para la búsqueda, y el <code translate="No">videosReturned</code> matriz muestra los tres videos devueltos por la búsqueda.</p>
+    <figure class="bcls-figure"><img class="bcls-image" alt="Objects in console from getSearch method call" src="/assets/images/references/player-catalog/getsearch-console.png" /></figure>
   </section>
   <section class="bcls-section">
-    <h2 id="getSequence_method">GetSequence (), método</h2>
-    <p>El <code translate="No">getSequence(sequences, callback, [adConfigId]) ⇒ Array.&lt;XMLHttpRequest&gt;</code> método permite pasar varias <code translate="No">catalog</code> operaciones y recupera todos los objetos de vídeo de esas <code translate="No">catalog</code> operaciones múltiples. Puede tener tres tipos de operaciones, las cuales son:</p>
+    <h2 id="getSequence_method">método getSequence ()</h2>
+    <p>La <code translate="No">getSequence(sequences, callback, [adConfigId]) ⇒ Array.&lt;XMLHttpRequest&gt;</code> El método permite pasar múltiples <code translate="No">catalog</code> operaciones y recupera todos los objetos de video de esos múltiples <code translate="No">catalog</code> operaciones. Puede tener tres tipos de operaciones, siendo estas:</p>
     <ol>
-      <li>buscar</li>
+      <li>búsqueda</li>
       <li>video</li>
       <li>lista de reproducción</li>
     </ol>
-    <p>En términos prácticos, esto significa que puede recuperar las siguientes combinaciones y los datos devueltos son una matriz de objetos de vídeo:</p>
+    <p>En términos prácticos, esto significa que puede recuperar las siguientes combinaciones y los datos devueltos son una matriz de objetos de video:</p>
     <ul>
-      <li>Múltiples listas de reproducción</li>
-      <li>Una lista de reproducción y varios vídeos individuales adicionales</li>
-      <li>Usando la búsqueda, todos los vídeos con una determinada cadena en el nombre, descripción o etiqueta.</li>
+      <li>Varias listas de reproducción</li>
+      <li>Una lista de reproducción y varios videos individuales adicionales</li>
+      <li>Mediante la búsqueda, todos los videos con una determinada cadena en el nombre, descripción o etiqueta.</li>
     </ul>
-    <p>Por supuesto, las secuencias que acaban de enumerar son sólo unas pocas de un número casi infinito de combinaciones.</p>
+    <p>Por supuesto, las secuencias que acabamos de enumerar son solo algunas de un número casi infinito de combinaciones.</p>
     <h3>Parámetros</h3>
     <ul>
       <li>
-        <p><strong translate="No">sequences</strong>: Un objeto de <a href="#Catalog_parameters_object"><span translate="No">catalog</span> parámetros</a> de tipo O una matriz de objetos que representa una secuencia de <code translate="No">catalog</code> operaciones.</p>
+        <p><strong translate="No">secuencias</strong>: Un objeto de tipo <a href="#Catalog_parameters_object"><span translate="No">catalogar</span> parámetros</a> O una matriz de objetos que representan una secuencia de <code translate="No">catalog</code> operaciones.</p>
       </li>
       <li>
-        <p><strong translate="No">callback</strong>: Función que se llamará cuando se complete la solicitud, ya sea que sea exitosa o no. Se invoca con dos argumentos:</p>
+        <p><strong translate="No">devolución de llamada</strong>: Función a la que se llamará cuando se complete la solicitud, se haya realizado correctamente o no. Se invoca con dos argumentos:</p>
         <ul>
           <li>
-            <p>El primer argumento contendrá un objeto de error, si se produce un error. Este objeto contiene detalles del error. Si no se produce ningún error, este objeto es <strong translate="No">null</strong>.</p>
+            <p>El primer argumento contendrá un objeto de error si se produce un error. Este objeto contiene detalles del error. Si no se produce ningún error, este objeto es <strong translate="No">nulo</strong>.</p>
           </li>
           <li>
             <p>Si no se produce ningún error, el segundo argumento es el objeto de vídeo solicitado. Si se produce un error, este valor contiene la cadena vacía.</p>
@@ -1567,14 +419,14 @@ https://players.api.brightcove.com/v2/accounts/$ACCOUNT_ID/players/$PLAYER_ID/co
         </ul>
       </li>
       <li>
-        <p><strong translate="No">[adConfigId]</strong>: Un ID de configuración de anuncio que se transmitirá junto con cada solicitud.</p>
+        <p><strong translate="No">[AdConfigID]</strong>: Un ID de configuración de anuncios que se transmitirá junto con cada solicitud.</p>
       </li>
     </ul>
-    <p>Tenga en cuenta que si se devuelve un vídeo específico en más de una de las operaciones, estará en el resultado varias veces.</p>
+    <p>Tenga en cuenta que si se devuelve un video específico en más de una de las operaciones, aparecerá en el resultado varias veces.</p>
     <h3>Valor devuelto</h3>
-    <p>La llamada en sí devuelve un objeto de tipo.<code translate="No">catalog</code><strong translate="No">XMLHttpRequest</strong> Aunque la llamada devuelve un <strong translate="No">XMLHttpRequest</strong> objeto, lo más probable es que nunca tratará con ese objeto. La razón es que en la función de devolución de llamada la respuesta JSON se analiza automáticamente y un objeto utilizable es lo que se pasa a la función de devolución de llamada. La estructura exacta de los datos devueltos en la devolución de llamada variará dependiendo de lo que se haya buscado.</p>
+    <p>La <code translate="No">catalog</code> llamada en sí devuelve un objeto de tipo <strong translate="No">XMLHttpRequest</strong>. Aunque la llamada devuelve un <strong translate="No">XMLHttpRequest</strong> objeto, lo más probable es que nunca se ocupe de ese objeto. El motivo es que en la función de devolución de llamada la respuesta JSON se analiza automáticamente y un objeto utilizable es lo que se pasa a la función de devolución de llamada. La estructura exacta de los datos devueltos en la devolución de llamada variará según lo que se haya buscado.</p>
     <h3>Ejemplo</h3>
-    <p>En el ejemplo siguiente se utiliza una secuencia de tres <code translate="No">catalog</code> operaciones. El primero es una búsqueda de los 10 vídeos más antiguos del <code translate="No">catalog</code>, el segundo se añade un vídeo individual y, por último, los vídeos de una lista de reproducción se agregan al resultado.</p>
+    <p>El siguiente ejemplo usa una secuencia de tres <code translate="No">catalog</code> operaciones. El primero es una búsqueda de los 10 videos más antiguos del <code translate="No">catalog</code> , en el segundo se agrega un video individual y, por último, se agregan videos de una lista de reproducción al resultado.</p>
     <pre class="line-numbers">
 <code class="language-javascript" translate="No">&lt;script&gt;
   videojs.getPlayer('myPlayerID').ready(function() {
@@ -1623,48 +475,48 @@ https://players.api.brightcove.com/v2/accounts/$ACCOUNT_ID/players/$PLAYER_ID/co
     });
   });
 &lt;/script&gt;</code></pre>
-    <p>La siguiente captura de pantalla muestra la estructura de la <code translate="No">mySequences</code> matriz, seguida de la matriz de objetos de vídeo devueltos:</p>
-    <figure class="bcls-figure"><img class="bcls-image" alt="La estructura de datos MyStructures" src="//learning-services-media.brightcove.com/doc-assets/player-development/references/player-catalog/getSequences-mySequences.png"/></figure>
+    <p>La siguiente captura de pantalla muestra la estructura del <code translate="No">mySequences</code> matriz, seguida de la matriz de objetos de vídeo devueltos:</p>
+    <figure class="bcls-figure"><img class="bcls-image" alt="The myStructures data structure" src="/assets/images/references/player-catalog/getSequences-mySequences.png" /></figure>
   </section>
   <section class="bcls-section">
-    <h2 id="getLazySequence_method">getLazySequence () (método)</h2>
-    <p>El <code translate="No">getLazySequence(sequences, callback, [adConfigId]) ⇒ XMLHttpRequest</code> método se comporta del mismo modo que el <a href="#getSequence_method">método getSequence ()</a> , excepto que se emplea la carga perezosa de vídeos. Esto significa que cuando se recuperan los vídeos de una operación de secuencia, los vídeos de la siguiente operación de secuencia no se recuperarán hasta que se alcance el último vídeo de la operación anterior. Existe un caso especial si una secuencia devuelve sólo un solo vídeo, en cuyo caso se realiza la siguiente operación de secuencia y se recuperan más vídeos.</p>
+    <h2 id="getLazySequence_method">método getLazySequence ()</h2>
+    <p>La <code translate="No">getLazySequence(sequences, callback, [adConfigId]) ⇒ XMLHttpRequest</code> El método se comporta igual que el <a href="#getSequence_method">método getSequence ()</a> , excepto que se emplea la carga diferida de videos. Esto significa que cuando se recuperan los videos de una operación de secuencia, los videos de la siguiente operación de secuencia no se recuperarán hasta que se alcance el último video de la operación anterior. Existe un caso especial si una secuencia devuelve solo un video, en cuyo caso se realiza la siguiente operación de secuencia y se recuperan más videos.</p>
   </section>
   <section class="bcls-section">
-    <h2 id="autoFindAndLoadMedia_method">AutoFindAndLoadMedia () (método)</h2>
-    <p>El <code translate="No">autoFindAndLoadMedia([opts]) ⇒ Object | undefined</code> método busca el último ID de vídeo o lista de reproducción definido, lo solicita desde la API y lo carga en el reproductor. Este método define el comportamiento predeterminado para el Brightcove Player.</p>
+    <h2 id="autoFindAndLoadMedia_method">método autoFindAndLoadMedia ()</h2>
+    <p>La <code translate="No">autoFindAndLoadMedia([opts]) ⇒ Object | undefined</code> El método busca el ID de lista de reproducción o video definido por última vez, lo solicita a la API y lo carga en el reproductor. Este método define el comportamiento predeterminado de Brightcove Player.</p>
     <h3>Parámetros</h3>
     <ul>
-      <li><code translate="No">options</code>: Se reconocen cualquiera de las siguientes opciones:
+      <li><code translate="No">options</code>: Se reconoce cualquiera de las siguientes opciones:
         <ul>
           <li>
-            <p><code translate="No">adConfigId</code> ( número): Valor numérico de una configuración de anuncio que se pasará a la API de reproducción. Se llamará ad_config_id al final.</p>
+            <p><code translate="No">adConfigId</code>(número): Un valor numérico para una configuración de anuncios que se transferirá a la API de reproducción. Se llamará ad_config_id al final.</p>
           </li>
           <li>
-            <p><code translate="No">embedHasPoster</code> ( booleano): Si el incrustado original tenía o no un póster.</p>
+            <p><code translate="No">embedHasPoster</code>(booleano): Si la inserción original tenía un póster o no.</p>
           </li>
           <li>
-            <p><code translate="No">embedHasSources</code> ( booleano): Ya sea que el incrustado original tuviera o no fuentes.</p>
+            <p><code translate="No">embedHasSources</code>(booleano): Si la inserción original tenía o no fuentes.</p>
           </li>
           <li>
-            <p><code translate="No">embedHasTracks</code> ( booleano): Si el incrustado original tenía o no pistas.</p>
+            <p><code translate="No">embedHasTracks</code>(booleano): Si el incrustado original tenía pistas o no.</p>
           </li>
           <li>
-            <p><code translate="No">playlistId</code> ( cadena): Un ID de lista de reproducción proporcionado en la configuración del reproductor.</p>
+            <p><code translate="No">playlistId</code>(cuerda): Una ID de lista de reproducción proporcionada en la configuración del reproductor.</p>
           </li>
           <li>
-            <p><code translate="No">search</code> ( cadena | Objeto): Una cadena de búsqueda/objeto que se proporcionó en la configuración del reproductor o incrustar. Consulte el método para obtener más información sobre los parámetros admitidos.<code translate="No">get()</code></p>
+            <p><code translate="No">search</code>(cadena | Objeto): Cadena/objeto de búsqueda que se proporcionó en la configuración o incrustación del reproductor. Consulte <code translate="No">get()</code> el método para obtener más información sobre los parámetros admitidos.</p>
           </li>
           <li>
-            <p><code translate="No">sequence</code> ( Objeto | Array.Object): Una cadena de búsqueda/objeto que se proporcionó en la configuración del reproductor o incrustar. Consulte el método para obtener más información sobre los parámetros admitidos.<code translate="No">get()</code></p>
+            <p><code translate="No">sequence</code>(Objeto | Array.Object): Cadena/objeto de búsqueda que se proporcionó en la configuración o incrustación del reproductor. Consulte <code translate="No">get()</code> el método para obtener más información sobre los parámetros admitidos.</p>
           </li>
           <li>
-            <p><code translate="No">videoId</code> ( cadena): Un ID de vídeo proporcionado en la configuración del reproductor.</p>
+            <p><code translate="No">videoId</code>(cuerda): Una identificación de video proporcionada en la configuración del reproductor.</p>
           </li>
         </ul>
       </li>
     </ul>
-    <p>El siguiente ejemplo obtiene el objeto de vídeo basado en el <code translate="No">videoId</code> y lo carga en el reproductor:</p>
+    <p>El siguiente ejemplo obtiene el objeto de video basado en el <code translate="No">videoId</code> y lo carga en el reproductor:</p>
     <pre class="line-numbers">
 <code class="language-javascript" translate="No">&lt;script type="text/javascript"&gt;
   videojs.getPlayer('myPlayerID').ready(function() {
@@ -1674,8 +526,8 @@ https://players.api.brightcove.com/v2/accounts/$ACCOUNT_ID/players/$PLAYER_ID/co
     myPlayer.catalog.autoFindAndLoadMedia(options);
   });
 &lt;/script&gt;</code></pre>
-    <aside class="bcls-aside bcls-aside--tip">También puede cargar un video por id de referencia usando <code translate="No">options.videoId = 'ref:yourrefid';</code></aside>
-    <p>El siguiente ejemplo obtiene el objeto de lista de reproducción basado en <code translate="No">playlistId</code> y lo carga en el reproductor. También obtiene el objeto de vídeo basado en <code translate="No">playlistVideoId</code> y lo carga como el primer video que se reproduce en la lista de reproducción:</p>
+    <aside class="bcls-aside bcls-aside--tip">También puede cargar un video por identificación de referencia usando <code translate="No">options.videoId = 'ref:yourrefid';</code></aside>
+    <p>El siguiente ejemplo obtiene el objeto de lista de reproducción basado en <code translate="No">playlistId</code> y lo carga en el reproductor. También obtiene el objeto de video basado en <code translate="No">playlistVideoId</code> y lo carga como el primer video para reproducir en la lista de reproducción:</p>
     <pre class="line-numbers">
 <code class="language-javascript" translate="No">&lt;script type="text/javascript"&gt;
   videojs.getPlayer('myPlayerID').ready(function() {
@@ -1688,53 +540,53 @@ https://players.api.brightcove.com/v2/accounts/$ACCOUNT_ID/players/$PLAYER_ID/co
 &lt;/script&gt;</code></pre>
   </section>
   <section class="bcls-section">
-    <h2 id="transformVideoResponse_method">TransformVideoResponse (), método</h2>
-    <p>El <code translate="No">transformVideoResponse(data)</code> método convierte un objeto de vídeo sin procesar de la <a href="https://apis.support.brightcove.com/cms/references/reference.html">CMS API</a> o de la <a href="https://apis.support.brightcove.com/playback/references/reference_v1.html">Playback API</a> en un formato compatible con el reproductor y los navegadores. Esto incluye tiempos de duración y compatibilidad de imágenes https. También reorganiza las fuentes para asegurarse de que las fuentes que se espera que proporcionen la experiencia de visualización de la más alta calidad en esta plataforma se intentan primero.</p>
+    <h2 id="transformVideoResponse_method">método transformVideoResponse ()</h2>
+    <p>La <code translate="No">transformVideoResponse(data)</code> El método convierte un objeto de video sin procesar de la <a href="https://apis.support.brightcove.com/cms/references/reference.html">API de CMS</a> o el <a href="https://apis.support.brightcove.com/playback/references/reference_v1.html">API de reproducción</a> en un formato compatible con el reproductor y los navegadores. Esto incluye tiempos de duración y compatibilidad de imágenes https. También reorganiza las fuentes para garantizar que las fuentes que se espera brinden la experiencia de visualización de la más alta calidad en esta plataforma se intenten primero.</p>
     <aside class="bcls-aside bcls-aside--tip">Al usar el <code translate="No">catalog.getVideo()</code> o <code translate="No">catalog.getPlaylist()</code> métodos, el <code translate="No">transformVideoResponse()</code> se llama automáticamente, de modo que los datos devueltos estén en el formato apropiado.</aside>
     <h3>Parámetros</h3>
     <ul>
       <li>
-        <p><code translate="No">data</code>: Objeto de vídeo sin procesar analizado a partir de una respuesta <code translate="No">catalog</code> API.</p>
+        <p><code translate="No">data</code>: Un objeto de video sin procesar analizado a partir de un <code translate="No">catalog</code> Respuesta de API.</p>
       </li>
     </ul>
-    <p>A continuación se muestra un ejemplo de uso del método:</p>
+    <p>A continuación, se muestra un ejemplo de uso del método:</p>
     <pre class="line-numbers">
 <code class="language-html" translate="No"> for (var i=0; i&lt;limitValue; i++) {
   	mediaData.videos[i] = myPlayer.catalog.transformVideoResponse (mediaData.videos[i], myPlayer);
   }</code></pre>
-    <p>Para obtener el ejemplo de código completo, consulte el documento de <a href="/code-samples/brightcove-player-sample-playback-api-paging.html">paginación de Playback API</a> .</p>
+    <p>Para ver el ejemplo de código completo, consulte el <a href="/code-samples/brightcove-player-sample-playback-api-paging.html">Paginación de la API de reproducción</a> documento.</p>
     <h3>Valor devuelto</h3>
-    <p>Objeto que es más coherente con el entorno del reproductor y del navegador.</p>
+    <p>Un objeto que es más coherente con el entorno del navegador y el reproductor.</p>
   </section>
   <section class="bcls-section">
-    <h2 id="Catalog_events"><span translate="No">catalog</span> eventos</h2>
-    <p>Hay tres catálogos de eventos para los que se puede escuchar. A saber:</p>
+    <h2 id="Catalog_events"><span translate="No">catalogar</span> eventos</h2>
+    <p>Hay tres catálogos de eventos para los que puede escuchar. Son:</p>
     <ul>
       <li>
-        <p><code translate="No">catalog_request</code>: Un evento que se distribuye cuando se <code translate="No">catalog</code> realiza una solicitud a la.</p>
+        <p><code translate="No">catalog_request</code>: Un evento enviado cuando una solicitud al <code translate="No">catalog</code> está hecho.</p>
       </li>
       <li>
-        <p><code translate="No">catalog_response</code>: Un evento que se distribuye cuando <code translate="No">catalog</code> se recibe una respuesta del. La respuesta con formato JSON contiene los datos sin procesar que devolvió la <span translate="No">catalog</span> API. Consulte el contenido de la <a href="#Response_information">información de respuesta</a> más adelante en esta sección para obtener más información.</p>
+        <p><code translate="No">catalog_response</code>: Un evento enviado cuando una respuesta del <code translate="No">catalog</code> Esta recibido. La respuesta con formato JSON contiene los datos sin procesar que <span translate="No">catalogar</span> API devuelta. Ver el <a href="#Response_information">Información de respuesta</a> contenido más adelante en esta sección para obtener más detalles.</p>
       </li>
       <li>
-        <p><code translate="No">catalog_request_error</code>: Un evento distribuido cuando hay un error al interactuar con <code translate="No">catalog</code>.</p>
+        <p><code translate="No">catalog_request_error</code>: Un evento enviado cuando hay un error al interactuar con el <code translate="No">catalog</code>.</p>
       </li>
     </ul>
-    <p>A continuación se muestra el registro de la consola de los eventos de una solicitud y la respuesta de <code translate="No">catalog</code>:</p>
-    <figure class="bcls-figure"><img class="bcls-image" alt="Objetos de evento de solicitud y respuesta" src="//learning-services-media.brightcove.com/doc-assets/player-development/references/player-catalog/events.png"/></figure>
-    <p>Verá muchas propiedades estándar de un objeto de evento. De especial interés para <code translate="No">catalog</code> los eventos es <strong translate="No">type</strong> y <strong translate="No">url</strong>.</p>
-    <p>A continuación se muestra un registro de consola de un objeto de error de <code translate="No">catalog</code> solicitud:</p>
-    <figure class="bcls-figure"><img class="bcls-image" alt="Objeto de evento Error" src="//learning-services-media.brightcove.com/doc-assets/player-development/references/player-catalog/error-event-object.png"/></figure>
+    <p>A continuación se muestra el registro de la consola de los eventos de una solicitud a, y la respuesta de, el <code translate="No">catalog</code>:</p>
+    <figure class="bcls-figure"><img class="bcls-image" alt="Request and response event objects" src="/assets/images/references/player-catalog/events.png" /></figure>
+    <p>Ve muchas propiedades estándar de un objeto de evento. De especial interés para <code translate="No">catalog</code> eventos es <strong translate="No">escribe</strong> y <strong translate="No">url</strong>.</p>
+    <p>A continuación se muestra un registro de la consola de un <code translate="No">catalog</code> objeto de error de solicitud:</p>
+    <figure class="bcls-figure"><img class="bcls-image" alt="Error event object" src="/assets/images/references/player-catalog/error-event-object.png" /></figure>
     <h3 id="Response_information">Información de respuesta</h3>
-    <p>El objeto de <code translate="No">catalog_response</code> evento contiene una <code translate="No">response</code> propiedad con formato JSON que contiene los datos sin procesar de la respuesta de <span translate="No">catalog</span> API. A continuación se muestra el registro de la consola de la propiedad de respuesta:</p>
-    <figure class="bcls-figure"><img class="bcls-image" alt="Objetos de evento de respuesta" src="//learning-services-media.brightcove.com/doc-assets/player-development/references/player-catalog/parsed-response.png"/></figure>
-    <p>Para utilizar realmente los datos de la propiedad de respuesta, debe analizar la cadena formateada JSON sin procesar en un objeto. A continuación se muestra el acceso a la <code translate="No">name</code> propiedad:</p>
+    <p>los <code translate="No">catalog_response</code> El objeto de evento contiene un JSON con formato <code translate="No">response</code> propiedad que contiene los datos brutos del <span translate="No">catalogar</span> Respuesta de API. A continuación, se muestra el registro de la consola de la propiedad de respuesta:</p>
+    <figure class="bcls-figure"><img class="bcls-image" alt="Response event objects" src="/assets/images/references/player-catalog/parsed-response.png" /></figure>
+    <p>Para usar realmente los datos de la propiedad de respuesta, debe analizar la cadena con formato JSON sin procesar en un objeto. A continuación se muestra cómo acceder al <code translate="No">name</code> propiedad:</p>
     <pre class="line-numbers">
 <code class="language-javascript" translate="No">myPlayer.on('catalog_response',function(evt){
   var api_response = JSON.parse(evt.response.response);
   console.log('api_response.name',api_response.name);
 });</code></pre>
-    <p>A continuación se muestra el JSON de una <code translate="No">response</code> propiedad de ejemplo:</p>
+    <p>A continuación se muestra el JSON de un ejemplo <code translate="No">response</code> propiedad:</p>
     <pre class="line-numbers">
 <code class="language-json" translate="No">{
   "description": null,
@@ -1825,12 +677,12 @@ https://players.api.brightcove.com/v2/accounts/$ACCOUNT_ID/players/$PLAYER_ID/co
 }</code></pre>
   </section>
   <section class="bcls-section">
-    <h2 id="catalogerrors"><span translate="No">catalog</span> errores</h2>
-    <p>El <code translate="No">catalog</code> arrojará errores cuando haya problemas para recuperar o reproducir inicialmente el vídeo o la lista de reproducción. Los errores se detallan a continuación.</p>
+    <h2 id="catalogerrors"><span translate="No">catalogar</span> errores</h2>
+    <p>La <code translate="No">catalog</code> arrojará errores cuando haya problemas para recuperar o reproducir inicialmente el video o la lista de reproducción. Los errores se detallan a continuación.</p>
     <table class="bcls-table">
       <thead class="bcls-table__head">
         <tr>
-          <th><span translate="No">catalog</span> Error</th>
+          <th><span translate="No">catalogar</span> Error</th>
           <th>Descripción</th>
         </tr>
       </thead>
@@ -1841,7 +693,7 @@ https://players.api.brightcove.com/v2/accounts/$ACCOUNT_ID/players/$PLAYER_ID/co
         </tr>
         <tr>
           <td><code translate="No">VIDEO_CLOUD_ERR_RESOURCE_NOT_FOUND</code></td>
-          <td>El ID predeterminado de la lista de reproducción no es válido.</td>
+          <td>El ID de lista de reproducción predeterminado no es válido.</td>
         </tr>
         <tr>
           <td><code translate="No">VIDEO_CLOUD_ERR_VIDEO_NOT_FOUND</code></td>
@@ -1849,16 +701,16 @@ https://players.api.brightcove.com/v2/accounts/$ACCOUNT_ID/players/$PLAYER_ID/co
         </tr>
         <tr>
           <td><code translate="No">VIDEO_CLOUD_ERR_NOT_PLAYABLE</code></td>
-          <td>El vídeo de Video Cloud no se puede reproducir.&nbsp;Las causas frecuentes de este error incluyen cuando se desactiva un ID de vídeo o cuando la disponibilidad programada ha caducado.</td>
+          <td>El video de Video Cloud no se puede reproducir.&nbsp;Las causas frecuentes de este error incluyen cuando una identificación de video está desactivada o cuando la disponibilidad programada ha expirado.</td>
         </tr>
       </tbody>
     </table>
   </section>
   <section class="bcls-section">
-    <h2 id="catalog-error">Mango <code translate="No">bc-catalog-error</code></h2>
-    <p>Es posible que el manejo de errores en la <code translate="No">ready()</code> sección normal del <code translate="No">script</code> bloque pueda causar problemas. Por ejemplo, puede suceder que el <code translate="No">bc-catalog-error</code> evento se pueda enviar antes de que el jugador esté listo, y si escucha el error en la <code translate="No">ready()</code> sección, no podrá manejar el error. Este problema puede producirse cuando se utiliza el filtrado geográfico, un vídeo no se publica, un vídeo está fuera del rango de programación o en una cuenta diferente. Es posible que encuentre que no hay un problema en su código, pero el problema puede depender del navegador, así que prueba a fondo.</p>
-    <p>Si esta es una posibilidad en su implementación, su código de manejo de errores debe usar el método de manejo de <code translate="No">one()</code> eventos para escuchar el <code translate="No">bc-catalog-error</code> en un bloque de código separado en lugar de dentro del <code translate="No">ready()</code> sección.</p>
-    <p>En el ejemplo de código a continuación, verá que un bloque de código maneja el <code translate="No">bc-catalog-error</code> (línea 62), y también un bloque de código para <code translate="No">ready</code> (línea 71).</p>
+    <h2 id="catalog-error">Resolver <code translate="No">bc-catalog-error</code></h2>
+    <p>Es posible que el manejo de errores en la <code translate="No">ready()</code> sección normal del <code translate="No">script</code> bloque pueda causar problemas. Por ejemplo, puede ocurrir que el <code translate="No">bc-catalog-error</code> evento se pueda enviar antes de que el reproductor esté listo y, si escucha el error en la <code translate="No">ready()</code> sección, no podrás manejar el error. Este problema puede producirse cuando se utiliza el filtrado geográfico, un vídeo no se publica, un vídeo está fuera del rango de programación o en otra cuenta. Es posible que descubra que no hay ningún problema en su código, pero el problema puede depender del navegador, así que pruebe a fondo.</p>
+    <p>Si esta es una posibilidad en su implementación, su código de manejo de errores debe usar el <code translate="No">one()</code> método de manejo de eventos para escuchar el <code translate="No">bc-catalog-error</code> en un bloque de código separado en lugar de dentro del <code translate="No">ready()</code> sección.</p>
+    <p>En el ejemplo de código a continuación, verá un bloque de código que maneja el <code translate="No">bc-catalog-error</code> (línea 62), y también un bloque de código para <code translate="No">ready</code> (línea 71).</p>
     <pre class="line-numbers" data-start="50">
 <code class="language-html" translate="No">  &lt;video-js id="myPlayerID"
     data-account="1486906377"
@@ -1886,8 +738,8 @@ https://players.api.brightcove.com/v2/accounts/$ACCOUNT_ID/players/$PLAYER_ID/co
       console.log('in ready');
     });
   &lt;/script&gt;  </code></pre>
-    <h3>Uso de error personalizado</h3>
-    <p>La mejor solución para manejar un específico <strong translate="No">bc-catalog-error</strong> tal vez usando un error personalizado. El siguiente código muestra un complemento que utiliza un error personalizado para notificar al espectador de un vídeo inactivo por qué el vídeo no se reproducirá:</p>
+    <h3>Usando error personalizado</h3>
+    <p>La mejor solución para manejar un <strong translate="No">error de catálogo de bc</strong> tal vez usando un error personalizado. El siguiente código muestra un complemento que usa un error personalizado para notificar a un espectador de un video inactivo por qué el video no se reproduce:</p>
     <pre class="line-numbers">
 <code class="language-javascript" translate="No">videojs.registerPlugin('inactiveErrorCheck', function(options) {
   var myPlayer = this;
@@ -1909,7 +761,7 @@ https://players.api.brightcove.com/v2/accounts/$ACCOUNT_ID/players/$PLAYER_ID/co
     };
   });
 });</code></pre>
-    <p>El código para usar el plugin, utilizando una implementación de reproductor incrustado en página, sigue:</p>
+    <p>El código para usar el complemento, utilizando una implementación de reproductor integrado en la página, es el siguiente:</p>
     <pre class="line-numbers">
 <code class="language-html" translate="No">&lt;video-js id="myPlayerID" data-video-id="5350958927001"
   data-account="1507807800001"
@@ -1929,19 +781,19 @@ https://players.api.brightcove.com/v2/accounts/$ACCOUNT_ID/players/$PLAYER_ID/co
     options.inactiveMessage = "This is the message to display for inactive videos.";
     myPlayer.inactiveErrorCheck(options);
 });&lt;/script&gt;</code></pre>
-    <p>Si está agregando el plugin a través de la <strong translate="No">PLUGINS</strong> sección en Studio, proporcionaría la URL correcta donde almacenó su código JavaScript, luego en la <strong translate="No">Name, Option (JSON)</strong> entrada suministre:</p>
+    <p>Si está agregando el complemento a través del <strong translate="No">PLUGINS</strong> sección en Studio, debe proporcionar la URL correcta donde almacenó su código JavaScript, luego en la <strong translate="No">Nombre, opción (JSON)</strong> suministro de entrada:</p>
     <ul>
       <li>
-        <p>Nombre:<strong translate="No">inactiveErrorCheck</strong></p>
+        <p>Nombre: <strong translate="No">inactiveErrorCheck</strong></p>
       </li>
       <li>
         <p>Opciones: <strong translate="No">{ "inactiveMessage": "This is the message to display for inactive videos." }</strong></p>
       </li>
     </ul>
-    <h3 id="Handle_geo-filtering_error">Error de filtrado geográfico</h3>
-    <p>Como se mencionó anteriormente, el geo-filtrado puede causar errores en el catalog. Puede manejarlos de manera muy similar a lo que se acaba de mostrar. Se mostrará el código que pone un mensaje debajo del reproductor «errorizado», como se muestra aquí:</p>
-    <figure class="bcls-figure"><img class="bcls-image" alt="error geográfico" src="//learning-services-media.brightcove.com/doc-assets/player-development/references/player-catalog/geo-error.png"/></figure>
-    <p>El siguiente código detecta el error de catalog y, a continuación, comprueba si se trata de un problema de filtrado geográfico. Si lo es, entonces se muestra un mensaje apropiado en la página HTML, justo debajo del reproductor, como se muestra en la captura de pantalla.</p>
+    <h3 id="Handle_geo-filtering_error">Manejar el error de filtrado geográfico</h3>
+    <p>Como se mencionó anteriormente, el filtrado geográfico puede causar errores de catálogo. Puede manejarlos de manera muy similar a lo que se acaba de mostrar. Se mostrará un código que coloca un mensaje debajo del reproductor "con errores", como se muestra aquí:</p>
+    <figure class="bcls-figure"><img class="bcls-image" alt="geo error" src="/assets/images/references/player-catalog/geo-error.png" /></figure>
+    <p>El siguiente código detecta el error del catálogo y luego verifica si se trata de un problema de filtrado geográfico. Si es así, se muestra un mensaje apropiado en la página HTML, justo debajo del reproductor, como se muestra en la captura de pantalla.</p>
     <pre class="line-numbers">
 <code class="language-html" translate="No">&lt;video-js id="myPlayerID"
   data-video-id="4040394419001"
@@ -1975,8 +827,8 @@ https://players.api.brightcove.com/v2/accounts/$ACCOUNT_ID/players/$PLAYER_ID/co
     console.log('in ready');
   });
 &lt;/script&gt;</code></pre>
-    <h3 id="Handle_IP_restriction_error">Error de restricción de IP</h3>
-    <p>El siguiente código es análogo a lo que se acaba de mostrar anteriormente para el geo-filtrado, a excepción de las restricciones IP:</p>
+    <h3 id="Handle_IP_restriction_error">Manejar error de restricción de IP</h3>
+    <p>El siguiente código es análogo al que se acaba de mostrar arriba para el filtrado geográfico, excepto por las restricciones de IP:</p>
     <pre class="line-numbers">
 <code class="language-html" translate="No">&lt;video-js id="myPlayerID"
   data-video-id="5981021521001"
@@ -2013,163 +865,6 @@ https://players.api.brightcove.com/v2/accounts/$ACCOUNT_ID/players/$PLAYER_ID/co
   </section>
   <section class="bcls-section">
     <h2 id="requestlimit">Límite de solicitud</h2>
-    <p>Dado que las respuestas de la API se almacenan en caché, no hay límite de tasa en <code translate="No">catalog</code> las solicitudes.</p>
+    <p>Dado que las respuestas de la API se almacenan en caché, no hay límite de frecuencia en <code translate="No">catalog</code> peticiones.</p>
   </section>
 </article>
-
-<!-- complete bootstrap layout -->
-    </div>
-    <div class="col-sm-2 right-side-bar">
-      
-      <nav class="right-side-nav" id="right_side_nav">
-        <h6 class="toc">Contenido de la página</h6>
-        <ul id="in_page_nav" class="list-none"></ul>
-      </nav>
-      
-    </div>
-  </div>
-</div>
-
-<hr>
-<footer class="bcls-footer" role="contentinfo">  <div class="row">
-    <div class="region region-footer-top-center col-md-12">
-      <nav role="navigation" aria-labelledby="block-brightcovesupport-menu" id="block-brightcovesupport" class="footer-menu">
-
-        <h2>Asistencia técnica de Brightcove</h2>
-
-        <ul class="menu">
-          <li>
-            Estado del sistema<a href="https://status.brightcove.com"></a>
-          </li>
-          <li>
-            <a href="https://supportportal.brightcove.com/s/login/?">Contactar soporte</a>
-          </li>
-          <li>
-            <a href="https://support.brightcove.com/">Documentación</a>
-          </li>
-        </ul>
-
-      </nav>
-      <nav role="navigation" aria-labelledby="block-training-menu" id="block-training" class="footer-menu">
-
-        <h2>Formación</h2>
-
-        <ul class="menu">
-          <li>
-            Cursos en línea<a href="https://studio.support.brightcove.com/training/online-training-courses.html"></a>
-          </li>
-          <li>
-            Inscríbete a un curso<a href="https://studio.support.brightcove.com/training/register-training.html"></a>
-          </li>
-          <li>
-            <a href="https://university.brightcove.com/">Universidad de Brightcove</a>
-          </li>
-        </ul>
-
-      </nav>
-      <nav role="navigation" aria-labelledby="block-brightcove-menu" class="footer-menu">
-
-        <h2>Brightcove</h2>
-
-        <ul class="menu">
-          <li>
-            <a href="https://www.brightcove.com">BrightCove.com</a>
-          </li>
-          <li>
-            <a href="https://supportportal.brightcove.com/s/login/?">Contáctanos</a>
-          </li>
-        </ul>
-      </nav>
-    </div>
-  </div>
-  <div class="row">
-    <div class="region region-footer-bottom-center col-md-12">
-      <div class="bcls-copyright footer-menu">
-        <table>
-          <tr>
-            <td>
-              <div id="bc_copyright" class="field field--name-field-copyright-year field--type-string field--label-hidden field--item" style="float: left;"> Brightcove Inc. All rights reserved.</div>
-            </td>
-            <td>Privacidad | Términos y Condiciones<a href="https://www.brightcove.com/en/legal/privacy"></a><a href="https://www.brightcove.com/en/terms-and-conditions"></a></td>
-            <td>
-              <div class="gf-links-cols footer-menu">
-                <div class="gf-social"><a href="https://www.linkedin.com/company/16439" title="LinkedIn" newtab="newtab" class="gf-social-linkedin"><i class="fab fa-linkedin-in" style="font-size: 1.5rem;"></i></a><a href="https://twitter.com/brightcove" title="Twitter" newtab="newtab" class="gf-social-twitter"><i class="fab fa-twitter" style="font-size: 1.5rem;"></i></a><a href="https://www.facebook.com/Brightcove" title="Facebook" newtab="newtab" class="gf-social-facebook"><i class="fab fa-facebook-f" style="font-size: 1.5rem;"></i></a>
-                </div>
-              </div>
-            </td>
-          </tr>
-        </table>
-      </div>
-    </div>
-  </div>
-</footer>
-
-</div>
-</div>
-<script>
-      
-  var searchBox = sajari.init({
-    mode: "search-box",
-    project: "1588255093746585379", // Set this to your project.
-    collection: "brightcove-documenation", // Set this to your collection.
-    instantPipeline: "autocomplete", // Pipeline used as you type
-    inputPlaceholder: "Search", // Input element placeholder
-    maxSuggestions: 5, // Maximum number of suggestions to show
-    attachSearchBox: document.getElementById("nav-search-box") // DOM element to attach to
-  });
-  
-    searchBox("sub", "pipeline.search-sent", function (_, query) {
-      window.location = "/search.html?q=" + encodeURIComponent(query.q);
-    });
-  
-
-</script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-  <script src="https://support.brightcove.com/site-assets/js/site/https-fix.js"></script>
-  <script src="https://support.brightcove.com/site-assets/js/site/setDate.js"></script>
-  
-  <script src="https://support.brightcove.com/site-assets/js/site/prism.js"></script>
-  
-  <script src="https://support.brightcove.com/site-assets/js/site/site.js"></script>
-  <script src="https://support.brightcove.com/site-assets/js/site/tabs.js"></script>
-  <script src="https://support.brightcove.com/site-assets/js/site/toc.js"></script>
-  <script src="/assets/js/sites_nav.js"></script>
-  <script src="https://support.brightcove.com/site-assets/js/site/bcls-utils.js"></script>
-  <script src="https://support.brightcove.com/site-assets/js/site/local-link-fix.js"></script>
-  <script src="/assets/js/feedback.js"></script>
-  
-  <script src="/assets/js/sajari-search-foot.js"></script>
-  
-  <!-- <script src="/assets/js/sajari-index.js"></script> -->
-  <style>
-    a.sj-paginator__page-number.sj-paginator__page-number--current.css-so0ov7 {
-      background-color: lightblue;
-    }
-    div.sj-tabs__tab {
-      margin-top: 3rem;
-      margin-left: .3rem;
-      border-top-left-radius: .4rem;
-      border-top-right-radius: .4rem;
-      background-color:#e8e8e8;
-    }
-
-    div.sj-tabs__tab.sj-tabs__tab--selected {
-      border-bottom-color: crimson;
-      background-color: #f8f8f8;
-    }
-
-    p.sj-results__result__description.css-p9jvyt {
-      font-size: 1rem;
-    }
-
-    .sj-result__text.css-31l7gp h3 {
-      color: navy;
-      font-size: 1.4rem;
-    }
-    </style>
-
-</body>
-
-</html>

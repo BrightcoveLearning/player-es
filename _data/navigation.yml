@@ -1,0 +1,494 @@
+- section:
+  name: 'Inicio'
+  url: '/index.html'
+- section:
+  name: 'Empezar'
+  url: '/getting-started/index.html'
+  docs:
+    - name: Vídeos básicos del desarrollador
+      url: /training/developer-basics-videos.html
+    - name: '¿Qué es Brightcove Player?'
+      url: /getting-started/what-brightcove-player.html
+    - name: 'Descripción general: Jugador Brightcove'
+      url: /getting-started/overview-brightcove-player.html
+    - name: 'Guía de aprendizaje: Publicidad video'
+      url: /getting-started/learning-guide-video-advertising.html
+    - name: 'Descripción general: Complementos de Brightcove Player'
+      url: /getting-started/overview-brightcove-player-plugins.html
+    - name: Videos de capacitación sobre desarrollo de jugadores
+      url: /training/player-development-training-videos.html
+    - name: 'Paso a paso: Jugador Brightcove'
+      url: /getting-started/step-step-brightcove-player.html
+    - name: 'Paso a paso: Personalización del reproductor'
+      url: /getting-started/step-step-player-customization.html
+    - name: 'Formación: Desarrollo con Brightcove Player'
+      url: /training/training-demand-developing-brightcove-player.html
+    - name: 'Guía de aprendizaje: Usando las API REST'
+      url: /getting-started/learning-guide-using-rest-apis.html
+- section:
+  name: 'Aprende lo básico'
+  url: '/basics/index.html'
+  docs:
+    - name: Avanzado Código de jugador
+      url: /basics/developer-basics-advanced-player-code.html
+    - name: Reproducción automática de un video
+      url: /basics/developer-basics-autoplaying-video.html
+    - name: 'Complemento personalizado: conversión de código'
+      url: /basics/developer-basics-custom-plugin-converting-code.html
+    - name: 'Complemento personalizado: transferencia de datos'
+      url: /basics/developer-basics-custom-plugin-passing-data.html
+    - name: 'Complemento personalizado: uso de Studio'
+      url: /basics/developer-basics-custom-plugin-using-studio.html
+    - name: 'Complemento personalizado: por qué y cómo'
+      url: /basics/developer-basics-custom-plugin-why-and-how.html
+    - name: Vídeos básicos del desarrollador
+      url: /training/developer-basics-videos.html
+    - name: Generando código de jugador
+      url: /basics/developer-basics-generating-player-code.html
+    - name: Preparación para escribir código
+      url: /basics/developer-basics-preparing-write-code.html
+- section:
+  name: 'Referencias'
+  url: '/references/index.html'
+  docs:
+    - name: Guía de migración de Brightcove Player 5 a 6
+      url: /references/brightcove-player-5-6-migration-guide.html
+    - name: Documentación de Brightcove Player API
+      url: /brightcove-player/current-release/index.html
+    - name: Cookies de Brightcove Player
+      url: /references/brightcove-player-cookies.html
+    - name: Brightcove Referencia de error del jugador
+      url: /references/brightcove-player-error-reference.html
+    - name: Foro de anuncios de jugadores de Brightcove
+      url: 'https://groups.google.com/forum/embed/?place=forum/bcplayerdev#!forum/bcplayerdev'
+    - name: Requisitos del sistema de Brightcove Player
+      url: /references/brightcove-player-system-requirements.html
+    - name: Arquitectura de búsqueda de catálogo
+      url: /references/catalog-search-architecture.html
+    - name: Problemas conocidos
+      url: https://general.support.brightcove.com/general/known-issues-studio-brightcove-player-and-apis.html
+    - name: Catálogo de jugadores
+      url: /references/player-catalog.html
+    - name: Soporte de funciones del reproductor por navegador
+      url: /references/player-feature-support-browser.html
+    - name: Metadatos del reproductor de bcinfo
+      url: /references/player-metadata-bcinfo.html
+    - name: API de eventos / métodos de jugador
+      url: /brightcove-player/current-release/Player.html
+    - name: Guía de API de listas de reproducción
+      url: /references/guide-playlist-api.html
+    - name: Metadatos de vídeo de mediainfo
+      url: /references/video-metadata-mediainfo.html
+- section:
+  name: 'Complementos'
+  url: '/plugins/index.html'
+  docs:
+    - name: Video 360º
+      url: /plugins/360degvr-video-plugin.html
+    - name: Solo anuncio
+      url: /plugins/ad-only-plugin.html
+    - name: Publicidad con el complemento FreeWheel
+      url: /plugins/advertising-freewheel-plugin.html
+    - name: Publicidad con el complemento IMA3
+      url: /plugins/advertising-ima3-plugin.html
+    - name: Actualización a la versión 3 del complemento IMA3
+      url: /plugins/upgrading-ima3-plugin-version-3.html
+    - name: Publicidad con SSAI
+      url: /plugins/implementing-server-side-ads-brightcove-player.html
+    - name: Salida en antena
+      url: /plugins/airplay-plugin.html
+    - name: Chromecast
+      url: /plugins/chromecast-plugin-brightcove-player.html
+    - name: Pantalla final personalizada
+      url: /plugins/custom-endscreen-plugin.html
+    - name: Mostrar mensajes de error
+      url: /plugins/display-error-messages-plugin.html
+    - name: Mostrar vistas previas de miniaturas
+      url: /plugins/display-thumbnail-previews-plugin.html
+    - name: DRM
+      url: /plugins/configuring-brightcove-player-drm.html
+    - name: Administrador de etiquetas de Google
+      url: /plugins/google-tag-manager-plugin-brightcove-player.html
+    - name: HLS
+      url: /plugins/hls-plugin.html
+    - name: DVRUX en vivo
+      url: /plugins/live-dvrux-plugin.html
+    - name: Cubrir
+      url: /plugins/display-overlay-plugin.html
+    - name: 'Descripción general: Plugins de reproductor'
+      url: /plugins/overview-brightcove-player-plugins.html
+    - name: Imagen en imagen
+      url: /plugins/picture-picture-plugin-aka-floating-or-pinned.html
+    - name: Prueba de versión de reproductor/plugin
+      url: /plugins/playerplugin-version-testing.html
+    - name: Pantalla final de lista de reproducción
+      url: /plugins/playlist-endscreen-plugin.html
+    - name: IU de lista de reproducción
+      url: /plugins/playlist-ui-plugin.html
+    - name: Registro de cambios del complemento
+      url: /plugins/changelog/index.html
+    - name: Registro de complementos
+      url: /plugins/plugin-registry.html
+    - name: Referencia de la versión del complemento
+      url: /plugins/plugin-version-reference.html
+    - name: Selección de calidad
+      url: /plugins/quality-selection-plugin.html
+    - name: Redes sociales
+      url: /plugins/social-sharing-plugin.html
+    - name: Administrador de etiquetas Tealium
+      url: /plugins/tealium-plugin-brightcove-player.html
+    - name: Búsqueda de miniaturas
+      url: /plugins/thumbnails-plugin.html
+    - name: Generador de esquemas de video SEO
+      url: /plugins/video-seo-schema-generator-plugin.html
+- section:
+  name: 'Publicidad'
+  url: '/advertising/index.html'
+  icon: '<i data-feather="dollar-sign"></i>'
+  docs:
+    - name: Eventos publicitarios y objetos publicitarios
+      url: /advertising/ad-events-and-ad-objects.html
+    - name: Complemento solo para anuncios
+      url: /plugins/ad-only-plugin.html
+    - name: Publicidad con el complemento FreeWheel
+      url: /plugins/advertising-freewheel-plugin.html
+    - name: Publicidad con el complemento IMA3
+      url: /plugins/advertising-ima3-plugin.html
+    - name: 'Anuncios pre-roll del lado del cliente con SSAI en vivo'
+      url: /advertising/client-side-preroll-with-live-ssai.html
+    - name: Visualización de anuncios mediante puntos de inserción de anuncios
+      url: /advertising/displaying-ads-using-ad-cue-points.html
+    - name: Flash ya no es válido con IMA
+      url: /advertising/flash-no-longer-valid-ima.html
+    - name: 'Guía: Integración de socios publicitarios'
+      url: /advertising/guide-ad-partner-integration.html
+    - name: 'Guía: migración de contrib-ads'
+      url: /advertising/guide-contrib-ads-migration.html
+    - name: Implementación de SSAI con Brightcove Player
+      url: /plugins/implementing-server-side-ads-brightcove-player.html
+    - name: 'Jump Start: Anuncio de oferta de encabezado'
+      url: /advertising/jump-start-header-bidding-ad.html
+    - name: 'Jump Start: Anuncio outstream'
+      url: /advertising/jump-start-outstream-ad.html
+    - name: 'Jump Start: Anuncio previo al video'
+      url: /advertising/jump-start-pre-roll-ad.html
+    - name: 'Problemas conocidos: Inserción de anuncios en el servidor (SSAI)'
+      url: /advertising/known-issues-server-side-ad-insertion-ssai.html
+    - name: 'Guía de aprendizaje: Publicidad video'
+      url: /getting-started/learning-guide-video-advertising.html
+    - name: 'Paso a paso: Implementación de publicidad'
+      url: /advertising/step-step-implementing-advertising.html
+    - name: Prueba de complementos publicitarios previos al lanzamiento
+      url: /advertising/testing-pre-release-advertising-plugins.html
+    - name: Uso de DFP Premium con Brightcove Player
+      url: /advertising/using-dfp-premium-brightcove-player.html
+    - name: Uso de mejoras del reproductor para Live SSAI
+      url: /advertising/using-player-enhancements-live-ssai-brightcove-player.html
+    - name: Validación de etiquetas publicitarias SSAI de Video Cloud
+      url: /advertising/video-cloud-ssai-ad-tag-validation.html
+- section:
+  name: 'Publicación de videos y reproductores'
+  url: '/publish/index.html'
+  docs:
+    - name: Asignar video al reproductor mediante programación
+      url: /publish/assigning-video-player-programmatically.html
+    - name: Opciones para código incrustado avanzado (en la página)
+      url: /publish/available-options-advanced-page-embed-code.html
+    - name: Opciones para el código de inserción estándar (iframe)
+      url: /publish/available-options-standard-iframe-embed-code.html
+    - name: Cargador de reproductores Brightcove
+      url: /publish/brightcove-player-loader.html
+    - name: Actualización masiva del reproductor predeterminado de Brightcove
+      url: /publish/bulk-updating-brightcove-default-player.html
+    - name: Elegir el código de inserción correcto
+      url: https://studio.support.brightcove.com/publish/choosing-correct-embed-code.html
+    - name: Retrasar la instanciación del jugador
+      url: /publish/delaying-player-instantiation.html
+    - name: Reproductor de prelanzamiento
+      url: /publish/pre-release-player.html
+    - name: Estrategias de distribución
+      url: /publish/syndication-strategies.html
+    - name: Uso de un reproductor que no sea de Brightcove
+      url: /publish/using-non-brightcove-player.html
+    - name: Uso de varios reproductores en una página
+      url: https://studio.support.brightcove.com/publish/using-multiple-players-one-page.html
+    - name: Usar ID de referencia
+      url: https://studio.support.brightcove.com/publish/using-reference-ids.html
+    - name: Inspector de reproducciones de video
+      url:
+- section:
+  name: 'Solución de problemas'
+  url: '/troubleshooting/index.html'
+  docs:
+    - name: Aplicación de tecnología de reproducción Brightcove
+      url: /troubleshooting/brightcove-playback-technology-app.html
+    - name: Brightcove Referencia de error del jugador
+      url: /references/brightcove-player-error-reference.html
+    - name: Modal de información del jugador de Brightcove
+      url: /troubleshooting/brightcove-player-information-modal.html
+    - name: Guía de resolución de problemas del reproductor Brightcove
+      url: /troubleshooting/brightcove-player-troubleshooting-guide.html
+    - name: Creando un Charles Log
+      url: /troubleshooting/creating-charles-log.html
+    - name: Crear un registro de red
+      url: /troubleshooting/creating-network-log.html
+    - name: Mensajería de restricciones de dominio
+      url: /troubleshooting/domain-restrictions-messaging.html
+    - name: Mostrar complemento de mensajes de error
+      url: /plugins/display-error-messages-plugin.html
+    - name: Configuración manual de la versión del reproductor
+      url: /troubleshooting/manually-setting-player-version.html
+    - name: Prueba de versión de reproductor/plugin
+      url: /plugins/playerplugin-version-testing.html
+    - name: Propiedades informativas del jugador
+      url: /troubleshooting/player-informational-properties.html
+    - name: 'Muestra: Mensaje de error personalizado en vivo'
+      url: /code-samples/brightcove-player-sample-live-custom-error-message.html
+    - name: 'Paso a paso: Depurador de Brightcove Player'
+      url: /troubleshooting/step-step-brightcove-player-debugger.html
+    - name: Ejecución de un seguimiento de ruta de red
+      url: /troubleshooting/running-network-path-trace.html
+    - name: Uso de la referencia del reproductor
+      url: /troubleshooting/using-player-reference.html
+    - name: Verificación de lanzamientos de Brightcove Player
+      url: /troubleshooting/vetting-brightcove-player-releases.html
+    - name: Visualización de la configuración del reproductor
+      url: /troubleshooting/viewing-player-configuration.html
+- section:
+  name: 'Estilo y apariencia'
+  url: '/styling/index.html'
+  docs:
+    - name: Personalización de la apariencia del jugador
+      url: /styling/customizing-player-appearance.html
+    - name: Personalización de la apariencia del jugador: aspecto heredado
+      url: /styling/customizing-player-appearance-legacy-skin.html
+    - name: Patio de juegos de estilo de jugador
+      url: /styling/brightcove-player-sample-player-styling-playground.html
+    - name: 'Inicio rápido: Personalización del jugador: aspecto heredado'
+      url: /styling/quick-start-player-customization-legacy-skin.html
+    - name: 'Paso a paso: Personalización del reproductor'
+      url: /getting-started/step-step-player-customization.html
+    - name: Tamaño adaptable para Brightcove Player
+      url: /styling/responsive-sizing-brightcove-player.html
+    - name: Dimensionamiento del jugador
+      url: /styling/sizing-player.html
+    - name: Máscaras y versiones de jugador
+      url: /styling/skins-and-player-versions.html
+    - name: Estilo de subtítulos
+      url: https://studio.support.brightcove.com/media/styling-captions.html
+    - name: Estilismo de listas de reproducción
+      url: /styling/styling-playlists.html
+- section:
+  name: 'Reproducción'
+  url: '/playback/index.html'
+  docs:
+    - name: Consideraciones sobre la reproducción automática
+      url: /playback/autoplay-considerations.html
+    - name: Aplicación de tecnología de reproducción Brightcove
+      url: /troubleshooting/brightcove-playback-technology-app.html
+    - name: Entrega de China
+      url: /playback/china-delivery-with-bcp.html
+    - name: Currículum multidispositivo
+      url: /playback/xdr-with-bcplayer.html
+    - name: Vinculación profunda
+      url: https://studio.support.brightcove.com/publish/deep-linking.html
+    - name: Entrega de video HLS
+      url: /playback/delivering-hls-video.html
+    - name: Reglas de entrega
+      url: /playback/using-delivery-rules-with-bcp.html
+    - name: Determinar qué interpretación se reproducirá
+      url: /playback/determining-which-rendition-will-play.html
+    - name: Marca de agua forense
+      url: /playback/forensic-watermarking-with-bcp.html
+    - name: 'Guía: Tecnología de reproducción'
+      url: /playback/guide-playback-technology.html
+    - name: Complemento HLS
+      url: /plugins/hls-plugin.html
+    - name: iOS y Brightcove Player
+      url: /playback/ios-and-brightcove-player.html
+    - name: Restricciones de reproducción
+      url: /playback/playback-restrictions-with-bcp.html
+    - name: 'Descripción general: Soporte HTTPS'
+      url: /playback/overview-https-support.html
+    - name: Complemento de selección de calidad
+      url: /plugins/quality-selection-plugin.html
+    - name: Entrega de URL estática
+      url: /playback/static-url-delivery.html
+    - name: Transmisión de contenido protegido PlayReady
+      url: /playback/streaming-playready-protected-content-dynamic-delivery.html
+    - name: Uso de Brightcove Player para TVE
+      url: /playback/using-brightcove-player-tve.html
+- section:
+  name: 'DRM y protección de contenido'
+  url: '/content-protection/index.html'
+  docs:
+    - name: Configuración de restricciones de contenido del reproductor
+      url: https://studio.support.brightcove.com/players/configuring-player-content-restrictions.html
+    - name: Creación de un manifiesto DASH DRM para Brightcove Player
+      url: /content-protection/creating-dash-drm-manifest-brightcove-player.html
+    - name: Mensajería de restricciones de dominio
+      url: /troubleshooting/domain-restrictions-messaging.html
+    - name: Complemento DRM
+      url: /plugins/configuring-brightcove-player-drm.html
+    - name: 'Descripción general: Protección de contenido'
+      url: /content-protection/overview-content-protection.html
+    - name: Claves de política
+      url: /content-protection/policy-keys.html
+    - name: Restricción de la reproducción de video mediante la dirección IP
+      url: /content-protection/restricting-video-playback-using-ip-address.html
+    - name: URL firmadas y autenticación de tokens con transmisión en directo
+      url: /content-protection/signed-urls-and-token-auth-live-stream.html
+- section:
+  name: 'Temas de codificación'
+  url: '/coding-topics/index.html'
+  docs:
+    - name: Cargador de reproductores Brightcove
+      url: /publish/brightcove-player-loader.html
+    - name: Actualización de búsqueda de catálogo
+      url: /references/catalog-search-architecture.html
+    - name: Evento personalizado
+      url: /code-samples/brightcove-player-sample-trigger-rewind-custom-event.html
+    - name: 'Guía: Tecnología de reproducción'
+      url: /playback/guide-playback-technology.html
+    - name: Localización de Brightcove Player
+      url: /coding-topics/programmatically-localizing-brightcove-player.html
+    - name: Localización de complementos
+      url: /coding-topics/localizing-plugins.html
+    - name: Eventos del jugador
+      url: /coding-topics/player-events.html
+    - name: 'Descripción general: Componentes'
+      url: /coding-topics/overview-components.html
+    - name: 'Descripción general: Soporte HTTPS'
+      url: /playback/overview-https-support.html
+    - name: 'Descripción general: API del reproductor'
+      url: /coding-topics/overview-player-api.html
+    - name: Pasar datos al complemento
+      url: /coding-topics/pass-data-plugin.html
+    - name: React Player Loader
+      url: /coding-topics/react-player-loader.html
+    - name: Informes sobre configuraciones de reproductores de Brightcove
+      url: /coding-topics/reporting-brightcove-player-configurations.html
+    - name: RequireJS y Brightcove Player
+      url: /coding-topics/requirejs-and-brightcove-player.html
+    - name: Recuperar la tasa de bits de la reproducción actual
+      url: /coding-topics/retrieve-bitrate-current-rendition.html
+    - name: 'Paso a paso: Desarrollo de complementos'
+      url: /coding-topics/step-step-plugin-development.html
+    - name: 'Paso a paso: Generador de complementos de Video.js'
+      url: /coding-topics/step-step-videojs-plugin-generator.html
+    - name: Usando los métodos bc () y getPlayer ()
+      url: /coding-topics/using-bc-and-getplayer-methods.html
+    - name: Visualización de la configuración del reproductor
+      url: /troubleshooting/viewing-player-configuration.html
+- section:
+  name: 'Información general'
+  url: '/general/index.html'
+  docs:
+    - name: Agregar una ID de aplicación al código de inserción del reproductor
+      url: https://studio.support.brightcove.com/publish/adding-application-id-player-embed-code.html
+    - name: Agregar subtítulos a videos mediante programación
+      url: /general/adding-captions-videos-programmatically.html
+    - name: Agregar capítulos a un video
+      url: https://studio.support.brightcove.com/media/adding-chapters-video.html
+    - name: Brightcove Player 6 ahora versión predeterminada
+      url: /general/brightcove-player-6-now-default-version.html
+    - name: Accesibilidad de Brightcove Player
+      url: /general/brightcove-player-accessibility.html
+    - name: Plugin de pantalla final personalizado
+      url: /plugins/custom-endscreen-plugin.html
+    - name: Complemento de superposición de pantalla
+      url: /plugins/display-overlay-plugin.html
+    - name: 'Autoconfiguración de Google Analytics'
+      url: /general/ga-self-configure.html
+    - name: 'Guía: API de lista de reproducción'
+      url: /references/guide-playlist-api.html
+    - name: Identificar y eliminar videos de bajo rendimiento
+      url: /general/identify-and-delete-low-performing-videos.html
+    - name: Implementar puntos de referencia mediante programación
+      url: /general/implementing-cue-points-programmatically.html
+    - name: Implementación de listas de reproducción
+      url: /general/implementing-playlists.html
+    - name: Implementación de ModalDialog
+      url: /general/implementing-modaldialog.html
+    - name: Live HLS
+      url: /general/live-hls.html
+    - name: Configuración de transmisión en vivo
+      url: /general/live-stream-configuration.html
+    - name: Varias pistas de audio
+      url: /general/multiple-audio-tracks.html
+    - name: Guía de configuración del reproductor
+      url: /general/player-configuration-guide.html
+    - name: Reproducción de transmisiones en vivo
+      url: /general/playing-live-streams.html
+    - name: Plugin de interfaz de usuario de
+      url: /plugins/playlist-ui-plugin.html
+    - name: URL firmadas y autenticación de tokens con transmisión en directo
+      url: /content-protection/signed-urls-and-token-auth-live-stream.html
+    - name: Complemento de redes sociales
+      url: /plugins/social-sharing-plugin.html
+    - name: 'Paso a paso: Gestión de jugadores'
+      url: https://apis.support.brightcove.com/player-management/getting-started/step-step-player-management.html
+    - name: Estilismo de listas de reproducción
+      url: /styling/styling-playlists.html
+    - name: Uso de un lector de pantalla con Brightcove Player
+      url: /general/using-screen-reader-brightcove-player.html
+    - name: Versiones de la documentación de Brightcove Player
+      url: /general/versions-brightcove-player-documentation.html
+    - name: Control del volumen
+      url: /general/volume-control.html
+- section:
+  name: 'Muestras de código'
+  url: '/code-samples/index.html'
+  docs:
+    - name: Muestras de código por grupo
+      url: /code-samples/index-thumb.html
+    - name: Índice de muestra de código
+      url: /code-samples/index.html
+- section:
+  name: 'AMPERIO'
+  url: '/amp/index.html'
+  docs:
+    - name: AMP usando un video de Video Cloud
+      url: /amp/amp-using-video-cloud-video.html
+    - name: AMP usando un video externo
+      url: /amp/amp-using-external-video.html
+    - name: AMP y publicidad
+      url: /amp/amp-and-advertising.html
+- section:
+  name: 'Capacitación'
+  url: '/training/index.html'
+  docs:
+    - name: Todos los cursos de formación online
+      url: /training/online-training-courses.html
+    - name: Vídeos básicos del desarrollador
+      url: /training/developer-basics-videos.html
+    - name: Videos de capacitación sobre desarrollo de jugadores
+      url: /training/player-development-training-videos.html
+    - name: Regístrese para recibir formación dirigida por instructores
+      url: /training/register-training.html
+    - name: 'Formación: Desarrollo con Brightcove Player'
+      url: /training/training-demand-developing-brightcove-player.html
+    - name: 'Formación: Inicio rápido de la administración de jugadores'
+      url: https://apis.support.brightcove.com/player-management/getting-started/training-demand-quick-start-player-management.html
+    - name: Cursos de formación de Brightcove University
+      url: /training/brightcove-university.html
+- section:
+  name: Notas de versión
+  url: /release-notes/index.html
+  docs:
+    - name: Notas de la versión de Brightcove Player
+      url: /release-notes/brightcove-player-release-notes.html
+    - name: Notas previas al lanzamiento de Brightcove Player
+      url: /release-notes/brightcove-player-prerelease-notes.html
+- section:
+  name: 'Soporte'
+  url: '/support/index.html'
+  docs:
+    - name: 'Visualización de la página de estado del sistema Brightcove'
+      url: '/support/viewing-brightcove-system-status-page.html'
+    - name: 'Contactar con ventas'
+      url: '/support/contact-sales.html'
+    - name: 'Abrir un caso de soporte'
+      url: '/support/opening-case-with-brightcove-support.html'
+    - name: 'Restablecer la contraseña del portal de soporte'
+      url: '/support/reset-support-portal-password.html'

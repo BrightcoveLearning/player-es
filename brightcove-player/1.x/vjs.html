@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    
+  
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  
+  <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no, width=device-width" />
+  <!-- change title to match the h1 heading -->
+  <title>vjs</title>
+  <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/foundation/5.5.3/css/foundation.min.css" />
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.3/css/normalize.css" />
+  <script src="//use.edgefonts.net/source-code-pro.js"></script>
+  <link href="//fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/font-hack/2.015/css/hack-extended.min.css">
+
+  <link rel="stylesheet" type="text/css" href="/en/styles/bcls-doc-site.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.9.1/styles/atelier-forest.light.min.css">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/font-hack/2.015/css/hack-extended.min.css">
+
+  <script>
+  (function (i, s, o, g, r, a, m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){ (i[r].q=i[r].q||[]).push(arguments)}, i [r] .l=1*nueva fecha (); a=s.createElement (o), m=s.getElementsByTagName (o) [0]; a.async=1; a.src=g; m.parentNode.insertBefore (a, m)}) (ventana, documento, '', '//www.google-analytics.com/analytics.js', 'ga'); ga («crear», 'UA-2728311- 23', 'auto'); ga («enviar», «vista de página»);
+
+</script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/foundation/5.5.3/js/vendor/modernizr.js"></script>
+  </head>
+
+<body>
+	<!-- header navbar -->
+	<div id="navWrapper" class="fixed"></div>
+	<!-- breadcrumbs -->
+	<nav id="breadCrumbWrapper" class="breadcrumbs show-for-medium-up"></nav>
+	<!-- search -->
+	<div id="searchModal" class="reveal-modal" data-reveal></div>
+	<!-- content -->
+    <div class="row">
+        <div class="sidebar large-2 columns show-for-large-up">
+            <div id="sidenav" class="side-nav"></div>
+        </div>
+        <div id="main" class="large-10 small-12 columns">
+      <div id="top" class="section">
+
+<!-- GENERATED FROM SOURCE -->
+<h1>vjs</h1>
+<div class="right"><a href="./index.html">Índice API</a></div>
+
+<p><strong>DEFINIDO EN</strong> : <a href="https://github.com/videojs/video.js/blob/master/src/js/core.js#L26">src / js / core.js # L26</a>  </p>
+
+<p>Funcionan como función principal para que los usuarios creen una instancia de reproductor y también el objeto de biblioteca principal.</p>
+
+<p><strong>ALIAS</strong> videojs, <em>V</em> (obsoleto)</p>
+
+<p>los <code>vjs</code> La función se puede utilizar para inicializar o recuperar un reproductor.</p>
+
+<pre><code>var myPlayer = vjs ('my_video_id'); </code></pre>
+
+<hr>
+
+<div class="section" id="index">
+<h2>ÍNDICE</h2>
+
+<ul>
+<li><p><a href="#properties">PROPIEDADES</a></p>
+
+<ul>
+<li><a href="#options">opciones</a></li>
+<li><a href="#players">jugadores</a></li>
+</ul></li>
+<li><p>CLASES</p>
+
+<ul>
+<li><a href="vjs.BigPlayButton.html">Botón de reproducción grande</a></li>
+<li><a href="vjs.Button.html">Botón</a></li>
+<li><a href="vjs.CaptionsButton.html">Botón de subtítulos</a></li>
+<li><a href="vjs.CaptionsTrack.html">Subtítulos</a></li>
+<li><a href="vjs.ChaptersButton.html">Botón Capítulos</a></li>
+<li><a href="vjs.ChaptersTrack.html">Capítulos</a></li>
+<li><a href="vjs.ChaptersTrackMenuItem.html">Elemento del menú Track de capítulos</a></li>
+<li><a href="vjs.Component.html">Componente</a></li>
+<li><a href="vjs.ControlBar.html">Barra de control</a></li>
+<li>CoreObject<a href="vjs.CoreObject.html"></a></li>
+<li><a href="vjs.CurrentTimeDisplay.html">Pantalla de tiempo actual</a></li>
+<li><a href="vjs.DurationDisplay.html">Visualización de duración</a></li>
+<li><a href="vjs.Flash.html">Flash</a></li>
+<li><a href="vjs.FullscreenToggle.html">Gogle a pantalla completa</a></li>
+<li><a href="vjs.Html5.html">Html5</a></li>
+<li><a href="vjs.LoadProgressBar.html">Barra de progreso de carga</a></li>
+<li><a href="vjs.LoadingSpinner.html">Spinner de carga</a></li>
+<li><a href="vjs.MediaLoader.html">MediaLoader</a></li>
+<li>MediaTechController<a href="vjs.MediaTechController.html"></a></li>
+<li><a href="vjs.Menu.html">Menú</a></li>
+<li><a href="vjs.MenuButton.html">Botón Menú</a></li>
+<li><a href="vjs.MenuItem.html">Elemento de menú</a></li>
+<li><a href="vjs.MuteToggle.html">Alternar silencio</a></li>
+<li><a href="vjs.OffTextTrackMenuItem.html">Elemento de menú de seguimiento de texto fuera</a></li>
+<li><a href="vjs.PlayProgressBar.html">Barra de progreso de reproducción</a></li>
+<li><a href="vjs.PlayToggle.html">Toggle</a></li>
+<li><a href="player.html">Jugador</a></li>
+<li><a href="vjs.PosterImage.html">Imagen de póster</a></li>
+<li><a href="vjs.ProgressControl.html">Control de progreso</a></li>
+<li><a href="vjs.RemainingTimeDisplay.html">Pantalla de tiempo restante</a></li>
+<li><a href="vjs.SeekBar.html">Barra de búsqueda</a></li>
+<li>SeekHandle<a href="vjs.SeekHandle.html"></a></li>
+<li><a href="vjs.Slider.html">Control deslizante</a></li>
+<li><a href="vjs.SliderHandle.html">Control deslizante</a></li>
+<li><a href="vjs.SubtitlesButton.html">Botón Subtítulos</a></li>
+<li><a href="vjs.SubtitlesTrack.html">Subtítulos</a></li>
+<li><a href="vjs.TextTrack.html">Track de texto</a></li>
+<li><a href="vjs.TextTrackButton.html">Botón de pista de texto</a></li>
+<li><a href="vjs.TextTrackDisplay.html">Visualización de pistas de texto</a></li>
+<li><a href="vjs.TextTrackMenuItem.html">Elemento de menú TextTrack</a></li>
+<li><a href="vjs.TimeDivider.html">divisor de tiempo</a></li>
+<li><a href="vjs.VolumeBar.html">Barra de volumen</a></li>
+<li><a href="vjs.VolumeControl.html">Control de volumen</a></li>
+<li>VolumeHandle<a href="vjs.VolumeHandle.html"></a></li>
+<li><a href="vjs.VolumeLevel.html">Nivel de volumen</a></li>
+<li><a href="vjs.VolumeMenuButton.html">Botón Menu volumen</a></li>
+</ul></li>
+<li><p><a href="#methods">MÉTODOS</a></p>
+
+<ul>
+<li><a href="#plugin-name-init-">plugin</a></li>
+</ul></li>
+</ul>
+
+<hr>
+
+<h2 id="properties">PROPIEDADES</h2>
+
+<h3 id="options">opciones</h3>
+
+<blockquote>
+<p>Opciones de instancia de Global Player, surgidas de vjs.Player.prototype.options_ vjs.options = vjs.Player.prototype.options_ Todas las opciones deben usar claves de cadena para evitar el cambio de nombre por el compilador de cierre</p>
+</blockquote>
+
+<p><em>definido en</em>: <a href="https://github.com/videojs/video.js/blob/master/src/js/core.js#L77">src / js / core.js # L77</a></p>
+
+<hr>
+
+<h3 id="players">jugadores</h3>
+
+<blockquote>
+<p>Lista global de jugadores</p>
+</blockquote>
+
+<p><em>definido en</em>: <a href="https://github.com/videojs/video.js/blob/master/src/js/core.js#L118">src / js / core.js # L118</a></p>
+
+<hr>
+
+</div>
+<div class="section" id="methodsSection">
+<h2 id="methods">MÉTODOS</h2>
+
+<h3 id="plugin-name-init-">complemento (nombre, init)</h3>
+
+<blockquote>
+<p>el método para registrar un complemento de video.js</p>
+</blockquote>
+
+<h5>PARÁMETROS:</h5>
+
+<ul>
+<li><strong>nombre</strong> <code>Cuerda</code> El nombre del complemento</li>
+<li><strong>en eso</strong> <code>Función</code> La función que se ejecuta cuando el reproductor inicia</li>
+</ul>
+
+<p><em>definido en</em>: <a href="https://github.com/videojs/video.js/blob/master/src/js/plugins.js#L7">src / js / plugins.js # L7</a></p>
+
+<hr>
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- bcl scripts -->
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/foundation/5.5.3/js/foundation.min.js"></script>
+  
+  <script src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.3/handlebars.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.9.1/highlight.min.js"></script>
+  <script src="/en/scripts/log.js"></script>
+    <script src="/en/scripts/docs-nav-data.min.js"></script>
+    <script src="/en/scripts/bcls-doc-site-v1.js"></script>
+    <script src="/en/scripts/bc-mapi.js"></script>
+    <script>
+        $ (documento) .foundation ();
+    </script>
+    <script type="text/javascript">
+    /******** Cualquier guión específico de las muestras de páginas debería ir aquí *********/
+  </script>
+    
+    
+	<div style="text-align:center">
+    <iframe id="CSAT" src="//learning-services-media.brightcove.com/doc-assets/general/surveylink.html" style=" padding-bottom:20px;border:none"></iframe>
+</div>
+<div class="bcls-footer"><a id="feedbackMail" href="mailto:docs@brightcove.com">¿Tiene preguntas o comentarios?</a></div>
+<script>
+var feedbackMail = document.getElementById («FeedbackMail»); Feedbackmail.setAttribute («href», «mailto: docs@brightcove.com? subject=pregunta relativa a "+ encodeURI (document.location.href));
+</script>
+<script src="https://learning-services-media.brightcove.com/doc-assets/js/https-fix.js"></script>
+<script src="https://learning-services-media.brightcove.com/doc-assets/js/support-feedback.js"></script><script src="https://support.brightcove.com/site-assets/js/site/feedback-docs.js"></script>
+</body>
+
+</html>

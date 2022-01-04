@@ -1,0 +1,79 @@
+---
+title: "AMP y publicidad"
+description: "En este tema, aprenderá a mostrar publicidad con un Brightcove Player que utiliza AMP. También aprenderá a utilizar el consentimiento del lado del cliente con la configuración Brightcove Player / AMP ".
+
+parent: "amp"
+---
+ <h1>{{ page.title }}</h1>
+<article class="bcls-article">
+    <summary>{{ page.description }}</summary>
+    <section class="bcls-section">
+        <h2 id="section-name">Implementar publicidad en un reproductor AMP</h2>
+        <p>La publicidad, incluidos los prerolls, funciona en los reproductores que se utilizan en AMP. El complemento publicitario y su configuración solo deben incluirse en la configuración del reproductor. Si necesita incluir valores específicos del artículo en sus llamadas al servidor de anuncios, puede pasar datos personalizados a un complemento de reproductor como se describe más adelante en este documento.</p>
+        <p>AMP es muy estricto en lo que se puede agregar a una página AMP válida, como se detalla en el <a href="/amp/amp-using-video-cloud-video.html">AMP usando un video de Video Cloud</a> documento. Por ejemplo, NO PUEDE utilizar la práctica estándar de agregar un <code translate="No">id</code> hacia <code translate="No">amp-brightcove</code> luego use una <code translate="No">script</code> block para configurar, por ejemplo, el complemento IMA3.</p>
+        <p>Para reiterar, la publicidad debe implementarse en la configuración del reproductor, ya sea usando Studio o la API de administración de jugadores.</p>
+        <p>Si desea utilizar URL de configuración de anuncios que utilizan una macro de anuncios como <code translate="No">{pageVariable.<span class="bcls-highlight">adId</span>}</code> , debe modificar la configuración del reproductor. Puede utilizar un parámetro personalizado como:</p>
+        <pre class="line-numbers">
+  <code class="language-html" translate="No">data-param-ad-id="preonlybumper"</code></pre>
+        <p>Esto no hace que el valor esté disponible automáticamente para la macro de anuncios. <code translate="No">{pageVariable.adId}</code>. Para hacer el <code translate="No">ad-id/adId</code> propiedad disponible para la URL del anuncio, debe utilizar Brightcove Player's <a href="/general/player-configuration-guide.html#query_string_to_window">query_string_to_window</a> opción de configuración. Esta opción controla la población de las variables del espacio de nombres global (ventana) a partir de los parámetros de la cadena de consulta. Para agregar todos los parámetros de cadena de consulta al espacio de nombres global, agregue lo siguiente a la configuración de su reproductor:
+            <pre class="line-numbers">
+<code class="language-bash" translate="No">"query_string_to_window": {
+  "target": "queryStringParams"
+}</code></pre>
+            <p>Nota la <code translate="no">queryStringsParams</code> nombre es la "variable" en la que se almacenarán los parámetros, y puede cambiar el nombre como desee.</p>
+            <p>Si por alguna razón prefiere asignar solo parámetros limitados al espacio de nombres global, puede hacerlo. Por ejemplo, para hacer solo el <code class="language-html" translate="No">data-param-<span class="bcls-highlight">ad-id</span>="..."</code> disponible para el complemento, agrega lo siguiente a la configuración del reproductor:</p>
+            <pre class="line-numbers">
+<code class="language-bash" translate="No">"query_string_to_window": {
+  "globals": [
+    "adId"
+  ]
+}</code></pre>
+            <p>Para obtener instrucciones específicas sobre cómo actualizar la configuración de un reproductor, consulte <a href="https://apis.support.brightcove.com/player-management/references/reference.html#operation/UpdatePlayerConfiguration">Configuraciones de jugador: actualizar una configuración de jugador</a> de la referencia de la API de administración de reproductores.</p>
+    </section>
+    <section class="bcls-section">
+        <h2 id="section-name">Consentimiento y publicidad de AMP</h2>
+        <p>En AMP, puede usar el consentimiento del lado del cliente, lo que brinda a los usuarios un control adicional sobre su experiencia en línea. Si su página de AMP administra el consentimiento del usuario con el consentimiento de AMP, y está utilizando publicidad en el reproductor, es posible que desee adaptar la solicitud de anuncios del reproductor en función de ese consentimiento. Hágalo agregando un
+            <pre><code class="language-javascript">data-block-on-consent = "_ till_responded"</code></pre>
+            atributo al elemento amp-brightcove. Esto hará que la carga del reproductor se retrase hasta que el usuario haya aceptado o rechazado el consentimiento. En las páginas siguientes en las que se conoce el consentimiento, el reproductor se cargará normalmente sin demora.</p>
+        <aside class="bcls-aside bcls-aside--information">Para obtener más información sobre el consentimiento del usuario de AMP, consulte AMP <a href="https://amp.dev/documentation/examples/user-consent/client_side_user_consent_flow/">Flujo de consentimiento del usuario del lado del cliente</a> documento.</aside>
+        <h3>Configuraciones de anuncios</h3>
+        <p>El escenario más simple para implementar publicidad y AMP es utilizar la integración de publicidad IMA estándar de Brightcove Player con Google Ad Manager, que espera <code translate="no">npa = 1</code> que se agregará a la solicitud de anuncio si se desconoce o no se otorga el consentimiento. Para hacer esto, agregue</p>
+            <pre><code class="language-javascript">"imaAddNpa": verdadero</code></pre>
+            <p>a las opciones del complemento de soporte AMP del reproductor, y esto se agregará automáticamente a la URL del servidor de anuncios, como se muestra aquí:</p>
+        <figure class="bcls-figure">
+            <img class="bcls-image" src="/assets/images/amp/amp-ad-plugin-config.png" alt="plugin configuration">
+        </figure>
+        <p>Para otros cambios en la URL del servidor de anuncios, el estado de consentimiento se establecerá en el iframe del reproductor con tres parámetros de consulta:</p>
+
+        <ul>
+            <li><code translate="no">ampInitialConsentState</code>: Si el consentimiento es aceptado, rechazado, desconocido</li>
+            <li><code translate="no">ampConsentSharedData</code>: Una cadena de datos JSON del proveedor de consentimiento</li>
+            <li><code translate="no">ampInitialConsentValue</code>: La cadena de consentimiento del proveedor de consentimiento</li>
+        </ul>
+
+        <p>El estado de consentimiento es un número entero como se define en AMP:</p>
+
+        <ul>
+            <li>SUFICIENTE: 1</li>
+            <li>INSUFICIENTE: 2</li>
+            <li>UNKNOWN_NOT_REQUIRED: 3</li>
+            <li>DESCONOCIDO: 4</li>
+        </ul>
+
+        <p>Para actualizar la configuración del reproductor para que los parámetros de consulta del iframe del reproductor estén disponibles como variables simples de Javascript, agregue lo siguiente a la configuración del reproductor en el editor JSON:</p>
+        <pre><code class="language-javascript">"query_string_to_window": {"target": "queryStringParams"}</code></pre>
+        <p>Para obtener ayuda, aquí hay una captura de pantalla de la interfaz de usuario:
+        </p>
+        <figure class="bcls-figure">
+            <img class="bcls-image" src="/assets/images/amp/amp-ad-json-editor.png" alt="JSON editor">
+        </figure>
+        <p>Luego, puede usar los parámetros de consulta de consentimiento en la solicitud del servidor de anuncios, ya sea usando macros o configurando severURL para que sea una función.</p>
+        <h4>Ejemplo de macro</h4>
+        <pre><code class="language-javascript">"adserverURL": "https://ads.example.com/ad?consent={pageVariable.queryStringParams.ampInitialConsentState} consentString ={pageVariable.queryStringParams.ampInitialConsentValue}"</code></pre>
+        <h4>Ejemplo de función</h4>
+        <p>Configure el reproductor sin una URL de servidor de anuncios utilizando lo siguiente:</p>
+        <pre><code class="language-javascript">videojs.registerPlugin ('setAdUrl', función () { this.ima3.settings.serverUrl = function(callback) { if (window.queryStringParams.ampInitialConsentState === 1) { // Sufficient consent callback('https://ads.example.com/adwithconsent?string={pageVariable.queryStringParams.ampInitialConsentValue}'); } demás { // Use a different ad callback('https://ads.example.com/basicad'); } });</code></pre>
+
+
+    </section>
+</article>

@@ -1,1168 +1,13 @@
-﻿<!doctype html>
-<html lang="es-es">
-
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  
-  <title>Guía: Playlist API</title>
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  <link rel="manifest" href="/site.webmanifest">  
-  <link data-react-helmet="true" rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500&amp;display=swap">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/prism.css">
-  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/styles.css">
-  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/landing-page.css">
-  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/tabs.css">
-  <link rel="stylesheet" href="/assets/css/local.css">
-  <link data-react-helmet="true" rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500&display=swap">
-  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap" rel="stylesheet">
-  <script src="https://kit.fontawesome.com/381443caa8.js" crossorigin="anonymous"></script>
-  <script src="https://support.brightcove.com/site-assets/js/site/google-analytics.js"></script>
-  <script src="/assets/js/sajari-head.js"></script>
-</head>
-
-<body class="body">
-
-<header>
-  <div class="div-header">
-    <a href="/"><img class="product-logo" src="https://support.brightcove.com/site-assets/images/site/product-logos/Player_Logo.svg" alt="logotipo del producto" style="max-height: 100px;max-width: 232px;"/></a>
-<!-- GTranslate: https://gtranslate.io/ -->
-<select onchange="doGTranslate(this);"><option value="">Seleccionar idioma</option><option value="en|en" translate="No">English</option><option value="en|zh-TW" translate="No">繁體中文</option><option value="en|fr" translate="No">Français</option><option value="en|de" translate="No">Deutsche</option><option value="en|ja" translate="No">日本語</option><option value="en|ko" translate="No">한국어</option><option value="en|es" translate="No">Español</option></select>
-
-<script>
-/* <![CDATA[ */
-function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;if(lang_pair=='')return;var lang=lang_pair.split('|')[1];var plang=location.hostname.split('.')[0];if(plang.length !=2 && plang.toLowerCase() != 'zh-cn' && plang.toLowerCase() != 'zh-tw')plang='en';location.href=location.protocol+'//'+(lang == 'en' ? '' : lang+'.')+location.hostname.replace('www.', '').replace(RegExp('^' + plang + '\\.'), '')+location.pathname+location.search;}
-/* ]]> */
-</script>
-
-    
-
-
-    <span class="secondary-nav"><a href="https://supportportal.brightcove.com/s/login/?"><img src="https://support.brightcove.com/site-assets/images/site/support.png" alt="soporte"/> Contactar con Soporte</a> <span style="vertical-align: top;margin-left:1em;margin-right:1em;">|</span> <a href="https://status.brightcove.com/">Estado<img src="https://support.brightcove.com/site-assets/images/site/status.png" alt="estado del sistema"/> del sistema</a></span> <br/>
-    
-  </div>
-  <nav aria-label="breadcrumb">
-    <ol class="breadcrumb arr-right">
-      
-      <li class="breadcrumb-item"><a href="/">Inicio</a></li>
-      
-      
-      
-      <li class="breadcrumb-item">Referencias<a href="/references/"></a></li>
-      
-      <li class="breadcrumb-item active" aria-current="page">Guía: Playlist API</li>
-    </ol>
-  </nav>
-</header>
-<div class="container">
-    <div class="row">
-            <div class="col-sm-3 left-side-bar">
-        <select id="site_select" class="bcls-select" style="margin-right: 1rem;">
-          <option value="">Otros documentos de Brightcove</option>
-          
-            
-              <option value="https://support.brightcove.com">Documentación Inicio</option>
-            
-          
-            
-              <option value="https://audience.support.brightcove.com">Audiencia de Brightcove</option>
-            
-          
-            
-              <option value="https://beacon.support.brightcove.com">Baliza Brightcove</option>
-            
-          
-            
-              <option value="https://campaign.support.brightcove.com">Campaña de Brightcove</option>
-            
-          
-            
-              <option value="https://engage.support.brightcove.com">Brightcove Engage</option>
-            
-          
-            
-              <option value="https://live.support.brightcove.com">Brightcove Live</option>
-            
-          
-            
-              <option value="https://gallery.support.brightcove.com">Brightcove Gallery</option>
-            
-          
-            
-              <option value="https://ssai.support.brightcove.com">Brightcove SSAI</option>
-            
-          
-            
-              <option value="https://social.support.brightcove.com">Brightcove Social</option>
-            
-          
-            
-              <option value="https://studio.support.brightcove.com">Video Cloud Studio</option>
-            
-          
-            
-              <option value="https://player.support.brightcove.com">Desarrollo de jugadores de Brightcove</option>
-            
-          
-            
-              <option value="https://apis.support.brightcove.com">API para la plataforma de Video Cloud</option>
-            
-          
-            
-              <option value="https://sdks.support.brightcove.com">SDK de dispositivos de Video Cloud</option>
-            
-          
-            
-              <option value="https://integrations.support.brightcove.com">Integraciones y conectores CMS</option>
-            
-          
-            
-              <option value="https://general.support.brightcove.com">Información general de Video Cloud</option>
-            
-          
-            
-              <option value="https://zencoder.support.brightcove.com">Zencoder</option>
-            
-          
-        </select>
-
-        <nav class="sidenav" id="side_nav">
-          
-            
-            <h5><a href="/index.html">Inicio</a></h5>
-            
-          
-            
-              <select id="site_select" class="bcls-select" style="margin-right: 1rem;">
-					<option value="">기타 브라이트코브 문서</option>
-					
-						
-							<option value="https://support.brightcove.com">설명서 홈</option>
-						
-					
-						
-							<option value="https://audience.support.brightcove.com">브라이트코브 대상</option>
-						
-					
-						
-							<option value="https://beacon.support.brightcove.com">브라이트코브 비콘</option>
-						
-					
-						
-							<option value="https://campaign.support.brightcove.com">브라이트코브 캠페인</option>
-						
-					
-						
-							<option value="https://engage.support.brightcove.com">브라이트코브 참여</option>
-						
-					
-						
-							<option value="https://live.support.brightcove.com">Brightcove Live</option>
-						
-					
-						
-							<option value="https://gallery.support.brightcove.com">Brightcove Gallery</option>
-						
-					
-						
-							<option value="https://ssai.support.brightcove.com">Brightcove SSAI</option>
-						
-					
-						
-							<option value="https://social.support.brightcove.com">브라이트코브 소셜</option>
-						
-					
-						
-							<option value="https://studio.support.brightcove.com">비디오 클라우드 스튜디오</option>
-						
-					
-						
-							<option value="https://player.support.brightcove.com">브라이트코브 플레이어 개발</option>
-						
-					
-						
-							<option value="https://apis.support.brightcove.com">비디오 클라우드 플랫폼 API</option>
-						
-					
-						
-							<option value="https://sdks.support.brightcove.com">비디오 클라우드 디바이스 SDK</option>
-						
-					
-						
-							<option value="https://integrations.support.brightcove.com">통합 및 CMS 커넥터</option>
-						
-					
-						
-							<option value="https://general.support.brightcove.com">비디오 클라우드 일반 정보</option>
-						
-					
-						
-							<option value="https://zencoder.support.brightcove.com">Zencoder</option>
-						
-			<h5 class="submenu-header"><a href="/getting-started/index.html"><strong>+</strong> Empezar</a></h5>		
-				</select>
-        <nav class="sidenav" id="side_nav">
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    <li><a href="/training/developer-basics-videos.html">Vídeos básicos del desarrollador</a></li>
-                  
-                
-                  
-                    <li>¿Qué es Brightcove Player?<a href="/getting-started/what-brightcove-player.html"></a></li>
-                  
-                
-                  
-                    <li>Visión general:<a href="/getting-started/overview-brightcove-player.html"> Reproductor de Brightcove</a></li>
-                  
-                
-                  
-                    <li>Guía de aprendizaje:<a href="/getting-started/learning-guide-video-advertising.html"> Publicidad en vídeo</a></li>
-                  
-                
-                  
-                    <li>Visión general:<a href="/getting-started/overview-brightcove-player-plugins.html"> Complementos de Brightcove Player</a></li>
-                  
-                
-                  
-                    <li>Vídeos de capacitación sobre desarrollo de jugadores<a href="/training/player-development-training-videos.html"></a></li>
-                  
-                
-                  
-                    <li>Paso a paso:<a href="/getting-started/step-step-brightcove-player.html"> Reproductor de Brightcove</a></li>
-                  
-                
-                  
-                    <li>Paso a paso:<a href="/getting-started/step-step-player-customization.html"> Personalización del reproductor</a></li>
-                  
-                
-                  
-                    <li>Capacitación:<a href="/training/training-demand-developing-brightcove-player.html"> Desarrollar con Brightcove Player</a></li>
-                  
-                
-                  
-                    <li><a href="/getting-started/learning-guide-using-rest-apis.html">Guía de aprendizaje: Uso de las API REST</a></li>
-                  
-                
-              </ul>
-            
-          
-            
-              <h5 class="submenu-header">Aprender los conceptos básicos +<a href="/basics/index.html"><strong></strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    <li><a href="/basics/developer-basics-advanced-player-code.html">Código del reproductor avanzado</a></li>
-                  
-                
-                  
-                    <li><a href="/basics/developer-basics-autoplaying-video.html">Reproducción automática de un vídeo</a></li>
-                  
-                
-                  
-                    <li><a href="/basics/developer-basics-custom-plugin-converting-code.html">Plugin personalizado - Conversión de código</a></li>
-                  
-                
-                  
-                    <li><a href="/basics/developer-basics-custom-plugin-passing-data.html">Plugin personalizado - Pasar datos</a></li>
-                  
-                
-                  
-                    <li><a href="/basics/developer-basics-custom-plugin-using-studio.html">Plugin personalizado - Usar Studio</a></li>
-                  
-                
-                  
-                    <li><a href="/basics/developer-basics-custom-plugin-why-and-how.html">Plugin personalizado - Por qué y cómo</a></li>
-                  
-                
-                  
-                    <li><a href="/training/developer-basics-videos.html">Vídeos básicos del desarrollador</a></li>
-                  
-                
-                  
-                    <li><a href="/basics/developer-basics-generating-player-code.html">Generación de código de jugador</a></li>
-                  
-                
-                  
-                    <li>Preparación para escribir código<a href="/basics/developer-basics-preparing-write-code.html"></a></li>
-                  
-                
-              </ul>
-            
-          
-            
-              <h5 class="submenu-header">Referencias +<a href="/references/index.html"><strong></strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    <li><a href="/references/brightcove-player-5-6-migration-guide.html">Guía de migración de Brightcove Player 5 a 6</a></li>
-                  
-                
-                  
-                    <li><a href="https://docs.brightcove.com/brightcove-player/current-release/index.html">Documentación de Brightcove Player API (sitio externo)</a></li>
-                  
-                
-                  
-                    <li><a href="/references/brightcove-player-cookies.html">Cookies de reproductor de Brightcove</a></li>
-                  
-                
-                  
-                    <li><a href="/references/brightcove-player-error-reference.html">Referencia de error del Reproductor de Brightcove</a></li>
-                  
-                
-                  
-                    <li><a href="https://groups.google.com/forum/embed/?place=forum/bcplayerdev#!forum/bcplayerdev">Foro de anuncios de jugadores de Brightcove</a></li>
-                  
-                
-                  
-                    <li><a href="/references/brightcove-player-system-requirements.html">Requisitos del sistema de Brightcove Player</a></li>
-                  
-                
-                  
-                    <li><a href="/references/catalog-search-architecture.html">Arquitectura de búsqueda</a></li>
-                  
-                
-                  
-                    <li>Problemas conocidos<a href="https://general.support.brightcove.com/general/known-issues-studio-brightcove-player-and-apis.html"></a></li>
-                  
-                
-                  
-                    <li>Catálogo de jugadores<a href="/references/player-catalog.html"></a></li>
-                  
-                
-                  
-                    <li>Compatibilidad con funciones de jugador por navegador<a href="/references/player-feature-support-browser.html"></a></li>
-                  
-                
-                  
-                    <li>Metadatos del reproductor de bcinfo<a href="/references/player-metadata-bcinfo.html"></a></li>
-                  
-                
-                  
-                    <li>Métodos de reproductores/API de eventos (sitio externo)<a href="https://docs.brightcove.com/brightcove-player/current-release/Player.html"></a></li>
-                  
-                
-                  
-                    <li>Guía de API de lista de reproducción<a href="/references/guide-playlist-api.html"></a></li>
-                  
-                
-                  
-                    <li>Metadatos de vídeo de mediainfo<a href="/references/video-metadata-mediainfo.html"></a></li>
-                  
-                
-              </ul>
-            
-          
-            
-              <h5 class="submenu-header">Plugins +<a href="/plugins/index.html"><strong></strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    <li><a href="/plugins/360degvr-video-plugin.html">Vídeo 360º</a></li>
-                  
-                
-                  
-                    <li><a href="/plugins/ad-only-plugin.html">Sólo anuncio</a></li>
-                  
-                
-                  
-                    <li><a href="/plugins/advertising-freewheel-plugin.html">Publicidad con el plugin FreeWheel</a></li>
-                  
-                
-                  
-                    <li><a href="/plugins/advertising-ima3-plugin.html">Publicidad con el complemento IMA3</a></li>
-                  
-                
-                  
-                    <li>Actualización a la versión 3 del complemento IMA3<a href="/plugins/upgrading-ima3-plugin-version-3.html"></a></li>
-                  
-                
-                  
-                    <li><a href="/plugins/implementing-server-side-ads-brightcove-player.html">Publicidad con SSAI</a></li>
-                  
-                
-                  
-                    <li><a href="/plugins/chromecast-plugin-brightcove-player.html">Chromecast</a></li>
-                  
-                
-                  
-                    <li><a href="/plugins/custom-endscreen-plugin.html">Pantalla final personalizada</a></li>
-                  
-                
-                  
-                    <li><a href="/plugins/display-error-messages-plugin.html">Mostrar mensajes de error</a></li>
-                  
-                
-                  
-                    <li><a href="/plugins/display-thumbnail-previews-plugin.html">Mostrar vistas previas en miniatura</a></li>
-                  
-                
-                  
-                    <li><a href="/plugins/configuring-brightcove-player-drm.html">DRM</a></li>
-                  
-                
-                  
-                    <li><a href="/plugins/google-tag-manager-plugin-brightcove-player.html">Administrador de etiquetas de Google</a></li>
-                  
-                
-                  
-                    <li><a href="/plugins/hls-plugin.html">HLS</a></li>
-                  
-                
-                  
-                    <li>DVRUX en vivo<a href="/plugins/live-dvrux-plugin.html"></a></li>
-                  
-                
-                  
-                    <li>Superposición<a href="/plugins/display-overlay-plugin.html"></a></li>
-                  
-                
-                  
-                    <li>Visión general:<a href="/plugins/overview-brightcove-player-plugins.html"> Plugins de jugador</a></li>
-                  
-                
-                  
-                    <li>Imagen en imagen<a href="/plugins/picture-picture-plugin-aka-floating-or-pinned.html"></a></li>
-                  
-                
-                  
-                    <li>Pruebas de versión de reproductor/plugin<a href="/plugins/playerplugin-version-testing.html"></a></li>
-                  
-                
-                  
-                    <li>IU de lista de reproducción<a href="/plugins/playlist-ui-plugin.html"></a></li>
-                  
-                
-                  
-                    <li>Registro de cambios del complemento<a href="/plugins/changelog/index.html"></a></li>
-                  
-                
-                  
-                    <li>Registro de complementos<a href="/plugins/plugin-registry.html"></a></li>
-                  
-                
-                  
-                    <li>Referencia de versión del complemento<a href="/plugins/plugin-version-reference.html"></a></li>
-                  
-                
-                  
-                    <li>Selección de calidad<a href="/plugins/quality-selection-plugin.html"></a></li>
-                  
-                
-                  
-                    <li>Redes Sociales<a href="/plugins/social-sharing-plugin.html"></a></li>
-                  
-                
-                  
-                    <li>Tealium Tag Manager<a href="/plugins/tealium-plugin-brightcove-player.html"></a></li>
-                  
-                
-                  
-                    <li>Generador de esquemas SEO de vídeo<a href="/plugins/video-seo-schema-generator-plugin.html"></a></li>
-                  
-                
-              </ul>
-            
-          
-            
-              <h5 class="submenu-header"><a href="/advertising/index.html">Publicidad <strong>+</strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    <li><a href="/advertising/ad-events-and-ad-objects.html">Eventos de anuncio y objetos de anuncio</a></li>
-                  
-                
-                  
-                    <li><a href="/plugins/ad-only-plugin.html">Plugin solo para anuncios</a></li>
-                  
-                
-                  
-                    <li><a href="/plugins/advertising-freewheel-plugin.html">Publicidad con el plugin FreeWheel</a></li>
-                  
-                
-                  
-                    <li><a href="/plugins/advertising-ima3-plugin.html">Publicidad con el complemento IMA3</a></li>
-                  
-                
-                  
-                    <li><a href="/advertising/client-side-preroll-with-live-ssai.html">Anuncios pre-roll del lado del cliente con SSAI en vivo</a></li>
-                  
-                
-                  
-                    <li><a href="/advertising/displaying-ads-using-ad-cue-points.html">Visualización de anuncios mediante puntos de anuncio</a></li>
-                  
-                
-                  
-                    <li><a href="/advertising/flash-no-longer-valid-ima.html">Flash ya no es válido con IMA</a></li>
-                  
-                
-                  
-                    <li><a href="/advertising/guide-ad-partner-integration.html">Guía: Integración de socios publicitarios</a></li>
-                  
-                
-                  
-                    <li><a href="/advertising/guide-contrib-ads-migration.html">Guía: migración de contrib-ads</a></li>
-                  
-                
-                  
-                    <li><a href="/plugins/implementing-server-side-ads-brightcove-player.html">Implementación de SSAI con Brightcove Player</a></li>
-                  
-                
-                  
-                    <li><a href="/advertising/jump-start-header-bidding-ad.html">Inicio de salto: Anuncio de puja de encabezado</a></li>
-                  
-                
-                  
-                    <li><a href="/advertising/jump-start-outstream-ad.html">Inicio de salto: Anuncio Outstream</a></li>
-                  
-                
-                  
-                    <li><a href="/advertising/jump-start-pre-roll-ad.html">Inicio de salto: Anuncio de pre-rollo</a></li>
-                  
-                
-                  
-                    <li>Problemas conocidos:<a href="/advertising/known-issues-server-side-ad-insertion-ssai.html"> Inserción de anuncios en el lado del servidor (SSAI)</a></li>
-                  
-                
-                  
-                    <li>Guía de aprendizaje:<a href="/getting-started/learning-guide-video-advertising.html"> Publicidad en vídeo</a></li>
-                  
-                
-                  
-                    <li>Paso a paso:<a href="/advertising/step-step-implementing-advertising.html"> Implementar publicidad</a></li>
-                  
-                
-                  
-                    <li>Prueba de complementos publicitarios previos al lanzamiento<a href="/advertising/testing-pre-release-advertising-plugins.html"></a></li>
-                  
-                
-                  
-                    <li>Uso de DFP Premium con Brightcove Player<a href="/advertising/using-dfp-premium-brightcove-player.html"></a></li>
-                  
-                
-                  
-                    <li>Uso de Live SSAI y Advanced Player Toolkit<a href="/advertising/using-player-enhancements-live-ssai-brightcove-player.html"></a></li>
-                  
-                
-                  
-                    <li>Validación de etiquetas de anuncio SSAI de Video Cloud<a href="/advertising/video-cloud-ssai-ad-tag-validation.html"></a></li>
-                  
-                
-              </ul>
-            
-          
-            
-              <h5 class="submenu-header">Publicar vídeos y reproductores +<a href="/publish/index.html"><strong></strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    <li><a href="/publish/assigning-video-player-programmatically.html">Asignación de un vídeo al reproductor mediante programación</a></li>
-                  
-                
-                  
-                    <li><a href="/publish/available-options-advanced-page-embed-code.html">Opciones disponibles para el código de inserción avanzado (en página)</a></li>
-                  
-                
-                  
-                    <li><a href="/publish/available-options-standard-iframe-embed-code.html">Opciones disponibles para el código de inserción estándar (iframe)</a></li>
-                  
-                
-                  
-                    <li><a href="/publish/brightcove-player-loader.html">Cargador de jugadores de Brightcove</a></li>
-                  
-                
-                  
-                    <li><a href="/publish/bulk-updating-brightcove-default-player.html">Actualización masiva del reproductor predeterminado de Brightcove</a></li>
-                  
-                
-                  
-                    <li><a href="https://studio.support.brightcove.com/publish/choosing-correct-embed-code.html">Elegir el código de incrustación correcto</a></li>
-                  
-                
-                  
-                    <li>Atrasando la instanciación del jugador<a href="/publish/delaying-player-instantiation.html"></a></li>
-                  
-                
-                  
-                    <li>Jugador previo al lanzamiento<a href="/publish/pre-release-player.html"></a></li>
-                  
-                
-                  
-                    <li>Estrategias de sindicación<a href="/publish/syndication-strategies.html"></a></li>
-                  
-                
-                  
-                    <li>Uso de un reproductor que no sea de Brightcove<a href="/publish/using-non-brightcove-player.html"></a></li>
-                  
-                
-                  
-                    <li>Uso de varios jugadores en una página<a href="https://studio.support.brightcove.com/publish/using-multiple-players-one-page.html"></a></li>
-                  
-                
-                  
-                    <li>Uso de Id. de referencia<a href="https://studio.support.brightcove.com/publish/using-reference-ids.html"></a></li>
-                  
-                
-                  
-                    <li>Inspector de copias de vídeo<a href=""></a></li>
-                  
-                
-              </ul>
-            
-          
-            
-              <h5 class="submenu-header">Solución de problemas +<a href="/troubleshooting/index.html"><strong></strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    <li><a href="/troubleshooting/brightcove-playback-technology-app.html">Aplicación de tecnología de reproducción Brightcove</a></li>
-                  
-                
-                  
-                    <li><a href="/references/brightcove-player-error-reference.html">Referencia de error del Reproductor de Brightcove</a></li>
-                  
-                
-                  
-                    <li><a href="/troubleshooting/brightcove-player-information-modal.html">Brightcove Información del Jugador Modal</a></li>
-                  
-                
-                  
-                    <li><a href="/troubleshooting/brightcove-player-troubleshooting-guide.html">Guía de solución de problemas de Brightcove Player</a></li>
-                  
-                
-                  
-                    <li><a href="/troubleshooting/creating-charles-log.html">Creación de un Charles Log</a></li>
-                  
-                
-                  
-                    <li><a href="/troubleshooting/creating-network-log.html">Creación de un registro de red</a></li>
-                  
-                
-                  
-                    <li><a href="/troubleshooting/domain-restrictions-messaging.html">Mensajería de restricciones de dominio</a></li>
-                  
-                
-                  
-                    <li><a href="/plugins/display-error-messages-plugin.html">Mostrar plugin de mensajes de error</a></li>
-                  
-                
-                  
-                    <li>Configuración manual de la versión del reproductor<a href="/troubleshooting/manually-setting-player-version.html"></a></li>
-                  
-                
-                  
-                    <li>Pruebas de versión de reproductor/plugin<a href="/plugins/playerplugin-version-testing.html"></a></li>
-                  
-                
-                  
-                    <li>Propiedades informativas del jugador<a href="/troubleshooting/player-informational-properties.html"></a></li>
-                  
-                
-                  
-                    <li>Ejemplo:<a href="/code-samples/brightcove-player-sample-live-custom-error-message.html"> Mensaje de error personalizado en vivo</a></li>
-                  
-                
-                  
-                    <li>Paso a paso:<a href="/troubleshooting/step-step-brightcove-player-debugger.html"> Depurador de reproductor de Brightcove</a></li>
-                  
-                
-                  
-                    <li>Ejecución de un seguimiento de ruta de red<a href="/troubleshooting/running-network-path-trace.html"></a></li>
-                  
-                
-                  
-                    <li>Uso de la referencia del reproductor<a href="/troubleshooting/using-player-reference.html"></a></li>
-                  
-                
-                  
-                    <li>Vetting Lanzamientos del jugador de Brightcove<a href="/troubleshooting/vetting-brightcove-player-releases.html"></a></li>
-                  
-                
-                  
-                    <li>Visualización de la configuración del reproductor<a href="/troubleshooting/viewing-player-configuration.html"></a></li>
-                  
-                
-              </ul>
-            
-          
-            
-              <h5 class="submenu-header">Estilo y apariencia +<a href="/styling/index.html"><strong></strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    <li><a href="/styling/customizing-player-appearance.html">Personalización de la apariencia del reproductor</a></li>
-                  
-                
-                  
-                    <li><a href="/styling/customizing-player-appearance-legacy-skin.html">Personalización del aspecto del jugador - Aspecto heredado</a></li>
-                  
-                
-                  
-                    <li>Player Styling Playground<a href="/styling/brightcove-player-sample-player-styling-playground.html"></a></li>
-                  
-                
-                  
-                    <li>Inicio rápido:<a href="/styling/quick-start-player-customization-legacy-skin.html"> Personalización del jugador: aspecto heredado</a></li>
-                  
-                
-                  
-                    <li>Paso a paso:<a href="/getting-started/step-step-player-customization.html"> Personalización del reproductor</a></li>
-                  
-                
-                  
-                    <li>Tamaño de respuesta para el reproductor de Brightcove<a href="/styling/responsive-sizing-brightcove-player.html"></a></li>
-                  
-                
-                  
-                    <li>Tamaño del jugador<a href="/styling/sizing-player.html"></a></li>
-                  
-                
-                  
-                    <li>Skins y versiones de jugador<a href="/styling/skins-and-player-versions.html"></a></li>
-                  
-                
-                  
-                    <li>Estilo de subtítulos<a href="https://studio.support.brightcove.com/media/styling-captions.html"></a></li>
-                  
-                
-                  
-                    <li>Estilo de listas de reproducción<a href="/styling/styling-playlists.html"></a></li>
-                  
-                
-              </ul>
-            
-          
-            
-              <h5 class="submenu-header">Reproducción +<a href="/playback/index.html"><strong></strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    <li><a href="/playback/autoplay-considerations.html">Consideraciones de reproducción automática</a></li>
-                  
-                
-                  
-                    <li><a href="/troubleshooting/brightcove-playback-technology-app.html">Aplicación de tecnología de reproducción Brightcove</a></li>
-                  
-                
-                  
-                    <li><a href="/playback/xdr-with-bcplayer.html">Reanudación multidispositivo con Brightcove Player</a></li>
-                  
-                
-                  
-                    <li><a href="https://studio.support.brightcove.com/publish/deep-linking.html">Vinculación profunda</a></li>
-                  
-                
-                  
-                    <li><a href="/playback/delivering-hls-video.html">Entrega de vídeo HLS</a></li>
-                  
-                
-                  
-                    <li><a href="/playback/determining-which-rendition-will-play.html">Determinar qué copia se reproducirá</a></li>
-                  
-                
-                  
-                    <li><a href="/playback/guide-playback-technology.html">Guía: Tecnología de reproducción</a></li>
-                  
-                
-                  
-                    <li><a href="/plugins/hls-plugin.html">Complemento HLS</a></li>
-                  
-                
-                  
-                    <li><a href="/playback/ios-and-brightcove-player.html">iOS y reproductor de Brightcove</a></li>
-                  
-                
-                  
-                    <li>Visión general:<a href="/playback/overview-https-support.html"> Soporte de HTTPS</a></li>
-                  
-                
-                  
-                    <li>Complemento de selección de calidad<a href="/plugins/quality-selection-plugin.html"></a></li>
-                  
-                
-                  
-                    <li>Entrega URL estática<a href="/playback/static-url-delivery.html"></a></li>
-                  
-                
-                  
-                    <li>Transmisión de contenido protegido PlayReady<a href="/playback/streaming-playready-protected-content-dynamic-delivery.html"></a></li>
-                  
-                
-                  
-                    <li>Uso del reproductor de Brightcove para TVE<a href="/playback/using-brightcove-player-tve.html"></a></li>
-                  
-                
-              </ul>
-            
-          
-            
-              <h5 class="submenu-header"><a href="/content-protection/index.html">Protección de contenido y DRM <strong>+</strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    <li><a href="https://studio.support.brightcove.com/players/configuring-player-content-restrictions.html">Configuración de Restricciones de Contenido del Reproductor</a></li>
-                  
-                
-                  
-                    <li><a href="/content-protection/creating-dash-drm-manifest-brightcove-player.html">Creación de un manifiesto DRM de DASH para el reproductor de Brightcove</a></li>
-                  
-                
-                  
-                    <li><a href="/troubleshooting/domain-restrictions-messaging.html">Mensajería de restricciones de dominio</a></li>
-                  
-                
-                  
-                    <li><a href="/plugins/configuring-brightcove-player-drm.html">Complemento DRM</a></li>
-                  
-                
-                  
-                    <li>Visión general:<a href="/content-protection/overview-content-protection.html"> Protección de contenido</a></li>
-                  
-                
-                  
-                    <li>Teclas de política<a href="/content-protection/policy-keys.html"></a></li>
-                  
-                
-                  
-                    <li>Restringir la reproducción de vídeo mediante dirección IP<a href="/content-protection/restricting-video-playback-using-ip-address.html"></a></li>
-                  
-                
-                  
-                    <li>URL firmadas y autenticación de tokens con una transmisión en directo<a href="/content-protection/signed-urls-and-token-auth-live-stream.html"></a></li>
-                  
-                
-              </ul>
-            
-          
-            
-              <h5 class="submenu-header"><a href="/coding-topics/index.html">Temas de codificación <strong>+</strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    <li><a href="/publish/brightcove-player-loader.html">Cargador de jugadores de Brightcove</a></li>
-                  
-                
-                  
-                    <li><a href="/references/catalog-search-architecture.html">Actualización de búsqueda de catálogo</a></li>
-                  
-                
-                  
-                    <li><a href="/code-samples/brightcove-player-sample-trigger-rewind-custom-event.html">Evento personalizado</a></li>
-                  
-                
-                  
-                    <li><a href="/playback/guide-playback-technology.html">Guía: Tecnología de reproducción</a></li>
-                  
-                
-                  
-                    <li>Localización de Brightcove Player<a href="/coding-topics/programmatically-localizing-brightcove-player.html"></a></li>
-                  
-                
-                  
-                    <li>Localización de complementos<a href="/coding-topics/localizing-plugins.html"></a></li>
-                  
-                
-                  
-                    <li>Eventos de jugador<a href="/coding-topics/player-events.html"></a></li>
-                  
-                
-                  
-                    <li>Visión general:<a href="/coding-topics/overview-components.html"> Componentes</a></li>
-                  
-                
-                  
-                    <li>Visión general:<a href="/playback/overview-https-support.html"> Soporte de HTTPS</a></li>
-                  
-                
-                  
-                    <li>Visión general:<a href="/coding-topics/overview-player-api.html"> Player API</a></li>
-                  
-                
-                  
-                    <li>Pasar datos al complemento<a href="/coding-topics/pass-data-plugin.html"></a></li>
-                  
-                
-                  
-                    <li>Reaccionar el cargador del jugador<a href="/coding-topics/react-player-loader.html"></a></li>
-                  
-                
-                  
-                    <li>Informes sobre configuraciones de Brightcove Player<a href="/coding-topics/reporting-brightcove-player-configurations.html"></a></li>
-                  
-                
-                  
-                    <li>RequireJS y reproductor de Brightcove<a href="/coding-topics/requirejs-and-brightcove-player.html"></a></li>
-                  
-                
-                  
-                    <li>Paso a paso:<a href="/coding-topics/step-step-plugin-development.html"> Desarrollo de complementos</a></li>
-                  
-                
-                  
-                    <li>Paso a paso:<a href="/coding-topics/step-step-videojs-plugin-generator.html"> Generador de complementos Video.js</a></li>
-                  
-                
-                  
-                    <li>Uso de los métodos bc () y getPlayer ()<a href="/coding-topics/using-bc-and-getplayer-methods.html"></a></li>
-                  
-                
-                  
-                    <li>Visualización de la configuración del reproductor<a href="/troubleshooting/viewing-player-configuration.html"></a></li>
-                  
-                
-              </ul>
-            
-          
-            
-              <h5 class="submenu-header"><a href="/general/index.html">Información general <strong>+</strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    <li><a href="https://studio.support.brightcove.com/publish/adding-application-id-player-embed-code.html">Adición de un ID de aplicación al código de incrustación del reproductor</a></li>
-                  
-                
-                  
-                    <li><a href="/general/adding-captions-videos-programmatically.html">Adición de subtítulos a vídeos mediante programación</a></li>
-                  
-                
-                  
-                    <li><a href="https://studio.support.brightcove.com/media/adding-chapters-video.html">Adición de capítulos a un vídeo</a></li>
-                  
-                
-                  
-                    <li><a href="/general/brightcove-player-6-now-default-version.html">Versión predeterminada de Brightcove Player 6</a></li>
-                  
-                
-                  
-                    <li><a href="/general/brightcove-player-accessibility.html">Accesibilidad del reproductor de Brightcove</a></li>
-                  
-                
-                  
-                    <li><a href="/plugins/custom-endscreen-plugin.html">Complemento de pantalla final personalizado</a></li>
-                  
-                
-                  
-                    <li><a href="/plugins/display-overlay-plugin.html">Complemento de superposición de visualización</a></li>
-                  
-                
-                  
-                    <li><a href="/references/guide-playlist-api.html">Guía: API de lista de reproducción</a></li>
-                  
-                
-                  
-                    <li><a href="/general/identify-and-delete-low-performing-videos.html">Identificar y eliminar vídeos de bajo rendimiento</a></li>
-                  
-                
-                  
-                    <li><a href="/general/implementing-cue-points-programmatically.html">Implementación de puntos de referencia mediante programación</a></li>
-                  
-                
-                  
-                    <li><a href="/general/implementing-playlists.html">Implementar listas de reproducción</a></li>
-                  
-                
-                  
-                    <li><a href="/general/implementing-modaldialog.html">Implementación del ModalDialog</a></li>
-                  
-                
-                  
-                    <li>HLS en vivo<a href="/general/live-hls.html"></a></li>
-                  
-                
-                  
-                    <li>Configuración de Live Stream<a href="/general/live-stream-configuration.html"></a></li>
-                  
-                
-                  
-                    <li>Varias pistas de audio<a href="/general/multiple-audio-tracks.html"></a></li>
-                  
-                
-                  
-                    <li>Guía de configuración del reproductor<a href="/general/player-configuration-guide.html"></a></li>
-                  
-                
-                  
-                    <li>Reproducir transmisiones en vivo<a href="/general/playing-live-streams.html"></a></li>
-                  
-                
-                  
-                    <li>Plugin UI de lista de reproducción<a href="/plugins/playlist-ui-plugin.html"></a></li>
-                  
-                
-                  
-                    <li>URL firmadas y autenticación de tokens con una transmisión en directo<a href="/content-protection/signed-urls-and-token-auth-live-stream.html"></a></li>
-                  
-                
-                  
-                    <li>Plugin de redes sociales<a href="/plugins/social-sharing-plugin.html"></a></li>
-                  
-                
-                  
-                    <li>Paso a paso:<a href="https://apis.support.brightcove.com/player-management/getting-started/step-step-player-management.html"> Administración de jugadores</a></li>
-                  
-                
-                  
-                    <li>Estilo de listas de reproducción<a href="/styling/styling-playlists.html"></a></li>
-                  
-                
-                  
-                    <li>Uso de un lector de pantalla con Brightcove Player<a href="/general/using-screen-reader-brightcove-player.html"></a></li>
-                  
-                
-                  
-                    <li>Versiones de la documentación de Brightcove Player<a href="/general/versions-brightcove-player-documentation.html"></a></li>
-                  
-                
-                  
-                    <li>Control de volumen<a href="/general/volume-control.html"></a></li>
-                  
-                
-              </ul>
-            
-          
-            
-              <h5 class="submenu-header"><a href="/code-samples/index.html">Ejemplos de código <strong>+</strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    <li><a href="/code-samples/index-thumb.html">Ejemplos de código por grupo</a></li>
-                  
-                
-                  
-                    <li><a href="/code-samples/index.html">Índice de ejemplo de código</a></li>
-                  
-                
-              </ul>
-            
-          
-            
-              <h5 class="submenu-header"><a href="/amp/index.html">AMP <strong>+</strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    <li><a href="/amp/amp-using-video-cloud-video.html">AMP Uso de un vídeo de Video Cloud</a></li>
-                  
-                
-                  
-                    <li><a href="/amp/amp-using-external-video.html">AMP Uso de un vídeo externo</a></li>
-                  
-                
-              </ul>
-            
-          
-            
-              <h5 class="submenu-header">Entrenamiento +<a href="/training/index.html"><strong></strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    <li><a href="/training/online-training-courses.html">Todos los cursos de formación en línea</a></li>
-                  
-                
-                  
-                    <li><a href="/training/developer-basics-videos.html">Vídeos básicos del desarrollador</a></li>
-                  
-                
-                  
-                    <li>Vídeos de capacitación sobre desarrollo de jugadores<a href="/training/player-development-training-videos.html"></a></li>
-                  
-                
-                  
-                    <li>Regístrese para la formación impartida por instructor<a href="/training/register-training.html"></a></li>
-                  
-                
-                  
-                    <li>Capacitación:<a href="/training/training-demand-developing-brightcove-player.html"> Desarrollar con Brightcove Player</a></li>
-                  
-                
-                  
-                    <li>Capacitación:<a href="https://apis.support.brightcove.com/player-management/getting-started/training-demand-quick-start-player-management.html"> Inicio rápido de la administración de reproductores</a></li>
-                  
-                
-                  
-                    <li><a href="/training/brightcove-university.html">Cursos de formación de la Universidad de Brightcove</a></li>
-                  
-                
-              </ul>
-            
-          
-            
-              <h5 class="submenu-header">Notas de la versión +<a href="/release-notes/index.html"><strong></strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    <li><a href="/release-notes/brightcove-player-release-notes.html">Brightcove Player Notas informativas</a></li>
-                  
-                
-                  
-                    <li><a href="/release-notes/brightcove-player-prerelease-notes.html">Notas previas al lanzamiento del jugador de Brightcove</a></li>
-                  
-                
-              </ul>
-            
-          
-            
-              <h5 class="submenu-header">Soporte +<a href="/support/index.html"><strong></strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    
-                  
-                
-                  
-                    <li>Visualización de la página Estado del Sistema de Brightcove<a href="/support/viewing-brightcove-system-status-page.html"></a></li>
-                  
-                
-                  
-                    <li><a href="/support/contact-sales.html">Contacto con Ventas</a></li>
-                  
-                
-                  
-                    <li>Apertura de un caso de soporte<a href="/support/opening-case-with-brightcove-support.html"></a></li>
-                  
-                
-              </ul>
-            
-          
-      </nav>
-    </div>
-    <div class="col-lg-7" style="background-color: white;color: #333333;margin-top: -1em;margin-bottom: -1em;padding-bottom:1em;">
-  <!-- bootstrap layout -->
-
-<p id="bc_veggie_burger_wrapper" style="display: none;"><img id="bc_veggie_burger" src="/assets/images/feather/menu.svg" alt="Menú de navegación"/></p>
-
-<!-- search bar -->
-<div id="nav-search-box" style="margin-top: 1rem;"></div>
-<!-- in-page navigation for narrow screens -->
-<details class="centered-inpage-nav" id="centered_inpage_nav">
-  <summary><h6 class="toc">Contenido de la página</h6></summary>
-  <nav id="centered_toc"></nav>
-  <ul id="centered_in_page_toc" class="list-none"></ul>
-</details>
-<!-- open in new tab/window -->
-<a id="open_new_tab" href="#" target="_blank" style="display: none;"><img src="/assets/images/feather/external-link.svg" alt="abrir en una nueva pestaña" style="margin-top:4em;width: 1.5em;"/></a>
-
-
-
-  
-    
-
+---
+title: 'Guía: API de lista de reproducción'
+parent: References
+---
 
 <article class="bcls-article">
-  <h1>Guía: Playlist API</h1>
-  <summary>En este tema aprenderá acerca de la API de listas de reproducción disponible en Brightcove Player. Esta API proporciona la funcionalidad para controlar mediante programación una lista de reproducción. Para obtener información sobre cómo implementar la representación visual de una lista de reproducción (un caso de uso mucho más común) consulte el documento <a href="/general/implementing-playlists.html">Implementación programática de listas de reproducción</a> .</summary>
+  <h1>Guía: API de lista de reproducción</h1>
+  <summary>En este tema, aprenderá sobre la API de lista de reproducción disponible en Brightcove Player. Esta API proporciona la funcionalidad para controlar mediante programación una lista de reproducción. Para obtener información sobre cómo implementar la representación visual de una lista de reproducción (un caso de uso mucho más común), consulte la <a href="/general/implementing-playlists.html">Implementación programática de listas de reproducción</a> documento.</summary>
   <style type="text/css">
-.video-js {
-          height: 344px;
-          width: 640px;
-        }
-
-        button {
-          background-color: #777777;
-        }
+.video-js { height: 344px; width: 640px; } botón { background-color: #777777; }
 </style>
   <section class="bcls-section">
     <h2 id="overview">Resumen</h2>
@@ -1179,12 +24,12 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
         <tr>
           <td>Objeto</td>
           <td><a href="#Playlist_Item_Object"><code translate="No">Playlist Item Object</code></a></td>
-          <td>Una lista de reproducción es una matriz de elementos de lista de reproducción.</td>
+          <td>Una lista de reproducción es una variedad de elementos de la lista de reproducción.</td>
         </tr>
         <tr>
           <td>Método</td>
           <td><a href="#autoadvance"><code translate="No">autoadvance()</code></a></td>
-          <td>Determina si se reproduce el siguiente vídeo de la lista de reproducción y cuánto tiempo esperar antes.</td>
+          <td>Determina si, y cuánto tiempo esperar antes, se reproduce el siguiente video de la lista de reproducción.</td>
         </tr>
         <tr>
           <td>Método</td>
@@ -1194,17 +39,17 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
         <tr>
           <td>Método</td>
           <td><a href="#currentIndex"><code translate="No">currentIndex()</code></a></td>
-          <td>Recupera el índice del elemento actual de la lista de reproducción.</td>
+          <td>Recupera el índice del elemento actual en la lista de reproducción.</td>
         </tr>
         <tr>
           <td>Método</td>
           <td><a href="#currentitem"><code translate="No">currentItem()</code></a></td>
-          <td>Asigna o recupera el vídeo actual en el reproductor.</td>
+          <td>Asigna o recupera el video actual en el reproductor.</td>
         </tr>
         <tr>
           <td>Método</td>
           <td><a href="#first"><code translate="No">first()</code></a></td>
-          <td>Reproduce el primer vídeo de la lista de reproducción.</td>
+          <td>Reproduce el primer video de la lista de reproducción.</td>
         </tr>
         <tr>
           <td>Método</td>
@@ -1214,7 +59,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
         <tr>
           <td>Método</td>
           <td><a href="#last"><code translate="No">last()</code></a></td>
-          <td>Reproduce el último vídeo de la lista de reproducción.</td>
+          <td>Reproduce el último video de la lista de reproducción.</td>
         </tr>
         <tr>
           <td>Método</td>
@@ -1224,32 +69,32 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
         <tr>
           <td>Método</td>
           <td><a href="#next"><code translate="No">next()</code></a></td>
-          <td>Reproduce el vídeo que sigue al vídeo que se está reproduciendo actualmente en el reproductor.</td>
+          <td>Reproduce el video que sigue al video que se está reproduciendo actualmente en el reproductor.</td>
         </tr>
         <tr>
           <td>Método</td>
           <td><a href="#nextIndex"><code translate="No">nextIndex()</code></a></td>
-          <td>Recupera el índice del vídeo que sigue al vídeo que se está reproduciendo actualmente en el reproductor.</td>
+          <td>Recupera el índice del video que sigue al video que se está reproduciendo actualmente en el reproductor.</td>
         </tr>
         <tr>
           <td>Método</td>
           <td><a href="#playlist"><code translate="No">playlist()</code></a></td>
-          <td>Asigna o recupera la lista de reproducción actual asociada al reproductor.</td>
+          <td>Asigna o recupera la lista de reproducción actual asociada con el reproductor.</td>
         </tr>
         <tr>
           <td>Método</td>
           <td><a href="#previous"><code translate="No">previous()</code></a></td>
-          <td>Reproduce el vídeo que sigue el vídeo que se está reproduciendo actualmente en el reproductor.</td>
+          <td>Reproduce el video a partir del video que se está reproduciendo actualmente en el reproductor.</td>
         </tr>
         <tr>
           <td>Método</td>
           <td><a href="#previousIndex"><code translate="No">previousIndex()</code></a></td>
-          <td>Recupera el índice del vídeo que sigue el vídeo que se está reproduciendo actualmente en el reproductor.</td>
+          <td>Recupera el índice del video que procede del video que se está reproduciendo actualmente en el reproductor.</td>
         </tr>
         <tr>
           <td>Método</td>
           <td><a href="#repeat"><code translate="No">repeat()</code></a></td>
-          <td>Cuando se hayan reproducido todos los vídeos de la lista de reproducción, comienza a reproducir la lista de reproducción de nuevo.</td>
+          <td>Cuando se hayan reproducido todos los videos de la lista de reproducción, comienza a reproducir la lista de reproducción nuevamente.</td>
         </tr>
         <tr>
           <td>Método</td>
@@ -1259,7 +104,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
         <tr>
           <td>Método</td>
           <td><a href="#shuffle"><code translate="No">shuffle()</code></a></td>
-          <td>Mezcla o aleatoriza el orden de los elementos de la lista de reproducción.</td>
+          <td>Mezcla aleatoriamente / aleatoriza el orden de los elementos de la lista de reproducción.</td>
         </tr>
         <tr>
           <td>Método</td>
@@ -1269,116 +114,116 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
         <tr>
           <td>Evento</td>
           <td><a href="#beforeplaylistitem"><code translate="No">beforeplaylistitem</code></a></td>
-          <td>Se distribuye antes de cambiar a un nuevo vídeo dentro de la lista de reproducción.</td>
+          <td>Se envía antes de cambiar a un nuevo video dentro de la lista de reproducción.</td>
         </tr>
         <tr>
           <td>Evento</td>
           <td><a href="#duringplaylistchange"><code translate="No">duringplaylistchange</code></a></td>
-          <td>Este evento se activa después de cambiar el contenido de la lista de reproducción al llamar <code translate="No">playlist()</code>, pero antes de que se cambie el elemento de la lista de reproducción actual.</td>
+          <td>Este evento se activa después de que se cambia el contenido de la lista de reproducción al llamar <code translate="No">playlist()</code> , pero antes de que se cambie el elemento de la lista de reproducción actual.</td>
         </tr>
         <tr>
           <td>Evento</td>
           <td><a href="#playlistchange"><code translate="No">playlistchange</code></a></td>
-          <td>Se distribuye cada vez que se cambia la lista de reproducción asociada al reproductor.</td>
+          <td>Se envía siempre que se cambia la lista de reproducción asociada con el reproductor.</td>
         </tr>
         <tr>
           <td>Evento</td>
           <td><a href="#playlistitem"><code translate="No">playlistitem</code></a></td>
-          <td>Se distribuye al cambiar a un nuevo vídeo dentro de una lista de reproducción.</td>
+          <td>Se envía al cambiar a un nuevo video dentro de una lista de reproducción.</td>
         </tr>
         <tr>
           <td>Evento</td>
           <td><a href="#playlistsorted"><code translate="No">playlistsorted</code></a></td>
-          <td>Se distribuye cuando se llama a cualquier método que cambie el orden de los elementos de la lista de reproducción.</td>
+          <td>Se distribuye cuando se llama a cualquier método que cambia el orden de los elementos de la lista de reproducción.</td>
         </tr>
         <tr>
           <td>Opción de configuración</td>
           <td><a href="#playOnSelect"><code translate="No">playOnSelect</code></a></td>
-          <td>Hace que un vídeo en el que se haya hecho clic de la lista de reproducción comience a reproducirse, incluso si el vídeo actual del reproductor se ha pausado previamente.</td>
+          <td>Hace que se inicie la reproducción de un video en el que se hizo clic en la lista de reproducción, incluso si el video actual en el reproductor se pausó previamente.</td>
         </tr>
       </tbody>
     </table>
   </section>
   <section class="bcls-section">
     <h2 id="Example">Ejemplo</h2>
-    <p>El siguiente Brightcove Player tiene una lista de reproducción cargada y utilizando los botones puede moverse en la lista de reproducción.</p>
+    <p>El siguiente Brightcove Player tiene una lista de reproducción cargada y con los botones puede moverse en la lista de reproducción.</p>
     <video-js id="myPlayerID" data-account="1752604059001" data-player="f50a2d3c-af51-4d8c-84e3-0c7cdec0edbe" data-embed="default" class="video-js" controls="">&nbsp;</video-js>
     <p>
-      <button onclick="nextVideo()">Siguiente vídeo</button>
+      <button onclick="nextVideo()">Siguiente video</button>
     </p>
     <p>
-      <button onclick="previousVideo()">Vídeo anterior</button>
+      <button onclick="previousVideo()">Video anterior</button>
     </p>
     <p>
-      <button onclick="goto3()">Saltar al 4º vídeo</button>
+      <button onclick="goto3()">Saltar al cuarto video</button>
     </p>
     <aside class="bcls-aside bcls-aside--information">
       <p>Revisión de vocabulario:</p>
       <ul>
-        <li>Cuando un método recupera un valor se llama a <strong translate="No">getter</strong>.</li>
-        <li>Cuando un método asigna un valor se llama a <strong translate="No">setter</strong>.</li>
+        <li>Cuando un método recupera un valor, se llama <strong translate="No">adquiridor</strong>.</li>
+        <li>Cuando un método asigna un valor, se llama <strong translate="No">setter</strong>.</li>
       </ul>
-      <p>Nota: No es inusual que un método actúe tanto como getter y setter. Cuando el método utiliza un argumento el método actúa como un setter, sin ningún argumento el método actúa como un getter.</p>
+      <p>Nota: No es inusual que un método actúe como captador y definidor. Cuando el método usa un argumento, el método actúa como un establecedor, sin argumento, el método actúa como un captador.</p>
     </aside>
   </section>
   <section class="bcls-section">
     <h2 id="Playlist_Item_Object">Objeto de elemento de lista de reproducción</h2>
-    Un elemento de lista de reproducción es un objeto con las siguientes propiedades:
+    Un elemento de la lista de reproducción es un objeto con las siguientes propiedades:
     <table class="bcls-table">
       <thead class="bcls-table__head">
         <tr>
           <th>Propiedad</th>
           <th>Tipo</th>
-          <th>Obligatorio</th>
+          <th>Necesario</th>
           <th>Descripción</th>
         </tr>
       </thead>
       <tbody class="bcls-table__body">
         <tr>
           <td>fuentes</td>
-          <td>Array</td>
+          <td>Gama</td>
           <td>Sí</td>
-          <td>Una matriz de fuentes que video.js entiende.</td>
+          <td>Una variedad de fuentes que entiende video.js.</td>
         </tr>
         <tr>
-          <td>cartel</td>
-          <td>Cadena</td>
+          <td>póster</td>
+          <td>cuerda</td>
           <td>No</td>
           <td>Una imagen de póster para mostrar para estas fuentes.</td>
         </tr>
         <tr>
-          <td>TextTracks</td>
-          <td>Array</td>
+          <td>Pistas de texto</td>
+          <td>Gama</td>
           <td>No</td>
-          <td>Una matriz de pistas de texto que Video.js entiende.</td>
+          <td>Un conjunto de pistas de texto que entiende Video.js.</td>
         </tr>
       </tbody>
     </table>
   </section>
   <section class="bcls-section">
-    <h2 id="autoadvance">autoadvance (), método</h2>
-    <p>El <code translate="No">player.playlist.autoadvance( )</code> método actúa sólo como un setter, y establece el avance automático de la lista de reproducción. Una vez habilitado, esperará la cantidad de segundos especificada al final de un vídeo antes de proceder automáticamente al siguiente vídeo. Cualquier valor que no sea un entero finito positivo será tratado como una solicitud para cancelar y restablecer el avance automático. Si cambia la función de avance automático durante un período de tiempo de espera, el avance automático se cancelará y no avanzará al siguiente vídeo, pero utilizará el nuevo valor de tiempo de espera para los siguientes vídeos.</p>
+    <h2 id="autoadvance">método autoadvance ()</h2>
+    <p>La <code translate="No">player.playlist.autoadvance( )</code> El método actúa solo como establecedor y establece el avance automático de la lista de reproducción. Una vez habilitado, esperará la cantidad especificada de segundos al final de un video antes de pasar automáticamente al siguiente video. Cualquier valor que no sea un entero finito positivo se tratará como una solicitud para cancelar y restablecer el avance automático. Si cambia la función de avance automático durante un período de tiempo de espera, el avance automático se cancelará y no avanzará al siguiente video, pero usará el nuevo valor de tiempo de espera para los siguientes videos.</p>
     <h5>Parámetro:</h5>
     <ul>
-      <li><strong translate="No">timeout</strong>: Un número entero en segundos para retrasar antes de cargar el siguiente vídeo en la lista de reproducción</li>
+      <li><strong translate="No">se acabó el tiempo</strong>: Un número entero en segundos para retrasar antes de cargar el siguiente video en la lista de reproducción</li>
     </ul>
     <h5>Valor devuelto:</h5>
-    <p>El método no devuelve un valor.</p>
-    <p>Ejemplos de usos del método siguen:</p>
-    <p><code translate="No">player.playlist.autoadvance(0);</code> No esperará antes de cargar el siguiente elemento</p>
-    <p><code translate="No">player.playlist.autoadvance(5);</code> Espera 5 segundos antes de cargar el siguiente elemento</p>
-    <p><code translate="No">player.playlist.autoadvance(null);</code> Restablece y cancela el avance automático</p>
+    <p>El método no devuelve ningún valor.</p>
+    <p>A continuación, se muestran ejemplos de usos del método:</p>
+    <p><code translate="No">player.playlist.autoadvance(0);</code> No esperará antes de cargar el siguiente artículo.</p>
+    <p><code translate="No">player.playlist.autoadvance(5);</code> Espera 5 segundos antes de cargar el siguiente artículo.</p>
+    <p><code translate="No">player.playlist.autoadvance(null);</code> Reinicia y cancela el avance automático</p>
   </section>
   <section class="bcls-section">
-    <h2 id="contains">contains (), método</h2>
-    <p>El <code translate="No">player.playlist.contains( item )</code> método comprueba una lista de reproducción para detectar la presencia del objeto en el <code translate="No">item</code> parámetro. Si el <code translate="No">item</code> está en la lista de reproducción <code translate="No">true</code> se devuelve, si no <code translate="No">false</code> está presente se devuelve.</p>
+    <h2 id="contains">contiene () método</h2>
+    <p>La <code translate="No">player.playlist.contains( item )</code> El método comprueba una lista de reproducción para detectar la presencia del objeto en el <code translate="No">item</code> parámetro. Si el <code translate="No">item</code> está en la lista de reproducción <code translate="No">true</code> se devuelve, si no está presente <code translate="No">false</code> es regresado.</p>
     <h5>Parámetros:</h5>
     <ul>
-      <li><strong translate="No">item</strong>: Valor que representa un elemento de vídeo de la lista de reproducción.</li>
+      <li><strong translate="No">artículo</strong>: Valor que representa un elemento de vídeo de la lista de reproducción.</li>
     </ul>
     <p>Los formularios válidos para el parámetro de elemento incluyen:</p>
     <ul>
-      <li>URL a un vídeo como una cadena
+      <li>URL de un vídeo como cadena
         <pre class="line-numbers">
 <code class="language-javascript" translate="No">'//media.w3.org/2010/05/sintel/trailer.mp4'</code></pre>
       </li>
@@ -1398,51 +243,51 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
   }]
 }</code></pre>
       </li>
-      <li class="video-cloud-only">En Video Cloud, puede utilizar el <code translate="No">currentSrc()</code> método con el <code translate="No">contains()</code> método para asegurarse de que el vídeo que se está reproduciendo es de la lista de reproducción cargada actualmente.
+      <li class="video-cloud-only">En Video Cloud, puede utilizar el <code translate="No">currentSrc()</code> método con el <code translate="No">contains()</code> método para asegurarse de que el video que se está reproduciendo actualmente es de la lista de reproducción cargada actualmente.
         <pre class="line-numbers">
 <code class="language-javascript" translate="No">myPlayer.playlist.contains(myPlayer.currentSrc());</code></pre>
       </li>
     </ul>
     <h5>Valor devuelto:</h5>
-    <p>El método devuelve un objeto de tipo.<strong translate="No">boolean</strong></p>
+    <p>El método devuelve un objeto de tipo <strong translate="No">booleano</strong>.</p>
   </section>
   <section class="bcls-section">
-    <h2 id="currentIndex">CurrentIndex () (método</h2>
-    <p>El <code translate="No">player.playlist.currentIndex( )</code> método recupera el índice del elemento actual en la lista de reproducción. Esto es idéntico a llamar <code translate="No">currentItem()</code> sin argumentos.</p>
+    <h2 id="currentIndex">método currentIndex ()</h2>
+    <p>La <code translate="No">player.playlist.currentIndex( )</code> El método recupera el índice del elemento actual en la lista de reproducción. Esto es idéntico a llamar <code translate="No">currentItem()</code> sin argumentos.</p>
     <h5>Parámetro:</h5>
     <ul>
-      <li>Ninguno</li>
+      <li>Ninguna</li>
     </ul>
     <h5>Valor devuelto:</h5>
-    <p>El método devuelve un valor de tipo número. El valor devuelto representa la posición de la matriz del vídeo que se está reproduciendo actualmente en el reproductor. Si el reproductor está reproduciendo un vídeo que no sea de lista de reproducción, <code translate="No">currentIndex()</code> volverá <strong translate="No">-1</strong>.</p>
+    <p>El método devuelve un valor del número de tipo. El valor devuelto representa la posición de la matriz del vídeo que se está reproduciendo actualmente en el reproductor. Si el reproductor está reproduciendo un video que no pertenece a la lista de reproducción, <code translate="No">currentIndex()</code> volverá <strong translate="No">-1</strong>.</p>
   </section>
   <section class="bcls-section">
-    <h2 id="currentitem">Método CurrentItem ()</h2>
-    <p>El <code translate="No">player.playlist.currentItem(index)</code> método actúa como getter y setter, ya sea recuperando el vídeo actual de la lista de reproducción que se reproduce en el reproductor, o asignando un nuevo video para reproducirlo en el reproductor, basado en el índice. Si se llama sin un argumento, el método realiza la recuperación y actúa como un getter, con un argumento se asigna el valor y actúa como un setter.</p>
+    <h2 id="currentitem">método currentItem ()</h2>
+    <p>La <code translate="No">player.playlist.currentItem(index)</code> El método actúa como captador y configurador, ya sea recuperando el video actual de la lista de reproducción que se reproduce en el reproductor o asignando un nuevo video para reproducir en el reproductor, según el índice. Si se llama sin argumento, el método realiza la recuperación y actúa como captador, con un argumento se asigna el valor y actúa como configurador.</p>
     <h5>Parámetro (setter):</h5>
     <ul>
-      <li><strong translate="No">index</strong>: Número que representa el índice de matriz basado en cero de la lista de reproducción del vídeo que se va a cargar en el reproductor.</li>
+      <li><strong translate="No">índice</strong>: Un número que representa el índice de matriz de base cero de la lista de reproducción del video que se cargará en el reproductor.</li>
     </ul>
     <h5>Valor devuelto (getter):</h5>
-    <p>El método devuelve un valor de tipo.<strong translate="No">number</strong> El valor devuelto representa la posición de la matriz del vídeo que se está reproduciendo actualmente en el reproductor. Si el reproductor está reproduciendo un vídeo que no sea de lista de reproducción, <code translate="No">currentItem()</code> volverá <strong translate="No">-1</strong>.</p>
-    <p>A continuación se muestra un ejemplo de uso del método en una función para saltar a un video específico:</p>
+    <p>El método devuelve un valor del <strong translate="No">número de tipo</strong>. El valor devuelto representa la posición de la matriz del vídeo que se está reproduciendo actualmente en el reproductor. Si el reproductor está reproduciendo un video que no pertenece a la lista de reproducción, <code translate="No">currentItem()</code> volverá <strong translate="No">-1</strong>.</p>
+    <p>A continuación, se muestra un ejemplo de uso del método en una función para saltar a un video específico:</p>
     <pre class="line-numbers">
 <code class="language-javascript" translate="No">function goto2(){
   myPlayer.playlist.currentItem(2);
 }</code></pre>
   </section>
   <section class="bcls-section">
-    <h2 id="first">first () método</h2>
-    <p>El <code translate="No">player.playlist.first()</code> método reproduce el primer elemento de la lista de reproducción. El nuevo vídeo que se reproduce en el reproductor se devolverá de esta llamada al método. El se actualizará con el nuevo índice.<code translate="No">currentItem</code></p>
+    <h2 id="first">primer método ()</h2>
+    <p>La <code translate="No">player.playlist.first()</code> El método reproduce el primer elemento de la lista de reproducción. El nuevo vídeo que se reproduce en el reproductor se devolverá a partir de esta llamada al método. Se <code translate="No">currentItem</code> actualizará con el nuevo índice.</p>
     <h5>Parámetros:</h5>
     <ul>
-      <li>Ninguno</li>
+      <li>Ninguna</li>
     </ul>
     <h5>Valor devuelto:</h5>
-    <p>El método devuelve un objeto de tipo.<strong translate="No">object</strong> A continuación se muestra un ejemplo de este objeto para una lista de reproducción creada manualmente:</p>
-    <figure class="bcls-figure"><img class="bcls-image" alt="objeto de lista de reproducción" src="//learning-services-media.brightcove.com/doc-assets/player-development/playlists/general-information/playlist-api/playlist-vidobject-perform.png"/></figure>
+    <p>El método devuelve un objeto de tipo <strong translate="No">objeto</strong>. A continuación se muestra un ejemplo de este objeto para una lista de reproducción creada manualmente:</p>
+    <figure class="bcls-figure"><img class="bcls-image" alt="playlist object" src="/assets/images/references/playlist-api/playlist-vidobject-perform.png" /></figure>
     <p class="video-cloud-only">A continuación se muestra un ejemplo de este objeto para una lista de reproducción de Video Cloud:</p>
-    <figure class="bcls-figure video-cloud-only"><img class="bcls-image" alt="objeto de lista de reproducción de Video Cloud" src="//learning-services-media.brightcove.com/doc-assets/player-development/playlists/general-information/playlist-api/playlist-vidobject-vc.png"/></figure>
+    <figure class="bcls-figure video-cloud-only"><img class="bcls-image" alt="playlist object from Video Cloud" src="/assets/images/references/playlist-api/playlist-vidobject-vc.png" /></figure>
     <p>A continuación se muestra un ejemplo de uso del método en una función para pasar al siguiente vídeo:</p>
     <pre class="line-numbers">
 <code class="language-javascript" translate="No">function goToBeginning() {
@@ -1450,15 +295,15 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 }</code></pre>
   </section>
   <section class="bcls-section">
-    <h2 id="indexof">IndexOf (), método</h2>
-    <p>El <code translate="No">player.playlist.indexOf( item )</code> método comprueba la lista de reproducción para detectar la presencia del objeto en el <code translate="No">item</code> parámetro y, si se encuentra, devuelve el índice basado en cero del elemento. El método devuelve <strong translate="No">-1</strong> si no se encuentra el elemento.</p>
+    <h2 id="indexof">método indexOf ()</h2>
+    <p>La <code translate="No">player.playlist.indexOf( item )</code> El método comprueba la lista de reproducción para detectar la presencia del objeto en el <code translate="No">item</code> parámetro y, si se encuentra, devuelve el índice de base cero del elemento. El método regresa <strong translate="No">-1</strong> si no se encuentra el artículo.</p>
     <h5>Parámetros:</h5>
     <ul>
-      <li><strong translate="No">item</strong>: Valor que representa un elemento de vídeo de la lista de reproducción.</li>
+      <li><strong translate="No">artículo</strong>: Valor que representa un elemento de vídeo de la lista de reproducción.</li>
     </ul>
     <p>Los formularios válidos para el parámetro de elemento incluyen:</p>
     <ul>
-      <li>URL a un vídeo como una cadena
+      <li>URL de un vídeo como cadena
         <pre class="line-numbers">
 <code class="language-javascript" translate="No">'//media.w3.org/2010/05/sintel/trailer.mp4'</code></pre>
       </li>
@@ -1478,26 +323,26 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
   }]
 }</code></pre>
       </li>
-      <li class="video-cloud-only">En Video Cloud puede utilizar el <code translate="No">currentSrc()</code> método con el <code translate="No">indexOf()</code> método para encontrar la ubicación del vídeo que se está reproduciendo actualmente en la lista de reproducción.
+      <li class="video-cloud-only">En Video Cloud puede utilizar el <code translate="No">currentSrc()</code> método con el <code translate="No">indexOf()</code> método para encontrar la ubicación del video que se está reproduciendo actualmente en la lista de reproducción.
         <pre class="line-numbers">
 <code class="language-javascript" translate="No">myPlayer.playlist.indexOf(myPlayer.currentSrc());</code></pre>
       </li>
     </ul>
     <h5>Valor devuelto:</h5>
-    <p>El método devuelve un valor de tipo.<strong translate="No">number</strong> El valor representa la posición indizada cero del elemento, o -1 si no se encuentra el objeto.</p>
+    <p>El método devuelve un valor del <strong translate="No">número de tipo</strong>. El valor representa la posición de índice cero del elemento, o -1 si no se encuentra el objeto.</p>
   </section>
   <section class="bcls-section">
-    <h2 id="last">last (), método</h2>
-    <p>El <code translate="No">player.playlist.last()</code> método reproduce el último elemento de la lista de reproducción. El nuevo vídeo que se reproduce en el reproductor se devolverá de esta llamada al método. El se actualizará con el nuevo índice.<code translate="No">currentItem</code></p>
+    <h2 id="last">método last ()</h2>
+    <p>La <code translate="No">player.playlist.last()</code> El método reproduce el último elemento de la lista de reproducción. El nuevo vídeo que se reproduce en el reproductor se devolverá a partir de esta llamada al método. Se <code translate="No">currentItem</code> actualizará con el nuevo índice.</p>
     <h5>Parámetros:</h5>
     <ul>
-      <li>Ninguno</li>
+      <li>Ninguna</li>
     </ul>
     <h5>Valor devuelto:</h5>
-    <p>El método devuelve un objeto de tipo.<strong translate="No">object</strong> A continuación se muestra un ejemplo de este objeto para una lista de reproducción creada manualmente:</p>
-    <figure class="bcls-figure"><img class="bcls-image" alt="objeto de lista de reproducción" src="//learning-services-media.brightcove.com/doc-assets/player-development/playlists/general-information/playlist-api/playlist-vidobject-perform.png"/></figure>
+    <p>El método devuelve un objeto de tipo <strong translate="No">objeto</strong>. A continuación se muestra un ejemplo de este objeto para una lista de reproducción creada manualmente:</p>
+    <figure class="bcls-figure"><img class="bcls-image" alt="playlist object" src="/assets/images/references/playlist-api/playlist-vidobject-perform.png" /></figure>
     <p class="video-cloud-only">A continuación se muestra un ejemplo de este objeto para una lista de reproducción de Video Cloud:</p>
-    <figure class="bcls-figure video-cloud-only"><img class="bcls-image" alt="objeto de lista de reproducción de Video Cloud" src="//learning-services-media.brightcove.com/doc-assets/player-development/playlists/general-information/playlist-api/playlist-vidobject-vc.png"/></figure>
+    <figure class="bcls-figure video-cloud-only"><img class="bcls-image" alt="playlist object from Video Cloud" src="/assets/images/references/playlist-api/playlist-vidobject-vc.png" /></figure>
     <p>A continuación se muestra un ejemplo de uso del método en una función para pasar al siguiente vídeo:</p>
     <pre class="line-numbers">
 <code class="language-javascript" translate="No">function goToEnd() {
@@ -1505,27 +350,27 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 }</code></pre>
   </section>
   <section class="bcls-section">
-    <h2 id="lastIndex">LastIndex (), método</h2>
-    <p>El <code translate="No">player.playlist.lastIndex( )</code> método devuelve el índice del último elemento de la lista de reproducción.</p>
+    <h2 id="lastIndex">método lastIndex ()</h2>
+    <p>La <code translate="No">player.playlist.lastIndex( )</code> El método devuelve el índice del último elemento de la lista de reproducción.</p>
     <h5>Parámetro:</h5>
     <ul>
-      <li>Ninguno</li>
+      <li>Ninguna</li>
     </ul>
     <h5>Valor devuelto:</h5>
-    <p>El método devuelve un valor de tipo.<strong translate="No">number</strong> El valor devuelto representa la posición de la matriz del último vídeo de la lista de reproducción.</p>
+    <p>El método devuelve un valor del <strong translate="No">número de tipo</strong>. El valor devuelto representa la posición de la matriz del último video de la lista de reproducción.</p>
   </section>
   <section class="bcls-section">
     <h2 id="next">método next ()</h2>
-    <p>El <code translate="No">player.playlist.next()</code> método avanza el jugador al siguiente elemento de la lista de reproducción. El nuevo vídeo que se reproduce en el reproductor se devolverá de esta llamada al método. El se actualizará con el nuevo índice.<code translate="No">currentItem</code> Si estás al final de la lista de reproducción, no podrás pasar el final y no se devolverá nada.</p>
+    <p>La <code translate="No">player.playlist.next()</code> El método avanza al reproductor al siguiente elemento de la lista de reproducción. El nuevo vídeo que se reproduce en el reproductor se devolverá a partir de esta llamada al método. Se <code translate="No">currentItem</code> actualizará con el nuevo índice. Si está al final de la lista de reproducción, no podrá continuar más allá del final y no se devolverá nada.</p>
     <h5>Parámetros:</h5>
     <ul>
-      <li>Ninguno</li>
+      <li>Ninguna</li>
     </ul>
     <h5>Valor devuelto:</h5>
-    <p>El método devuelve un objeto de tipo.<strong translate="No">object</strong> A continuación se muestra un ejemplo de este objeto para una lista de reproducción creada manualmente:</p>
-    <figure class="bcls-figure"><img class="bcls-image" alt="objeto de lista de reproducción" src="//learning-services-media.brightcove.com/doc-assets/player-development/playlists/general-information/playlist-api/playlist-vidobject-perform.png"/></figure>
+    <p>El método devuelve un objeto de tipo <strong translate="No">objeto</strong>. A continuación se muestra un ejemplo de este objeto para una lista de reproducción creada manualmente:</p>
+    <figure class="bcls-figure"><img class="bcls-image" alt="playlist object" src="/assets/images/references/playlist-api/playlist-vidobject-perform.png" /></figure>
     <p class="video-cloud-only">A continuación se muestra un ejemplo de este objeto para una lista de reproducción de Video Cloud:</p>
-    <figure class="bcls-figure video-cloud-only"><img class="bcls-image" alt="objeto de lista de reproducción de Video Cloud" src="//learning-services-media.brightcove.com/doc-assets/player-development/playlists/general-information/playlist-api/playlist-vidobject-vc.png"/></figure>
+    <figure class="bcls-figure video-cloud-only"><img class="bcls-image" alt="playlist object from Video Cloud" src="/assets/images/references/playlist-api/playlist-vidobject-vc.png" /></figure>
     <p>A continuación se muestra un ejemplo de uso del método en una función para pasar al siguiente vídeo:</p>
     <pre class="line-numbers">
 <code class="language-javascript" translate="No">function nextVideo() {
@@ -1533,33 +378,33 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 }</code></pre>
   </section>
   <section class="bcls-section">
-    <h2 id="nextIndex">Método NExtindex ()</h2>
-    <p>El <code translate="No">player.playlist.nextIndex( )</code> método devuelve el índice del siguiente elemento de la lista de reproducción.</p>
+    <h2 id="nextIndex">método nextIndex ()</h2>
+    <p>La <code translate="No">player.playlist.nextIndex( )</code> El método devuelve el índice del siguiente elemento de la lista de reproducción.</p>
     <h5>Parámetro:</h5>
     <ul>
-      <li>Ninguno</li>
+      <li>Ninguna</li>
     </ul>
     <h5>Valor devuelto:</h5>
-    <p>El método devuelve un valor de tipo.<strong translate="No">number</strong> El valor devuelto representa la posición de la matriz del siguiente vídeo que se reproducirá en la lista de reproducción.</p>
-    <p>Si el reproductor está en el último elemento, este método devuelve el índice del último elemento. Sin embargo, si la lista de reproducción se repite y está en el último elemento, el método devuelve <strong translate="No">0</strong>. Si el reproductor está reproduciendo un vídeo que no sea de lista de reproducción, volverá <strong translate="No">-1</strong>.</p>
+    <p>El método devuelve un valor del <strong translate="No">número de tipo</strong>. El valor devuelto representa la posición de la matriz del siguiente video que se reproducirá en la lista de reproducción.</p>
+    <p>Si el jugador está en el último elemento, este método devuelve el índice del último elemento. Sin embargo, si la lista de reproducción se repite y está en el último elemento, el método devuelve <strong translate="No">0</strong>. Si el reproductor está reproduciendo un vídeo que no es lista de reproducción, devolverá <strong translate="No">-1</strong>.</p>
   </section>
   <section class="bcls-section">
-    <h2 id="playlist">playlist (), método</h2>
-    <p>El <code translate="No">player.playlist(newPlayList)</code> método actúa como getter y setter, ya sea recuperando la lista de reproducción que se reproduce actualmente en el reproductor, o asignando una lista de reproducción al jugador para jugar. Si se llama sin un argumento, el método realiza la recuperación y actúa como un getter, con un argumento se asigna el valor y actúa como un setter.</p>
+    <h2 id="playlist">método playlist ()</h2>
+    <p>La <code translate="No">player.playlist(newPlayList)</code> El método actúa como captador y configurador, ya sea recuperando la lista de reproducción que se está reproduciendo actualmente en el reproductor o asignando una lista de reproducción al reproductor para que la reproduzca. Si se llama sin argumento, el método realiza la recuperación y actúa como captador, con un argumento se asigna el valor y actúa como configurador.</p>
     <h5>Parámetro (setter):</h5>
     <ul>
-      <li><strong translate="No">newPlaylist</strong>: Una matriz de fuentes u objetos de vídeo. <span class="video-cloud-only">Los objetos se pueden crear manualmente o simplemente un ID de lista de reproducción de Video Cloud o un ID de referencia.</span></li>
+      <li><strong translate="No">nueva lista de reproducción</strong>: Una variedad de fuentes / objetos de video. <span class="video-cloud-only">Los objetos pueden crearse manualmente o simplemente un ID de lista de reproducción o un ID de referencia de Video Cloud.</span></li>
     </ul>
-    <p class="video-cloud-only">Aunque puede utilizar el <code translate="No">playlist()</code> método como configurador, es recomendable utilizar la funcionalidad del catalog de Brightcove Player para cargar una lista de reproducción, por ejemplo&nbsp;<code translate="No">myPlayer.catalog.getPlaylist( playlistID )</code> y <code translate="No">myPlayer.catalog.load( playlist )</code>. Consulte el documento <a href="/references/player-catalog.html">Catálogo del Reproductor</a> para obtener más información.</p>
-    <aside class="bcls-aside bcls-aside--tip language-editable">Si desea cargar la lista de reproducción, pero NO tener el primer vídeo de la lista de reproducción colocado en el reproductor, en el método puede establecer un segundo parámetro en.<code translate="No">playlist()</code><code translate="No">-1</code> Por ejemplo, el siguiente código recupera una lista de reproducción, la coloca en el reproductor, pero no carga el primer vídeo en el reproductor:
+    <p class="video-cloud-only">Aunque puede utilizar el <code translate="No">playlist()</code> como setter, es una buena práctica utilizar la funcionalidad de catálogo de Brightcove Player para cargar una lista de reproducción, por ejemplo&nbsp;<code translate="No">myPlayer.catalog.getPlaylist( playlistID )</code> y <code translate="No">myPlayer.catalog.load( playlist )</code>. Ver el <a href="/references/player-catalog.html">Catálogo de jugadores</a> documento para obtener más información.</p>
+    <aside class="bcls-aside bcls-aside--tip">Si deseas cargar la lista de reproducción, pero NO tienes el primer vídeo de la lista de reproducción colocado en el reproductor, en el <code translate="No">playlist()</code> método puedes establecer un segundo parámetro en <code translate="No">-1</code>. Por ejemplo, el siguiente código recupera una lista de reproducción, la coloca en el reproductor, pero no carga el primer vídeo en el reproductor:
       <pre class="line-numbers">
 <code class="language-javascript" translate="No">myPlayer.catalog.getPlaylist(playlistID, function(error, myPlaylist) {
   // deal with error
   // +++ Place playlist in player, but -1 parameter does not load playlist video in player +++
   myPlayer.playlist(myPlaylist, -1);
 });</code></pre>
-      Por supuesto, entonces tiene que cargar el video manualmente. Consulte el ejemplo del reproductor de Brightcove:<a href="/code-samples/brightcove-player-sample-play-video-playlist.html"> Reproducir vídeo antes de la lista de reproducción para un ejemplo de esta técnica.</a></aside>
-    <p class="player-only">A continuación se muestra un ejemplo de uso del método con una lista de reproducción creada manualmente:</p>
+      Por supuesto, entonces tienes que cargar el vídeo manualmente. Vea la muestra de <a href="/code-samples/brightcove-player-sample-play-video-playlist.html">Brightcove Player: Reproducir vídeo antes de la lista de reproducción</a> para ver un ejemplo de esta técnica.</aside>
+    <p class="player-only">A continuación, se muestra un ejemplo de uso del método con una lista de reproducción creada manualmente:</p>
     <pre class="line-numbers player-only">
 <code class="language-javascript" translate="No">myPlayer = this;
 myPlayer.playlist([{
@@ -1595,11 +440,11 @@ myPlayer.playlist([{
     "src": "//solutions.brightcove.com/bcls/assets/videos/Sea_LionFish.mp4", "type": "video/mp4"
   }],</code></pre>
     <h5>Valor devuelto (getter):</h5>
-    <p>El método devuelve un valor de <strong translate="No">array of objects</strong>.</p>
-    <p class="video-cloud-only">A continuación se muestra un ejemplo de una lista de reproducción devuelta de Video Cloud (una matriz de objetos de vídeo de Video Cloud):</p>
-    <figure class="bcls-figure"><img class="bcls-image video-cloud-only" alt="Objeto de lista de reproducción de Video Cloud" src="//learning-services-media.brightcove.com/doc-assets/player-development/playlists/general-information/playlist-api/playlist-vc-object.png"/></figure>
-    <figure class="bcls-figure player-only"><img class="bcls-image" alt="realizar objeto de lista de reproducción" src="//learning-services-media.brightcove.com/doc-assets/player-development/playlists/general-information/playlist-api/playlist-perform-object.png"/></figure>
-    <p class="video-cloud-only">En el ejemplo siguiente se muestra el uso del objeto de catalog <code translate="No">getPlaylist()</code> y <code translate="No">load()</code> los métodos para cargar una lista de reproducción de Video Cloud. Como se mencionó anteriormente, este es el enfoque recomendado cuando se usan listas de reproducción de Video Cloud. Para obtener más información, consulte el documento <a href="/references/player-catalog.html">Catálogo del Reproductor</a> .</p>
+    <p>El método devuelve un <strong translate="No">matriz de objetos</strong>.</p>
+    <p class="video-cloud-only">A continuación, se muestra un ejemplo de una lista de reproducción de Video Cloud devuelta (una matriz de objetos de video de Video Cloud):</p>
+    <figure class="bcls-figure"><img class="bcls-image video-cloud-only" alt="Video Cloud playlist object" src="/assets/images/references/playlist-api/playlist-vc-object.png" /></figure>
+    <figure class="bcls-figure player-only"><img class="bcls-image" alt="playlist object perform" src="/assets/images/references/playlist-api/playlist-perform-object.png" /></figure>
+    <p class="video-cloud-only">El siguiente ejemplo muestra el uso del objeto de catálogo <code translate="No">getPlaylist()</code> y <code translate="No">load()</code> métodos para cargar una lista de reproducción de Video Cloud. Como se mencionó anteriormente, este es el enfoque recomendado cuando se utilizan listas de reproducción de Video Cloud. Para obtener más información, consulte el <a href="/references/player-catalog.html">Catálogo de jugadores</a> documento.</p>
     <pre class="line-numbers video-cloud-only">
 <code class="language-javascript" translate="No">myPlayer = this;
 myPlayer.catalog.getPlaylist('1754200320001', function(error, playlist){
@@ -1607,54 +452,54 @@ myPlayer.catalog.getPlaylist('1754200320001', function(error, playlist){
   console.log('mediainfo', myPlayer.mediainfo);
 )};</code></pre>
     <div class="video-cloud-only">
-      <p>Puede utilizar el objeto devuelto por el <code translate="No">options()</code> método para recuperar el ID de la lista de reproducción. Aquí hay una <code translate="No">console.log</code> muestra la sintaxis:</p>
+      <p>Puede utilizar el objeto devuelto por el <code translate="No">options()</code> método para recuperar el ID de la lista de reproducción. Aquí hay un <code translate="No">console.log</code> mostrando la sintaxis:</p>
       <pre class="line-numbers">
 <code class="language-javascript" translate="No">console.log('playlist id: ', myPlayer.options()['data-playlist-id']);</code></pre>
     </div>
   </section>
   <section class="bcls-section">
-    <h2 id="previous">anterior () método</h2>
-    <p>El <code translate="No">previous()</code> método reproduce el elemento anterior de la lista de reproducción. El nuevo vídeo que se reproduce en el reproductor se devolverá de esta llamada al método. El se actualizará con el nuevo índice.<code translate="No">currentItem</code> Si se encuentra al inicio de la lista de reproducción, no podrá pasar más allá del inicio y no se devolverá nada.</p>
+    <h2 id="previous">método anterior ()</h2>
+    <p>La <code translate="No">previous()</code> El método reproduce el elemento anterior de la lista de reproducción. El nuevo vídeo que se reproduce en el reproductor se devolverá a partir de esta llamada al método. Se <code translate="No">currentItem</code> actualizará con el nuevo índice. Si está al comienzo de la lista de reproducción, no podrá continuar más allá del comienzo y no se devolverá nada.</p>
     <h5>Parámetros:</h5>
     <ul>
-      <li>Ninguno</li>
+      <li>Ninguna</li>
     </ul>
     <h5>Valor devuelto:</h5>
-    <p>El método devuelve un objeto de tipo.<strong translate="No">object</strong> A continuación se muestra un ejemplo de este objeto para una lista de reproducción creada manualmente:</p>
-    <figure class="bcls-figure"><img class="bcls-image" alt="objeto de lista de reproducción" src="//learning-services-media.brightcove.com/doc-assets/player-development/playlists/general-information/playlist-api/playlist-vidobject-perform.png"/></figure>
+    <p>El método devuelve un objeto de tipo <strong translate="No">objeto</strong>. A continuación se muestra un ejemplo de este objeto para una lista de reproducción creada manualmente:</p>
+    <figure class="bcls-figure"><img class="bcls-image" alt="playlist object" src="/assets/images/references/playlist-api/playlist-vidobject-perform.png" /></figure>
     <p class="video-cloud-only">A continuación se muestra un ejemplo de este objeto para una lista de reproducción de Video Cloud:</p>
-    <figure class="bcls-figure video-cloud-only"><img class="bcls-image" alt="Objeto de lista de reproducción de Video Cloud" src="//learning-services-media.brightcove.com/doc-assets/player-development/playlists/general-information/playlist-api/playlist-vidobject-vc.png"/></figure>
-    <p>A continuación se muestra un ejemplo de uso del método en una función para moverse al vídeo anterior:</p>
+    <figure class="bcls-figure video-cloud-only"><img class="bcls-image" alt="Video Cloud playlist object" src="/assets/images/references/playlist-api/playlist-vidobject-vc.png" /></figure>
+    <p>A continuación, se muestra un ejemplo de uso del método en una función para pasar al video anterior:</p>
     <pre class="line-numbers">
 <code class="language-javascript" translate="No">function previousVideo() {
   myPlayer.playlist.previous();
 }</code></pre>
   </section>
   <section class="bcls-section">
-    <h2 id="previousIndex">PreviousIndex (), método</h2>
-    <p>El <code translate="No">player.playlist.previsousIndex( )</code> método devuelve el índice del vídeo que continúa el vídeo que se está reproduciendo actualmente en el reproductor.</p>
+    <h2 id="previousIndex">método previousIndex ()</h2>
+    <p>La <code translate="No">player.playlist.previsousIndex( )</code> El método devuelve el índice del video que procede del video que se está reproduciendo actualmente en el reproductor.</p>
     <h5>Parámetro:</h5>
     <ul>
-      <li>Ninguno</li>
+      <li>Ninguna</li>
     </ul>
     <h5>Valor devuelto:</h5>
-    <p>El método devuelve un valor de tipo.<strong translate="No">number</strong> El valor devuelto representa la posición de la matriz del vídeo que continúa con el vídeo que se está reproduciendo actualmente en el reproductor.</p>
-    <p>Si el jugador está en el primer elemento, el método devuelve <strong translate="No">0</strong>. Sin embargo, si la lista de reproducción se repite y está en el primer elemento, devuelve el índice del último elemento. Si el reproductor está reproduciendo un vídeo que no sea de lista de reproducción, volverá <strong translate="No">-1</strong>.</p>
+    <p>El método devuelve un valor del <strong translate="No">número de tipo</strong>. El valor devuelto representa la posición de la matriz del video que procede del video que se está reproduciendo actualmente en el reproductor.</p>
+    <p>Si el jugador está en el primer elemento, el método devuelve <strong translate="No">0</strong>. Sin embargo, si la lista de reproducción se repite y está en el primer elemento, devuelve el índice del último elemento. Si el reproductor está reproduciendo un vídeo que no es lista de reproducción, devolverá <strong translate="No">-1</strong>.</p>
   </section>
   <section class="bcls-section">
-    <h2 id="repeat">repeat (), método</h2>
-    <p>Puede repetir una lista de reproducción después de que haya terminado el último vídeo de la lista de reproducción utilizando el <code translate="No">playlist.repeat()</code> método. Esta funcionalidad reproduce el primer vídeo de la lista de reproducción una vez finalizado el último vídeo de la lista de reproducción.</p>
+    <h2 id="repeat">método repeat ()</h2>
+    <p>Puede repetir una lista de reproducción después de que haya terminado el último video de la lista de reproducción usando el <code translate="No">playlist.repeat()</code> método. Esta funcionalidad reproduce el primer vídeo de la lista de reproducción una vez finalizado el último vídeo de la lista de reproducción.</p>
     <h5>Parámetros:</h5>
     <ul>
-      <li>Valor booleano que indica si la lista de reproducción debe repetirse o no; el valor predeterminado es <code translate="No">false</code></li>
+      <li>Valor booleano que indica si la lista de reproducción debe repetirse o no; por defecto es <code translate="No">false</code></li>
     </ul>
     <h5>Valor devuelto:</h5>
     <p>El valor actual de <code translate="No">playlist.repeat</code></p>
-    <p>El método establece el valor pasando cualquiera <code translate="No">true</code> o <code translate="No">false</code> como argumento. Si no se utiliza ningún argumento, el método devuelve el valor actual. El siguiente código muestra la implementación:</p>
+    <p>El método establece el valor pasando <code translate="No">true</code> o <code translate="No">false</code> como argumento. Si no se utiliza ningún argumento, el método devuelve el valor actual. El siguiente código muestra la implementación:</p>
     <ul>
-      <li>Líneas 1-11: El código de reproductor de lista de reproducción estándar excepto a <code translate="No">id</code> se añade con un valor de <code translate="No">myPlayerID</code>.</li>
-      <li>Línea 16: Define la lista de reproducción para que se repita.</li>
-      <li>Línea 17: Muestra el método en acción como un getter. Muestra en la consola el valor de <code translate="No">repeat</code>.</li>
+      <li>Líneas 1-11: Código de reproductor de lista de reproducción estándar, excepto un <code translate="No">id</code> se suma con un valor de <code translate="No">myPlayerID</code>.</li>
+      <li>Línea 16: Configura la lista de reproducción para que se repita.</li>
+      <li>Línea 17: Muestra el método en acción como captador. Muestra en la consola el valor de <code translate="No">repeat</code>.</li>
     </ul>
     <pre class="line-numbers">
 <code class="language-html" translate="No">&lt;video-js <span class="bcls-highlight">id="myPlayerID"</span>
@@ -1678,47 +523,47 @@ myPlayer.catalog.getPlaylist('1754200320001', function(error, playlist){
 &lt;/script&gt;</code></pre>
   </section>
   <section class="bcls-section">
-    <h2 id="reverse">reverse (), método</h2>
-    <p>El <code translate="No">player.playlist.reverse( )</code> método cambia el orden de los vídeos en la lista de reproducción para que el primer vídeo se convierta en el último y el último vídeo se convierte en el primero.</p>
+    <h2 id="reverse">método reverse ()</h2>
+    <p>La <code translate="No">player.playlist.reverse( )</code> El método cambia el orden de los videos en la lista de reproducción para que el primer video se convierta en el último y el último en el primero.</p>
     <h5>Parámetro:</h5>
     <ul>
-      <li>Ninguno</li>
+      <li>Ninguna</li>
     </ul>
     <h5>Valor devuelto:</h5>
-    <p>El método no devuelve un valor.</p>
-    <p>Invierte el orden de los vídeos de la lista de reproducción. Por ejemplo, el primer video se convierte en el último, y el último video se convierte en el primero.</p>
-    <p>El método distribuye el evento después de revertir.<code translate="No">playlistsorted</code></p>
+    <p>El método no devuelve ningún valor.</p>
+    <p>Invierte el orden de los vídeos de la lista de reproducción. Por ejemplo, el primer video se convierte en el último y el último video se convierte en el primero.</p>
+    <p>El método distribuye el <code translate="No">playlistsorted</code> evento tras la marcha atrás.</p>
   </section>
   <section class="bcls-section">
     <h2 id="shuffle">método shuffle ()</h2>
-    <p>El <code translate="No">player.playlist.shuffle( )</code> método baraja/aleatoriza el orden de los elementos de la lista de reproducción.</p>
+    <p>La <code translate="No">player.playlist.shuffle( )</code> El método baraja / aleatoriza el orden de los elementos de la lista de reproducción.</p>
     <h5>Parámetro:</h5>
     <ul>
-      <li> <code translate="No">rest</code> Opción opcional: De forma predeterminada, toda la lista de reproducción se aleatoriza. Sin embargo, esto puede no ser deseable en todos los casos, como cuando un usuario ya está viendo un video. Cuando <code translate="No">true</code> se pasa para esta opción, solo se alearán los elementos de la lista de reproducción después del elemento actual. Por ejemplo, cuando se encuentre en el primer elemento, el método mezclará sólo el segundo elemento y más allá. La sintaxis para utilizar el parámetro es:
+      <li>Opcional <code translate="No">rest</code> opción: De forma predeterminada, toda la lista de reproducción es aleatoria. Sin embargo, esto puede no ser deseable en todos los casos, como cuando un usuario ya está viendo un video. Cuándo <code translate="No">true</code> se pasa para esta opción, solo reproducirá aleatoriamente los elementos de la lista de reproducción después del elemento actual. Por ejemplo, cuando está en el primer elemento, el método barajará solo el segundo elemento y más allá. La sintaxis para usar el parámetro es:
         <pre class="line-numbers">
 <code class="language-javascript" translate="No">player.playlist.shuffle({rest: true});</code></pre>
       </li>
     </ul>
     <h5>Valor devuelto:</h5>
-    <p>El método no devuelve un valor.</p>
-    <p>Este método baraja los elementos de la lista de reproducción utilizando el <a href="//en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle">algoritmo aleatorio Fisher-Yates</a>.</p>
-    <p>El método distribuye el <code translate="No">playlistsorted</code> evento después de mezclar.</p>
-    <p>Si desea mezclar una lista de reproducción cuando el jugador se carga por primera vez, debe utilizar este&nbsp;método en un controlador de eventos para el <code translate="No">playlistsorted</code> evento. Esto evita la condición en la que el método intenta mezclar la lista de reproducción antes de cargarla en el reproductor. La sintaxis de ejemplo es:</p>
+    <p>El método no devuelve ningún valor.</p>
+    <p>Este método baraja los elementos de la lista de reproducción utilizando el <a href="//en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle">Algoritmo de reproducción aleatoria de Fisher-Yates</a>.</p>
+    <p>El método envía el <code translate="No">playlistsorted</code> evento después de barajar.</p>
+    <p>Si desea reproducir aleatoriamente una lista de reproducción cuando el reproductor se carga por primera vez, debe usar este&nbsp;método en un controlador de eventos para el <code translate="No">playlistsorted</code> evento. Esto evita la condición en la que el método intenta mezclar la lista de reproducción antes de que se cargue en el reproductor. La sintaxis de muestra es:</p>
     <pre class="line-numbers">
 <code class="language-javascript" translate="No">myPlayer.on("duringplaylistchange", function() {
   myPlayer.playlist.shuffle();
 });</code></pre>
   </section>
   <section class="bcls-section">
-    <h2 id="sort">sort (), método</h2>
-    <p>El <code translate="No">player.playlist.sort( )</code> método ordena los vídeos en una lista de reproducción de una manera idéntica al método <a href="//developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort">Array.prototype.sort ()</a> de JavaScript.</p>
+    <h2 id="sort">método sort ()</h2>
+    <p>La <code translate="No">player.playlist.sort( )</code> El método ordena los videos en una lista de reproducción de una manera idéntica a la de JavaScript. <a href="//developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort">Array.prototype.sort ()</a> método.</p>
     <h5>Parámetro:</h5>
     <ul>
-      <li><strong translate="No">compareFunction</strong>: Función que define cómo se deben ordenar los vídeos.</li>
+      <li><strong translate="No">compareFunction</strong>: Una función que define cómo se deben ordenar los videos.</li>
     </ul>
     <h5>Valor devuelto:</h5>
-    <p>El método no devuelve un valor.</p>
-    <p>A continuación se muestra un ejemplo de uso del método para ordenar los vídeos <code translate="No">duration</code> :</p>
+    <p>El método no devuelve ningún valor.</p>
+    <p>Un ejemplo de uso del método para ordenar los videos por <code translate="No">duration</code> sigue:</p>
     <pre class="line-numbers">
 <code class="language-javascript" translate="No">videojs.getPlayer('myPlayerID').ready(function() {
   var myPlayer = this;
@@ -1728,33 +573,33 @@ myPlayer.catalog.getPlaylist('1754200320001', function(error, playlist){
     });
   });
 });</code></pre>
-    <p>El método distribuye el evento después de revertir.<code translate="No">playlistsorted</code></p>
+    <p>El método distribuye el <code translate="No">playlistsorted</code> evento tras la marcha atrás.</p>
   </section>
   <section class="bcls-section">
     <h2 id="beforeplaylistitem">evento beforeplaylistitem</h2>
-    <p>los <code translate="No">beforeplaylistitem</code> El evento se envía antes de cambiar a una nueva fuente de contenido dentro de una lista de reproducción (es decir, cuando alguno de los <code translate="No">currentItem()</code> , <code translate="No">first()</code> , etc.) pero antes de que se haya cambiado el estado del jugador.</p>
+    <p>La <code translate="No">beforeplaylistitem</code> El evento se envía antes de cambiar a una nueva fuente de contenido dentro de una lista de reproducción (es decir, cuando alguno de los <code translate="No">currentItem()</code> , <code translate="No">first()</code> , etc.) pero antes de que se haya cambiado el estado del jugador.</p>
   </section>
   <section class="bcls-section">
-    <h2 id="duringplaylistchange">evento duringplaylistchange</h2>
-    <p>El <code translate="No">duringplaylistchange</code> evento se distribuye después de cambiar el contenido de la lista de reproducción al llamar <code translate="No">playlist()</code> , pero antes de que se cambie el elemento de la lista de reproducción actual. El objeto de evento tiene varias propiedades especiales:</p>
+    <h2 id="duringplaylistchange">durante el evento de cambio de lista de reproducción</h2>
+    <p>La <code translate="No">duringplaylistchange</code> El evento se envía después de que se cambia el contenido de la lista de reproducción al llamar <code translate="No">playlist()</code> , pero antes de que se cambie el elemento de la lista de reproducción actual. El objeto de evento tiene varias propiedades especiales:</p>
     <ul>
       <li><code translate="No">nextIndex</code>: El índice de la siguiente lista de reproducción que se reproducirá primero.</li>
       <li><code translate="No">nextPlaylist</code>: Un clon superficial de la siguiente lista de reproducción.</li>
-      <li><code translate="No">previousIndex</code>: El índice de la lista de reproducción anterior (siempre coincidirá con el índice actual cuando se activa este evento, pero se proporciona para completar).</li>
+      <li><code translate="No">previousIndex</code>: El índice de la lista de reproducción anterior (siempre coincidirá con el índice actual cuando se active este evento, pero se proporciona para completar).</li>
       <li><code translate="No">previousPlaylist</code>: Un clon superficial de la lista de reproducción anterior.</li>
     </ul>
-    <aside class="bcls-aside bcls-aside--information">Este evento se activa cada vez <code translate="No">player.playlist()</code> que se llama, incluida la primera vez.</aside>
+    <aside class="bcls-aside bcls-aside--information">Este evento se dispara cada vez <code translate="No">player.playlist()</code> se llama, incluida la primera vez.</aside>
     <h3>Advertencias</h3>
     <p>Durante la activación de este evento, se considera que la lista de reproducción está en un estado cambiante, lo que tiene los siguientes efectos:</p>
     <ul>
-      <li>Al llamar al método principal de la lista de reproducción, <code translate="No">player.playlist([...])</code> se producirá un error.</li>
+      <li>Llamando al método de lista de reproducción principal, <code translate="No">player.playlist([...])</code> arrojará un error.</li>
       <li>Métodos de navegación de listas de reproducción, <code translate="No">first</code> , <code translate="No">last</code> , <code translate="No">next</code> y <code translate="No">previous</code> , se vuelven inoperables.</li>
-      <li>El <code translate="No">currentItem()</code> método solo actúa como un getter.</li>
-      <li>Aunque los métodos de ordenación <code translate="No">sort</code>, , <code translate="No">reverse</code> y <code translate="No">shuffle</code>, continuarán funcionando, no envían el <code translate="No">playlistsorted</code> evento.</li>
+      <li>La <code translate="No">currentItem()</code> El método solo actúa como captador.</li>
+      <li>Mientras que los métodos de clasificación, <code translate="No">sort</code> , <code translate="No">reverse</code> y <code translate="No">shuffle</code> , seguirá funcionando, no envían el <code translate="No">playlistsorted</code> evento.</li>
       <li>&nbsp;</li>
     </ul>
-    <h3>Por qué usar este evento</h3>
-    <p>Este evento brinda la oportunidad de interceptar el proceso de configuración de la lista de reproducción antes de que se establezca una nueva fuente en el reproductor y antes de que se <code translate="No">playlistchange</code> desencadene el evento, al tiempo que proporciona una API de lista de reproducción coherente. Un caso de uso podría ser barajar una lista de reproducción que acaba de venir de un servidor, pero antes de que su fuente inicial se cargue en el reproductor o se actualice la interfaz de usuario de la lista de reproducción:</p>
+    <h3>Por que usar este evento</h3>
+    <p>Este evento brinda la oportunidad de interceptar el proceso de configuración de la lista de reproducción antes de que se establezca una nueva fuente en el reproductor y antes de que <code translate="No">playlistchange</code> eventos, al tiempo que proporciona una API de lista de reproducción consistente. Un caso de uso podría ser mezclar una lista de reproducción que acaba de venir de un servidor, pero antes de que su fuente inicial se cargue en el reproductor o se actualice la interfaz de usuario de la lista de reproducción:</p>
     <pre class="line-numbers">
 <code class="language-javascript" translate="No">player.on('duringplaylistchange', function() {
   // Remember, this will not trigger a "playlistsorted" event!
@@ -1766,34 +611,34 @@ player.on('playlistchange', function() {
 });</code></pre>
   </section>
   <section class="bcls-section">
-    <h2 id="playlistchange">evento playlistchange</h2>
-    <p>El <code translate="No">playlistchange</code> evento se distribuye de forma asíncrona cada vez que se cambia la lista de reproducción. Cuando se envíe este evento, el reproductor comenzará a cargar el primer vídeo de la nueva lista de reproducción. Se dispara de forma asíncrona para permitir que el navegador comience a cargar el primer video en la nueva lista de reproducción.</p>
+    <h2 id="playlistchange">evento de cambio de lista de reproducción</h2>
+    <p>La <code translate="No">playlistchange</code> El evento se distribuye de forma asincrónica cada vez que se cambia la lista de reproducción. Cuando se distribuya este evento, el reproductor comenzará a cargar el primer video en la nueva lista de reproducción. Se dispara de forma asincrónica para permitir que el navegador comience a cargar el primer video en la nueva lista de reproducción.</p>
   </section>
   <section class="bcls-section">
-    <h2 id="playlistitem">evento playlistitem</h2>
-    <p>los <code translate="No">playlistitem</code> El evento se distribuye cuando se cambia a una nueva fuente de contenido dentro de una lista de reproducción (es decir, cuando cualquiera de <code translate="No">currentItem()</code> , <code translate="No">first()</code> , etc.) después de que se haya cambiado el estado del reproductor, pero antes de que se reanude la reproducción.</p>
+    <h2 id="playlistitem">evento de lista de reproducción</h2>
+    <p>La <code translate="No">playlistitem</code> El evento se distribuye cuando se cambia a una nueva fuente de contenido dentro de una lista de reproducción (es decir, cuando alguno de los <code translate="No">currentItem()</code> , <code translate="No">first()</code> , etc.) después de que se haya cambiado el estado del reproductor, pero antes de que se reanude la reproducción.</p>
   </section>
   <section class="bcls-section">
-    <h2 id="playlistsorted">evento playlistsorted</h2>
-    <p>El <code translate="No">playlistsorted</code> evento se distribuye cuando se llama a cualquier método que cambie el orden de los elementos de la lista de reproducción, los que son <code translate="No">sort()</code> , <code translate="No">reverse()</code> o <code translate="No">shuffle()</code>.</p>
+    <h2 id="playlistsorted">evento surtido</h2>
+    <p>La <code translate="No">playlistsorted</code> El evento se envía cuando se llama a cualquier método que cambia el orden de los elementos de la lista de reproducción, <code translate="No">sort()</code> , <code translate="No">reverse()</code> o <code translate="No">shuffle()</code>.</p>
   </section>
   <section id="playonselect" class="bcls-section">
-    <h2>PlayOnSelect</h2>
-    <p>Este valor es una opción de configuración que, cuando se establece en, <code translate="No">true</code> hace que un vídeo en el que se haya hecho clic de la lista de reproducción comience a reproducirse, incluso si el vídeo actual del reproductor se ha pausado previamente. De forma predeterminada, al hacer clic en un nuevo vídeo de la lista de reproducción, se cargará el nuevo vídeo, pero mantendrá el reproductor en pausa si se ha pausado de antemano.</p>
-    <p>Encontrará información sobre cómo manipular este valor en la <a href="/general/player-configuration-guide.html">sección Guía de configuración del reproductor - Listas de reproducción</a>.</p>
+    <h2>Playon Select</h2>
+    <p>Este valor es una opción de configuración que cuando se establece en <code translate="No">true</code> hace que se inicie la reproducción de un video en el que se hizo clic en la lista de reproducción, incluso si el video actual en el reproductor se pausó previamente. De forma predeterminada, al hacer clic en un nuevo vídeo de la lista de reproducción se cargará el nuevo vídeo pero mantendrá el reproductor en pausa si se ha pausado de antemano.</p>
+    <p>La información sobre cómo manipular este valor se puede encontrar en el <a href="/general/player-configuration-guide.html">Guía de configuración del reproductor: sección Listas de reproducción</a>.</p>
   </section>
   <section id="visualplaylist" class="bcls-section">
     <h2>Listas de reproducción visuales</h2>
-    <p>Si desea tener una representación visual de la lista de reproducción en su página, debe configurar el reproductor para hacerlo. Puede actualizar la configuración usando Studio, en la <strong translate="No">PLAYERS &gt; Styling</strong> sección, como se muestra aquí (puede elegir una lista de reproducción vertical u horizontal):</p>
-    <figure class="bcls-figure"><img class="bcls-image" alt="habilitar lista de reproducción en Studio" src="//learning-services-media.brightcove.com/doc-assets/player-development/playlists/general-information/playlist-api/playlist-enable-in-studio.png"/></figure>
-    <p>Si lo desea, también puede utilizar la Player Management API para configurar su reproductor para listas de reproducción. Consulte la <strong translate="No">Playlists</strong> sección de la <a href="/general/player-configuration-guide.html#playlists">Guía de configuración del reproductor</a> para obtener información completa.</p>
-    <p>Puede comprobar mediante programación si las listas de reproducción están habilitadas comprobando si el valor de <code translate="No">player.playlistUi</code> está definido.</p>
+    <p>Si desea tener una representación visual de la lista de reproducción en su página, debe configurar el reproductor para que lo haga. Puede actualizar la configuración usando Studio, en el <strong translate="No">JUGADORES&gt; Estilismo</strong> sección, como se muestra aquí (puede elegir una lista de reproducción vertical u horizontal):</p>
+    <figure class="bcls-figure"><img class="bcls-image" alt="enable playlist in Studio" src="/assets/images/references/playlist-api/playlist-enable-in-studio.png" /></figure>
+    <p>Si lo desea, también puede utilizar la API de administración de reproductores para configurar su reproductor para las listas de reproducción. Ver el <strong translate="No">Listas de reproducción</strong> sección de la <a href="/general/player-configuration-guide.html#playlists">Guía de configuración del reproductor</a> para obtener información completa.</p>
+    <p>Puede comprobar mediante programación si las listas de reproducción están habilitadas comprobando si el valor de <code translate="No">player.playlistUi</code> se define.</p>
     <pre class="line-numbers">
 <code class="language-javascript" translate="No">console.log('myPlayer.playlistUi:', myPlayer.playlistUi);</code></pre>
   </section>
   <section id="catalogplaylists" class="section video-cloud-only">
-    <h2>Catálogo de listas de reproducción</h2>
-    <p>Como se mencionó anteriormente en el documento, la lista de reproducción puede ser una lista de reproducción de Video Cloud. Puede recuperar una lista de reproducción de Video Cloud utilizando el <code translate="No">player.catalog.getPlaylist()</code> método. A continuación, cargue la lista de reproducción en el reproductor utilizando el <code translate="No">player.catalog.load()</code> método. El siguiente código muestra este uso:</p>
+    <h2>Listas de reproducción de catálogo</h2>
+    <p>Como se mencionó anteriormente en el documento, la lista de reproducción puede ser una lista de reproducción de Video Cloud. Puede recuperar una lista de reproducción de Video Cloud utilizando el <code translate="No">player.catalog.getPlaylist()</code> método. A continuación, carga la lista de reproducción en el reproductor utilizando el <code translate="No">player.catalog.load()</code> método. El siguiente código muestra este uso:</p>
     <pre class="line-numbers">
 <code class="language-javascript" translate="No">myPlayer = this;
 myPlayer.catalog.getPlaylist('1754200320001', function(error, playlist){
@@ -1802,212 +647,5 @@ myPlayer.catalog.getPlaylist('1754200320001', function(error, playlist){
 });</code></pre>
   </section>
   <script src="https://players.brightcove.net/1752604059001/f50a2d3c-af51-4d8c-84e3-0c7cdec0edbe_default/index.min.js"></script><script>
-        var myPlayer;
-
-        videojs.getPlayer('myPlayerID').ready(function() {
-          myPlayer = this;
-          myPlayer.playlist([{
-            sources: [{
-              src: '//solutions.brightcove.com/bcls/assets/videos/Sea_SeaHorse.mp4',
-              type: 'video/mp4'
-            }],
-            poster: '//solutions.brightcove.com/bcls/assets/images/Sea_Seahorse_poster.png'
-          }, {
-            sources: [{
-              src: '//solutions.brightcove.com/bcls/assets/videos/Sea_Anemone.mp4',
-              type: 'video/mp4'
-            }],
-            poster: '//solutions.brightcove.com/bcls/assets/images/Sea_Anemone_poster.png'
-          }, {
-            sources: [{
-              src: '//solutions.brightcove.com/bcls/assets/videos/Tiger.mp4',
-              type: 'video/mp4'
-            }],
-            poster: '//solutions.brightcove.com/bcls/assets/images/Tiger_poster.png'
-          }, {
-            sources: [{
-              src: '//solutions.brightcove.com/bcls/assets/videos/Sea_ClownFish.mp4',
-              type: 'video/mp4'
-            }],
-            poster: '//solutions.brightcove.com/bcls/assets/images/Sea_ClownFish_poster.png'
-          }, {
-            sources: [{
-              src: '//solutions.brightcove.com/bcls/assets/videos/Sea_LionFish.mp4',
-              type: 'video/mp4'
-            }],
-            poster: '//solutions.brightcove.com/bcls/assets/images/Sea_LionFish_poster.png'
-          }]);
-          myPlayer.playlist.autoadvance(0);
-          console.log(myPlayer.playlist());
-          console.log('contains', myPlayer.playlist.contains('//solutions.brightcove.com/bcls/assets/videos/Sea_ClownFish.mp4'));
-        });
-
-        function nextVideo() {
-          myPlayer.playlist.next();
-        }
-
-        function previousVideo() {
-          myPlayer.playlist.previous();
-        }
-
-        function goto3() {
-          myPlayer.playlist.currentItem(3);
-        }
+        var myPlayer; videojs.getPlayer ('myPlayerID'). listo (función () { myPlayer = this; myPlayer.playlist([{ sources: [{ src: '//solutions.brightcove.com/bcls/assets/videos/Sea_SeaHorse.mp4', type: 'video/mp4' }], póster: '//solutions.brightcove.com/bcls/assets/images/Sea_Seahorse_poster.png' }, { sources: [{ src: '//solutions.brightcove.com/bcls/assets/videos/Sea_Anemone.mp4', type: 'video/mp4' }], póster: '//solutions.brightcove.com/bcls/assets/images/Sea_Anemone_poster.png' }, { sources: [{ src: '//solutions.brightcove.com/bcls/assets/videos/Tiger.mp4', type: 'video/mp4' }], póster: '//solutions.brightcove.com/bcls/assets/images/Tiger_poster.png' }, { sources: [{ src: '//solutions.brightcove.com/bcls/assets/videos/Sea_ClownFish.mp4', type: 'video/mp4' }], póster: '//solutions.brightcove.com/bcls/assets/images/Sea_ClownFish_poster.png' }, { sources: [{ src: '//solutions.brightcove.com/bcls/assets/videos/Sea_LionFish.mp4', type: 'video/mp4' }], póster: '//solutions.brightcove.com/bcls/assets/images/Sea_LionFish_poster.png' }]); myPlayer.playlist.autoadvance (0); console.log (myPlayer.playlist ()); console.log ('contiene', myPlayer.playlist.contains ('// solutions.brightcove.com/bcls/assets/videos/Sea_ClownFish.mp4')); }); función nextVideo () { myPlayer.playlist.next(); } función previousVideo () { myPlayer.playlist.previous(); } función goto3 () { myPlayer.playlist.currentItem(3); }
       </script></article>
-
-<!-- complete bootstrap layout -->
-    </div>
-    <div class="col-sm-2 right-side-bar">
-      
-      <nav class="right-side-nav" id="right_side_nav">
-        <h6 class="toc">Contenido de la página</h6>
-        <ul id="in_page_nav" class="list-none"></ul>
-      </nav>
-      
-    </div>
-  </div>
-</div>
-
-<hr>
-<footer class="bcls-footer" role="contentinfo">  <div class="row">
-    <div class="region region-footer-top-center col-md-12">
-      <nav role="navigation" aria-labelledby="block-brightcovesupport-menu" id="block-brightcovesupport" class="footer-menu">
-
-        <h2>Asistencia técnica de Brightcove</h2>
-
-        <ul class="menu">
-          <li>
-            Estado del sistema<a href="https://status.brightcove.com"></a>
-          </li>
-          <li>
-            <a href="https://supportportal.brightcove.com/s/login/?">Contactar soporte</a>
-          </li>
-          <li>
-            <a href="https://support.brightcove.com/">Documentación</a>
-          </li>
-        </ul>
-
-      </nav>
-      <nav role="navigation" aria-labelledby="block-training-menu" id="block-training" class="footer-menu">
-
-        <h2>Formación</h2>
-
-        <ul class="menu">
-          <li>
-            Cursos en línea<a href="https://studio.support.brightcove.com/training/online-training-courses.html"></a>
-          </li>
-          <li>
-            Inscríbete a un curso<a href="https://studio.support.brightcove.com/training/register-training.html"></a>
-          </li>
-          <li>
-            <a href="https://university.brightcove.com/">Universidad de Brightcove</a>
-          </li>
-        </ul>
-
-      </nav>
-      <nav role="navigation" aria-labelledby="block-brightcove-menu" class="footer-menu">
-
-        <h2>Brightcove</h2>
-
-        <ul class="menu">
-          <li>
-            <a href="https://www.brightcove.com">BrightCove.com</a>
-          </li>
-          <li>
-            <a href="https://supportportal.brightcove.com/s/login/?">Contáctanos</a>
-          </li>
-        </ul>
-      </nav>
-    </div>
-  </div>
-  <div class="row">
-    <div class="region region-footer-bottom-center col-md-12">
-      <div class="bcls-copyright footer-menu">
-        <table>
-          <tr>
-            <td>
-              <div id="bc_copyright" class="field field--name-field-copyright-year field--type-string field--label-hidden field--item" style="float: left;"> Brightcove Inc. All rights reserved.</div>
-            </td>
-            <td>Privacidad | Términos y Condiciones<a href="https://www.brightcove.com/en/legal/privacy"></a><a href="https://www.brightcove.com/en/terms-and-conditions"></a></td>
-            <td>
-              <div class="gf-links-cols footer-menu">
-                <div class="gf-social"><a href="https://www.linkedin.com/company/16439" title="LinkedIn" newtab="newtab" class="gf-social-linkedin"><i class="fab fa-linkedin-in" style="font-size: 1.5rem;"></i></a><a href="https://twitter.com/brightcove" title="Twitter" newtab="newtab" class="gf-social-twitter"><i class="fab fa-twitter" style="font-size: 1.5rem;"></i></a><a href="https://www.facebook.com/Brightcove" title="Facebook" newtab="newtab" class="gf-social-facebook"><i class="fab fa-facebook-f" style="font-size: 1.5rem;"></i></a>
-                </div>
-              </div>
-            </td>
-          </tr>
-        </table>
-      </div>
-    </div>
-  </div>
-</footer>
-
-</div>
-</div>
-<script>
-      
-  var searchBox = sajari.init({
-    mode: "search-box",
-    project: "1588255093746585379", // Set this to your project.
-    collection: "brightcove-documenation", // Set this to your collection.
-    instantPipeline: "autocomplete", // Pipeline used as you type
-    inputPlaceholder: "Search", // Input element placeholder
-    maxSuggestions: 5, // Maximum number of suggestions to show
-    attachSearchBox: document.getElementById("nav-search-box") // DOM element to attach to
-  });
-  
-    searchBox("sub", "pipeline.search-sent", function (_, query) {
-      window.location = "/search.html?q=" + encodeURIComponent(query.q);
-    });
-  
-
-</script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-  <script src="https://support.brightcove.com/site-assets/js/site/https-fix.js"></script>
-  <script src="https://support.brightcove.com/site-assets/js/site/setDate.js"></script>
-  
-  <script src="https://support.brightcove.com/site-assets/js/site/prism.js"></script>
-  
-  <script src="https://support.brightcove.com/site-assets/js/site/site.js"></script>
-  <script src="https://support.brightcove.com/site-assets/js/site/tabs.js"></script>
-  <script src="https://support.brightcove.com/site-assets/js/site/toc.js"></script>
-  <script src="/assets/js/sites_nav.js"></script>
-  <script src="https://support.brightcove.com/site-assets/js/site/bcls-utils.js"></script>
-  <script src="https://support.brightcove.com/site-assets/js/site/local-link-fix.js"></script>
-  <script src="/assets/js/feedback.js"></script>
-  
-  <script src="/assets/js/sajari-search-foot.js"></script>
-  
-  <!-- <script src="/assets/js/sajari-index.js"></script> -->
-  <style>
-    a.sj-paginator__page-number.sj-paginator__page-number--current.css-so0ov7 {
-      background-color: lightblue;
-    }
-    div.sj-tabs__tab {
-      margin-top: 3rem;
-      margin-left: .3rem;
-      border-top-left-radius: .4rem;
-      border-top-right-radius: .4rem;
-      background-color:#e8e8e8;
-    }
-
-    div.sj-tabs__tab.sj-tabs__tab--selected {
-      border-bottom-color: crimson;
-      background-color: #f8f8f8;
-    }
-
-    p.sj-results__result__description.css-p9jvyt {
-      font-size: 1rem;
-    }
-
-    .sj-result__text.css-31l7gp h3 {
-      color: navy;
-      font-size: 1.4rem;
-    }
-    </style>
-
-</body>
-
-</html>

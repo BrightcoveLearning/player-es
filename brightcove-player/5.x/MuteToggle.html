@@ -1,0 +1,10182 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>Clase Brightcove Player v5.22.2: Alternar silencio</title>
+
+	<!--[if lt IE 9]>
+	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	<link type="text/css" rel="stylesheet" href="styles/sunlight.default.css">
+
+	<link type="text/css" rel="stylesheet" href="styles/site.yeti.css">
+
+</head>
+
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top navbar-inverse">
+<div class="container">
+	<div class="navbar-header">
+		<a class="navbar-brand" href="index.html">Reproductor de Brightcove v5.22.2</a>
+		<button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#topNavigation">
+			<span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>
+        </button>
+	</div>
+	<div class="navbar-collapse collapse" id="topNavigation">
+		<ul class="nav navbar-nav">
+			
+			<li class="dropdown">
+				<a href="modules.list.html" class="dropdown-toggle" data-toggle="dropdown">Módulos<b class="caret"></b></a>
+				<ul class="dropdown-menu inline">
+					<li><a href="module-browser.html">navegador</a></li><li><a href="module-buffer.html">tampón</a></li><li><a href="module-computed-style.html">estilo computarizado</a></li><li><a href="module-dom.html">dom</a></li><li><a href="module-events.html">eventos</a></li><li><a href="module-extend.html">extender</a></li><li><a href="module-flash-rtmp.html">flash-rtmp</a></li><li><a href="module-fn.html">fn</a></li><li><a href="module-Format-time.html">Format-time</a></li><li><a href="module-guid.html">guid</a></li><li><a href="module-log.html">registro</a></li><li><a href="module-merge-options.html">opciones de fusión</a></li><li><a href="module-obj.html">obj</a></li><li><a href="module-plugins.html">plugins</a></li><li><a href="module-setup.html">configuración</a></li><li><a href="module-stylesheet.html">hoja de estilo</a></li><li><a href="module-text-track-list-converter.html">convertidor de lista-pista de texto</a></li><li><a href="module-time-ranges.html">intervalos temporales</a></li><li><a href="module-to-title-case.html">a title-case</a></li><li><a href="module-url.html">url</a></li><li><a href="module-videojs.html">vídeos</a></li>
+				</ul>
+			</li>
+			
+			<li class="dropdown">
+				<a href="classes.list.html" class="dropdown-toggle" data-toggle="dropdown">Clases<b class="caret"></b></a>
+				<ul class="dropdown-menu inline">
+					<li><a href="AudioTrack.html">pista de audio</a></li><li><a href="AudioTrackButton.html">Botón de pista de audio</a></li><li><a href="AudioTrackList.html">Lista de pistas de audio</a></li><li><a href="AudioTrackMenuItem.html">Elemento del menú Audio Track</a></li><li><a href="BigPlayButton.html">Botón de reproducción grande</a></li><li><a href="Button.html">Botón</a></li><li><a href="CaptionsButton.html">Botón de subtítulos</a></li><li><a href="CaptionSettingsMenuItem.html">Elemento de menú Configuración de subtítulos</a></li><li><a href="ChaptersButton.html">Botón Capítulos</a></li><li><a href="ChaptersTrackMenuItem.html">Elemento del menú Track de capítulos</a></li><li><a href="ClickableComponent.html">Componente que se puede hacer clic</a></li><li><a href="CloseButton.html">Botón Cerrar</a></li><li><a href="Component.html">Componente</a></li><li><a href="ControlBar.html">Barra de control</a></li><li><a href="CurrentTimeDisplay.html">Pantalla de tiempo actual</a></li><li><a href="CustomControlSpacer.html">Espaciador de control personalizado</a></li><li><a href="DescriptionsButton.html">Botón descripciones</a></li><li><a href="DurationDisplay.html">Visualización de duración</a></li><li><a href="ErrorDisplay.html">Visualización de errores</a></li><li><a href="EventTarget.html">Objetivo del evento</a></li><li><a href="Flash.html">Flash</a></li><li><a href="FullscreenToggle.html">Gogle a pantalla completa</a></li><li><a href="Html5.html">Html5</a></li><li><a href="HTMLTrackElement.html">Elemento de seguimiento HTML</a></li><li><a href="HtmlTrackElementList.html">Lista de elementos de seguimiento HTML</a></li><li><a href="LiveDisplay.html">Pantalla en vivo</a></li><li><a href="LoadingSpinner.html">Spinner de carga</a></li><li><a href="LoadProgressBar.html">Barra de progreso de carga</a></li><li><a href="MediaError.html">Error de medios</a></li><li><a href="MediaLoader.html">MediaLoader</a></li><li><a href="Menu.html">Menú</a></li><li><a href="MenuButton.html">Botón Menú</a></li><li><a href="MenuItem.html">Elemento de menú</a></li><li><a href="ModalDialog.html">Cuadro de diálogo modal</a></li><li><a href="module-videojs-videojs.AudioTrack.videojs.AudioTrack.html">VideoJS ~ VideoJS.AudioTrack.videojs.pista de audio</a></li><li><a href="module-videojs-videojs.EventTarget.videojs.EventTarget.html">videojs~videojs.eventtarget.videojs.eventTarget</a></li><li><a href="module-videojs-videojs.TextTrack.videojs.TextTrack.html">Videojs~videojs.texttrack.videojs.texttrack</a></li><li><a href="module-videojs-videojs.VideoTrack.videojs.VideoTrack.html">VideoJS ~ VideoJS.VideoTrack.videojs.VideoTrack</a></li><li><a href="MouseTimeDisplay.html">Pantalla Mouse Timer</a></li><li><a href="MuteToggle.html">Alternar silencio</a></li><li><a href="OffTextTrackMenuItem.html">Elemento de menú de seguimiento de texto fuera</a></li><li><a href="PlaybackRateMenuButton.html">Botón Menú Velocidad de reproducción</a></li><li><a href="PlaybackRateMenuItem.html">Elemento del menú Índice de reproducción</a></li><li><a href="Player.html">Jugador</a></li><li><a href="PlayProgressBar.html">Barra de progreso de reproducción</a></li><li><a href="PlayToggle.html">Toggle</a></li><li><a href="Popup.html">emergente</a></li><li><a href="PopupButton.html">Botón emergente</a></li><li><a href="PosterImage.html">Imagen de póster</a></li><li><a href="ProgressControl.html">Control de progreso</a></li><li><a href="RemainingTimeDisplay.html">Pantalla de tiempo restante</a></li><li><a href="SeekBar.html">Barra de búsqueda</a></li><li><a href="Slider.html">Control deslizante</a></li><li><a href="Spacer.html">Espaciador</a></li><li><a href="SubtitlesButton.html">Botón Subtítulos</a></li><li><a href="Tech.html">Tecnología</a></li><li><a href="TextTrack.html">Track de texto</a></li><li><a href="TextTrackButton.html">Botón de pista de texto</a></li><li><a href="TextTrackCueList.html">Lista de Cuelistas de TextTrack</a></li><li><a href="TextTrackDisplay.html">Visualización de pistas de texto</a></li><li><a href="TextTrackList.html">Text Lista De Pistas</a></li><li><a href="TextTrackMenuItem.html">Elemento de menú TextTrack</a></li><li><a href="TextTrackSettings.html">Configuración de pista de texto</a></li><li><a href="TimeDivider.html">divisor de tiempo</a></li><li><a href="TooltipProgressBar.html">Barra de progreso de información sobre herramientas</a></li><li><a href="Track.html">Track</a></li><li><a href="TrackButton.html">Botón Track</a></li><li><a href="TrackList.html">Lista de canciones</a></li><li><a href="VideoTrack.html">pista de vídeo</a></li><li><a href="VideoTrackList.html">Lista de seguimiento de vídeo</a></li><li><a href="VolumeBar.html">Barra de volumen</a></li><li><a href="VolumeControl.html">Control de volumen</a></li><li><a href="VolumeLevel.html">Nivel de volumen</a></li><li><a href="VolumeMenuButton.html">Botón Menu volumen</a></li>
+				</ul>
+			</li>
+			
+			<li class="dropdown">
+				<a href="mixins.list.html" class="dropdown-toggle" data-toggle="dropdown">Mixins<b class="caret"></b></a>
+				<ul class="dropdown-menu inline">
+					<li><a href="module-flash-rtmp-FlashRtmpDecorator.html">Flash-RTMP ~ Decorador Flash RTMP</a></li>
+				</ul>
+			</li>
+			
+			<li class="dropdown">
+				<a href="events.list.html" class="dropdown-toggle" data-toggle="dropdown">Eventos<b class="caret"></b></a>
+				<ul class="dropdown-menu inline">
+					<li><a href="AudioTrack.html#event:enabledchange">AudioTrack #evento: cambio habilitado</a></li><li><a href="AudioTrackList.html#event:addtrack">Lista de pistas de audio #evento: agregar pista</a></li><li><a href="AudioTrackList.html#event:change">Lista de seguimiento de audio #evento: cambiar</a></li><li><a href="AudioTrackList.html#event:removetrack">Lista de pistas de audio #evento: eliminar pista</a></li><li><a href="BigPlayButton.html#event:dispose">BigPlayButton #evento: desechar</a></li><li><a href="BigPlayButton.html#event:ready">BigPlayButton #evento: listo</a></li><li><a href="BigPlayButton.html#event:resize">BigPlayButton #evento: cambiar tamaño</a></li><li><a href="BigPlayButton.html#event:tap">Big PlayButton #evento: toque</a></li><li><a href="Button.html#event:dispose">Botón #evento:desechar</a></li><li><a href="Button.html#event:ready">Botón #evento:listo</a></li><li><a href="Button.html#event:resize">Botón #evento:cambiar tamaño</a></li><li><a href="Button.html#event:tap">Botón #evento:toque</a></li><li><a href="ClickableComponent.html#event:dispose">ClicableComponente #evento:eliminar</a></li><li><a href="ClickableComponent.html#event:ready">ClicableComponente #evento:listo</a></li><li><a href="ClickableComponent.html#event:resize">ClicableComponente #evento: cambiar tamaño</a></li><li><a href="ClickableComponent.html#event:tap">Componente en el que se puede hacer clic #evento: toque</a></li><li><a href="CloseButton.html#event:close">CloseButton #evento:cerrar</a></li><li><a href="CloseButton.html#event:dispose">CloseButton #evento:desechar</a></li><li><a href="CloseButton.html#event:ready">CloseButton #evento:listo</a></li><li><a href="CloseButton.html#event:resize">CloseButton #evento:cambiar tamaño</a></li><li><a href="CloseButton.html#event:tap">Cerrar botón #evento:toque</a></li><li><a href="Component.html#event:dispose">Componente #evento:desechar</a></li><li><a href="Component.html#event:ready">Componente #evento:listo</a></li><li><a href="Component.html#event:resize">Componente #evento:redimensionar</a></li><li><a href="Component.html#event:tap">Componente #evento:toque</a></li><li><a href="ControlBar.html#event:dispose">Barra de control #evento:desechar</a></li><li><a href="ControlBar.html#event:ready">Barra de control #evento: listo</a></li><li><a href="ControlBar.html#event:resize">Barra de control #evento:cambiar tamaño</a></li><li><a href="ControlBar.html#event:tap">Barra de control #evento:toque</a></li><li><a href="CurrentTimeDisplay.html#event:dispose">Pantalla de tiempo actual #evento: desechar</a></li><li><a href="CurrentTimeDisplay.html#event:ready">Pantalla de tiempo actual #evento: listo</a></li><li><a href="CurrentTimeDisplay.html#event:resize">Pantalla en tiempo actual #evento: redimensionar</a></li><li><a href="CurrentTimeDisplay.html#event:tap">Pantalla de tiempo actual #evento: toque</a></li><li><a href="CustomControlSpacer.html#event:dispose">CustomControls Spacer #evento:desechar</a></li><li><a href="CustomControlSpacer.html#event:ready">CustomControls Spacer #evento: listo</a></li><li><a href="CustomControlSpacer.html#event:resize">CustomControls Spacer #evento: redimensionar</a></li><li><a href="CustomControlSpacer.html#event:tap">Control personalizado espaciador #evento: toque</a></li><li><a href="DurationDisplay.html#event:dispose">Duración Visualización #evento:desechar</a></li><li><a href="DurationDisplay.html#event:ready">Duración Visualización #evento:listo</a></li><li><a href="DurationDisplay.html#event:resize">Duración Visualización #evento:redimensionar</a></li><li><a href="DurationDisplay.html#event:tap">Duración Visualización #evento:toque</a></li><li><a href="ErrorDisplay.html#event:beforemodalclose">Error Mostrar #evento: antes de cerrar de forma remota</a></li><li><a href="ErrorDisplay.html#event:beforemodalempty">Error Mostrar #evento: antes de remodelar vacío</a></li><li><a href="ErrorDisplay.html#event:beforemodalfill">Error Mostrar #evento: antes del relleno de la remodelación</a></li><li><a href="ErrorDisplay.html#event:beforemodalopen">Error Mostrar #evento: antes de la remodelación abierta</a></li><li><a href="ErrorDisplay.html#event:modalclose">Error Mostrar #evento: cierre modal</a></li><li><a href="ErrorDisplay.html#event:modalempty">Error Mostrar #evento:modal vacía</a></li><li><a href="ErrorDisplay.html#event:modalfill">Error Mostrar #evento:relleno modal</a></li><li><a href="ErrorDisplay.html#event:modalopen">Error Visualización #evento: modal open</a></li><li><a href="Flash.html#event:audiotrackchange">Flash #evento: cambio de pista de audio</a></li><li><a href="Flash.html#event:progress">Flash #evento:progreso</a></li><li><a href="Flash.html#event:texttrackchange">Flash #evento: cambio de pista de texto</a></li><li><a href="Flash.html#event:timeupdate">Flash #evento:actualización de tiempo</a></li><li><a href="Flash.html#event:videotrackchange">Flash #evento: cambio de pista de vídeo</a></li><li><a href="Flash.html#event:vttjsloaded">Flash #evento:vttj cargada</a></li><li><a href="FullscreenToggle.html#event:dispose">Google a pantalla completa #evento: desechar</a></li><li><a href="FullscreenToggle.html#event:ready">Google de pantalla completa #evento: listo</a></li><li><a href="FullscreenToggle.html#event:resize">Google de pantalla completa #evento: redimensionar</a></li><li><a href="FullscreenToggle.html#event:tap">Google de pantalla completa #evento: toque</a></li><li><a href="Html5.html#event:audiotrackchange">Html5 #evento: cambio de pista de audio</a></li><li><a href="Html5.html#event:progress">Html5 #evento: progreso</a></li><li><a href="Html5.html#event:texttrackchange">Html5 #evento: cambio de pista de texto</a></li><li><a href="Html5.html#event:timeupdate">Html5 #evento:actualización de tiempo</a></li><li><a href="Html5.html#event:videotrackchange">Html5 #evento: cambio de pista de vídeo</a></li><li><a href="Html5.html#event:vttjsloaded">Html5 #evento: vttj cargada</a></li><li><a href="LiveDisplay.html#event:dispose">Live Display #evento:desechar</a></li><li><a href="LiveDisplay.html#event:ready">Live Display #evento:listo</a></li><li><a href="LiveDisplay.html#event:resize">Live Display #evento:redimensionar</a></li><li><a href="LiveDisplay.html#event:tap">Live Display #evento:toque</a></li><li><a href="LoadingSpinner.html#event:dispose">LoadingSpinner #evento:desechar</a></li><li><a href="LoadingSpinner.html#event:ready">LoadingSpinner #evento:listo</a></li><li><a href="LoadingSpinner.html#event:resize">LoadingSpinner #evento:redimensionar</a></li><li><a href="LoadingSpinner.html#event:tap">LoadingSpinner #evento:toque</a></li><li><a href="LoadProgressBar.html#event:dispose">LoadProgressBar #evento:desechar</a></li><li><a href="LoadProgressBar.html#event:ready">Load ProgressBar #evento: listo</a></li><li><a href="LoadProgressBar.html#event:resize">Barra de progreso de carga #evento: redimensionar</a></li><li><a href="LoadProgressBar.html#event:tap">Barra de progreso de carga #evento: toque</a></li><li><a href="MediaLoader.html#event:dispose">MediaLoader #evento:desechar</a></li><li><a href="MediaLoader.html#event:ready">MediaLoader #evento:listo</a></li><li><a href="MediaLoader.html#event:resize">MediaLoader #evento:cambiar tamaño</a></li><li><a href="MediaLoader.html#event:tap">MediaLoader #evento:toque</a></li><li><a href="Menu.html#event:dispose">Menú #evento:desechar</a></li><li><a href="Menu.html#event:ready">Menú #evento:listo</a></li><li><a href="Menu.html#event:resize">Menú #evento:cambiar tamaño</a></li><li><a href="Menu.html#event:tap">Menú #evento:toque</a></li><li><a href="MenuButton.html#event:dispose">MenuButton #evento:desechar</a></li><li><a href="MenuButton.html#event:ready">MenuButton #evento:listo</a></li><li><a href="MenuButton.html#event:resize">MenuButton #evento:cambiar tamaño</a></li><li><a href="MenuButton.html#event:tap">MenúBotón #evento:toque</a></li><li><a href="MenuItem.html#event:dispose">MenúElemento #evento:desechar</a></li><li><a href="MenuItem.html#event:ready">MenúElemento #evento:listo</a></li><li><a href="MenuItem.html#event:resize">MenúElemento #evento:cambiar tamaño</a></li><li><a href="MenuItem.html#event:tap">MenúElemento #evento:toque</a></li><li><a href="ModalDialog.html#event:beforemodalclose">Cuadro de diálogo modal #evento: antes de cerrar</a></li><li><a href="ModalDialog.html#event:beforemodalempty">Diálogo modal #evento: antes de remodelar vacío</a></li><li><a href="ModalDialog.html#event:beforemodalfill">Diálogo modal #evento: antes del relleno de la remodelación</a></li><li><a href="ModalDialog.html#event:beforemodalopen">Cuadro de diálogo modal #evento: antes de remodelar abrir</a></li><li><a href="ModalDialog.html#event:dispose">Diálogo modal #evento:desechar</a></li><li><a href="ModalDialog.html#event:modalclose">Diálogo modal #evento: cierre modal</a></li><li><a href="ModalDialog.html#event:modalempty">Diálogo modal #evento:modal vacía</a></li><li><a href="ModalDialog.html#event:modalfill">Diálogo modal #evento:relleno modal</a></li><li><a href="ModalDialog.html#event:modalopen">Diálogo modal #evento: modal open</a></li><li><a href="ModalDialog.html#event:ready">Diálogo modal #evento:listo</a></li><li><a href="ModalDialog.html#event:resize">Diálogo modal #evento:cambiar tamaño</a></li><li><a href="ModalDialog.html#event:tap">Diálogo modal #evento:toque</a></li><li><a href="MouseTimeDisplay.html#event:dispose">MouseTieDisplay #evento:desechar</a></li><li><a href="MouseTimeDisplay.html#event:ready">MouseTieDisplay #evento: listo</a></li><li><a href="MouseTimeDisplay.html#event:resize">MouseTieDisplay #evento: redimensionar</a></li><li><a href="MouseTimeDisplay.html#event:tap">Mouse TiemPlay #evento: toque</a></li><li><a href="MuteToggle.html#event:dispose">Silenciar Toggle #evento:desechar</a></li><li><a href="MuteToggle.html#event:ready">Silenciar Toggle #evento:listo</a></li><li><a href="MuteToggle.html#event:resize">MuteToggle #evento:redimensionar</a></li><li><a href="MuteToggle.html#event:tap">Silenciar Toggle #evento:toque</a></li><li><a href="Player.html#event:abort">Jugador #evento:abort</a></li><li><a href="Player.html#event:canplay">Jugador #evento: puede jugar</a></li><li><a href="Player.html#event:canplaythrough">Jugador #evento: puede jugar</a></li><li><a href="Player.html#event:controlsdisabled">Jugador #evento: controles desactivados</a></li><li><a href="Player.html#event:controlsenabled">Jugador #evento: controles habilitados</a></li><li><a href="Player.html#event:dispose">Jugador #evento:desechar</a></li><li><a href="Player.html#event:durationchange">Jugador #evento: cambio de duración</a></li><li><a href="Player.html#event:emptied">Jugador #evento: vaciado</a></li><li><a href="Player.html#event:ended">#jugador #evento:finalizado</a></li><li><a href="Player.html#event:enterFullWindow">Jugador #Evento: Entra Full Window</a></li><li><a href="Player.html#event:error">Jugador #evento:error</a></li><li><a href="Player.html#event:exitFullWindow">Jugador #Evento: Salir Ventana completa</a></li><li><a href="Player.html#event:firstplay">Jugador #evento: primera jugada</a></li><li><a href="Player.html#event:fullscreenchange">#evento del jugador: cambio de pantalla completa</a></li><li><a href="player_.html#event:loadeddata">jugador #evento: datos cargados</a></li><li><a href="Player.html#event:loadeddata">Jugador #evento: datos cargados</a></li><li><a href="Player.html#event:loadedmetadata">Jugador #evento: metadatos cargados</a></li><li><a href="Player.html#event:loadstart">Jugador #evento:loadstart</a></li><li><a href="Player.html#event:pause">Jugador #evento:pausa</a></li><li><a href="Player.html#event:play">Jugador #evento:play</a></li><li><a href="Player.html#event:playing">Jugador #evento:jugar</a></li><li><a href="Player.html#event:posterchange">Jugador #evento: cambio de póster</a></li><li><a href="Player.html#event:progress">Jugador #evento:progreso</a></li><li><a href="player_.html#event:ratechange">jugador #evento:cambio de tarifas</a></li><li><a href="Player.html#event:ready">Jugador #evento:listo</a></li><li><a href="Player.html#event:resize">Jugador #evento:resize</a></li><li><a href="Player.html#event:seeked">Jugador #evento:buscado</a></li><li><a href="Player.html#event:seeking">Jugador #evento:buscando</a></li><li><a href="Player.html#event:stalled">Jugador #evento:estancado</a></li><li><a href="Player.html#event:suspend">Jugador #evento:suspender</a></li><li><a href="Player.html#event:tap">Jugador #evento:toque</a></li><li><a href="Player.html#event:textdata">Jugador #evento:datos de texto</a></li><li><a href="player_.html#event:texttrackchange">jugador #evento:cambio de pista de texto</a></li><li><a href="player_.html#event:timeupdate">jugador #evento:timeupdate</a></li><li><a href="Player.html#event:timeupdate">Jugador #evento:timeupdate</a></li><li><a href="Player.html#event:useractive">Jugador #evento:usuario activo</a></li><li><a href="Player.html#event:userinactive">Jugador #evento: usuario inactivo</a></li><li><a href="Player.html#event:usingcustomcontrols">#jugador #evento:utilizar controles personalizados</a></li><li><a href="Player.html#event:usingnativecontrols">#jugador #evento: uso de controles nativos</a></li><li><a href="Player.html#event:volumechange">Jugador #evento: cambio de volumen</a></li><li><a href="player_.html#event:volumechange">jugador #evento:cambio de volumen</a></li><li><a href="Player.html#event:waiting">Jugador #evento:esperando</a></li><li><a href="PlayProgressBar.html#event:dispose">PlayProgressBar #evento: desechar</a></li><li><a href="PlayProgressBar.html#event:ready">PlayProgressBar #evento: listo</a></li><li><a href="PlayProgressBar.html#event:resize">PlayProgressBar #evento: redimensionar</a></li><li><a href="PlayProgressBar.html#event:tap">Barra de progreso de reproducción #evento: toque</a></li><li><a href="PlayToggle.html#event:dispose">PlayToggle #evento:desechar</a></li><li><a href="PlayToggle.html#event:ready">PlayToggle #evento: listo</a></li><li><a href="PlayToggle.html#event:resize">PlayToggle #evento:cambiar tamaño</a></li><li><a href="PlayToggle.html#event:tap">PlayToggle #evento:toque</a></li><li><a href="Popup.html#event:dispose">emergente #evento:desechar</a></li><li><a href="Popup.html#event:ready">emergente #evento:listo</a></li><li><a href="Popup.html#event:resize">emergente #evento:redimensionar</a></li><li><a href="Popup.html#event:tap">emergente #evento:toque</a></li><li><a href="PopupButton.html#event:dispose">Botón emergente #evento:desechar</a></li><li><a href="PopupButton.html#event:ready">Botón emergente #evento: listo</a></li><li><a href="PopupButton.html#event:resize">Botón emergente #evento: redimensionar</a></li><li><a href="PopupButton.html#event:tap">Botón emergente #evento: toque</a></li><li><a href="PosterImage.html#event:dispose">Imagen del póster #evento: desechar</a></li><li><a href="PosterImage.html#event:ready">Poster Image #evento:ready</a></li><li><a href="PosterImage.html#event:resize">Imagen del póster #evento: redimensionar</a></li><li><a href="PosterImage.html#event:tap">Imagen del póster #evento: toque</a></li><li><a href="ProgressControl.html#event:dispose">ProgressControl #evento:desechar</a></li><li><a href="ProgressControl.html#event:ready">ProgressControl #evento:listo</a></li><li><a href="ProgressControl.html#event:resize">ProgressControl #evento:cambiar tamaño</a></li><li><a href="ProgressControl.html#event:tap">ProgressControl #evento:toque</a></li><li><a href="RemainingTimeDisplay.html#event:dispose">Tiempo restante Pantalla #evento:desechar</a></li><li><a href="RemainingTimeDisplay.html#event:ready">Tiempo restante Mostrar #evento: listo</a></li><li><a href="RemainingTimeDisplay.html#event:resize">Tiempo restante Mostrar #evento: redimensionar</a></li><li><a href="RemainingTimeDisplay.html#event:tap">Tiempo restante Mostrar #evento:toque</a></li><li><a href="SeekBar.html#event:slideractive">SeekBar #evento:slideractive</a></li><li><a href="SeekBar.html#event:sliderinactive">SeekBar #evento: control deslizante inactivo</a></li><li><a href="Slider.html#event:dispose">Control deslizante #evento:desechar</a></li><li><a href="Slider.html#event:ready">Slider #evento:listo</a></li><li><a href="Slider.html#event:resize">Control deslizante #evento:redimensionar</a></li><li><a href="Slider.html#event:slideractive">Slider #evento:slideractive</a></li><li><a href="Slider.html#event:sliderinactive">Control deslizante #evento:deslizador inactivo</a></li><li><a href="Slider.html#event:tap">Control deslizante #evento:toque</a></li><li><a href="Spacer.html#event:dispose">Espaciador #evento:desechar</a></li><li><a href="Spacer.html#event:ready">Spacer #evento:listo</a></li><li><a href="Spacer.html#event:resize">Espaciador #evento:redimensionar</a></li><li><a href="Spacer.html#event:tap">Espaciador #evento:toque</a></li><li><a href="Tech.html#event:audiotrackchange">#evento tecnológico: cambio de pista de audio</a></li><li><a href="Tech.html#event:dispose">Tecnología #evento:desechar</a></li><li><a href="Tech.html#event:progress">Tecnología #evento:progreso</a></li><li><a href="Tech.html#event:ready">Tech #evento:ready</a></li><li><a href="Tech.html#event:resize">Tecnología #evento:redimensionar</a></li><li><a href="Tech.html#event:tap">Tecnología #evento:tap</a></li><li><a href="Tech.html#event:texttrackchange">Tecnología #evento:cambio de pista de texto</a></li><li><a href="Tech.html#event:timeupdate">Tecnología #evento:timeupdate</a></li><li><a href="Tech.html#event:videotrackchange">Tech #evento:cambio de seguimiento de vídeo</a></li><li><a href="Tech.html#event:vttjsloaded">Tecnología #event:vttjsloaded</a></li><li><a href="TextTrack.html#event:modechange">TextTrack #evento: cambio de modo</a></li><li><a href="TextTrackDisplay.html#event:dispose">TextTrackDisplay #evento:desechar</a></li><li><a href="TextTrackDisplay.html#event:ready">TextTrack Display #evento: listo</a></li><li><a href="TextTrackDisplay.html#event:resize">TextTrack Display #evento: cambiar tamaño</a></li><li><a href="TextTrackDisplay.html#event:tap">TextTrack Display #evento:toque</a></li><li><a href="TextTrackList.html#event:addtrack">Lista de canciones de texto #evento: agregar pista</a></li><li><a href="TextTrackList.html#event:change">TextTracklist #evento:change</a></li><li><a href="TextTrackList.html#event:removetrack">Lista de canciones de texto #evento: eliminar pista</a></li><li><a href="TextTrackSettings.html#event:dispose">Configuración de la pista de texto #evento:desechar</a></li><li><a href="TextTrackSettings.html#event:ready">Configuración de la pista de texto #evento: listo</a></li><li><a href="TextTrackSettings.html#event:resize">Configuración de la pista de texto #evento: cambiar tamaño</a></li><li><a href="TextTrackSettings.html#event:tap">Configuración de la pista de texto #evento:toque</a></li><li><a href="TimeDivider.html#event:dispose">TieDivider #evento:desechar</a></li><li><a href="TimeDivider.html#event:ready">TieDivider #evento:listo</a></li><li><a href="TimeDivider.html#event:resize">TieDivider #evento:redimensionar</a></li><li><a href="TimeDivider.html#event:tap">TieVider #evento:toque</a></li><li><a href="TooltipProgressBar.html#event:dispose">TooltipBarra de progreso #evento:desechar</a></li><li><a href="TooltipProgressBar.html#event:ready">Información sobre herramientas Barra de progreso #evento: listo</a></li><li><a href="TooltipProgressBar.html#event:resize">Información sobre herramientas Barra de progreso #evento:cambiar tamaño</a></li><li><a href="TooltipProgressBar.html#event:tap">Información sobre herramientas Barra de progreso #evento:toque</a></li><li><a href="TrackList.html#event:addtrack">Lista de canciones #evento: add track</a></li><li><a href="TrackList.html#event:change">Tracklist #evento:change</a></li><li><a href="TrackList.html#event:removetrack">Lista de canciones #evento: eliminar pista</a></li><li><a href="VideoTrack.html#event:selectedchange">Video Track #evento: cambio seleccionado</a></li><li><a href="VideoTrackList.html#event:addtrack">Lista de pistas de vídeo #evento: add track</a></li><li><a href="VideoTrackList.html#event:change">Lista de seguimiento de vídeo #evento:change</a></li><li><a href="VideoTrackList.html#event:removetrack">Lista de seguimiento de vídeo #evento: eliminar pista</a></li><li><a href="VolumeBar.html#event:slideractive">Barra de volumen #evento:slideractive</a></li><li><a href="VolumeBar.html#event:sliderinactive">Barra de volumen #evento: control deslizante inactivo</a></li><li><a href="VolumeControl.html#event:dispose">Control de volumen #evento:desechar</a></li><li><a href="VolumeControl.html#event:ready">Control de volumen #evento: listo</a></li><li><a href="VolumeControl.html#event:resize">Control de volumen #evento: cambiar tamaño</a></li><li><a href="VolumeControl.html#event:tap">Control de volumen #evento:toque</a></li><li><a href="VolumeLevel.html#event:dispose">Nivel de volumen #evento: desechar</a></li><li><a href="VolumeLevel.html#event:ready">Nivel de volumen #evento: listo</a></li><li><a href="VolumeLevel.html#event:resize">Nivel de volumen #evento: redimensionar</a></li><li><a href="VolumeLevel.html#event:tap">Nivel de volumen #evento:toque</a></li>
+				</ul>
+			</li>
+			
+			<li class="dropdown">
+				<a href="global.html" class="dropdown-toggle" data-toggle="dropdown">Global<b class="caret"></b></a>
+				<ul class="dropdown-menu inline">
+					<li><a href="global.html#activeCues">Cutes activos</a></li><li><a href="global.html#createTrackHelper">Create Track Helper</a></li><li><a href="global.html#cues">señales</a></li><li><a href="global.html#currentSrc">SRC actual</a></li><li><a href="global.html#default">predeterminado</a></li><li><a href="global.html#emulateTextTracks">Emular pistas de texto</a></li><li><a href="global.html#enabled">habilitado</a></li><li><a href="global.html#id">id</a></li><li><a href="global.html#kind">amable</a></li><li><a href="global.html#label">etiqueta</a></li><li><a href="global.html#language">idioma</a></li><li><a href="global.html#length">longitud</a></li><li><a href="global.html#mode">modo</a></li><li><a href="global.html#NONE">NINGUNO</a></li><li><a href="global.html#readyState">Estado listo</a></li><li><a href="global.html#selected">seleccionado</a></li><li><a href="global.html#track">pista</a></li><li><a href="global.html#tryUpdateStyle">Prueba Update Style</a></li>
+				</ul>
+			</li>
+			
+		</ul>
+        
+            <div class="col-sm-3 col-md-3">
+                <form class="navbar-form" role="search">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search" name="q" id="search-input">
+                        <div class="input-group-btn">
+                            <button class="btn btn-default" id="search-submit"><i class="glyphicon glyphicon-search"></i></button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        
+	</div>
+
+</div>
+</div>
+
+
+<div class="container" id="toc-content">
+<div class="row">
+
+	
+	<div class="col-md-8">
+	
+		<div id="main">
+			
+
+	<h1 class="page-title">Clase: Alternar silencio</h1>
+<section>
+
+<header>
+    
+        <h2>
+        Alternar silencio
+        </h2>
+        
+            <div class="class-description"><p>Componente de botón para silenciar el audio.</p></div>
+        
+    
+</header>
+
+
+<article>
+    <div class="container-overview">
+    
+        
+<hr>
+<dt>
+    <h4 class="name" id="MuteToggle"><span class="type-signature"></span>nuevo MuteToggle (jugador [, opciones])</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Crea una instancia de esta clase.</p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5>Parámetros:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Nombre</th>
+        
+
+        <th>Tipo</th>
+
+        
+        <th>Argumento</th>
+        
+
+        
+
+        <th class="last">Descripción</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>jugador</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="Player.html">Jugador</a></span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>El <code>jugador al</code> que debe asociarse esta clase.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>opciones</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Objeto</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;opcional&gt;<br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>El almacén de clave/valor de las opciones de los jugadores.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source method-doc-label method-doc-details-label">Fuente:</dt>
+	<dd class="tag-source">
+		control-bar/mute-toggle.js que es
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dd>
+
+    
+    </div>
+
+    
+        <h3 class="subsection-title">Extiende</h3>
+
+        
+
+
+    <ul>
+        <li><a href="Button.html">Botón</a></li>
+    </ul>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <h3 class="subsection-title">Métodos</h3>
+
+        <dl>
+            
+<hr>
+<dt>
+    <h4 class="name" id="$"><span class="type-signature"></span>$ (selector [, context])</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Busque un único elemento DOM que coincida con un <code>selector</code>. Puede estar dentro del <code>componente</code> <code>contenTel ()</code> u otro contexto personalizado.</p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5>Parámetros:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Nombre</th>
+        
+
+        <th>Tipo</th>
+
+        
+        <th>Argumento</th>
+        
+
+        
+        <th>Predeterminado</th>
+        
+
+        <th class="last">Descripción</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>selector</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">cuerda</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last"><p>Selector CSS válido, que se pasará a <code>QuerySelector</code>.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>contexto</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Element</span> | <span class="param-type">cadena</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;opcional&gt;<br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    Este.contentel ()
+                
+                </td>
+            
+
+            <td class="description last"><p>Elemento DOM dentro del que realizar consultas. También puede ser una cadena selectora en cuyo caso el primer elemento coincidente se utilizará como contexto. Si falta <code>this.contentel ()</code> se utiliza. Si <code>this.contentel () no</code> devuelve nada, vuelve al <code>documento</code>.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+	<dt class="inherited-from method-doc-label method-doc-details-label">Heredado de:</dt>
+	<dd class="inherited-from">
+		<ul class="dummy">
+			<li>
+				<a href="Component.html#$">Componente#$</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source method-doc-label method-doc-details-label">Fuente:</dt>
+	<dd class="tag-source">
+		component.js que es
+	</dd>
+	
+
+	
+
+	
+	<dt class="tag-see method-doc-label method-doc-details-label">Ver:</dt>
+	<dd class="tag-see">
+		<ul>
+			<li><p><a href="https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Getting_Started/Selectors">Información sobre selectores CSS</a></p></li>
+			</ul>
+	</dd>
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Devoluciones:</h5>
+    
+            
+<div class="param-desc">
+    <p>el elemento dom que se encontró, o nulo</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Tipo
+    </dt>
+    <dd>
+        
+<span class="param-type">Elemento</span> | <span class="param-type">null</span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="$$"><span class="type-signature"></span>$$ (selector [, context])</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Busca todos los elementos DOM que coinciden con un <code>selector</code>. Puede estar dentro del <code>componente</code> <code>contenTel ()</code> u otro contexto personalizado.</p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5>Parámetros:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Nombre</th>
+        
+
+        <th>Tipo</th>
+
+        
+        <th>Argumento</th>
+        
+
+        
+        <th>Predeterminado</th>
+        
+
+        <th class="last">Descripción</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>selector</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">cuerda</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last"><p>Selector CSS válido, que se pasará a <code>QuerySelectorAll</code>.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>contexto</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Element</span> | <span class="param-type">cadena</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;opcional&gt;<br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    Este.contentel ()
+                
+                </td>
+            
+
+            <td class="description last"><p>Elemento DOM dentro del que realizar consultas. También puede ser una cadena selectora en cuyo caso el primer elemento coincidente se utilizará como contexto. Si falta <code>this.contentel ()</code> se utiliza. Si <code>this.contentel () no</code> devuelve nada, vuelve al <code>documento</code>.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+	<dt class="inherited-from method-doc-label method-doc-details-label">Heredado de:</dt>
+	<dd class="inherited-from">
+		<ul class="dummy">
+			<li>
+				<a href="Component.html#$$">Componente#$$</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source method-doc-label method-doc-details-label">Fuente:</dt>
+	<dd class="tag-source">
+		component.js que es
+	</dd>
+	
+
+	
+
+	
+	<dt class="tag-see method-doc-label method-doc-details-label">Ver:</dt>
+	<dd class="tag-see">
+		<ul>
+			<li><p><a href="https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Getting_Started/Selectors">Información sobre selectores CSS</a></p></li>
+			</ul>
+	</dd>
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Devoluciones:</h5>
+    
+            
+<div class="param-desc">
+    <p>una lista de elementos dom que se encontraron</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Tipo
+    </dt>
+    <dd>
+        
+<span class="param-type">Lista de nodos</span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="addChild"><span class="type-signature"></span>addChild (child [, opciones])</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Agregue un <code>componente hijo</code> dentro de este <code>botón</code>.</p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5>Parámetros:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Nombre</th>
+        
+
+        <th>Tipo</th>
+
+        
+        <th>Argumento</th>
+        
+
+        
+        <th>Predeterminado</th>
+        
+
+        <th class="last">Descripción</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>niño</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span> | <span class="param-type"><a href="Component.html">Componente</a></span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last"><p>El nombre o la instancia de un hijo que se va a agregar.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>opciones</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Objeto</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;opcional&gt;<br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    {}
+                
+                </td>
+            
+
+            <td class="description last"><p>El almacén de clave/valor de opciones que se pasarán a los hijos del niño.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+	<dt class="inherited-from method-doc-label method-doc-details-label">Heredado de:</dt>
+	<dd class="inherited-from">
+		<ul class="dummy">
+			<li>
+				<a href="Button.html#addChild">Botón #addChild</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+	<dt class="important tag-deprecated method-doc-label method-doc-details-label">En desuso:</dt>
+	
+    <dd>
+        <ul class="dummy">
+            <li>desde la versión 5</li>
+        </ul>
+    </dd>
+    
+    
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source method-doc-label method-doc-details-label">Fuente:</dt>
+	<dd class="tag-source">
+		button.js que es
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Devoluciones:</h5>
+    
+            
+<div class="param-desc">
+    <p>El <code>componente</code> que se agrega como hijo. Cuando se usa una cuerda, <code>Componente</code> será creado por este proceso.</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Tipo
+    </dt>
+    <dd>
+        
+<span class="param-type"><a href="Component.html">Componente</a></span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="addClass"><span class="type-signature"></span>Agregar clase (clase para agregar)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Agregue un nombre de clase CSS al elemento del <code>componente</code>.</p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5>Parámetros:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Nombre</th>
+        
+
+        <th>Tipo</th>
+
+        
+
+        
+
+        <th class="last">Descripción</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>Clase para agregar</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">cuerda</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Nombre de clase CSS para agregar</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+	<dt class="inherited-from method-doc-label method-doc-details-label">Heredado de:</dt>
+	<dd class="inherited-from">
+		<ul class="dummy">
+			<li>
+				<a href="Component.html#addClass">Componente #addClass</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source method-doc-label method-doc-details-label">Fuente:</dt>
+	<dd class="tag-source">
+		component.js que es
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Devoluciones:</h5>
+    
+            
+<div class="param-desc">
+    <p>Devuelve por sí mismo; el método se puede encadenar.</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Tipo
+    </dt>
+    <dd>
+        
+<span class="param-type"><a href="Component.html">Componente</a></span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="blur"><span class="type-signature"></span>blur ()</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Eliminar el enfoque de este componente</p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+	<dt class="inherited-from method-doc-label method-doc-details-label">Heredado de:</dt>
+	<dd class="inherited-from">
+		<ul class="dummy">
+			<li>
+				<a href="Component.html#blur">Componente #blur</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source method-doc-label method-doc-details-label">Fuente:</dt>
+	<dd class="tag-source">
+		component.js que es
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="buildCSSClass"><span class="type-signature"></span>Crear clase CSS ()</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Crea el <code>nombre de clase DOM predeterminado</code>.</p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+    <dt class="tag-overrides">Anulaciones:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="Button.html#buildCSSClass">Botón #buildCSSClass</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source method-doc-label method-doc-details-label">Fuente:</dt>
+	<dd class="tag-source">
+		control-bar/mute-toggle.js que es
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Devoluciones:</h5>
+    
+            
+<div class="param-desc">
+    <p>El <code>nombre de clase DOM</code> de este objeto.</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Tipo
+    </dt>
+    <dd>
+        
+<span class="param-type">cuerda</span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="children"><span class="type-signature"></span>niños ()</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Obtenga una matriz de todos los componentes secundarios</p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+	<dt class="inherited-from method-doc-label method-doc-details-label">Heredado de:</dt>
+	<dd class="inherited-from">
+		<ul class="dummy">
+			<li>
+				<a href="Component.html#children">Componente #children</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source method-doc-label method-doc-details-label">Fuente:</dt>
+	<dd class="tag-source">
+		component.js que es
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Devoluciones:</h5>
+    
+            
+<div class="param-desc">
+    <p>Los niños</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Tipo
+    </dt>
+    <dd>
+        
+<span class="param-type">Matriz</span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="clearInterval"><span class="type-signature"></span>ClearInterval (interválido)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Borra un intervalo que se crea a través de <code>Window.setInterval</code> o <a href="Component.html#setInterval">Component #setInterval</a>. Si establece un intervalo mediante el <a href="Component.html#setInterval">Componente #setInterval,</a> utilice esta función en lugar de <code>Window.clearInterval</code>. Si no lo hace, su oyente no se limpiará hasta el <a href="Component.html#dispose">Componente #dispose</a>.</p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5>Parámetros:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Nombre</th>
+        
+
+        <th>Tipo</th>
+
+        
+
+        
+
+        <th class="last">Descripción</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>Interválido</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">número</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>ID del intervalo que se va a borrar. El valor devuelto de <a href="Component.html#setInterval">Component #setInterval</a> o <code>Window.setInterval</code>.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+	<dt class="inherited-from method-doc-label method-doc-details-label">Heredado de:</dt>
+	<dd class="inherited-from">
+		<ul class="dummy">
+			<li>
+				<a href="Component.html#clearInterval">Componente #clearInterval</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source method-doc-label method-doc-details-label">Fuente:</dt>
+	<dd class="tag-source">
+		component.js que es
+	</dd>
+	
+
+	
+
+	
+	<dt class="tag-see method-doc-label method-doc-details-label">Ver:</dt>
+	<dd class="tag-see">
+		<ul>
+			<li><p><a href="https://developer.mozilla.org/en-US/docs/Web/API/WindowTimers/clearInterval">Similar a</a></p></li>
+			</ul>
+	</dd>
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Devoluciones:</h5>
+    
+            
+<div class="param-desc">
+    <p>Devuelve el identificador de intervalo que se ha borrado.</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Tipo
+    </dt>
+    <dd>
+        
+<span class="param-type">número</span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="clearTimeout"><span class="type-signature"></span>Borrar tiempo de espera (ID de tiempo de espera)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Borra un tiempo de espera que se crea a través de <code>Window.setTimeout</code> o <a href="Component.html#setTimeout">Component #setTimeout</a>. Si establece un tiempo de espera mediante el <a href="Component.html#setTimeout">Componente #setTimeout,</a> utilice esta función en lugar de <code>Window.Cleartimout</code>. Si no lo hace, su oyente no se limpiará hasta el <a href="Component.html#dispose">Componente #dispose</a>.</p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5>Parámetros:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Nombre</th>
+        
+
+        <th>Tipo</th>
+
+        
+
+        
+
+        <th class="last">Descripción</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>ID de tiempo de espera</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">número</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Identificación del tiempo de espera que se va a borrar. El valor devuelto de <a href="Component.html#setTimeout">Component #setTimeout</a> o <code>Window.setTimeout</code>.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+	<dt class="inherited-from method-doc-label method-doc-details-label">Heredado de:</dt>
+	<dd class="inherited-from">
+		<ul class="dummy">
+			<li>
+				<a href="Component.html#clearTimeout">Componente #clearTimeout</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source method-doc-label method-doc-details-label">Fuente:</dt>
+	<dd class="tag-source">
+		component.js que es
+	</dd>
+	
+
+	
+
+	
+	<dt class="tag-see method-doc-label method-doc-details-label">Ver:</dt>
+	<dd class="tag-see">
+		<ul>
+			<li><p><a href="https://developer.mozilla.org/en-US/docs/Web/API/WindowTimers/clearTimeout">Similar a</a></p></li>
+			</ul>
+	</dd>
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Devoluciones:</h5>
+    
+            
+<div class="param-desc">
+    <p>Devuelve el identificador de tiempo de espera que se ha borrado.</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Tipo
+    </dt>
+    <dd>
+        
+<span class="param-type">número</span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="contentEl"><span class="type-signature"></span>contenido en el ()</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Devuelve el elemento DOM del <code>componente</code>. Aquí es donde se insertan los niños. Normalmente, será el mismo que el elemento devuelto en el <a href="Component.html#el">Componente #el</a>.</p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+	<dt class="inherited-from method-doc-label method-doc-details-label">Heredado de:</dt>
+	<dd class="inherited-from">
+		<ul class="dummy">
+			<li>
+				<a href="Component.html#contentEl">Componente #contentEl</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source method-doc-label method-doc-details-label">Fuente:</dt>
+	<dd class="tag-source">
+		component.js que es
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Devoluciones:</h5>
+    
+            
+<div class="param-desc">
+    <p>El elemento de contenido de este <code>componente</code>.</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Tipo
+    </dt>
+    <dd>
+        
+<span class="param-type">Elemento</span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="controlText"><span class="type-signature"></span>ControlText ([texto] [, el])</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Obtenga o configure el texto de localización que se utilizará para los controles del <code>componente</code>.</p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5>Parámetros:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Nombre</th>
+        
+
+        <th>Tipo</th>
+
+        
+        <th>Argumento</th>
+        
+
+        
+        <th>Predeterminado</th>
+        
+
+        <th class="last">Descripción</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>texto</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">cuerda</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;opcional&gt;<br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last"><p>Texto de control del elemento.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>el</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Elemento</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;opcional&gt;<br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    this.el ()
+                
+                </td>
+            
+
+            <td class="description last"><p>Elemento en el que configurar el título.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+	<dt class="inherited-from method-doc-label method-doc-details-label">Heredado de:</dt>
+	<dd class="inherited-from">
+		<ul class="dummy">
+			<li>
+				<a href="ClickableComponent.html#controlText">Componente clicable #controlText</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source method-doc-label method-doc-details-label">Fuente:</dt>
+	<dd class="tag-source">
+		clickable-component.js que es
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Devoluciones:</h5>
+    
+            
+<div class="param-desc">
+    <ul>
+<li>El texto de control al obtener<pre class="prettyprint source"><code>- Devuelve a sí mismo al configurar; el método se puede encadenar.</code></pre></li>
+</ul>
+</div>
+
+
+
+<dl>
+    <dt>
+        Tipo
+    </dt>
+    <dd>
+        
+<span class="param-type">string</span> | <span class="param-type"><a href="ClickableComponent.html">ClickableComponent</a></span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="createControlTextEl"><span class="type-signature"></span>Crear texto de control ([el])</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Crear un elemento de texto de control en este <code>componente</code></p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5>Parámetros:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Nombre</th>
+        
+
+        <th>Tipo</th>
+
+        
+        <th>Argumento</th>
+        
+
+        
+
+        <th class="last">Descripción</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>el</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Elemento</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;opcional&gt;<br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Elemento principal del texto de control.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+	<dt class="inherited-from method-doc-label method-doc-details-label">Heredado de:</dt>
+	<dd class="inherited-from">
+		<ul class="dummy">
+			<li>
+				<a href="ClickableComponent.html#createControlTextEl">Componente clicable #createControlTextEl</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source method-doc-label method-doc-details-label">Fuente:</dt>
+	<dd class="tag-source">
+		clickable-component.js que es
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Devoluciones:</h5>
+    
+            
+<div class="param-desc">
+    <p>Elemento de texto de control que se crea.</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Tipo
+    </dt>
+    <dd>
+        
+<span class="param-type">Elemento</span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="createEl"><span class="type-signature"></span>CreaEl ([etiqueta] [, props] [, atributos])</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Cree el elemento DOM de <code>Button</code>.</p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5>Parámetros:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Nombre</th>
+        
+
+        <th>Tipo</th>
+
+        
+        <th>Argumento</th>
+        
+
+        
+        <th>Predeterminado</th>
+        
+
+        <th class="last">Descripción</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>etiqueta</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">cuerda</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;opcional&gt;<br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    botón
+                
+                </td>
+            
+
+            <td class="description last"><p>Tipo de nodo de elemento. Por ejemplo, «botón»</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>utilería</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Objeto</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;opcional&gt;<br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    {}
+                
+                </td>
+            
+
+            <td class="description last"><p>Objeto de propiedades que debe establecerse en el elemento.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>atributos</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Objeto</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;opcional&gt;<br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    {}
+                
+                </td>
+            
+
+            <td class="description last"><p>Objeto de atributos que debe establecerse en el elemento.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+	<dt class="inherited-from method-doc-label method-doc-details-label">Heredado de:</dt>
+	<dd class="inherited-from">
+		<ul class="dummy">
+			<li>
+				<a href="Button.html#createEl">Botón #createEl</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source method-doc-label method-doc-details-label">Fuente:</dt>
+	<dd class="tag-source">
+		button.js que es
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Devoluciones:</h5>
+    
+            
+<div class="param-desc">
+    <p>El elemento que se crea.</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Tipo
+    </dt>
+    <dd>
+        
+<span class="param-type">Elemento</span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="currentDimension"><span class="type-signature"></span>Dimensión actual (ancho o alto)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Obtenga el ancho o la altura del <code>Componente</code> elementos calculados estilo. Utiliza <code>Window.getComputedStyle</code>.</p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5>Parámetros:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Nombre</th>
+        
+
+        <th>Tipo</th>
+
+        
+
+        
+
+        <th class="last">Descripción</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>Anchura o altura</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">cuerda</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Una cadena que contiene «anchura' o «altura». Cualquiera que quieras conseguir.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+	<dt class="inherited-from method-doc-label method-doc-details-label">Heredado de:</dt>
+	<dd class="inherited-from">
+		<ul class="dummy">
+			<li>
+				<a href="Component.html#currentDimension">Componente #currentDimension</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source method-doc-label method-doc-details-label">Fuente:</dt>
+	<dd class="tag-source">
+		component.js que es
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Devoluciones:</h5>
+    
+            
+<div class="param-desc">
+    <p>La dimensión que se solicita o 0 si no se ha establecido nada para esa dimensión.</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Tipo
+    </dt>
+    <dd>
+        
+<span class="param-type">número</span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="currentDimensions"><span class="type-signature"></span>Dimensiones actuales ()</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Obtenga un objeto que contenga valores de anchura y altura del estilo calculado del <code>componente</code>.</p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+	<dt class="inherited-from method-doc-label method-doc-details-label">Heredado de:</dt>
+	<dd class="inherited-from">
+		<ul class="dummy">
+			<li>
+				<a href="Component.html#currentDimensions">Componente #currentDimensions</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source method-doc-label method-doc-details-label">Fuente:</dt>
+	<dd class="tag-source">
+		component.js que es
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Devoluciones:</h5>
+    
+            
+<div class="param-desc">
+    <p>Dimensiones del elemento componente</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Tipo
+    </dt>
+    <dd>
+        
+<span class="param-type"><a href="Component.html#~DimensionObject">Componente~DimensionObject</a></span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="currentHeight"><span class="type-signature"></span>Altura actual ()</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Obtenga la altura del estilo calculado del <code>componente</code>. Utiliza <code>Window.getComputedStyle</code>.</p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+	<dt class="inherited-from method-doc-label method-doc-details-label">Heredado de:</dt>
+	<dd class="inherited-from">
+		<ul class="dummy">
+			<li>
+				<a href="Component.html#currentHeight">Componente #currentHeight</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source method-doc-label method-doc-details-label">Fuente:</dt>
+	<dd class="tag-source">
+		component.js que es
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Devoluciones:</h5>
+    
+            
+<div class="param-desc">
+    <p>height Altura del estilo calculado del <code>componente</code>.</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Tipo
+    </dt>
+    <dd>
+        
+<span class="param-type">número</span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="currentWidth"><span class="type-signature"></span>Current Width ()</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Obtenga el ancho del estilo calculado del <code>componente</code>. Utiliza <code>Window.getComputedStyle</code>.</p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+	<dt class="inherited-from method-doc-label method-doc-details-label">Heredado de:</dt>
+	<dd class="inherited-from">
+		<ul class="dummy">
+			<li>
+				<a href="Component.html#currentWidth">Componente #currentWidth</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source method-doc-label method-doc-details-label">Fuente:</dt>
+	<dd class="tag-source">
+		component.js que es
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Devoluciones:</h5>
+    
+            
+<div class="param-desc">
+    <p>width Ancho del estilo calculado del <code>componente</code>.</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Tipo
+    </dt>
+    <dd>
+        
+<span class="param-type">número</span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="dimension"><span class="type-signature"></span>dimensión (ancho o alto [, num] [, saltar Listeners])</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Obtenga o establezca el ancho o alto del <code>Componente</code> elemento. Este es el código compartido para el <a href="Component.html#width">componente #width</a> y el <a href="Component.html#height">componente #height</a>.</p>
+<p>Cosas que debes saber:</p>
+<ul>
+<li>Si el ancho o el alto de un número devolverá el número postfijo con «px».</li>
+<li>Si el ancho/alto es un porcentaje, devolverá el porcentaje fijado con '%'.</li>
+<li>Los elementos ocultos tienen un ancho de 0 con <code>window.getComputedStyle</code>. Esta función tiene por defecto el <code>Componente</code>s <code>style.width</code> y vuelve a caer <code>window.getComputedStyle</code>. Consulte <a href="http://www.foliotek.com/devblog/getting-the-width-of-a-hidden-element-with-jquery-using-width/">esto</a> para obtener más información</li>
+<li>Si desea el estilo calculado del componente, utilice <a href="Component.html#currentWidth">Component #currentWidth</a> y {Component #currentHeight</li>
+</ul>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5>Parámetros:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Nombre</th>
+        
+
+        <th>Tipo</th>
+
+        
+        <th>Argumento</th>
+        
+
+        
+
+        <th class="last">Descripción</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>Anchura o altura</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">cuerda</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>8 «ancho' o «alto»</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>num</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span> | <span class="param-type">string</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;opcional&gt;<br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>8 Nueva dimensión</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>Alicates de esquí</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">booleano</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;opcional&gt;<br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Omitir activador de evento de redimension</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+	<dt class="inherited-from method-doc-label method-doc-details-label">Heredado de:</dt>
+	<dd class="inherited-from">
+		<ul class="dummy">
+			<li>
+				<a href="Component.html#dimension">Componente #dimension</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source method-doc-label method-doc-details-label">Fuente:</dt>
+	<dd class="tag-source">
+		component.js que es
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+    <h5>Fuegos:</h5>
+    <ul>
+        <li><a href="Component.html#event:resize">Componente #evento:redimensionar</a></li>
+    </ul>
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Devoluciones:</h5>
+    
+            
+<div class="param-desc">
+    <ul>
+<li>la dimensión al obtener o 0 si no está establecida<pre class="prettyprint source"><code>- Devuelve a sí mismo al configurar; el método se puede encadenar.</code></pre></li>
+</ul>
+</div>
+
+
+
+<dl>
+    <dt>
+        Tipo
+    </dt>
+    <dd>
+        
+<span class="param-type"><a href="Component.html">Componente</a></span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="dimensions"><span class="type-signature"></span>dimensiones (ancho, alto)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Establezca tanto el ancho como el alto del <code>Componente</code> elemento al mismo tiempo.</p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5>Parámetros:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Nombre</th>
+        
+
+        <th>Tipo</th>
+
+        
+
+        
+
+        <th class="last">Descripción</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>anchura</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span> | <span class="param-type">string</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Ancho para establecer el elemento <code>componente</code>s.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>altura</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span> | <span class="param-type">string</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Altura en la que se establece el elemento <code>componente</code>s.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+	<dt class="inherited-from method-doc-label method-doc-details-label">Heredado de:</dt>
+	<dd class="inherited-from">
+		<ul class="dummy">
+			<li>
+				<a href="Component.html#dimensions">Componente #dimensions</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source method-doc-label method-doc-details-label">Fuente:</dt>
+	<dd class="tag-source">
+		component.js que es
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Devoluciones:</h5>
+    
+            
+<div class="param-desc">
+    <p>Devuelve por sí mismo; el método se puede encadenar.</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Tipo
+    </dt>
+    <dd>
+        
+<span class="param-type"><a href="Component.html">Componente</a></span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="disable"><span class="type-signature"></span>disable ()</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Habilite el <code>Botón</code> elemento para que no se pueda activar o hacer clic. Utilícelo con <a href="Button.html#enable">el botón #enable</a>.</p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+	<dt class="inherited-from method-doc-label method-doc-details-label">Heredado de:</dt>
+	<dd class="inherited-from">
+		<ul class="dummy">
+			<li>
+				<a href="Button.html#disable">Botón #disable</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source method-doc-label method-doc-details-label">Fuente:</dt>
+	<dd class="tag-source">
+		button.js que es
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="dispose"><span class="type-signature"></span>disponer ()</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Elimine el <code>componente</code> y todos los componentes secundarios.</p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+	<dt class="inherited-from method-doc-label method-doc-details-label">Heredado de:</dt>
+	<dd class="inherited-from">
+		<ul class="dummy">
+			<li>
+				<a href="Component.html#dispose">Componente #dispose</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source method-doc-label method-doc-details-label">Fuente:</dt>
+	<dd class="tag-source">
+		component.js que es
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+    <h5>Fuegos:</h5>
+    <ul>
+        <li><a href="Component.html#event:dispose">Componente #evento:desechar</a></li>
+    </ul>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="el"><span class="type-signature"></span>el ()</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Obtener el elemento DOM del <code>componente</code></p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+	<dt class="inherited-from method-doc-label method-doc-details-label">Heredado de:</dt>
+	<dd class="inherited-from">
+		<ul class="dummy">
+			<li>
+				<a href="Component.html#el">Componente #el</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source method-doc-label method-doc-details-label">Fuente:</dt>
+	<dd class="tag-source">
+		component.js que es
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Devoluciones:</h5>
+    
+            
+<div class="param-desc">
+    <p>El elemento DOM de este <code>componente</code>.</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Tipo
+    </dt>
+    <dd>
+        
+<span class="param-type">Elemento</span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="enable"><span class="type-signature"></span>enable ()</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Habilite el <code>Botón</code> elemento para que se pueda activar o hacer clic. Utilícelo con <a href="Button.html#disable">el botón #disable</a>.</p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+	<dt class="inherited-from method-doc-label method-doc-details-label">Heredado de:</dt>
+	<dd class="inherited-from">
+		<ul class="dummy">
+			<li>
+				<a href="Button.html#enable">Botón #enable</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source method-doc-label method-doc-details-label">Fuente:</dt>
+	<dd class="tag-source">
+		button.js que es
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="enableTouchActivity"><span class="type-signature"></span>Activar actividad de Touch ()</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Esta función informa de la actividad del usuario cada vez que se producen eventos táctiles. Esto puede desactivarse por cualquier subcomponente que quiera que los eventos táctiles actúen de otra manera.</p>
+<p>Informar de la actividad táctil del usuario cuando se producen eventos táctiles. La actividad del usuario se utiliza para determinar cuándo deben mostrarse u ocultar los controles. Es sencillo cuando se trata de eventos de ratón, porque cualquier evento de ratón debería mostrar los controles. Así que capturamos eventos de ratón que se acumulan al jugador e informamos de la actividad cuando eso ocurre. Con los eventos táctiles no es tan fácil como <code>touchstart</code> y <code>tocar</code> alternar los controles del reproductor. Así que los eventos táctiles tampoco nos pueden ayudar a nivel de jugador.</p>
+<p>La actividad del usuario se comprueba de forma asíncrona. Así que lo que podría suceder es que un evento de toque en el vídeo desactiva los controles. Entonces el <code>tocar</code> evento burbujea hasta el jugador. Lo que, si informaba de la actividad del usuario, volvería a activar los controles. Tampoco queremos bloquear por completo los eventos táctiles para evitar que se burbujeen. Además un <code>tocar</code> evento y cualquier otra cosa que no sea un toque, no debe volver a activar los controles.</p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+	<dt class="inherited-from method-doc-label method-doc-details-label">Heredado de:</dt>
+	<dd class="inherited-from">
+		<ul class="dummy">
+			<li>
+				<a href="Component.html#enableTouchActivity">Componente #enableTouchActivity</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source method-doc-label method-doc-details-label">Fuente:</dt>
+	<dd class="tag-source">
+		component.js que es
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+    <h5>Escucha eventos:</h5>
+    <ul>
+        <li>Componente #event:touchstart</li>
+    
+        <li>Componente #evento:touch move</li>
+    
+        <li>Componente #evento:touchend</li>
+    
+        <li>Componente #evento:touchcancelación</li>
+    </ul>
+    
+
+    
+
+    
+
+    
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="focus"><span class="type-signature"></span>focus ()</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Establezca el foco en este componente</p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+	<dt class="inherited-from method-doc-label method-doc-details-label">Heredado de:</dt>
+	<dd class="inherited-from">
+		<ul class="dummy">
+			<li>
+				<a href="Component.html#focus">Componente #focus</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source method-doc-label method-doc-details-label">Fuente:</dt>
+	<dd class="tag-source">
+		component.js que es
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="getAttribute"><span class="type-signature"></span>getAttribute (atributo)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Obtenga el valor de un atributo en el elemento del <code>componente</code>.</p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5>Parámetros:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Nombre</th>
+        
+
+        <th>Tipo</th>
+
+        
+
+        
+
+        <th class="last">Descripción</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>atributo</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">cuerda</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Nombre del atributo del que se obtiene el valor.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+	<dt class="inherited-from method-doc-label method-doc-details-label">Heredado de:</dt>
+	<dd class="inherited-from">
+		<ul class="dummy">
+			<li>
+				<a href="Component.html#getAttribute">Componente #getAttribute</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source method-doc-label method-doc-details-label">Fuente:</dt>
+	<dd class="tag-source">
+		component.js que es
+	</dd>
+	
+
+	
+
+	
+	<dt class="tag-see method-doc-label method-doc-details-label">Ver:</dt>
+	<dd class="tag-see">
+		<ul>
+			<li><p><a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/getAttribute">API DOM</a></p></li>
+			</ul>
+	</dd>
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Devoluciones:</h5>
+    
+            
+<div class="param-desc">
+    <ul>
+<li>El valor del atributo que se ha solicitado.<pre class="prettyprint source"><code>- Puede ser una cadena vacía en algunos navegadores si el atributo no existe o no tiene valor - La mayoría de los navegadores devolverán nulo si el atributo no existe o no tiene valor.</code></pre></li>
+</ul>
+</div>
+
+
+
+<dl>
+    <dt>
+        Tipo
+    </dt>
+    <dd>
+        
+<span class="param-type">string</span> | <span class="param-type">null</span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="getChild"><span class="type-signature"></span>getChild (nombre)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Devuelve el <code>componente secundario</code> con el <code>nombre de pila</code>.</p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5>Parámetros:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Nombre</th>
+        
+
+        <th>Tipo</th>
+
+        
+
+        
+
+        <th class="last">Descripción</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>nombre</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">cuerda</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Nombre del <code>componente hijo que se</code> va a obtener.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+	<dt class="inherited-from method-doc-label method-doc-details-label">Heredado de:</dt>
+	<dd class="inherited-from">
+		<ul class="dummy">
+			<li>
+				<a href="Component.html#getChild">Componente #getChild</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source method-doc-label method-doc-details-label">Fuente:</dt>
+	<dd class="tag-source">
+		component.js que es
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Devoluciones:</h5>
+    
+            
+<div class="param-desc">
+    <p>El <code>componente hijo</code> con el <code>nombre de pila</code> o sin definir.</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Tipo
+    </dt>
+    <dd>
+        
+<span class="param-type"><a href="Component.html">Componente</a></span> | <span class="param-type">indefinido</span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="getChildById"><span class="type-signature"></span>getChildById (id)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Devuelve el <code>componente hijo</code> con el <code>identificador dado</code>.</p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5>Parámetros:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Nombre</th>
+        
+
+        <th>Tipo</th>
+
+        
+
+        
+
+        <th class="last">Descripción</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>id</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">cuerda</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>ID del <code>componente secundario que se</code> va a obtener.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+	<dt class="inherited-from method-doc-label method-doc-details-label">Heredado de:</dt>
+	<dd class="inherited-from">
+		<ul class="dummy">
+			<li>
+				<a href="Component.html#getChildById">Componente #getChildById</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source method-doc-label method-doc-details-label">Fuente:</dt>
+	<dd class="tag-source">
+		component.js que es
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Devoluciones:</h5>
+    
+            
+<div class="param-desc">
+    <p>El <code>componente hijo</code> con el <code>identificador dado</code> o sin definir.</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Tipo
+    </dt>
+    <dd>
+        
+<span class="param-type"><a href="Component.html">Componente</a></span> | <span class="param-type">indefinido</span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="handleBlur"><span class="type-signature"></span>HandleBlur (evento)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Se llama cuando un <code>ClickableComponent</code> pierde el foco. Apaga el oyente para <code>keydown</code> eventos. Que se detiene <code>this.handleKeyPress</code> de ser llamado.</p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5>Parámetros:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Nombre</th>
+        
+
+        <th>Tipo</th>
+
+        
+
+        
+
+        <th class="last">Descripción</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>evento</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="EventTarget.html#~Event">Objeto del evento~Evento</a></span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>los <code>difuminar</code> evento que hizo que se llamara a esta función.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+	<dt class="inherited-from method-doc-label method-doc-details-label">Heredado de:</dt>
+	<dd class="inherited-from">
+		<ul class="dummy">
+			<li>
+				<a href="ClickableComponent.html#handleBlur">Componente clicable #handleBlur</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source method-doc-label method-doc-details-label">Fuente:</dt>
+	<dd class="tag-source">
+		clickable-component.js que es
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+    <h5>Escucha eventos:</h5>
+    <ul>
+        <li>evento: borroso</li>
+    </ul>
+    
+
+    
+
+    
+
+    
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="handleClick"><span class="type-signature"></span>handleClick ([evento])</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Esto se llama cuando un <code>MuteToggle</code> se "hace clic". Consulte <a href="ClickableComponent.html">ClickableComponent</a> para obtener información más detallada sobre lo que puede ser un clic.</p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5>Parámetros:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Nombre</th>
+        
+
+        <th>Tipo</th>
+
+        
+        <th>Argumento</th>
+        
+
+        
+
+        <th class="last">Descripción</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>evento</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="EventTarget.html#~Event">Objeto del evento~Evento</a></span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;opcional&gt;<br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>los <code>keydown</code> , <code>grifo</code> , o <code>hacer clic</code> evento que hizo que se llamara a esta función.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+    <dt class="tag-overrides">Anulaciones:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="Button.html#handleClick">Botón #handleClick</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source method-doc-label method-doc-details-label">Fuente:</dt>
+	<dd class="tag-source">
+		control-bar/mute-toggle.js que es
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+    <h5>Escucha eventos:</h5>
+    <ul>
+        <li>evento:tap</li>
+    
+        <li>evento:haga clic</li>
+    </ul>
+    
+
+    
+
+    
+
+    
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="handleFocus"><span class="type-signature"></span>HandleFocus (evento)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Esto se llama cuando un <code>ClickableComponent</code> gana el enfoque a través de un <code>atención</code> evento. Enciende la escucha <code>keydown</code> eventos. Cuando suceden, llama a <code>esto.HandleKeypress</code>.</p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5>Parámetros:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Nombre</th>
+        
+
+        <th>Tipo</th>
+
+        
+
+        
+
+        <th class="last">Descripción</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>evento</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="EventTarget.html#~Event">Objeto del evento~Evento</a></span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>los <code>atención</code> evento que hizo que se llamara a esta función.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+	<dt class="inherited-from method-doc-label method-doc-details-label">Heredado de:</dt>
+	<dd class="inherited-from">
+		<ul class="dummy">
+			<li>
+				<a href="ClickableComponent.html#handleFocus">Componente clicable #handleFocus</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source method-doc-label method-doc-details-label">Fuente:</dt>
+	<dd class="tag-source">
+		clickable-component.js que es
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+    <h5>Escucha eventos:</h5>
+    <ul>
+        <li>evento:focus</li>
+    </ul>
+    
+
+    
+
+    
+
+    
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="handleKeyPress"><span class="type-signature"></span>HandleKeypress (evento)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Esto se llama cuando un <code>botón</code> tiene el foco y <code></code> se activa el teclado pulsando una tecla.</p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5>Parámetros:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Nombre</th>
+        
+
+        <th>Tipo</th>
+
+        
+
+        
+
+        <th class="last">Descripción</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>evento</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="EventTarget.html#~Event">Objeto del evento~Evento</a></span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Evento que provocó que se llamara a esta función.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+	<dt class="inherited-from method-doc-label method-doc-details-label">Heredado de:</dt>
+	<dd class="inherited-from">
+		<ul class="dummy">
+			<li>
+				<a href="Button.html#handleKeyPress">Botón #handleKeyPress</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source method-doc-label method-doc-details-label">Fuente:</dt>
+	<dd class="tag-source">
+		button.js que es
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+    <h5>Escucha eventos:</h5>
+    <ul>
+        <li>evento:keydown</li>
+    </ul>
+    
+
+    
+
+    
+
+    
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="hasClass"><span class="type-signature"></span>HasClass (clase para comprobar)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Compruebe si el elemento de un componente tiene un nombre de clase CSS.</p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5>Parámetros:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Nombre</th>
+        
+
+        <th>Tipo</th>
+
+        
+
+        
+
+        <th class="last">Descripción</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>Clase a comprobar</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">cuerda</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Nombre de clase CSS para comprobar.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+	<dt class="inherited-from method-doc-label method-doc-details-label">Heredado de:</dt>
+	<dd class="inherited-from">
+		<ul class="dummy">
+			<li>
+				<a href="Component.html#hasClass">Componente #hasClass</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source method-doc-label method-doc-details-label">Fuente:</dt>
+	<dd class="tag-source">
+		component.js que es
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Devoluciones:</h5>
+    
+            
+<div class="param-desc">
+    <ul>
+<li>True si el <code>componente</code> tiene la clase.<pre class="prettyprint source"><code>- False si el `Componente` no tiene la clase `</code></pre></li>
+</ul>
+</div>
+
+
+
+<dl>
+    <dt>
+        Tipo
+    </dt>
+    <dd>
+        
+<span class="param-type">booleano</span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="height"><span class="type-signature"></span>height ([num] [, Skiplisteners])</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Obtenga o establezca la altura del componente en función de los estilos CSS. Consulte <a href="Component.html#dimension">Componente #dimension</a> para obtener información más detallada.</p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5>Parámetros:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Nombre</th>
+        
+
+        <th>Tipo</th>
+
+        
+        <th>Argumento</th>
+        
+
+        
+
+        <th class="last">Descripción</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>num</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span> | <span class="param-type">string</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;opcional&gt;<br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>La altura que desea fijar en postfijo con «%», «px' o nada».</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>Alicates de esquí</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">booleano</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;opcional&gt;<br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Omitir el activador de evento de redimensionamiento</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+	<dt class="inherited-from method-doc-label method-doc-details-label">Heredado de:</dt>
+	<dd class="inherited-from">
+		<ul class="dummy">
+			<li>
+				<a href="Component.html#height">Componente #height</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source method-doc-label method-doc-details-label">Fuente:</dt>
+	<dd class="tag-source">
+		component.js que es
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Devoluciones:</h5>
+    
+            
+<div class="param-desc">
+    <ul>
+<li>El ancho al obtener, cero si no hay ancho. Puede ser una cuerda<pre class="prettyprint source"><code> postpixed con '%' o 'px'. - Se vuelve a sí mismo al configurar; El método se puede encadenar.</code></pre></li>
+</ul>
+</div>
+
+
+
+<dl>
+    <dt>
+        Tipo
+    </dt>
+    <dd>
+        
+<span class="param-type"><a href="Component.html">Componente</a></span> | <span class="param-type">número</span> | <span class="param-type">cadena</span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="hide"><span class="type-signature"></span>hide ()</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Oculte el elemento de <code>Component</code>si se muestra actualmente añadiéndole el nombre de clase «vjs-hidden'.</p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+	<dt class="inherited-from method-doc-label method-doc-details-label">Heredado de:</dt>
+	<dd class="inherited-from">
+		<ul class="dummy">
+			<li>
+				<a href="Component.html#hide">Componente #hide</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source method-doc-label method-doc-details-label">Fuente:</dt>
+	<dd class="tag-source">
+		component.js que es
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Devoluciones:</h5>
+    
+            
+<div class="param-desc">
+    <p>Devuelve por sí mismo; el método se puede encadenar.</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Tipo
+    </dt>
+    <dd>
+        
+<span class="param-type"><a href="Component.html">Componente</a></span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="id"><span class="type-signature"></span>id ()</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Obtener el ID <code>de este componente</code></p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+	<dt class="inherited-from method-doc-label method-doc-details-label">Heredado de:</dt>
+	<dd class="inherited-from">
+		<ul class="dummy">
+			<li>
+				<a href="Component.html#id">Componente #id</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source method-doc-label method-doc-details-label">Fuente:</dt>
+	<dd class="tag-source">
+		component.js que es
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Devoluciones:</h5>
+    
+            
+<div class="param-desc">
+    <p>El id de este <code>componente</code></p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Tipo
+    </dt>
+    <dd>
+        
+<span class="param-type">cuerda</span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="initChildren"><span class="type-signature"></span>Init Niños ()</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Agregue e inicialice los <code>componentes secundarios</code>predeterminados en función de las opciones.</p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+	<dt class="inherited-from method-doc-label method-doc-details-label">Heredado de:</dt>
+	<dd class="inherited-from">
+		<ul class="dummy">
+			<li>
+				<a href="Component.html#initChildren">Componente #initChildren</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source method-doc-label method-doc-details-label">Fuente:</dt>
+	<dd class="tag-source">
+		component.js que es
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="localize"><span class="type-signature"></span>localize (cadena)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Localiza una cadena dada la cadena en inglés.</p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5>Parámetros:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Nombre</th>
+        
+
+        <th>Tipo</th>
+
+        
+
+        
+
+        <th class="last">Descripción</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>cuerda</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">cuerda</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>La cadena que se va a localizar.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+	<dt class="inherited-from method-doc-label method-doc-details-label">Heredado de:</dt>
+	<dd class="inherited-from">
+		<ul class="dummy">
+			<li>
+				<a href="Component.html#localize">Componente #localize</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source method-doc-label method-doc-details-label">Fuente:</dt>
+	<dd class="tag-source">
+		component.js que es
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Devoluciones:</h5>
+    
+            
+<div class="param-desc">
+    <p>La cadena localizada o, si no existe ninguna localización, la cadena inglesa.</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Tipo
+    </dt>
+    <dd>
+        
+<span class="param-type">cuerda</span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="name"><span class="type-signature"></span>nombre ()</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Obtenga el nombre del <code>componente</code>. El nombre se utiliza para hacer referencia al <code>componente</code> y se establece durante el registro.</p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+	<dt class="inherited-from method-doc-label method-doc-details-label">Heredado de:</dt>
+	<dd class="inherited-from">
+		<ul class="dummy">
+			<li>
+				<a href="Component.html#name">Componente #name</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source method-doc-label method-doc-details-label">Fuente:</dt>
+	<dd class="tag-source">
+		component.js que es
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Devoluciones:</h5>
+    
+            
+<div class="param-desc">
+    <p>Nombre de este <code>componente</code>.</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Tipo
+    </dt>
+    <dd>
+        
+<span class="param-type">cuerda</span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="off"><span class="type-signature"></span>off ([primero] [, segundo] [, tercero])</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Elimine un detector de eventos del elemento de este <code>componente</code>. Si se excluyó el segundo argumento, todos los oyentes del tipo que se pasa ya que se eliminarán el primer argumento.</p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5>Parámetros:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Nombre</th>
+        
+
+        <th>Tipo</th>
+
+        
+        <th>Argumento</th>
+        
+
+        
+
+        <th class="last">Descripción</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>primero</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span> | <span class="param-type"><a href="Component.html">Componente</a></span> | <span class="param-type">Matriz.&lt;cadena&gt;</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;opcional&gt;<br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>El nombre del evento y la matriz de nombres de eventos u otro <code>componente</code>.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>segundo</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="EventTarget.html#~EventListener">eventtarget~EventListener</a></span> | <span class="param-type">string</span> | <span class="param-type">matriz.&lt;cadena&gt;</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;opcional&gt;<br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>La función de escucha, un nombre de evento o un conjunto de nombres de eventos.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>tercero</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="EventTarget.html#~EventListener">Objeto de eventos~Escuchador de eventos</a></span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;opcional&gt;<br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>El controlador de eventos si el <code>primero</code> es un <code>componente</code> y el <code>segundo</code> es un nombre de evento o una matriz de nombres de eventos.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+	<dt class="inherited-from method-doc-label method-doc-details-label">Heredado de:</dt>
+	<dd class="inherited-from">
+		<ul class="dummy">
+			<li>
+				<a href="Component.html#off">Componente #off</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source method-doc-label method-doc-details-label">Fuente:</dt>
+	<dd class="tag-source">
+		component.js que es
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Devoluciones:</h5>
+    
+            
+<div class="param-desc">
+    <p>Devuelve por sí mismo; el método se puede encadenar.</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Tipo
+    </dt>
+    <dd>
+        
+<span class="param-type"><a href="Component.html">Componente</a></span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="on"><span class="type-signature"></span>on ([primero] [, segundo] [, tercero])</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Agregar un <code>oyente de eventos</code> a esto <code>Componente</code>elemento s.</p>
+<p>La ventaja de utilizarlo sobre lo siguiente:</p>
+<ul>
+<li><code>vjevents.on (OtherElement, 'EventName', myFunc)</code></li>
+<li><p><code>OtherComponent.on ('Nombre del evento', myFunc)</code></p>
+</li>
+<li><p>Es que los oyentes se limpiarán cuando se elimine cualquiera de los componentes.</p>
+</li>
+<li>También vinculará <code>myComponent</code> como contexto de <code>myFunc</code>.<blockquote>
+<p>NOTA: Si elimina el elemento del DOM que se ha utilizado <code>en,</code> debe</p>
+<pre class="prettyprint source"><code> limpiar referencias usando: `MyComponent.trigger (el, 'dispose') `Esto también permitirá que el navegador recoja la basura. En casos especiales, como «ventana» y «documento», que son permanentes, esto no es necesario.</code></pre></blockquote>
+</li>
+</ul>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5>Parámetros:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Nombre</th>
+        
+
+        <th>Tipo</th>
+
+        
+        <th>Argumento</th>
+        
+
+        
+
+        <th class="last">Descripción</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>primero</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span> | <span class="param-type"><a href="Component.html">Componente</a></span> | <span class="param-type">Matriz.&lt;cadena&gt;</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;opcional&gt;<br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>El nombre del evento y la matriz de nombres de eventos u otro <code>componente</code>.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>segundo</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="EventTarget.html#~EventListener">eventtarget~EventListener</a></span> | <span class="param-type">string</span> | <span class="param-type">matriz.&lt;cadena&gt;</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;opcional&gt;<br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>La función de escucha, un nombre de evento o un conjunto de nombres de eventos.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>tercero</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="EventTarget.html#~EventListener">Objeto de eventos~Escuchador de eventos</a></span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;opcional&gt;<br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>El controlador de eventos si el <code>primero</code> es un <code>componente</code> y el <code>segundo</code> es un nombre de evento o una matriz de nombres de eventos.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+	<dt class="inherited-from method-doc-label method-doc-details-label">Heredado de:</dt>
+	<dd class="inherited-from">
+		<ul class="dummy">
+			<li>
+				<a href="Component.html#on">Componente #on</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source method-doc-label method-doc-details-label">Fuente:</dt>
+	<dd class="tag-source">
+		component.js que es
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+    <h5>Escucha eventos:</h5>
+    <ul>
+        <li><a href="Component.html#event:dispose">Componente #evento:desechar</a></li>
+    </ul>
+    
+
+    
+
+    
+
+    
+    <h5>Devoluciones:</h5>
+    
+            
+<div class="param-desc">
+    <p>Devuelve por sí mismo; el método se puede encadenar.</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Tipo
+    </dt>
+    <dd>
+        
+<span class="param-type"><a href="Component.html">Componente</a></span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="one"><span class="type-signature"></span>uno ([primero] [, segundo] [, tercero])</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Agrega un detector de eventos que se activa solo una vez y luego se elimina.</p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5>Parámetros:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Nombre</th>
+        
+
+        <th>Tipo</th>
+
+        
+        <th>Argumento</th>
+        
+
+        
+
+        <th class="last">Descripción</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>primero</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span> | <span class="param-type"><a href="Component.html">Componente</a></span> | <span class="param-type">Matriz.&lt;cadena&gt;</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;opcional&gt;<br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>El nombre del evento y la matriz de nombres de eventos u otro <code>componente</code>.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>segundo</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="EventTarget.html#~EventListener">eventtarget~EventListener</a></span> | <span class="param-type">string</span> | <span class="param-type">matriz.&lt;cadena&gt;</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;opcional&gt;<br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>La función de escucha, un nombre de evento o un conjunto de nombres de eventos.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>tercero</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="EventTarget.html#~EventListener">Objeto de eventos~Escuchador de eventos</a></span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;opcional&gt;<br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>El controlador de eventos si el <code>primero</code> es un <code>componente</code> y el <code>segundo</code> es un nombre de evento o una matriz de nombres de eventos.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+	<dt class="inherited-from method-doc-label method-doc-details-label">Heredado de:</dt>
+	<dd class="inherited-from">
+		<ul class="dummy">
+			<li>
+				<a href="Component.html#one">Componente #one</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source method-doc-label method-doc-details-label">Fuente:</dt>
+	<dd class="tag-source">
+		component.js que es
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Devoluciones:</h5>
+    
+            
+<div class="param-desc">
+    <p>Devuelve por sí mismo; el método se puede encadenar.</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Tipo
+    </dt>
+    <dd>
+        
+<span class="param-type"><a href="Component.html">Componente</a></span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="options"><span class="type-signature"></span>opciones (obj)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Fusión profunda de objetos de opciones con nuevas opciones.</p>
+<blockquote>
+<p>Nota: Cuando tanto <code>obj</code> como <code>opciones</code> contienen propiedades cuyos valores son objetos. Las dos propiedades se fusionan mediante Module:MergeOptions</p>
+</blockquote>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5>Parámetros:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Nombre</th>
+        
+
+        <th>Tipo</th>
+
+        
+
+        
+
+        <th class="last">Descripción</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>obj</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Objeto</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Objeto que contiene nuevas opciones.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+	<dt class="inherited-from method-doc-label method-doc-details-label">Heredado de:</dt>
+	<dd class="inherited-from">
+		<ul class="dummy">
+			<li>
+				<a href="Component.html#options">Componente #options</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+	<dt class="important tag-deprecated method-doc-label method-doc-details-label">En desuso:</dt>
+	
+    <dd>
+        <ul class="dummy">
+            <li>desde la versión 5</li>
+        </ul>
+    </dd>
+    
+    
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source method-doc-label method-doc-details-label">Fuente:</dt>
+	<dd class="tag-source">
+		component.js que es
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Devoluciones:</h5>
+    
+            
+<div class="param-desc">
+    <p>Un nuevo objeto de <code>esto.options_</code> y <code>obj</code> se fusionaron.</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Tipo
+    </dt>
+    <dd>
+        
+<span class="param-type">Objeto</span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="player"><span class="type-signature"></span>jugador ()</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Devuelve el <a href="Player.html">Jugador</a> que el <code>Componente</code> se ha adjuntado a.</p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+	<dt class="inherited-from method-doc-label method-doc-details-label">Heredado de:</dt>
+	<dd class="inherited-from">
+		<ul class="dummy">
+			<li>
+				<a href="Component.html#player">Componente #player</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source method-doc-label method-doc-details-label">Fuente:</dt>
+	<dd class="tag-source">
+		component.js que es
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Devoluciones:</h5>
+    
+            
+<div class="param-desc">
+    <p>El jugador que este <code>Componente</code> se ha adjuntado a.</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Tipo
+    </dt>
+    <dd>
+        
+<span class="param-type"><a href="Player.html">Jugador</a></span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="ready"><span class="type-signature"></span>ready (fn [, sync])</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Enlazar un agente de escucha al estado listo del componente. Si el evento listo ya ha ocurrido, activará la función inmediatamente.</p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5>Parámetros:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Nombre</th>
+        
+
+        <th>Tipo</th>
+
+        
+        <th>Argumento</th>
+        
+
+        
+        <th>Predeterminado</th>
+        
+
+        <th class="last">Descripción</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>fn</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="Component.html#~ReadyCallback">Componente~Devolución de llamada lista</a></span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last"><p>Se activa una función a la que llamar cuando esté listo.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>sincronizar</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">booleano</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;opcional&gt;<br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    falso
+                
+                </td>
+            
+
+            <td class="description last"><p>Ejecute el listener de forma sincrónica si el <code>componente</code> está listo.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+	<dt class="inherited-from method-doc-label method-doc-details-label">Heredado de:</dt>
+	<dd class="inherited-from">
+		<ul class="dummy">
+			<li>
+				<a href="Component.html#ready">Componente #ready</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source method-doc-label method-doc-details-label">Fuente:</dt>
+	<dd class="tag-source">
+		component.js que es
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Devoluciones:</h5>
+    
+            
+<div class="param-desc">
+    <p>Devuelve por sí mismo; el método se puede encadenar.</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Tipo
+    </dt>
+    <dd>
+        
+<span class="param-type"><a href="Component.html">Componente</a></span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="removeAttribute"><span class="type-signature"></span>removeAttribute (atributo)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Elimina un atributo del elemento del <code>componente</code>.</p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5>Parámetros:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Nombre</th>
+        
+
+        <th>Tipo</th>
+
+        
+
+        
+
+        <th class="last">Descripción</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>atributo</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">cuerda</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Nombre del atributo que se va a quitar.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+	<dt class="inherited-from method-doc-label method-doc-details-label">Heredado de:</dt>
+	<dd class="inherited-from">
+		<ul class="dummy">
+			<li>
+				<a href="Component.html#removeAttribute">Componente #removeAttribute</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source method-doc-label method-doc-details-label">Fuente:</dt>
+	<dd class="tag-source">
+		component.js que es
+	</dd>
+	
+
+	
+
+	
+	<dt class="tag-see method-doc-label method-doc-details-label">Ver:</dt>
+	<dd class="tag-see">
+		<ul>
+			<li><p><a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/removeAttribute">API DOM</a></p></li>
+			</ul>
+	</dd>
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Devoluciones:</h5>
+    
+            
+<div class="param-desc">
+    <p>Devuelve por sí mismo; el método se puede encadenar.</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Tipo
+    </dt>
+    <dd>
+        
+<span class="param-type"><a href="Component.html">Componente</a></span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="removeChild"><span class="type-signature"></span>RemoveChild (componente)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Quitar a un niño <code>Componente</code> de esto <code>Componente</code>s lista de niños. Elimina también el elemento secundario del <code>componente</code>s de este elemento <code>componente</code>.</p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5>Parámetros:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Nombre</th>
+        
+
+        <th>Tipo</th>
+
+        
+
+        
+
+        <th class="last">Descripción</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>componente</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="Component.html">Componente</a></span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>El <code>componente secundario</code> que se va a quitar.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+	<dt class="inherited-from method-doc-label method-doc-details-label">Heredado de:</dt>
+	<dd class="inherited-from">
+		<ul class="dummy">
+			<li>
+				<a href="Component.html#removeChild">Componente #removeChild</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source method-doc-label method-doc-details-label">Fuente:</dt>
+	<dd class="tag-source">
+		component.js que es
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="removeClass"><span class="type-signature"></span>Quitar clase (clase para quitar)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Elimina un nombre de clase CSS del elemento <code>Component</code>.</p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5>Parámetros:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Nombre</th>
+        
+
+        <th>Tipo</th>
+
+        
+
+        
+
+        <th class="last">Descripción</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>Clase que se eliminará</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">cuerda</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Nombre de clase CSS que se va a quitar</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+	<dt class="inherited-from method-doc-label method-doc-details-label">Heredado de:</dt>
+	<dd class="inherited-from">
+		<ul class="dummy">
+			<li>
+				<a href="Component.html#removeClass">Componente #removeClass</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source method-doc-label method-doc-details-label">Fuente:</dt>
+	<dd class="tag-source">
+		component.js que es
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Devoluciones:</h5>
+    
+            
+<div class="param-desc">
+    <p>Devuelve por sí mismo; el método se puede encadenar.</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Tipo
+    </dt>
+    <dd>
+        
+<span class="param-type"><a href="Component.html">Componente</a></span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="setAttribute"><span class="type-signature"></span>setAttribute (atributo, valor)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Establecer el valor de un atributo en el <code>Componente</code>elemento de</p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5>Parámetros:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Nombre</th>
+        
+
+        <th>Tipo</th>
+
+        
+
+        
+
+        <th class="last">Descripción</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>atributo</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">cuerda</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Nombre del atributo que se va a establecer.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>valor</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">cuerda</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Valor en el que establecer el atributo.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+	<dt class="inherited-from method-doc-label method-doc-details-label">Heredado de:</dt>
+	<dd class="inherited-from">
+		<ul class="dummy">
+			<li>
+				<a href="Component.html#setAttribute">Componente #setAttribute</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source method-doc-label method-doc-details-label">Fuente:</dt>
+	<dd class="tag-source">
+		component.js que es
+	</dd>
+	
+
+	
+
+	
+	<dt class="tag-see method-doc-label method-doc-details-label">Ver:</dt>
+	<dd class="tag-see">
+		<ul>
+			<li><p><a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/setAttribute">API DOM</a></p></li>
+			</ul>
+	</dd>
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Devoluciones:</h5>
+    
+            
+<div class="param-desc">
+    <p>Devuelve por sí mismo; el método se puede encadenar.</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Tipo
+    </dt>
+    <dd>
+        
+<span class="param-type"><a href="Component.html">Componente</a></span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="setInterval"><span class="type-signature"></span>setInterval (fn, intervalo)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Crea una función que se ejecuta cada <code>x</code> milisegundos. Esta función es un envoltorio alrededor de <code>Window.setInterval</code>. Sin embargo, hay algunas razones para usar este.</p>
+<ol>
+<li>Se borra a través de <a href="Component.html#clearInterval">Componente # clearInterval</a> cuando <a href="Component.html#dispose">Componente # desechar</a> se llama.</li>
+<li>La devolución de llamada de la función será un <a href="Component.html#~GenericCallback">componente ~ GenericCallback</a></li>
+</ol>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5>Parámetros:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Nombre</th>
+        
+
+        <th>Tipo</th>
+
+        
+
+        
+
+        <th class="last">Descripción</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>fn</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="Component.html#~GenericCallback">Componente~Devolución de llamada genérica</a></span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Función que se ejecuta cada <code>x</code> segundos.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>intervalo</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">número</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Ejecute la función especificada cada <code>x</code> milisegundos.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+	<dt class="inherited-from method-doc-label method-doc-details-label">Heredado de:</dt>
+	<dd class="inherited-from">
+		<ul class="dummy">
+			<li>
+				<a href="Component.html#setInterval">Componente #setInterval</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source method-doc-label method-doc-details-label">Fuente:</dt>
+	<dd class="tag-source">
+		component.js que es
+	</dd>
+	
+
+	
+
+	
+	<dt class="tag-see method-doc-label method-doc-details-label">Ver:</dt>
+	<dd class="tag-see">
+		<ul>
+			<li><p><a href="https://developer.mozilla.org/en-US/docs/Web/API/WindowTimers/setInterval">Similar a</a></p></li>
+			</ul>
+	</dd>
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+    <h5>Escucha eventos:</h5>
+    <ul>
+        <li><a href="Component.html#event:dispose">Componente #evento:desechar</a></li>
+    </ul>
+    
+
+    
+
+    
+
+    
+    <h5>Devoluciones:</h5>
+    
+            
+<div class="param-desc">
+    <p>Devuelve un id que se puede utilizar para identificar el intervalo. También se puede utilizar en el <a href="Component.html#clearInterval">componente #clearInterval</a> para borrar el intervalo.</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Tipo
+    </dt>
+    <dd>
+        
+<span class="param-type">número</span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="setTimeout"><span class="type-signature"></span>setTimeout (fn, timeout)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Crea una función que se ejecuta tras un tiempo de espera de <code>x</code> milisegundos. Esta función es un envoltorio alrededor de <code>Window.setTimeout</code>. Sin embargo, hay algunas razones para usar este:</p>
+<ol>
+<li>Se borra a través de <a href="Component.html#clearTimeout">Componente # clearTimeout</a> cuando <a href="Component.html#dispose">Componente # desechar</a> se llama.</li>
+<li>La devolución de llamada de la función se convertirá en un <a href="Component.html#~GenericCallback">componente ~ GenericCallback</a></li>
+</ol>
+<blockquote>
+<p>Nota: Puede usar <code>Window.CleartimeOut</code> en el id devuelto por esta función. Esto hará que su oyente de desecho no se limpie. Utilice <a href="Component.html#clearTimeout">Componente #clearTimeout</a> o <a href="Component.html#dispose">Componente #dispose</a>.</p>
+</blockquote>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5>Parámetros:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Nombre</th>
+        
+
+        <th>Tipo</th>
+
+        
+
+        
+
+        <th class="last">Descripción</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>fn</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="Component.html#~GenericCallback">Componente~Devolución de llamada genérica</a></span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Función que se ejecutará tras el tiempo de <code>espera</code>.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>tiempo de espera</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">número</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Tiempo de espera en milisegundos para retrasar antes de ejecutar la función especificada.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+	<dt class="inherited-from method-doc-label method-doc-details-label">Heredado de:</dt>
+	<dd class="inherited-from">
+		<ul class="dummy">
+			<li>
+				<a href="Component.html#setTimeout">Componente #setTimeout</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source method-doc-label method-doc-details-label">Fuente:</dt>
+	<dd class="tag-source">
+		component.js que es
+	</dd>
+	
+
+	
+
+	
+	<dt class="tag-see method-doc-label method-doc-details-label">Ver:</dt>
+	<dd class="tag-see">
+		<ul>
+			<li><p><a href="https://developer.mozilla.org/en-US/docs/Web/API/WindowTimers/setTimeout">Similar a</a></p></li>
+			</ul>
+	</dd>
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+    <h5>Escucha eventos:</h5>
+    <ul>
+        <li><a href="Component.html#event:dispose">Componente #evento:desechar</a></li>
+    </ul>
+    
+
+    
+
+    
+
+    
+    <h5>Devoluciones:</h5>
+    
+            
+<div class="param-desc">
+    <p>Devuelve un identificador de tiempo de espera que se utiliza para identificar el tiempo de espera. También se puede utilizar en el <a href="Component.html#clearTimeout">componente #clearTimeout</a> para borrar el tiempo de espera establecido.</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Tipo
+    </dt>
+    <dd>
+        
+<span class="param-type">número</span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="show"><span class="type-signature"></span>show ()</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Muestra el elemento del <code>componente</code>si está oculto eliminando el nombre de' clase 'vjs-hidden» de él.</p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+	<dt class="inherited-from method-doc-label method-doc-details-label">Heredado de:</dt>
+	<dd class="inherited-from">
+		<ul class="dummy">
+			<li>
+				<a href="Component.html#show">Componente #show</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source method-doc-label method-doc-details-label">Fuente:</dt>
+	<dd class="tag-source">
+		component.js que es
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Devoluciones:</h5>
+    
+            
+<div class="param-desc">
+    <p>Devuelve por sí mismo; el método se puede encadenar.</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Tipo
+    </dt>
+    <dd>
+        
+<span class="param-type"><a href="Component.html">Componente</a></span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="toggleClass"><span class="type-signature"></span>ToggleClass (ClassToggle [, predicado])</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Añada o elimine un nombre de clase CSS del elemento del componente.</p>
+<ul>
+<li><code>ClassToToggle</code> se agrega cuando el <a href="Component.html#hasClass">componente #hasClass</a> devuelve false.</li>
+<li><code>ClassToggle</code> se elimina cuando el <a href="Component.html#hasClass">componente #hasClass</a> devuelve true.</li>
+</ul>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5>Parámetros:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Nombre</th>
+        
+
+        <th>Tipo</th>
+
+        
+        <th>Argumento</th>
+        
+
+        
+
+        <th class="last">Descripción</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>Clase para alternar</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">cuerda</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>La clase que se va a agregar o eliminar según (@link Component #hasClass}</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>predicado</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span> | <span class="param-type">DOM~Predicado</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;opcional&gt;<br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Una función de predicado DOM~o booleano</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+	<dt class="inherited-from method-doc-label method-doc-details-label">Heredado de:</dt>
+	<dd class="inherited-from">
+		<ul class="dummy">
+			<li>
+				<a href="Component.html#toggleClass">Componente #toggleClass</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source method-doc-label method-doc-details-label">Fuente:</dt>
+	<dd class="tag-source">
+		component.js que es
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Devoluciones:</h5>
+    
+            
+<div class="param-desc">
+    <p>Devuelve por sí mismo; el método se puede encadenar.</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Tipo
+    </dt>
+    <dd>
+        
+<span class="param-type"><a href="Component.html">Componente</a></span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="trigger"><span class="type-signature"></span>trigger (evento [, hash])</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Activa un evento en un elemento.</p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5>Parámetros:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Nombre</th>
+        
+
+        <th>Tipo</th>
+
+        
+        <th>Argumento</th>
+        
+
+        
+
+        <th class="last">Descripción</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>evento</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="EventTarget.html#~Event">eventtarget~event</a></span> | <span class="param-type">Objeto</span> | <span class="param-type">cadena</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>El nombre del evento y Evento o un objeto similar a un evento con un atributo de tipo establecido en el nombre del evento.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>hachís</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Objeto</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;opcional&gt;<br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Hash de datos para transmitir junto con el evento</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+	<dt class="inherited-from method-doc-label method-doc-details-label">Heredado de:</dt>
+	<dd class="inherited-from">
+		<ul class="dummy">
+			<li>
+				<a href="Component.html#trigger">Componente #trigger</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source method-doc-label method-doc-details-label">Fuente:</dt>
+	<dd class="tag-source">
+		component.js que es
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Devoluciones:</h5>
+    
+            
+<div class="param-desc">
+    <p>Devuelve por sí mismo; el método se puede encadenar.</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Tipo
+    </dt>
+    <dd>
+        
+<span class="param-type"><a href="Component.html">Componente</a></span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="triggerReady"><span class="type-signature"></span>Listo para activadores ()</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Activa todos los oyentes listeners para este <code>componente</code>.</p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+	<dt class="inherited-from method-doc-label method-doc-details-label">Heredado de:</dt>
+	<dd class="inherited-from">
+		<ul class="dummy">
+			<li>
+				<a href="Component.html#triggerReady">Componente #triggerReady</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source method-doc-label method-doc-details-label">Fuente:</dt>
+	<dd class="tag-source">
+		component.js que es
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+    <h5>Fuegos:</h5>
+    <ul>
+        <li><a href="Component.html#event:ready">Componente #evento:listo</a></li>
+    </ul>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="update"><span class="type-signature"></span>update ([evento])</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Actualice el estado del volumen.</p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5>Parámetros:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Nombre</th>
+        
+
+        <th>Tipo</th>
+
+        
+        <th>Argumento</th>
+        
+
+        
+
+        <th class="last">Descripción</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>evento</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="EventTarget.html#~Event">Objeto del evento~Evento</a></span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;opcional&gt;<br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>El evento Player #loadstart si se ha llamado a esta función a través de un evento.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source method-doc-label method-doc-details-label">Fuente:</dt>
+	<dd class="tag-source">
+		control-bar/mute-toggle.js que es
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+    <h5>Escucha eventos:</h5>
+    <ul>
+        <li><a href="Player.html#event:loadstart">Jugador #evento:loadstart</a></li>
+    </ul>
+    
+
+    
+
+    
+
+    
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="width"><span class="type-signature"></span>width ([num] [, Skiplisteners])</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Obtén o establece el ancho del componente en función de los estilos CSS. Consulte <a href="Component.html#dimension">Componente #dimension</a> para obtener información más detallada.</p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5>Parámetros:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Nombre</th>
+        
+
+        <th>Tipo</th>
+
+        
+        <th>Argumento</th>
+        
+
+        
+
+        <th class="last">Descripción</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>num</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span> | <span class="param-type">string</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;opcional&gt;<br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>El ancho que desea establecer postfijo con «%», «px' o nada».</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>Alicates de esquí</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">booleano</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;opcional&gt;<br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Omitir el activador de evento de redimensionamiento</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+	<dt class="inherited-from method-doc-label method-doc-details-label">Heredado de:</dt>
+	<dd class="inherited-from">
+		<ul class="dummy">
+			<li>
+				<a href="Component.html#width">Componente #width</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source method-doc-label method-doc-details-label">Fuente:</dt>
+	<dd class="tag-source">
+		component.js que es
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Devoluciones:</h5>
+    
+            
+<div class="param-desc">
+    <ul>
+<li>El ancho al obtener, cero si no hay ancho. Puede ser una cuerda<pre class="prettyprint source"><code> postpixed con '%' o 'px'. - Se vuelve a sí mismo al configurar; El método se puede encadenar.</code></pre></li>
+</ul>
+</div>
+
+
+
+<dl>
+    <dt>
+        Tipo
+    </dt>
+    <dd>
+        
+<span class="param-type"><a href="Component.html">Componente</a></span> | <span class="param-type">número</span> | <span class="param-type">cadena</span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
+</dd>
+
+        </dl>
+    
+
+    
+
+    
+        <h3 class="subsection-title">Eventos</h3>
+
+        <dl>
+            
+<hr>
+<dt>
+    <h4 class="name" id="event:dispose">deshacerse</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Se activa cuando un <code>Componente</code> está dispuesto.</p>
+    </div>
+    
+
+    
+
+    
+        <h5>Tipo: <span class="param-type"><a href="EventTarget.html#~Event">Objeto del evento~Evento</a></span>
+
+
+</h5>
+    
+
+    
+    
+
+    
+<dl class="details">
+    
+
+    <h5 class="subsection-title">Propiedades:</h5>
+
+    <dl>
+
+<table class="props table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Nombre</th>
+        
+
+        <th>Tipo</th>
+
+        
+        <th>Argumento</th>
+        
+
+        
+        <th>Predeterminado</th>
+        
+
+        <th class="last">Descripción</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>burbujas</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">booleano</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;opcional&gt;<br>
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    falso
+                
+                </td>
+            
+
+            <td class="description last"><p>se establece en false para que el evento de cierre no se burbujee</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+</dl>
+
+    
+
+	
+
+	
+
+	
+	<dt class="inherited-from method-doc-label method-doc-details-label">Heredado de:</dt>
+	<dd class="inherited-from">
+		<ul class="dummy">
+			<li>
+				<a href="Component.html#event:dispose">Componente #evento:desechar</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source method-doc-label method-doc-details-label">Fuente:</dt>
+	<dd class="tag-source">
+		component.js que es
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="event:ready">listo</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Se activa cuando un <code>componente</code> está listo.</p>
+    </div>
+    
+
+    
+
+    
+        <h5>Tipo: <span class="param-type"><a href="EventTarget.html#~Event">Objeto del evento~Evento</a></span>
+
+
+</h5>
+    
+
+    
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+	<dt class="inherited-from method-doc-label method-doc-details-label">Heredado de:</dt>
+	<dd class="inherited-from">
+		<ul class="dummy">
+			<li>
+				<a href="Component.html#event:ready">Componente #evento:listo</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source method-doc-label method-doc-details-label">Fuente:</dt>
+	<dd class="tag-source">
+		component.js que es
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="event:resize">cambiar tamaño</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Se activa cuando se cambia el tamaño de un componente.</p>
+    </div>
+    
+
+    
+
+    
+        <h5>Tipo: <span class="param-type"><a href="EventTarget.html#~Event">Objeto del evento~Evento</a></span>
+
+
+</h5>
+    
+
+    
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+	<dt class="inherited-from method-doc-label method-doc-details-label">Heredado de:</dt>
+	<dd class="inherited-from">
+		<ul class="dummy">
+			<li>
+				<a href="Component.html#event:resize">Componente #evento:redimensionar</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source method-doc-label method-doc-details-label">Fuente:</dt>
+	<dd class="tag-source">
+		component.js que es
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="event:tap">toque</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Se activa cuando un <code>Componente</code> se toca.</p>
+    </div>
+    
+
+    
+
+    
+        <h5>Tipo: <span class="param-type"><a href="EventTarget.html#~Event">Objeto del evento~Evento</a></span>
+
+
+</h5>
+    
+
+    
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+	<dt class="inherited-from method-doc-label method-doc-details-label">Heredado de:</dt>
+	<dd class="inherited-from">
+		<ul class="dummy">
+			<li>
+				<a href="Component.html#event:tap">Componente #evento:toque</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source method-doc-label method-doc-details-label">Fuente:</dt>
+	<dd class="tag-source">
+		component.js que es
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dd>
+
+        </dl>
+    
+</article>
+
+</section>
+
+
+
+
+		</div>
+	</div>
+
+	<div class="clearfix"></div>
+
+	
+		<div class="col-md-3">
+			<div id="toc" class="col-md-3 hidden-xs hidden-sm hidden-md"></div>
+		</div>
+	
+
+</div>
+</div>
+
+
+    <div class="modal fade" id="searchResults">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title">Resultados de búsqueda</h4>
+          </div>
+          <div class="modal-body"></div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div>
+
+
+<footer>
+
+
+	<span class="copyright"> Copyright 2017 </span> <span class="jsdoc-message"> Documentación generada por <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.0</a> el 5 de junio de 2017 utilizando la plantilla <a href="https://github.com/docstrap/docstrap">DocStrap</a>. </span>
+</footer>
+
+<script src="scripts/docstrap.lib.js"></script>
+<script src="scripts/toc.js"></script>
+
+    <script type="text/javascript" src="scripts/fulltext-search-ui.js"></script>
+
+
+<script>
+$ (function () { $( "[id*='$']" ).each( function () { var $this = $( this ); $this.attr( "id", $this.attr( "id" ).replace( "$", "__" ) ); }); $ («.tutorial-section pre, .readme-section pre, pre.prettyprint.source») .each (function () { var $this = $( this ); var example = $this.find( "code" ); exampleText = example.html(); var lang = /{@lang (.*?)}/.exec (exampleText); if (lang &amp;&amp; lang [1]) { exampleText = exampleText.replace( lang[0], "" ); example.html( exampleText ); lang = lang[1]; } else { var langClassMatch = example.parent()[0].className.match(/lang\-(\S+)/); lang = langClassMatch ? langClassMatch[1] : "javascript"; } if (lang) { $this .addClass( "sunlight-highlight-" + lang ) .addClass( "linenums" ) .html( example.html() ); }}); Sunlight.highlightAll ( { lineNumbers : false, showMenu : true, enableDoclinks : true }); $.catchanchorLinks ( { navbarOffset: 10 }); $ ("#toc") .toc ( { anchorName : function ( i, heading, prefix ) { return $( heading ).attr( "id" ) || ( prefix + i ); }, selectores: "#toc -content h1, #toc -content h2, #toc -content h3, #toc -content h4", Mostrar y ocultar: false, SmoothScrolling: true}); $ ("#main span [id^='toc']») .addClass («toc-shim»); $ ('.dropdown-toggle' ) .dropdown (); $ («tabla») .each (function ( { var $this = $( this ); $this.addClass('table'); }));}
+</script>
+
+
+
+<!--Navigation and Symbol Display-->
+
+<script>
+	$ (function () { $( '#main' ).localScroll( { offset : { top : 60 } //offset por la altura de tu encabezado (da o toma algunos px, mira qué funciona para ti)}); $ («dt.name») .each (function () {var $this = $ (this) .find («h4"); icono var = $ (»<i/>«) .addClass («icon-plus-sign») .addClass («pull-right») .addClass («icono-blanco»); var dt = $ (this); var children = dt.next («dd» {cursor : "pointer"}); dt.prepend (icono) .css (); dt.addClass («miembro»); children.hide (); dt.children () .on («clic», function () { children = dt.next( "dd" ); children.slideToggle( "fast", function () { if ( children.is( ":visible" ) ) { icon.addClass( "icon-minus-sign" ).removeClass( "icon-plus-sign" ).removeClass( "icon-white" ); dt.addClass( "member-open" ).animate( "member-collapsed" ); } else { icon.addClass( "icon-plus-sign" ).removeClass( "icon-minus-sign" ).addClass( "icon-white" ); dt.addClass( "member-collapsed" ).removeClass( "member-open" ); }});});});});});});
+</script>
+
+
+<!--Google Analytics-->
+
+
+
+    <script type="text/javascript">
+        $ (documento) .ready (function () { SearcherDisplay.init(); });
+    </script>
+
+
+<script src="https://learning-services-media.brightcove.com/doc-assets/js/https-fix.js"></script>
+<script src="https://learning-services-media.brightcove.com/doc-assets/js/support-feedback.js"></script><script src="https://support.brightcove.com/site-assets/js/site/feedback-docs.js"></script>
+</body>
+</html>
