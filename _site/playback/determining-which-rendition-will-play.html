@@ -1204,16 +1204,16 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     <p>El proceso se ilustra a continuación:</p>
     <ol>
       <li>Cada vez que se descarga un nuevo segmento, la velocidad de bits de descarga se calcula en función del tamaño del segmento y del tiempo que tardó en descargarse:
-        <figure class="bcls-figure"><img class="bcls-image" alt="copia HLS 1" src="//learning-services-media.brightcove.com/doc-assets/player-development/playback/HLS-plugin/HLS-rendition-1.png"/></figure>
+        <figure class="bcls-figure"><img class="bcls-image" alt="copia HLS 1" src="/assets/images/playback/HLS-plugin/HLS-rendition-1.png"/></figure>
       </li>
       <li>Todas las copias que tienen una velocidad de bits más alta que la nueva medición se filtran:
-        <figure class="bcls-figure"><img class="bcls-image" alt="copia HLS 2" src="//learning-services-media.brightcove.com/doc-assets/player-development/playback/HLS-plugin/HLS-rendition-2.png"/></figure>
+        <figure class="bcls-figure"><img class="bcls-image" alt="copia HLS 2" src="/assets/images/playback/HLS-plugin/HLS-rendition-2.png"/></figure>
       </li>
       <li>Todas las copias que sean mayores que las dimensiones del reproductor actual se filtran:
-        <figure class="bcls-figure"><img class="bcls-image" alt="copia HLS3" src="//learning-services-media.brightcove.com/doc-assets/player-development/playback/HLS-plugin/HLS-rendition-3.png"/></figure>
+        <figure class="bcls-figure"><img class="bcls-image" alt="copia HLS3" src="/assets/images/playback/HLS-plugin/HLS-rendition-3.png"/></figure>
       </li>
       <li>No se desea una caída significativa de calidad sólo porque su reproductor es un píxel demasiado pequeño, por lo que añadimos la siguiente resolución más alta. La representación de velocidad de bits más alta que permanece es la que se utiliza:
-        <figure class="bcls-figure"><img class="bcls-image" alt="copia HLS4" src="//learning-services-media.brightcove.com/doc-assets/player-development/playback/HLS-plugin/HLS-rendition-4.png"/></figure>
+        <figure class="bcls-figure"><img class="bcls-image" alt="copia HLS4" src="/assets/images/playback/HLS-plugin/HLS-rendition-4.png"/></figure>
       </li>
     </ol>
     <p>Si resulta que no se aceptan copias basadas en el filtrado descrito anteriormente, se utilizará la primera codificación que aparece en la lista de reproducción maestra.</p>

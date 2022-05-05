@@ -1163,7 +1163,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     <h2 id="Player">Reproductor</h2>
     <aside class="bcls-aside bcls-aside--information language-editable">Nota: Este documento asume algunos conocimientos de CSS y el uso de herramientas de desarrollo de un navegador para ver las clases del elemento HTML y examinar CSS aplicable. Si no tiene el conocimiento de base previo requisito, sería mejor que trabaje a través del <a href="/getting-started/step-step-player-customization.html">paso a paso: Personalización del reproductor</a>.</aside>
     <p >Puede alterar la apariencia del jugador, pero primero debe tener una forma de abordarlo. Para ver esto, busque una página HTML con el código Avanzado (incrustar en página) insertado. En la <strong><span translate="No">Elements</span></strong> sección de las Herramientas de desarrollo localiza la <code translate="No">&lt;video-js&gt;</code> etiqueta y verás que tiene una clase con el valor <code translate="No">video-js</code> asignado, entre muchos otros.</p>
-    <figure class="bcls-figure"><img class="bcls-image" alt="personalizar-elementos del jugador" src="//learning-services-media.brightcove.com/doc-assets/player-development/player-customization/5x-player-styling/customize-appearance/player-elements.png"/></figure>
+    <figure class="bcls-figure"><img class="bcls-image" alt="personalizar-elementos del jugador" src="/assets/images/player-customization/5x-player-styling/customize-appearance/player-elements.png"/></figure>
     <p >Una vez que lo sepas, puedes usar estilos para alterar el propio jugador. Por ejemplo, para incluir un borde alrededor del reproductor puede usar este estilo:</p>
     <pre class="line-numbers">
 <code class="language-html" translate="No">&lt;style&gt;
@@ -1173,12 +1173,12 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     border-color: red;
   }
 &lt;/style&gt;</code></pre>
-    <figure class="bcls-figure"><img class="bcls-image" alt="personalizar-elementos del jugador" src="//learning-services-media.brightcove.com/doc-assets/player-development/player-customization/5x-player-styling/customize-appearance/double-border.png"/></figure>
+    <figure class="bcls-figure"><img class="bcls-image" alt="personalizar-elementos del jugador" src="/assets/images/player-customization/5x-player-styling/customize-appearance/double-border.png"/></figure>
   </section>
   <section class="bcls-section">
     <h2 id="iframe_player">reproductor iframe</h2>
     <p >Si está utilizando la implementación Estándar (iframe) del jugador, la situación es diferente. Todavía verás al jugador con la <code translate="No">video-js</code> clase, pero estará, por supuesto, dentro del iframe, y dentro de la <code translate="No">video-js</code> etiqueta.</p>
-    <figure class="bcls-figure"><img class="bcls-image" alt="iframe-jugador-elementos" src="//learning-services-media.brightcove.com/doc-assets/player-development/player-customization/5x-player-styling/customize-appearance/iframe-elements.png"/></figure>
+    <figure class="bcls-figure"><img class="bcls-image" alt="iframe-jugador-elementos" src="/assets/images/player-customization/5x-player-styling/customize-appearance/iframe-elements.png"/></figure>
     <p >Los estilos que cree seguirán funcionando con el reproductor en el iframe, pero será necesario crear un archivo CSS y asociarlo con el reproductor utilizando Studio. Para ello, vaya al módulo <strong>Jugadores</strong> , luego haga clic en el reproductor con el que desea asociar el CSS, luego en la sección <strong>Plugins &gt; Stylesheets</strong> agregue la ruta que su archivo CSS.</p>
     <p >Si desea personalizar el iframe en sí, puede hacerlo utilizando un selector de elementos. A continuación, utilice una etiqueta para modificar como desee.<code translate="No">&lt;style&gt;</code> En el ejemplo siguiente se añade un borde alrededor del jugador.</p>
     <pre class="line-numbers">
@@ -1211,9 +1211,9 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
   <section class="bcls-section">
     <h2 id="Play_button">Botón Reproducir</h2>
     <p >Si desea modificar la apariencia del botón de reproducción, primero necesita saber cómo abordarlo. En Chrome, haga clic derecho en el botón. De las selecciones que aparecen elija <strong><span translate="No">Inspect</span></strong>. Cuando seleccionas <strong><span translate="No">Inspect</span></strong> , Chrome&nbsp;<strong>Herramientas de desarrollo</strong> abrirá.</p>
-    <figure class="bcls-figure"><img class="bcls-image" alt="botón de inspección" src="//learning-services-media.brightcove.com/doc-assets/player-development/player-customization/5x-player-styling/customize-appearance/inspect-button.png"/></figure>
+    <figure class="bcls-figure"><img class="bcls-image" alt="botón de inspección" src="/assets/images/player-customization/5x-player-styling/customize-appearance/inspect-button.png"/></figure>
     <p >En la <strong><span translate="No">Elements</span></strong> sección de Herramientas de desarrollo, verá el código HTML que corresponde al elemento button.</p>
-    <figure class="bcls-figure"><img class="bcls-image" alt="botón de reproducción grande" src="//learning-services-media.brightcove.com/doc-assets/player-development/player-customization/5x-player-styling/customize-appearance/big-play-button.png"/></figure>
+    <figure class="bcls-figure"><img class="bcls-image" alt="botón de reproducción grande" src="/assets/images/player-customization/5x-player-styling/customize-appearance/big-play-button.png"/></figure>
     <p >Desde el código resaltado arriba, se puede ver la clase asignada al botón es <code translate="No">vjs-big-play-button</code>. El color del botón de reproducción (para que coincida con el tigre) y la opacidad se cambiarán con estos estilos:</p>
     <pre class="line-numbers">
 <code class="language-css" translate="No">.vjs-big-play-button {
@@ -1229,7 +1229,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
   opacity: .6;
 }</code></pre>
     <p >Aquí está el resultado de cambiar el botón de gris oscuro a naranja:</p>
-    <figure class="bcls-figure"><img class="bcls-image" alt="botón de reproducción naranja-" src="//learning-services-media.brightcove.com/doc-assets/player-development/player-customization/5x-player-styling/customize-appearance/orange-play-button.png"/></figure>
+    <figure class="bcls-figure"><img class="bcls-image" alt="botón de reproducción naranja-" src="/assets/images/player-customization/5x-player-styling/customize-appearance/orange-play-button.png"/></figure>
     <h3>Ocultar botón de reproducción</h3>
     <p >Puede ocultar completamente el botón de reproducción utilizando el siguiente estilo:</p>
     <pre class="line-numbers">
@@ -1309,9 +1309,9 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
   <section class="bcls-section">
     <h2 id="Progress_bar">Barra de progreso</h2>
     <p >Ahora verá cómo cambiar el color del indicador de progreso. El color predeterminado para el indicador es fucsia, como se muestra aquí:</p>
-    <figure class="bcls-figure"><img class="bcls-image" alt="personalizar-elementos del jugador" src="//learning-services-media.brightcove.com/doc-assets/player-development/player-customization/5x-player-styling/customize-appearance/play-progress-standard.png"/></figure>
+    <figure class="bcls-figure"><img class="bcls-image" alt="personalizar-elementos del jugador" src="/assets/images/player-customization/5x-player-styling/customize-appearance/play-progress-standard.png"/></figure>
     <p >El reto aquí es encontrar los nombres de clase para los elementos. Usando la misma técnica descrita anteriormente en el documento, haciendo clic derecho en un elemento y eligiendo <strong><span translate="No">Inspect</span></strong>, luego profundizando verá la <code translate="No">vjs-play-progress</code> clase.</p>
-    <figure class="bcls-figure"><img class="bcls-image" alt="elementos de progreso y volumen" src="//learning-services-media.brightcove.com/doc-assets/player-development/player-customization/5x-player-styling/customize-appearance/play-progress-element.png"/></figure>
+    <figure class="bcls-figure"><img class="bcls-image" alt="elementos de progreso y volumen" src="/assets/images/player-customization/5x-player-styling/customize-appearance/play-progress-element.png"/></figure>
     <aside class="bcls-aside bcls-aside--tip language-editable">En los navegadores puede buscar nombres de clase en la consola. Por ejemplo, en Chrome simplemente use <strong>CTL-F</strong> y luego ingrese la clase que está buscando.</aside>
     <p >El <code translate="No">background-color</code> cambia el color del elemento y necesita ser estilo. El estilo necesario se muestra aquí:</p>
     <pre class="line-numbers">
@@ -1320,14 +1320,14 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 }</code></pre>
     <p >Observe que la clase se agregó al selector.<code translate="No">.video-js</code> Esto se hace para aumentar la especificidad CSS del selector.</p>
     <p >Los resultados aparecen de la siguiente manera, mostrando una barra de progreso ahora verde:</p>
-    <figure class="bcls-figure"><img class="bcls-image" alt="personalizar-elementos del jugador" src="//learning-services-media.brightcove.com/doc-assets/player-development/player-customization/5x-player-styling/customize-appearance/play-progress-green.png"/></figure>
+    <figure class="bcls-figure"><img class="bcls-image" alt="personalizar-elementos del jugador" src="/assets/images/player-customization/5x-player-styling/customize-appearance/play-progress-green.png"/></figure>
   </section>
   <section class="bcls-section">
     <h2 id="Volume_controls">Controles de volumen</h2>
     <p >Puede personalizar el control de volumen mediante CSS o pasando el <code translate="No">options</code> objeto durante la creación del reproductor.</p>
     <h3>Actualizar usando CSS</h3>
     <p >Ahora verá cómo cambiar el color de los controles de volumen. El aspecto predeterminado se muestra aquí, un botón de volumen blanco con una barra de nivel de volumen fucsia:</p>
-    <figure class="bcls-figure"><img class="bcls-image" alt="personalizar-elementos del jugador" src="//learning-services-media.brightcove.com/doc-assets/player-development/player-customization/5x-player-styling/customize-appearance/volume-standard.png"/></figure>
+    <figure class="bcls-figure"><img class="bcls-image" alt="personalizar-elementos del jugador" src="/assets/images/player-customization/5x-player-styling/customize-appearance/volume-standard.png"/></figure>
     <p >Para cambiar el color del botón de volumen y el botón de silencio al hacer clic en él, utilice el selector que se muestra aquí:</p>
     <pre class="line-numbers">
 <code class="language-css" translate="No">.vjs-volume-panel.vjs-control.vjs-volume-panel-horizontal {
@@ -1340,7 +1340,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 }</code></pre>
     <p >Observe que la clase se agregó al selector.<code translate="No">.video-js</code> Esto se hace para aumentar la especificidad CSS del selector.</p>
     <p >Los resultados del estilo del botón y la barra de volumen se muestran aquí:</p>
-    <figure class="bcls-figure"><img class="bcls-image" alt="personalizar-elementos del jugador" src="//learning-services-media.brightcove.com/doc-assets/player-development/player-customization/5x-player-styling/customize-appearance/volume-yellow.png"/></figure>
+    <figure class="bcls-figure"><img class="bcls-image" alt="personalizar-elementos del jugador" src="/assets/images/player-customization/5x-player-styling/customize-appearance/volume-yellow.png"/></figure>
     <h3>Actualizar mediante el objeto options</h3>
     <p >Para cambiar el diseño del control de volumen, puede pasar el <code translate="No">options</code> objeto al <a href="/publish/delaying-player-instantiation.html">método bc ()</a> de la siguiente manera:</p>
     <ol class="bcls-tasklist">
@@ -1368,21 +1368,21 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 <code class="language-css" translate="No">bc("myPlayerID", options);</code></pre>
       </li>
       <li>Para obtener más información, consulte el ejemplo del reproductor <a href="/code-samples/brightcove-player-sample-vertical-volume-control.html">Vertical Volume Control</a> .
-        <figure class="bcls-figure"><img class="bcls-image" alt="personalizar-elementos del jugador" src="//learning-services-media.brightcove.com/doc-assets/player-development/player-customization/5x-player-styling/customize-appearance/vertical-volume.png"/></figure>
+        <figure class="bcls-figure"><img class="bcls-image" alt="personalizar-elementos del jugador" src="/assets/images/player-customization/5x-player-styling/customize-appearance/vertical-volume.png"/></figure>
       </li>
     </ol>
   </section>
   <section class="bcls-section">
     <h2 id="Fonts">Fuentes</h2>
     <p >El título y la descripción aparecen cuando el reproductor se carga por primera vez y cuando el usuario pasa el cursor sobre el reproductor. Puede cambiar el estilo de las fuentes del título y la descripción, ya sea juntas o por separado. El HTML del <strong>dock</strong> aparece como se muestra en la siguiente captura de pantalla. Tenga en cuenta que hay un <code translate="No">&lt;div&gt;</code> elemento con una clase de <code translate="No">vjs-dock-text</code> que contiene otros dos <code translate="No">&lt;div&gt;</code> elementos que contienen el <strong>título</strong> y <strong>descripción</strong>.</p>
-    <figure class="bcls-figure"><img class="bcls-image" alt="selectores de texto de acoplamiento" src="//learning-services-media.brightcove.com/doc-assets/player-development/player-customization/5x-player-styling/customize-appearance/dock-text-elements.png"/></figure>
+    <figure class="bcls-figure"><img class="bcls-image" alt="selectores de texto de acoplamiento" src="/assets/images/player-customization/5x-player-styling/customize-appearance/dock-text-elements.png"/></figure>
     <p >Puede afectar tanto al título como a la descripción estableciendo un estilo en la <code translate="No">vjs-dock-text</code> clase. Tenga en cuenta que los estilos establecidos en el <code translate="No">.vjs-dock-title</code> y <code translate="No">.vjs-dock-description</code> , por supuesto, no serán completamente anulados por el estilo establecido en un nivel superior. Algunos estilos se heredan, como se muestra en el siguiente estilo y su resultado en el texto:</p>
     <pre class="line-numbers">
 <code class="language-css" translate="No">.video-js .vjs-dock-text {
   color: yellow;
   font-size: .7em;
 }</code></pre>
-    <figure class="bcls-figure"><img class="bcls-image" alt="ejemplo del selector de texto de dock" src="//learning-services-media.brightcove.com/doc-assets/player-development/player-customization/5x-player-styling/customize-appearance/dock-text-selector.png"/></figure>
+    <figure class="bcls-figure"><img class="bcls-image" alt="ejemplo del selector de texto de dock" src="/assets/images/player-customization/5x-player-styling/customize-appearance/dock-text-selector.png"/></figure>
     <p >Puede dar estilo directamente al título y la descripción individuales. A continuación se muestran los estilos establecidos en el <code translate="No">.vjs-dock-title</code> y <code translate="No">.vjs-dock-description</code> selectores de clase, con el texto resultante mostrando los estilos:</p>
     <pre class="line-numbers">
 <code class="language-css" translate="No">.video-js .vjs-dock-title {
@@ -1393,12 +1393,12 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
   color: yellow;
   font-size: 1.0em;
 }</code></pre>
-    <figure class="bcls-figure"><img class="bcls-image" alt="selectores de título y descripción" src="//learning-services-media.brightcove.com/doc-assets/player-development/player-customization/5x-player-styling/customize-appearance/title-and-description-selectors.png"/></figure>
+    <figure class="bcls-figure"><img class="bcls-image" alt="selectores de título y descripción" src="/assets/images/player-customization/5x-player-styling/customize-appearance/title-and-description-selectors.png"/></figure>
   </section>
   <section class="bcls-section">
     <h2 id="Controlbar_icon_manipulation">Manipulación de iconos de la barra</h2>
     <p >El orden de los iconos de la barra de controles determinado por el orden de <code translate="No">&lt;div&gt;</code>los HTML s en la barra de control principal <code translate="No">&lt;div&gt;</code>. Aquí se ve la barra de control <code translate="No">&lt;div&gt;</code> con todos sus hijos.</p>
-    <figure class="bcls-figure"><img class="bcls-image" alt="elementos-controlbar-div" src="//learning-services-media.brightcove.com/doc-assets/player-development/player-customization/5x-player-styling/customize-appearance/elements-controlbar-div.png"/></figure>
+    <figure class="bcls-figure"><img class="bcls-image" alt="elementos-controlbar-div" src="/assets/images/player-customization/5x-player-styling/customize-appearance/elements-controlbar-div.png"/></figure>
     <p >Generalmente, este es el enfoque a tomar cuando se coloca en el icono en la barra de control:</p>
     <ul>
       <li>Construya dinámicamente el elemento que desea insertar en la barra de control.</li>
@@ -1466,12 +1466,12 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     controlBar.insertBefore(newElement,insertBeforeNode);
   });</code></pre>
     <p >Aquí puede ver el resultado del código, con el icono recién insertado resaltado en amarillo:</p>
-    <figure class="bcls-figure"><img class="bcls-image" alt="descarga-icon-antes-volumen" src="//learning-services-media.brightcove.com/doc-assets/player-development/player-customization/5x-player-styling/customize-appearance/download-icon-before-volume.png"/></figure>
+    <figure class="bcls-figure"><img class="bcls-image" alt="descarga-icon-antes-volumen" src="/assets/images/player-customization/5x-player-styling/customize-appearance/download-icon-before-volume.png"/></figure>
     <p >Si desea tener el icono en una ubicación diferente, solo necesita cambiar el código que obtiene el elemento a insertar delante de. Por ejemplo, para mover el nuevo icono delante del botón de pantalla completa, use esto:</p>
     <pre class="line-numbers">
 <code class="language-javascript" translate="No">insertBeforeNode = document.getElementsByClassName('vjs-fullscreen-control')[0];</code></pre>
     <p >El resultado aparecería de la siguiente manera:</p>
-    <figure class="bcls-figure"><img class="bcls-image" alt="descarga-icon-antes-pantalla completa" src="//learning-services-media.brightcove.com/doc-assets/player-development/player-customization/5x-player-styling/customize-appearance/download-icon-before-fullscreen.png"/></figure>
+    <figure class="bcls-figure"><img class="bcls-image" alt="descarga-icon-antes-pantalla completa" src="/assets/images/player-customization/5x-player-styling/customize-appearance/download-icon-before-fullscreen.png"/></figure>
     <h3>Icono en el extremo derecho</h3>
     <p >Si desea que el icono aparezca en el extremo derecho de la barra de control, reemplazaría el <code translate="No">insertBefore()</code> por el <code translate="No">appendChild()</code> método, como se muestra aquí:</p>
     <pre class="line-numbers">
@@ -1481,19 +1481,19 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     <p >Aunque las técnicas anteriores funcionan para colocar iconos en la barra de control, es posible que no sean compatibles con otro código que manipule la barra de control. Además, lo más probable es que no desee abstraer el código en un complemento para su reutilización general.</p>
     <p >Las debilidades del párrafo anterior se pueden superar utilizando el elemento <strong>espaciador</strong> especial insertado en la barra de control, especialmente para añadir iconos. El inconveniente del espaciador es que no tiene control total sobre dónde se puede colocar el icono, mientras que lo hace utilizando las técnicas mostradas anteriormente en esta sección.</p>
     <p >El elemento espaciador se encuentra en la barra de control entre la información de tiempo a la izquierda y el icono de pantalla completa a la derecha, como se muestra en la siguiente captura de pantalla (resaltada en el óvalo verde). Tenga en cuenta que en la sección <strong>Elementos</strong> de las Herramientas de desarrollo el elemento se define como HTML <code translate="No">&lt;div&gt;</code>.</p>
-    <figure class="bcls-figure"><img class="bcls-image" alt="espaciador" src="//learning-services-media.brightcove.com/doc-assets/player-development/player-customization/5x-player-styling/customize-appearance/spacer.png"/></figure>
+    <figure class="bcls-figure"><img class="bcls-image" alt="espaciador" src="/assets/images/player-customization/5x-player-styling/customize-appearance/spacer.png"/></figure>
     <p >Para colocar un icono en el elemento espaciador, utilice el siguiente código, que es muy similar al código mostrado anteriormente en esta sección. El resultado del código se muestra en la captura de pantalla que sigue al fragmento de código.</p>
     <pre class="line-numbers">
 <code class="language-javascript" translate="No">// Get the spacer element
 spacer = document.getElementsByClassName('vjs-spacer')[0];
 // Place the new element in the spacer
 spacer.appendChild(newElement);</code></pre>
-    <figure class="bcls-figure"><img class="bcls-image" alt="espaciador-izquierda" src="//learning-services-media.brightcove.com/doc-assets/player-development/player-customization/5x-player-styling/customize-appearance/spacer-left.png"/></figure>
+    <figure class="bcls-figure"><img class="bcls-image" alt="espaciador-izquierda" src="/assets/images/player-customization/5x-player-styling/customize-appearance/spacer-left.png"/></figure>
     <p >Si desea colocar el icono en el lado derecho del espaciador, se debe usar otra línea de código. El diseño del espaciador está controlado por un Flexbox HTML. Por lo tanto, añadiendo un estilo Flexbox puede empujar el icono añadido a la derecha. El resultado del código se muestra en la captura de pantalla que sigue al fragmento de código.</p>
     <pre class="line-numbers">
 <code class="language-javascript" translate="No">// Set the content of the spacer to be right justified
 spacer.setAttribute("style", "justify-content: flex-end;");</code></pre>
-    <figure class="bcls-figure"><img class="bcls-image" alt="espaciador-derecha" src="//learning-services-media.brightcove.com/doc-assets/player-development/player-customization/5x-player-styling/customize-appearance/spacer-right.png"/></figure>/playback/ios-y-co-brillante-player.html/reproducción/ios-y-reproductor-cove-brillante.html
+    <figure class="bcls-figure"><img class="bcls-image" alt="espaciador-derecha" src="/assets/images/player-customization/5x-player-styling/customize-appearance/spacer-right.png"/></figure>/playback/ios-y-co-brillante-player.html/reproducción/ios-y-reproductor-cove-brillante.html
   </section>
   <section class="bcls-section">
     <h2 id="Remove_fullscreen_icon">Eliminar botón de pantalla completa</h2>
@@ -1513,7 +1513,7 @@ spacer.setAttribute("style", "justify-content: flex-end;");</code></pre>
   <section class="bcls-section">
     <h2 id="Controlbar_icon_glow">Icono de la barra de control «resplandor»</h2>
     <p >Puede cambiar la sombra de texto (a veces denominada «resplandor») de los iconos en la barra de control. Por ejemplo, es posible que desee cambiar el color o aumentar el brillo para enfocar más el icono. La siguiente captura de pantalla muestra la sombra de texto en rojo.</p>
-    <figure class="bcls-figure"><img class="bcls-image" alt="sombra de texto rojo" src="//learning-services-media.brightcove.com/doc-assets/player-development/player-customization/5x-player-styling/customize-appearance/red-glow.png"/></figure>
+    <figure class="bcls-figure"><img class="bcls-image" alt="sombra de texto rojo" src="/assets/images/player-customization/5x-player-styling/customize-appearance/red-glow.png"/></figure>
     <p >El efecto mostrado se realiza cambiando el CSS <code translate="No">text-shadow</code>. El selector determina que el cambio sólo se producirá con el icono tiene estados de enfoque o de cursor.</p>
     <pre class="line-numbers">
 <code class="language-css" translate="No">.video-js .vjs-control:hover:before, .video-js .vjs-control:focus:before {
@@ -1540,7 +1540,7 @@ spacer.setAttribute("style", "justify-content: flex-end;");</code></pre>
   background: linear-gradient(45deg, rgba(0,0,255,.8) 35%, transparent);
   height: 80%;
 }</code></pre>
-    <figure class="bcls-figure"><img class="bcls-image" alt="mal degradado azul" src="//learning-services-media.brightcove.com/doc-assets/player-development/player-customization/5x-player-styling/customize-appearance/gradient-blue.png"/></figure>
+    <figure class="bcls-figure"><img class="bcls-image" alt="mal degradado azul" src="/assets/images/player-customization/5x-player-styling/customize-appearance/gradient-blue.png"/></figure>
     <p >En este ejemplo, se aplica un degradado azul con un alfa .8 en un ángulo descendente de 45 grados. El color/alfa establecido en el gradiente lineal se utilizará para el primer 35% del gradiente antes de que comience a desvanecerse. Además, se usa el 80% de la altura del elemento.</p>
     <p >El siguiente CodePen le permite experimentar con valores. Inicie el vídeo y el mouse hacia dentro y hacia fuera para ver el degradado sutil utilizado por defecto.</p>
     <p data-height="371" data-theme-id="14832" data-slug-hash="XXyKqx" data-default-tab="result" data-user="bcls" class="codepen">Vea el <a href="http://codepen.io/team/bcls/pen/XXyKqx/">aspecto Luna Gradient Pen Hover</a> de Brightcove Learning Services (<a href="https://codepen.io/team/rcrooks1969">@bcls</a> ) en <a href="http://codepen.io">CodePen</a>.</p>
@@ -1548,7 +1548,7 @@ spacer.setAttribute("style", "justify-content: flex-end;");</code></pre>
   <section class="bcls-section">
     <h2 id="Caption_list_items">Elementos de la lista de títulos</h2>
     <p>Si desea estilo/controlar los elementos de la lista en el menú de subtítulos, los selectores se muestran aquí:</p>
-    <figure class="bcls-figure"><img class="bcls-image" alt="Selectores de elementos de la lista de títulos" width="800" height="281" src="//learning-services-media.brightcove.com/doc-assets/player-development/player-customization/5x-player-styling/customize-appearance/caption-list-items.png"/></figure>
+    <figure class="bcls-figure"><img class="bcls-image" alt="Selectores de elementos de la lista de títulos" width="800" height="281" src="/assets/images/player-customization/5x-player-styling/customize-appearance/caption-list-items.png"/></figure>
     <p>Puede aplicar estilo a todos los elementos utilizando el selector:</p>
     <pre class="line-numbers">
 <code class="language-javascript" translate="No">.vjs-subs-caps-button .vjs-menu .vjs-menu-content .vjs-menu-item.</code></pre>
@@ -1557,7 +1557,7 @@ spacer.setAttribute("style", "justify-content: flex-end;");</code></pre>
     <h2 id="CSS_specificity">Especificidad CSS</h2>
     <p >La especificidad de CSS se refiere a la forma en que los navegadores determinan qué valores de propiedad se aplican a un elemento en función de su relevancia. Para obtener más detalles sobre este concepto, revise el artículo <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity">Specificity</a> .</p>
     <p >En Chrome, inspeccione el botón de juego grande. Observe que la propiedad se establece utilizando varias clases.<code translate="No">background</code> Esto significa que no podemos usar solo la clase para anular esta propiedad.<code translate="No">.vjs-big-play-button</code></p>
-    <figure class="bcls-figure"><img class="bcls-image" alt="clases de botón de reproducción" src="//learning-services-media.brightcove.com/doc-assets/player-development/player-customization/5x-player-styling/customize-appearance/play-button-classes.png"/></figure>
+    <figure class="bcls-figure"><img class="bcls-image" alt="clases de botón de reproducción" src="/assets/images/player-customization/5x-player-styling/customize-appearance/play-button-classes.png"/></figure>
     <p >Aquí hay tres enfoques para personalizar el botón de juego grande:</p>
     <ul>
       <li>Haga referencia a una identificación asignada al jugador.</li>
@@ -1586,7 +1586,7 @@ spacer.setAttribute("style", "justify-content: flex-end;");</code></pre>
     }
 &lt;/style&gt;</code></pre>
     <p >Deberías ver que el botón de juego grande ahora es naranja.</p>
-    <figure class="bcls-figure"><img class="bcls-image" alt="orange-play-button.png" src="//learning-services-media.brightcove.com/doc-assets/player-development/player-customization/5x-player-styling/customize-appearance/orange-play-button.png"/></figure>
+    <figure class="bcls-figure"><img class="bcls-image" alt="orange-play-button.png" src="/assets/images/player-customization/5x-player-styling/customize-appearance/orange-play-button.png"/></figure>
     <h3>Uso de varias clases</h3>
     <p >Dado que la <code translate="No">background</code> propiedad para el botón de juego grande se establece usando dos clases, necesitará al menos dos clases en el selector CSS para anular esta propiedad.</p>
     <p >Añade el <code translate="No">.video-js</code> clase a la <code translate="No">.vjs-big-play-button</code> selector de clases. Recuerde que la clase está configurada en el contenedor de video.<code translate="No">.video-js</code></p>
@@ -1635,9 +1635,9 @@ spacer.setAttribute("style", "justify-content: flex-end;");</code></pre>
     <h2 id="Component_selectors">Selectores de componentes</h2>
     <p >Estas capturas de pantalla y tabla siguiente muestran los componentes y los selectores CSS necesarios para manipular ese componente. Para obtener más información sobre los componentes, consulte el documento <a href="/coding-topics/overview-components.html">Visión general de componentes</a> .</p>
     <h3>Al cargar y pasar el cursor</h3>
-    <figure class="bcls-figure"><img style="max-width: none" width="794" height="352" alt="componentes en carga" src="//learning-services-media.brightcove.com/doc-assets/player-development/player-customization/5x-player-styling/customize-appearance/5x-components-onload.png"/></figure>
+    <figure class="bcls-figure"><img style="max-width: none" width="794" height="352" alt="componentes en carga" src="/assets/images/player-customization/5x-player-styling/customize-appearance/5x-components-onload.png"/></figure>
     <h3>Durante la reproducción</h3>
-    <figure class="bcls-figure"><img class="bcls-image" style="max-width: none" width="831" height="525" alt="reproducción de componentes" src="//learning-services-media.brightcove.com/doc-assets/player-development/player-customization/5x-player-styling/customize-appearance/6x-components.png"/></figure>
+    <figure class="bcls-figure"><img class="bcls-image" style="max-width: none" width="831" height="525" alt="reproducción de componentes" src="/assets/images/player-customization/5x-player-styling/customize-appearance/6x-components.png"/></figure>
     <h3>Resumen de selectores de componentes</h3>
     <table class="table-styles">
       <thead>

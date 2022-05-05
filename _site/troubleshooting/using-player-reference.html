@@ -1164,7 +1164,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     </ul>
     <p>La página Referencia del Reproductor se encuentra en <a href="http://players.brightcove.net/3303963094001/player-reference-app/index.html">http://players.brightcove.net/3303963094001/player-reference-app/index.html</a>.</p>
     <aside class="bcls-aside bcls-aside--warning language-editable">Si está utilizando un recurso HLS con IE11/Win7, DEBE cambiar al modo Flash haciendo clic en el botón <strong>Modo</strong> en la Referencia del reproductor.
-      <figure class="bcls-figure"><img class="bcls-image" alt="Modo Flash" src="//learning-services-media.brightcove.com/doc-assets/player-development/playback/troubleshooting/player-reference/flash-mode.png"/></figure>
+      <figure class="bcls-figure"><img class="bcls-image" alt="Modo Flash" src="/assets/images/playback/troubleshooting/player-reference/flash-mode.png"/></figure>
     </aside>
   </section>
   <section id="Video_demonstration" class="bcls-section">
@@ -1177,13 +1177,13 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     <p>Lo primero que tendrá que hacer es proporcionar una fuente de vídeo para el reproductor, o usar uno de los vídeos predeterminados proporcionados. Pega la URL y, a continuación, haga clic en las opciones de la barra de botones de configuración con las que desea probar. Debe seleccionar previamente las opciones y hacer clic en <strong>Cargar</strong>.</p>
     <aside class="bcls-aside bcls-aside--warning">La selección de opciones en la barra de botones de configuración durante la reproducción no tiene ningún efecto. Debe hacer clic en los botones de configuración y volver a hacer clic en <strong>Cargar</strong> . Además, debe elegir manualmente el <strong>tipo de contenido de URL</strong> correcto para el vídeo suministrado. Si elige el tipo incorrecto, obtendrá un error o el video no se reproducirá.</aside>
     <p>Si lo desea, puede utilizar una fuente de Video Cloud para realizar pruebas. Simplemente vaya al módulo <strong>MEDIA</strong> en Studio, haga clic en un video, luego en la sección <strong>ARCHIVOS DE VÍDEO</strong> haga clic derecho en la entrada de la columna <strong>Formato</strong> , luego elija <strong>Copiar dirección de enlace</strong>. A continuación, puede pegar el enlace copiado en el área de entrada de URL.</p>
-    <figure class="bcls-figure"><img class="bcls-image" alt="Obtener la URL de origen de vídeo en Studio" src="//learning-services-media.brightcove.com/doc-assets/player-development/playback/troubleshooting/player-reference/get-video-source-url.png"/></figure>
+    <figure class="bcls-figure"><img class="bcls-image" alt="Obtener la URL de origen de vídeo en Studio" src="/assets/images/playback/troubleshooting/player-reference/get-video-source-url.png"/></figure>
     <aside class="bcls-aside bcls-aside--information">Cuando proporcione una fuente de vídeo DASH, se le pedirá que proporcione también la URL del servidor de licencias. Tenga en cuenta que en este momento no puede proporcionar todo el objeto <strong>KeySystemsOptions</strong> como <strong>Opciones del Reproductor</strong>.</aside>
   </section>
   <section id="section-name" class="bcls-section">
     <h2>Suministro de opciones de jugador</h2>
     <p>Una opción de la barra de botones de configuración que necesita alguna explicación es el botón <strong>Opciones del jugador</strong> .</p>
-    <figure class="bcls-figure"><img class="bcls-image" alt="Botón de opciones del reproductor" src="//learning-services-media.brightcove.com/doc-assets/player-development/playback/troubleshooting/player-reference/player-options-button.png"/></figure>
+    <figure class="bcls-figure"><img class="bcls-image" alt="Botón de opciones del reproductor" src="/assets/images/playback/troubleshooting/player-reference/player-options-button.png"/></figure>
     <p>Este botón le da una manera de pasar ciertas opciones de configuración al reproductor utilizando datos con formato JSON válidos. Por ejemplo, lo siguiente proporcionaría un nuevo póster y el bucle de vídeo una vez finalizado:</p>
     <pre class="line-numbers">
 {«póster»: "http://solutions.brightcove.com/fish_poster.png «, «bucle»: true}</pre>
@@ -1195,15 +1195,15 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     <h3>Cambio de velocidad de bits</h3>
     <p>En primer lugar, si está viendo una fuente de vídeo MP4, no verá ninguna información en esta sección. Para un MP4 se envía la fuente de vídeo y no hay más negociación. Para HLS, los segmentos se solicitan periódicamente, por lo que dependiendo del ancho de banda se pueden solicitar segmentos de menor calidad o de mayor calidad. Una línea de tendencia ascendente (pendiente positiva) en el gráfico significaría que la velocidad de bits disponible está aumentando y se solicitarán segmentos de mejor calidad. Por el contrario, una línea de tendencia descendente (pendiente negativa) en el gráfico significaría que la tasa de bits disponible está disminuyendo y se solicitarán segmentos de menor calidad.</p>
     <p>Las líneas del gráfico corresponden a las representaciones disponibles para el vídeo. Cuando el gráfico trazado se mueve por encima de una línea, el jugador solicitará segmentos de mayor calidad. Lo contrario es true cuando el gráfico trazado se mueve por debajo de una línea. Tenga en cuenta que lo más probable es que no vea un cambio inmediato en la calidad del vídeo cuando el gráfico del trazador cruza una línea. Los segmentos solicitados tendrían que enviarse en función de la solicitud, y cuando se recibieran anexados a los segmentos actualmente en el búfer.</p>
-    <figure class="bcls-figure"><img class="bcls-image" alt="Gráfico de cambio de velocidad de bits" src="//learning-services-media.brightcove.com/doc-assets/player-development/playback/troubleshooting/player-reference/bitrate-switching.png"/></figure>
+    <figure class="bcls-figure"><img class="bcls-image" alt="Gráfico de cambio de velocidad de bits" src="/assets/images/playback/troubleshooting/player-reference/bitrate-switching.png"/></figure>
     <aside class="bcls-aside bcls-aside--information">Nota: El gráfico anterior muestra un ancho de banda disponible alto y no variable.</aside>
     <p>Los picos agudos en el gráfico trazado, como se muestra a continuación, lo más probable es que desencadenen cambios de representación.</p>
-    <figure class="bcls-figure"><img class="bcls-image" alt="Picos afilados en el gráfico" src="//learning-services-media.brightcove.com/doc-assets/player-development/playback/troubleshooting/player-reference/sharp-spikes.png"/></figure>
+    <figure class="bcls-figure"><img class="bcls-image" alt="Picos afilados en el gráfico" src="/assets/images/playback/troubleshooting/player-reference/sharp-spikes.png"/></figure>
     <h3>Cronología del evento</h3>
     <p>La escala de tiempo del evento sólo mostrará los eventos que se han distribuido. Esta captura de pantalla muestra un vídeo HLS antes de que comience a reproducirse, <code translate="No">progress</code> y solo se han distribuido <code translate="No">loadedmetadata</code> los eventos y.</p>
-    <figure class="bcls-figure"><img class="bcls-image" alt="Eventos al inicio" src="//learning-services-media.brightcove.com/doc-assets/player-development/playback/troubleshooting/player-reference/events-at-start.png"/></figure>
+    <figure class="bcls-figure"><img class="bcls-image" alt="Eventos al inicio" src="/assets/images/playback/troubleshooting/player-reference/events-at-start.png"/></figure>
     <p>La siguiente captura de pantalla muestra el mismo vídeo después de que el vídeo ha comenzado a reproducirse, se ha pausado y reiniciado, así como una búsqueda realizada.</p>
-    <figure class="bcls-figure"><img class="bcls-image" alt="Eventos después de jugar" src="//learning-services-media.brightcove.com/doc-assets/player-development/playback/troubleshooting/player-reference/events-after-playing.png"/></figure>
+    <figure class="bcls-figure"><img class="bcls-image" alt="Eventos después de jugar" src="/assets/images/playback/troubleshooting/player-reference/events-after-playing.png"/></figure>
   </section>
 </article>
 

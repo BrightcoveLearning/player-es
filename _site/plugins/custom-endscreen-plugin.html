@@ -1285,7 +1285,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     <p>Puede usar CSS para personalizar la apariencia de su pantalla final. A continuación se muestran algunos ejemplos de lo que puede hacer. Asegúrese de probar sus implementaciones para asegurarse de que funcionan con el contenido de su página.</p>
     <aside class="bcls-aside bcls-aside--information">El código de esta sección utiliza posicionamiento relativo, que se puede utilizar junto con un reproductor receptivo. Para que el reproductor responda, consulte el documento <a href="/styling/responsive-sizing-brightcove-player.html">Tamaño adaptable</a> o utilice el módulo <strong>Reproductores</strong> para establecer la configuración de <strong>tamaño</strong> en <strong>Responsive</strong>.</aside>
     <p>Así es como aparece la pantalla final con el botón de reinicio de vídeo y un botón para compartir en redes sociales.</p>
-    <figure class="bcls-figure"><img class="bcls-image" alt="pantalla final personalizada predeterminada" src="//learning-services-media.brightcove.com/doc-assets/player-development/player-customization/custom-endscreens/plugin-doc/endscreen-default.png"/></figure>
+    <figure class="bcls-figure"><img class="bcls-image" alt="pantalla final personalizada predeterminada" src="/assets/images/player-customization/custom-endscreens/plugin-doc/endscreen-default.png"/></figure>
     <h3>Cambiar tamaño del botón</h3>
     <p>Supongamos que desea cambiar el tamaño de los botones de la pantalla final. Estas imágenes de botones son formato Scalable Vectorial Graphics (SVG) para que se carguen rápidamente en todas las plataformas. Debido a esto, no puede cambiar su tamaño mediante el uso de las propiedades <code translate="No">width</code> y <code translate="No">height</code> CSS.</p>
     <p>En su lugar, dado que estos botones son archivos de texto XML, puede cambiar su tamaño utilizando la propiedad <code translate="No">font-size</code> CSS.</p>
@@ -1300,7 +1300,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
   font-size: 50%;
 }</code></pre>
     <p>El resultado debería verse así:</p>
-    <figure class="bcls-figure"><img class="bcls-image" alt="botones pequeños de la pantalla final" src="//learning-services-media.brightcove.com/doc-assets/player-development/player-customization/custom-endscreens/plugin-doc/endscreen-small-buttons.png"/></figure>
+    <figure class="bcls-figure"><img class="bcls-image" alt="botones pequeños de la pantalla final" src="/assets/images/player-customization/custom-endscreens/plugin-doc/endscreen-small-buttons.png"/></figure>
     <p>O puede controlar el tamaño de cada botón de forma independiente:</p>
     <pre class="line-numbers">
 <code class="language-javascript" translate="No">.vjs-restart-control {
@@ -1316,7 +1316,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
   "content": "&lt;a href='https://www.brightcove.com'&gt;Visit our home page&lt;/a&gt;"
 }</code></pre>
     <p>De forma predeterminada, el contenido agregado se muestra encima de los botones de la pantalla final:</p>
-    <figure class="bcls-figure"><img class="bcls-image" alt="contenido encima de los botones de la pantalla final" src="//learning-services-media.brightcove.com/doc-assets/player-development/player-customization/custom-endscreens/plugin-doc/endscreen-content-above.png"/></figure>
+    <figure class="bcls-figure"><img class="bcls-image" alt="contenido encima de los botones de la pantalla final" src="/assets/images/player-customization/custom-endscreens/plugin-doc/endscreen-content-above.png"/></figure>
     <p>Utilice el siguiente CSS para colocar su contenido HTML debajo de los botones de la pantalla final:</p>
     <ul>
       <li>Líneas 190-193: Coloque los botones desde la parte superior. Estos elementos ya están centrados en la página para usted.</li>
@@ -1338,7 +1338,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
   width: 100%;
 }</code></pre>
     <p>El resultado debería verse así:</p>
-    <figure class="bcls-figure"><img class="bcls-image" alt="contenido debajo de los botones de la pantalla final" src="//learning-services-media.brightcove.com/doc-assets/player-development/player-customization/custom-endscreens/plugin-doc/endscreen-content-below.png"/></figure>
+    <figure class="bcls-figure"><img class="bcls-image" alt="contenido debajo de los botones de la pantalla final" src="/assets/images/player-customization/custom-endscreens/plugin-doc/endscreen-content-below.png"/></figure>
     <h3>Mostrar contenido vertical y botones</h3>
     <p>También puede cambiar el diseño del contenido HTML y los botones de la pantalla final. De forma predeterminada, se muestran horizontalmente, con el contenido encima de los botones. El siguiente código flota su contenido a la izquierda de los botones y muestra los botones verticalmente:</p>
     <ul>
@@ -1371,13 +1371,13 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 }
 </code></pre>
     <p>El resultado debería verse así:</p>
-    <figure class="bcls-figure"><img class="bcls-image" alt="contenido vertical y botones de pantalla final" src="//learning-services-media.brightcove.com/doc-assets/player-development/player-customization/custom-endscreens/plugin-doc/endscreen-vertical.png"/></figure>
+    <figure class="bcls-figure"><img class="bcls-image" alt="contenido vertical y botones de pantalla final" src="/assets/images/player-customization/custom-endscreens/plugin-doc/endscreen-vertical.png"/></figure>
     <p>Puede ser creativo con el aspecto que tendrá su pantalla final anulando las propiedades CSS predeterminadas. En su navegador, inspeccione los elementos para encontrar los nombres y valores de clase de elemento. Para obtener una revisión rápida de cómo hacerlo, consulte el documento <a href="/styling/customizing-player-appearance.html">Personalizar apariencia del reproductor</a> .</p>
   </section>
   <section id="mailto" class="bcls-section video-cloud-only">
     <h2>Usar mailto con nombre de vídeo</h2>
     <p>Es posible que desee permitir que el espectador del vídeo le envíe una pregunta o comentario por correo electrónico. Puede hacerlo utilizando un enlace HTML <strong>mailto</strong> en la pantalla final personalizada, como se muestra aquí:</p>
-    <figure class="bcls-figure"><img class="bcls-image" alt="pantalla final del cliente mailto" src="//learning-services-media.brightcove.com/doc-assets/player-development/player-customization/custom-endscreens/plugin-doc/custom-endscreen-mailto.png"/></figure>
+    <figure class="bcls-figure"><img class="bcls-image" alt="pantalla final del cliente mailto" src="/assets/images/player-customization/custom-endscreens/plugin-doc/custom-endscreen-mailto.png"/></figure>
     <p>Al hacer clic en el enlace se abrirá el cliente de correo electrónico predeterminado de los clientes. El siguiente código muestra cómo utilizar los metatdatos del vídeo, en este caso el nombre del vídeo, para ser automáticamente el asunto del correo electrónico.</p>
     <p>En la siguiente sección se explica cómo realizar esa tarea en particular, pero además, una vez que tenga datos de la propiedad <a href="/references/video-metadata-mediainfo.html">mediainfo</a> , cualquier metatdata de vídeo podría utilizarse en el enlace mailto.</p>
     <ul>
@@ -1452,7 +1452,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
   });
 });</code></pre>
     <p>Esto daría como resultado la siguiente pantalla final:</p>
-    <figure class="bcls-figure"><img class="bcls-image" alt="uso de macros" src="//learning-services-media.brightcove.com/doc-assets/player-development/player-customization/custom-endscreens/plugin-doc/using-macros.png"/></figure>
+    <figure class="bcls-figure"><img class="bcls-image" alt="uso de macros" src="/assets/images/player-customization/custom-endscreens/plugin-doc/using-macros.png"/></figure>
     <p>Aquí está la lista completa de macros disponibles:</p>
     <table class="bcls-table">
       <thead class="bcls-table__head">

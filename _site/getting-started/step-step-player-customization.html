@@ -1173,12 +1173,12 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       <li>Examine la página recién creada.</li>
       <li>Abre las herramientas de desarrollo de tu navegador y profundiza en el HTML para encontrar la <code translate="No">&lt;video-js&gt;</code> etiqueta. Verá que la <code translate="No">&lt;video-js&gt;</code> etiqueta tiene una clase también llamada <code translate="No">video-js</code>. La <code translate="No">&lt;video-js&gt;</code> etiqueta siempre tendrá una clase de <code translate="No">video-js</code>. Utilizará la <code translate="No">video-js</code> clase con frecuencia al diseñar el reproductor.</li>
       <li>Compruebe la captura de pantalla a continuación para ver la clase resaltada en rojo. Destacado en verde está la <code translate="No">&lt;video-js&gt;</code> etiqueta, que es, por supuesto, Brightcove Player.
-        <figure class="bcls-figure"><img class="bcls-image" alt="selectores de jugadores" src="//learning-services-media.brightcove.com/doc-assets/player-development/player-customization/5x-player-styling/quick-start-player-styling/player-div-with-video.png"/></figure>
+        <figure class="bcls-figure"><img class="bcls-image" alt="selectores de jugadores" src="/assets/images/player-customization/5x-player-styling/quick-start-player-styling/player-div-with-video.png"/></figure>
         <!-- <aside class="bcls-aside bcls-aside--information">
 	<p>Note: Depending on the operating system and browser being used, the Flash fallback version of the player may be displayed. If your player is using the Flash fallback version of the player, you will not see a <code translate="No">&lt;video-js&gt;</code> tag. Instead you will see the <code translate="No">&lt;div&gt;</code> surrounding an <code translate="No">&lt;object&gt;</code> tag, as highlighted below.</p>
 	</aside>
 
-	<figure class="bcls-figure"><img class="bcls-image" alt="player div with object" src="//learning-services-media.brightcove.com/doc-assets/player-development/player-customization/5x-player-styling/quick-start-player-styling/player-div-with-object.png" /></figure> --></li>
+	<figure class="bcls-figure"><img class="bcls-image" alt="player div with object" src="/assets/images/player-customization/5x-player-styling/quick-start-player-styling/player-div-with-object.png" /></figure> --></li>
     </ol>
   </section>
   <section id="buttonselector" class="bcls-section">
@@ -1188,7 +1188,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       <li>Examine su página HTML.</li>
       <li>Haga clic derecho en el botón de reproducción que superpone al jugador y seleccione Inspeccionar elemento.<strong></strong></li>
       <li>Tenga en cuenta que la <code translate="No">&lt;div&gt;</code> etiqueta que está resaltada representa el botón de reproducción y tiene una clase de <code translate="No">vjs-big-play-button</code>.
-        <figure class="bcls-figure"><img class="bcls-image" alt="botón de juego grande div" src="//learning-services-media.brightcove.com/doc-assets/player-development/player-customization/5x-player-styling/quick-start-player-styling/big-play-button-div.png"/></figure>
+        <figure class="bcls-figure"><img class="bcls-image" alt="botón de juego grande div" src="/assets/images/player-customization/5x-player-styling/quick-start-player-styling/big-play-button-div.png"/></figure>
       </li>
       <li>Modifique sus estilos para incluir CSS que cambie el color y la opacidad del botón de reproducción.
         <pre class="line-numbers">
@@ -1200,10 +1200,10 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 &lt;/style&gt;</code></pre>
       </li>
       <li>Examine su página y verá que no se han utilizado todos los estilos. El botón no es rojo.
-        <figure class="bcls-figure"><img class="bcls-image" alt="botón no rojo" src="//learning-services-media.brightcove.com/doc-assets/player-development/player-customization/5x-player-styling/quick-start-player-styling/button-not-red.png"/></figure>
+        <figure class="bcls-figure"><img class="bcls-image" alt="botón no rojo" src="/assets/images/player-customization/5x-player-styling/quick-start-player-styling/button-not-red.png"/></figure>
       </li>
       <li>Mira a la derecha de tus herramientas de desarrollador y verás un resumen de tus estilos. Puede mirar hacia abajo y ver que cambiar el fondo a rojo está anulado, representado por el tachado.
-        <figure class="bcls-figure"><img class="bcls-image" alt="estilos de fondo anulado" src="//learning-services-media.brightcove.com/doc-assets/player-development/player-customization/5x-player-styling/quick-start-player-styling/styles-background-overridden.png"/></figure>
+        <figure class="bcls-figure"><img class="bcls-image" alt="estilos de fondo anulado" src="/assets/images/player-customization/5x-player-styling/quick-start-player-styling/styles-background-overridden.png"/></figure>
         <aside class="bcls-aside bcls-aside--information">Nota: En Safari, el estilo puede no ser tachado a pesar de que está siendo anulado.</aside>
         <p>Lo que ha sucedido es que se realizan numerosos cambios en el color de fondo. El estilo que establece se ha anulado en la parte de «cascada» de CSS. Puede cambiar esto utilizando la funcionalidad de CSS llamada especificidad.<strong></strong> La especificidad determina qué regla CSS es aplicada por los navegadores y es un tipo de ponderación que influye en cómo se muestran las reglas de hoja de estilos en cascada (CSS). Usando la especificidad, puede hacer que su estilo sea más importante que otros, forzándolo a ser utilizado. Hay una breve introducción a la especificidad de CSS en el documento <a href="/styling/customizing-player-appearance.html#CSS_specificity">Personalizar apariencia del jugador</a> , y numerosas referencias en cualquier búsqueda.</p>
       </li>
@@ -1217,10 +1217,10 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 &lt;/style&gt;  </code></pre>
       </li>
       <li>Examine su página y vea que ahora se aplican todos los estilos.
-        <figure class="bcls-figure"><img class="bcls-image" alt="estilos de trabajo de fondo" src="//learning-services-media.brightcove.com/doc-assets/player-development/player-customization/5x-player-styling/quick-start-player-styling/styles-background-working.png"/></figure>
+        <figure class="bcls-figure"><img class="bcls-image" alt="estilos de trabajo de fondo" src="/assets/images/player-customization/5x-player-styling/quick-start-player-styling/styles-background-working.png"/></figure>
       </li>
       <li>Vuelva a mirar a la derecha de sus herramientas de desarrollador y verá un resumen de sus estilos. Ahora verá que el cambio de color de fondo no se anula.
-        <figure class="bcls-figure"><img class="bcls-image" alt="estilos de fondo NO anulado" src="//learning-services-media.brightcove.com/doc-assets/player-development/player-customization/5x-player-styling/quick-start-player-styling/styles-background-NOT-overridden.png"/></figure>
+        <figure class="bcls-figure"><img class="bcls-image" alt="estilos de fondo NO anulado" src="/assets/images/player-customization/5x-player-styling/quick-start-player-styling/styles-background-NOT-overridden.png"/></figure>
       </li>
     </ol>
   </section>
@@ -1333,7 +1333,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       <li>En Studio, vaya al módulo <strong>Reproductores</strong> y edite el reproductor que está utilizando para este inicio rápido.</li>
       <li>Haga clic en <strong>Plugins</strong> en el menú de navegación izquierdo.</li>
       <li>Haga clic en <strong>Hojas de estilo</strong> y, a continuación, en el botón <strong>Agregar una hoja de estilo</strong> e introduzca la ruta de acceso:
-        <figure class="bcls-figure"><img class="bcls-image" alt="estudio ingrese css" src="//learning-services-media.brightcove.com/doc-assets/player-development/player-customization/5x-player-styling/quick-start-player-styling/studio-enter-css.png"/></figure>
+        <figure class="bcls-figure"><img class="bcls-image" alt="estudio ingrese css" src="/assets/images/player-customization/5x-player-styling/quick-start-player-styling/studio-enter-css.png"/></figure>
       </li>
       <li>Para guardar los cambios, haga clic en <strong>Guardar</strong>. El reproductor de previsualización de la parte derecha de la página se actualizará para mostrar los estilos CSS aplicados al botón.</li>
       <li>Para publicar el reproductor, haga clic en Publicar e incrustar &gt; Publicar cambios.<strong></strong></li>

@@ -1179,14 +1179,14 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     <h2 id="brightcoveplugins">Complementos de Brightcove</h2>
     <p>La <a href="/plugins/overview-brightcove-player-plugins.html">descripción general: Player Plugins</a> documento enumera los plugins suministrados por Brightcove y qué complementos se cargan de forma predeterminada.</p>
     <p>Los complementos suministrados por Brightcove se pueden utilizar de varias maneras. Aunque todo se puede implementar usando la sección <strong>Plugins</strong> del módulo <strong>PLAYERS</strong> de Studio, algunos tienen una sección dedicada para cargar la funcionalidad, como publicidad, pantallas finales y redes sociales. También puede obtener ayuda adicional para algunos complementos en la sección <strong>Plugins</strong> como se muestra en estas capturas de pantalla:</p>
-    <figure class="bcls-figure"><img class="bcls-image" alt="agregar plugin en Studio" src="//learning-services-media.brightcove.com/doc-assets/player-development/plugins/plugin-guide/add-brightcove.png"/></figure>
-    <figure class="bcls-figure"><img class="bcls-image" alt="plugin suministrado por brightcove" src="//learning-services-media.brightcove.com/doc-assets/player-development/plugins/plugin-guide/chromecast.png"/></figure>
+    <figure class="bcls-figure"><img class="bcls-image" alt="agregar plugin en Studio" src="/assets/images/plugins/plugin-guide/add-brightcove.png"/></figure>
+    <figure class="bcls-figure"><img class="bcls-image" alt="plugin suministrado por brightcove" src="/assets/images/plugins/plugin-guide/chromecast.png"/></figure>
   </section>
   <section class="bcls-section">
     <h2 id="Adding_plugins_in_Studio">Agregar complementos en Studio</h2>
     <p>Si decide no hacerlo, o no hay forma de agregar un plugin de otra manera, utilice el siguiente formulario. Como se muestra, primero seleccione <strong>Plugin personalizado</strong>, el formulario aparecerá para completar.</p>
-    <figure class="bcls-figure"><img class="bcls-image" alt="agregar plugin en Studio" src="//learning-services-media.brightcove.com/doc-assets/player-development/plugins/plugin-guide/add-custom.png"/></figure>
-    <figure class="bcls-figure"><img class="bcls-image" alt="agregar plugin en Studio" src="//learning-services-media.brightcove.com/doc-assets/player-development/plugins/plugin-guide/manually-add-plugin-form.png"/></figure>
+    <figure class="bcls-figure"><img class="bcls-image" alt="agregar plugin en Studio" src="/assets/images/plugins/plugin-guide/add-custom.png"/></figure>
+    <figure class="bcls-figure"><img class="bcls-image" alt="agregar plugin en Studio" src="/assets/images/plugins/plugin-guide/manually-add-plugin-form.png"/></figure>
     <p>Verá que agrega el nombre del plugin, un enlace accesible a Internet al archivo JavaScript, al archivo CSS (si es necesario) y opciones.</p>
     <aside class="bcls-aside bcls-aside--information">En algunos casos, es posible que desee agregar un enlace al código JavaScript, pero no ejecutar ningún código de inicialización. En este caso, agregue el vínculo bajo la ficha <strong>Scripts</strong> . Del mismo modo, puede hacer lo mismo si solo tiene CSS usando la pestaña <strong>CSS</strong> .</aside>
   </section>
@@ -1230,9 +1230,9 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
   https://players.api.brightcove.com/v2/accounts/$ACCOUNT_ID/players/$PLAYER_ID/configuration</code></pre>
     <h3>¿Cómo detectar si se carga un complemento predeterminado?</h3>
     <p>Puede determinar si se carga un plugin predeterminado yendo a la consola de un navegador al usar la URL o las implementaciones embed_in_page de un reproductor y ver si el objeto plugin correspondiente está presente. La siguiente captura de pantalla muestra la presencia del plugin.</p>
-    <figure class="bcls-figure"><img class="bcls-image" alt="predeterminado-plugin-con-hls" src="//learning-services-media.brightcove.com/doc-assets/player-development/plugins/plugin-overview/default-plugin-with-hls.png"/></figure>
+    <figure class="bcls-figure"><img class="bcls-image" alt="predeterminado-plugin-con-hls" src="/assets/images/plugins/plugin-overview/default-plugin-with-hls.png"/></figure>
     <p>Si ha configurado un complemento predeterminado particular NO para ser cargado, su objeto no estará presente en la página. En la siguiente captura de pantalla, verá que el objeto del complemento HLS NO está presente:</p>
-    <figure class="bcls-figure"><img class="bcls-image" alt="predeterminado-plugin-no-hls" src="//learning-services-media.brightcove.com/doc-assets/player-development/plugins/plugin-overview/default-plugin-no-hls.png"/></figure>
+    <figure class="bcls-figure"><img class="bcls-image" alt="predeterminado-plugin-no-hls" src="/assets/images/plugins/plugin-overview/default-plugin-no-hls.png"/></figure>
   </section>
   <section class="bcls-section">
     <h2 id="passdata">Pasar datos</h2>

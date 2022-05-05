@@ -1267,7 +1267,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     <pre class="line-numbers">
 <code class="language-html" translate="No">https://players.brightcove.net/videojs-overlay/2/videojs-overlay.css</code></pre>
     <p>A continuación, agregue la información de configuración de la siguiente manera:</p>
-    <figure class="bcls-figure"><img class="bcls-image" alt="crear un punto de referencia en Studio" src="//learning-services-media.brightcove.com/doc-assets/player-development/player-customization/cue-points/cue-points-cta/overlay-plugin-studio.png"/></figure>
+    <figure class="bcls-figure"><img class="bcls-image" alt="crear un punto de referencia en Studio" src="/assets/images/player-customization/cue-points/cue-points-cta/overlay-plugin-studio.png"/></figure>
     <aside class="bcls-aside bcls-aside--tip">No se suministra ningún <strong>contenido</strong> en la configuración de superposición, ya que se construirá dinámicamente e inyectará en la superposición.</aside>
     <p>Los vídeos publicados con el reproductor deben contener puntos de referencia configurados en Studio. La información del CTA se almacena en el campo <strong>Metadatos</strong> . En una lista separada por punto y coma, almacene lo siguiente:</p>
     <ul>
@@ -1275,7 +1275,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       <li>Texto para la etiqueta de anclaje</li>
       <li>URL de la etiqueta de anclaje</li>
     </ul>
-    <figure class="bcls-figure"><img class="bcls-image" alt="crear un punto de referencia en Studio" src="//learning-services-media.brightcove.com/doc-assets/player-development/player-customization/cue-points/cue-points-cta/make-cp-in-studio.png"/></figure>
+    <figure class="bcls-figure"><img class="bcls-image" alt="crear un punto de referencia en Studio" src="/assets/images/player-customization/cue-points/cue-points-cta/make-cp-in-studio.png"/></figure>
     <h3>Otro HTML</h3>
     <p>No se agregan otros elementos HTML a la página.</p>
   </section>
@@ -1296,7 +1296,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     <pre>
 <code class="language-javascript" translate="No">// ### Listen for cue change then pass data to be displayed ###</code></pre>
     <p>Después de extraer la información del punto de referencia del <code translate="No">mediainfo</code> objeto, utilice el controlador de <code translate="No">oncuechange</code> eventos de JavaScript para escuchar los inicios de punto de referencia. A continuación, extraiga la información del punto de referencia para el punto de referencia actual y llame al <code translate="No">displayCTA()</code> método. La información sobre los puntos de referencia pasados a la función personalizada aparece de la siguiente manera:</p>
-    <figure class="bcls-figure"><img class="bcls-image" alt="información del punto de referencia" src="//learning-services-media.brightcove.com/doc-assets/player-development/player-customization/cue-points/cue-points-cta/console-cp-info.png"/></figure>
+    <figure class="bcls-figure"><img class="bcls-image" alt="información del punto de referencia" src="/assets/images/player-customization/cue-points/cue-points-cta/console-cp-info.png"/></figure>
     <aside class="bcls-aside bcls-aside--tip">El no <code translate="No">endTime</code> es útil en esta aplicación ya que es la hora del siguiente punto de referencia o el final del video. Recuerde, la duración de la superposición que se mostrará se almacena en los <strong>metadatos</strong>del punto de referencia.</aside>
     <!-- UPDATE task 2 -->
     

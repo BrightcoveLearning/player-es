@@ -1164,13 +1164,13 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     <p>Estos pasos le permiten establecer manualmente una versión de reproductor.</p>
     <ol class="bcls-tasklist">
       <li>Primero, querrá configurar el reproductor para que se actualice manualmente. Esto evitará que un cambio de versión del jugador sea anulado por una actualización de jugador. Para ello, vaya a Studio, módulo <strong>PLAYERS</strong> y, en la sección <strong>Información del jugador</strong> , configure el <strong>modo de actualización</strong> en <strong>Manual.</strong>
-        <figure class="bcls-figure"><img class="bcls-image" alt="studio ui set manual" src="//learning-services-media.brightcove.com/doc-assets/player-development/troubleshooting/manually-change-player-version/studio-ui-set-manual.png"/></figure>
+        <figure class="bcls-figure"><img class="bcls-image" alt="studio ui set manual" src="/assets/images/troubleshooting/manually-change-player-version/studio-ui-set-manual.png"/></figure>
         Por supuesto, guarde los cambios.</li>
       <li>Ahora configurará manualmente la versión del reproductor usando el <strong>Editor JSON</strong> en el módulo <strong>PLAYERS</strong> . Este es un ejemplo de las miradas de configuración de un reproductor antes de realizar cualquier cambio de versión:
-        <figure class="bcls-figure"><img class="bcls-image" alt="configuración del reproductor antes del cambio" src="//learning-services-media.brightcove.com/doc-assets/player-development/troubleshooting/manually-change-player-version/json-editor-before.png"/></figure>
+        <figure class="bcls-figure"><img class="bcls-image" alt="configuración del reproductor antes del cambio" src="/assets/images/troubleshooting/manually-change-player-version/json-editor-before.png"/></figure>
         <aside class="bcls-aside bcls-aside--tip language-editable">Tenga en cuenta que el <code translate="No">"locked": true</code> atributo es el resultado del paso 1.</aside>
         En el <strong>Editor JSON</strong>, modifique el atributo <strong>version</strong> a la versión deseada.
-        <figure class="bcls-figure"><img class="bcls-image" alt="configuración del reproductor después del cambio" src="//learning-services-media.brightcove.com/doc-assets/player-development/troubleshooting/manually-change-player-version/json-editor-after.png"/></figure>
+        <figure class="bcls-figure"><img class="bcls-image" alt="configuración del reproductor después del cambio" src="/assets/images/troubleshooting/manually-change-player-version/json-editor-after.png"/></figure>
         Asegúrese de guardar los cambios y publicar el reproductor.</li>
     </ol>
     <p>No olvides que una vez que se corrija el problema para cambiar el reproductor de nuevo para que se actualice automáticamente.</p>

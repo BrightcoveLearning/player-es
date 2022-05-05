@@ -1173,7 +1173,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       <li>API REST:<strong></strong> Brightcove proporciona un conjunto completo de API para personalizar, ampliar e integrar con la plataforma Brightcove. Consulte la descripción general:<a href="https://apis.support.brightcove.com/getting-started/getting-started-brightcove-apis.html"> para obtener más información, documento API de Video Cloud.</a></li>
     </ul>
     <p>El siguiente diagrama muestra la interacción entre las tres entidades principales del proceso para recuperar datos de una de las API REST de Brightcove:</p>
-    <figure class="bcls-figure"><img class="bcls-image" alt="Descripción general de piezas básicas" src="//learning-services-media.brightcove.com/doc-assets/player-development/architecture/proxy-API-call/client-proxy-api.png"/></figure>
+    <figure class="bcls-figure"><img class="bcls-image" alt="Descripción general de piezas básicas" src="/assets/images/architecture/proxy-API-call/client-proxy-api.png"/></figure>
   </section>
   <section class="bcls-section">
     <h2 id="Client_functionality_overview">Introducción a la funcionalidad del cliente</h2>
@@ -1192,7 +1192,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       <li>El proxy para devolver los datos al cliente.</li>
     </ul>
     <p>Tenga en cuenta que las flechas de flujo lógico de la caja que llama (cuadro inferior izquierdo) parecen indicar que el código se ejecuta en dos momentos diferentes, que es exactamente el caso.<code translate="No">makeRequest()</code> Se realiza la llamada a la función, pero la función de devolución de llamada no se ejecuta hasta que haya hecho su trabajo y se ejecuta la función de devolución de llamada, que devuelve los datos solicitados al código de llamada a la función.<code translate="No">makeRequest()</code></p>
-    <figure class="bcls-figure"><img class="bcls-image" alt="Introducción a la funcionalidad del cliente" src="//learning-services-media.brightcove.com/doc-assets/player-development/architecture/proxy-API-call/proxy-API-call.png"/></figure>
+    <figure class="bcls-figure"><img class="bcls-image" alt="Introducción a la funcionalidad del cliente" src="/assets/images/architecture/proxy-API-call/proxy-API-call.png"/></figure>
   </section>
   <section class="bcls-section">
     <h2 id="Example_code_walkthrough">Tutorial de código de ejemplo</h2>
@@ -1263,7 +1263,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     <p>Esta sección de código hace que la llamada a la función.<code translate="No">makeRequest()</code> Tenga en cuenta que se pasan dos parámetros. El primero es el objeto options que contiene información para el extremo, y el segundo es la función de devolución de llamada. Recuerde, esta es una llamada asincrónica por lo que la función de devolución de llamada definida de forma anónima no será llamada hasta que la API REST haya devuelto los datos a la función.<code translate="No">makeRequest()</code></p>
     <ul>
       <li>Línea 1: Llame a la <code translate="No">makeRequest()</code> función, pasando los valores requeridos para la llamada en el <code translate="No">options</code> objeto. En este caso, el objeto contiene lo siguiente:
-        <figure class="bcls-figure"><img class="bcls-image" alt="options (objeto)" src="//learning-services-media.brightcove.com/doc-assets/player-development/architecture/proxy-API-call/options-object-console.png"/></figure>
+        <figure class="bcls-figure"><img class="bcls-image" alt="options (objeto)" src="/assets/images/architecture/proxy-API-call/options-object-console.png"/></figure>
       </li>
       <li>Líneas 3-13: La función de devolución de llamada se define como una función anónima (resaltada en amarillo). Recuerde que esta función es un parámetro y NO se llama aquí sino más tarde en el código.</li>
       <li>Líneas 6, 8, 10: declaraciones que muestran:<code translate="No">console.log()</code>
@@ -1276,7 +1276,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       <li>Línea 12: Llama a la función que muestra el número de vistas en la barra de control.</li>
     </ul>
     <p>La siguiente captura de pantalla de la consola muestra datos reales mostrados de las instrucciones:<code translate="No">console.log</code></p>
-    <figure class="bcls-figure"><img class="bcls-image" alt="Procesamiento de datos en función de devolución de llamada" src="//learning-services-media.brightcove.com/doc-assets/player-development/architecture/proxy-API-call/console-data-process-callback-function.png"/></figure>
+    <figure class="bcls-figure"><img class="bcls-image" alt="Procesamiento de datos en función de devolución de llamada" src="/assets/images/architecture/proxy-API-call/console-data-process-callback-function.png"/></figure>
     <pre class="line-numbers">
 	<code class="language-javascript" translate="No">// +++ Make the request to the <span translate="No">Analytics API</span> +++
 	// Extract views from data returned by Analytics API
@@ -1338,7 +1338,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       <li>Líneas 8, 26: Define la función del controlador de eventos para los cambios.<code translate="No">readyState</code></li>
       <li>Líneas 9, 23, 25: Utilice un en caso de que la solicitud falla en un nivel alto.<code translate="No">try-catch</code></li>
       <li>Líneas 10, 11: Utilice instrucciones para asegurarse de que la solicitud ha finalizado (es 4) y se ha completado correctamente, el estado está en el rango 200.<code translate="No">if</code><code translate="No">readyState</code> A continuación se muestra el registro de la consola de los valores y en la definición del controlador de eventos:<code translate="No">readyState</code><code translate="No">status</code>
-        <figure class="bcls-figure"><img class="bcls-image" alt="Registro ReadyState y estado" src="//learning-services-media.brightcove.com/doc-assets/player-development/architecture/proxy-API-call/console-readystate-and-status.png"/></figure>
+        <figure class="bcls-figure"><img class="bcls-image" alt="Registro ReadyState y estado" src="/assets/images/architecture/proxy-API-call/console-readystate-and-status.png"/></figure>
       </li>
       <li>Línea 18: Se ejecuta la función de devolución de llamada. Esto pasa los datos devueltos de la API a la función de devolución de llamada como se detalla en la sección Call MakeRequest () anterior.<strong></strong></li>
       <li>Línea 33: Establezca el controlador de eventos para el evento.<code translate="No">XMLHttpRequest.onreadystatechange</code></li>
@@ -1422,7 +1422,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     <p>Un par de sencillas sugerencias se hacen en esta sección, y son un gran lugar para comenzar su aventura de depuración. Las dos secciones siguientes le dan una forma de ver la información más básica que necesita, qué se pasa para realizar la llamada y lo que se devuelve.</p>
     <h3>Comprobación de las opciones de llamada</h3>
     <p>El código del lado del cliente discutido en este documento es básicamente todo acerca de proporcionar las opciones correctas para ser usadas con el proxy, y a su vez la API real. Así que saber que las opciones son correctas es esencial para el correcto funcionamiento de su código. Una forma simple de hacer esto es registrar en la consola el <code translate="No">options</code> objeto justo antes de pasar a la <code translate="No">makeRequest</code> función donde se usan:</p>
-    <figure class="bcls-figure"><img class="bcls-image" alt="opciones de registro de código de depuración" src="//learning-services-media.brightcove.com/doc-assets/player-development/architecture/proxy-API-call/debugging-code-log-options.png"/></figure>
+    <figure class="bcls-figure"><img class="bcls-image" alt="opciones de registro de código de depuración" src="/assets/images/architecture/proxy-API-call/debugging-code-log-options.png"/></figure>
     <p>Lo que contiene el objeto options variará según lo que está tratando de hacer, pero algunos conceptos básicos siempre estarán allí, los siguientes son:</p>
     <ul>
       <li>El ID de cuenta. Puede ser una propiedad independiente o parte de la URL de EndPoint de API.</li>
@@ -1436,17 +1436,17 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       </li>
     </ul>
     <p>Otras propiedades pueden ser necesarias en el objeto options dependiendo de la solicitud API. Aquí hay un ejemplo de lo que vería en la consola al registrar el objeto de opciones para hacer una solicitud para todos los jugadores en una cuenta específica:</p>
-    <figure class="bcls-figure"><img class="bcls-image" alt="opciones de depuración simples" src="//learning-services-media.brightcove.com/doc-assets/player-development/architecture/proxy-API-call/debugging-options-simple.png"/></figure>
+    <figure class="bcls-figure"><img class="bcls-image" alt="opciones de depuración simples" src="/assets/images/architecture/proxy-API-call/debugging-options-simple.png"/></figure>
     <p>Aquí hay un poco más complejo de opciones registradas objeto utilizado al actualizar jugadores:</p>
-    <figure class="bcls-figure"><img class="bcls-image" alt="opciones de depuración" src="//learning-services-media.brightcove.com/doc-assets/player-development/architecture/proxy-API-call/debugging-options.png"/></figure>
+    <figure class="bcls-figure"><img class="bcls-image" alt="opciones de depuración" src="/assets/images/architecture/proxy-API-call/debugging-options.png"/></figure>
     <h3>Ver datos devueltos</h3>
     <p>Lo que se devuelva variará según los datos solicitados y si se devuelve un error. Pero no importa lo que se devuelva, lo más probable es que desee ver qué datos se devuelven. Una forma simple de hacer esto es registrar en la consola los <code translate="No">response</code> datos sin procesar justo después de la llamada a la <code translate="No">makeRequest</code> función:</p>
-    <figure class="bcls-figure"><img class="bcls-image" alt="opciones de registro de código de depuración" src="//learning-services-media.brightcove.com/doc-assets/player-development/architecture/proxy-API-call/debugging-code-log-response.png"/></figure>
+    <figure class="bcls-figure"><img class="bcls-image" alt="opciones de registro de código de depuración" src="/assets/images/architecture/proxy-API-call/debugging-code-log-response.png"/></figure>
     <p>Lo que se devolverá tiene posibilidades casi infinitas, pero los siguientes son algunos ejemplos. La primera muestra el comienzo de una respuesta cuando se pide a todos los jugadores de una cuenta:</p>
-    <figure class="bcls-figure"><img class="bcls-image" alt="respuesta de depuración en la solicitud de los jugadores" src="//learning-services-media.brightcove.com/doc-assets/player-development/architecture/proxy-API-call/debugging-response-multiple-players.png"/></figure>
+    <figure class="bcls-figure"><img class="bcls-image" alt="respuesta de depuración en la solicitud de los jugadores" src="/assets/images/architecture/proxy-API-call/debugging-response-multiple-players.png"/></figure>
     <aside class="bcls-aside bcls-aside--tip">Este es un buen ejemplo de cuando la visualización de la respuesta puede ser extremadamente útil, ya que muestra la información del reproductor se almacena en una matriz llamada.<code translate="No">items</code></aside>
     <p>Aquí está la respuesta después de actualizar los reproductores, usando el método <code translate="No">PATCH</code> HTTP:</p>
-    <figure class="bcls-figure"><img class="bcls-image" alt="respuesta de depuración en el parche del reproductor" src="//learning-services-media.brightcove.com/doc-assets/player-development/architecture/proxy-API-call/debugging-response-on-player-patch.png"/></figure>
+    <figure class="bcls-figure"><img class="bcls-image" alt="respuesta de depuración en el parche del reproductor" src="/assets/images/architecture/proxy-API-call/debugging-response-on-player-patch.png"/></figure>
     <p>Aquí hay una vista más bien formateada de los datos en la primera respuesta:</p>
     <pre class="line-numbers">
 	<code class="language-json" translate="No">{
@@ -1456,7 +1456,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 		"preview_embed_code": "&lt;iframe src='//preview-players.brightcove.net/v2/accounts/.../master/index.html' ...&gt;&lt;/iframe&gt;"
 	}</code></pre>
     <p>Y finalmente, aquí hay una respuesta muy valiosa de cuando ocurrió un error. En este caso, se estaba utilizando una cuenta sin las credenciales adecuadas:</p>
-    <figure class="bcls-figure"><img class="bcls-image" alt="respuesta de depuración en caso de error" src="//learning-services-media.brightcove.com/doc-assets/player-development/architecture/proxy-API-call/debugging-response-on-error.png"/></figure>
+    <figure class="bcls-figure"><img class="bcls-image" alt="respuesta de depuración en caso de error" src="/assets/images/architecture/proxy-API-call/debugging-response-on-error.png"/></figure>
   </section>
   <h3>Otros consejos para la solución de problemas</h3>
   <p>Si tiene problemas, aquí hay algunas otras cosas a buscar.</p>

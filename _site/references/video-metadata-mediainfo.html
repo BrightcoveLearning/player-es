@@ -1310,7 +1310,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 &lt;/script&gt;</code></pre>
     <p>Aquí se muestra un ejemplo de visualización desde la consola:</p>
     <aside class="bcls-aside bcls-aside--information">En esta captura de pantalla, los nombres de las propiedades de caso de serpiente de estilo antiguo (account_id) se muestran junto con los nombres de mayúsculas y minúsculas de camello actuales (AccountId).</aside>
-    <figure class="bcls-figure"><img class="bcls-image" alt="pantalla de consola" src="//learning-services-media.brightcove.com/doc-assets/player-development/references/mediainfo/console-display.png"/></figure>
+    <figure class="bcls-figure"><img class="bcls-image" alt="pantalla de consola" src="/assets/images/references/mediainfo/console-display.png"/></figure>
   </section>
   <section id="populatetheobject" class="bcls-section player-only">
     <h2>Rellenar el objeto</h2>
@@ -1357,7 +1357,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     <h2 id="displaytagsfields">Mostrar etiquetas y campos personalizados</h2>
     <aside class="bcls-aside bcls-aside--information player-only">Aunque es poco probable que rellene manualmente el <strong translate="No">custom fields</strong> y <strong translate="No">tags</strong> objetos, es posible, por lo que este contenido está incluido.</aside>
     <p>Tanto las etiquetas como los campos personalizados se almacenan en estructuras de datos complejas. El <strong translate="No">customFields</strong> en un objeto y <strong translate="No">tags</strong> en una matriz. La siguiente captura de pantalla muestra los campos y etiquetas personalizados resaltados en el <code translate="No">mediainfo</code> objeto.</p>
-    <figure class="bcls-figure"><img class="bcls-image" alt="etiquetas y campos personalizados en la visualización de la consola" src="//learning-services-media.brightcove.com/doc-assets/player-development/references/mediainfo/tags-custom-fields.png"/></figure>
+    <figure class="bcls-figure"><img class="bcls-image" alt="etiquetas y campos personalizados en la visualización de la consola" src="/assets/images/references/mediainfo/tags-custom-fields.png"/></figure>
     <p>Para mostrar los datos de estas complejas estructuras de datos necesita dos tipos de bucles. Un <code translate="No">for</code> bucle se utiliza para iterar sobre la matriz de etiquetas (líneas 16-20) e inyectar la lista de HTML desordenada construida dinámicamente en un <code translate="No">&lt;div&gt;</code> (definido en la línea 9). Un <code translate="No">for-in</code> bucle se utiliza para iterar sobre el objeto campos personalizados (líneas 24-27) e inyectar la lista HTML desordenada generada dinámicamente en el <code translate="No">&lt;div&gt;</code>.</p>
     <pre class="line-numbers">
 <code class="language-html" translate="No">&lt;video-js id="myPlayerID"
@@ -1392,7 +1392,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
   });
 &lt;/script&gt;</code></pre>
     <p>El HTML renderizado aparece como se muestra en esta captura de pantalla.</p>
-    <figure class="bcls-figure"><img class="bcls-image" alt="etiquetas y visualización personalizada en HTML" src="//learning-services-media.brightcove.com/doc-assets/player-development/references/mediainfo/html-display.png"/></figure>
+    <figure class="bcls-figure"><img class="bcls-image" alt="etiquetas y visualización personalizada en HTML" src="/assets/images/references/mediainfo/html-display.png"/></figure>
     <aside class="bcls-aside bcls-aside--information video-cloud-only">Nota: Las claves de campo personalizadas, <strong translate="No">customfield1</strong> y <strong translate="No">customfield2</strong> , son sólo nombres de demostración. Puede elegir nombres de clave que reflejen los datos almacenados en el campo personalizado.</aside>
   </section>
 </article>

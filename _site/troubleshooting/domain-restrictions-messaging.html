@@ -1158,15 +1158,15 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     <h2 id="Overview">Resumen</h2>
     <p>Es posible restringir dónde se puede ver un vídeo mediante restricciones de dominio. El documento <a href="https://studio.support.brightcove.com/players/configuring-player-content-restrictions.html">Configuring Player Content Restrictions</a> muestra cómo utilizar Video Cloud para aplicar restricciones de dominio. El documento que está leyendo le indica cómo implementar código para informar a los usuarios de que el reproductor está utilizando restricciones de dominio.</p>
     <p>De forma predeterminada, Brightcove Player no informa al usuario de que un vídeo que intenta ver se encuentra en un reproductor de dominio restringido. El reproductor simplemente muestra una pantalla negra. Si ve la consola, verá lo siguiente.</p>
-    <figure class="bcls-figure"><img class="bcls-image" alt="error de consola de restricción de dominio" src="//learning-services-media.brightcove.com/doc-assets/player-development/playback/troubleshooting/domain-restrictions-messaging/domain-restrictions-error-console.png"/></figure>
+    <figure class="bcls-figure"><img class="bcls-image" alt="error de consola de restricción de dominio" src="/assets/images/playback/troubleshooting/domain-restrictions-messaging/domain-restrictions-error-console.png"/></figure>
     <p>Esto no es muy útil, pero si comprueba la pestaña <strong>Red</strong> y hace clic en un <strong>Nombre</strong> que corresponda a su ID de vídeo y luego comprueba la pestaña <strong>Vista previa</strong> , verá un error más iluminador.</p>
-    <figure class="bcls-figure"><img class="bcls-image" alt="ficha de red de consola de mensajes de dominio" src="//learning-services-media.brightcove.com/doc-assets/player-development/playback/troubleshooting/domain-restrictions-messaging/domain-restrictions-error-network.png"/></figure>
+    <figure class="bcls-figure"><img class="bcls-image" alt="ficha de red de consola de mensajes de dominio" src="/assets/images/playback/troubleshooting/domain-restrictions-messaging/domain-restrictions-error-network.png"/></figure>
     <p>Este documento implementa una estrategia para que el usuario sepa que el vídeo que está tratando de ver está restringido por dominio.</p>
   </section>
   <section class="bcls-section">
     <h2 id="errorobject">Objeto de error del catálogo del reproductor</h2>
     <p>La clave para crear un mensaje fácil de usar es el <code translate="No">error</code> objeto contenido en Brightcove Player <code translate="No">catalog</code>. A continuación se muestra un ejemplo de error de restricción de dominio en una captura de pantalla de la consola de un navegador. Observe que el objeto contiene una <code translate="No">data</code> propiedad, que a su vez contiene una matriz. La matriz contendrá el último error que encontró el catalog cargando un vídeo. En el ejemplo, verá que el elemento de la matriz informa de un problema de restricción de dominio.</p>
-    <figure class="bcls-figure"><img class="bcls-image" alt="objeto de error de catalog" src="//learning-services-media.brightcove.com/doc-assets/player-development/playback/troubleshooting/domain-restrictions-messaging/domain-restrictions-catalog-error.png"/></figure>
+    <figure class="bcls-figure"><img class="bcls-image" alt="objeto de error de catalog" src="/assets/images/playback/troubleshooting/domain-restrictions-messaging/domain-restrictions-catalog-error.png"/></figure>
   </section>
   <section class="bcls-section">
     <h2 id="bccatalogerror">Manejar error de catálogo de código</h2>
@@ -1221,7 +1221,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     });
   &lt;/script&gt;</code></pre>
     <p>La siguiente captura de pantalla muestra el mensaje que se muestra debajo del reproductor.</p>
-    <figure class="bcls-figure"><img class="bcls-image" alt="error debajo del jugador" src="//learning-services-media.brightcove.com/doc-assets/player-development/playback/troubleshooting/domain-restrictions-messaging/domain-restrictions-html-message.png"/></figure>
+    <figure class="bcls-figure"><img class="bcls-image" alt="error debajo del jugador" src="/assets/images/playback/troubleshooting/domain-restrictions-messaging/domain-restrictions-html-message.png"/></figure>
   </section>
   <section class="bcls-section">
     <h2 id="errorplugin">Mensaje a través del plugin de errores</h2>
@@ -1257,12 +1257,12 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     });
   &lt;/script&gt;</code></pre>
     <p>La siguiente captura de pantalla muestra la visualización del plugin de error del error definido.</p>
-    <figure class="bcls-figure"><img class="bcls-image" alt="error definido" src="//learning-services-media.brightcove.com/doc-assets/player-development/playback/troubleshooting/domain-restrictions-messaging/domain-restrictions-errors-plugin.png"/></figure>
+    <figure class="bcls-figure"><img class="bcls-image" alt="error definido" src="/assets/images/playback/troubleshooting/domain-restrictions-messaging/domain-restrictions-errors-plugin.png"/></figure>
   </section>
   <section id="generalerror" class="bcls-section">
     <h2>Visualización de errores generales</h2>
     <p>Las dos secciones anteriores tratan específicamente de mostrar el error generado cuando se visualiza un vídeo georestringido desde una configuración regional restringida. Algunos errores no proporcionan el nivel de detalle que tiene la restricción de dominio. Aquí se muestra un objeto de error de ejemplo de este tipo. Observe que el campo de <strong>datos</strong> está vacío, mientras que con el error de restricción de dominio contenía información de error clave.</p>
-    <figure class="bcls-figure"><img class="bcls-image" alt="objeto de error general" src="//learning-services-media.brightcove.com/doc-assets/player-development/playback/troubleshooting/domain-restrictions-messaging/domain-restrictions-general-error.png"/></figure>
+    <figure class="bcls-figure"><img class="bcls-image" alt="objeto de error general" src="/assets/images/playback/troubleshooting/domain-restrictions-messaging/domain-restrictions-general-error.png"/></figure>
     <p>El siguiente código muestra cómo mostrar información desde <code translate="No">catalog.error</code> cualquier nivel de detalle. En un alto nivel, el código realiza lo siguiente:</p>
     <ul>
       <li>Comprueba si se ha producido un error de catalog.</li>
@@ -1292,7 +1292,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     });
   &lt;/script&gt;</code></pre>
     <p>La siguiente captura de pantalla muestra el mensaje de error general que se muestra en HTML. Por supuesto, también puede utilizar el plugin de errores para mostrar el mensaje, como se muestra la sección anterior de este documento.</p>
-    <figure class="bcls-figure"><img class="bcls-image" alt="mensaje de error general muestra debajo del reproductor" src="//learning-services-media.brightcove.com/doc-assets/player-development/playback/troubleshooting/domain-restrictions-messaging/domain-restrictions-general-message.png"/></figure>
+    <figure class="bcls-figure"><img class="bcls-image" alt="mensaje de error general muestra debajo del reproductor" src="/assets/images/playback/troubleshooting/domain-restrictions-messaging/domain-restrictions-general-message.png"/></figure>
   </section>
 </article>
 

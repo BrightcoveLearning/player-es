@@ -1157,16 +1157,16 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
   <section class="bcls-section">
     <h2 id="View_player_information">Ver información del jugador</h2>
     <p>Para mostrar la información del reproductor, haga clic derecho en el reproductor y seleccione <strong>Información del jugador</strong>, como se muestra en esta captura de pantalla.</p>
-    <figure class="bcls-figure"><img class="bcls-image" alt="Seleccione Información del jugador en el menú contextual" src="//learning-services-media.brightcove.com/doc-assets/player-development/playback/player-info-modal/context-menu.png"/></figure>
+    <figure class="bcls-figure"><img class="bcls-image" alt="Seleccione Información del jugador en el menú contextual" src="/assets/images/playback/player-info-modal/context-menu.png"/></figure>
     <aside class="bcls-aside bcls-aside--information">Nota: En el móvil puede usar la pulsación larga para abrir el modal.</aside>
     <p>Una vez que seleccione <strong>Información del jugador</strong> , verá la ventana modal que contiene información sobre el reproductor, como se muestra en esta captura de pantalla.</p>
-    <figure class="bcls-figure"><img class="bcls-image" alt="Información del jugador en modal" src="//learning-services-media.brightcove.com/doc-assets/player-development/playback/player-info-modal/modal-with-info.png"/></figure>
+    <figure class="bcls-figure"><img class="bcls-image" alt="Información del jugador en modal" src="/assets/images/playback/player-info-modal/modal-with-info.png"/></figure>
     <aside class="bcls-aside bcls-aside--information">Nota: Sólo los complementos suministrados por Brightcove que formen parte de la configuración aparecerán en la sección <strong>Plugins</strong> . Si agrega un complemento de Brightcove en el JavaScript de una página HTML, NO aparecerá en la lista. Los complementos desarrollados por el cliente, aunque aparezcan como parte de la configuración del jugador, NO aparecerán.</aside>
   </section>
   <section id="Close_the_modal_window" class="bcls-section">
     <h2>Cerrar la ventana modal</h2>
     <p>Cierre el modal presionando la tecla <strong>ESC</strong> o haciendo clic en el icono de cerrar en la parte superior izquierda.</p>
-    <figure class="bcls-figure"><img class="bcls-image" alt="Cerrar icono" src="//learning-services-media.brightcove.com/doc-assets/player-development/playback/player-info-modal/close-modal.png"/></figure>
+    <figure class="bcls-figure"><img class="bcls-image" alt="Cerrar icono" src="/assets/images/playback/player-info-modal/close-modal.png"/></figure>
   </section>
   <section class="bcls-section">
     <h2 id="Alter_the_context_menu">Alterar el menú contextual</h2>
@@ -1181,7 +1181,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     <p>Si desea evitar que aparezca el menú contextual de información del jugador, puede realizar una de las siguientes acciones:</p>
     <h4>Usar el Editor JSON</h4>
     <p>Altere la configuración del reproductor añadiendo la propiedad resaltada (asegúrese de guardar el cambio):</p>
-    <figure class="bcls-figure"><img class="bcls-image" alt="JSON Editor sin depurador" src="//learning-services-media.brightcove.com/doc-assets/player-development/playback/player-info-modal/json-editor-no-debugger.png"/></figure>
+    <figure class="bcls-figure"><img class="bcls-image" alt="JSON Editor sin depurador" src="/assets/images/playback/player-info-modal/json-editor-no-debugger.png"/></figure>
     <h4>Usar rizo</h4>
     <pre class="line-numbers">
 <code class="language-bash" translate="No">curl \
@@ -1193,7 +1193,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
   }' \
   https://players.api.brightcove.com/v2/accounts/$ACCOUNT_ID/players/$PLAYER_ID/configuration</code></pre>
     <aside class="bcls-aside bcls-aside--information">Nota: Siempre que realice un cambio en un reproductor usando curl, debe volver a publicar el reproductor. Puede hacerlo en Studio y verá que su reproductor está marcado como necesario publicar en la columna Estado:<strong></strong>
-      <figure class="bcls-figure"><img class="bcls-image" alt="Las muestras de estado deben publicarse" src="//learning-services-media.brightcove.com/doc-assets/player-development/playback/player-info-modal/needs-to-be-published.png"/></figure>
+      <figure class="bcls-figure"><img class="bcls-image" alt="Las muestras de estado deben publicarse" src="/assets/images/playback/player-info-modal/needs-to-be-published.png"/></figure>
       <p>También puede usar curl para publicar su reproductor:</p>
       <pre class="line-numbers">
 <code class="language-bash" translate="No">curl \
@@ -1206,7 +1206,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     <p>Si desea evitar que aparezca la opción de menú <strong>Acerca de Brightcove</strong> , puede realizar una de las siguientes acciones:</p>
     <h4>Usar el Editor JSON</h4>
     <p>Altere la configuración del reproductor añadiendo la propiedad resaltada (asegúrese de guardar el cambio):</p>
-    <figure class="bcls-figure"><img class="bcls-image" alt="JSON Editor sin marca de Brightcove Player" src="//learning-services-media.brightcove.com/doc-assets/player-development/playback/player-info-modal/json-editor-no-bc-branding.png"/></figure>
+    <figure class="bcls-figure"><img class="bcls-image" alt="JSON Editor sin marca de Brightcove Player" src="/assets/images/playback/player-info-modal/json-editor-no-bc-branding.png"/></figure>
     <h4>Usar rizo</h4>
     <pre class="line-numbers">
 <code class="language-bash" translate="No">curl \
@@ -1218,7 +1218,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
   }' \
   https://players.api.brightcove.com/v2/accounts/$ACCOUNT_ID/players/$PLAYER_ID/configuration</code></pre>
     <aside class="bcls-aside bcls-aside--information">Nota: Siempre que realice un cambio en un reproductor usando curl, debe volver a publicar el reproductor. Puede hacerlo en Studio y verá que su reproductor está marcado como necesario publicar en la columna Estado:<strong></strong>
-      <figure class="bcls-figure"><img class="bcls-image" alt="Las muestras de estado deben publicarse" src="//learning-services-media.brightcove.com/doc-assets/player-development/playback/player-info-modal/needs-to-be-published.png"/></figure>
+      <figure class="bcls-figure"><img class="bcls-image" alt="Las muestras de estado deben publicarse" src="/assets/images/playback/player-info-modal/needs-to-be-published.png"/></figure>
       <p>También puede usar curl para publicar su reproductor:</p>
       <pre class="line-numbers">
 <code class="language-bash" translate="No">curl \
