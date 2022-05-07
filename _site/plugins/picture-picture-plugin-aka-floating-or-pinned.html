@@ -1,1138 +1,625 @@
-﻿<!doctype html>
-<html lang="es-es">
+<!doctype html>
+<html lang="en-us">
 
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
+  <meta name="description" content="En este tema, aprenderá a utilizar el complemento de imagen en imagen para habilitar este modo para Brightcove Player.">
   
-  <title>Plugin de imagen en imagen (también conocido como «flotante» o «anclado»)</title>
+  <title>Complemento de imagen en imagen (también conocido como "flotante" o "fijado")</title>
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <link rel="manifest" href="/site.webmanifest">  
-  <link data-react-helmet="true" rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500&amp;display=swap">
+<link rel="preconnect" href="https://fonts.gstatic.com"> 
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/prism.css">
   <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/styles.css">
   <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/landing-page.css">
   <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/tabs.css">
   <link rel="stylesheet" href="/assets/css/local.css">
-  <link data-react-helmet="true" rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500&display=swap">
+  <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap" rel="stylesheet">
-  <script src="https://kit.fontawesome.com/381443caa8.js" crossorigin="anonymous"></script>
-  <script src="https://support.brightcove.com/site-assets/js/site/google-analytics.js"></script>
+  
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-2728311-17"></script>
+<script>
+  window.dataLayer = Window.DataLayer || []; function gtag (){dataLayer.push(arguments);} gtag ('js', new Date ()); gtag ('config', 'UA-2728311-17');
+</script>
   <script src="/assets/js/sajari-head.js"></script>
+  <script src="https://unpkg.com/feather-icons"></script>
 </head>
 
 <body class="body">
 
 <header>
   <div class="div-header">
-    <a href="/"><img class="product-logo" src="https://support.brightcove.com/site-assets/images/site/product-logos/Player_Logo.svg" alt="logotipo del producto" style="max-height: 100px;max-width: 232px;"/></a>
+    <a href="/"><img class="product-logo" src="https://support.brightcove.com/site-assets/images/site/product-logos/SVG/COVE004_Brightcove_Player_Logo_RGB_K.svg" alt="Brightcove" style="max-width: 200px;"></a>
 <!-- GTranslate: https://gtranslate.io/ -->
-<select onchange="doGTranslate(this);"><option value="">Seleccionar idioma</option><option value="en|en" translate="No">English</option><option value="en|zh-TW" translate="No">繁體中文</option><option value="en|fr" translate="No">Français</option><option value="en|de" translate="No">Deutsche</option><option value="en|ja" translate="No">日本語</option><option value="en|ko" translate="No">한국어</option><option value="en|es" translate="No">Español</option></select>
+<select onchange="doGTranslate(this);"><option value="">Seleccionar idioma</option><option value="en|en" translate="No">Inglés</option><option value="en|zh-TW" translate="No">繁體中文</option><option value="en|fr" translate="No">Français</option><option value="en|de" translate="No">Deutsche</option><option value="en|ja" translate="No">日本語</option><option value="en|ko" translate="No">한국어</option><option value="en|es" translate="No">español</option></select>
 
 <script>
-/* <![CDATA[ */
-function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;if(lang_pair=='')return;var lang=lang_pair.split('|')[1];var plang=location.hostname.split('.')[0];if(plang.length !=2 && plang.toLowerCase() != 'zh-cn' && plang.toLowerCase() != 'zh-tw')plang='en';location.href=location.protocol+'//'+(lang == 'en' ? '' : lang+'.')+location.hostname.replace('www.', '').replace(RegExp('^' + plang + '\\.'), '')+location.pathname+location.search;}
-/* ]]> */
+/*<![CDATA[ */ función dogTranslate (lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;if(lang_pair=='')return;var lang=lang_pair.split('|')[1];var plang=location.hostname.split('.')[0];if(plang.length !=2 && plang.toLowerCase() != 'zh-cn' && plang.toLowerCase() != 'zh-tw')plang='en';location.href=location.protocol+'//'+(lang == 'en' ? '' : lang+'.')+location.hostname.replace('www.', '').replace(RegExp('^' + plang + '\\.'), '')+location.pathname+location.search;} /*]]> */
 </script>
 
-    
 
 
-    <span class="secondary-nav"><a href="https://supportportal.brightcove.com/s/login/?"><img src="https://support.brightcove.com/site-assets/images/site/support.png" alt="soporte"/> Contactar con Soporte</a> <span style="vertical-align: top;margin-left:1em;margin-right:1em;">|</span> <a href="https://status.brightcove.com/">Estado<img src="https://support.brightcove.com/site-assets/images/site/status.png" alt="estado del sistema"/> del sistema</a></span> <br/>
+    <span class="secondary-nav"><a href="https://supportportal.brightcove.com/s/login/?"><i data-feather="help-circle"></i> Contacta con el soporte</a> <span style="vertical-align: middle;margin-left:1em;margin-right:1em;">|</span> <a href="https://status.brightcove.com/"><i data-feather="cloud"></i> Estado del sistema</a></span>
+    <br>
     
   </div>
   <nav aria-label="breadcrumb">
     <ol class="breadcrumb arr-right">
       
-      <li class="breadcrumb-item"><a href="/">Inicio</a></li>
+      <li class="breadcrumb-item first-item"><a href="/">Inicio</a></li>
+        
+      <li class="breadcrumb-item"><a href="/plugins/">Plugins</a></li>
       
-      
-      
-      <li class="breadcrumb-item">Plugins<a href="/plugins/"></a></li>
-      
-      <li class="breadcrumb-item active" aria-current="page">Plugin de imagen en imagen (también conocido como «flotante» o «anclado»)</li>
+      <li class="breadcrumb-item active" aria-current="page">Complemento de imagen en imagen (también conocido como "flotante" o "fijado")</li>
     </ol>
   </nav>
 </header>
 <div class="container">
     <div class="row">
-            <div class="col-sm-3 left-side-bar">
-        <select id="site_select" class="bcls-select" style="margin-right: 1rem;">
-          <option value="">Otros documentos de Brightcove</option>
-          
-            
-              <option value="https://support.brightcove.com">Documentación Inicio</option>
-            
-          
-            
-              <option value="https://audience.support.brightcove.com">Audiencia de Brightcove</option>
-            
-          
-            
-              <option value="https://beacon.support.brightcove.com">Baliza Brightcove</option>
-            
-          
-            
-              <option value="https://campaign.support.brightcove.com">Campaña de Brightcove</option>
-            
-          
-            
-              <option value="https://engage.support.brightcove.com">Brightcove Engage</option>
-            
-          
-            
-              <option value="https://live.support.brightcove.com">Brightcove Live</option>
-            
-          
-            
-              <option value="https://gallery.support.brightcove.com">Brightcove Gallery</option>
-            
-          
-            
-              <option value="https://ssai.support.brightcove.com">Brightcove SSAI</option>
-            
-          
-            
-              <option value="https://social.support.brightcove.com">Brightcove Social</option>
-            
-          
-            
-              <option value="https://studio.support.brightcove.com">Video Cloud Studio</option>
-            
-          
-            
-              <option value="https://player.support.brightcove.com">Desarrollo de jugadores de Brightcove</option>
-            
-          
-            
-              <option value="https://apis.support.brightcove.com">API para la plataforma de Video Cloud</option>
-            
-          
-            
-              <option value="https://sdks.support.brightcove.com">SDK de dispositivos de Video Cloud</option>
-            
-          
-            
-              <option value="https://integrations.support.brightcove.com">Integraciones y conectores CMS</option>
-            
-          
-            
-              <option value="https://general.support.brightcove.com">Información general de Video Cloud</option>
-            
-          
-            
-              <option value="https://zencoder.support.brightcove.com">Zencoder</option>
-            
-          
-        </select>
-
-        <nav class="sidenav" id="side_nav">
-          
-            
-            <h5><a href="/index.html">Inicio</a></h5>
-            
-          
-            
-              <select id="site_select" class="bcls-select" style="margin-right: 1rem;">
-					<option value="">기타 브라이트코브 문서</option>
-					
-						
-							<option value="https://support.brightcove.com">설명서 홈</option>
-						
-					
-						
-							<option value="https://audience.support.brightcove.com">브라이트코브 대상</option>
-						
-					
-						
-							<option value="https://beacon.support.brightcove.com">브라이트코브 비콘</option>
-						
-					
-						
-							<option value="https://campaign.support.brightcove.com">브라이트코브 캠페인</option>
-						
-					
-						
-							<option value="https://engage.support.brightcove.com">브라이트코브 참여</option>
-						
-					
-						
-							<option value="https://live.support.brightcove.com">Brightcove Live</option>
-						
-					
-						
-							<option value="https://gallery.support.brightcove.com">Brightcove Gallery</option>
-						
-					
-						
-							<option value="https://ssai.support.brightcove.com">Brightcove SSAI</option>
-						
-					
-						
-							<option value="https://social.support.brightcove.com">브라이트코브 소셜</option>
-						
-					
-						
-							<option value="https://studio.support.brightcove.com">비디오 클라우드 스튜디오</option>
-						
-					
-						
-							<option value="https://player.support.brightcove.com">브라이트코브 플레이어 개발</option>
-						
-					
-						
-							<option value="https://apis.support.brightcove.com">비디오 클라우드 플랫폼 API</option>
-						
-					
-						
-							<option value="https://sdks.support.brightcove.com">비디오 클라우드 디바이스 SDK</option>
-						
-					
-						
-							<option value="https://integrations.support.brightcove.com">통합 및 CMS 커넥터</option>
-						
-					
-						
-							<option value="https://general.support.brightcove.com">비디오 클라우드 일반 정보</option>
-						
-					
-						
-							<option value="https://zencoder.support.brightcove.com">Zencoder</option>
-						
-			<h5 class="submenu-header"><a href="/getting-started/index.html"><strong>+</strong> Empezar</a></h5>		
+      <div class="col-sm-3 left-side-bar">
+				<select id="site_select" class="bcls-select" style="margin-left: 1rem;">
+					<option value="">Otros documentos de Brightcove</option>
+					 
+							<option value="https://support.brightcove.com">Página principal de documentación</option>
+						  
+							<option value="">— NUBE DE VÍDEO —</option>
+						  
+							<option value="https://studio.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;Video Cloud Studio</option>
+						  
+							<option value="https://player.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;Desarrollo de jugadores Brightcove</option>
+						  
+							<option value="https://apis.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;API de plataforma de Video Cloud</option>
+						  
+							<option value="https://sdks.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;SDK de dispositivos de Video Cloud</option>
+						  
+							<option value="https://integrations.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;Integraciones y conectores CMS</option>
+						  
+							<option value="https://general.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;Información general de Video Cloud</option>
+						  
+							<option value="">— ELEMENTOS ESENCIALES DE VÍDEO —</option>
+						  
+							<option value="https://beacon.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;Baliza Brightcove</option>
+						  
+							<option value="https://live.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;Brightcove En directo</option>
+						  
+							<option value="https://zencoder.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;Zencoder</option>
+						  
+							<option value="">— COMPLEMENTOS DE VIDEO CLOUD —</option>
+						  
+							<option value="https://campaign.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;Campaña Brightcove</option>
+						  
+							<option value="https://engage.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;Brightcove Engage</option>
+						  
+							<option value="https://gallery.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;Galería Brightcove</option>
+						  
+							<option value="https://studio.support.brightcove.com/social/index.html">&nbsp;&nbsp;&nbsp;&nbsp;Brightcove Social</option>
+						  
+							<option value="https://ssai.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;SSAI de Brightcove</option>
+						 
 				</select>
         <nav class="sidenav" id="side_nav">
+           
+            <h5><a href="/index.html">Inicio</a></h5>
+              
+              <h5 class="submenu-header"><a href="/getting-started/index.html"><span style="color:#8E9093">+</span>&nbsp;&nbsp;Empezar</a></h5>
               <ul class="sidenav-submenu" style="display:none;">
-                
-                  
+                 
                     <li><a href="/training/developer-basics-videos.html">Vídeos básicos del desarrollador</a></li>
-                  
-                
-                  
-                    <li>¿Qué es Brightcove Player?<a href="/getting-started/what-brightcove-player.html"></a></li>
-                  
-                
-                  
-                    <li>Visión general:<a href="/getting-started/overview-brightcove-player.html"> Reproductor de Brightcove</a></li>
-                  
-                
-                  
-                    <li>Guía de aprendizaje:<a href="/getting-started/learning-guide-video-advertising.html"> Publicidad en vídeo</a></li>
-                  
-                
-                  
-                    <li>Visión general:<a href="/getting-started/overview-brightcove-player-plugins.html"> Complementos de Brightcove Player</a></li>
-                  
-                
-                  
-                    <li>Vídeos de capacitación sobre desarrollo de jugadores<a href="/training/player-development-training-videos.html"></a></li>
-                  
-                
-                  
-                    <li>Paso a paso:<a href="/getting-started/step-step-brightcove-player.html"> Reproductor de Brightcove</a></li>
-                  
-                
-                  
-                    <li>Paso a paso:<a href="/getting-started/step-step-player-customization.html"> Personalización del reproductor</a></li>
-                  
-                
-                  
-                    <li>Capacitación:<a href="/training/training-demand-developing-brightcove-player.html"> Desarrollar con Brightcove Player</a></li>
-                  
-                
-                  
-                    <li><a href="/getting-started/learning-guide-using-rest-apis.html">Guía de aprendizaje: Uso de las API REST</a></li>
-                  
-                
-              </ul>
-            
-          
-            
-              <h5 class="submenu-header">Aprender los conceptos básicos +<a href="/basics/index.html"><strong></strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    <li><a href="/basics/developer-basics-advanced-player-code.html">Código del reproductor avanzado</a></li>
-                  
-                
-                  
-                    <li><a href="/basics/developer-basics-autoplaying-video.html">Reproducción automática de un vídeo</a></li>
-                  
-                
-                  
-                    <li><a href="/basics/developer-basics-custom-plugin-converting-code.html">Plugin personalizado - Conversión de código</a></li>
-                  
-                
-                  
-                    <li><a href="/basics/developer-basics-custom-plugin-passing-data.html">Plugin personalizado - Pasar datos</a></li>
-                  
-                
-                  
-                    <li><a href="/basics/developer-basics-custom-plugin-using-studio.html">Plugin personalizado - Usar Studio</a></li>
-                  
-                
-                  
-                    <li><a href="/basics/developer-basics-custom-plugin-why-and-how.html">Plugin personalizado - Por qué y cómo</a></li>
-                  
-                
-                  
-                    <li><a href="/training/developer-basics-videos.html">Vídeos básicos del desarrollador</a></li>
-                  
-                
-                  
-                    <li><a href="/basics/developer-basics-generating-player-code.html">Generación de código de jugador</a></li>
-                  
-                
-                  
-                    <li>Preparación para escribir código<a href="/basics/developer-basics-preparing-write-code.html"></a></li>
-                  
-                
-              </ul>
-            
-          
-            
-              <h5 class="submenu-header">Referencias +<a href="/references/index.html"><strong></strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    <li><a href="/references/brightcove-player-5-6-migration-guide.html">Guía de migración de Brightcove Player 5 a 6</a></li>
-                  
-                
-                  
-                    <li><a href="https://docs.brightcove.com/brightcove-player/current-release/index.html">Documentación de Brightcove Player API (sitio externo)</a></li>
-                  
-                
-                  
-                    <li><a href="/references/brightcove-player-cookies.html">Cookies de reproductor de Brightcove</a></li>
-                  
-                
-                  
-                    <li><a href="/references/brightcove-player-error-reference.html">Referencia de error del Reproductor de Brightcove</a></li>
-                  
-                
-                  
-                    <li><a href="https://groups.google.com/forum/embed/?place=forum/bcplayerdev#!forum/bcplayerdev">Foro de anuncios de jugadores de Brightcove</a></li>
-                  
-                
-                  
-                    <li><a href="/references/brightcove-player-system-requirements.html">Requisitos del sistema de Brightcove Player</a></li>
-                  
-                
-                  
-                    <li><a href="/references/catalog-search-architecture.html">Arquitectura de búsqueda</a></li>
-                  
-                
-                  
-                    <li>Problemas conocidos<a href="https://general.support.brightcove.com/general/known-issues-studio-brightcove-player-and-apis.html"></a></li>
-                  
-                
-                  
-                    <li>Catálogo de jugadores<a href="/references/player-catalog.html"></a></li>
-                  
-                
-                  
-                    <li>Compatibilidad con funciones de jugador por navegador<a href="/references/player-feature-support-browser.html"></a></li>
-                  
-                
-                  
-                    <li>Metadatos del reproductor de bcinfo<a href="/references/player-metadata-bcinfo.html"></a></li>
-                  
-                
-                  
-                    <li>Métodos de reproductores/API de eventos (sitio externo)<a href="https://docs.brightcove.com/brightcove-player/current-release/Player.html"></a></li>
-                  
-                
-                  
-                    <li>Guía de API de lista de reproducción<a href="/references/guide-playlist-api.html"></a></li>
-                  
-                
-                  
-                    <li>Metadatos de vídeo de mediainfo<a href="/references/video-metadata-mediainfo.html"></a></li>
-                  
-                
-              </ul>
-            
-          
-            
-              <h5 class="submenu-header">Plugins +<a href="/plugins/index.html"><strong></strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    <li><a href="/plugins/360degvr-video-plugin.html">Vídeo 360º</a></li>
-                  
-                
-                  
-                    <li><a href="/plugins/ad-only-plugin.html">Sólo anuncio</a></li>
-                  
-                
-                  
-                    <li><a href="/plugins/advertising-freewheel-plugin.html">Publicidad con el plugin FreeWheel</a></li>
-                  
-                
-                  
-                    <li><a href="/plugins/advertising-ima3-plugin.html">Publicidad con el complemento IMA3</a></li>
-                  
-                
-                  
-                    <li>Actualización a la versión 3 del complemento IMA3<a href="/plugins/upgrading-ima3-plugin-version-3.html"></a></li>
-                  
-                
-                  
-                    <li><a href="/plugins/implementing-server-side-ads-brightcove-player.html">Publicidad con SSAI</a></li>
-                  
-                
-                  
-                    <li><a href="/plugins/chromecast-plugin-brightcove-player.html">Chromecast</a></li>
-                  
-                
-                  
-                    <li><a href="/plugins/custom-endscreen-plugin.html">Pantalla final personalizada</a></li>
-                  
-                
-                  
-                    <li><a href="/plugins/display-error-messages-plugin.html">Mostrar mensajes de error</a></li>
-                  
-                
-                  
-                    <li><a href="/plugins/display-thumbnail-previews-plugin.html">Mostrar vistas previas en miniatura</a></li>
-                  
-                
-                  
-                    <li><a href="/plugins/configuring-brightcove-player-drm.html">DRM</a></li>
-                  
-                
-                  
-                    <li><a href="/plugins/google-tag-manager-plugin-brightcove-player.html">Administrador de etiquetas de Google</a></li>
-                  
-                
-                  
-                    <li><a href="/plugins/hls-plugin.html">HLS</a></li>
-                  
-                
-                  
-                    <li>DVRUX en vivo<a href="/plugins/live-dvrux-plugin.html"></a></li>
-                  
-                
-                  
-                    <li>Superposición<a href="/plugins/display-overlay-plugin.html"></a></li>
-                  
-                
-                  
-                    <li>Visión general:<a href="/plugins/overview-brightcove-player-plugins.html"> Plugins de jugador</a></li>
-                  
-                
-                  
-                    <li>Imagen en imagen<a href="/plugins/picture-picture-plugin-aka-floating-or-pinned.html"></a></li>
-                  
-                
-                  
-                    <li>Pruebas de versión de reproductor/plugin<a href="/plugins/playerplugin-version-testing.html"></a></li>
-                  
-                
-                  
-                    <li>IU de lista de reproducción<a href="/plugins/playlist-ui-plugin.html"></a></li>
-                  
-                
-                  
-                    <li>Registro de cambios del complemento<a href="/plugins/changelog/index.html"></a></li>
-                  
-                
-                  
-                    <li>Registro de complementos<a href="/plugins/plugin-registry.html"></a></li>
-                  
-                
-                  
-                    <li>Referencia de versión del complemento<a href="/plugins/plugin-version-reference.html"></a></li>
-                  
-                
-                  
-                    <li>Selección de calidad<a href="/plugins/quality-selection-plugin.html"></a></li>
-                  
-                
-                  
-                    <li>Redes Sociales<a href="/plugins/social-sharing-plugin.html"></a></li>
-                  
-                
-                  
-                    <li>Tealium Tag Manager<a href="/plugins/tealium-plugin-brightcove-player.html"></a></li>
-                  
-                
-                  
-                    <li>Generador de esquemas SEO de vídeo<a href="/plugins/video-seo-schema-generator-plugin.html"></a></li>
-                  
-                
-              </ul>
-            
-          
-            
-              <h5 class="submenu-header"><a href="/advertising/index.html">Publicidad <strong>+</strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    <li><a href="/advertising/ad-events-and-ad-objects.html">Eventos de anuncio y objetos de anuncio</a></li>
-                  
-                
-                  
-                    <li><a href="/plugins/ad-only-plugin.html">Plugin solo para anuncios</a></li>
-                  
-                
-                  
-                    <li><a href="/plugins/advertising-freewheel-plugin.html">Publicidad con el plugin FreeWheel</a></li>
-                  
-                
-                  
-                    <li><a href="/plugins/advertising-ima3-plugin.html">Publicidad con el complemento IMA3</a></li>
-                  
-                
-                  
-                    <li><a href="/advertising/client-side-preroll-with-live-ssai.html">Anuncios pre-roll del lado del cliente con SSAI en vivo</a></li>
-                  
-                
-                  
-                    <li><a href="/advertising/displaying-ads-using-ad-cue-points.html">Visualización de anuncios mediante puntos de anuncio</a></li>
-                  
-                
-                  
-                    <li><a href="/advertising/flash-no-longer-valid-ima.html">Flash ya no es válido con IMA</a></li>
-                  
-                
-                  
-                    <li><a href="/advertising/guide-ad-partner-integration.html">Guía: Integración de socios publicitarios</a></li>
-                  
-                
-                  
-                    <li><a href="/advertising/guide-contrib-ads-migration.html">Guía: migración de contrib-ads</a></li>
-                  
-                
-                  
-                    <li><a href="/plugins/implementing-server-side-ads-brightcove-player.html">Implementación de SSAI con Brightcove Player</a></li>
-                  
-                
-                  
-                    <li><a href="/advertising/jump-start-header-bidding-ad.html">Inicio de salto: Anuncio de puja de encabezado</a></li>
-                  
-                
-                  
-                    <li><a href="/advertising/jump-start-outstream-ad.html">Inicio de salto: Anuncio Outstream</a></li>
-                  
-                
-                  
-                    <li><a href="/advertising/jump-start-pre-roll-ad.html">Inicio de salto: Anuncio de pre-rollo</a></li>
-                  
-                
-                  
-                    <li>Problemas conocidos:<a href="/advertising/known-issues-server-side-ad-insertion-ssai.html"> Inserción de anuncios en el lado del servidor (SSAI)</a></li>
-                  
-                
-                  
-                    <li>Guía de aprendizaje:<a href="/getting-started/learning-guide-video-advertising.html"> Publicidad en vídeo</a></li>
-                  
-                
-                  
-                    <li>Paso a paso:<a href="/advertising/step-step-implementing-advertising.html"> Implementar publicidad</a></li>
-                  
-                
-                  
-                    <li>Prueba de complementos publicitarios previos al lanzamiento<a href="/advertising/testing-pre-release-advertising-plugins.html"></a></li>
-                  
-                
-                  
-                    <li>Uso de DFP Premium con Brightcove Player<a href="/advertising/using-dfp-premium-brightcove-player.html"></a></li>
-                  
-                
-                  
-                    <li>Uso de Live SSAI y Advanced Player Toolkit<a href="/advertising/using-player-enhancements-live-ssai-brightcove-player.html"></a></li>
-                  
-                
-                  
-                    <li>Validación de etiquetas de anuncio SSAI de Video Cloud<a href="/advertising/video-cloud-ssai-ad-tag-validation.html"></a></li>
-                  
-                
-              </ul>
-            
-          
-            
-              <h5 class="submenu-header">Publicar vídeos y reproductores +<a href="/publish/index.html"><strong></strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    <li><a href="/publish/assigning-video-player-programmatically.html">Asignación de un vídeo al reproductor mediante programación</a></li>
-                  
-                
-                  
-                    <li><a href="/publish/available-options-advanced-page-embed-code.html">Opciones disponibles para el código de inserción avanzado (en página)</a></li>
-                  
-                
-                  
-                    <li><a href="/publish/available-options-standard-iframe-embed-code.html">Opciones disponibles para el código de inserción estándar (iframe)</a></li>
-                  
-                
-                  
-                    <li><a href="/publish/brightcove-player-loader.html">Cargador de jugadores de Brightcove</a></li>
-                  
-                
-                  
-                    <li><a href="/publish/bulk-updating-brightcove-default-player.html">Actualización masiva del reproductor predeterminado de Brightcove</a></li>
-                  
-                
-                  
-                    <li><a href="https://studio.support.brightcove.com/publish/choosing-correct-embed-code.html">Elegir el código de incrustación correcto</a></li>
-                  
-                
-                  
-                    <li>Atrasando la instanciación del jugador<a href="/publish/delaying-player-instantiation.html"></a></li>
-                  
-                
-                  
-                    <li>Jugador previo al lanzamiento<a href="/publish/pre-release-player.html"></a></li>
-                  
-                
-                  
-                    <li>Estrategias de sindicación<a href="/publish/syndication-strategies.html"></a></li>
-                  
-                
-                  
-                    <li>Uso de un reproductor que no sea de Brightcove<a href="/publish/using-non-brightcove-player.html"></a></li>
-                  
-                
-                  
-                    <li>Uso de varios jugadores en una página<a href="https://studio.support.brightcove.com/publish/using-multiple-players-one-page.html"></a></li>
-                  
-                
-                  
-                    <li>Uso de Id. de referencia<a href="https://studio.support.brightcove.com/publish/using-reference-ids.html"></a></li>
-                  
-                
-                  
-                    <li>Inspector de copias de vídeo<a href=""></a></li>
-                  
-                
-              </ul>
-            
-          
-            
-              <h5 class="submenu-header">Solución de problemas +<a href="/troubleshooting/index.html"><strong></strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    <li><a href="/troubleshooting/brightcove-playback-technology-app.html">Aplicación de tecnología de reproducción Brightcove</a></li>
-                  
-                
-                  
-                    <li><a href="/references/brightcove-player-error-reference.html">Referencia de error del Reproductor de Brightcove</a></li>
-                  
-                
-                  
-                    <li><a href="/troubleshooting/brightcove-player-information-modal.html">Brightcove Información del Jugador Modal</a></li>
-                  
-                
-                  
-                    <li><a href="/troubleshooting/brightcove-player-troubleshooting-guide.html">Guía de solución de problemas de Brightcove Player</a></li>
-                  
-                
-                  
-                    <li><a href="/troubleshooting/creating-charles-log.html">Creación de un Charles Log</a></li>
-                  
-                
-                  
-                    <li><a href="/troubleshooting/creating-network-log.html">Creación de un registro de red</a></li>
-                  
-                
-                  
-                    <li><a href="/troubleshooting/domain-restrictions-messaging.html">Mensajería de restricciones de dominio</a></li>
-                  
-                
-                  
-                    <li><a href="/plugins/display-error-messages-plugin.html">Mostrar plugin de mensajes de error</a></li>
-                  
-                
-                  
-                    <li>Configuración manual de la versión del reproductor<a href="/troubleshooting/manually-setting-player-version.html"></a></li>
-                  
-                
-                  
-                    <li>Pruebas de versión de reproductor/plugin<a href="/plugins/playerplugin-version-testing.html"></a></li>
-                  
-                
-                  
-                    <li>Propiedades informativas del jugador<a href="/troubleshooting/player-informational-properties.html"></a></li>
-                  
-                
-                  
-                    <li>Ejemplo:<a href="/code-samples/brightcove-player-sample-live-custom-error-message.html"> Mensaje de error personalizado en vivo</a></li>
-                  
-                
-                  
-                    <li>Paso a paso:<a href="/troubleshooting/step-step-brightcove-player-debugger.html"> Depurador de reproductor de Brightcove</a></li>
-                  
-                
-                  
-                    <li>Ejecución de un seguimiento de ruta de red<a href="/troubleshooting/running-network-path-trace.html"></a></li>
-                  
-                
-                  
-                    <li>Uso de la referencia del reproductor<a href="/troubleshooting/using-player-reference.html"></a></li>
-                  
-                
-                  
-                    <li>Vetting Lanzamientos del jugador de Brightcove<a href="/troubleshooting/vetting-brightcove-player-releases.html"></a></li>
-                  
-                
-                  
-                    <li>Visualización de la configuración del reproductor<a href="/troubleshooting/viewing-player-configuration.html"></a></li>
-                  
-                
-              </ul>
-            
-          
-            
-              <h5 class="submenu-header">Estilo y apariencia +<a href="/styling/index.html"><strong></strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    <li><a href="/styling/customizing-player-appearance.html">Personalización de la apariencia del reproductor</a></li>
-                  
-                
-                  
-                    <li><a href="/styling/customizing-player-appearance-legacy-skin.html">Personalización del aspecto del jugador - Aspecto heredado</a></li>
-                  
-                
-                  
-                    <li>Player Styling Playground<a href="/styling/brightcove-player-sample-player-styling-playground.html"></a></li>
-                  
-                
-                  
-                    <li>Inicio rápido:<a href="/styling/quick-start-player-customization-legacy-skin.html"> Personalización del jugador: aspecto heredado</a></li>
-                  
-                
-                  
-                    <li>Paso a paso:<a href="/getting-started/step-step-player-customization.html"> Personalización del reproductor</a></li>
-                  
-                
-                  
-                    <li>Tamaño de respuesta para el reproductor de Brightcove<a href="/styling/responsive-sizing-brightcove-player.html"></a></li>
-                  
-                
-                  
-                    <li>Tamaño del jugador<a href="/styling/sizing-player.html"></a></li>
-                  
-                
-                  
-                    <li>Skins y versiones de jugador<a href="/styling/skins-and-player-versions.html"></a></li>
-                  
-                
-                  
-                    <li>Estilo de subtítulos<a href="https://studio.support.brightcove.com/media/styling-captions.html"></a></li>
-                  
-                
-                  
-                    <li>Estilo de listas de reproducción<a href="/styling/styling-playlists.html"></a></li>
-                  
-                
-              </ul>
-            
-          
-            
-              <h5 class="submenu-header">Reproducción +<a href="/playback/index.html"><strong></strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    <li><a href="/playback/autoplay-considerations.html">Consideraciones de reproducción automática</a></li>
-                  
-                
-                  
-                    <li><a href="/troubleshooting/brightcove-playback-technology-app.html">Aplicación de tecnología de reproducción Brightcove</a></li>
-                  
-                
-                  
-                    <li><a href="/playback/xdr-with-bcplayer.html">Reanudación multidispositivo con Brightcove Player</a></li>
-                  
-                
-                  
-                    <li><a href="https://studio.support.brightcove.com/publish/deep-linking.html">Vinculación profunda</a></li>
-                  
-                
-                  
-                    <li><a href="/playback/delivering-hls-video.html">Entrega de vídeo HLS</a></li>
-                  
-                
-                  
-                    <li><a href="/playback/determining-which-rendition-will-play.html">Determinar qué copia se reproducirá</a></li>
-                  
-                
-                  
-                    <li><a href="/playback/guide-playback-technology.html">Guía: Tecnología de reproducción</a></li>
-                  
-                
-                  
-                    <li><a href="/plugins/hls-plugin.html">Complemento HLS</a></li>
-                  
-                
-                  
-                    <li><a href="/playback/ios-and-brightcove-player.html">iOS y reproductor de Brightcove</a></li>
-                  
-                
-                  
-                    <li>Visión general:<a href="/playback/overview-https-support.html"> Soporte de HTTPS</a></li>
-                  
-                
-                  
-                    <li>Complemento de selección de calidad<a href="/plugins/quality-selection-plugin.html"></a></li>
-                  
-                
-                  
-                    <li>Entrega URL estática<a href="/playback/static-url-delivery.html"></a></li>
-                  
-                
-                  
-                    <li>Transmisión de contenido protegido PlayReady<a href="/playback/streaming-playready-protected-content-dynamic-delivery.html"></a></li>
-                  
-                
-                  
-                    <li>Uso del reproductor de Brightcove para TVE<a href="/playback/using-brightcove-player-tve.html"></a></li>
-                  
-                
-              </ul>
-            
-          
-            
-              <h5 class="submenu-header"><a href="/content-protection/index.html">Protección de contenido y DRM <strong>+</strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    <li><a href="https://studio.support.brightcove.com/players/configuring-player-content-restrictions.html">Configuración de Restricciones de Contenido del Reproductor</a></li>
-                  
-                
-                  
-                    <li><a href="/content-protection/creating-dash-drm-manifest-brightcove-player.html">Creación de un manifiesto DRM de DASH para el reproductor de Brightcove</a></li>
-                  
-                
-                  
-                    <li><a href="/troubleshooting/domain-restrictions-messaging.html">Mensajería de restricciones de dominio</a></li>
-                  
-                
-                  
-                    <li><a href="/plugins/configuring-brightcove-player-drm.html">Complemento DRM</a></li>
-                  
-                
-                  
-                    <li>Visión general:<a href="/content-protection/overview-content-protection.html"> Protección de contenido</a></li>
-                  
-                
-                  
-                    <li>Teclas de política<a href="/content-protection/policy-keys.html"></a></li>
-                  
-                
-                  
-                    <li>Restringir la reproducción de vídeo mediante dirección IP<a href="/content-protection/restricting-video-playback-using-ip-address.html"></a></li>
-                  
-                
-                  
-                    <li>URL firmadas y autenticación de tokens con una transmisión en directo<a href="/content-protection/signed-urls-and-token-auth-live-stream.html"></a></li>
-                  
-                
-              </ul>
-            
-          
-            
-              <h5 class="submenu-header"><a href="/coding-topics/index.html">Temas de codificación <strong>+</strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    <li><a href="/publish/brightcove-player-loader.html">Cargador de jugadores de Brightcove</a></li>
-                  
-                
-                  
-                    <li><a href="/references/catalog-search-architecture.html">Actualización de búsqueda de catálogo</a></li>
-                  
-                
-                  
-                    <li><a href="/code-samples/brightcove-player-sample-trigger-rewind-custom-event.html">Evento personalizado</a></li>
-                  
-                
-                  
-                    <li><a href="/playback/guide-playback-technology.html">Guía: Tecnología de reproducción</a></li>
-                  
-                
-                  
-                    <li>Localización de Brightcove Player<a href="/coding-topics/programmatically-localizing-brightcove-player.html"></a></li>
-                  
-                
-                  
-                    <li>Localización de complementos<a href="/coding-topics/localizing-plugins.html"></a></li>
-                  
-                
-                  
-                    <li>Eventos de jugador<a href="/coding-topics/player-events.html"></a></li>
-                  
-                
-                  
-                    <li>Visión general:<a href="/coding-topics/overview-components.html"> Componentes</a></li>
-                  
-                
-                  
-                    <li>Visión general:<a href="/playback/overview-https-support.html"> Soporte de HTTPS</a></li>
-                  
-                
-                  
-                    <li>Visión general:<a href="/coding-topics/overview-player-api.html"> Player API</a></li>
-                  
-                
-                  
-                    <li>Pasar datos al complemento<a href="/coding-topics/pass-data-plugin.html"></a></li>
-                  
-                
-                  
-                    <li>Reaccionar el cargador del jugador<a href="/coding-topics/react-player-loader.html"></a></li>
-                  
-                
-                  
-                    <li>Informes sobre configuraciones de Brightcove Player<a href="/coding-topics/reporting-brightcove-player-configurations.html"></a></li>
-                  
-                
-                  
-                    <li>RequireJS y reproductor de Brightcove<a href="/coding-topics/requirejs-and-brightcove-player.html"></a></li>
-                  
-                
-                  
-                    <li>Paso a paso:<a href="/coding-topics/step-step-plugin-development.html"> Desarrollo de complementos</a></li>
-                  
-                
-                  
-                    <li>Paso a paso:<a href="/coding-topics/step-step-videojs-plugin-generator.html"> Generador de complementos Video.js</a></li>
-                  
-                
-                  
-                    <li>Uso de los métodos bc () y getPlayer ()<a href="/coding-topics/using-bc-and-getplayer-methods.html"></a></li>
-                  
-                
-                  
-                    <li>Visualización de la configuración del reproductor<a href="/troubleshooting/viewing-player-configuration.html"></a></li>
-                  
-                
-              </ul>
-            
-          
-            
-              <h5 class="submenu-header"><a href="/general/index.html">Información general <strong>+</strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    <li><a href="https://studio.support.brightcove.com/publish/adding-application-id-player-embed-code.html">Adición de un ID de aplicación al código de incrustación del reproductor</a></li>
-                  
-                
-                  
-                    <li><a href="/general/adding-captions-videos-programmatically.html">Adición de subtítulos a vídeos mediante programación</a></li>
-                  
-                
-                  
-                    <li><a href="https://studio.support.brightcove.com/media/adding-chapters-video.html">Adición de capítulos a un vídeo</a></li>
-                  
-                
-                  
-                    <li><a href="/general/brightcove-player-6-now-default-version.html">Versión predeterminada de Brightcove Player 6</a></li>
-                  
-                
-                  
-                    <li><a href="/general/brightcove-player-accessibility.html">Accesibilidad del reproductor de Brightcove</a></li>
-                  
-                
-                  
-                    <li><a href="/plugins/custom-endscreen-plugin.html">Complemento de pantalla final personalizado</a></li>
-                  
-                
-                  
-                    <li><a href="/plugins/display-overlay-plugin.html">Complemento de superposición de visualización</a></li>
-                  
-                
-                  
-                    <li><a href="/references/guide-playlist-api.html">Guía: API de lista de reproducción</a></li>
-                  
-                
-                  
-                    <li><a href="/general/identify-and-delete-low-performing-videos.html">Identificar y eliminar vídeos de bajo rendimiento</a></li>
-                  
-                
-                  
-                    <li><a href="/general/implementing-cue-points-programmatically.html">Implementación de puntos de referencia mediante programación</a></li>
-                  
-                
-                  
-                    <li><a href="/general/implementing-playlists.html">Implementar listas de reproducción</a></li>
-                  
-                
-                  
-                    <li><a href="/general/implementing-modaldialog.html">Implementación del ModalDialog</a></li>
-                  
-                
-                  
-                    <li>HLS en vivo<a href="/general/live-hls.html"></a></li>
-                  
-                
-                  
-                    <li>Configuración de Live Stream<a href="/general/live-stream-configuration.html"></a></li>
-                  
-                
-                  
-                    <li>Varias pistas de audio<a href="/general/multiple-audio-tracks.html"></a></li>
-                  
-                
-                  
-                    <li>Guía de configuración del reproductor<a href="/general/player-configuration-guide.html"></a></li>
-                  
-                
-                  
-                    <li>Reproducir transmisiones en vivo<a href="/general/playing-live-streams.html"></a></li>
-                  
-                
-                  
-                    <li>Plugin UI de lista de reproducción<a href="/plugins/playlist-ui-plugin.html"></a></li>
-                  
-                
-                  
-                    <li>URL firmadas y autenticación de tokens con una transmisión en directo<a href="/content-protection/signed-urls-and-token-auth-live-stream.html"></a></li>
-                  
-                
-                  
-                    <li>Plugin de redes sociales<a href="/plugins/social-sharing-plugin.html"></a></li>
-                  
-                
-                  
-                    <li>Paso a paso:<a href="https://apis.support.brightcove.com/player-management/getting-started/step-step-player-management.html"> Administración de jugadores</a></li>
-                  
-                
-                  
-                    <li>Estilo de listas de reproducción<a href="/styling/styling-playlists.html"></a></li>
-                  
-                
-                  
-                    <li>Uso de un lector de pantalla con Brightcove Player<a href="/general/using-screen-reader-brightcove-player.html"></a></li>
-                  
-                
-                  
-                    <li>Versiones de la documentación de Brightcove Player<a href="/general/versions-brightcove-player-documentation.html"></a></li>
-                  
-                
-                  
-                    <li>Control de volumen<a href="/general/volume-control.html"></a></li>
-                  
-                
-              </ul>
-            
-          
-            
-              <h5 class="submenu-header"><a href="/code-samples/index.html">Ejemplos de código <strong>+</strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    <li><a href="/code-samples/index-thumb.html">Ejemplos de código por grupo</a></li>
-                  
-                
-                  
-                    <li><a href="/code-samples/index.html">Índice de ejemplo de código</a></li>
-                  
-                
-              </ul>
-            
-          
-            
-              <h5 class="submenu-header"><a href="/amp/index.html">AMP <strong>+</strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    <li><a href="/amp/amp-using-video-cloud-video.html">AMP Uso de un vídeo de Video Cloud</a></li>
-                  
-                
-                  
-                    <li><a href="/amp/amp-using-external-video.html">AMP Uso de un vídeo externo</a></li>
-                  
-                
-              </ul>
-            
-          
-            
-              <h5 class="submenu-header">Entrenamiento +<a href="/training/index.html"><strong></strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    <li><a href="/training/online-training-courses.html">Todos los cursos de formación en línea</a></li>
-                  
-                
-                  
-                    <li><a href="/training/developer-basics-videos.html">Vídeos básicos del desarrollador</a></li>
-                  
-                
-                  
-                    <li>Vídeos de capacitación sobre desarrollo de jugadores<a href="/training/player-development-training-videos.html"></a></li>
-                  
-                
-                  
-                    <li>Regístrese para la formación impartida por instructor<a href="/training/register-training.html"></a></li>
-                  
-                
-                  
-                    <li>Capacitación:<a href="/training/training-demand-developing-brightcove-player.html"> Desarrollar con Brightcove Player</a></li>
-                  
-                
-                  
-                    <li>Capacitación:<a href="https://apis.support.brightcove.com/player-management/getting-started/training-demand-quick-start-player-management.html"> Inicio rápido de la administración de reproductores</a></li>
-                  
-                
-                  
-                    <li><a href="/training/brightcove-university.html">Cursos de formación de la Universidad de Brightcove</a></li>
-                  
-                
-              </ul>
-            
-          
-            
-              <h5 class="submenu-header">Notas de la versión +<a href="/release-notes/index.html"><strong></strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    <li><a href="/release-notes/brightcove-player-release-notes.html">Brightcove Player Notas informativas</a></li>
-                  
-                
-                  
-                    <li><a href="/release-notes/brightcove-player-prerelease-notes.html">Notas previas al lanzamiento del jugador de Brightcove</a></li>
-                  
-                
-              </ul>
-            
-          
-            
-              <h5 class="submenu-header">Soporte +<a href="/support/index.html"><strong></strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
                     
-                  
-                
-                  
-                    <li>Visualización de la página Estado del Sistema de Brightcove<a href="/support/viewing-brightcove-system-status-page.html"></a></li>
-                  
-                
-                  
-                    <li><a href="/support/contact-sales.html">Contacto con Ventas</a></li>
-                  
-                
-                  
-                    <li>Apertura de un caso de soporte<a href="/support/opening-case-with-brightcove-support.html"></a></li>
-                  
-                
+                    <li><a href="/getting-started/what-brightcove-player.html">¿Qué es Brightcove Player?</a></li>
+                    
+                    <li><a href="/getting-started/overview-brightcove-player.html">Descripción general: Jugador Brightcove</a></li>
+                    
+                    <li><a href="/getting-started/learning-guide-video-advertising.html">Guía de aprendizaje: Publicidad video</a></li>
+                    
+                    <li><a href="/getting-started/overview-brightcove-player-plugins.html">Descripción general: Complementos de Brightcove Player</a></li>
+                    
+                    <li><a href="/training/player-development-training-videos.html">Videos de capacitación sobre desarrollo de jugadores</a></li>
+                    
+                    <li><a href="/getting-started/step-step-brightcove-player.html">Paso a paso: Jugador Brightcove</a></li>
+                    
+                    <li><a href="/getting-started/step-step-player-customization.html">Paso a paso: Personalización del reproductor</a></li>
+                    
+                    <li><a href="/training/training-demand-developing-brightcove-player.html">Formación: Desarrollo con Brightcove Player</a></li>
+                    
+                    <li><a href="/getting-started/learning-guide-using-rest-apis.html">Guía de aprendizaje: Usando las API REST</a></li>
+                   
               </ul>
-            
-          
+              
+              <h5 class="submenu-header"><a href="/basics/index.html"><span style="color:#8E9093">+</span>&nbsp;&nbsp;Aprende lo básico</a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                 
+                    <li><a href="/basics/developer-basics-advanced-player-code.html">Avanzado Código de jugador</a></li>
+                    
+                    <li><a href="/basics/developer-basics-autoplaying-video.html">Reproducción automática de un video</a></li>
+                    
+                    <li><a href="/basics/developer-basics-custom-plugin-converting-code.html">Complemento personalizado: conversión de código</a></li>
+                    
+                    <li><a href="/basics/developer-basics-custom-plugin-passing-data.html">Complemento personalizado: transferencia de datos</a></li>
+                    
+                    <li><a href="/basics/developer-basics-custom-plugin-using-studio.html">Complemento personalizado: uso de Studio</a></li>
+                    
+                    <li><a href="/basics/developer-basics-custom-plugin-why-and-how.html">Complemento personalizado: por qué y cómo</a></li>
+                    
+                    <li><a href="/training/developer-basics-videos.html">Vídeos básicos del desarrollador</a></li>
+                    
+                    <li><a href="/basics/developer-basics-generating-player-code.html">Generando código de jugador</a></li>
+                    
+                    <li><a href="/basics/developer-basics-preparing-write-code.html">Preparación para escribir código</a></li>
+                   
+              </ul>
+              
+              <h5 class="submenu-header"><a href="/references/index.html"><span style="color:#8E9093">+</span>&nbsp;&nbsp;Referencias</a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                 
+                    <li><a href="/references/brightcove-player-5-6-migration-guide.html">Guía de migración de Brightcove Player 5 a 6</a></li>
+                    
+                    <li><a href="/brightcove-player/current-release/index.html">Documentación de Brightcove Player API</a></li>
+                    
+                    <li><a href="/references/brightcove-player-cookies.html">Cookies de Brightcove Player</a></li>
+                    
+                    <li><a href="/references/brightcove-player-error-reference.html">Brightcove Referencia de error del jugador</a></li>
+                    
+                    <li><a href="https://groups.google.com/forum/embed/?place=forum/bcplayerdev#!forum/bcplayerdev">Foro de anuncios de jugadores de Brightcove</a></li>
+                    
+                    <li><a href="/references/brightcove-player-system-requirements.html">Requisitos del sistema de Brightcove Player</a></li>
+                    
+                    <li><a href="/references/catalog-search-architecture.html">Arquitectura de búsqueda de catálogo</a></li>
+                    
+                    <li><a href="https://general.support.brightcove.com/general/known-issues-studio-brightcove-player-and-apis.html">Problemas conocidos</a></li>
+                    
+                    <li><a href="/references/player-catalog.html">Catálogo de jugadores</a></li>
+                    
+                    <li><a href="/references/player-feature-support-browser.html">Soporte de funciones del reproductor por navegador</a></li>
+                    
+                    <li><a href="/references/player-metadata-bcinfo.html">Metadatos del reproductor de bcinfo</a></li>
+                    
+                    <li><a href="/brightcove-player/current-release/Player.html">API de eventos / métodos de jugador</a></li>
+                    
+                    <li><a href="/references/guide-playlist-api.html">Guía de API de listas de reproducción</a></li>
+                    
+                    <li><a href="/references/video-metadata-mediainfo.html">Metadatos de vídeo de mediainfo</a></li>
+                   
+              </ul>
+              
+              <h5 class="submenu-header"><a href="/plugins/index.html"><span style="color:#8E9093">+</span>&nbsp;&nbsp;Complementos</a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                 
+                    <li><a href="/plugins/360degvr-video-plugin.html">Video 360º</a></li>
+                    
+                    <li><a href="/plugins/ad-only-plugin.html">Solo anuncio</a></li>
+                    
+                    <li><a href="/plugins/advertising-freewheel-plugin.html">Publicidad con el complemento FreeWheel</a></li>
+                    
+                    <li><a href="/plugins/advertising-ima3-plugin.html">Publicidad con el complemento IMA3</a></li>
+                    
+                    <li><a href="/plugins/upgrading-ima3-plugin-version-3.html">Actualización a la versión 3 del complemento IMA3</a></li>
+                    
+                    <li><a href="/plugins/implementing-server-side-ads-brightcove-player.html">Publicidad con SSAI</a></li>
+                    
+                    <li><a href="/plugins/airplay-plugin.html">Salida en antena</a></li>
+                    
+                    <li><a href="/plugins/chromecast-plugin-brightcove-player.html">Chromecast</a></li>
+                    
+                    <li><a href="/plugins/custom-endscreen-plugin.html">Pantalla final personalizada</a></li>
+                    
+                    <li><a href="/plugins/display-error-messages-plugin.html">Mostrar mensajes de error</a></li>
+                    
+                    <li><a href="/plugins/display-thumbnail-previews-plugin.html">Mostrar vistas previas de miniaturas</a></li>
+                    
+                    <li><a href="/plugins/configuring-brightcove-player-drm.html">DRM</a></li>
+                    
+                    <li><a href="/plugins/google-tag-manager-plugin-brightcove-player.html">Administrador de etiquetas de Google</a></li>
+                    
+                    <li><a href="/plugins/hls-plugin.html">HLS</a></li>
+                    
+                    <li><a href="/plugins/live-dvrux-plugin.html">DVRUX en vivo</a></li>
+                    
+                    <li><a href="/plugins/display-overlay-plugin.html">Cubrir</a></li>
+                    
+                    <li><a href="/plugins/overview-brightcove-player-plugins.html">Descripción general: Plugins de reproductor</a></li>
+                    
+                    <li><a href="/plugins/picture-picture-plugin-aka-floating-or-pinned.html">Imagen en imagen</a></li>
+                    
+                    <li><a href="/plugins/playerplugin-version-testing.html">Prueba de versión de reproductor/plugin</a></li>
+                    
+                    <li><a href="/plugins/playlist-endscreen-plugin.html">Pantalla final de lista de reproducción</a></li>
+                    
+                    <li><a href="/plugins/playlist-ui-plugin.html">IU de lista de reproducción</a></li>
+                    
+                    <li><a href="/plugins/changelog/index.html">Registro de cambios del complemento</a></li>
+                    
+                    <li><a href="/plugins/plugin-registry.html">Registro de complementos</a></li>
+                    
+                    <li><a href="/plugins/plugin-version-reference.html">Referencia de la versión del complemento</a></li>
+                    
+                    <li><a href="/plugins/quality-selection-plugin.html">Selección de calidad</a></li>
+                    
+                    <li><a href="/plugins/social-sharing-plugin.html">Redes sociales</a></li>
+                    
+                    <li><a href="/plugins/tealium-plugin-brightcove-player.html">Administrador de etiquetas Tealium</a></li>
+                    
+                    <li><a href="/plugins/thumbnails-plugin.html">Búsqueda de miniaturas</a></li>
+                    
+                    <li><a href="/plugins/video-seo-schema-generator-plugin.html">Generador de esquemas de video SEO</a></li>
+                   
+              </ul>
+              
+              <h5 class="submenu-header"><a href="/advertising/index.html"><span style="color:#8E9093">+</span>&nbsp;&nbsp;Publicidad</a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                 
+                    <li><a href="/advertising/ad-events-and-ad-objects.html">Eventos publicitarios y objetos publicitarios</a></li>
+                    
+                    <li><a href="/plugins/ad-only-plugin.html">Complemento solo para anuncios</a></li>
+                    
+                    <li><a href="/plugins/advertising-freewheel-plugin.html">Publicidad con el complemento FreeWheel</a></li>
+                    
+                    <li><a href="/plugins/advertising-ima3-plugin.html">Publicidad con el complemento IMA3</a></li>
+                    
+                    <li><a href="/advertising/client-side-preroll-with-live-ssai.html">Anuncios pre-roll del lado del cliente con SSAI en vivo</a></li>
+                    
+                    <li><a href="/advertising/displaying-ads-using-ad-cue-points.html">Visualización de anuncios mediante puntos de inserción de anuncios</a></li>
+                    
+                    <li><a href="/advertising/flash-no-longer-valid-ima.html">Flash ya no es válido con IMA</a></li>
+                    
+                    <li><a href="/advertising/guide-ad-partner-integration.html">Guía: Integración de socios publicitarios</a></li>
+                    
+                    <li><a href="/advertising/guide-contrib-ads-migration.html">Guía: migración de contrib-ads</a></li>
+                    
+                    <li><a href="/plugins/implementing-server-side-ads-brightcove-player.html">Implementación de SSAI con Brightcove Player</a></li>
+                    
+                    <li><a href="/advertising/jump-start-header-bidding-ad.html">Jump Start: Anuncio de oferta de encabezado</a></li>
+                    
+                    <li><a href="/advertising/jump-start-outstream-ad.html">Jump Start: Anuncio outstream</a></li>
+                    
+                    <li><a href="/advertising/jump-start-pre-roll-ad.html">Jump Start: Anuncio previo al video</a></li>
+                    
+                    <li><a href="/advertising/known-issues-server-side-ad-insertion-ssai.html">Problemas conocidos: Inserción de anuncios en el servidor (SSAI)</a></li>
+                    
+                    <li><a href="/getting-started/learning-guide-video-advertising.html">Guía de aprendizaje: Publicidad video</a></li>
+                    
+                    <li><a href="/advertising/step-step-implementing-advertising.html">Paso a paso: Implementación de publicidad</a></li>
+                    
+                    <li><a href="/advertising/testing-pre-release-advertising-plugins.html">Prueba de complementos publicitarios previos al lanzamiento</a></li>
+                    
+                    <li><a href="/advertising/using-dfp-premium-brightcove-player.html">Uso de DFP Premium con Brightcove Player</a></li>
+                    
+                    <li><a href="/advertising/using-player-enhancements-live-ssai-brightcove-player.html">Uso de mejoras del reproductor para Live SSAI</a></li>
+                    
+                    <li><a href="/advertising/video-cloud-ssai-ad-tag-validation.html">Validación de etiquetas publicitarias SSAI de Video Cloud</a></li>
+                   
+              </ul>
+              
+              <h5 class="submenu-header"><a href="/publish/index.html"><span style="color:#8E9093">+</span>&nbsp;&nbsp;Publicación de videos y reproductores</a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                 
+                    <li><a href="/publish/assigning-video-player-programmatically.html">Asignar video al reproductor mediante programación</a></li>
+                    
+                    <li><a href="/publish/available-options-advanced-page-embed-code.html">Opciones para código incrustado avanzado (en la página)</a></li>
+                    
+                    <li><a href="/publish/available-options-standard-iframe-embed-code.html">Opciones para el código de inserción estándar (iframe)</a></li>
+                    
+                    <li><a href="/publish/brightcove-player-loader.html">Cargador de reproductores Brightcove</a></li>
+                    
+                    <li><a href="/publish/bulk-updating-brightcove-default-player.html">Actualización masiva del reproductor predeterminado de Brightcove</a></li>
+                    
+                    <li><a href="https://studio.support.brightcove.com/publish/choosing-correct-embed-code.html">Elegir el código de inserción correcto</a></li>
+                    
+                    <li><a href="/publish/delaying-player-instantiation.html">Retrasar la instanciación del jugador</a></li>
+                    
+                    <li><a href="/publish/pre-release-player.html">Reproductor de prelanzamiento</a></li>
+                    
+                    <li><a href="/publish/syndication-strategies.html">Estrategias de distribución</a></li>
+                    
+                    <li><a href="/publish/using-non-brightcove-player.html">Uso de un reproductor que no sea de Brightcove</a></li>
+                    
+                    <li><a href="https://studio.support.brightcove.com/publish/using-multiple-players-one-page.html">Uso de varios reproductores en una página</a></li>
+                    
+                    <li><a href="https://studio.support.brightcove.com/publish/using-reference-ids.html">Usar ID de referencia</a></li>
+                    
+                    <li><a href="">Inspector de reproducciones de video</a></li>
+                   
+              </ul>
+              
+              <h5 class="submenu-header"><a href="/troubleshooting/index.html"><span style="color:#8E9093">+</span>&nbsp;&nbsp;Solución de problemas</a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                 
+                    <li><a href="/troubleshooting/brightcove-playback-technology-app.html">Aplicación de tecnología de reproducción Brightcove</a></li>
+                    
+                    <li><a href="/references/brightcove-player-error-reference.html">Brightcove Referencia de error del jugador</a></li>
+                    
+                    <li><a href="/troubleshooting/brightcove-player-information-modal.html">Modal de información del jugador de Brightcove</a></li>
+                    
+                    <li><a href="/troubleshooting/brightcove-player-troubleshooting-guide.html">Guía de resolución de problemas del reproductor Brightcove</a></li>
+                    
+                    <li><a href="/troubleshooting/creating-charles-log.html">Creando un Charles Log</a></li>
+                    
+                    <li><a href="/troubleshooting/creating-network-log.html">Crear un registro de red</a></li>
+                    
+                    <li><a href="/troubleshooting/domain-restrictions-messaging.html">Mensajería de restricciones de dominio</a></li>
+                    
+                    <li><a href="/plugins/display-error-messages-plugin.html">Mostrar complemento de mensajes de error</a></li>
+                    
+                    <li><a href="/troubleshooting/manually-setting-player-version.html">Configuración manual de la versión del reproductor</a></li>
+                    
+                    <li><a href="/plugins/playerplugin-version-testing.html">Prueba de versión de reproductor/plugin</a></li>
+                    
+                    <li><a href="/troubleshooting/player-informational-properties.html">Propiedades informativas del jugador</a></li>
+                    
+                    <li><a href="/code-samples/brightcove-player-sample-live-custom-error-message.html">Muestra: Mensaje de error personalizado en vivo</a></li>
+                    
+                    <li><a href="/troubleshooting/step-step-brightcove-player-debugger.html">Paso a paso: Depurador de Brightcove Player</a></li>
+                    
+                    <li><a href="/troubleshooting/running-network-path-trace.html">Ejecución de un seguimiento de ruta de red</a></li>
+                    
+                    <li><a href="/troubleshooting/using-player-reference.html">Uso de la referencia del reproductor</a></li>
+                    
+                    <li><a href="/troubleshooting/vetting-brightcove-player-releases.html">Verificación de lanzamientos de Brightcove Player</a></li>
+                    
+                    <li><a href="/troubleshooting/viewing-player-configuration.html">Visualización de la configuración del reproductor</a></li>
+                   
+              </ul>
+              
+              <h5 class="submenu-header"><a href="/styling/index.html"><span style="color:#8E9093">+</span>&nbsp;&nbsp;Estilo y apariencia</a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                 
+                    <li><a href="/styling/customizing-player-appearance.html">Personalización de la apariencia del jugador</a></li>
+                    
+                    <li><a href="/styling/customizing-player-appearance-legacy-skin.html">Personalización de la apariencia del jugador: aspecto heredado</a></li>
+                    
+                    <li><a href="/styling/brightcove-player-sample-player-styling-playground.html">Patio de juegos de estilo de jugador</a></li>
+                    
+                    <li><a href="/styling/quick-start-player-customization-legacy-skin.html">Inicio rápido: Personalización del jugador: aspecto heredado</a></li>
+                    
+                    <li><a href="/getting-started/step-step-player-customization.html">Paso a paso: Personalización del reproductor</a></li>
+                    
+                    <li><a href="/styling/responsive-sizing-brightcove-player.html">Tamaño adaptable para Brightcove Player</a></li>
+                    
+                    <li><a href="/styling/sizing-player.html">Dimensionamiento del jugador</a></li>
+                    
+                    <li><a href="/styling/skins-and-player-versions.html">Máscaras y versiones de jugador</a></li>
+                    
+                    <li><a href="https://studio.support.brightcove.com/media/styling-captions.html">Estilo de subtítulos</a></li>
+                    
+                    <li><a href="/styling/styling-playlists.html">Estilismo de listas de reproducción</a></li>
+                   
+              </ul>
+              
+              <h5 class="submenu-header"><a href="/playback/index.html"><span style="color:#8E9093">+</span>&nbsp;&nbsp;Reproducción</a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                 
+                    <li><a href="/playback/autoplay-considerations.html">Consideraciones sobre la reproducción automática</a></li>
+                    
+                    <li><a href="/troubleshooting/brightcove-playback-technology-app.html">Aplicación de tecnología de reproducción Brightcove</a></li>
+                    
+                    <li><a href="/playback/china-delivery-with-bcp.html">Entrega de China</a></li>
+                    
+                    <li><a href="/playback/xdr-with-bcplayer.html">Currículum multidispositivo</a></li>
+                    
+                    <li><a href="https://studio.support.brightcove.com/publish/deep-linking.html">Vinculación profunda</a></li>
+                    
+                    <li><a href="/playback/delivering-hls-video.html">Entrega de video HLS</a></li>
+                    
+                    <li><a href="/playback/using-delivery-rules-with-bcp.html">Reglas de entrega</a></li>
+                    
+                    <li><a href="/playback/determining-which-rendition-will-play.html">Determinar qué interpretación se reproducirá</a></li>
+                    
+                    <li><a href="/playback/forensic-watermarking-with-bcp.html">Marca de agua forense</a></li>
+                    
+                    <li><a href="/playback/guide-playback-technology.html">Guía: Tecnología de reproducción</a></li>
+                    
+                    <li><a href="/plugins/hls-plugin.html">Complemento HLS</a></li>
+                    
+                    <li><a href="/playback/ios-and-brightcove-player.html">iOS y Brightcove Player</a></li>
+                    
+                    <li><a href="/playback/playback-restrictions-with-bcp.html">Restricciones de reproducción</a></li>
+                    
+                    <li><a href="/playback/overview-https-support.html">Descripción general: Soporte HTTPS</a></li>
+                    
+                    <li><a href="/plugins/quality-selection-plugin.html">Complemento de selección de calidad</a></li>
+                    
+                    <li><a href="/playback/static-url-delivery.html">Entrega de URL estática</a></li>
+                    
+                    <li><a href="/playback/streaming-playready-protected-content-dynamic-delivery.html">Transmisión de contenido protegido PlayReady</a></li>
+                    
+                    <li><a href="/playback/using-brightcove-player-tve.html">Uso de Brightcove Player para TVE</a></li>
+                   
+              </ul>
+              
+              <h5 class="submenu-header"><a href="/content-protection/index.html"><span style="color:#8E9093">+</span>&nbsp;&nbsp;DRM y protección de contenido</a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                 
+                    <li><a href="https://studio.support.brightcove.com/players/configuring-player-content-restrictions.html">Configuración de restricciones de contenido del reproductor</a></li>
+                    
+                    <li><a href="/content-protection/creating-dash-drm-manifest-brightcove-player.html">Creación de un manifiesto DASH DRM para Brightcove Player</a></li>
+                    
+                    <li><a href="/troubleshooting/domain-restrictions-messaging.html">Mensajería de restricciones de dominio</a></li>
+                    
+                    <li><a href="/plugins/configuring-brightcove-player-drm.html">Complemento DRM</a></li>
+                    
+                    <li><a href="/content-protection/overview-content-protection.html">Descripción general: Protección de contenido</a></li>
+                    
+                    <li><a href="/content-protection/policy-keys.html">Claves de política</a></li>
+                    
+                    <li><a href="/content-protection/restricting-video-playback-using-ip-address.html">Restricción de la reproducción de video mediante la dirección IP</a></li>
+                    
+                    <li><a href="/content-protection/signed-urls-and-token-auth-live-stream.html">URL firmadas y autenticación de tokens con transmisión en directo</a></li>
+                   
+              </ul>
+              
+              <h5 class="submenu-header"><a href="/coding-topics/index.html"><span style="color:#8E9093">+</span>&nbsp;&nbsp;Temas de codificación</a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                 
+                    <li><a href="/publish/brightcove-player-loader.html">Cargador de reproductores Brightcove</a></li>
+                    
+                    <li><a href="/references/catalog-search-architecture.html">Actualización de búsqueda de catálogo</a></li>
+                    
+                    <li><a href="/code-samples/brightcove-player-sample-trigger-rewind-custom-event.html">Evento personalizado</a></li>
+                    
+                    <li><a href="/playback/guide-playback-technology.html">Guía: Tecnología de reproducción</a></li>
+                    
+                    <li><a href="/coding-topics/programmatically-localizing-brightcove-player.html">Localización de Brightcove Player</a></li>
+                    
+                    <li><a href="/coding-topics/localizing-plugins.html">Localización de complementos</a></li>
+                    
+                    <li><a href="/coding-topics/player-events.html">Eventos del jugador</a></li>
+                    
+                    <li><a href="/coding-topics/overview-components.html">Descripción general: Componentes</a></li>
+                    
+                    <li><a href="/playback/overview-https-support.html">Descripción general: Soporte HTTPS</a></li>
+                    
+                    <li><a href="/coding-topics/overview-player-api.html">Descripción general: API del reproductor</a></li>
+                    
+                    <li><a href="/coding-topics/pass-data-plugin.html">Pasar datos al complemento</a></li>
+                    
+                    <li><a href="/coding-topics/react-player-loader.html">React Player Loader</a></li>
+                    
+                    <li><a href="/coding-topics/reporting-brightcove-player-configurations.html">Informes sobre configuraciones de reproductores de Brightcove</a></li>
+                    
+                    <li><a href="/coding-topics/requirejs-and-brightcove-player.html">RequireJS y Brightcove Player</a></li>
+                    
+                    <li><a href="/coding-topics/retrieve-bitrate-current-rendition.html">Recuperar la tasa de bits de la reproducción actual</a></li>
+                    
+                    <li><a href="/coding-topics/step-step-plugin-development.html">Paso a paso: Desarrollo de complementos</a></li>
+                    
+                    <li><a href="/coding-topics/step-step-videojs-plugin-generator.html">Paso a paso: Generador de complementos de Video.js</a></li>
+                    
+                    <li><a href="/coding-topics/using-bc-and-getplayer-methods.html">Usando los métodos bc () y getPlayer ()</a></li>
+                    
+                    <li><a href="/troubleshooting/viewing-player-configuration.html">Visualización de la configuración del reproductor</a></li>
+                   
+              </ul>
+              
+              <h5 class="submenu-header"><a href="/general/index.html"><span style="color:#8E9093">+</span>&nbsp;&nbsp;Información general</a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                 
+                    <li><a href="https://studio.support.brightcove.com/publish/adding-application-id-player-embed-code.html">Agregar una ID de aplicación al código de inserción del reproductor</a></li>
+                    
+                    <li><a href="/general/adding-captions-videos-programmatically.html">Agregar subtítulos a videos mediante programación</a></li>
+                    
+                    <li><a href="https://studio.support.brightcove.com/media/adding-chapters-video.html">Agregar capítulos a un video</a></li>
+                    
+                    <li><a href="/general/brightcove-player-6-now-default-version.html">Brightcove Player 6 ahora versión predeterminada</a></li>
+                    
+                    <li><a href="/general/brightcove-player-accessibility.html">Accesibilidad de Brightcove Player</a></li>
+                    
+                    <li><a href="/plugins/custom-endscreen-plugin.html">Plugin de pantalla final personalizado</a></li>
+                    
+                    <li><a href="/plugins/display-overlay-plugin.html">Complemento de superposición de pantalla</a></li>
+                    
+                    <li><a href="/general/ga-self-configure.html">Autoconfiguración de Google Analytics</a></li>
+                    
+                    <li><a href="/references/guide-playlist-api.html">Guía: API de lista de reproducción</a></li>
+                    
+                    <li><a href="/general/identify-and-delete-low-performing-videos.html">Identificar y eliminar videos de bajo rendimiento</a></li>
+                    
+                    <li><a href="/general/implementing-cue-points-programmatically.html">Implementar puntos de referencia mediante programación</a></li>
+                    
+                    <li><a href="/general/implementing-playlists.html">Implementación de listas de reproducción</a></li>
+                    
+                    <li><a href="/general/implementing-modaldialog.html">Implementación de ModalDialog</a></li>
+                    
+                    <li><a href="/general/live-hls.html">Live HLS</a></li>
+                    
+                    <li><a href="/general/live-stream-configuration.html">Configuración de transmisión en vivo</a></li>
+                    
+                    <li><a href="/general/multiple-audio-tracks.html">Varias pistas de audio</a></li>
+                    
+                    <li><a href="/general/player-configuration-guide.html">Guía de configuración del reproductor</a></li>
+                    
+                    <li><a href="/general/playing-live-streams.html">Reproducción de transmisiones en vivo</a></li>
+                    
+                    <li><a href="/plugins/playlist-ui-plugin.html">Plugin de interfaz de usuario de</a></li>
+                    
+                    <li><a href="/content-protection/signed-urls-and-token-auth-live-stream.html">URL firmadas y autenticación de tokens con transmisión en directo</a></li>
+                    
+                    <li><a href="/plugins/social-sharing-plugin.html">Complemento de redes sociales</a></li>
+                    
+                    <li><a href="https://apis.support.brightcove.com/player-management/getting-started/step-step-player-management.html">Paso a paso: Gestión de jugadores</a></li>
+                    
+                    <li><a href="/styling/styling-playlists.html">Estilismo de listas de reproducción</a></li>
+                    
+                    <li><a href="/general/using-screen-reader-brightcove-player.html">Uso de un lector de pantalla con Brightcove Player</a></li>
+                    
+                    <li><a href="/general/versions-brightcove-player-documentation.html">Versiones de la documentación de Brightcove Player</a></li>
+                    
+                    <li><a href="/general/volume-control.html">Control del volumen</a></li>
+                   
+              </ul>
+              
+              <h5 class="submenu-header"><a href="/code-samples/index.html"><span style="color:#8E9093">+</span>&nbsp;&nbsp;Muestras de código</a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                 
+                    <li><a href="/code-samples/index-thumb.html">Muestras de código por grupo</a></li>
+                    
+                    <li><a href="/code-samples/index.html">Índice de muestra de código</a></li>
+                   
+              </ul>
+              
+              <h5 class="submenu-header"><a href="/amp/index.html"><span style="color:#8E9093">+</span>&nbsp;&nbsp;AMPERIO</a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                 
+                    <li><a href="/amp/amp-using-video-cloud-video.html">AMP usando un video de Video Cloud</a></li>
+                    
+                    <li><a href="/amp/amp-using-external-video.html">AMP usando un video externo</a></li>
+                    
+                    <li><a href="/amp/amp-and-advertising.html">AMP y publicidad</a></li>
+                   
+              </ul>
+              
+              <h5 class="submenu-header"><a href="/training/index.html"><span style="color:#8E9093">+</span>&nbsp;&nbsp;Capacitación</a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                 
+                    <li><a href="/training/online-training-courses.html">Todos los cursos de formación online</a></li>
+                    
+                    <li><a href="/training/developer-basics-videos.html">Vídeos básicos del desarrollador</a></li>
+                    
+                    <li><a href="/training/player-development-training-videos.html">Videos de capacitación sobre desarrollo de jugadores</a></li>
+                    
+                    <li><a href="/training/register-training.html">Regístrese para recibir formación dirigida por instructores</a></li>
+                    
+                    <li><a href="/training/training-demand-developing-brightcove-player.html">Formación: Desarrollo con Brightcove Player</a></li>
+                    
+                    <li><a href="https://apis.support.brightcove.com/player-management/getting-started/training-demand-quick-start-player-management.html">Formación: Inicio rápido de la administración de jugadores</a></li>
+                    
+                    <li><a href="/training/brightcove-university.html">Cursos de formación de Brightcove University</a></li>
+                   
+              </ul>
+              
+              <h5 class="submenu-header"><a href="/release-notes/index.html"><span style="color:#8E9093">+</span>&nbsp;&nbsp;Notas de versión</a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                 
+                    <li><a href="/release-notes/brightcove-player-release-notes.html">Notas de la versión de Brightcove Player</a></li>
+                    
+                    <li><a href="/release-notes/brightcove-player-prerelease-notes.html">Notas previas al lanzamiento de Brightcove Player</a></li>
+                   
+              </ul>
+              
+              <h5 class="submenu-header"><a href="/support/index.html"><span style="color:#8E9093">+</span>&nbsp;&nbsp;Soporte</a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                 
+                    <li><a href="/support/viewing-brightcove-system-status-page.html">Visualización de la página de estado del sistema Brightcove</a></li>
+                    
+                    <li><a href="/support/contact-sales.html">Contactar con ventas</a></li>
+                    
+                    <li><a href="/support/opening-case-with-brightcove-support.html">Abrir un caso de soporte</a></li>
+                    
+                    <li><a href="/support/reset-support-portal-password.html">Restablecer la contraseña del portal de soporte</a></li>
+                   
+              </ul>
+             
       </nav>
     </div>
     <div class="col-lg-7" style="background-color: white;color: #333333;margin-top: -1em;margin-bottom: -1em;padding-bottom:1em;">
   <!-- bootstrap layout -->
 
-<p id="bc_veggie_burger_wrapper" style="display: none;"><img id="bc_veggie_burger" src="/assets/images/feather/menu.svg" alt="Menú de navegación"/></p>
+<p id="bc_veggie_burger_wrapper" style="display: none;"><img id="bc_veggie_burger" src="/assets/images/feather/menu.svg" alt="Navigation Menu"></p>
 
 <!-- search bar -->
 <div id="nav-search-box" style="margin-top: 1rem;"></div>
@@ -1143,73 +630,130 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
   <ul id="centered_in_page_toc" class="list-none"></ul>
 </details>
 <!-- open in new tab/window -->
-<a id="open_new_tab" href="#" target="_blank" style="display: none;"><img src="/assets/images/feather/external-link.svg" alt="abrir en una nueva pestaña" style="margin-top:4em;width: 1.5em;"/></a>
-
-
-
-  
-    
-
-
+<a id="open_new_tab" href="#" target="_blank" style="display: none;"><img src="/assets/images/feather/external-link.svg" alt="open in new tab" style="margin-top:4em;width: 1.5em;"></a> 
+ <h1>Complemento de imagen en imagen (también conocido como "flotante" o "fijado")</h1>
 <article class="bcls-article">
-  <h1>Plugin de imagen en imagen (también conocido como «flotante» o «anclado»)</h1>
-  <summary>En este tema, aprenderá a utilizar el complemento Picture-in-picture para habilitar este modo para Brightcove Player.</summary>
+    <summary>En este tema, aprenderá a utilizar el complemento de imagen en imagen para habilitar este modo para Brightcove Player.</summary>
+
   <section class="bcls-section">
     <h2 id="Overview">Resumen</h2>
-    <p>El modo Picture-in-Picture permite a los usuarios realizar varias tareas. Una vez que se haya iniciado la reproducción de vídeo, a medida que el usuario se desplaza hacia abajo por la página, el modo de imagen en imagen se reubicará y fijará el reproductor a una esquina de la página web.</p>
-    <aside class="bcls-aside bcls-aside--information">El complemento Picture-in-Picture sólo funciona con el código Advanced (<code translate="No">video</code>) incrustado. No funcionará con la implementación Standard (<code translate="No">iframe</code>) .</aside>
-    <h3>¿Por qué se llama Picture-in-Picture</h3>
-    <p>El comportamiento que este complemento habilita también se conoce comúnmente como comportamiento «flotante» o «anclado». Brightcove utiliza el término «imagen en imagen» debido a la adopción de esta verboria por Apple y Google para sus navegadores nativos. Los <a href="https://wicg.github.io/picture-in-picture/">estándares</a> W3C también hacen referencia a «picture in-picture».</p>
+    <p>El modo de imagen en imagen permite a los usuarios realizar múltiples tareas. Una vez que ha comenzado la reproducción de video, a medida que el usuario se desplaza hacia abajo en la página, el modo de imagen en imagen reposicionará y fijará el reproductor en una esquina de la página web.</p>
+    <aside class="bcls-aside bcls-aside--information">El complemento de imagen en imagen solo funciona con Advanced (<code translate="No">video</code> ) código de inserción. No funcionará con el estándar (<code translate="No">iframe</code> ) implementación.</aside>
+    <h3>Por qué se llama Picture-in-Picture</h3>
+    <p>El comportamiento que habilita este complemento también se conoce comúnmente como comportamiento "flotante" o "anclado". Brightcove utiliza el término "imagen en imagen" debido a que Apple y Google adoptaron esta palabrería para sus navegadores nativos. W3C <a href="https://wicg.github.io/picture-in-picture/">normas</a> también haga referencia a "imagen en imagen".</p>
+  </section>
+
+  <section class="bcls-section">
+    <h2 id="Brightcove_plugin_versus_native_functionality">Complemento de Brightcove frente a funcionalidad nativa</h2>
+    <p>La mayoría de los navegadores modernos ahora incluyen la funcionalidad de imagen en imagen. En esta sección, verá las diferencias entre el complemento Brightcove Beacon y la funcionalidad nativa. A esto le seguirán las razones por las que desearía desactivar la funcionalidad nativa y agregar el complemento a su reproductor.</p>
+    <h3>Funcionalidad del navegador nativo</h3>
+    <p>A continuación se detalla cómo funciona la imagen en imagen del navegador nativo:</p>
+    <ul>
+      <li>No tiene que hacer nada para habilitar la funcionalidad, el ícono de imagen dentro de imagen estará en la barra de control.</li>
+      <li>El botón de icono funciona como un interruptor, los espectadores activan y desactivan la funcionalidad.</li>
+      <li>La funcionalidad nativa de imagen en imagen abre un reproductor de navegador en una ventana de navegador / sistema operativo completamente nueva, que se puede controlar independientemente de la página web que lo inició. Por lo tanto, el reproductor de imagen en imagen NO está limitado por el navegador. El reproductor de imagen en imagen aparecerá en la parte inferior derecha de la pantalla, sin importar el tamaño de su navegador.</li>
+      <li>El video en Brightcove Player aparece "atenuado" cuando la funcionalidad nativa de imagen dentro de imagen está activada.</li>
+    </ul>
+    <h4>Descubre cómo funciona</h4>
+    <p>Mire este video para ver la implementación nativa en uso:</p>
+    <video-js data-account="1752604059001"
+      data-player="default"
+      data-embed="default"
+      controls=""
+      data-video-id="1700303668035561406"
+      data-playlist-id=""
+      data-application-id=""
+      width="800" height="450"></video-js>
+    <script src="https://players.brightcove.net/1752604059001/default_default/index.min.js"></script>
+
+    <h4>Desactivar la funcionalidad</h4>
+    <p>Si desea desactivar la funcionalidad del navegador nativo, coloque la siguiente línea de código JSON en la configuración del reproductor usando Video Cloud Studio <strong>Editor JSON</strong>:</p>
+    <pre class="line-numbers"><code class="language-json" translate="No">"picture_in_picture_control": false,</code></pre>
+    <figure class="bcls-figure">
+      <img class="bcls-image" src="/assets/images/plugins/picture-in-picture/json-editor-run-off-native.png" alt="json editor">
+    </figure>
+
+    <h3>Plugin Brightcove</h3>
+    <p>A continuación se detalla cómo funciona el complemento Picture-in-Picture de Brightcove Player:</p>
+    <ul>
+      <li>Una vez que el complemento está instalado, el espectador NO necesita realizar ninguna acción para iniciar el reproductor de imagen en imagen, aparte de desplazar el Brightcove Player casi fuera de la vista. No hay ningún botón en el que hacer clic para activar la imagen en imagen.</li>
+      <li>Cuando el espectador vuelve a mostrar Brightcove Player, el reproductor de imagen en imagen desaparecerá automáticamente.</li>
+      <li>El reproductor de imagen en imagen se muestra (por defecto) en la esquina inferior derecha del navegador. A diferencia de la funcionalidad nativa, el complemento está limitado por el navegador.</li>
+    </ul>
+    <h4>Descubre cómo funciona</h4>
+    <p>Mire este video para ver la implementación del complemento Brightcove Player en uso:</p>
+    <video-js data-account="1752604059001"
+          data-player="default"
+          data-embed="default"
+          controls=""
+          data-video-id="1700305593799961732"
+          data-playlist-id=""
+          data-application-id=""
+          width="800" height="435"></video-js>
+    <script src="https://players.brightcove.net/1752604059001/default_default/index.min.js"></script>
+
+    <h3>¿Por qué utilizar el complemento Brightcove Player?</h3>
+    <p>Con la funcionalidad nativa incorporada, y no tiene que hacer nada, ¿por qué querría desactivar la funcionalidad nativa e instalar el complemento Brightcove Player? Las siguientes son algunas de las razones:</p>
+    <ul>
+      <li>El reproductor nativo no reproduce anuncios del lado del cliente. Reproducirá anuncios SSAI, pero no proporcionará las personalizaciones de la interfaz de usuario que realiza Brightcove Player y no evitará que el usuario busque esos anuncios.</li>
+      <li>Desea que la funcionalidad de imagen en imagen esté limitada por el navegador. No desea que el reproductor de imagen en imagen se coloque fuera del espacio del navegador.</li>
+      <li>Desea que la funcionalidad esté en vigor sin ninguna interacción del usuario.</li>
+      <li>El complemento proporciona más personalización y es más fácil de implementar. Las opciones, métodos y eventos que puede utilizar con el complemento se enumeran cerca del final de este documento.</li>
+    </ul>
+  </section>
+
+  <section class="bcls-section">
+    <h2 id="Player_example">Ejemplo de jugador</h2>
+    <!-- UPDATE description -->
+
+    <p>Inicia la reproducción de vídeo. (Entonces puede detenerlo). Desplácese hacia abajo en la página para ver el reproductor de imagen en imagen en la esquina derecha de la página web. Puede cerrar el reproductor de imagen en imagen o desplazarse hacia arriba hasta el reproductor de tamaño completo.</p>
+    <!-- UPDATE codepen here -->
+
+    <p data-height="750" data-theme-id="dark" data-slug-hash="ZxwOMR" data-default-tab="result" data-user="bcls1969" data-embed-version="2" data-pen-title="Picture-in-Picture Plugin" class="codepen">Ver la pluma <a href="https://codepen.io/team/bcls1969/pen/ZxwOMR/">Complemento de imagen en imagen</a> por Brightcove Learning Services (<a href="https://codepen.io/team/rcrooks1969"> bcls1969</a> ) en <a href="https://codepen.io">CodePen</a>.</p>
+    <script async src="https://static.codepen.io/assets/embed/ei.js"></script><!-- UPDATE link to GitHub source -->
+    <!-- <p>View the <a href="https://github.com/BrightcoveLearning/18193-brightcove-player-sample-age-gate-modaldialog">source code</a>.</p> -->
   </section>
   <section class="bcls-section">
-    <h2 id="Player_example">Ejemplo de reproductor</h2>
-    <!-- UPDATE description -->
-    
-    <p>Inicie la reproducción de vídeo. (A continuación, puede detenerlo). Desplácese hacia abajo por la página para ver el reproductor de imágenes en imagen en la esquina derecha de la página web. Puede cerrar el reproductor de imagen en imagen o desplazarse hacia arriba hasta el reproductor de tamaño completo.</p>
-    <!-- UPDATE codepen here -->
-    
-    <p data-height="750" data-theme-id="dark" data-slug-hash="ZxwOMR" data-default-tab="result" data-user="bcls1969" data-embed-version="2" data-pen-title="Picture-in-Picture Plugin" class="codepen">Consulte el plugin <a href="https://codepen.io/team/bcls1969/pen/ZxwOMR/">Plugin Picture-in-Picture</a> de Brightcove Learning Services (<a href="https://codepen.io/team/rcrooks1969">@bcls1969</a> ) en <a href="https://codepen.io">CodePen</a>.</p>
-    <script async src="https://static.codepen.io/assets/embed/ei.js"></script><!-- UPDATE link to GitHub source --><!-- <p>View the <a href="https://github.com/BrightcoveLearning/18193-brightcove-player-sample-age-gate-modaldialog">source code</a>.</p> --></section>
-  <section class="bcls-section">
-    <h2 id="Implement_using_Players_module">Implementar usando el módulo Players</h2>
-    <p>Para implementar el&nbsp;complemento Picture-in-Picture utilizando el módulo Players, siga estos pasos:</p>
+    <h2 id="Implement_using_Players_module">Implementación mediante el módulo Pla</h2>
+    <p>Para implementar la imagen en imagen&nbsp;Complemento usando el módulo Players, siga estos pasos:</p>
     <ol class="bcls-tasklist">
-      <li>Abra el módulo PLAYERS y cree un nuevo reproductor o localice el reproductor al que desea añadir el plugin.<strong></strong></li>
-      <li>Seleccione el enlace para que el reproductor abra las propiedades del reproductor.</li>
-      <li>Seleccione Plugins en el menú de navegación de la izquierda.<strong></strong></li>
+      <li>Abre el <strong>JUGADORES</strong> módulo y cree un nuevo reproductor o localice el reproductor al que desea agregar el complemento.</li>
+      <li>Selecciona el enlace del reproductor para abrir las propiedades del reproductor.</li>
+      <li>Selecciona <strong>Plugins</strong> en el menú de navegación izquierdo.</li>
       <li>
-        <p>A continuación, seleccione el botón Agregar un complemento y, a continuación, seleccione Brightcove Plugin.<strong></strong><strong></strong></p>
-        <figure class="bcls-figure"><img class="bcls-image" alt="Botón Agregar un Plugin" src="/assets/images/plugins/chromecast/add-a-plugin.png"/>
-          <figcaption class="bcls-caption--image">Botón Agregar un Plugin</figcaption>
+        <p>A continuación, seleccione el <strong>Agregar un complemento</strong> y luego seleccione <strong>Complemento Brightcove</strong>.</p>
+        <figure class="bcls-figure"><img class="bcls-image" alt="Add a Plugin button" src="/assets/images/plugins/picture-in-picture/add-a-plugin.png" />
+          <figcaption class="bcls-caption--image">Botón Agregar un complemento</figcaption>
         </figure>
       </li>
       <li>
-        <p>Expanda el menú desplegable <strong>Brightcove Plugin</strong> y seleccione <strong>Picture-in-Picture</strong>.</p>
-        <figure class="bcls-figure"><img class="bcls-image" alt="pip" src="/assets/images/plugins/pip/pip.png"/>
-          <figcaption class="bcls-caption--image">imagen-en-imagen</figcaption>
+        <p>Ampliar la <strong>Complemento Brightcove</strong> desplegable y seleccione <strong>Imagen en imagen</strong>.</p>
+        <figure class="bcls-figure"><img class="bcls-image" alt="pip" src="/assets/images/plugins/picture-in-picture/pip.png" />
+          <figcaption class="bcls-caption--image">imagen en imagen</figcaption>
         </figure>
       </li>
       <li>
-        <p>Opcional:<strong></strong> Introduzca las opciones de configuración en el cuadro de texto <strong>Opciones (JSON)</strong> . Aquí se muestra un ejemplo para ajustar la alineación horizontal del reproductor cuando está en modo imagen en imagen:</p>
-        <figure class="bcls-figure"><img class="bcls-image" alt="Opciones de plugin" src="/assets/images/plugins/pip/options.png"/>
-          <figcaption class="bcls-caption--image">Opciones de plugin</figcaption>
+        <p><strong>Opcional</strong>: Ingrese las opciones de configuración en el <strong>Opciones (JSON)</strong> caja de texto. Aquí se muestra un ejemplo para configurar la alineación horizontal del reproductor cuando está en modo de imagen en imagen:</p>
+        <figure class="bcls-figure"><img class="bcls-image" alt="Plugin options" src="/assets/images/plugins/picture-in-picture/options.png" />
+          <figcaption class="bcls-caption--image">Opciones de complementos</figcaption>
         </figure>
-        <p>Consulte la sección <a href="#Options">de opciones</a> para obtener más detalles.</p>
+        <p>Ver el <a href="#Options">opciones</a> sección para más detalles.</p>
       </li>
+      <li>Selecciona el <strong>Ahorrar</strong> botón.</li>
       <li>
-        <p>Seleccione el botón Guardar.<strong></strong> Ahora verá el plugin <strong>Picture-in-Picture</strong> añadido a la lista de complementos para su reproductor.</p>
-        <figure class="bcls-figure"><img class="bcls-image" alt="Plugin añadido" src="/assets/images/plugins/pip/plugin-added.png"/>
+        <p>Ahora verá el <strong>Imagen en imagen</strong> complemento agregado a la lista de complementos para su reproductor.</p>
+        <figure class="bcls-figure"><img class="bcls-image" alt="Plugin added" src="/assets/images/plugins/picture-in-picture/plugin-added.png" />
           <figcaption class="bcls-caption--image">Plugin añadido</figcaption>
         </figure>
       </li>
-      <li>Para publicar el reproductor, seleccione Publicar e incrustar &gt; Publicar cambios.<strong></strong></li>
-      <li>Para cerrar el cuadro de diálogo abierto, seleccione Cerrar.<strong></strong></li>
+      <li>Para publicar el reproductor, seleccione <strong>Publicar e incrustar &gt; Publicar cambios</strong>.</li>
+      <li>Para cerrar el cuadro de diálogo abierto, seleccione <strong>Cerrar</strong>.</li>
       <li>
-        <p>Vuelva al módulo <strong>MEDIA</strong> y publique su vídeo con el reproductor que acaba de actualizar para Picture-in-Picture.</p>
+        <p>Volver a la <strong>MEDIOS DE COMUNICACIÓN</strong> módulo y publique su video usando el reproductor que acaba de actualizar para imagen en imagen.</p>
       </li>
       <li>En un editor, copie el código de inserción del reproductor en su página web.</li>
       <li>
-        <p>El plugin Picture-in-Picture requiere que su reproductor esté envuelto por un elemento contenedor con la clase establecida en <code translate="No">vjs-pip-container</code>. Su código debería verse similar a esto:</p>
+        <p>El complemento de imagen en imagen requiere que su reproductor esté envuelto por un elemento contenedor con la clase establecida en <code translate="No">vjs-pip-container</code>. El código debería tener un aspecto similar a este:</p>
         <pre class="line-numbers">
 <code class="language-html" translate="No"><span class="bcls-highlight">&lt;div class="vjs-pip-container"&gt;</span>
   &lt;video-js id="myPlayerID"
@@ -1222,29 +766,30 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     controls&gt;&lt;/video-js&gt;
   &lt;script src="https://players.brightcove.net/1752604059001/default_default/index.min.js"&gt;&lt;/script&gt;
 <span class="bcls-highlight">&lt;/div&gt;</span></code></pre>
-        <p>Si el <code translate="No">&lt;div&gt;</code> elemento anterior no se encuentra como el padre del reproductor, el plugin no se inicializará y obtendrá la siguiente advertencia de registro:</p>
+        <p>Si el <code translate="No">&lt;div&gt;</code> elemento anterior no se encuentra como padre del reproductor, el complemento no se inicializará y recibirá la siguiente advertencia de registro:</p>
         <pre>
 <code class="language-html" translate="No">VIDEOJS: WARN: expected player to be a child of a "vjs-pip-container" element, cannot continue with picture-in-picture plugin</code></pre>
       </li>
-      <li>Cuando el vídeo comience a reproducirse, desplácese hacia abajo para ver el reproductor de imagen en imagen anclado al final de la página.</li>
+      <li>Cuando el video comience a reproducirse, desplácese hacia abajo para ver el reproductor de imagen en imagen anclado en la parte inferior de la página.</li>
     </ol>
   </section>
   <section class="bcls-section">
-    <h2 id="Implement_using_code">Implementar usando código</h2>
-    <p>Para implementar el complemento utilizando código personalizado, configurará las siguientes propiedades del complemento:</p>
+    <h2 id="Implement_using_code">Implementación mediante código</h2>
+    <p>Para implementar el plugin utilizando código personalizado, configurará las siguientes propiedades del complemento:</p>
     <ul>
-      <li><code translate="No">scripts</code> - JavaScript suministrado para el plugin y no cambiará para diferentes implementaciones de plugin</li>
-      <li><code translate="No">stylesheets </code>- CSS suministrado a usted para el plugin y no cambiará para diferentes implementaciones de plugin</li>
-      <li><code translate="No">plugin name</code> - Siempre <strong>pip</strong></li>
-      <li><code translate="No">plugin options</code> - Contiene una matriz de propiedades y valores</li>
+      <li><code translate="No">scripts</code>- JavaScript suministrado para el plugin y no cambiará para diferentes implementaciones de complementos</li>
+      <li><code translate="No">stylesheets </code>- CSS proporcionado para el complemento y no cambiará para diferentes implementaciones de complementos</li>
+      <li><code translate="No">plugin name</code>- Siempre <strong>pepita</strong></li>
+      <li><code translate="No">plugin options</code>- Contiene una matriz de propiedades y valores</li>
     </ul>
-    <p>Para agregar el complemento a su código, siga estos pasos:</p>
+    <p>Para añadir el complemento a tu código, sigue estos pasos:</p>
     <ol class="bcls-tasklist__restart">
-      <li>Añada los estilos para el plugin picture in-picture.
+      <li>Agregue los estilos para el complemento de imagen en imagen.
         <pre class="line-numbers">
 <code class="language-html" translate="No">&lt;link href="https://players.brightcove.net/videojs-pip/1/videojs-pip.css" rel="stylesheet"&gt;</code></pre>
       </li>
-      <li>Agregue el archivo JavaScript para incluir el plugin picture in-picture. <!-- <aside class="bcls-aside bcls-aside--tip">Note: This plugin script must be placed after the last <code translate="No">&lt;script&gt;</code> tag for your player embed code.</aside> -->
+      <li>Agregue el archivo JavaScript para incluir el complemento de imagen en imagen.
+        <!-- <aside class="bcls-aside bcls-aside--tip">Note: This plugin script must be placed after the last <code translate="No">&lt;script&gt;</code> tag for your player embed code.</aside> -->
         <pre class="line-numbers">
 <code class="language-html" translate="No">&lt;video-js id="myPlayerID"
   data-video-id="5701202551001"
@@ -1260,7 +805,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 <span class="bcls-highlight">&lt;script src="https://players.brightcove.net/videojs-pip/1/videojs-pip.min.js"&gt;&lt;/script&gt;</span></code></pre>
       </li>
       <li>
-        <p>Envuelva el código de inserción del reproductor en un elemento contenedor con la clase establecida en <code translate="No">vjs-pip-container</code>. El plugin Picture-in-Picture requiere que su reproductor esté envuelto por este elemento contenedor.</p>
+        <p>Envuelva el código de inserción del reproductor en un elemento contenedor con la clase establecida en <code translate="No">vjs-pip-container</code>. El complemento de imagen en imagen requiere que su reproductor esté envuelto por este elemento contenedor.</p>
         <pre class="line-numbers">
 <code class="language-html" translate="No"><span class="bcls-highlight">&lt;div class="vjs-pip-container"&gt;</span>
     &lt;video-js id="myPlayerID"
@@ -1276,14 +821,14 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 
         &lt;!-- Script for the picture-in-picture plugin --&gt;
         &lt;script src="https://players.brightcove.net/videojs-pip/1/videojs-pip.min.js"&gt;&lt;/script&gt;</code></pre>
-        <p>Si el <code translate="No">&lt;div&gt;</code> elemento anterior no se encuentra como el padre del reproductor, el plugin no se inicializará y obtendrá la siguiente advertencia de registro:</p>
+        <p>Si el <code translate="No">&lt;div&gt;</code> elemento anterior no se encuentra como padre del reproductor, el complemento no se inicializará y recibirá la siguiente advertencia de registro:</p>
         <pre>
 <code class="language-html" translate="No">expected player to be a child of a "vjs-pip-container" element, cannot continue with picture-in-picture plugin</code></pre>
       </li>
-      <li>Agregue código de script personalizado que haga lo siguiente:
+      <li>Agregue un código de secuencia de comandos personalizado que haga lo siguiente:
         <ul>
-          <li>Cuando el jugador esté listo, obtiene una referencia al Brightcove Player. En este ejemplo, estamos creando una variable llamada <code translate="No">myPlayer</code> y asignándole una referencia al jugador.</li>
-          <li>Inicializa el plugin de imagen en imagen.</li>
+          <li>Cuando el reproductor está listo, obtiene una referencia al Brightcove Player. En este ejemplo, vamos a crear una variable denominada <code translate="No">myPlayer</code> y asignarle una referencia al reproductor.</li>
+          <li>Inicializa el complemento de imagen en imagen.</li>
         </ul>
         <pre class="line-numbers">
 <code class="language-javascript" translate="No">videojs.getPlayer('myPlayerID').ready(function() {
@@ -1292,26 +837,26 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
   // Initialize the picture-in-picture plugin
   myPlayer.pip();
 });</code></pre>
-        <p>Para obtener más información, consulte el <a href="#Player_example">ejemplo de lápiz de código</a> anterior.</p>
+        <p>Para obtener más detalles, consulte la <a href="#Player_example">ejemplo de codepen</a> sobre.</p>
       </li>
     </ol>
   </section>
   <section class="bcls-section">
     <h2 id="Options">Opciones</h2>
-    <p>Puede pasar un objeto de opciones al plugin tras la inicialización. Este objeto puede contener cualquiera de las siguientes opciones:</p>
-    <h3>PermitirOnMobile</h3>
+    <p>Puede pasar un objeto options al complemento tras la inicialización. Este objeto puede contener cualquiera de las siguientes opciones:</p>
+    <h3>allowOnMobile</h3>
     <ul>
       <li><code translate="No">allowOnMobile</code>:
         <ul>
-          <li>Tipo:<code translate="No">boolean</code></li>
-          <li>Predeterminado:<code translate="No">false</code></li>
+          <li>Tipo: <code translate="No">boolean</code></li>
+          <li>Predeterminado: <code translate="No">false</code></li>
           <li>
-            <p>De forma predeterminada, el modo de imagen en imagen no funcionará en dispositivos móviles Android o iOS. La razón de esto es porque estos posicionamiento fijo CSS no funcionan en dispositivos con zoom con múltiples ventanas gráficas de la misma manera que en dispositivos de escritorio.</p>
-            <p>Si desea habilitar Picture-in-Picture en dispositivos móviles compatibles, puede hacerlo con esta opción. Hay algunos casos en los que es posible que desee habilitar el soporte:</p>
+            <p>De forma predeterminada, el modo de imagen en imagen no funcionará en dispositivos móviles Android o iOS. La razón de esto es que este posicionamiento fijo CSS no funciona en dispositivos ampliables con múltiples ventanas gráficas de la misma manera que lo hace en dispositivos de escritorio.</p>
+            <p>Si desea habilitar la función de imagen en imagen en dispositivos móviles compatibles, puede hacerlo con esta opción. Hay algunos casos en los que es posible que desee habilitar el soporte:</p>
             <ul>
               <li>El integrador está dispuesto a asumir la responsabilidad de gestionar el posicionamiento para el modo de reproductor de imagen en imagen.</li>
               <li>Es poco probable que se amplíe el sitio web que utiliza el reproductor.</li>
-              <li>El zoom se ha deshabilitado mediante una <code translate="No">user-scalable=no</code> directiva. El uso de esta directiva hará <code translate="No">position: fixed</code> que se comporte como lo hace en los escritorios, pero no se recomienda específicamente porque puede ser un problema de accesibilidad.
+              <li>El zoom se ha desactivado mediante un <code translate="No">user-scalable=no</code> directiva. El uso de esta directiva hará <code translate="No">position: fixed</code> se comporta como lo hace en los escritorios, pero no se recomienda específicamente porque puede ser un problema de accesibilidad.
                 <pre>
 <code class="language-html" translate="No">&lt;meta name="viewport" content="width=device-width, user-scalable=no"&gt;</code></pre>
               </li>
@@ -1326,14 +871,14 @@ player.pip({allowOnMobile: true});</code></pre>
         </ul>
       </li>
     </ul>
-    <aside class="bcls-aside bcls-aside--warning">En dispositivos iOS anteriores a la versión 12.2 y dispositivos Android, una vez que el reproductor se haya movido a su nueva ubicación, no volverá a aparecer en la ubicación original del reproductor, incluso cuando la ubicación del reproductor original sea totalmente visible en el navegador.</aside>
+    <aside class="bcls-aside bcls-aside--warning">En dispositivos iOS anteriores a la versión 12.2 y dispositivos Android, una vez que el reproductor se haya movido a su nueva ubicación, no volverá a aparecer en la ubicación original del reproductor, incluso cuando la ubicación original del reproductor sea completamente visible en el navegador.</aside>
     <h3>cerrable</h3>
     <ul>
       <li><code translate="No">closeable</code>:
         <ul>
-          <li>Tipo:<code translate="No">boolean</code></li>
-          <li>Predeterminado:<code translate="No">true</code></li>
-          <li>De forma predeterminada, el usuario puede desactivar el modo de imagen en imagen haciendo clic en el botón <strong>X</strong> situado en la esquina superior derecha del reproductor. Esta función se puede deshabilitar pasando <code translate="No">false</code> por esta opción.</li>
+          <li>Tipo: <code translate="No">boolean</code></li>
+          <li>Predeterminado: <code translate="No">true</code></li>
+          <li>De forma predeterminada, el usuario puede desactivar el modo de imagen en imagen haciendo clic en el <strong>X</strong> en la esquina superior derecha del reproductor. Esta función se puede desactivar pasando <code translate="No">false</code> para esta opción.</li>
           <li>
             <p>Ejemplo:</p>
             <pre class="line-numbers">
@@ -1347,9 +892,9 @@ player.pip({closeable: false});</code></pre>
     <ul>
       <li><code translate="No">scale</code>:
         <ul>
-          <li>Tipo:<code translate="No">number</code></li>
-          <li>Predeterminado:<code translate="No">2 / 3</code></li>
-          <li>Factor de escala aplicado al reproductor cuando se encuentra en modo imagen en imagen. Este valor debe ser un número mayor que cero e inferior o igual que 1.</li>
+          <li>Tipo: <code translate="No">number</code></li>
+          <li>Predeterminado: <code translate="No">2 / 3</code></li>
+          <li>El factor de escala aplicado al reproductor cuando está en modo de imagen en imagen. Este valor debe ser un número mayor que cero y menor o igual que 1.</li>
           <li>
             <p>Ejemplo:</p>
             <pre class="line-numbers">
@@ -1365,15 +910,15 @@ player.pip({scale: 0.5});</code></pre>
         </ul>
       </li>
     </ul>
-    <h3>altura y ancho</h3>
+    <h3>alto y ancho</h3>
     <ul>
       <li><code translate="No">height</code> y <code translate="No">width</code>:
         <ul>
-          <li>Tipo:<code translate="No">number</code></li>
-          <li>Predeterminado:<code translate="No">null</code></li>
+          <li>Tipo: <code translate="No">number</code></li>
+          <li>Predeterminado: <code translate="No">null</code></li>
           <li>
-            <p>Por defecto, el plugin reducirá las dimensiones del jugador por un factor determinado por la <code translate="No">scale</code> opción. Sin embargo, proporcionar un <code translate="No">height</code> (o <code translate="No">width</code> ) anulará la escala predeterminada y establecerá el tamaño del reproductor reducido explícitamente.</p>
-            <p>Si solo se proporciona una dimensión, la otra se reducirá para mantener la relación de aspecto. Si se proporcionan ambas dimensiones, el jugador se ajustará al tamaño exacto y especificado, permitiendo un cambio en la relación de aspecto.</p>
+            <p>De forma predeterminada, el complemento reducirá las dimensiones del reproductor por un factor determinado por el <code translate="No">scale</code> opción. Sin embargo, proporcionar un <code translate="No">height</code> (o <code translate="No">width</code> ) anulará la escala predeterminada y establecerá explícitamente el tamaño del reproductor reducido.</p>
+            <p>Si solo se proporciona una dimensión, la otra se reducirá para mantener la relación de aspecto. Si se proporcionan ambas dimensiones, el reproductor se configurará con el tamaño exacto especificado, lo que permitirá un cambio en la relación de aspecto.</p>
           </li>
           <li>
             <p>Ejemplo:</p>
@@ -1385,14 +930,14 @@ player.pip({width: 300});</code></pre>
         </ul>
       </li>
     </ul>
-    <h3>POSx</h3>
+    <h3>posX</h3>
     <ul>
       <li><code translate="No">posX</code>:
         <ul>
-          <li>Tipo:<code translate="No">string</code></li>
-          <li>Predeterminado:<code translate="No">"right"</code></li>
+          <li>Tipo: <code translate="No">string</code></li>
+          <li>Predeterminado: <code translate="No">"right"</code></li>
           <li>
-            <p>La alineación horizontal del reproductor cuando está en modo imagen en imagen - ya sea «derecha» o «izquierda».</p>
+            <p>La alineación horizontal del reproductor cuando está en el modo de imagen en imagen, ya sea "derecha" o "izquierda".</p>
           </li>
           <li>
             <p>Ejemplo:</p>
@@ -1403,14 +948,14 @@ player.pip({posX: 'left'});</code></pre>
         </ul>
       </li>
     </ul>
-    <h3>PoSy</h3>
+    <h3>ramillete de flores</h3>
     <ul>
       <li><code translate="No">posY</code>:
         <ul>
-          <li>Tipo:<code translate="No">string</code></li>
-          <li>Predeterminado:<code translate="No">"bottom"</code></li>
+          <li>Tipo: <code translate="No">string</code></li>
+          <li>Predeterminado: <code translate="No">"bottom"</code></li>
           <li>
-            <p>La alineación vertical del reproductor cuando está en modo imagen en imagen - ya sea «arriba» o «inferior».</p>
+            <p>La alineación vertical del reproductor cuando está en el modo de imagen en imagen, ya sea "superior" o "inferior".</p>
           </li>
           <li>
             <p>Ejemplo:</p>
@@ -1425,11 +970,11 @@ player.pip({posY: 'top'});</code></pre>
     <ul>
       <li><code translate="No">viewable</code>:
         <ul>
-          <li>Tipo:<code translate="No">number</code></li>
-          <li>Predeterminado:<code translate="No">0.8</code></li>
+          <li>Tipo: <code translate="No">number</code></li>
+          <li>Predeterminado: <code translate="No">0.8</code></li>
           <li>
-            <p>El umbral en el que el jugador se considera visible. En otras palabras, cuando este porcentaje del área total del jugador (altura y ancho) es visible en la ventana gráfica del navegador, se considera visible.</p>
-            <p>Por ejemplo, con el valor predeterminado de 0.8, el reproductor no se considera visible a menos que el 80% del mismo sea visible en la ventana gráfica. El <code translate="No">viewable</code> valor debe ser un número mayor o igual que 0 y menor o igual que 1.</p>
+            <p>El umbral en el que el jugador se considera visible. En otras palabras, cuando este porcentaje del área total del jugador (alto y ancho) es visible en la ventana del navegador, se considera visible.</p>
+            <p>Por ejemplo, con el valor predeterminado de 0.8, el reproductor no se considera visible a menos que el 80% sea visible en la ventana gráfica. La <code translate="No">viewable</code> El valor debe ser un número mayor o igual que 0 y menor o igual que 1.</p>
           </li>
           <li>
             <p>Ejemplo:</p>
@@ -1440,16 +985,16 @@ player.pip({viewable: 0.5});</code></pre>
         </ul>
       </li>
     </ul>
-    <h3>ManualContainerTamaño</h3>
+    <h3>manualContainerSize</h3>
     <ul>
       <li><code translate="No">manualContainerSize</code>:
         <ul>
-          <li>Tipo:<code translate="No">boolean</code></li>
-          <li>Predeterminado:<code translate="No">false</code></li>
+          <li>Tipo: <code translate="No">boolean</code></li>
+          <li>Predeterminado: <code translate="No">false</code></li>
           <li>
-            <p>Por defecto, un reproductor con este plugin habilitado mantendrá las dimensiones físicas del elemento contenedor especial sincronizadas con las dimensiones del reproductor. Sin embargo, este comportamiento puede no funcionar para todos los casos de uso, por lo que puede deshabilitarse configurando esta opción en <code translate="No">true</code>.</p>
-            <p>Al hacerlo, el elemento contenedor se comportará como un elemento de bloque normal. Esto significa que los usuarios del plugin tendrán que administrar su tamaño por su cuenta.</p>
-            <p>Esta opción también se puede establecer en el código de inserción a través del <code translate="No">data-manual-container-size</code> atributo booleano en el contenedor. Su presencia establecerá esta opción en true. Tenga en cuenta que cualquier valor pasado al complemento tendrá prioridad sobre cualquier valor definido en el código de inserción.</p>
+            <p>De forma predeterminada, un reproductor con este complemento habilitado mantendrá las dimensiones físicas del elemento contenedor especial sincronizadas con las dimensiones del reproductor. Sin embargo, es posible que este comportamiento no funcione para todos los casos de uso, por lo que se puede deshabilitar configurando esta opción en <code translate="No">true</code>.</p>
+            <p>Al hacerlo, el elemento contenedor se comportará como un elemento de bloque normal. Esto significa que los usuarios del complemento deberán administrar su tamaño por sí mismos.</p>
+            <p>Esta opción también se puede configurar en el código de inserción a través del booleano <code translate="No">data-manual-container-size</code> atributo en el contenedor. Su presencia establecerá esta opción en verdadera. Tenga en cuenta que cualquier valor pasado al complemento tendrá prioridad sobre cualquier valor definido en el código de inserción.</p>
           </li>
           <li>
             <p>Ejemplo:</p>
@@ -1473,16 +1018,16 @@ player.pip({manualContainerSize: true});</code></pre>
     <h2 id="Using_the_options">Uso de las opciones</h2>
     <p>Tiene dos formas de utilizar la opción:</p>
     <ol>
-      <li>En la sección <strong>&gt; PLUGINS PLAYERS</strong> de Studio.</li>
-      <li>Usar JavaScript con el reproductor.</li>
+      <li>En Studio's <strong>JUGADORES&gt; PLUGINS</strong> sección.</li>
+      <li>Uso de JavaScript con el reproductor.</li>
     </ol>
     <h3>Uso de Studio</h3>
-    <p>En Studio, edite el reproductor y vuelva a la sección <strong>Plugins</strong> . Haga clic en Picture-in-Picture en la lista de nombres. Usando el formato JSON adecuado, enumere la opción (entre comillas), seguida del valor apropiado. Si los valores son de cadena, deben estar entre comillas. Si son numéricos o booleanos, no se pueden incluir comillas:</p>
-    <figure class="bcls-figure"><img class="bcls-image" alt="Opciones de plugin" src="/assets/images/plugins/pip/plugin-options.png"/>
-      <figcaption class="bcls-caption--image">Opciones de plugin</figcaption>
+    <p>En Studio, edite el reproductor y vuelva a la <strong>Complementos</strong> sección. Haga clic en Picture-in-Picture en la lista de nombres. Utilizando el formato JSON adecuado, enumere la opción (entre comillas), seguida del valor apropiado. Si los valores son cadenas, deben estar entre comillas. Si son numéricos o booleanos, no se pueden incluir comillas:</p>
+    <figure class="bcls-figure"><img class="bcls-image" alt="Plugin options" src="/assets/images/plugins/picture-in-picture/plugin-options.png" />
+      <figcaption class="bcls-caption--image">Opciones de complementos</figcaption>
     </figure>
-    <h3>Utilizando JavaScript</h3>
-    <p>Para implementar las opciones en el código, usted crea un objeto, asigna las opciones deseadas sus respectivos valores, luego pasa el objeto options al llamar al plugin:</p>
+    <h3>Uso de JavaScript</h3>
+    <p>Para implementar las opciones en código, crea un objeto, asigna a las opciones deseadas sus respectivos valores y, a continuación, pasa el objeto options al llamar al plugin:</p>
     <pre class="line-numbers">
 <code class="language-javascript" translate="No">videojs.getPlayer('myPlayerID').ready(function() {
   // When the player is ready, get a reference to it
@@ -1497,7 +1042,7 @@ player.pip({manualContainerSize: true});</code></pre>
   </section>
   <section class="bcls-section">
     <h2 id="Methods">Métodos</h2>
-    <p>Los siguientes métodos le permiten interactuar con el plugin picture-in-picture:</p>
+    <p>Los siguientes métodos le permiten interactuar con el complemento de imagen en imagen:</p>
     <table class="bcls-table">
       <thead class="bcls-table__head">
         <tr>
@@ -1516,22 +1061,22 @@ player.pip({manualContainerSize: true});</code></pre>
         </tr>
         <tr>
           <td><code translate="No">myPlayer.pip().toggle()</code></td>
-          <td>Activar o desactivar manualmente el modo de imagen en imagen en función del estado actual</td>
+          <td>Activar o desactivar manualmente el modo de imagen en imagen según el estado actual</td>
         </tr>
         <tr>
           <td><code translate="No">myPlayer.pip().activate()</code></td>
-          <td>Coloque manualmente el reproductor en modo de imagen en imagen</td>
+          <td>Ponga manualmente el reproductor en modo de imagen en imagen</td>
         </tr>
         <tr>
           <td><code translate="No">myPlayer.pip().deactivate()</code></td>
-          <td>Sacar manualmente el reproductor del modo de imagen en imagen</td>
+          <td>Saque manualmente el reproductor del modo de imagen en imagen</td>
         </tr>
       </tbody>
     </table>
   </section>
   <section class="bcls-section">
     <h2 id="Events">Eventos</h2>
-    <p>Los siguientes eventos se desencadenan desde el plugin picture-in-picture:</p>
+    <p>Los siguientes eventos se disparan desde el complemento de imagen en imagen:</p>
     <table class="bcls-table">
       <thead class="bcls-table__head">
         <tr>
@@ -1542,45 +1087,45 @@ player.pip({manualContainerSize: true});</code></pre>
       <tbody class="bcls-table__body">
         <tr>
           <td><code translate="No">beforepipactive</code></td>
-          <td>Se dispara antes de que se active el modo pip</td>
+          <td>Dispara antes de que se active el modo pip</td>
         </tr>
         <tr>
           <td><code translate="No">pipactive</code></td>
-          <td>Se dispara después de activar el modo pip</td>
+          <td>Se dispara después de que se activa el modo pip</td>
         </tr>
         <tr>
           <td><code translate="No">beforepipinactive</code></td>
-          <td>Se dispara antes de que se desactive el modo pip</td>
+          <td>Dispara antes de que se desactive el modo pip</td>
         </tr>
         <tr>
           <td><code translate="No">pipinactive</code></td>
-          <td>Se dispara después de que se desactive el modo pip</td>
+          <td>Se dispara después de que se desactiva el modo pip</td>
         </tr>
         <tr>
           <td><code translate="No">beforepipenabled</code></td>
-          <td>Se activa antes de que el plugin videojs-pip esté habilitado</td>
+          <td>Se activa antes de que se habilite el complemento videojs-pip</td>
         </tr>
         <tr>
           <td><code translate="No">pipenabled</code></td>
-          <td>Se activa después de que el plugin videojs-pip está habilitado</td>
+          <td>Se activa después de que se habilita el complemento videojs-pip</td>
         </tr>
         <tr>
           <td><code translate="No">beforepipdisabled</code></td>
-          <td>Se activa antes de que el complemento videojs-pip esté deshabilitado</td>
+          <td>Se activa antes de que se deshabilite el complemento videojs-pip</td>
         </tr>
         <tr>
           <td><code translate="No">pipdisabled</code></td>
-          <td>Se dispara después de que el plugin videojs-pip está deshabilitado</td>
+          <td>Se activa después de que se deshabilita el complemento videojs-pip</td>
         </tr>
       </tbody>
     </table>
   </section>
   <section class="bcls-section">
     <h2 id="Changelog">Registro de cambios</h2>
-    <p>Vea el registro de cambios aquí.<a href="/plugins/changelog/picture-picture-plugin-changelog.html"></a></p>
+    <p>Ver el <a href="http://players.brightcove.net/release-notes/brightcove-player-pip/index.html">Notas de la versión del complemento Picture-in-Picture</a>.</p>
+    <p>Para obtener notas de la versión histórica, consulte la <a href="/plugins/changelog/picture-picture-plugin-changelog.html">registro de cambios aquí</a>.</p>
   </section>
 </article>
-
 <!-- complete bootstrap layout -->
     </div>
     <div class="col-sm-2 right-side-bar">
@@ -1595,18 +1140,26 @@ player.pip({manualContainerSize: true});</code></pre>
 </div>
 
 <hr>
-<footer class="bcls-footer" role="contentinfo">  <div class="row">
+<div class="last-updated">
+  Página actualizada por última vez el 04 Jan 2022
+</div>
+
+
+
+<footer class="bcls-footer" role="contentinfo">
+  <div class="row">
     <div class="region region-footer-top-center col-md-12">
       <nav role="navigation" aria-labelledby="block-brightcovesupport-menu" id="block-brightcovesupport" class="footer-menu">
+        <img src="https://support.brightcove.com/site-assets/images/site/SVG/COVE004_Brightcove_Logo_093020_RGB_KO.svg" class="bc-footer-logo" alt="Brightcove">
 
-        <h2>Asistencia técnica de Brightcove</h2>
+        <h2>Soporte de Brightcove</h2>
 
         <ul class="menu">
           <li>
-            Estado del sistema<a href="https://status.brightcove.com"></a>
+            <a href="https://status.brightcove.com">Estado del sistema</a>
           </li>
           <li>
-            <a href="https://supportportal.brightcove.com/s/login/?">Contactar soporte</a>
+            <a href="https://supportportal.brightcove.com/s/login/?">Contactar con el soporte</a>
           </li>
           <li>
             <a href="https://support.brightcove.com/">Documentación</a>
@@ -1616,17 +1169,17 @@ player.pip({manualContainerSize: true});</code></pre>
       </nav>
       <nav role="navigation" aria-labelledby="block-training-menu" id="block-training" class="footer-menu">
 
-        <h2>Formación</h2>
+        <h2>Capacitación</h2>
 
         <ul class="menu">
           <li>
-            Cursos en línea<a href="https://studio.support.brightcove.com/training/online-training-courses.html"></a>
+            <a href="https://studio.support.brightcove.com/training/online-training-courses.html">Cursos online</a>
           </li>
           <li>
-            Inscríbete a un curso<a href="https://studio.support.brightcove.com/training/register-training.html"></a>
+            <a href="https://studio.support.brightcove.com/training/register-training.html">Regístrese para un curso</a>
           </li>
           <li>
-            <a href="https://university.brightcove.com/">Universidad de Brightcove</a>
+            <a href="https://university.brightcove.com/">Universidad Brightcove</a>
           </li>
         </ul>
 
@@ -1637,7 +1190,7 @@ player.pip({manualContainerSize: true});</code></pre>
 
         <ul class="menu">
           <li>
-            <a href="https://www.brightcove.com">BrightCove.com</a>
+            <a href="https://www.brightcove.com">Brightcove.com</a>
           </li>
           <li>
             <a href="https://supportportal.brightcove.com/s/login/?">Contáctanos</a>
@@ -1652,12 +1205,12 @@ player.pip({manualContainerSize: true});</code></pre>
         <table>
           <tr>
             <td>
-              <div id="bc_copyright" class="field field--name-field-copyright-year field--type-string field--label-hidden field--item" style="float: left;"> Brightcove Inc. All rights reserved.</div>
+              <div id="bc_copyright" class="field field--name-field-copyright-year field--type-string field--label-hidden field--item" style="float: left;"> Brightcove Inc. Reservados todos los derechos.</div>
             </td>
-            <td>Privacidad | Términos y Condiciones<a href="https://www.brightcove.com/en/legal/privacy"></a><a href="https://www.brightcove.com/en/terms-and-conditions"></a></td>
+            <td><a href="https://www.brightcove.com/en/legal/privacy">Privacidad</a> | <a href="https://www.brightcove.com/en/terms-and-conditions">Términos y condiciones</a></td>
             <td>
               <div class="gf-links-cols footer-menu">
-                <div class="gf-social"><a href="https://www.linkedin.com/company/16439" title="LinkedIn" newtab="newtab" class="gf-social-linkedin"><i class="fab fa-linkedin-in" style="font-size: 1.5rem;"></i></a><a href="https://twitter.com/brightcove" title="Twitter" newtab="newtab" class="gf-social-twitter"><i class="fab fa-twitter" style="font-size: 1.5rem;"></i></a><a href="https://www.facebook.com/Brightcove" title="Facebook" newtab="newtab" class="gf-social-facebook"><i class="fab fa-facebook-f" style="font-size: 1.5rem;"></i></a>
+                <div class="gf-social"><a href="https://www.linkedin.com/company/16439" title="LinkedIn" newtab="newtab" class="gf-social-linkedin" style="margin-right: 1rem;"><i data-feather="linkedin" style="color:#8E9093;height: 1.25rem;"></i></a><a href="https://twitter.com/brightcove" title="Twitter" newtab="newtab" class="gf-social-twitter" style="margin-right: 1rem;"><i data-feather="twitter" style="color:#8E9093;height: 1.25rem;"></i></a><a href="https://www.facebook.com/Brightcove" title="Facebook" newtab="newtab" class="gf-social-facebook"><i data-feather="facebook" style="color:#8E9093;height: 1.25rem;"></i></a>
                 </div>
               </div>
             </td>
@@ -1668,23 +1221,9 @@ player.pip({manualContainerSize: true});</code></pre>
   </div>
 </footer>
 
-</div>
-</div>
 <script>
       
-  var searchBox = sajari.init({
-    mode: "search-box",
-    project: "1588255093746585379", // Set this to your project.
-    collection: "brightcove-documenation", // Set this to your collection.
-    instantPipeline: "autocomplete", // Pipeline used as you type
-    inputPlaceholder: "Search", // Input element placeholder
-    maxSuggestions: 5, // Maximum number of suggestions to show
-    attachSearchBox: document.getElementById("nav-search-box") // DOM element to attach to
-  });
-  
-    searchBox("sub", "pipeline.search-sent", function (_, query) {
-      window.location = "/search.html?q=" + encodeURIComponent(query.q);
-    });
+  var searchBox = sajari.init ({ mode: "search-box", project: "1588255093746585379", // Set this to your project. collection: "brightcove-documenation", // Set this to your collection. instantPipeline: "autocomplete", // Pipeline used as you type inputPlaceholder: "Search", // Input element placeholder maxSuggestions: 5, // Maximum number of suggestions to show attachSearchBox: document.getElementById("nav-search-box") // DOM element to attach to }); SearchBox («sub», «pipeline.search-sent», función (_, consulta) { window.location = "/search.html?q=" + encodeURIComponent(query.q); });
   
 
 </script>
@@ -1706,32 +1245,12 @@ player.pip({manualContainerSize: true});</code></pre>
   
   <script src="/assets/js/sajari-search-foot.js"></script>
   
+  <script>
+  pluma.replace ()
+</script>
   <!-- <script src="/assets/js/sajari-index.js"></script> -->
   <style>
-    a.sj-paginator__page-number.sj-paginator__page-number--current.css-so0ov7 {
-      background-color: lightblue;
-    }
-    div.sj-tabs__tab {
-      margin-top: 3rem;
-      margin-left: .3rem;
-      border-top-left-radius: .4rem;
-      border-top-right-radius: .4rem;
-      background-color:#e8e8e8;
-    }
-
-    div.sj-tabs__tab.sj-tabs__tab--selected {
-      border-bottom-color: crimson;
-      background-color: #f8f8f8;
-    }
-
-    p.sj-results__result__description.css-p9jvyt {
-      font-size: 1rem;
-    }
-
-    .sj-result__text.css-31l7gp h3 {
-      color: navy;
-      font-size: 1.4rem;
-    }
+     { background-color: lightblue; } a.sj-paginator__paginator__paginator__paginator__paginator__paginator__paginator__current.css-so0ov7 { margin-top: 3rem; margin-left: .3rem; border-top-left-radius: .4rem; border-top-right-radius: .4rem; background-color:#e8e8e8; } div.sj-tabs__tab div.sj-tabs__tabs__tab—seleccionado { border-bottom-color: crimson; background-color: #f8f8f8; } p.sj-result__description.css-p9jvyt { font-size: 1rem; } .sj-result__text. css-31l7gp h3 { color: navy; font-size: 1.4rem; }
     </style>
 
 </body>
