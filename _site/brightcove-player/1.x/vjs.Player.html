@@ -1,5 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
+﻿<!DOCTYPE html>
+<html lang="es">
 
 <head>
     
@@ -20,8 +20,14 @@
     <link href="//fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700" rel="stylesheet" type="text/css">
 	<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/font-hack/2.015/css/hack-extended.min.css">
 
-  <script>
-  (function (i, s, o, g, r, a, m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){ (i[r].q=i[r].q||[]).push(arguments)}, i [r] .l=1*nueva fecha (); a=s.createElement (o), m=s.getElementsByTagName (o) [0]; a.async=1; a.src=g; m.parentNode.insertBefore (a, m)}) (ventana, documento, '', '//www.google-analytics.com/analytics.js', 'ga'); ga («crear», 'UA-2728311- 23', 'auto'); ga («enviar», «vista de página»);
+  <script translate="no">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-2728311-23', 'auto');
+  ga('send', 'pageview');
 
 </script>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/foundation/5.5.3/js/vendor/modernizr.js"></script>
@@ -53,7 +59,7 @@
 <ul>
 <li><a href="#vjsplayer">visplayer</a></li> 
 </ul>
-<br />
+<br/>
 <li><p><a href="#methods">Métodos</a></p>
 
 <ul>
@@ -62,7 +68,7 @@
 <li><a href="#buffered">tampón</a></li>
 <li><a href="#bufferedEnd">Fin bufferedEnd</a></li> 
 <li><a href="#bufferedpercent">Porcentaje almacenado</a></li>
-<li><a href="#cancelfullscreen">Cancelar pantalla completa</a><em><code>obsoleto</code></em></li>
+<li><a href="#cancelfullscreen">cancelFullScreen</a> <em><code>en desuso</code></em></li>
 <li  class="video-cloud-only"><a href="#cataloggetvideo">Catalog.getVideo</a></li>
 <li  class="video-cloud-only"><a href="#catalogload">catalog.load</a></li>
 <li><a href="#controls-controls-">controles</a></li>
@@ -75,7 +81,7 @@
 <li><a href="#error">error</a></li> 
 <li><a href="#exitFullscreen">Salir a pantalla completa</a></li> 
 <li><a href="#init-tag-options-ready-">init</a></li>
-<li><a href="#isFullScreen">es pantalla completa</a><em><code>obsoleto</code></em></li> 
+<li><a href="#isFullScreen">isFullScreen</a> <em><code>en desuso</code></em></li> 
 <li><a href="#isFullscreen">es pantalla completa</a></li> 
 <li><a href="#language">idioma</a></li> 
 <li><a href="#load">carga</a></li> 
@@ -89,45 +95,45 @@
 <li><a href="#poster-src-">póster</a></li>
 <li><a href="#preload">precarga</a></li> 
 <li><a href="#remainingTime">Tiempo restante</a></li> 
-<li><a href="#requestFullScreen">Solicitar pantalla completa</a><em><code>obsoleto</code></em></li>
+<li><a href="#requestFullScreen">requestFullScreen</a> <em><code>en desuso</code></em></li>
 <li><a href="#requestFullscreen">Solicitar pantalla completa</a></li> 
 <li><a href="#seeking">buscando</a></li> 
 <li><a href="#src-source-">src</a></li>
 <li><a href="#volume-percentasdecimal-">volumen</a></li>
-<li><a href="#addchild-child-options-">Agregar hijo</a> <em><code>heredado</code></em></li>
-<li><a href="#addclass-classtoadd-">Agregar clase</a> <em><code>heredado</code></em></li>
-<li><a href="#buildcssclass">Construye clase CSS</a> <em><code>heredado</code></em></li>
-<li><a href="#children">niños</a> <em><code>heredado</code></em></li>
-<li><a href="#clearInterval">Intervalo claro</a> <em><code>heredado</code></em></li> 
-<li><a href="#clearTimeout">Borrar el timeout</a> <em><code>heredado</code></em></li> 
-<li><a href="#contentel">contenido en el</a> <em><code>heredado</code></em></li>
-<li><a href="#createel-tagname-attributes-">Crear el</a> <em><code>heredado</code></em></li>
-<li><a href="#dimensions-width-height-">dimensiones</a> <em><code>heredado</code></em></li>
+<li><a href="#addchild-child-options-">addChild</a> <em><code>heredado</code></em></li>
+<li><a href="#addclass-classtoadd-">addClass</a> <em><code>heredado</code></em></li>
+<li><a href="#buildcssclass">buildCSSClass</a> <em><code>heredado</code></em></li>
+<li><a href="#children">hijos</a> <em><code>heredados</code></em></li>
+<li><a href="#clearInterval">clearInterval</a> <em><code>heredado</code></em></li> 
+<li><a href="#clearTimeout">clearTimeout</a> <em><code>heredado</code></em></li> 
+<li><a href="#contentel">contentEl</a> <em><code>heredado</code></em></li>
+<li><a href="#createel-tagname-attributes-">crearEl</a> <em><code>heredado</code></em></li>
+<li><a href="#dimensions-width-height-">dimensiones</a> <em><code>heredadas</code></em></li>
 <!--<li><a href="#disable">disable</a> <em><code>inherited</code></em></li>-->
 <li><a href="#el">el</a> <em><code>heredado</code></em></li>
-<li><a href="#enableTouchActivity">Activar actividad de Touch</a> <em><code>heredado</code></em></li> 
-<li><a href="#getchild-name-">GetChild</a> <em><code>heredado</code></em></li>
-<li><a href="#getchildbyid-id-">Obtener hijo por ID</a> <em><code>heredado</code></em></li>
-<li><a href="#hasClass">Clase tiene</a> <em><code>heredado</code></em></li>
-<li><a href="#height-num-skiplisteners-">altura</a> <em><code>heredado</code></em></li>
+<li><a href="#enableTouchActivity">enableTouchActivity</a> <em><code>heredado</code></em></li> 
+<li><a href="#getchild-name-">getChild</a> <em><code>heredado</code></em></li>
+<li><a href="#getchildbyid-id-">getChildById</a> <em><code>heredado</code></em></li>
+<li><a href="#hasClass">hasClass</a> <em><code>heredado</code></em></li>
+<li><a href="#height-num-skiplisteners-">altura</a> <em><code>heredada</code></em></li>
 <li><a href="#hide">ocultar</a> <em><code>heredado</code></em></li>
-<li><a href="#id">id</a> <em><code>heredado</code></em></li>
-<li><a href="#initchildren">Init Niños</a> <em><code>heredado</code></em></li>
+<li><a href="#id">identificación</a> <em><code>heredada</code></em></li>
+<li><a href="#initchildren">initChildren</a> <em><code>heredado</code></em></li>
 <li><a href="#name">nombre</a> <em><code>heredado</code></em></li>
-<li><a href="#off-type-fn-">apagado</a> <em><code>heredado</code></em></li>
+<li><a href="#off-type-fn-">fuera</a> <em><code>heredado</code></em></li>
 <li><a href="#on-type-fn-">en</a> <em><code>heredado</code></em></li>
 <li><a href="#one-type-fn-">uno</a> <em><code>heredado</code></em></li>
-<li><a href="#options-obj-">opciones</a> <em><code>heredado</code></em></li>
+<li><a href="#options-obj-">opciones</a> <em><code>heredadas</code></em></li>
 <li><a href="#player">jugador</a> <em><code>heredado</code></em></li>
 <li><a href="#ready-fn-">listo</a> <em><code>heredado</code></em></li>
-<li><a href="#removechild-component-">Eliminar hijo</a> <em><code>heredado</code></em></li>
-<li><a href="#removeclass-classtoremove-">Eliminar clase</a> <em><code>heredado</code></em></li>
-<li><a href="#setInterval">Establecer intervalo</a> <em><code>heredado</code></em></li>
-<li><a href="#setTimeout">Establecer tiempo de espera</a> <em><code>heredado</code></em></li>
+<li><a href="#removechild-component-">removeChild</a> <em><code>heredado</code></em></li>
+<li><a href="#removeclass-classtoremove-">removeClass</a> <em><code>heredado</code></em></li>
+<li><a href="#setInterval">setInterval</a> <em><code>heredado</code></em></li>
+<li><a href="#setTimeout">setTimeout</a> <em><code>heredado</code></em></li>
 <li><a href="#show">mostrar</a> <em><code>heredado</code></em></li>
-<li><a href="#trigger-type-event-">gatillo</a> <em><code>heredado</code></em></li>
-<li><a href="#triggerready">Listo para gatillo</a> <em><code>heredado</code></em></li>
-<li><p><a href="#width-num-skiplisteners-">anchura</a> <em><code>heredado</code></em></p></li>
+<li><a href="#trigger-type-event-">activador</a> <em><code>heredado</code></em></li>
+<li><a href="#triggerready">triggerReady</a> <em><code>heredado</code></em></li>
+<li><p><a href="#width-num-skiplisteners-">ancho</a> <em><code>heredado</code></em></p></li>
 </ul></li>
 <li><p><a href="#events">Eventos</a></p>
 
@@ -146,7 +152,7 @@
 <li><a href="#progress-event">progreso</a></li>
 <li><a href="#timeupdate-event">actualización de tiempo</a></li>
 <li><a href="#volumechange-event">cambio de volumen</a></li>
-<li><a href="#resize-event">cambiar tamaño</a> <em><code>heredado</code></em></li>
+<li><a href="#resize-event">cambiar el tamaño</a> <em><code>heredado</code></em></li>
 </ul></li>
 </ul>
 
@@ -157,16 +163,28 @@
 <div id="vjsplayer" class="section">
 <h3>VJS. Reproductor</h3>
 
-<p><strong>EXTIENDE</strong>: <a href="vjs.Component.html">VJS.Component</a><br>
-<strong>DEFINIDO EN</strong>: <a href="https://github.com/videojs/video.js/blob/master/src/js/player.js#L21">src/js/player.js #L21</a>  </p>
+<p><strong>EXTENDE</strong> : <a href="vjs.Component.html">vjs.Componente</a><br/> <strong>DEFINIDO EN</strong> : <a href="https://github.com/videojs/video.js/blob/master/src/js/player.js#L21">src/js/player.js#L21</a>  </p>
 
 <p>Una instancia del <code>vjs.Player</code> La clase se crea cuando se usa cualquiera de los métodos de configuración de Video.js para inicializar un video.</p>
 
-<pre><code class="js">&lt;video id="MyPlayerID»... &gt; &lt;/video &gt;... &lt;script type="text/javascript"&gt; var myPlayer = videojs ('MyPlayerID'); &lt;/script &gt; </code></pre>
+<pre><code class="js">&lt;id de video = "myPlayerID"
+  ...&gt;
+&lt;/video&gt;
+...
+&lt;script type = "text / javascript"&gt;
+  var myPlayer = videojs('myPlayerID');
+&lt;/script&gt;
+</code></pre>
 
 <p>En el ejemplo siguiente, varias de las propiedades indican a la biblioteca Video.js que cree una instancia de reproductor cuando la biblioteca esté lista.</p>
 
-<pre><code class="html"> &lt;video data-account="3423279428001" data-player="89d39071-6b96-412c-b759-2aff4f7811b3" data-embed="default» data-video-id="3971877621001" class="video-js» controles&gt;&lt;/video &gt; </code></pre>
+<pre><code class="html">&lt;video
+  cuenta-datos="3423279428001"
+  reproductor de datos="89d39071-6b96-412c-b759-2aff4f7811b3"
+  data-embed = "predeterminado"
+  datos-video-id="3971877621001"
+  controles de clase = "video-js"&gt;&lt; /video&gt;
+</code></pre>
 El uso de cualquiera de las siguientes propiedades en el <code>&lt; video&gt;</code> La etiqueta hará que se cree una instancia de jugador:
 <ul>
     <li>cuenta de datos</li>
@@ -185,18 +203,34 @@ El uso de cualquiera de las siguientes propiedades en el <code>&lt; video&gt;</c
 <blockquote>
 <p>Añade un componente hijo dentro de este componente</p>
 
-<pre><code>myComponent.el ();//-&gt; &lt;div class='mi-componente' &gt;&lt;/div &gt; myComonent.Children ();//[matriz vacía] var myButton = myComponent.addChild ('myButton');//-&gt; &lt;div class='mi-componente' &gt;&lt;div class="mi-botón"&gt;myButton&lt;div&gt;&lt;/div &gt;//-&gt; myButton === myComponent. niños () [0]; </code></pre>
+<pre><code>miComponente.el();
+// -&gt; &lt; div class='mi-componente'&gt;&lt; /div&gt;
+miComponente.niños();
+// [matriz vacía]
+
+var myButton = myComponent.addChild('MyButton');
+// -&gt; &lt; div class='mi-componente'&gt;&lt; div class="mi-boton"&gt; miBoton&lt; división&gt;&lt; /div&gt;
+// -&gt; miBotón === miComponente.niños()[0];
+</code></pre>
 
 <p>Pasar opciones para constructores secundarios y opciones para hijos del niño</p>
 
-<pre><code>var myButton = myComponent.addChild ('myButton', { text: 'Press Me', children: { buttonChildExample: { buttonChildOption: true }}}); </code></pre>
+<pre><code>var miBotón = miComponente.addChild('MiBotón', {
+  texto: 'Presionarme',
+  niños: {
+    buttonChildEjemplo: {
+      buttonChildOption: verdadero
+    }
+  }
+});
+</code></pre>
 </blockquote>
 
 <h5>Parámetros:</h5>
 
 <ul>
 <li><strong></strong> <code>cadena secundario|VJS.Component Nombre</code> de clase o instancia de un hijo que se va a agregar</li>
-<li><strong>options</strong> <code>Objeto</code> <em>(OPCIONAL)</em> Opciones, incluidas las opciones que deben pasarse a los hijos del niño.</li>
+<li><strong>options</strong> <code>Object</code> <em>(OPCIONAL)</em> Opciones, incluidas las opciones que se pasarán a los hijos del hijo.</li>
 </ul>
 
 <h5>Devoluciones:</h5>
@@ -205,7 +239,7 @@ El uso de cualquiera de las siguientes propiedades en el <code>&lt; video&gt;</c
 <li><code>vjs.component</code> El componente hijo (creado por este proceso si se ha utilizado una cadena)</li>
 </ul>
 
-<p><em>heredado de</em>: <a href="https://github.com/videojs/video.js/blob/master/src/js/component.js#L362">src/js/component.js #L362</a></p>
+<p><em>heredado de</em> : <a href="https://github.com/videojs/video.js/blob/master/src/js/component.js#L362">src/js/component.js#L362</a></p>
 
 <hr>
 
@@ -227,7 +261,7 @@ El uso de cualquiera de las siguientes propiedades en el <code>&lt; video&gt;</c
 <li><code>Componente VJS</code> </li>
 </ul>
 
-<p><em>heredado de</em>: <a href="https://github.com/videojs/video.js/blob/master/src/js/component.js#L826">src/js/component.js #L826</a></p>
+<p><em>heredado de</em> : <a href="https://github.com/videojs/video.js/blob/master/src/js/component.js#L826">src/js/component.js#L826</a></p>
 
 <hr>
 
@@ -242,7 +276,12 @@ El uso de cualquiera de las siguientes propiedades en el <code>&lt; video&gt;</c
 <li><strong>TrackToAdd objeto</strong> <code>JSON</code> Track to add</li>
 </ul>
 <p>Seguimiento de subtítulos de ejemplo:</p>
-<pre><code>var EnTrack = myPlayer.AddRemoteTextTrack ({ kind: 'captions', language: 'en', label: 'English', src: 'http://solutions.brightcove.com/bcls/captions/adding_captions_to_videos.vtt' });</code></pre>
+<pre><code>var enTrack = myPlayer.addRemoteTextTrack({
+ tipo: 'títulos',
+ idioma: 'en',
+ etiqueta: 'Inglés',
+ src: 'http://solutions.brightcove.com/bcls/captions/adding_captions_to_videos.vtt'
+});</code></pre>
 
 
 <h5>Devoluciones:</h5>
@@ -272,7 +311,7 @@ El uso de cualquiera de las siguientes propiedades en el <code>&lt; video&gt;</c
 <li><code>vjs.player</code> Devuelve el reproductor al configurar</li>
 </ul>
 
-<p><em>definido en</em>: <a href="https://github.com/videojs/video.js/blob/master/src/js/player.js#L1275">src/js/player.js #L1275</a></p>
+<p><em>definido en</em> : <a href="https://github.com/videojs/video.js/blob/master/src/js/player.js#L1275">src/js/player.js#L1275</a></p>
 
 <hr>
 
@@ -283,7 +322,18 @@ El uso de cualquiera de las siguientes propiedades en el <code>&lt; video&gt;</c
 
 <p>Si solo quieres el porcentaje del vídeo que se ha descargado, usa BufferedPercent.</p>
 
-<pre><code>//Número de intervalos de tiempo diferentes que se han almacenado en búfer. Normalmente 1. numberOfRanges = bufferedTimerange.length,//Tiempo en segundos cuando comienza el primer rango. Normalmente 0. firsRangeStart = bufferedTimerange.start (0),//Tiempo en segundos cuando termina el primer rango FirsRangeEnd = bufferedTimerange.end (0),//Longitud en segundos del primer intervalo de tiempo FirsAngelLength = firsRangeEnd - FirsRangeStart; </code></pre>
+<pre><code>//Número de intervalos de tiempo diferentes que se han almacenado en búfer. Usualmente 1.
+numberOfRanges = bufferedTimeRange.longitud,
+
+// Tiempo en segundos cuando comienza el primer rango. Normalmente 0.
+firstRangeStart = bufferedTimeRange.start(0),
+
+// Tiempo en segundos cuando finaliza el primer rango
+firstRangeEnd = bufferedTimeRange.end(0),
+
+// Duración en segundos del primer intervalo de tiempo
+firstRangeLength = firstRangeEnd - firstRangeStart;
+</code></pre>
 </blockquote>
 
 <h5>Devoluciones:</h5>
@@ -292,11 +342,11 @@ El uso de cualquiera de las siguientes propiedades en el <code>&lt; video&gt;</c
 <li><code></code> Objeto Objeto timeRange simulado (siguiendo las especificaciones HTML)</li>
 </ul>
 
-<p><em>definido en</em>: <a href="https://github.com/videojs/video.js/blob/master/src/js/player.js#L782">src/js/player.js #L782</a></p>
+<p><em>definido en</em> : <a href="https://github.com/videojs/video.js/blob/master/src/js/player.js#L782">src/js/player.js#L782</a></p>
 
 <hr>
 	
-<h3 id="bufferedEnd">BufferedEnd ()</h3>
+<h3 id="bufferedEnd">bufferEnd ()</h3>
 
 <blockquote>
 <p>Obtener la hora de finalización del último intervalo de tiempo almacenado en búfer</p>
@@ -310,7 +360,7 @@ El uso de cualquiera de las siguientes propiedades en el <code>&lt; video&gt;</c
 <li><code>Número</code> El final del último intervalo de tiempo almacenado en búfer</li>
 </ul>
 
-<p><em>definido en</em>: <a href="https://github.com/videojs/video.js/blob/master/src/js/player.js#L833">src/js/player.js #L833</a></p>
+<p><em>definido en</em> : <a href="https://github.com/videojs/video.js/blob/master/src/js/player.js#L833">src/js/player.js#L833</a></p>
 
 <hr>
 
@@ -319,7 +369,8 @@ El uso de cualquiera de las siguientes propiedades en el <code>&lt; video&gt;</c
 <blockquote>
 <p>Obtén el porcentaje (como decimal) del vídeo que se ha descargado</p>
 
-<pre><code>var cuánto se ha descargado = myPlayer.BufferedPercent (); </code></pre>
+<pre><code>var cuánto se ha descargado = myPlayer.bufferedPercent();
+</code></pre>
 
 <p>0 significa ninguno, 1 significa todo. (Este método no está en la especificación HTML5, pero es muy conveniente)</p>
 </blockquote>
@@ -330,7 +381,7 @@ El uso de cualquiera de las siguientes propiedades en el <code>&lt; video&gt;</c
 <li><code>Número</code> Un decimal entre 0 y 1 que representa el porcentaje</li>
 </ul>
 
-<p><em>definido en</em>: <a href="https://github.com/videojs/video.js/blob/master/src/js/player.js#L802">src/js/player.js #L802</a></p>
+<p><em>definido en</em> : <a href="https://github.com/videojs/video.js/blob/master/src/js/player.js#L802">src/js/player.js#L802</a></p>
 
 <hr>
 
@@ -346,7 +397,7 @@ El uso de cualquiera de las siguientes propiedades en el <code>&lt; video&gt;</c
 <li><code>String</code> El nombre de la clase construida</li>
 </ul>
 
-<p><em>heredado de</em>: <a href="https://github.com/videojs/video.js/blob/master/src/js/component.js#L536">src/js/component.js #L536</a></p>
+<p><em>heredado de</em> : <a href="https://github.com/videojs/video.js/blob/master/src/js/component.js#L536">src/js/component.js#L536</a></p>
 
 <hr>
 
@@ -356,7 +407,7 @@ El uso de cualquiera de las siguientes propiedades en el <code>&lt; video&gt;</c
 <p>Nombre anterior para ExitFullScreen obsoleto true</p>
 </blockquote>
 
-<p><em>definido en</em>: <a href="https://github.com/videojs/video.js/blob/master/src/js/player.js#L1038">src/js/player.js #L1038</a></p>
+<p><em>definido en</em> : <a href="https://github.com/videojs/video.js/blob/master/src/js/player.js#L1038">src/js/player.js#L1038</a></p>
 
 <hr>
 
@@ -402,7 +453,8 @@ El uso de cualquiera de las siguientes propiedades en el <code>&lt; video&gt;</c
 <blockquote>
 <p>Obtenga una matriz de todos los componentes secundarios</p>
 
-<pre><code>var kids = myComponent.Children (); </code></pre>
+<pre><code>var niños = miComponente.niños();
+</code></pre>
 </blockquote>
 
 <h5>Devoluciones:</h5>
@@ -411,7 +463,7 @@ El uso de cualquiera de las siguientes propiedades en el <code>&lt; video&gt;</c
 <li><code>Array</code> Los niños</li>
 </ul>
 
-<p><em>heredado de</em>: <a href="https://github.com/videojs/video.js/blob/master/src/js/component.js#L296">src/js/component.js #L296</a></p>
+<p><em>heredado de</em> : <a href="https://github.com/videojs/video.js/blob/master/src/js/component.js#L296">src/js/component.js#L296</a></p>
 
 <hr>
 	
@@ -433,7 +485,7 @@ El uso de cualquiera de las siguientes propiedades en el <code>&lt; video&gt;</c
 <li><code>Número</code> Devuelve el identificador de intervalo</li>
 </ul>
 
-<p><em>heredado de</em>: <a href="https://github.com/videojs/video.js/blob/master/src/js/component.js#L1219">src/js/component.js #L1219</a></p>
+<p><em>heredado de</em> : <a href="https://github.com/videojs/video.js/blob/master/src/js/component.js#L1219">src/js/component.js#L1219</a></p>
 
 <hr>
 	
@@ -455,7 +507,7 @@ El uso de cualquiera de las siguientes propiedades en el <code>&lt; video&gt;</c
 <li><code>Número</code> Devuelve el identificador de tiempo de espera</li>
 </ul>
 
-<p><em>heredado de</em>: <a href="https://github.com/videojs/video.js/blob/master/src/js/component.js#L1181">src/js/component.js #L1181</a></p>
+<p><em>heredado de</em> : <a href="https://github.com/videojs/video.js/blob/master/src/js/component.js#L1181">src/js/component.js#L1181</a></p>
 
 <hr>
 
@@ -471,7 +523,7 @@ El uso de cualquiera de las siguientes propiedades en el <code>&lt; video&gt;</c
 <li><code>Elemento</code> </li>
 </ul>
 
-<p><em>heredado de</em>: <a href="https://github.com/videojs/video.js/blob/master/src/js/component.js#L239">src/js/component.js #L239</a></p>
+<p><em>heredado de</em> : <a href="https://github.com/videojs/video.js/blob/master/src/js/component.js#L239">src/js/component.js#L239</a></p>
 
 <hr>
 
@@ -493,7 +545,7 @@ El uso de cualquiera de las siguientes propiedades en el <code>&lt; video&gt;</c
 <li><code>Se muestran</code> los controles booleanos</li>
 </ul>
 
-<p><em>definido en</em>: <a href="https://github.com/videojs/video.js/blob/master/src/js/player.js#L1355">src/js/player.js #L1355</a></p>
+<p><em>definido en</em> : <a href="https://github.com/videojs/video.js/blob/master/src/js/player.js#L1355">src/js/player.js#L1355</a></p>
 
 <hr>
 
@@ -506,8 +558,8 @@ El uso de cualquiera de las siguientes propiedades en el <code>&lt; video&gt;</c
 <h5>Parámetros:</h5>
 
 <ul>
-<li><strong></strong> <code>Cadena de nombre de etiqueta</code> <em>(OPCIONAL)</em> Tipo de nodo de elemento. Por ejemplo, 'div'</li>
-<li><strong>attributes</strong> <code>Objeto</code> <em>(OPCIONAL)</em> Objeto de atributos de elemento que debe establecerse en el elemento</li>
+<li><strong>tagName</strong> <code>Cadena</code> <em>(OPCIONAL)</em> Tipo de nodo del elemento. por ejemplo, 'div'</li>
+<li><strong>atributos</strong> <code>Objeto</code> <em>(OPCIONAL)</em> Un objeto de atributos de elemento que debe establecerse en el elemento</li>
 </ul>
 
 <h5>Devoluciones:</h5>
@@ -516,7 +568,7 @@ El uso de cualquiera de las siguientes propiedades en el <code>&lt; video&gt;</c
 <li><code>Elemento</code> </li>
 </ul>
 
-<p><em>heredado de</em>: <a href="https://github.com/videojs/video.js/blob/master/src/js/component.js#L200">src/js/component.js #L200</a></p>
+<p><em>heredado de</em> : <a href="https://github.com/videojs/video.js/blob/master/src/js/component.js#L200">src/js/component.js#L200</a></p>
 
 <hr>
 	
@@ -532,7 +584,7 @@ El uso de cualquiera de las siguientes propiedades en el <code>&lt; video&gt;</c
 <li><code>String</code> El origen actual</li>
 </ul>
 
-<p><em>definido en</em>: <a href="https://github.com/videojs/video.js/blob/master/src/js/player.js#L1242">src/js/player.js #L1242</a></p>
+<p><em>definido en</em> : <a href="https://github.com/videojs/video.js/blob/master/src/js/player.js#L1242">src/js/player.js#L1242</a></p>
 
 <hr>
 
@@ -541,13 +593,18 @@ El uso de cualquiera de las siguientes propiedades en el <code>&lt; video&gt;</c
 <blockquote>
 <p>Obtener o configurar la hora actual (en segundos)</p>
 
-<pre><code>//get var whereYouAt = myPlayer.currentTime ();//establece myPlayer.CurrentTime (120);//2 minutos en el vídeo </code></pre>
+<pre><code>// conseguir
+var whereYouAt = myPlayer.currentTime();
+
+// colocar
+miJugador.horaActual(120); // 2 minutos en el video
+</code></pre>
 </blockquote>
 
 <h5>Parámetros:</h5>
 
 <ul>
-<li><strong>segundos</strong> <code>Número|Cadena</code> <em>(OPCIONAL)</em> El momento de buscar</li>
+<li><strong>segundos</strong> <code>Número|Cadena</code> <em>(OPCIONAL)</em> El tiempo para buscar</li>
 </ul>
 
 <h5>Devoluciones:</h5>
@@ -557,11 +614,11 @@ El uso de cualquiera de las siguientes propiedades en el <code>&lt; video&gt;</c
 <li><code>VJS.player</code> self, cuando se establece la hora actual</li>
 </ul>
 
-<p><em>definido en</em>: <a href="https://github.com/videojs/video.js/blob/master/src/js/player.js#L702">src/js/player.js #L702</a></p>
+<p><em>definido en</em> : <a href="https://github.com/videojs/video.js/blob/master/src/js/player.js#L702">src/js/player.js#L702</a></p>
 
 <hr>
 	
-<h3 id="currentType">CurrentType ()</h3>
+<h3 id="currentType">currentType ()</h3>
 
 <blockquote>
 <p>Obtener el tipo de fuente actual, por ejemplo, vídeo/mp4 Esto puede permitirle reconstruir el objeto fuente actual para que pueda cargar la misma fuente y tecnología más adelante.</p>
@@ -573,7 +630,7 @@ El uso de cualquiera de las siguientes propiedades en el <code>&lt; video&gt;</c
 <li><code>String</code> El tipo MIME de origen</li>
 </ul>
 
-<p><em>definido en</em>: <a href="https://github.com/videojs/video.js/blob/master/src/js/player.js#L1252">src/js/player.js #L1252</a></p>
+<p><em>definido en</em> : <a href="https://github.com/videojs/video.js/blob/master/src/js/player.js#L1252">src/js/player.js#L1252</a></p>
 
 <hr>
 
@@ -596,7 +653,7 @@ El uso de cualquiera de las siguientes propiedades en el <code>&lt; video&gt;</c
 <li><code>vjs.component</code> El componente</li>
 </ul>
 
-<p><em>heredado de</em>: <a href="https://github.com/videojs/video.js/blob/master/src/js/component.js#L938">src/js/component.js #L938</a></p>
+<p><em>heredado de</em> : <a href="https://github.com/videojs/video.js/blob/master/src/js/component.js#L938">src/js/component.js#L938</a></p>
 
 <hr>
 
@@ -617,12 +674,13 @@ El uso de cualquiera de las siguientes propiedades en el <code>&lt; video&gt;</c
 <blockquote>
 <p>Destruye el reproductor de vídeo y realiza la limpieza necesaria</p>
 
-<pre><code>MyPlayer.dispose (); </code></pre>
+<pre><code>miJugador.dispose();
+</code></pre>
 
 <p>Esto resulta especialmente útil si agrega y elimina vídeos de forma dinámica a/desde el DOM.</p>
 </blockquote>
 
-<p><em>definido en</em>: <a href="https://github.com/videojs/video.js/blob/master/src/js/player.js#L164">src/js/player.js #L164</a></p>
+<p><em>definido en</em> : <a href="https://github.com/videojs/video.js/blob/master/src/js/player.js#L164">src/js/player.js#L164</a></p>
 
 <hr>
 
@@ -631,7 +689,8 @@ El uso de cualquiera de las siguientes propiedades en el <code>&lt; video&gt;</c
 <blockquote>
 <p>Obtén la duración del vídeo en segundos</p>
 
-<pre><code>var lengthOfVideo = myPlayer.duration (); </code></pre>
+<pre><code>var lengthOfVideo = myPlayer.duration();
+</code></pre>
 
 <p><strong>NOTA</strong>: El vídeo debe haber comenzado a cargarse antes de que se conozca la duración y, en el caso de Flash, puede que no se sepa hasta que el vídeo comience a reproducirse.</p>
 </blockquote>
@@ -648,7 +707,7 @@ El uso de cualquiera de las siguientes propiedades en el <code>&lt; video&gt;</c
 <li><code>Número</code> La duración del vídeo en segundos</li>
 </ul>
 
-<p><em>definido en</em>: <a href="https://github.com/videojs/video.js/blob/master/src/js/player.js#L730">src/js/player.js #L730</a></p>
+<p><em>definido en</em> : <a href="https://github.com/videojs/video.js/blob/master/src/js/player.js#L730">src/js/player.js#L730</a></p>
 
 <hr>
 
@@ -657,7 +716,8 @@ El uso de cualquiera de las siguientes propiedades en el <code>&lt; video&gt;</c
 <blockquote>
 <p>Obtener el elemento DOM del componente</p>
 
-<pre><code>var doMel = myComponent.el (); </code></pre>
+<pre><code>var domEl = miComponente.el();
+</code></pre>
 </blockquote>
 
 <h5>Devoluciones:</h5>
@@ -666,7 +726,7 @@ El uso de cualquiera de las siguientes propiedades en el <code>&lt; video&gt;</c
 <li><code>Elemento</code> </li>
 </ul>
 
-<p><em>heredado de</em>: <a href="https://github.com/videojs/video.js/blob/master/src/js/component.js#L220"> src/js/component.js #L220</a></p>
+<p><em>heredado de</em> : <a href="https://github.com/videojs/video.js/blob/master/src/js/component.js#L220">src/js/component.js#L220</a></p>
 
 <hr>
 
@@ -681,7 +741,7 @@ El uso de cualquiera de las siguientes propiedades en el <code>&lt; video&gt;</c
 
 </blockquote>
 
-<p><em>heredado de</em>: <a href="https://github.com/videojs/video.js/blob/master/src/js/component.js#L1120"> src/js/component.js #L1120</a></p>
+<p><em>heredado de</em> : <a href="https://github.com/videojs/video.js/blob/master/src/js/component.js#L1120">src/js/component.js#L1120</a></p>
 
 <hr>
 	
@@ -697,7 +757,7 @@ El uso de cualquiera de las siguientes propiedades en el <code>&lt; video&gt;</c
 <li><code>Boolean</code> True si el jugador está en estado final, falso si no</li>
 </ul>
 
-<p><em>definido en</em>: <a href="https://github.com/videojs/video.js/blob/master/src/js/player.js#L1476">src/js/player.js #L1476</a></p>
+<p><em>definido en</em> : <a href="https://github.com/videojs/video.js/blob/master/src/js/player.js#L1476">src/js/player.js#L1476</a></p>
 
 <hr>
 	
@@ -720,17 +780,18 @@ El uso de cualquiera de las siguientes propiedades en el <code>&lt; video&gt;</c
 <li><code>VJS.Player</code> al configurar</li>
 </ul>
 
-<p><em>definido en</em>: <a href="https://github.com/videojs/video.js/blob/master/src/js/player.js#L1440">src/js/player.js #L1440</a></p>
+<p><em>definido en</em> : <a href="https://github.com/videojs/video.js/blob/master/src/js/player.js#L1440">src/js/player.js#L1440</a></p>
 
 <hr>
 	
-<h3 id="exitFullscreen">Salir de pantalla completa ()</h3>
+<h3 id="exitFullscreen">salir de pantalla completa()</h3>
 
 <blockquote>
 <p>Devolver el vídeo a su tamaño normal después de haber estado en modo de pantalla completa</p>
 </blockquote>
 	
-<pre><code>Mi player.salir pantalla completa (); </code></pre>
+<pre><code>miJugador.exitFullscreen();
+</code></pre>
 	
 <h5>Devoluciones:</h5>
 
@@ -738,7 +799,7 @@ El uso de cualquiera de las siguientes propiedades en el <code>&lt; video&gt;</c
 <li><code>VJS.player</code> auto</li>
 </ul>
 
-<p><em>definido en</em>: <a href="https://github.com/videojs/video.js/blob/master/src/js/player.js#L1017">src/js/player.js #L1017</a></p>
+<p><em>definido en</em> : <a href="https://github.com/videojs/video.js/blob/master/src/js/player.js#L1017">src/js/player.js#L1017</a></p>
 
 <hr>
 	
@@ -760,7 +821,7 @@ El uso de cualquiera de las siguientes propiedades en el <code>&lt; video&gt;</c
 <li><code>Componente VJS</code> </li>
 </ul>
 
-<p><em>heredado de</em>: <a href="https://github.com/videojs/video.js/blob/master/src/js/component.js#L330">src/js/component.js #L330</a></p>
+<p><em>heredado de</em> : <a href="https://github.com/videojs/video.js/blob/master/src/js/component.js#L330">src/js/component.js#L330</a></p>
 
 <hr>
 
@@ -782,7 +843,7 @@ El uso de cualquiera de las siguientes propiedades en el <code>&lt; video&gt;</c
 <li><code>Componente VJS</code> </li>
 </ul>
 
-<p><em>heredado de</em>: <a href="https://github.com/videojs/video.js/blob/master/src/js/component.js#L313">src/js/component.js #L313</a></p>
+<p><em>heredado de</em> : <a href="https://github.com/videojs/video.js/blob/master/src/js/component.js#L313">src/js/component.js#L313</a></p>
 
 <hr>
 	
@@ -804,7 +865,7 @@ El uso de cualquiera de las siguientes propiedades en el <code>&lt; video&gt;</c
 <li><code>Componente VJS</code> </li>
 </ul>
 
-<p><em>heredado de</em>: <a href="https://github.com/videojs/video.js/blob/master/src/js/component.js#L816">src/js/component.js #L816</a></p>
+<p><em>heredado de</em> : <a href="https://github.com/videojs/video.js/blob/master/src/js/component.js#L816">src/js/component.js#L816</a></p>
 
 <hr>
 
@@ -819,8 +880,8 @@ El uso de cualquiera de las siguientes propiedades en el <code>&lt; video&gt;</c
 <h5>Parámetros:</h5>
 
 <ul>
-<li><strong></strong> <code>número|Cadena</code> <em>(OPCIONAL)</em> Altura de componentes nuevos</li>
-<li><strong>SkiListeners</strong> <code>booleano</code> <em>(OPCIONAL)</em> Omitir el activador de evento de redimensionamiento</li>
+<li><strong>num</strong> <code>Número|Cadena</code> <em>(OPCIONAL)</em> Altura del nuevo componente</li>
+<li><strong>skipListeners</strong> <code>Booleano</code> <em>(OPCIONAL)</em> Saltar el activador del evento de cambio de tamaño</li>
 </ul>
 
 <h5>Devoluciones:</h5>
@@ -830,7 +891,7 @@ El uso de cualquiera de las siguientes propiedades en el <code>&lt; video&gt;</c
 <li><code>Número|String</code> La altura, al obtener</li>
 </ul>
 
-<p><em>heredado de</em>: <a href="https://github.com/videojs/video.js/blob/master/src/js/component.js#L927">src/js/component.js #L927</a></p>
+<p><em>heredado de</em> : <a href="https://github.com/videojs/video.js/blob/master/src/js/component.js#L927">src/js/component.js#L927</a></p>
 
 <hr>
 
@@ -846,7 +907,7 @@ El uso de cualquiera de las siguientes propiedades en el <code>&lt; video&gt;</c
 <li><code>Componente VJS</code> </li>
 </ul>
 
-<p><em>heredado de</em>: <a href="https://github.com/videojs/video.js/blob/master/src/js/component.js#L857">src/js/component.js #L857</a></p>
+<p><em>heredado de</em> : <a href="https://github.com/videojs/video.js/blob/master/src/js/component.js#L857">src/js/component.js#L857</a></p>
 
 <hr>
 
@@ -855,7 +916,8 @@ El uso de cualquiera de las siguientes propiedades en el <code>&lt; video&gt;</c
 <blockquote>
 <p>Obtener el ID del componente</p>
 
-<pre><code>var id = myComponent.id (); </code></pre>
+<pre><code>var id = miComponente.id();
+</code></pre>
 </blockquote>
 
 <h5>Devoluciones:</h5>
@@ -864,7 +926,7 @@ El uso de cualquiera de las siguientes propiedades en el <code>&lt; video&gt;</c
 <li><code>cuerda</code> </li>
 </ul>
 
-<p><em>heredado de</em>: <a href="https://github.com/videojs/video.js/blob/master/src/js/component.js#L258">src/js/component.js #L258</a></p>
+<p><em>heredado de</em> : <a href="https://github.com/videojs/video.js/blob/master/src/js/component.js#L258">src/js/component.js#L258</a></p>
 
 <hr>
 
@@ -878,11 +940,11 @@ El uso de cualquiera de las siguientes propiedades en el <code>&lt; video&gt;</c
 
 <ul>
 <li><strong>tag</strong> <code>Element</code> La etiqueta de vídeo original utilizada para configurar las opciones</li>
-<li><strong>options</strong> <code>Objeto</code> <em>(OPCIONAL)</em> Opciones de reproductor</li>
-<li><strong>ready</strong> <code>Función</code> <em>(OPCIONAL)</em> Función de devolución de llamada lista</li>
+<li><strong>opciones</strong> <code>Objeto</code> <em>(OPCIONAL)</em> Opciones del jugador</li>
+<li><strong>listo</strong> <code>Función</code> <em>(OPCIONAL)</em> Función de devolución de llamada lista</li>
 </ul>
 
-<p><em>definido en</em>: <a href="https://github.com/videojs/video.js/blob/master/src/js/player.js#L32">src/js/player.js #L32</a></p>
+<p><em>definido en</em> : <a href="https://github.com/videojs/video.js/blob/master/src/js/player.js#L32">src/js/player.js#L32</a></p>
 
 <hr>
 
@@ -891,12 +953,35 @@ El uso de cualquiera de las siguientes propiedades en el <code>&lt; video&gt;</c
 <blockquote>
 <p>Agregar e inicializar componentes secundarios predeterminados desde las opciones</p>
 
-<pre><code>//cuando se crea una instancia de myComponent, todos los hijos de las opciones//se agregarán a la instancia mediante sus cadenas de nombre y opciones MyComponent.prototype.options_.children = { myChildComponent: { myChildOption: true }}//O al crear el componente var myComp = new myComponent (reproductor, { children: { myChildComponent: { myChildOption: true }}});</code></pre>
-<p>La opción secundaria también puede ser una matriz de nombres secundarios u objetos de opciones secundarias (que también incluyen una' clave de nombre).</p>
-<pre><code>var myComp = nuevo myComponent (jugador, { children: [ 'button', { name: 'button', someOtherOption: true }]});</code></pre>
+<pre><code>// cuando se crea una instancia de MyComponent, todos los hijos en opciones
+// se agregará a la instancia por sus cadenas de nombre y opciones
+MiComponente.prototipo.opciones_.niños = {
+  myChildComponent: {
+    myChildOption: verdadero
+  }
+}
+
+// O al crear el componente
+var myComp = new MyComponent(jugador, {
+  niños: {
+    myChildComponent: {
+      myChildOption: verdadero
+    }
+  }
+});</code></pre>
+<p>La opción de niños también puede ser una matriz de nombres de niños u objetos de opciones de niños (que también incluyen una clave de 'nombre').</p>
+<pre><code>var myComp = new MyComponent(jugador, {
+  niños: [
+    'botón',
+    {
+      nombre: 'botón',
+      algunaOtraOpción: verdadero
+    }
+  ]
+});</code></pre>
 </blockquote>
 
-<p><em>heredado de</em>: <a href="https://github.com/videojs/video.js/blob/master/src/js/component.js#L481">src/js/component.js #L481</a></p>
+<p><em>heredado de</em> : <a href="https://github.com/videojs/video.js/blob/master/src/js/component.js#L481">src/js/component.js#L481</a></p>
 
 <hr>
 	
@@ -912,7 +997,7 @@ El uso de cualquiera de las siguientes propiedades en el <code>&lt; video&gt;</c
 <li><strong>ISF</strong> </li>
 </ul>
 
-<p><em>definido en</em>: <a href="https://github.com/videojs/video.js/blob/master/src/js/player.js#L940">src/js/player.js #L940</a></p>
+<p><em>definido en</em> : <a href="https://github.com/videojs/video.js/blob/master/src/js/player.js#L940">src/js/player.js#L940</a></p>
 
 <hr>
 	
@@ -921,14 +1006,19 @@ El uso de cualquiera de las siguientes propiedades en el <code>&lt; video&gt;</c
 <blockquote>
 <p>Comprueba si el reproductor está en modo de pantalla completa</p>
 
-<pre><code>//get var fullScreenOrnot = myPlayer.isFullScreen ();//establece myPlayer.isFullScreen (true);//indica al jugador que está en pantalla completa </code></pre>
+<pre><code>// conseguir
+var fullscreenOrNot = myPlayer.isFullscreen();
+
+// colocar
+myPlayer.isFullscreen(verdadero); // decirle al jugador que está en pantalla completa
+</code></pre>
 <p>NOTA: A partir de la última especificación HTML5, isFullScreen ya no es una propiedad oficial y, en cambio, se utiliza document.fullScreenElement. Pero isFullScreen sigue siendo una propiedad valiosa para el funcionamiento interno de los jugadores.</p>
 </blockquote>
 
 <h5>Parámetros:</h5>
 
 <ul>
-<li><strong>ISFS</strong> <code>booleano</code> <em>(OPCIONAL)</em> Actualizar el estado de pantalla completa del reproductor</li>
+<li><strong>isFS</strong> <code>Boolean</code> <em>(OPCIONAL)</em> Actualizar el estado de pantalla completa del reproductor</li>
 </ul>
 
 <h5>Devoluciones:</h5>
@@ -938,7 +1028,7 @@ El uso de cualquiera de las siguientes propiedades en el <code>&lt; video&gt;</c
 <li><code>VJS.player</code> self, al configurar</li>
 </ul>
 
-<p><em>definido en</em>: <a href="https://github.com/videojs/video.js/blob/master/src/js/player.js#L928">src/js/player.js #L928</a></p>
+<p><em>definido en</em> : <a href="https://github.com/videojs/video.js/blob/master/src/js/player.js#L928">src/js/player.js#L928</a></p>
 
 <hr>
 	
@@ -961,7 +1051,7 @@ El uso de cualquiera de las siguientes propiedades en el <code>&lt; video&gt;</c
 <li><code>VJS.player</code> self, al configurar</li>
 </ul>
 
-<p><em>definido en</em>: <a href="https://github.com/videojs/video.js/blob/master/src/js/player.js#L124">src/js/player.js #L124</a></p>
+<p><em>definido en</em> : <a href="https://github.com/videojs/video.js/blob/master/src/js/player.js#L124">src/js/player.js#L124</a></p>
 
 <hr>
 	
@@ -977,7 +1067,7 @@ El uso de cualquiera de las siguientes propiedades en el <code>&lt; video&gt;</c
 <li><code>VJS.Player</code> Devuelve el jugador</li>
 </ul>
 
-<p><em>definido en</em>: <a href="https://github.com/videojs/video.js/blob/master/src/js/player.js#L1232">src/js/player.js #L1232</a></p>
+<p><em>definido en</em> : <a href="https://github.com/videojs/video.js/blob/master/src/js/player.js#L1232">src/js/player.js#L1232</a></p>
 
 <hr>
 	
@@ -1000,7 +1090,7 @@ El uso de cualquiera de las siguientes propiedades en el <code>&lt; video&gt;</c
 <li><code>vjs.player</code> Devuelve el reproductor al configurar</li>
 </ul>
 
-<p><em>definido en</em>: <a href="https://github.com/videojs/video.js/blob/master/src/js/player.js#L1289">src/js/player.js #L1289</a></p>
+<p><em>definido en</em> : <a href="https://github.com/videojs/video.js/blob/master/src/js/player.js#L1289">src/js/player.js#L1289</a></p>
 
 <hr>
 
@@ -1009,13 +1099,18 @@ El uso de cualquiera de las siguientes propiedades en el <code>&lt; video&gt;</c
 <blockquote>
 <p>Obtener el estado silenciado actual o activar o desactivar el silencio</p>
 
-<pre><code>//get var isVolumeMuted = myPlayer.muted ();//establece myPlayer.Muted (true);//silenciar el volumen </code></pre>
+<pre><code>// conseguir
+var isVolumeMuted = myPlayer.muted();
+
+// colocar
+miJugador.silenciado(verdadero); // silenciar el volumen
+</code></pre>
 </blockquote>
 
 <h5>Parámetros:</h5>
 
 <ul>
-<li><strong></strong> <code>booleano silenciado</code> <em>(OPCIONAL)</em> Verdadero para silenciar, falso a anular silencio</li>
+<li><strong>silenciado</strong> <code>Booleano</code> <em>(OPCIONAL)</em> Verdadero para silenciar, falso para no silenciar</li>
 </ul>
 
 <h5>Devoluciones:</h5>
@@ -1025,7 +1120,7 @@ El uso de cualquiera de las siguientes propiedades en el <code>&lt; video&gt;</c
 <li><code>VJS.player</code> self, al configurar el silencio</li>
 </ul>
 
-<p><em>definido en</em>: <a href="https://github.com/videojs/video.js/blob/master/src/js/player.js#L890">src/js/player.js #L890</a></p>
+<p><em>definido en</em> : <a href="https://github.com/videojs/video.js/blob/master/src/js/player.js#L890">src/js/player.js#L890</a></p>
 
 <hr>
 
@@ -1034,7 +1129,8 @@ El uso de cualquiera de las siguientes propiedades en el <code>&lt; video&gt;</c
 <blockquote>
 <p>Obtén el nombre del componente. El nombre se utiliza a menudo para hacer referencia al componente.</p>
 
-<pre><code>var name = mycomponent.name (); </code></pre>
+<pre><code>var nombre = miComponente.nombre();
+</code></pre>
 </blockquote>
 
 <h5>Devoluciones:</h5>
@@ -1043,7 +1139,7 @@ El uso de cualquiera de las siguientes propiedades en el <code>&lt; video&gt;</c
 <li><code>cuerda</code> </li>
 </ul>
 
-<p><em>heredado de</em>: <a href="https://github.com/videojs/video.js/blob/master/src/js/component.js#L277">src/js/component.js #L277</a></p>
+<p><em>heredado de</em> : <a href="https://github.com/videojs/video.js/blob/master/src/js/component.js#L277">src/js/component.js#L277</a></p>
 
 <hr>
 
@@ -1052,18 +1148,21 @@ El uso de cualquiera de las siguientes propiedades en el <code>&lt; video&gt;</c
 <blockquote>
 <p>Eliminar un detector de eventos del elemento del componente</p>
 
-<pre><code>myComponent.off ('EventType', myFunc); </code></pre>
+<pre><code>myComponent.off('tipoEvento', myFunc);
+</code></pre>
 <p>Si se excluye myFunc, se eliminarán TODOS los oyentes del tipo de evento. Si se excluye EventType, TODOS los oyentes se eliminarán del componente.</p>
 <p>Alternativamente, puede utilizar <code>off</code> para eliminar los oyentes que se agregaron a otros elementos o componentes mediante <code>MyComponent.On (OtherComponent...</code>. En este caso, tanto el tipo de evento como la función de escucha son NECESARIOS.</p>
-<pre><code>myComponent.off (OtherElement, 'EventType', myFunc); myComponent.off (OtherComponent, 'EventType', myFunc); </code></pre>
+<pre><code>myComponent.off(otherElement, 'eventType', myFunc);
+myComponent.off(otherComponent, 'eventType', myFunc);
+</code></pre>
 </blockquote>
 
 <h5>Parámetros:</h5>
 
 <ul>
-<li><strong>primera</strong> <code>cadena|VJS.component</code> <em>(OPCIONAL)</em> El tipo de evento u otro componente</li>
-<li><strong>segunda</strong> <code>función|String</code> <em>(OPCIONAL)</em> Función de escucha o tipo de evento</li>
-<li><strong>tercera</strong> <code>función</code> <em>(OPCIONAL)</em> El agente de escucha de otro componente</li>
+<li><strong>first</strong> <code>String|vjs.Component</code> <em>(OPCIONAL)</em> El tipo de evento u otro componente</li>
+<li><strong>segunda</strong> <code>Función|Cadena</code> <em>(OPCIONAL)</em> La función de escucha o el tipo de evento</li>
+<li><strong>tercera</strong> <code>función</code> <em>(OPCIONAL)</em> El oyente de otro componente</li>
 </ul>
 
 <h5>Devoluciones:</h5>
@@ -1072,7 +1171,7 @@ El uso de cualquiera de las siguientes propiedades en el <code>&lt; video&gt;</c
 <li><code>Componente VJS</code> </li>
 </ul>
 
-<p><em>heredado de</em>: <a href="https://github.com/videojs/video.js/blob/master/src/js/component.js#L646">src/js/component.js #L646</a></p>
+<p><em>heredado de</em> : <a href="https://github.com/videojs/video.js/blob/master/src/js/component.js#L646">src/js/component.js#L646</a></p>
 
 <hr>
 
@@ -1081,12 +1180,20 @@ El uso de cualquiera de las siguientes propiedades en el <code>&lt; video&gt;</c
 <blockquote>
 <p>Agregar un detector de eventos al elemento de este componente</p>
 
-<pre><code>var myFunc = function (){ var myPlayer = this; // Do something when the event is fired }; myComponent.on («EventType», myFunc); </code></pre>
+<pre><code>var myFunc = function(){
+  var myPlayer = this;
+  // Hacer algo cuando se dispara el evento
+};
+
+myComponent.on("tipoEvento", myFunc);
+</code></pre>
 
 <p>El contexto de myFunc será myComponent a menos que esté vinculado previamente.</p>
 <p>Alternativamente, puede agregar un agente de escucha a otro elemento o componente.</p>
 	
-<pre><code>myComponent.on (OtherElement, «EventName», myFunc); myComponent.on (OtherComponent, «EventName», myFunc); </code></pre>
+<pre><code>myComponent.on(otherElement, "eventName", myFunc);
+myComponent.on(otherComponent, "eventName", myFunc);
+</code></pre>
 <p>La ventaja de utilizar esto sobre <code>vjs.on (OtherElement, «EventName», myFunc)</code> y <code>OtherComponent.on («EventName», myFunc)</code> es que así los oyentes se limpiarán automáticamente cuando se elimine cualquiera de los componentes. También vinculará myComponent como contexto de myFunc.</p>
 <p>NOTA: Al usar esto en elementos de la página distintos de la ventana y del documento (ambos permanentes), si elimina el elemento del DOM, debe llamar a <code>vjs.trigger (el, «eliminar»)</code> para limpiar las referencias a él y permitir que el navegador se basura recogerlo.</p>
 </blockquote>
@@ -1105,7 +1212,7 @@ El uso de cualquiera de las siguientes propiedades en el <code>&lt; video&gt;</c
 <li><code>vjs.componente</code> auto</li>
 </ul>
 
-<p><em>heredado de</em>: <a href="https://github.com/videojs/video.js/blob/master/src/js/component.js#L577">src/js/component.js #L577</a></p>
+<p><em>heredado de</em> : <a href="https://github.com/videojs/video.js/blob/master/src/js/component.js#L577">src/js/component.js#L577</a></p>
 
 <hr>
 
@@ -1113,9 +1220,12 @@ El uso de cualquiera de las siguientes propiedades en el <code>&lt; video&gt;</c
 
 <blockquote>
 <p>Añadir un detector de eventos para activarlo solo una vez y luego eliminarlo</p>
-<pre><code>myComponent.one («Nombre del evento», myFunc); </code></pre>
+<pre><code>myComponent.one("nombreEvento", myFunc);
+</code></pre>
 <p>Alternativamente, puede agregar un agente de escucha a otro elemento o componente que se activará una sola vez.</p>
-<pre><code>myComponent.one (OtherElement, «EventName», myFunc); myComponent.one (OtherComponent, «EventName», myFunc); </code></pre>
+<pre><code>myComponent.one(otherElement, "eventName", myFunc);
+myComponent.one(otherComponent, "eventName", myFunc);
+</code></pre>
 </blockquote>
 
 <h5>Parámetros:</h5>
@@ -1123,7 +1233,7 @@ El uso de cualquiera de las siguientes propiedades en el <code>&lt; video&gt;</c
 <ul>
 <li><strong>first</strong> <code>string|VJS.Component</code> El tipo de evento u otro componente</li>
 <li><strong>second</strong> <code>Function|String</code> La función de escucha o tipo de evento</li>
-<li><strong>tercera</strong> <code>función</code> <em>(OPCIONAL)</em> Función de escucha de otro componente</li>
+<li><strong>tercera</strong> <code>función</code> <em>(OPCIONAL)</em> La función de escucha para otro componente</li>
 </ul>
 
 <h5>Devoluciones:</h5>
@@ -1132,7 +1242,7 @@ El uso de cualquiera de las siguientes propiedades en el <code>&lt; video&gt;</c
 <li><code>Componente VJS</code> </li>
 </ul>
 
-<p><em>heredado de</em>: <a href="https://github.com/videojs/video.js/blob/master/src/js/component.js#L691">src/js/component.js #L691</a></p>
+<p><em>heredado de</em> : <a href="https://github.com/videojs/video.js/blob/master/src/js/component.js#L691">src/js/component.js#L691</a></p>
 
 <hr>
 
@@ -1148,7 +1258,7 @@ El uso de cualquiera de las siguientes propiedades en el <code>&lt; video&gt;</c
 <li>objeto JavaScript</li>
 </ul>
 <p>Ejemplo de datos devueltos por <code>opciones ()</code> método</p>
-<div><img src="/en/player/brightcove-player/reference/assets/options-console-log.png" alt="options console log"></div>
+<div><img src="/en/player/brightcove-player/reference/assets/options-console-log.png" alt="registro de la consola de opciones"/></div>
 <p>Nota: Si el reproductor se completó con fuentes solo a través del catálogo, el <code>fuentes</code> la matriz no tendrá nada en ella</p>
 
 <hr>  
@@ -1162,11 +1272,35 @@ El uso de cualquiera de las siguientes propiedades en el <code>&lt; video&gt;</c
 
 <p>Se utiliza para combinar opciones de componentes secundarios. Queremos que sea fácil anular las opciones individuales de un componente secundario sin tener que volver a escribir todas las demás opciones predeterminadas.</p>
 
-<pre><code>parent.prototype.options_ = { children: { 'childOne': { 'foo': 'bar', 'asdf': 'fdsa' }, 'ChildTwo': {}, 'ChildThree': {}}} newOptions = { children: { 'childOne': { 'foo': 'baz', 'abc': '123' } 'ChildTwo': nulo, 'ChildFour': {} }} this.options (Nuevas opciones); </code></pre>
+<pre><code>Padre.prototipo.opciones_ = {
+  niños: {
+    'childOne': { 'foo': 'bar', 'asdf': 'fdsa' },
+    'niñoDos': {},
+    'niñoTres': {}
+  }
+}
+nuevasOpciones = {
+  niños: {
+    'niñoUno': { 'foo': 'baz', 'abc': '123' }
+    'niñoDos': nulo,
+    'niñoCuatro': {}
+  }
+}
+
+this.options(nuevasOpciones);
+</code></pre>
 
 <p>RESULTADO</p>
 
-<pre><code>{ children: { 'childOne': { 'foo': 'baz', 'asdf': 'fdsa', 'abc': '123' }, 'ChildTwo': nulo,//Deshabilitado. No se inicializará. 'ChildThree': {}, 'ChildFour': {}}} </code></pre>
+<pre><code>{
+  niños: {
+    'niñoUno': { 'foo': 'baz', 'asdf': 'fdsa', 'abc': '123' },
+    'childTwo': nulo, // Deshabilitado. No se inicializará.
+    'niñoTres': {},
+    'niñoCuatro': {}
+  }
+}
+</code></pre>
 </blockquote>
 
 <h5>Parámetros:</h5>
@@ -1181,7 +1315,7 @@ El uso de cualquiera de las siguientes propiedades en el <code>&lt; video&gt;</c
 <li><code></code> Objeto NUEVO objeto de esto.opciones_ y obj fusionados</li>
 </ul>
 
-<p><em>heredado de</em>: <a href="https://github.com/videojs/video.js/blob/master/src/js/component.js#L179">src/js/component.js #L179</a></p>
+<p><em>heredado de</em> : <a href="https://github.com/videojs/video.js/blob/master/src/js/component.js#L179">src/js/component.js#L179</a></p>
 
 <hr>
 
@@ -1190,7 +1324,8 @@ El uso de cualquiera de las siguientes propiedades en el <code>&lt; video&gt;</c
 <blockquote>
 <p>Pausa la reproducción de vídeo</p>
 
-<pre><code>MyPlayer.pause (); </code></pre>
+<pre><code>miJugador.pausa();
+</code></pre>
 </blockquote>
 
 <h5>Devoluciones:</h5>
@@ -1199,7 +1334,7 @@ El uso de cualquiera de las siguientes propiedades en el <code>&lt; video&gt;</c
 <li><code>VJS.player</code> auto</li>
 </ul>
 
-<p><em>definido en</em>: <a href="https://github.com/videojs/video.js/blob/master/src/js/player.js#L671">src/js/player.js #L671</a></p>
+<p><em>definido en</em> : <a href="https://github.com/videojs/video.js/blob/master/src/js/player.js#L671">src/js/player.js#L671</a></p>
 
 <hr>
 
@@ -1208,7 +1343,9 @@ El uso de cualquiera de las siguientes propiedades en el <code>&lt; video&gt;</c
 <blockquote>
 <p>Comprueba si el reproductor está en pausa</p>
 
-<pre><code>var isPaused = myPlayer.pased (); var isPlayer =! Mi jugador.pausado (); </code></pre>
+<pre><code>var isPaused = myPlayer.paused();
+var estáJugando = !miJugador.pausado();
+</code></pre>
 </blockquote>
 
 <h5>Devoluciones:</h5>
@@ -1217,7 +1354,7 @@ El uso de cualquiera de las siguientes propiedades en el <code>&lt; video&gt;</c
 <li><code>Boolean</code> false si el medio se está reproduciendo actualmente o true de otro modo</li>
 </ul>
 
-<p><em>definido en</em>: <a href="https://github.com/videojs/video.js/blob/master/src/js/player.js#L684">src/js/player.js #L684</a></p>
+<p><em>definido en</em> : <a href="https://github.com/videojs/video.js/blob/master/src/js/player.js#L684">src/js/player.js#L684</a></p>
 
 <hr>
 
@@ -1226,7 +1363,8 @@ El uso de cualquiera de las siguientes propiedades en el <code>&lt; video&gt;</c
 <blockquote>
 <p>iniciar la reproducción multimedia</p>
 
-<pre><code>Mi jugador.play (); </code></pre>
+<pre><code>miJugador.play();
+</code></pre>
 </blockquote>
 
 <h5>Devoluciones:</h5>
@@ -1235,7 +1373,7 @@ El uso de cualquiera de las siguientes propiedades en el <code>&lt; video&gt;</c
 <li><code>VJS.player</code> auto</li>
 </ul>
 
-<p><em>definido en</em>: <a href="https://github.com/videojs/video.js/blob/master/src/js/player.js#L659">src/js/player.js #L659</a></p>
+<p><em>definido en</em> : <a href="https://github.com/videojs/video.js/blob/master/src/js/player.js#L659">src/js/player.js#L659</a></p>
 
 <hr>
 	
@@ -1264,7 +1402,7 @@ El uso de cualquiera de las siguientes propiedades en el <code>&lt; video&gt;</c
     <li>Se basa en las capacidades del navegador y, por lo tanto, no funcionará en todas partes (debería funcionar bien en iPad, Chrome y Firefox)</li>
 </ul>
 
-<p><em>definido en</em>: <a href="https://github.com/videojs/video.js/blob/master/src/js/player.js#L1618">src/js/player.js #L1618</a></p>
+<p><em>definido en</em> : <a href="https://github.com/videojs/video.js/blob/master/src/js/player.js#L1618">src/js/player.js#L1618</a></p>
 
 <hr>
 
@@ -1280,7 +1418,7 @@ El uso de cualquiera de las siguientes propiedades en el <code>&lt; video&gt;</c
 <li><code>VJS. Reproductor</code> </li>
 </ul>
 
-<p><em>heredado de</em>: <a href="https://github.com/videojs/video.js/blob/master/src/js/component.js#L126">src/js/component.js #L126</a></p>
+<p><em>heredado de</em> : <a href="https://github.com/videojs/video.js/blob/master/src/js/component.js#L126">src/js/component.js#L126</a></p>
 
 <hr>
 
@@ -1291,13 +1429,18 @@ El uso de cualquiera de las siguientes propiedades en el <code>&lt; video&gt;</c
 
 <h5>EJEMPLO:</h5>
 
-<pre><code>//obtener var currentPoster = myPlayer.poster ();//configurar MyPlayer.poster ('http://example.com/myImage.jpg'); </code></pre>
+<pre><code>// conseguir
+var poster actual = myPlayer.poster();
+
+// configuración
+myPlayer.poster('http://example.com/myImage.jpg');
+</code></pre>
 </blockquote>
 
 <h5>Parámetros:</h5>
 
 <ul>
-<li><strong>src</strong> <code>String</code> <em>(OPCIONAL)</em> URL fuente de imagen de póster</li>
+<li><strong>src</strong> <code>String</code> <em>(OPCIONAL)</em> URL de origen de la imagen del póster</li>
 </ul>
 
 <h5>Devoluciones:</h5>
@@ -1307,7 +1450,7 @@ El uso de cualquiera de las siguientes propiedades en el <code>&lt; video&gt;</c
 <li><code>VJS.player</code> self al configurar</li>
 </ul>
 
-<p><em>definido en</em>: <a href="https://github.com/videojs/video.js/blob/master/src/js/player.js#L1320">src/js/player.js #L1320</a></p>
+<p><em>definido en</em> : <a href="https://github.com/videojs/video.js/blob/master/src/js/player.js#L1320">src/js/player.js#L1320</a></p>
 
 <hr>
 	
@@ -1330,7 +1473,7 @@ El uso de cualquiera de las siguientes propiedades en el <code>&lt; video&gt;</c
 <li><code>vjs.player</code> Devuelve el reproductor al configurar</li>
 </ul>
 
-<p><em>definido en</em>: <a href="https://github.com/videojs/video.js/blob/master/src/js/player.js#L1261">src/js/player.js #L1261</a></p>
+<p><em>definido en</em> : <a href="https://github.com/videojs/video.js/blob/master/src/js/player.js#L1261">src/js/player.js#L1261</a></p>
 
 <hr>
 
@@ -1354,15 +1497,16 @@ El uso de cualquiera de las siguientes propiedades en el <code>&lt; video&gt;</c
 <li><code>Componente VJS</code> </li>
 </ul>
 
-<p><em>heredado de</em>: <a href="https://github.com/videojs/video.js/blob/master/src/js/component.js#L769">src/js/component.js #L769</a></p>
+<p><em>heredado de</em> : <a href="https://github.com/videojs/video.js/blob/master/src/js/component.js#L769">src/js/component.js#L769</a></p>
 
 <hr>
 	
-<h3 id="remainingTime">Tiempo restante ()</h3>
+<h3 id="remainingTime">tiempo restante()</h3>
 
 <blockquote>
 <p>Calcula cuánto tiempo queda</p>
-<pre><code>var timeLeft = myPlayer.RemaningTime (); </code></pre>
+<pre><code>var timeLeft = myPlayer.remainingTime();
+</code></pre>
 <p>No es una función de elemento de vídeo nativo, pero útil</p>
 </blockquote>
 
@@ -1372,7 +1516,7 @@ El uso de cualquiera de las siguientes propiedades en el <code>&lt; video&gt;</c
 <li><code>Número</code> El tiempo restante en segundos</li>
 </ul>
 
-<p><em>definido en</em>: <a href="https://github.com/videojs/video.js/blob/master/src/js/player.js#L754">src/js/player.js #L754</a></p>
+<p><em>definido en</em> : <a href="https://github.com/videojs/video.js/blob/master/src/js/player.js#L754">src/js/player.js#L754</a></p>
 
 <hr>
 
@@ -1388,7 +1532,7 @@ El uso de cualquiera de las siguientes propiedades en el <code>&lt; video&gt;</c
 <li><strong>componente</strong> <code>vjs.componente</code> componente que se va a quitar</li>
 </ul>
 
-<p><em>heredado de</em>: <a href="https://github.com/videojs/video.js/blob/master/src/js/component.js#L420">src/js/component.js #L420</a></p>
+<p><em>heredado de</em> : <a href="https://github.com/videojs/video.js/blob/master/src/js/component.js#L420">src/js/component.js#L420</a></p>
 
 <hr>
 
@@ -1410,7 +1554,7 @@ El uso de cualquiera de las siguientes propiedades en el <code>&lt; video&gt;</c
 <li><code>Componente VJS</code> </li>
 </ul>
 
-<p><em>heredado de</em>: <a href="https://github.com/videojs/video.js/blob/master/src/js/component.js#L837">src/js/component.js #L837</a></p>
+<p><em>heredado de</em> : <a href="https://github.com/videojs/video.js/blob/master/src/js/component.js#L837">src/js/component.js#L837</a></p>
 
 <hr>
 
@@ -1420,16 +1564,17 @@ El uso de cualquiera de las siguientes propiedades en el <code>&lt; video&gt;</c
 <p>Nombre anterior para requestFullScreen obsoleto true</p>
 </blockquote>
 
-<p><em>definido en</em>: <a href="https://github.com/videojs/video.js/blob/master/src/js/player.js#L1004">src/js/player.js #L1004</a></p>
+<p><em>definido en</em> : <a href="https://github.com/videojs/video.js/blob/master/src/js/player.js#L1004">src/js/player.js#L1004</a></p>
 
 <hr>
 	
-<h3 id="requestFullscreen">Solicitar pantalla completa ()</h3>
+<h3 id="requestFullscreen">requestFullscreen ()</h3>
 
 <blockquote>
 <p>Aumenta el tamaño del vídeo a pantalla completa</p>
 
-<pre><code>Mi jugador.request pantalla completa (); </code></pre>
+<pre><code>myPlayer.requestFullscreen();
+</code></pre>
 
 <p>En algunos navegadores, la pantalla completa no es compatible de forma nativa, por lo que entra en «modo de ventana completa», donde el video llena la ventana del navegador. En los navegadores y dispositivos que admiten pantalla completa nativa, a veces se muestran los controles predeterminados del navegador, y no el aspecto personalizado Video.js. Esto incluye la mayoría de los dispositivos móviles (iOS, Android) y versiones anteriores de Safari.</p>
 </blockquote>
@@ -1440,7 +1585,7 @@ El uso de cualquiera de las siguientes propiedades en el <code>&lt; video&gt;</c
 <li><code>VJS.player</code> auto</li>
 </ul>
 
-<p><em>definido en</em>: <a href="https://github.com/videojs/video.js/blob/master/src/js/player.js#L959">src/js/player.js #L959</a></p>
+<p><em>definido en</em> : <a href="https://github.com/videojs/video.js/blob/master/src/js/player.js#L959">src/js/player.js#L959</a></p>
 
 <hr>
 	
@@ -1456,7 +1601,7 @@ El uso de cualquiera de las siguientes propiedades en el <code>&lt; video&gt;</c
 <li><code>Boolean</code> True si el jugador está en estado de búsqueda, falso si no</li>
 </ul>
 
-<p><em>definido en</em>: <a href="https://github.com/videojs/video.js/blob/master/src/js/player.js#L1482">src/js/player.js #L1482</a></p>
+<p><em>definido en</em> : <a href="https://github.com/videojs/video.js/blob/master/src/js/player.js#L1482">src/js/player.js#L1482</a></p>
 
 <hr>
 	
@@ -1479,7 +1624,7 @@ El uso de cualquiera de las siguientes propiedades en el <code>&lt; video&gt;</c
 <li><code>Número</code> Devuelve el identificador de intervalo</li>
 </ul>
 
-<p><em>heredado de</em>: <a href="https://github.com/videojs/video.js/blob/master/src/js/component.js#L1198">src/js/component.js #L1198</a></p>
+<p><em>heredado de</em> : <a href="https://github.com/videojs/video.js/blob/master/src/js/component.js#L1198">src/js/component.js#L1198</a></p>
 
 <hr>
 	
@@ -1502,7 +1647,7 @@ El uso de cualquiera de las siguientes propiedades en el <code>&lt; video&gt;</c
 <li><code>Número</code> Devuelve el identificador de tiempo de espera</li>
 </ul>
 
-<p><em>heredado de</em>: <a href="https://github.com/videojs/video.js/blob/master/src/js/component.js#L1158">src/js/component.js #L1158</a></p>
+<p><em>heredado de</em> : <a href="https://github.com/videojs/video.js/blob/master/src/js/component.js#L1158">src/js/component.js#L1158</a></p>
 
 <hr>
 
@@ -1518,7 +1663,7 @@ El uso de cualquiera de las siguientes propiedades en el <code>&lt; video&gt;</c
 <li><code>Componente VJS</code> </li>
 </ul>
 
-<p><em>heredado de</em>: <a href="https://github.com/videojs/video.js/blob/master/src/js/component.js#L847">src/js/component.js #L847</a></p>
+<p><em>heredado de</em> : <a href="https://github.com/videojs/video.js/blob/master/src/js/component.js#L847">src/js/component.js#L847</a></p>
 
 <hr>
 
@@ -1531,15 +1676,22 @@ El uso de cualquiera de las siguientes propiedades en el <code>&lt; video&gt;</c
 
 <p><strong>Cadena URL</strong>: URL del archivo de vídeo. Utilice este método si está seguro de que la tecnología de reproducción actual (HTML5/Flash) puede admitir la fuente que proporciona. Actualmente, solo se pueden utilizar archivos MP4 tanto en HTML5 como en Flash.</p>
 
-<pre><code>MyPlayer.src (» http://www.example.com/path/to/video.mp4 «); </code></pre>
+<pre><code>myPlayer.src("http://www.example.com/path/to/video.mp4");
+</code></pre>
 
 <p><strong>Objeto de origen (o elemento):</strong> Objeto javascript que contiene información sobre el archivo de origen. Utilice este método si desea que el reproductor determine si puede admitir el archivo utilizando la información de tipo.</p>
 
-<pre><code>MyPlayer.src ({ type: "video/mp4", src: "http://www.example.com/path/to/video.mp4" }); </code></pre>
+<pre><code>myPlayer.src({ tipo: "video/mp4", src: "http://www.example.com/path/to/video.mp4" });
+</code></pre>
 
 <p><strong>Matriz de objetos de origen:</strong> Para proporcionar varias versiones del origen para que se pueda reproducir utilizando HTML5 en todos los navegadores, puede utilizar una matriz de objetos de origen. Video.js detectará qué versión es compatible y cargará ese archivo.</p>
 
-<pre><code>MyPlayer.src ([ { type: "video/mp4", src: "http://www.example.com/path/to/video.mp4" }, { type: "video/webm", src: "http://www.example.com/path/to/video.webm" }, { type: "video/ogg", src: "http://www.example.com/path/to/video.ogv" }]); </code></pre>
+<pre><code>miJugador.src([
+  { tipo: "video/mp4", src: "http://www.example.com/path/to/video.mp4" },
+  { tipo: "video/webm", src: "http://www.example.com/path/to/video.webm" },
+  { tipo: "video/ogg", src: "http://www.example.com/path/to/video.ogv" }
+]);
+</code></pre>
 </blockquote>
 
 <h5>Parámetros:</h5>
@@ -1564,7 +1716,7 @@ El uso de cualquiera de las siguientes propiedades en el <code>&lt; video&gt;</c
 <li><code>Cadena</code> El reproductor al configurar</li>
 </ul>
 
-<p><em>definido en</em>: <a href="https://github.com/videojs/video.js/blob/master/src/js/player.js#L1147">src/js/player.js #L1147</a></p>
+<p><em>definido en</em> : <a href="https://github.com/videojs/video.js/blob/master/src/js/player.js#L1147">src/js/player.js#L1147</a></p>
 
 <hr>
 
@@ -1573,7 +1725,9 @@ El uso de cualquiera de las siguientes propiedades en el <code>&lt; video&gt;</c
 <blockquote>
 <p>Activar un evento en un elemento</p>
 
-<pre><code>MyComponent.Trigger ('EventName'); myComponent.trigger ({'type':'eventName'}); </code></pre>
+<pre><code>myComponent.trigger('nombreEvento');
+myComponent.trigger({'type':'eventName'});
+</code></pre>
 </blockquote>
 
 <h5>Parámetros:</h5>
@@ -1588,7 +1742,7 @@ El uso de cualquiera de las siguientes propiedades en el <code>&lt; video&gt;</c
 <li><code>vjs.componente</code> auto</li>
 </ul>
 
-<p><em>heredado de</em>: <a href="https://github.com/videojs/video.js/blob/master/src/js/component.js#L724">src/js/component.js #L724</a></p>
+<p><em>heredado de</em> : <a href="https://github.com/videojs/video.js/blob/master/src/js/component.js#L724">src/js/component.js#L724</a></p>
 
 <hr>
 
@@ -1604,7 +1758,7 @@ El uso de cualquiera de las siguientes propiedades en el <code>&lt; video&gt;</c
 <li><code>Componente VJS</code> </li>
 </ul>
 
-<p><em>heredado de</em>: <a href="https://github.com/videojs/video.js/blob/master/src/js/component.js#L788">src/js/component.js #L788</a></p>
+<p><em>heredado de</em> : <a href="https://github.com/videojs/video.js/blob/master/src/js/component.js#L788">src/js/component.js#L788</a></p>
 
 <hr>
 
@@ -1613,7 +1767,12 @@ El uso de cualquiera de las siguientes propiedades en el <code>&lt; video&gt;</c
 <blockquote>
 <p>Obtener o configurar el volumen actual de los medios</p>
 
-<pre><code>//get var howLoudisit = myPlayer.volume ();//establece myPlayer.volume (0.5);//Establecer el volumen a la mitad </code></pre>
+<pre><code>// conseguir
+var comoLoudIsIt = myPlayer.volume();
+
+// colocar
+miReproductor.volumen(0.5); // Poner el volumen a la mitad
+</code></pre>
 
 <p>0 está apagado (silenciado), 1,0 está todo el camino hacia arriba, 0,5 está a mitad de camino.</p>
 </blockquote>
@@ -1631,7 +1790,7 @@ El uso de cualquiera de las siguientes propiedades en el <code>&lt; video&gt;</c
 <li><code>VJS.player</code> self, al configurar</li>
 </ul>
 
-<p><em>definido en</em>: <a href="https://github.com/videojs/video.js/blob/master/src/js/player.js#L860">src/js/player.js #L860</a></p>
+<p><em>definido en</em> : <a href="https://github.com/videojs/video.js/blob/master/src/js/player.js#L860">src/js/player.js#L860</a></p>
 
 <hr>
 
@@ -1646,8 +1805,8 @@ El uso de cualquiera de las siguientes propiedades en el <code>&lt; video&gt;</c
 <h5>Parámetros:</h5>
 
 <ul>
-<li><strong></strong> <code>número|Cadena</code> <em>(OPCIONAL)</em> Número de ancho opcional</li>
-<li><strong>SkipListeners</strong> <code>Boolean</code> Omitir el activador del' evento de redimensionamiento</li>
+<li><strong>num</strong> <code>Número|Cadena</code> <em>(OPCIONAL)</em> Número de ancho opcional</li>
+<li><strong>skipListeners</strong> <code>Boolean</code> Saltar el activador del evento 'redimensionar'</li>
 </ul>
 
 <h5>Devoluciones:</h5>
@@ -1657,7 +1816,7 @@ El uso de cualquiera de las siguientes propiedades en el <code>&lt; video&gt;</c
 <li><code>Número|String</code> El ancho, al obtener</li>
 </ul>
 
-<p><em>heredado de</em>: <a href="https://github.com/videojs/video.js/blob/master/src/js/component.js#L910">src/js/component.js #L910</a></p>
+<p><em>heredado de</em> : <a href="https://github.com/videojs/video.js/blob/master/src/js/component.js#L910">src/js/component.js#L910</a></p>
 
 <hr>
 
@@ -1671,7 +1830,7 @@ El uso de cualquiera de las siguientes propiedades en el <code>&lt; video&gt;</c
 <p>Se activa cuando se conoce o cambia por primera vez la duración del recurso multimedia</p>
 </blockquote>
 
-<p><em>definido en</em>: <a href="https://github.com/videojs/video.js/blob/master/src/js/player.js#L554">src/js/player.js #L554</a></p>
+<p><em>definido en</em> : <a href="https://github.com/videojs/video.js/blob/master/src/js/player.js#L554">src/js/player.js#L554</a></p>
 
 <hr>
 
@@ -1681,7 +1840,7 @@ El uso de cualquiera de las siguientes propiedades en el <code>&lt; video&gt;</c
 <p>Se activa cuando se alcanza el final del recurso multimedia (CurrentTime == duración)</p>
 </blockquote>
 
-<p><em>definido en</em>: <a href="https://github.com/videojs/video.js/blob/master/src/js/player.js#L541">src/js/player.js #L541</a></p>
+<p><em>definido en</em> : <a href="https://github.com/videojs/video.js/blob/master/src/js/player.js#L541">src/js/player.js#L541</a></p>
 
 <hr>
 
@@ -1711,7 +1870,7 @@ El uso de cualquiera de las siguientes propiedades en el <code>&lt; video&gt;</c
 <p>No forma parte de las especificaciones de HLS, y no estamos seguros de si esta es la mejor implementación hasta la fecha, así que úsalo con moderación. Si no tienes motivos para impedir la reproducción, usa <code>MyPlayer.ONE («play»);</code> en su lugar.</p>
 </blockquote>
 
-<p><em>definido en</em>: <a href="https://github.com/videojs/video.js/blob/master/src/js/player.js#L498">src/js/player.js #L498</a></p>
+<p><em>definido en</em> : <a href="https://github.com/videojs/video.js/blob/master/src/js/player.js#L498">src/js/player.js#L498</a></p>
 
 <hr>
 
@@ -1721,7 +1880,7 @@ El uso de cualquiera de las siguientes propiedades en el <code>&lt; video&gt;</c
 <p>Se dispara cuando el reproductor entra o sale del modo de pantalla completa</p>
 </blockquote>
 
-<p><em>definido en</em>: <a href="https://github.com/videojs/video.js/blob/master/src/js/player.js#L583">src/js/player.js #L583</a></p>
+<p><em>definido en</em> : <a href="https://github.com/videojs/video.js/blob/master/src/js/player.js#L583">src/js/player.js#L583</a></p>
 
 <hr>
 
@@ -1731,7 +1890,7 @@ El uso de cualquiera de las siguientes propiedades en el <code>&lt; video&gt;</c
 <p>Se activa cuando el reproductor ha terminado de descargar los datos de origen</p>
 </blockquote>
 
-<p><em>definido en</em>: <a href="https://github.com/videojs/video.js/blob/master/src/js/player.js#L445">src/js/player.js #L445</a></p>
+<p><em>definido en</em> : <a href="https://github.com/videojs/video.js/blob/master/src/js/player.js#L445">src/js/player.js#L445</a></p>
 
 <hr>
 
@@ -1741,7 +1900,7 @@ El uso de cualquiera de las siguientes propiedades en el <code>&lt; video&gt;</c
 <p>Se activa cuando el reproductor ha descargado datos en la posición de reproducción actual</p>
 </blockquote>
 
-<p><em>definido en</em>: <a href="https://github.com/videojs/video.js/blob/master/src/js/player.js#L439">src/js/player.js #L439</a></p>
+<p><em>definido en</em> : <a href="https://github.com/videojs/video.js/blob/master/src/js/player.js#L439">src/js/player.js#L439</a></p>
 
 <hr>
 
@@ -1751,7 +1910,7 @@ El uso de cualquiera de las siguientes propiedades en el <code>&lt; video&gt;</c
 <p>Se dispara cuando el jugador tiene información inicial sobre la duración y la dimensión</p>
 </blockquote>
 
-<p><em>definido en</em>: <a href="https://github.com/videojs/video.js/blob/master/src/js/player.js#L433">src/js/player.js #L433</a></p>
+<p><em>definido en</em> : <a href="https://github.com/videojs/video.js/blob/master/src/js/player.js#L433">src/js/player.js#L433</a></p>
 
 <hr>
 
@@ -1761,7 +1920,7 @@ El uso de cualquiera de las siguientes propiedades en el <code>&lt; video&gt;</c
 <p>Se activa cuando el agente de usuario comienza a buscar datos multimedia</p>
 </blockquote>
 
-<p><em>definido en</em>: <a href="https://github.com/videojs/video.js/blob/master/src/js/player.js#L389">src/js/player.js #L389</a></p>
+<p><em>definido en</em> : <a href="https://github.com/videojs/video.js/blob/master/src/js/player.js#L389">src/js/player.js#L389</a></p>
 
 <hr>
 
@@ -1771,7 +1930,7 @@ El uso de cualquiera de las siguientes propiedades en el <code>&lt; video&gt;</c
 <p>Disparado cada vez que los medios han estado en pausa</p>
 </blockquote>
 
-<p><em>definido en</em>: <a href="https://github.com/videojs/video.js/blob/master/src/js/player.js#L512">src/js/player.js #L512</a></p>
+<p><em>definido en</em> : <a href="https://github.com/videojs/video.js/blob/master/src/js/player.js#L512">src/js/player.js#L512</a></p>
 
 <hr>
 
@@ -1781,7 +1940,7 @@ El uso de cualquiera de las siguientes propiedades en el <code>&lt; video&gt;</c
 <p>Se activa cada vez que el medio comienza o reanuda la reproducción</p>
 </blockquote>
 
-<p><em>definido en</em>: <a href="https://github.com/videojs/video.js/blob/master/src/js/player.js#L451">src/js/player.js #L451</a></p>
+<p><em>definido en</em> : <a href="https://github.com/videojs/video.js/blob/master/src/js/player.js#L451">src/js/player.js#L451</a></p>
 
 <hr>
 
@@ -1791,7 +1950,7 @@ El uso de cualquiera de las siguientes propiedades en el <code>&lt; video&gt;</c
 <p>Se activó mientras el agente de usuario descarga datos multimedia</p>
 </blockquote>
 
-<p><em>definido en</em>: <a href="https://github.com/videojs/video.js/blob/master/src/js/player.js#L530">src/js/player.js #L530</a></p>
+<p><em>definido en</em> : <a href="https://github.com/videojs/video.js/blob/master/src/js/player.js#L530">src/js/player.js#L530</a></p>
 
 <hr>
 
@@ -1801,7 +1960,7 @@ El uso de cualquiera de las siguientes propiedades en el <code>&lt; video&gt;</c
 <p>Disparado cuando cambian la anchura y/o la altura del componente</p>
 </blockquote>
 
-<p><em>heredado de</em>: <a href="https://github.com/videojs/video.js/blob/master/src/js/component.js#L1020">src/js/component.js #L1020</a></p>
+<p><em>heredado de</em> : <a href="https://github.com/videojs/video.js/blob/master/src/js/component.js#L1020">src/js/component.js#L1020</a></p>
 
 <hr>
 
@@ -1811,7 +1970,7 @@ El uso de cualquiera de las siguientes propiedades en el <code>&lt; video&gt;</c
 <p>Disparado cuando el jugador ha terminado de saltar a una nueva hora</p>
 </blockquote>
 
-<p><em>definido en</em>: <a href="https://github.com/videojs/video.js/blob/master/src/js/player.js#L485">src/js/player.js #L485</a></p>
+<p><em>definido en</em> : <a href="https://github.com/videojs/video.js/blob/master/src/js/player.js#L485">src/js/player.js#L485</a></p>
 
 <hr>
 
@@ -1821,7 +1980,7 @@ El uso de cualquiera de las siguientes propiedades en el <code>&lt; video&gt;</c
 <p>Disparado cada vez que el jugador salta a una nueva hora</p>
 </blockquote>
 
-<p><em>definido en</em>: <a href="https://github.com/videojs/video.js/blob/master/src/js/player.js#L477">src/js/player.js #L477</a></p>
+<p><em>definido en</em> : <a href="https://github.com/videojs/video.js/blob/master/src/js/player.js#L477">src/js/player.js#L477</a></p>
 
 <hr>
 
@@ -1833,7 +1992,7 @@ El uso de cualquiera de las siguientes propiedades en el <code>&lt; video&gt;</c
 <p>Durante la reproducción, se activa cada 15 a 250 milisegundos, dependiendo de la tecnología de reproducción que se utilice.</p>
 </blockquote>
 
-<p><em>definido en</em>: <a href="https://github.com/videojs/video.js/blob/master/src/js/player.js#L524">src/js/player.js #L524</a></p>
+<p><em>definido en</em> : <a href="https://github.com/videojs/video.js/blob/master/src/js/player.js#L524">src/js/player.js#L524</a></p>
 
 <hr>
 
@@ -1843,7 +2002,7 @@ El uso de cualquiera de las siguientes propiedades en el <code>&lt; video&gt;</c
 <p>Se activa cuando cambia el volumen</p>
 </blockquote>
 
-<p><em>definido en</em>: <a href="https://github.com/videojs/video.js/blob/master/src/js/player.js#L577">src/js/player.js #L577</a></p>
+<p><em>definido en</em> : <a href="https://github.com/videojs/video.js/blob/master/src/js/player.js#L577">src/js/player.js#L577</a></p>
 
 <hr>
 
@@ -1853,7 +2012,7 @@ El uso de cualquiera de las siguientes propiedades en el <code>&lt; video&gt;</c
 <p>Disparado cuando los medios empiezan a esperar</p>
 </blockquote>
 
-<p><em>definido en</em>: <a href="https://github.com/videojs/video.js/blob/master/src/js/player.js#L460">src/js/player.js #L460</a></p>
+<p><em>definido en</em> : <a href="https://github.com/videojs/video.js/blob/master/src/js/player.js#L460">src/js/player.js#L460</a></p>
 
 <hr>
         </div>
@@ -1872,23 +2031,18 @@ El uso de cualquiera de las siguientes propiedades en el <code>&lt; video&gt;</c
     <script src="/en/scripts/docs-nav-data.min.js"></script>
     <script src="/en/scripts/bcls-doc-site-v1.js"></script>
     <script src="/en/scripts/bc-mapi.js"></script>
-    <script>
-        $ (documento) .foundation ();
+    <script translate="no">
+        $(document).foundation();
     </script>
     <script type="text/javascript">
-    /******** Cualquier guión específico de las muestras de páginas debería ir aquí *********/
+    /******** Any scripts specific to page samples should go here *********/
   </script>
     
     
 	<div style="text-align:center">
-    <iframe id="CSAT" src="//learning-services-media.brightcove.com/doc-assets/general/surveylink.html" style=" padding-bottom:20px;border:none"></iframe>
+    
 </div>
-<div class="bcls-footer"><a id="feedbackMail" href="mailto:docs@brightcove.com">¿Tiene preguntas o comentarios?</a></div>
-<script>
-var feedbackMail = document.getElementById («FeedbackMail»); Feedbackmail.setAttribute («href», «mailto: docs@brightcove.com? subject=pregunta relativa a "+ encodeURI (document.location.href));
-</script>
-<script src="https://learning-services-media.brightcove.com/doc-assets/js/https-fix.js"></script>
-<script src="https://learning-services-media.brightcove.com/doc-assets/js/support-feedback.js"></script><script src="https://support.brightcove.com/site-assets/js/site/feedback-docs.js"></script>
+
 </body>
 
 </html>
